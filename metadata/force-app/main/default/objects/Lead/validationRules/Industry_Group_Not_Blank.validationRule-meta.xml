@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_Group_Not_Blank</fullName>
+    <active>false</active>
+    <description>Only Clearbit can fill in the Industry Group field.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+NOT(ISPICKVAL(PRIORVALUE(Industry_Group__c), &quot;&quot;)),
+ISCHANGED(Industry_Group__c)
+)</errorConditionFormula>
+    <errorDisplayField>Industry_Group__c</errorDisplayField>
+    <errorMessage>You cannot change the Industry Group. If you believe this value is incorrect contact Marketing/Sales Operations</errorMessage>
+</ValidationRule>

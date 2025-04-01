@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_s_partner_bulding_integration__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>What partner build the new integration?</inlineHelpText>
+    <label>Customer&apos;s partner bulding integration</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Adjacent Technologies (Customer&apos;s partner bulding integration)</relationshipLabel>
+    <relationshipName>Adjacent_Technologies</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

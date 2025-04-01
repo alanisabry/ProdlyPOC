@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Approval_Email_Alert_Sent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field that indicates whether an email alert to managers was sent upon submission of this opportunity for approval.</description>
+    <label>Pending Approval Email Alert Sent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

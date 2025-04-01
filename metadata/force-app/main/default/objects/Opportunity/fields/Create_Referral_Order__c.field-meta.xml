@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Referral_Order__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-4133: Used to enable or disable the automatic order creation after closing the referral opportunity.</description>
+    <inlineHelpText>Check this field to automatically generate order on closing referral opportunity.</inlineHelpText>
+    <label>Create Referral Order?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

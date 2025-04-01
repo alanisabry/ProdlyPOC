@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_Currency_ID__c</fullName>
+    <description>Internal ID of currency in Netsuite.</description>
+    <externalId>false</externalId>
+    <formula>CASE(CurrencyIsoCode,
+&quot;AED&quot;,  8,
+&quot;ARS&quot;,  19,
+&quot;AUD&quot;,  5,
+&quot;BGN&quot;,  24,
+&quot;CAD&quot;,  3,
+&quot;CHF&quot;,  6,
+&quot;CLP&quot;,  26,
+&quot;CNY&quot;,  16,
+&quot;CZK&quot;,  27,
+&quot;DKK&quot;,  11,
+&quot;EUR&quot;,  1,
+&quot;GBP&quot;,  4,
+&quot;HKD&quot;,  22,
+&quot;HUF&quot;,  15,
+&quot;IDR&quot;,  23,
+&quot;INR&quot;,  28,
+&quot;ISK&quot;,  10,
+&quot;JPY&quot;,  17,
+&quot;KRW&quot;,  20,
+&quot;NOK&quot;,  9,
+&quot;NZD&quot;,  25,
+&quot;PLN&quot;,  13,
+&quot;RUB&quot;,  18,
+&quot;SEK&quot;,  12,
+&quot;SGD&quot;,  21,
+&quot;THB&quot;,  14,
+&quot;USD&quot;,  2,
+&quot;ZAR&quot;,  7,1)</formula>
+    <inlineHelpText>Internal ID of currency in Netsuite.</inlineHelpText>
+    <label>Netsuite Currency ID</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

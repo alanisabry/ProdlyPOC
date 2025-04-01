@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date__c</fullName>
+    <formula>IF( OR (Pipeline_Stage__c = &quot;Lost&quot;,Pipeline_Stage__c = &quot;Won&quot;), Close_Date__c ,  DATEVALUE(CreatedDate ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

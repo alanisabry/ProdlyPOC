@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Opportunity_Value_Won__c</fullName>
+    <description>wd field
+Amount of related Won opportunity. Based on standard opportunity Amount field.</description>
+    <formula>IF( NOT(ISBLANK(FCR_Opportunity_Closed_Won__c)) , FCR_Opportunity_Amount__c , 0)</formula>
+    <inlineHelpText>Amount of related Won opportunity. Based on standard opportunity Amount field.</inlineHelpText>
+    <label>Opportunity Value Won</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

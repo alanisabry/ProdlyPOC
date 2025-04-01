@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unqualified_Reason__c</fullName>
+    <description>wd field (+B values)</description>
+    <inlineHelpText>Synced from Lead/ Contact Unqualified Reason</inlineHelpText>
+    <label>Unqualified Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wrong contact data</fullName>
+                <default>false</default>
+                <label>Wrong contact data</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <label>Competitor</label>
+            </value>
+            <value>
+                <fullName>VASP lead</fullName>
+                <default>false</default>
+                <label>VASP lead</label>
+            </value>
+            <value>
+                <fullName>Job applicant</fullName>
+                <default>false</default>
+                <label>Job applicant</label>
+            </value>
+            <value>
+                <fullName>No company</fullName>
+                <default>false</default>
+                <label>No company</label>
+            </value>
+            <value>
+                <fullName>Bad Data</fullName>
+                <default>false</default>
+                <label>Bad Data</label>
+            </value>
+            <value>
+                <fullName>International (outside target market)</fullName>
+                <default>false</default>
+                <label>International (outside target market)</label>
+            </value>
+            <value>
+                <fullName>Size of Organization</fullName>
+                <default>false</default>
+                <label>Size of Organization</label>
+            </value>
+            <value>
+                <fullName>Wrong Product Fit</fullName>
+                <default>false</default>
+                <label>Wrong Product Fit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

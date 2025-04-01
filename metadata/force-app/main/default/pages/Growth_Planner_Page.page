@@ -1,0 +1,5 @@
+<apex:page standardController="Quote" showHeader="false">
+    <apex:pageBlock >
+        <apex:iframe src="{!Quote.Growth_Planner_Sheet_URL__c}" scrolling="true" id="growthPlannerIframe" width="100%" height="1200"/>
+    </apex:pageBlock>
+</apex:page>

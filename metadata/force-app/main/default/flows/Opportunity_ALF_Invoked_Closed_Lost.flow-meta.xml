@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Alert_APAC_Send_Email_if_New_Business_is_Closed_Lost</name>
+        <label>Alert - APAC Send Email if New Business is Closed Lost</label>
+        <locationX>598</locationX>
+        <locationY>3819</locationY>
+        <actionName>Opportunity.APAC_Send_email_if_new_business_is_closed_lost</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Decision_Workfront_Closed_Lost_Renewal</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.APAC_Send_email_if_new_business_is_closed_lost</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Alert_APAC_Send_Email_if_Renewal_is_Closed_Lost</name>
+        <label>Alert - APAC Send Email if Renewal is Closed Lost</label>
+        <locationX>607</locationX>
+        <locationY>3598</locationY>
+        <actionName>Opportunity.APAC_Send_email_if_renewal_is_closed_lost</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Decision_APAC_Closed_Lost_New_Business</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.APAC_Send_email_if_renewal_is_closed_lost</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Alert_EMEA_Send_Email_if_New_Business_is_Closed_Lost</name>
+        <label>Alert - EMEA Send Email if New Business is Closed Lost</label>
+        <locationX>588</locationX>
+        <locationY>2907</locationY>
+        <actionName>Opportunity.EMEA_Send_email_if_new_business_is_closed_lost</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Decision_US_Closed_Lost_Renewal</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.EMEA_Send_email_if_new_business_is_closed_lost</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Alert_EMEA_Send_Email_if_Renewal_is_Closed_Lost</name>
+        <label>Alert - EMEA Send Email if Renewal is Closed Lost</label>
+        <locationX>562</locationX>
+        <locationY>2628</locationY>
+        <actionName>Opportunity.EMEA_Send_email_if_renewal_is_closed_lost</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Decision_EMEA_Closed_Lost_New_Business</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.EMEA_Send_email_if_renewal_is_closed_lost</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Alert_US_Send_Email_if_New_Business_is_Closed_Lost</name>
+        <label>Alert - US Send Email if New Business is Closed Lost</label>
+        <locationX>615</locationX>
+        <locationY>3402</locationY>
+        <actionName>Opportunity.US_Send_email_if_new_business_is_closed_lost</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Decision_APAC_Closed_Lost_Renewal</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.US_Send_email_if_new_business_is_closed_lost</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Alert_US_Send_Email_if_Renewal_is_Closed_Lost</name>
+        <label>Alert - US Send Email if Renewal is Closed Lost</label>
+        <locationX>612</locationX>
+        <locationY>3167</locationY>
+        <actionName>Opportunity.US_Send_email_if_renewal_is_closed_lost</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Decision_US_Closed_Lost_New_Business</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.US_Send_email_if_renewal_is_closed_lost</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Alert_Workfront_Closed_Lost</name>
+        <label>Alert - Workfront Closed Lost</label>
+        <locationX>596</locationX>
+        <locationY>4049</locationY>
+        <actionName>Opportunity.Workfront_closed_lost</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.Workfront_closed_lost</nameSegment>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Account_Values</name>
+        <label>Assign - Account Values</label>
+        <locationX>440</locationX>
+        <locationY>1055</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Opp_Account.Customer_Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cancelling</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Churn_Internal_Transfer_Value</name>
+        <label>Assign - Churn Internal Transfer Value</label>
+        <locationX>629</locationX>
+        <locationY>1357</locationY>
+        <assignmentItems>
+            <assignToReference>varOpportunityRecord.Internal_Transfer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NegativeChurnAmountPricingFactors</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Churn_Value</name>
+        <label>Assign - Churn Value</label>
+        <locationX>783</locationX>
+        <locationY>1504</locationY>
+        <assignmentItems>
+            <assignToReference>varOpportunityRecord.Churn__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ChurnAmount_PricingFactors</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Churn_Value_Platform_Transfer</name>
+        <label>Assign - Churn Value Platform Transfer</label>
+        <locationX>402</locationX>
+        <locationY>1198</locationY>
+        <assignmentItems>
+            <assignToReference>varOpportunityRecord.Churn_Platform_churn__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ChurnAmount_PricingFactors</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Immediate_Values</name>
+        <label>Assign - Immediate Values</label>
+        <locationX>176</locationX>
+        <locationY>255</locationY>
+        <assignmentItems>
+            <assignToReference>varOpportunityRecord.CloseDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_Set_Record_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Record_Type_Values</name>
+        <label>Assign - Record Type Values</label>
+        <locationX>148</locationX>
+        <locationY>629</locationY>
+        <assignmentItems>
+            <assignToReference>varOpportunityRecord.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>0120d000000UQ0w</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_Renewal_Set_to_Closed_Lost</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Record_Type_Values_Referral</name>
+        <label>Assign - Record Type Values Referral</label>
+        <locationX>403</locationX>
+        <locationY>624</locationY>
+        <assignmentItems>
+            <assignToReference>varOpportunityRecord.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>0123g000000bpTx</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_Renewal_Set_to_Closed_Lost</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Decision_APAC_Closed_Lost_New_Business</name>
+        <label>Decision - APAC Closed Lost New Business</label>
+        <locationX>249</locationX>
+        <locationY>3734</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Workfront_Closed_Lost_Renewal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_APAC_Closed_Lost_New_Business</name>
+            <conditionLogic>1 AND (2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Melbourne</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business-Enterprise Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business - Expansion Portal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.ARR_manual__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Alert_APAC_Send_Email_if_New_Business_is_Closed_Lost</targetReference>
+            </connector>
+            <label>Yes - APAC Closed Lost New Business</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_APAC_Closed_Lost_Renewal</name>
+        <label>Decision - APAC Closed Lost Renewal?</label>
+        <locationX>257</locationX>
+        <locationY>3527</locationY>
+        <defaultConnector>
+            <targetReference>Decision_APAC_Closed_Lost_New_Business</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_APAC_Closed_Lost_Renewal</name>
+            <conditionLogic>1 AND 2</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Melbourne</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Alert_APAC_Send_Email_if_Renewal_is_Closed_Lost</targetReference>
+            </connector>
+            <label>Yes - APAC Closed Lost Renewal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_EMEA_Closed_Lost_New_Business</name>
+        <label>Decision - EMEA Closed Lost New Business?</label>
+        <locationX>257</locationX>
+        <locationY>2800</locationY>
+        <defaultConnector>
+            <targetReference>Decision_US_Closed_Lost_Renewal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_EMEA_Closed_Lost_New_Business</name>
+            <conditionLogic>(1 OR 2 OR 3) AND (4 OR 5) AND 6</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Amsterdam</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dubai</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>London</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business-Enterprise Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business - Expansion Portal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.ARR_manual__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Alert_EMEA_Send_Email_if_New_Business_is_Closed_Lost</targetReference>
+            </connector>
+            <label>Yes - EMEA Closed Lost New Business</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_EMEA_Closed_Lost_Renewal</name>
+        <label>Decision - EMEA Closed Lost Renewal?</label>
+        <locationX>260</locationX>
+        <locationY>2544</locationY>
+        <defaultConnector>
+            <targetReference>Decision_EMEA_Closed_Lost_New_Business</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_EMEA_Closed_Lost_Renewal</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Amsterdam</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dubai</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>London</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Alert_EMEA_Send_Email_if_Renewal_is_Closed_Lost</targetReference>
+            </connector>
+            <label>Yes - EMEA Closed Lost Renewal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_New_Business_Lost_to_Competitor</name>
+        <label>Decision - New Business Lost to Competitor?</label>
+        <locationX>270</locationX>
+        <locationY>1953</locationY>
+        <defaultConnector>
+            <targetReference>Decision_SFMC_Order_Needed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_NB_Lost_to_Competitor</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business-Enterprise Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Primary_Loss_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lost to Competitor</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sub_Flow_Current_Vendor_on_Account</targetReference>
+            </connector>
+            <label>Yes - NB Lost to Competitor</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Renewal_Set_to_Closed_Lost</name>
+        <label>Decision - Renewal Set to Closed Lost</label>
+        <locationX>273</locationX>
+        <locationY>939</locationY>
+        <defaultConnector>
+            <targetReference>Update_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Renewal_Set_to_Closed_Lost</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Opp_Account</targetReference>
+            </connector>
+            <label>Yes - Renewal Set to Closed Lost</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Set_Churn</name>
+        <label>Decision - Set Churn?</label>
+        <locationX>774</locationX>
+        <locationY>1233</locationY>
+        <defaultConnector>
+            <targetReference>Update_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Churn_NOT_Platform_Transfer_Internal_Transfer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Reason_for_Churn__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Platform Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Reason_for_Churn__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Churn_Value</targetReference>
+            </connector>
+            <label>Yes - Set Churn NOT Platform Transfer/Internal Transfer</label>
+        </rules>
+        <rules>
+            <name>Yes_Set_Churn_Platform_Transfer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Reason_for_Churn__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Platform Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Churn_Value_Platform_Transfer</targetReference>
+            </connector>
+            <label>Yes - Set Churn Platform Transfer</label>
+        </rules>
+        <rules>
+            <name>Yes_Set_Churn_Internal_Transfer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Reason_for_Churn__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Churn_Internal_Transfer_Value</targetReference>
+            </connector>
+            <label>Yes - Set Churn Internal Transfer</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Set_Record_Type</name>
+        <label>Decision - Set Record Type?</label>
+        <locationX>273</locationX>
+        <locationY>421</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Renewal_Set_to_Closed_Lost</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Record_Type</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.RecordTypeId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>0120d000000UQ0w</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Referral</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Record_Type_Values</targetReference>
+            </connector>
+            <label>Yes - Set Record Type</label>
+        </rules>
+        <rules>
+            <name>Yes_Set_Record_Type_Referral</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referral</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Record_Type_Values_Referral</targetReference>
+            </connector>
+            <label>Yes - Set Record Type Referral</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_SFMC_Order_Needed</name>
+        <label>Decision - SFMC Order Needed?</label>
+        <locationX>262</locationX>
+        <locationY>2175</locationY>
+        <defaultConnector>
+            <targetReference>Decision_EMEA_Closed_Lost_Renewal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_SFMC_Order_Needed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmSFMCTransfer</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sub_Flow_Create_SFMC_Connector_Order</targetReference>
+            </connector>
+            <label>Yes - SFMC Order Needed?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Upsell_Closed</name>
+        <label>Decision - Upsell Closed?</label>
+        <locationX>278</locationX>
+        <locationY>1684</locationY>
+        <defaultConnector>
+            <targetReference>Decision_New_Business_Lost_to_Competitor</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Upsell_Closed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Upsell</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business - Expansion Portal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sub_Flow_Update_Contacts_Active_Status_to_CS</targetReference>
+            </connector>
+            <label>Yes - Upsell Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_US_Closed_Lost_New_Business</name>
+        <label>Decision - US Closed Lost New Business?</label>
+        <locationX>266</locationX>
+        <locationY>3293</locationY>
+        <defaultConnector>
+            <targetReference>Decision_APAC_Closed_Lost_Renewal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_US_Closed_Lost_New_Business</name>
+            <conditionLogic>(1 OR 2 OR 3) AND (4 OR 5) AND 6</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Boston</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>San Carlos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>San Mateo</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business-Enterprise Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business - Expansion Portal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.ARR_manual__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Alert_US_Send_Email_if_New_Business_is_Closed_Lost</targetReference>
+            </connector>
+            <label>Yes - US Closed Lost New Business</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_US_Closed_Lost_Renewal</name>
+        <label>Decision - US Closed Lost Renewal?</label>
+        <locationX>265</locationX>
+        <locationY>3043</locationY>
+        <defaultConnector>
+            <targetReference>Decision_US_Closed_Lost_New_Business</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_US_Closed_Lost_Renewal</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Boston</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>San Carlos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Sales_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>San Mateo</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Alert_US_Send_Email_if_Renewal_is_Closed_Lost</targetReference>
+            </connector>
+            <label>Yes - US Closed Lost Renewal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Workfront_Closed_Lost_Renewal</name>
+        <label>Decision - Workfront Closed Lost Renewal?</label>
+        <locationX>248</locationX>
+        <locationY>4004</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Workfront_Closed_Lost</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.OEM__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>0010P00001xSOyuQAG</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varOpportunityRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Alert_Workfront_Closed_Lost</targetReference>
+            </connector>
+            <label>Yes - Workfront Closed Lost</label>
+        </rules>
+    </decisions>
+    <description>BODEV-3376 Change Closed Lost Email field from &quot;MRR from Products&quot; to &quot;ARR&quot;
+Updated the flow to trigger closed lost email notification if ARR &gt;=0 instead of “MRR from Products” as Sales managers are missing Closed Lost notifications if the opportunities is closed before Proposal stage.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ChurnAmount_PricingFactors</name>
+        <dataType>Currency</dataType>
+        <expression>
+IF(NOT(ISNULL({!varOpportunityRecord.Indexation_reported_in_previous_contract__c})),({!varOpportunityRecord.Indexation_reported_in_previous_contract__c}+{!varOpportunityRecord.Original_Renewal_ARR__c})/12,
+{!varOpportunityRecord.Original_Renewal_ARR__c}/12
+)</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>frmSFMCTransfer</name>
+        <dataType>Boolean</dataType>
+        <expression>/*
+  Termination order for SFMC/SFCC/SFLWC Connector is needed
+  when Renewal is lost and Account SFMC/SFCC/SFLWC Commission or SF OEM Other Product Commission is not blank, or
+  SFMC/SFCC/SFLWC Connector is included in the OPP
+  (the second condition is not necessarily needed (included in the first condition),
+  however, added here just in case.
+*/
+
+AND(
+  ISPICKVAL({!varOpportunityRecord.Type}, &quot;Existing Business-Renewal&quot;),
+  OR(
+    TEXT({!Get_Opp_Account.Other_Commission__c}) &lt;&gt; &quot;&quot;,
+    TEXT({!Get_Opp_Account.SFMC_Commission__c}) &lt;&gt; &quot;&quot;,
+    TEXT({!Get_Opp_Account.SFCC_Commission__c}) &lt;&gt; &quot;&quot;,
+    TEXT({!Get_Opp_Account.SFLWC_Commission__c}) &lt;&gt; &quot;&quot;,
+    {!varOpportunityRecord.of_SFMC_Connector__c} &lt;&gt; 0,
+    {!varOpportunityRecord.of_SFCC_Connector__c} &lt;&gt; 0,
+    {!varOpportunityRecord.of_SFLWC_Connector__c} &lt;&gt; 0
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>NegativeChurnAmountPricingFactors</name>
+        <dataType>Currency</dataType>
+        <expression>-{!ChurnAmount_PricingFactors}</expression>
+        <scale>8</scale>
+    </formulas>
+    <interviewLabel>Opportunity [ALF] Invoked: Closed Lost {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity [ALF] Invoked: Closed Lost</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Opp_Account</name>
+        <label>Get - Opp Account</label>
+        <locationX>525</locationX>
+        <locationY>873</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Account_Values</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varOpportunityRecord.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update - Account</label>
+        <locationX>779</locationX>
+        <locationY>1055</locationY>
+        <connector>
+            <targetReference>Decision_Set_Churn</targetReference>
+        </connector>
+        <inputReference>Get_Opp_Account</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update - Opportunity</label>
+        <locationX>285</locationX>
+        <locationY>1466</locationY>
+        <connector>
+            <targetReference>Decision_Upsell_Closed</targetReference>
+        </connector>
+        <inputReference>varOpportunityRecord</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Assign_Immediate_Values</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Sub_Flow_Create_SFMC_Connector_Order</name>
+        <label>Sub Flow - Create SFMC Connector Order</label>
+        <locationX>443</locationX>
+        <locationY>2426</locationY>
+        <connector>
+            <targetReference>Decision_EMEA_Closed_Lost_Renewal</targetReference>
+        </connector>
+        <flowName>Create_SFMC_Connector_Order_Case</flowName>
+        <inputAssignments>
+            <name>Input_OpptyId</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Sub_Flow_Current_Vendor_on_Account</name>
+        <label>Sub Flow - Current Vendor on Account</label>
+        <locationX>538</locationX>
+        <locationY>2053</locationY>
+        <connector>
+            <targetReference>Decision_SFMC_Order_Needed</targetReference>
+        </connector>
+        <flowName>Current_Vendor_on_Account</flowName>
+        <inputAssignments>
+            <name>VarD_CloseDate</name>
+            <value>
+                <elementReference>varOpportunityRecord.CloseDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>VarT_AccountID</name>
+            <value>
+                <elementReference>varOpportunityRecord.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>VarT_OppID</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Sub_Flow_Update_Contacts_Active_Status_to_CS</name>
+        <label>Sub Flow - Update Contacts Active Status to CS</label>
+        <locationX>654</locationX>
+        <locationY>1836</locationY>
+        <connector>
+            <targetReference>Decision_New_Business_Lost_to_Competitor</targetReference>
+        </connector>
+        <flowName>ProcessLaunched_Update_Contacts_Status_to_Active_CS</flowName>
+        <inputAssignments>
+            <name>curOpportunity</name>
+            <value>
+                <elementReference>varOpportunityRecord.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>varOpportunityRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Matched_BDR_Owner__c</fullName>
+    <description>BODEV-2496 New field on Lead level: Pull Account Owner &amp; BDR Owner of Matched Account</description>
+    <externalId>false</externalId>
+    <formula>LeanData__Reporting_Matched_Account__r.BDR_Owner__r.FirstName +&quot; &quot;+LeanData__Reporting_Matched_Account__r.BDR_Owner__r.LastName</formula>
+    <label>Matched BDR Owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

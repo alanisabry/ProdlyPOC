@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sync_Form_Info</fullName>
+    <availability>online</availability>
+    <description>BODEV-1487: Button to call Flow &quot;Screen: Sync Customer Form Info&quot;</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Sync Form Info</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Sync_Customer_Onboarding_Form_Info?
+TXT_Form_ID={!Customer_Onboarding_Form__c.Id}&amp;retURL={!URLFOR(Customer_Onboarding_Form__c.Id)}</url>
+</WebLink>

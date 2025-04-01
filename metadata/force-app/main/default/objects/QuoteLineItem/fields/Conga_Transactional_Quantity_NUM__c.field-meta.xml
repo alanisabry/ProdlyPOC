@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Transactional_Quantity_NUM__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+For_Renewal__c = FALSE,
+ISPICKVAL(PricebookEntry.Product2.Product_Type__c, &quot;Users &amp; Storage&quot;),
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t0P000002FJq7QAG&apos;,
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000S23XAAS&apos;,
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000kQx4AAE&apos;,
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000SKDQAA4&apos;,
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000SKDVAA4&apos;,
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01tRo000005REVRIA4&apos;, /* CI-Hub Figma Users */
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01tRo000005zNhZIAU&apos;, /* 1 Additional Theme */
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01tRo000005zNcjIAE&apos;  /* 1 Additional Landing Page / Guide */
+),
+Quantity,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Conga Transactional Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

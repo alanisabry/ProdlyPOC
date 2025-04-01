@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MK_Account_Engagement_Signals__c</fullName>
+    <description>Reasons for the MadKudu Engagement and latest activities
+Signals customizable on MadKudu&apos;s platform app.madkudu.com</description>
+    <inlineHelpText>Reasons for the MK Account Engagement score, and latest activities of the people in the account.
+Signals customizable on MadKudu&apos;s platform</inlineHelpText>
+    <label>MK Account Engagement Signals</label>
+    <length>1054</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

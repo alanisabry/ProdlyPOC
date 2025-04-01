@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assigns the value &quot;True&quot; to the archived field. This field later will be synced to Mavenlink and archive the project there.</description>
+        <name>Set_Archived_to_True</name>
+        <label>Set &quot;Archived&quot; to True</label>
+        <locationX>493</locationX>
+        <locationY>120</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.mavenlink__Archived__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mavenlink_Project</targetReference>
+        </connector>
+    </assignments>
+    <description>BODEV-569: Automatically archives Mavenlink projects that are completed and were signed off more than 12 months ago.</description>
+    <interviewLabel>Scheduled: {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Scheduled: Auto-archive Mavenlink projects</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Updates the project to incorporate that assignment.</description>
+        <name>Update_Mavenlink_Project</name>
+        <label>Update Mavenlink Project</label>
+        <locationX>670</locationX>
+        <locationY>121</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Set_Archived_to_True</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Mavenlink_project_can_be_auto_archived__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>mavenlink__Archived__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>mavenlink__Mavenlink_Project__c</object>
+        <schedule>
+            <frequency>Weekly</frequency>
+            <startDate>2021-08-13</startDate>
+            <startTime>07:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

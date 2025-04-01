@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunities_with_draft_orders_locked</fullName>
+    <active>false</active>
+    <description>Cannot change opps with draft orders.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(ISCHANGED(Original_Renewal_Amount__c)),
+OR(
+ISCHANGED(Startdate_contract__c),
+ISCHANGED(End_date_contract__c),
+ISCHANGED(MRR__c),
+ISCHANGED(One_off__c)),
+NOT(OR( number_of_draft_Orders__c = 0, ISBLANK(number_of_draft_Orders__c))))</errorConditionFormula>
+    <errorMessage>Opportunities with draft orders cannot be changed. Please delete the draft orders and recreate them once the opportunity changes have been made.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Out_of_the_box_Solution__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to show whether out of the box Bynder will fulfil the SOW/Client&apos;s requirements</description>
+    <inlineHelpText>Will out of the box Bynder fulfil requirements?</inlineHelpText>
+    <label>Out of the box Solution</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

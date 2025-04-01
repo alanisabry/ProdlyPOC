@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Reactivation_Date__c</fullName>
+    <description>wd field
+This is the date/time the response was reactivated. It is not set when inserting a default campaign. Once set, this response cannot be reactivated by other reactivation scenarios.</description>
+    <inlineHelpText>This is the date/time the response was reactivated. It is not set when inserting a default campaign. Once set, this response cannot be reactivated by other reactivation scenarios.</inlineHelpText>
+    <label>Reactivation Date</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

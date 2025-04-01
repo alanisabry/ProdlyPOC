@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compact_Layout_Account_Customer</fullName>
+    <fields>Name</fields>
+    <fields>OwnerId</fields>
+    <fields>CSM_Owner__c</fields>
+    <fields>Customer_Tier__c</fields>
+    <fields>Platform__c</fields>
+    <fields>Current_ARR__c</fields>
+    <fields>Portal_URL__c</fields>
+    <label>Compact Layout - Account - Customer</label>
+</CompactLayout>

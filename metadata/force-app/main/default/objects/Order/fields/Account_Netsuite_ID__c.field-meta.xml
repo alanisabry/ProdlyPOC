@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Netsuite_ID__c</fullName>
+    <description>Customer Internal ID in Netsuite. If field is blank, this customer does not exist in Netsuite.</description>
+    <externalId>false</externalId>
+    <formula>Account.Netsuite_Internal_ID__c</formula>
+    <inlineHelpText>Customer Internal ID in Netsuite. If field is blank, this customer does not exist in Netsuite.</inlineHelpText>
+    <label>Account Netsuite ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

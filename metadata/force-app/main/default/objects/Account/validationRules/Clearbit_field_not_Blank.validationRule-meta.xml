@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clearbit_field_not_Blank</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(
+AND(
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(ISPICKVAL(PRIORVALUE(Company_Size_New__c),&quot;&quot;)),
+ISCHANGED(Company_Size_New__c)),
+AND(
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(ISPICKVAL(PRIORVALUE(Industry_Group__c),&quot;&quot;)),
+ISCHANGED(Industry_Group__c)
+))</errorConditionFormula>
+    <errorMessage>Cannot update a pre-populated value - if you believe this value is incorrect contact Marketing/Sales Operations</errorMessage>
+</ValidationRule>

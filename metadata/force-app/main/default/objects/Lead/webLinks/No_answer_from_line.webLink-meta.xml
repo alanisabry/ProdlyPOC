@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_answer_from_line</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Log a Call: No answer</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/00T/e?title=Call&amp;who_id={!Lead.Id}
+&amp;followup=1
+&amp;tsk5=Call: No Answer&amp;retURL=
+%2F{!Lead.Id}
+&amp;00NU0000004pc1g=Call
+&amp;00NU0000004pc1l=No+answer+from+line
+&amp;tsk6=Call: No Answer
+&amp;setupid=TaskRecords</url>
+</WebLink>

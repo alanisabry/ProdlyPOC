@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Goal_Sign_off_Date__c</fullName>
+    <description>Goal Sign off date of the project</description>
+    <formula>IF(
+   OR(ISPICKVAL(mavenlink__Opportunity__r.Standard_Package_Name__c, &quot;Workgroup&quot;), ISPICKVAL(Project_Type_SM__c, &quot;Standard Onboarding (Webdam)&quot;)), 
+   KICK_OFF_DATE__c + 84,
+   IF(
+      OR(ISPICKVAL(Project_Type_SM__c, &quot;Workstream Onboarding (Webdam)&quot;), ISPICKVAL(Project_Type_SM__c, &quot;Enterprise Onboarding (Webdam)&quot;), ISPICKVAL(mavenlink__Opportunity__r.Standard_Package_Name__c, &quot;Professional&quot;)),
+      KICK_OFF_DATE__c + 112,
+      IF(
+         OR(ISPICKVAL(Project_Type_SM__c, &quot;Elite Onboarding (Webdam)&quot;), ISPICKVAL(mavenlink__Opportunity__r.Standard_Package_Name__c, &quot;Enterprise&quot;)),
+         KICK_OFF_DATE__c + 140,
+         IF(
+         	ISPICKVAL(Project_Type_SM__c, &quot;8 Session Asset Bank Audit&quot;),
+         	KICK_OFF_DATE__c + 70,
+         	IF(
+         		ISPICKVAL(Project_Type_SM__c, &quot;12 Session Asset Bank Audit&quot;),
+         	    KICK_OFF_DATE__c + 98,
+         	    IF(
+                   ISPICKVAL(Project_Type_SM__c, &quot;5 Session Workflow Audit&quot;),
+         	       KICK_OFF_DATE__c + 49,null)
+         	    )
+         	) 
+        )
+    )
+)</formula>
+    <inlineHelpText>Goal Sign off date of the project</inlineHelpText>
+    <label>Goal Sign off Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

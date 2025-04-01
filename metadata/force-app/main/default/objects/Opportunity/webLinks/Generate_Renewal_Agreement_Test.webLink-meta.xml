@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Renewal_Agreement_Test</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://bynder--apxtconga4.na110.visual.force.com/a443g000000KyjGAAS
+01-Apr-2021 09:16:28 PM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Renewal Agreement</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Opportunity.Id}
+
+&amp;QueryId=[MRR]a3y0P000000LD8B,
+[ARR]a3y3g0000013Zy8,
+[LineitemQuery]a3yRo000000012X,
+[PreviousinvQuery]a3yRo0000000149,
+[NonpckgQuery]a3yRo000000015l,
+[NonsubQuery]a3yRo000000017N,
+[AnnualsubQuery]a3yRo000000018z,
+[IndexQuery]a3yRo00000001Ab,
+[UpliftQuery]a3yRo00000001CD,
+[DiscountQuery]a3yRo00000001Dp,
+[TotalDisQuery]a3yRo00000001VZ,
+[PricingQuery]a3yRo00000001XB,
+[McommitQuery]a3yRo00000001Yn,
+[NPcommitQuery]a3yRo00000001c1,
+[TPCommitQuery]a3yRo00000001k5,
+[CheckQuery]a3yRo00000001XB,
+[SubsQuery]a3yRo0000000AIj,
+[Sub1Query]a3yRo0000000AKL,
+[Sub2Query]a3yRo0000000ALx,
+[SigemeaQuery]a3yRo0000000ANZ,
+[SigusapQuery]a3yRo0000000AVd,
+[NonrecQuery]a3yRo0000000BEn
+
+&amp;TemplateId=a46Ro00000002bJIAQ
+
+&amp;SC1=SalesforceFile
+&amp;SC0=1
+&amp;Culture=en-US
+&amp;DefaultPDF=0
+&amp;DS7=3
+&amp;OFN={!Today()} - {!Account.Name} - Renewal agreement
+&amp;BML=Generating+Bynder+Renewal+Agreement</url>
+</WebLink>

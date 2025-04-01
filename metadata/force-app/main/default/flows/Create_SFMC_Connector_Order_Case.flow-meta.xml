@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Make a Chatter post to notify the Case Owner</description>
+        <name>Notify_Owner_by_Chatter</name>
+        <label>Notify Owner by Chatter</label>
+        <locationX>169</locationX>
+        <locationY>2357</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>Order_Type</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>ChatterNotificationText</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>Case.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assign values for a new Case</description>
+        <name>Assign_Case_Values</name>
+        <label>Assign Case Values</label>
+        <locationX>168</locationX>
+        <locationY>1139</locationY>
+        <assignmentItems>
+            <assignToReference>Case.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Oppty.Account_ID_18_digits__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Input_OpptyId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SFMC_Annual_Amount_Owed_to_Partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AnnualAmountToSalesforce</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SFMC_Monthly_Amount_Owed_to_Partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MonthlyAmountToSalesforce</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseOwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseRecordTypeId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SFMC_Order_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseOrderTypeFinal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SFMC_Other_Partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OtherPartner</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Is_SF_added_as_other_partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IsSFaddedasotherpartner</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign commission amount paid to Salesforce and amount paid by Customer to Case fields.</description>
+        <name>Assign_Commision_Amount_to_Case</name>
+        <label>Assign Commision Amount to Case</label>
+        <locationX>169</locationX>
+        <locationY>1971</locationY>
+        <assignmentItems>
+            <assignToReference>Case.SFMC_Annual_Amount_Owed_to_Partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AnnualAmountToSalesforce</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SFMC_Monthly_Amount_Owed_to_Partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MonthlyAmountToSalesforce</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Annual_Amount_Paid_to_Bynder__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OverallAnnualAmountFromCustomer</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Monthly_Amount_Paid_to_Bynder__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MonthlyAmountFromCustomer</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign SFMC Commission value to be populated on the Account</description>
+        <name>Assign_SFMC_Commission_on_Accuont</name>
+        <label>Assign SFMC Commission on Accuont</label>
+        <locationX>294</locationX>
+        <locationY>2651</locationY>
+        <assignmentItems>
+            <assignToReference>Account.SFMC_Commission__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SFMCCommissionUpdatedOnAccounts</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Account.SFCC_Commission__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SFCCCommissionUpdatedOnAccounts</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Account.SFLWC_Commission__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SFLWCCommissionUpdatedonAccount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Account.Other_Commission__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OtherCommissionUpdatedonAccount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Connecter_Included_in_Opp</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign SFMC and SFCC Connector Sales Price from OLI to Account</description>
+        <name>Assign_SFMC_SFCC_Connector_Sales_Price_to_Account</name>
+        <label>Assign SFMC or SFCC Connector Sales Price to Account</label>
+        <locationX>46</locationX>
+        <locationY>2910</locationY>
+        <assignmentItems>
+            <assignToReference>Account.SFMC_Connector_Sales_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SFMCConnectorSalesPriceOnAccount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Account.SFCC_Connector_Sales_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SFCCConnectorSalesPriceonAccount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Account.SFLWC_Connector_Sales_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SFLWCConnectorSalesPriceOnAccount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Is SFMC Connector included in Opp or not?</description>
+        <name>Connecter_Included_in_Opp</name>
+        <label>Connecter Included in Opp</label>
+        <locationX>160</locationX>
+        <locationY>2792</locationY>
+        <defaultConnector>
+            <targetReference>Update_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>True</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Oppty.of_SFMC_Connector__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Oppty.of_SFCC_Connector__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Oppty.of_SFLWC_Connector__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_SFMC_SFCC_Connector_Sales_Price_to_Account</targetReference>
+            </connector>
+            <label>True</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If Order Type is New Order or Termination, needs to update SFMC Commission field on Account.</description>
+        <name>Order_Type</name>
+        <label>Order Type</label>
+        <locationX>161</locationX>
+        <locationY>2550</locationY>
+        <defaultConnector>
+            <targetReference>Connecter_Included_in_Opp</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_Order_or_Termination</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CaseOrderTypeFinal</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>New Order</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CaseOrderTypeFinal</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Termination</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_SFMC_Commission_on_Accuont</targetReference>
+            </connector>
+            <label>New Order or Termination</label>
+        </rules>
+    </decisions>
+    <description>BODEV-4024: Enable @Marilyn Sysko access to the Channel Order App / Partner Order</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Annual amount paid by Customer to Bynder. Based on Order Type and SFMC Commission Type, only consider the amount from Customer related to SFMC Order.</description>
+        <name>AnnualAmountFromCustomer</name>
+        <dataType>Currency</dataType>
+        <expression>CASE({!CaseOrderType},
+   &quot;New Order - New Business with SFMC &amp; SFCC Connectors&quot;,
+   {!Oppty.ARR_manual__c},
+  &quot;New Order - New Business with SFMC Connector&quot;,                 /* Scenario 1 */
+    {!Oppty.ARR_manual__c},
+  &quot;New Order - New Business with SFCC Connector&quot;,                 /* Scenario 1 */
+    {!Oppty.ARR_manual__c},
+  &quot;New Order - New Business without SFMC or SFCC Connector&quot;,           /* Scenario 2 */
+    {!Oppty.ARR_manual__c},
+  &quot;New Order - Upsell SFMC Connector&quot;,                                        /* Scenario 3 */
+    {!ConnectorOLI.UnitPrice} * 12,
+  &quot;New Order - Upsell SFCC Connector&quot;,
+    {!SFCCConnectorOLI.UnitPrice} * 12,
+  &quot;New Order - Upsell SFMC &amp; SFCC Connectors&quot;,
+   ({!ConnectorOLI.UnitPrice} + {!SFCCConnectorOLI.UnitPrice}) * 12,
+  &quot;Order Update - Adjust 20% ARR&quot;,                                               /* Scenario 4, 5 */
+    IF(
+      CONTAINS(TEXT({!Oppty.Type}), &quot;Renewal&quot;),
+      {!Oppty.ARR_manual__c},
+      {!Account.Current_ARR__c} + IF({!Oppty.Contract_IsActive__c}, 0, {!Oppty.ARR_manual__c})
+    ),
+  &quot;Order Update - Adjust 20% Connector&quot;,                                    /* Scenario 6 */
+    ({!ConnectorOLI.UnitPrice} + {!SFCCConnectorOLI.UnitPrice}) * 12,
+  &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC Connector&quot;,
+   {!SFCCConnectorOLI.UnitPrice} * 12,
+   &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC Connector&quot;,
+    {!ConnectorOLI.UnitPrice} * 12,
+  &quot;Termination - Downsell SFMC Connector&quot;,                                 /* Scenario 7 */
+    0,
+    &quot;Termination - Downsell SFCC Connector&quot;,
+    0,
+    &quot;Termination - Downsell SFMC &amp; SFCC Connectors&quot;,
+    0,
+  &quot;Termination - Churn&quot;,                                                                      /* Scenario 8 */
+    0,
+    0
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>AnnualAmountFromCustomerDownsell</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+  ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Upsell&quot;),
+  CASE({!CaseOrderTypeDownsell},
+&quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC &amp; SFLWC Connector&quot;,
+    ({!SFCCConnectorOLI.UnitPrice} + {!SFLWCConnectorOLI.UnitPrice} ) * 12,
+    &quot;Termination - Downsell SFMC,SFLWC &amp; New Order - Upsell SFCC Connector&quot;,
+    {!SFCCConnectorOLI.UnitPrice} * 12,
+    &quot;Termination - Downsell SFMC,SFCC &amp; New Order - Upsell SFLWC Connector&quot;,
+    {!SFLWCConnectorOLI.UnitPrice} * 12,
+    &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC Connector&quot;,
+   {!SFCCConnectorOLI.UnitPrice} * 12,
+   &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFLWC Connector&quot;,
+   {!SFLWCConnectorOLI.UnitPrice} * 12,
+    &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC &amp; SFLWC Connector&quot;,
+    ({!ConnectorOLI.UnitPrice} + {!SFLWCConnectorOLI.UnitPrice} ) * 12,
+     &quot;Termination - Downsell SFCC,SFLWC &amp; New Order - Upsell SFMC Connector&quot;,
+    {!ConnectorOLI.UnitPrice} * 12,
+    &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC Connector&quot;,
+    {!ConnectorOLI.UnitPrice} * 12,
+    &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFLWC Connector&quot;,
+    {!SFLWCConnectorOLI.UnitPrice} * 12,
+    &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFMC &amp; SFCC Connector&quot;,
+    ({!ConnectorOLI.UnitPrice} + {!SFCCConnectorOLI.UnitPrice}) * 12,  
+    &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFMC Connector&quot;,
+     {!ConnectorOLI.UnitPrice}*12,
+     &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFCC Connector&quot;,
+     {!SFCCConnectorOLI.UnitPrice}*12,
+  &quot;Termination - Downsell SFMC Connector&quot;,                                 
+    0,
+    &quot;Termination - Downsell SFCC Connector&quot;,
+    0,
+    &quot;Termination - Downsell SFLWC Connector&quot;,
+    0,
+    &quot;Termination - Downsell SFMC &amp; SFCC Connectors&quot;,
+    0,
+     &quot;Termination - Downsell SFMC &amp; SFLWC Connectors&quot;,
+     0,
+     &quot;Termination - Downsell SFCC &amp; SFLWC Connectors&quot;,
+     0,
+    &quot;Termination - Downsell SFMC,SFCC &amp; SFLWC Connectors&quot;,
+    0,
+
+    0
+  )
+  ,
+  0
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>AnnualAmountFromCustomerNewBusiness</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+CONTAINS(TEXT({!Oppty.Type}), &quot;New Business&quot;),
+CASE({!CaseOrderTypeNewBusiness},
+   &quot;New Order - New Business with SFMC, SFCC &amp; SFLWC Connectors&quot;,
+   {!Oppty.ARR_manual__c},
+   &quot;New Order - New Business with SFMC &amp; SFCC Connectors&quot;,
+   {!Oppty.ARR_manual__c},
+   &quot;New Order - New Business with SFMC &amp; SFLWC Connectors&quot;,
+   {!Oppty.ARR_manual__c},
+   &quot;New Order - New Business with SFCC &amp; SFLWC Connectors&quot;,
+   {!Oppty.ARR_manual__c},
+  &quot;New Order - New Business with SFMC Connector&quot;,                
+    {!Oppty.ARR_manual__c},
+  &quot;New Order - New Business with SFCC Connector&quot;,                 
+    {!Oppty.ARR_manual__c},
+    &quot;New Order - New Business with SFLWC Connector&quot;,                 
+    {!Oppty.ARR_manual__c},
+  &quot;New Order - New Business without SFMC or SFCC or SFLWC Connector&quot;,   
+   {!Oppty.ARR_manual__c},
+   0
+)
+,
+0
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>AnnualAmountFromCustomerRenewal</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+  ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Renewal&quot;),
+  CASE({!CaseOrderTypeRenewal},
+&quot;Order Update - Adjust 20% ARR&quot;,                                               
+{!Oppty.ARR_manual__c},
+&quot;Order Update - Adjust 20% SFMC,SFCC,SFLWC Connector&quot;,
+({!ConnectorOLI.UnitPrice}+ {!SFCCConnectorOLI.UnitPrice} + {!SFLWCConnectorOLI.UnitPrice}) * 12,
+&quot;Order Update - Adjust 20% SFMC,SFCC Connector&quot;,
+({!ConnectorOLI.UnitPrice}+ {!SFCCConnectorOLI.UnitPrice}) * 12,
+ &quot;Order Update - Adjust 20% SFMC,SFLWC Connector&quot;, 
+({!ConnectorOLI.UnitPrice}+ {!SFLWCConnectorOLI.UnitPrice}) * 12,
+&quot;Order Update - Adjust 20% SFCC,SFLWC Connector&quot;,
+({!SFCCConnectorOLI.UnitPrice} + {!SFLWCConnectorOLI.UnitPrice}) * 12,
+&quot;Order Update - Adjust 20% SFMC Connector&quot;,
+{!ConnectorOLI.UnitPrice} * 12,
+&quot;Order Update - Adjust 20% SFCC Connector&quot;,
+{!SFCCConnectorOLI.UnitPrice} * 12,
+&quot;Order Update - Adjust 20% SFLWC Connector&quot;,
+ {!SFLWCConnectorOLI.UnitPrice} * 12,
+&quot;Termination - Churn&quot;,
+0,
+ 0
+  )
+  ,
+  0
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>AnnualAmountfromCustomerUpsell</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+  ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Upsell&quot;),
+  CASE({!CaseOrderTypeUpsell},
+  &quot;New Order - Upsell SFMC Connector&quot;,                                       
+    {!ConnectorOLI.UnitPrice} * 12,
+  &quot;New Order - Upsell SFCC Connector&quot;,
+    {!SFCCConnectorOLI.UnitPrice} * 12,
+    &quot;New Order - Upsell SFLWC Connector&quot;,
+    {!SFLWCConnectorOLI.UnitPrice} * 12,
+  &quot;New Order - Upsell SFMC &amp; SFCC Connectors&quot;,
+ ({!ConnectorOLI.UnitPrice} + {!SFCCConnectorOLI.UnitPrice}) * 12,
+  &quot;New Order - Upsell SFMC &amp; SFLWC Connectors&quot;,
+   ({!ConnectorOLI.UnitPrice} + {!SFLWCConnectorOLI.UnitPrice}) * 12,
+   &quot;New Order - Upsell SFCC &amp; SFLWC Connectors&quot;,
+   ({!SFCCConnectorOLI.UnitPrice} + {!SFLWCConnectorOLI.UnitPrice}) * 12,
+   &quot;New Order - Upsell SFMC,SFCC &amp; SFLWC Connectors&quot;,
+   ({!ConnectorOLI.UnitPrice}+ {!SFCCConnectorOLI.UnitPrice} + {!SFLWCConnectorOLI.UnitPrice}) * 12,
+  &quot;Order Update - Adjust 20% ARR&quot;,                                              
+    {!Account.Current_ARR__c} + IF({!Oppty.Contract_IsActive__c}, 0, {!Oppty.ARR_manual__c}),
+
+     0
+  )
+  ,
+  0
+  )</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Annual amount owed to Salesforce</description>
+        <name>AnnualAmountToSalesforce</name>
+        <dataType>Currency</dataType>
+        <expression>{!OverallAnnualAmountFromCustomer} * 0.2
+
+/*
+Calculate annual commission based on Order Type and SFMC Commission fields.
+*/
+
+/*
+CASE(Case.SFMC_Order_Type__c,
+  &quot;New Order - New Business incl. SFMC Connector&quot;,
+    IF(Case.SFMC_Commission__c = &quot;20% of ARR&quot;,
+      Oppty.ARR_manual__c * 0.2,
+      ConnectorOLI.UnitPrice * 0.2
+    ),
+  &quot;New Order - Upsell SFMC Connector&quot;,
+    IF(Case.SFMC_Commission__c = &quot;20% of ARR&quot;,
+      AnnualAmountFromCustomer * 0.2,
+      ConnectorOLI.UnitPrice * 0.2
+    ),
+  &quot;Order update - Adjust 20% ARR&quot;,
+    AnnualAmountFromCustomer * 0.2,
+  &quot;Order update - Adjust 20% Connector&quot;,
+    ConnectorOLI.UnitPrice * 0.2,
+  &quot;Termination - Downsell SFMC Connector&quot;,
+    0,
+  &quot;Termination - Churn&quot;,
+    -12,
+  100
+)
+*/</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Order Type based on Opportunity and Account information.</description>
+        <name>CaseOrderType</name>
+        <dataType>String</dataType>
+        <expression>/*
+  8 business scenarios where we need to submit orders to Salesforce.
+
+  1.  New business with SFMC/SFCC Connector
+  2.  New business without Connector, but referred from or influenced by SFDC
+  3.  Existing customer (no commission) purchases SFMC/SFCC Connector as upsell
+  4.  Existing customer downsell SFMC/SFCC Connector
+  5.  Existing customer with 20% ARR commission makes upsell/downsell
+  6.  Existing customer with 20% ARR commission makes renewal with changed ARR
+  7.  Existing customer with 20% Connector commission makes renewal with changed Connector sales price
+  8.  Existing customer churns
+*/
+IF(
+CONTAINS(TEXT({!Oppty.Type}), &quot;New Business&quot;),
+IF(
+  {!Oppty.of_SFMC_Connector__c} &lt;&gt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &lt;&gt; 0,  /* Scenario 1 */
+  &quot;New Order - New Business with SFMC &amp; SFCC Connectors&quot;,  
+  IF({!Oppty.of_SFMC_Connector__c} &lt;&gt; 0,
+  &quot;New Order - New Business with SFMC Connector&quot;,
+  IF({!Oppty.of_SFCC_Connector__c} &lt;&gt; 0,
+  &quot;New Order - New Business with SFCC Connector&quot;,
+  &quot;New Order - New Business without SFMC or SFCC Connector&quot; ))                /* Scenario 2 */                                    
+),
+IF(
+  ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Upsell&quot;),
+  IF(
+    {!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &lt; 0,      /* Scenario 4 */
+    &quot;Termination - Downsell SFMC &amp; SFCC Connectors&quot;,
+      IF({!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &gt; 0,
+    &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC Connector&quot;,
+     IF({!Oppty.of_SFMC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &lt; 0,
+    &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC Connector&quot;,
+      IF({!Oppty.of_SFMC_Connector__c} &lt; 0,
+    &quot;Termination - Downsell SFMC Connector&quot;,
+       IF({!Oppty.of_SFCC_Connector__c} &lt; 0,
+          &quot;Termination - Downsell SFCC Connector&quot;,
+   IF(
+        {!Oppty.of_SFMC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &gt; 0,     /* Scenario 3 */
+        &quot;New Order - Upsell SFMC &amp; SFCC Connectors&quot;,                                         
+        IF({!Oppty.of_SFMC_Connector__c} &gt; 0,
+      &quot;New Order - Upsell SFMC Connector&quot;,
+        IF({!Oppty.of_SFCC_Connector__c} &gt; 0,
+     &quot;New Order - Upsell SFCC Connector&quot;,                                            
+    IF(
+     ISPICKVAL({!Account.SFMC_Commission__c}, &quot;20% of ARR&quot;) || ISPICKVAL({!Account.SFCC_Commission__c}, &quot;20% of ARR&quot;),                /* Scenario 5 */
+      &quot;Order Update - Adjust 20% ARR&quot;,  
+      IF(ISPICKVAL({!Account.SFMC_Commission__c}, &quot;20% of Connector&quot;) || ISPICKVAL({!Account.SFCC_Commission__c}, &quot;20% of Connector&quot;),
+      &quot;Order Update - Adjust 20% Connector&quot;,  
+      &quot;UNDEFINED&quot;                                                       
+      ))))  
+  )))))),
+  IF(
+    CONTAINS(TEXT({!Oppty.Type}), &quot;Renewal&quot;),                                           /* Scenario 6 */
+    IF(
+      ISPICKVAL({!Oppty.StageName}, &quot;Closed Lost&quot;),                                      /* Scenario 8 */ 
+      &quot;Termination - Churn&quot;,                                                                               
+      IF(
+        ISPICKVAL({!Account.SFMC_Commission__c}, &quot;20% of ARR&quot;) || ISPICKVAL({!Account.SFCC_Commission__c}, &quot;20% of ARR&quot;),
+        &quot;Order Update - Adjust 20% ARR&quot;,                                                       
+        &quot;Order Update - Adjust 20% Connector&quot;                                           /* Scenario 7 */ 
+      )
+    ),
+    &quot;UNDEFINED&quot;
+  )
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CaseOrderTypeDownsell</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Upsell&quot;),
+  IF(
+    {!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &lt; 0,     
+    &quot;Termination - Downsell SFMC,SFCC &amp; SFLWC Connectors&quot;,
+    IF({!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &gt; 0,
+    &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC &amp; SFLWC Connector&quot;,
+    IF({!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &lt; 0,
+    &quot;Termination - Downsell SFMC,SFLWC &amp; New Order - Upsell SFCC Connector&quot;,
+     IF({!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &gt; 0,
+    &quot;Termination - Downsell SFMC,SFCC &amp; New Order - Upsell SFLWC Connector&quot;,
+     IF({!Oppty.of_SFCC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFMC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &gt; 0,
+    &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC &amp; SFLWC Connector&quot;,
+    IF({!Oppty.of_SFCC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFMC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &lt; 0,
+    &quot;Termination - Downsell SFCC,SFLWC &amp; New Order - Upsell SFMC Connector&quot;,
+    IF({!Oppty.of_SFLWC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFMC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &gt; 0,
+    &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFMC &amp; SFLCC Connector&quot;,
+
+    IF({!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &lt; 0,      
+    &quot;Termination - Downsell SFMC &amp; SFCC Connectors&quot;,
+    IF({!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &lt; 0,      
+    &quot;Termination - Downsell SFMC &amp; SFLWC Connectors&quot;,
+    IF({!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &gt; 0,
+    &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC Connector&quot;,
+    IF({!Oppty.of_SFMC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &gt; 0,      
+    &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFLWC Connector&quot;,
+    
+    
+    IF({!Oppty.of_SFCC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &lt; 0,      
+    &quot;Termination - Downsell SFCC &amp; SFLWC Connectors&quot;,
+    IF({!Oppty.of_SFCC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFMC_Connector__c} &gt; 0,
+    &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC Connector&quot;,
+    IF({!Oppty.of_SFCC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &gt; 0,      
+    &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFLWC Connector&quot;,
+
+    
+    IF({!Oppty.of_SFLWC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFMC_Connector__c} &gt; 0,
+    &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFMC Connector&quot;,
+    IF({!Oppty.of_SFLWC_Connector__c} &lt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &gt; 0,      
+    &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFLCC Connector&quot;,
+   
+      
+      IF({!Oppty.of_SFMC_Connector__c} &lt; 0,
+    &quot;Termination - Downsell SFMC Connector&quot;,
+       IF({!Oppty.of_SFCC_Connector__c} &lt; 0,
+          &quot;Termination - Downsell SFCC Connector&quot;,
+        IF({!Oppty.of_SFLWC_Connector__c} &lt; 0,
+          &quot;Termination - Downsell SFLWC Connector&quot;,
+          &quot;UNDEFINED&quot;
+                                     
+                                                      
+      ))))))))))))))))))),
+
+      &quot;UNDEFINED&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CaseOrderTypeFinal</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(CONTAINS({!CaseOrderTypeNewBusiness},&quot;UNDEFINED&quot;)),{!CaseOrderTypeNewBusiness},
+IF(NOT(CONTAINS({!CaseOrderTypeUpsell},&quot;UNDEFINED&quot;)),{!CaseOrderTypeUpsell},
+IF(NOT(CONTAINS({!CaseOrderTypeDownsell},&quot;UNDEFINED&quot;)),{!CaseOrderTypeDownsell},
+IF(NOT(CONTAINS({!CaseOrderTypeRenewal},&quot;UNDEFINED&quot;)),{!CaseOrderTypeRenewal},
+&quot;UNDEFINED&quot;)))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CaseOrderTypeNewBusiness</name>
+        <dataType>String</dataType>
+        <expression>IF(
+ CONTAINS(TEXT({!Oppty.Type}), &quot;New Business&quot;),
+
+   IF({!Oppty.of_SFMC_Connector__c} &lt;&gt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &lt;&gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &lt;&gt; 0,     
+       &quot;New Order - New Business with SFMC, SFCC &amp; SFLWC Connectors&quot;, 
+        IF({!Oppty.of_SFMC_Connector__c} &lt;&gt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &lt;&gt; 0,  
+  &quot;New Order - New Business with SFMC &amp; SFCC Connectors&quot;,  
+        IF({!Oppty.of_SFMC_Connector__c} &lt;&gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &lt;&gt; 0,  
+  &quot;New Order - New Business with SFMC &amp; SFLWC Connectors&quot;,  
+       IF({!Oppty.of_SFCC_Connector__c} &lt;&gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &lt;&gt; 0,  
+  &quot;New Order - New Business with SFCC &amp; SFLWC Connectors&quot;,                            
+     IF({!Oppty.of_SFMC_Connector__c} &lt;&gt; 0,
+  &quot;New Order - New Business with SFMC Connector&quot;,
+       IF({!Oppty.of_SFCC_Connector__c} &lt;&gt; 0,
+  &quot;New Order - New Business with SFCC Connector&quot;,
+         IF({!Oppty.of_SFLWC_Connector__c} &lt;&gt; 0,
+  &quot;New Order - New Business with SFLWC Connector&quot;,
+&quot;New Order - New Business without SFMC or SFCC or SFLWC Connector&quot; 
+         )))))))
+     ,
+&quot;UNDEFINED&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CaseOrderTypeRenewal</name>
+        <dataType>String</dataType>
+        <expression> IF(
+    ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Renewal&quot;),                                           
+    IF(
+      ISPICKVAL({!Oppty.StageName}, &quot;Closed Lost&quot;),                                      
+      &quot;Termination - Churn&quot;,                                                                               
+      IF(
+        ISPICKVAL({!Account.SFMC_Commission__c}, &quot;20% of ARR&quot;) || ISPICKVAL({!Account.SFCC_Commission__c}, &quot;20% of ARR&quot;) || ISPICKVAL({!Account.SFLWC_Commission__c}, &quot;20% of ARR&quot;) || ISPICKVAL({!Account.Other_Commission__c}, &quot;20% of ARR&quot;),
+        &quot;Order Update - Adjust 20% ARR&quot;,     
+      IF( ({!Oppty.SFMC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFMC_Connector_Sales_Price__c}) &amp;&amp; ({!Oppty.SFCC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFCC_Connector_Sales_Price__c}) &amp;&amp; ({!Oppty.SFLWC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFLWC_Connector_Sales_Price__c}),
+       &quot;Order Update - Adjust 20% SFMC,SFCC,SFLWC Connector&quot;,
+      IF( ({!Oppty.SFMC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFMC_Connector_Sales_Price__c}) &amp;&amp; ({!Oppty.SFCC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFCC_Connector_Sales_Price__c}),
+       &quot;Order Update - Adjust 20% SFMC,SFCC Connector&quot;,  
+      IF( ({!Oppty.SFMC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFMC_Connector_Sales_Price__c}) &amp;&amp; ({!Oppty.SFLWC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFLWC_Connector_Sales_Price__c}) ,
+       &quot;Order Update - Adjust 20% SFMC,SFLWC Connector&quot;,     
+       IF( ({!Oppty.SFCC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFCC_Connector_Sales_Price__c}) &amp;&amp; ({!Oppty.SFLWC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFLWC_Connector_Sales_Price__c}),
+       &quot;Order Update - Adjust 20% SFCC,SFLWC Connector&quot;,                                         
+      IF(({!Oppty.SFMC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFMC_Connector_Sales_Price__c}),  &quot;Order Update - Adjust 20% SFMC Connector&quot;,  
+      IF(({!Oppty.SFCC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFCC_Connector_Sales_Price__c}),  &quot;Order Update - Adjust 20% SFCC Connector&quot;, 
+      IF(({!Oppty.SFLWC_Connector_Sales_Price__c} &lt;&gt;
+        {!Oppty.Account.SFLWC_Connector_Sales_Price__c}),  &quot;Order Update - Adjust 20% SFLWC Connector&quot;, 
+ 
+      &quot;UNDEFINED&quot;
+      ))))))))),
+      &quot;UNDEFINED&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>CaseOrderTypeUpsell</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  AND(ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Upsell&quot;),NOT({!Oppty.of_SFMC_Connector__c}&lt;0),NOT({!Oppty.of_SFCC_Connector__c}&lt;0),NOT({!Oppty.of_SFLWC_Connector__c} &lt; 0)),
+
+   IF({!Oppty.of_SFMC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &gt; 0,   
+        &quot;New Order - Upsell SFMC,SFCC &amp; SFLWC Connectors&quot;,  
+        IF({!Oppty.of_SFMC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFCC_Connector__c} &gt; 0,     
+        &quot;New Order - Upsell SFMC &amp; SFCC Connectors&quot;,  
+        IF({!Oppty.of_SFMC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &gt; 0,     
+        &quot;New Order - Upsell SFMC &amp; SFLWC Connectors&quot;,         
+        IF({!Oppty.of_SFCC_Connector__c} &gt; 0 &amp;&amp; {!Oppty.of_SFLWC_Connector__c} &gt; 0,    
+        &quot;New Order - Upsell SFCC &amp; SFLWC Connectors&quot;,                                
+        IF({!Oppty.of_SFMC_Connector__c} &gt; 0,
+      &quot;New Order - Upsell SFMC Connector&quot;,
+        IF({!Oppty.of_SFCC_Connector__c} &gt; 0,
+     &quot;New Order - Upsell SFCC Connector&quot;,    
+         IF({!Oppty.of_SFLWC_Connector__c} &gt; 0,
+     &quot;New Order - Upsell SFLWC Connector&quot;,   
+     IF(
+     ISPICKVAL({!Account.SFMC_Commission__c}, &quot;20% of ARR&quot;) || ISPICKVAL({!Account.SFCC_Commission__c}, &quot;20% of ARR&quot;) || ISPICKVAL({!Account.SFLWC_Commission__c}, &quot;20% of ARR&quot;) || ISPICKVAL({!Account.Other_Commission__c}, &quot;20% of ARR&quot;),                
+      &quot;Order Update - Adjust 20% ARR&quot;,  
+      &quot;UNDEFINED&quot;
+      )
+))))))),
+&quot;UNDEFINED&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <description>User ID of the Case Owner. Defined in a custom label.</description>
+        <name>CaseOwnerId</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.SFMC_Connector_Order_Case_Owner_ID}</expression>
+    </formulas>
+    <formulas>
+        <description>ID of the dedicated Case Record Type</description>
+        <name>CaseRecordTypeId</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.SFMC_Connector_Order_Case_Record_Type_ID}</expression>
+    </formulas>
+    <formulas>
+        <description>Subject of the created Case. &quot;SFMC Connector: {Account Name} {Order Type} YYYY-MM&quot;</description>
+        <name>CaseSubject</name>
+        <dataType>String</dataType>
+        <expression>{!frmSubject} &amp; {!Account.Name} &amp;&quot; - &quot; &amp;
+IF(CONTAINS({!CaseOrderTypeFinal}, &quot;New Order&quot;), &quot;New Order&quot;,
+ IF(CONTAINS({!CaseOrderTypeFinal}, &quot;Termination&quot;), &quot;Termination&quot;, &quot;Adjust Order&quot;)
+) &amp; &quot; &quot; &amp;
+TEXT(YEAR(TODAY())) &amp; &quot;-&quot; &amp; IF(MONTH(TODAY())&lt;10, &quot;0&quot;, &quot;&quot;) &amp; TEXT(MONTH(TODAY()))</expression>
+    </formulas>
+    <formulas>
+        <description>Text template for the Chatter notifications sent to the Case Owner on Case creation.</description>
+        <name>ChatterNotificationText</name>
+        <dataType>String</dataType>
+        <expression>&quot;Hi &quot; &amp; &quot;@&quot; &amp; &quot;[&quot; &amp; {!CaseOwnerId} &amp; &quot;], a new Case for SFMC Connector Order has been created. Please look into this and submit an order accordingly. cc: &quot; &amp; &quot;@&quot; &amp; &quot;[&quot; &amp; {!$Label.SFMC_Connector_Order_Case_Sub_Owner_ID} &amp; &quot;]&quot; &amp; &quot; @&quot; &amp; &quot;[&quot; &amp; {!$Label.SFMC_Connector_Order_Case_Notify_Only_User} &amp; &quot;]&quot; &amp; &quot; @&quot; &amp; &quot;[&quot; &amp; {!$Label.SFMC_Connector_Order_Case_Notify_Only_User_2} &amp; &quot;]&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>frmSubject</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!CaseOrderTypeFinal},&quot;without SFMC or SFCC or SFLWC Connector&quot;),&quot;Influenced by Salesforce:&quot;,
+IF(CONTAINS({!CaseOrderTypeFinal},&quot;SFMC, SFCC &amp; SFLWC Connectors&quot;),&quot;SFMC, SFCC &amp; SFLWC Connectors:&quot;,
+IF(CONTAINS({!CaseOrderTypeFinal},&quot;SFMC &amp; SFCC&quot;),&quot;SFMC &amp; SFCC Connectors:&quot;,
+IF(CONTAINS({!CaseOrderTypeFinal},&quot;SFMC &amp; SFLWC&quot;),&quot;SFMC &amp; SFLWC Connectors:&quot;,
+IF(CONTAINS({!CaseOrderTypeFinal},&quot;SFCC &amp; SFLWC&quot;),&quot;SFCC &amp; SFLWC Connectors:&quot;,
+IF(CONTAINS({!CaseOrderTypeFinal},&quot;SFMC Connector&quot;),&quot;SFMC Connector:&quot;,
+IF(CONTAINS({!CaseOrderTypeFinal},&quot;SFCC Connector&quot;),&quot;SFCC Connector:&quot;,
+IF(CONTAINS({!CaseOrderTypeFinal},&quot;SFLWC Connector&quot;),&quot;SFLWC Connector:&quot;,&quot;&quot;)
+)))))))</expression>
+    </formulas>
+    <formulas>
+        <description>Monthly amount paid from Customer to Bynder</description>
+        <name>MonthlyAmountFromCustomer</name>
+        <dataType>Currency</dataType>
+        <expression>{!OverallAnnualAmountFromCustomer} / 12</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Monthly amount owed to Salesforce</description>
+        <name>MonthlyAmountToSalesforce</name>
+        <dataType>Currency</dataType>
+        <expression>{!AnnualAmountToSalesforce} / 12</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>OtherCommissionUpdatedonAccount</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business without SFMC or SFCC or SFLWC Connector&quot;),
+  {!Case.Other_Commission__c},
+  IF(ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Renewal&quot;) &amp;&amp; ISPICKVAL({!Oppty.StageName}, &quot;Closed Lost&quot;) &amp;&amp; ISPICKVAL({!Account.Other_Commission__c}, &quot;20% of ARR&quot;),
+  &quot;&quot;,
+  IF(ISPICKVAL({!Account.Other_Commission__c},&quot;&quot;),&quot;&quot;,TEXT({!Account.Other_Commission__c}))
+))</expression>
+    </formulas>
+    <formulas>
+        <name>OverallAnnualAmountFromCustomer</name>
+        <dataType>Currency</dataType>
+        <expression>IF(NOT(CONTAINS({!CaseOrderTypeNewBusiness},&quot;UNDEFINED&quot;)),{!AnnualAmountFromCustomerNewBusiness},
+IF(NOT(CONTAINS({!CaseOrderTypeUpsell},&quot;UNDEFINED&quot;)),{!AnnualAmountfromCustomerUpsell},
+IF(NOT(CONTAINS({!CaseOrderTypeDownsell},&quot;UNDEFINED&quot;)),{!AnnualAmountFromCustomerDownsell},
+IF(NOT(CONTAINS({!CaseOrderTypeRenewal},&quot;UNDEFINED&quot;)),{!AnnualAmountFromCustomerRenewal},
+0)))
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Partner Account Name to be added to the text variable. If the text variable is not blank, add &quot;, &quot; before the Account Name to concatenate.</description>
+        <name>PartnerAccountNameToBeAdded</name>
+        <dataType>String</dataType>
+        <expression>IF({!OtherPartner} = &quot;&quot;, &quot;&quot;, &quot;, &quot;) &amp; {!PartnerAccount.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>SFCCCommissionUpdatedOnAccounts</name>
+        <dataType>String</dataType>
+        <expression>
+/*
+  On New Order, populate Account field with the value on Case,
+  On Termination, clear the value on Account
+*/
+IF(
+  CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFMC, SFCC Connectors &amp; SFLWC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFMC &amp; SFCC Connectors&quot;) || 
+  CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFCC &amp; SFLWC Connectors&quot;) || 
+  CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFCC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFCC Connector&quot;) ||
+    CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFMC &amp; SFCC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFCC &amp; SFLWC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFMC,SFCC &amp; SFLWC Connectors&quot;) ||
+   CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC,SFLWC &amp; New Order - Upsell SFCC Connector&quot;) ||
+   CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC &amp; SFLWC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFCC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFMC &amp; SFCC Connector&quot;),
+ {!Case.SFCC_Commission__c},
+  IF(
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC&quot;) || 
+     CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; SFCC Connectors&quot;) || 
+     CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; SFLWC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC &amp; SFLWC Connector&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC Connector&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFLWC Connector&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; SFCC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; SFLWC Connectors&quot;) || 
+     CONTAINS({!CaseOrderTypeDownsell},&quot;Termination - Downsell SFMC,SFCC &amp; SFLWC Connectors&quot;) ||
+      CONTAINS({!CaseOrderTypeRenewal},&quot;Termination - Churn&quot;),
+    NULL,
+    IF(ISPICKVAL({!Account.SFCC_Commission__c},&quot;&quot;),&quot;&quot;,TEXT({!Account.SFCC_Commission__c})) /* This condition exists coz for the false condition we dont any value and we cannot directly set it to NULL */
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>SFCCConnectorSalesPriceonAccount</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+   OR(
+    {!Oppty.of_SFCC_Connector__c} &lt; 0,
+    ISPICKVAL({!Oppty.StageName}, &quot;Closed Lost&quot;)
+  ),
+  NULL,
+  IF(
+    OR(
+    AND(
+       {!Oppty.of_SFCC_Connector__c} &gt; 0,
+       CONTAINS(TEXT({!Oppty.Type}), &quot;New Business&quot;)),
+   AND(
+       {!Oppty.of_SFCC_Connector__c} &gt; 0,
+       ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Upsell&quot;)),
+ AND(
+  ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Renewal&quot;),
+  ({!Oppty.SFCC_Connector_Sales_Price__c} &lt;&gt; {!Oppty.Account.SFCC_Connector_Sales_Price__c}) )
+  ),
+  {!SFCCConnectorOLI.UnitPrice},
+
+IF(ISNULL({!Oppty.Account.SFCC_Connector_Sales_Price__c}),NULL,{!Oppty.Account.SFCC_Connector_Sales_Price__c})
+  ))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>SFLWCCommissionUpdatedonAccount</name>
+        <dataType>String</dataType>
+        <expression>
+IF(
+  CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFMC, SFCC Connectors &amp; SFLWC Connectors&quot;) || 
+  CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFMC &amp; SFLWC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFCC &amp; SFLWC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFLWC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFLWC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFMC &amp; SFLWC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFCC &amp; SFLWC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFMC,SFCC &amp; SFLWC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC,SFCC &amp; New Order - Upsell SFLWC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC &amp; SFLWC Connector&quot;) ||
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFLWC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC &amp; SFLWC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFLWC Connector&quot;),
+  {!Case.SFLWC_Commission__c},
+  IF(
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFLWC Connector&quot;) ||  
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; SFLWC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; SFLWC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFMC &amp; SFCC Connector&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFMC Connector&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFCC Connector&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; SFLWC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; SFLWC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell},&quot;Termination - Downsell SFMC,SFCC &amp; SFLWC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeRenewal},&quot;Termination - Churn&quot;),
+    NULL,
+    IF(ISPICKVAL({!Account.SFLWC_Commission__c},&quot;&quot;),&quot;&quot;,TEXT({!Account.SFLWC_Commission__c})) /* This condition exists coz for the false condition we dont any value and we cannot directly set it to NULL */
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>SFLWCConnectorSalesPriceOnAccount</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+   OR(
+    {!Oppty.of_SFLWC_Connector__c} &lt; 0,
+    ISPICKVAL({!Oppty.StageName}, &quot;Closed Lost&quot;)
+  ),
+  NULL,
+  IF(
+    OR(
+    AND(
+       {!Oppty.of_SFLWC_Connector__c} &gt; 0,
+       CONTAINS(TEXT({!Oppty.Type}), &quot;New Business&quot;)),
+   AND(
+       {!Oppty.of_SFLWC_Connector__c} &gt; 0,
+       ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Upsell&quot;)),
+ AND(
+  ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Renewal&quot;),
+  ({!Oppty.SFLWC_Connector_Sales_Price__c} &lt;&gt; {!Oppty.Account.SFLWC_Connector_Sales_Price__c}) )
+  ),
+  {!SFLWCConnectorOLI.UnitPrice},
+
+IF(ISNULL({!Oppty.Account.SFLWC_Connector_Sales_Price__c}),NULL,{!Oppty.Account.SFLWC_Connector_Sales_Price__c})
+  ))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>SFMC Commission value to be updated on Accounts on New Order or Termination</description>
+        <name>SFMCCommissionUpdatedOnAccounts</name>
+        <dataType>String</dataType>
+        <expression>/*
+  On New Order, populate Account field with the value on Case,
+  On Termination, clear the value on Account
+*/
+  IF(CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFMC, SFCC Connectors &amp; SFLWC Connectors&quot;) || CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFMC &amp; SFCC Connectors&quot;) || 
+  CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFMC &amp; SFLWC Connectors&quot;) ||
+ CONTAINS({!CaseOrderTypeNewBusiness}, &quot;New Order - New Business with SFMC Connector&quot;) ||
+CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFMC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFMC &amp; SFCC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFMC &amp; SFLWC Connectors&quot;) ||
+  CONTAINS({!CaseOrderTypeUpsell}, &quot;New Order - Upsell SFMC,SFCC &amp; SFLWC Connectors&quot;) ||
+   CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC,SFLWC &amp; New Order - Upsell SFMC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC &amp; SFLWC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFCC &amp; New Order - Upsell SFMC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFMC &amp; SFCC Connector&quot;) ||
+  CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFLWC &amp; New Order - Upsell SFMC Connector&quot;),
+  {!Case.SFMC_Commission__c},
+  IF(
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC&quot;) ||  
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; SFCC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; SFLWC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC &amp; SFLWC Connector&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFCC Connector&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; New Order - Upsell SFLWC Connector&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; SFLWC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell}, &quot;Termination - Downsell SFMC &amp; SFCC Connectors&quot;) || 
+    CONTAINS({!CaseOrderTypeDownsell},&quot;Termination - Downsell SFMC,SFCC &amp; SFLWC Connectors&quot;) ||
+    CONTAINS({!CaseOrderTypeRenewal},&quot;Termination - Churn&quot;),
+    NULL,
+  IF(ISPICKVAL({!Account.SFMC_Commission__c},&quot;&quot;),&quot;&quot;,TEXT({!Account.SFMC_Commission__c})) /* This condition exists coz for the false condition we dont any value and we cannot directly set it to NULL */
+  )
+
+)</expression>
+    </formulas>
+    <formulas>
+        <description>SFMC Connector Sales Price to be updated on Account, when Connector is involved in the Opp.</description>
+        <name>SFMCConnectorSalesPriceOnAccount</name>
+        <dataType>Currency</dataType>
+        <expression>    /*
+  New Business, Renewal, Upsell of Connector -&gt; Populate Sales Price of SFMC Connector
+  Downsell of Connector, Churn -&gt; Clear the value on Account
+*/
+IF(
+   OR(
+    {!Oppty.of_SFMC_Connector__c} &lt; 0,
+    ISPICKVAL({!Oppty.StageName}, &quot;Closed Lost&quot;)
+  ),
+  NULL,
+  IF(
+    OR(
+    AND(
+       {!Oppty.of_SFMC_Connector__c} &gt; 0,
+       CONTAINS(TEXT({!Oppty.Type}), &quot;New Business&quot;)),
+   AND(
+       {!Oppty.of_SFMC_Connector__c} &gt; 0,
+       ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Upsell&quot;)),
+ AND(
+  ISPICKVAL({!Oppty.Type}, &quot;Existing Business-Renewal&quot;),
+  ({!Oppty.SFMC_Connector_Sales_Price__c} &lt;&gt; {!Oppty.Account.SFMC_Connector_Sales_Price__c}) )
+  ),
+  {!ConnectorOLI.UnitPrice},
+
+IF(ISNULL({!Oppty.Account.SFMC_Connector_Sales_Price__c}),NULL,{!Oppty.Account.SFMC_Connector_Sales_Price__c})
+  ))</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Create SFMC Connector Order Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create SFMC Connector Order Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Create a Case based on the assigned values.</description>
+        <name>Create_Case</name>
+        <label>Create Case</label>
+        <locationX>169</locationX>
+        <locationY>1352</locationY>
+        <connector>
+            <targetReference>Get_Created_Case</targetReference>
+        </connector>
+        <inputReference>Case</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>Get the associated Account.</description>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>164</locationX>
+        <locationY>968</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Case_Values</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Oppty.AccountId</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>Account</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>SFMC_Commission__c</queriedFields>
+        <queriedFields>Current_ARR__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>SFCC_Commission__c</queriedFields>
+        <queriedFields>SFMC_Connector_Sales_Price__c</queriedFields>
+        <queriedFields>SFCC_Connector_Sales_Price__c</queriedFields>
+        <queriedFields>SFLWC_Commission__c</queriedFields>
+        <queriedFields>SFLWC_Connector_Sales_Price__c</queriedFields>
+        <queriedFields>Other_Commission__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Opportunity Line Item for SFMC Connector associated to the Opportunity.
+Returns NULL if Connector is not included in the Opportunity.</description>
+        <name>Get_Connector_OLI</name>
+        <label>Get Connector OLI</label>
+        <locationX>169</locationX>
+        <locationY>1739</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_SFCC_Connector_OLI</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Input_OpptyId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ProductCode</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Salesforce Marketing Cloud Connector</stringValue>
+            </value>
+        </filters>
+        <object>OpportunityLineItem</object>
+        <outputReference>ConnectorOLI</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>UnitPrice</queriedFields>
+        <sortField>OpportunityId</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the created Case with additional formula fields necessary in the later steps.</description>
+        <name>Get_Created_Case</name>
+        <label>Get Created Case</label>
+        <locationX>169</locationX>
+        <locationY>1512</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Connector_OLI</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Case.Id</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>Case</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>SFMC_Commission__c</queriedFields>
+        <queriedFields>SFCC_Commission__c</queriedFields>
+        <queriedFields>SFLWC_Commission__c</queriedFields>
+        <queriedFields>Other_Commission__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the won Opp record by its ID given as input of this flow.</description>
+        <name>Get_Oppty</name>
+        <label>Get Oppty</label>
+        <locationX>161</locationX>
+        <locationY>806</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Input_OpptyId</elementReference>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <outputReference>Oppty</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>AccountId</queriedFields>
+        <queriedFields>MRR__c</queriedFields>
+        <queriedFields>Startdate_contract__c</queriedFields>
+        <queriedFields>Account_ID_18_digits__c</queriedFields>
+        <queriedFields>Contract_IsActive__c</queriedFields>
+        <queriedFields>StageName</queriedFields>
+        <queriedFields>of_SFMC_Connector__c</queriedFields>
+        <queriedFields>Type</queriedFields>
+        <queriedFields>ARR_manual__c</queriedFields>
+        <queriedFields>of_SFCC_Connector__c</queriedFields>
+        <queriedFields>of_SFLWC_Connector__c</queriedFields>
+        <queriedFields>SFMC_Connector_Sales_Price__c</queriedFields>
+        <queriedFields>SFCC_Connector_Sales_Price__c</queriedFields>
+        <queriedFields>SFLWC_Connector_Sales_Price__c</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Opportunity Line Item for SFMC Connector associated to the Opportunity.
+Returns NULL if Connector is not included in the Opportunity.</description>
+        <name>Get_SFCC_Connector_OLI</name>
+        <label>Get SFCC Connector OLI</label>
+        <locationX>344</locationX>
+        <locationY>1752</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_SFLWC_Connector_OLI</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Input_OpptyId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ProductCode</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Salesforce Commerce Cloud Module</stringValue>
+            </value>
+        </filters>
+        <object>OpportunityLineItem</object>
+        <outputReference>SFCCConnectorOLI</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>UnitPrice</queriedFields>
+        <sortField>OpportunityId</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Opportunity Line Item for SFLWC Connector associated to the Opportunity.
+Returns NULL if Connector is not included in the Opportunity.</description>
+        <name>Get_SFLWC_Connector_OLI</name>
+        <label>Get SFLWC Connector OLI</label>
+        <locationX>402</locationX>
+        <locationY>1923</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Commision_Amount_to_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Input_OpptyId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ProductCode</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Salesforce Lightning Web Component</stringValue>
+            </value>
+        </filters>
+        <object>OpportunityLineItem</object>
+        <outputReference>SFLWCConnectorOLI</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>UnitPrice</queriedFields>
+        <sortField>OpportunityId</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update the Account with the assigned SFMC Commission value</description>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>160</locationX>
+        <locationY>3137</locationY>
+        <inputReference>Account</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the created case with the assigned amounts.</description>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>169</locationX>
+        <locationY>2161</locationY>
+        <connector>
+            <targetReference>Notify_Owner_by_Chatter</targetReference>
+        </connector>
+        <inputReference>Case</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>21</locationX>
+        <locationY>582</locationY>
+        <connector>
+            <targetReference>Get_Oppty</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Account to which the Opp is associated.</description>
+        <name>Account</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <description>Case for SFMC Connector Order submission</description>
+        <name>Case</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>Opportunity Line Item for SFMC Connector associated to the Opportunity</description>
+        <name>ConnectorOLI</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <description>Sales Price of SFMC Connector in the Opportunity</description>
+        <name>ConnectorSalesPrice</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>6</scale>
+    </variables>
+    <variables>
+        <description>ID of the Opp that triggers this flow. Given as an input value.</description>
+        <name>Input_OpptyId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>IsSFaddedasotherpartner</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Collection for Opportunity Partners under the Oppty</description>
+        <name>OpportunityPartnerList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityPartner</objectType>
+    </variables>
+    <variables>
+        <description>Opportunity that triggered the flow.</description>
+        <name>Oppty</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>Text to capture Partner Accounts&apos; name under the Oppty except Salesforce. If multiple partners are involved, account names are concatenated with &quot;, &quot;.</description>
+        <name>OtherPartner</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Partner Account for Opportunity Partner in the loop</description>
+        <name>PartnerAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>SFCCConnectorOLI</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <name>SFLWCConnectorOLI</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+</Flow>

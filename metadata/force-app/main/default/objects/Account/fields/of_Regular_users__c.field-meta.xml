@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_Regular_users__c</fullName>
+    <description>Rollup from opportunity, used in Licensed_Reg_users__c field</description>
+    <inlineHelpText>Number of regular users.</inlineHelpText>
+    <label># of Regular users</label>
+    <summarizedField>Opportunity.of_Regular_users__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.Contract_IsActive__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

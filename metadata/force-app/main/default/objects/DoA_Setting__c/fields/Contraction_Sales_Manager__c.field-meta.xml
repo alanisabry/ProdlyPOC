@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contraction_Sales_Manager__c</fullName>
+    <defaultValue>10000</defaultValue>
+    <description>BODEV-673: Amount threshold for Contraction below which Sales Manager can approve. Amount indicated for USD/EUR/GBP. For other currencies, it should be converted to the local currency.</description>
+    <externalId>false</externalId>
+    <label>Contraction: Sales Manager</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

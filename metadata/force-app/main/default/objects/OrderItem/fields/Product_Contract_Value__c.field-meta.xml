@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Contract_Value__c</fullName>
+    <formula>IF(For_Contract_Renewals_mapped__c= TRUE ,(UnitPrice-(UnitPrice* Discount__c))*Quantity*Order.Netsuite_Term__c,(UnitPrice-(UnitPrice* Discount__c))*Quantity)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Price - Order Period</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

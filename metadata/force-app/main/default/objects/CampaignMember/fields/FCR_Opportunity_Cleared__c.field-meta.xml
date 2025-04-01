@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Opportunity_Cleared__c</fullName>
+    <description>wd field
+If an opportunity was associated to a Campaign and then deleted - the date of deletion is set here.</description>
+    <inlineHelpText>If an opportunity was associated to a Campaign and then deleted - the date of deletion is set here.</inlineHelpText>
+    <label>Opportunity Cleared</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

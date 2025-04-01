@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_of_the_year_gift__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked contacts will receive a christmas card</description>
+    <label>End of the year gift</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

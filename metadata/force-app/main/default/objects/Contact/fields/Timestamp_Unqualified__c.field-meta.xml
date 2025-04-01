@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timestamp_Unqualified__c</fullName>
+    <description>BODEV-4126 MC Inactivity List Updates for Salesforce
+This field is populated from the Marketing Cloud side. It happens when the contact has had 3 hard bounces. The same automation will change the contact&apos;s status to Unqualified, with the reason Marketing Cloud Inactivity List</description>
+    <label>Timestamp Unqualified</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

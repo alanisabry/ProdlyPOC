@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Details_required_for_loss_category</fullName>
+    <active>true</active>
+    <description>If loss category is &apos;Organisational change&apos;, &apos;Did Current conditions impact decision?&apos; field should be filled.</description>
+    <errorConditionFormula>AND(ISCHANGED(Loss_Category__c),
+TEXT(Loss_Category__c) = &apos;Organisational change&apos;,
+ISPICKVAL(Did_Current_conditions_impact_decision__c,&apos;&apos;))</errorConditionFormula>
+    <errorMessage>Please fill &apos;Did Current conditions impact decision?&apos; field when the loss category is &apos;Organisational change&apos;.</errorMessage>
+</ValidationRule>

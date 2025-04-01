@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SF_World_Tour_Sydney_23_Visited_Booth</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Lead_write_up__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>SF World Tour Sydney &apos;23 - Visited Booth</label>
+</ListView>

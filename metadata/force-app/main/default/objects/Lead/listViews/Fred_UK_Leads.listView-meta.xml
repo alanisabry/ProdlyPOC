@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fred_UK_Leads</fullName>
+    <columns>Lead_Free__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>SMB_ENTERPRISE__c</columns>
+    <columns>Number_of_Employees__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.COUNTRY_CODE</field>
+        <operation>equals</operation>
+        <value>IE,GB</value>
+    </filters>
+    <filters>
+        <field>SMB_ENTERPRISE__c</field>
+        <operation>equals</operation>
+        <value>Enterprise,Strategic</value>
+    </filters>
+    <label>Fred UK Leads</label>
+</ListView>

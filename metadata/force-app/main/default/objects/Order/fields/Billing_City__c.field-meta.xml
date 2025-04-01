@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_City__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+  CONTAINS(Account.OEM_Account__r.Name,&quot;Acquia&quot;),
+  CONTAINS(Account.OEM_Account__r.Name,&quot;Workfront&quot;),
+Account.OEM_Account__r.Account_ID_18_digits__c = $Label.AWS_OEM_Account_ID
+) &amp;&amp;
+NOT(CONTAINS(Account.OEM_Account__r.Name, &quot;Non OEM&quot;)),
+Account.OEM_Account__r.BillingCity,
+Account.BillingCity)</formula>
+    <label>Billing City</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

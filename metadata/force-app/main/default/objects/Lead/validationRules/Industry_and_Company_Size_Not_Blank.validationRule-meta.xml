@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_and_Company_Size_Not_Blank</fullName>
+    <active>true</active>
+    <description>Industry Group and Company Size New are mandatory when a Lead is moved to Sales Qualified</description>
+    <errorConditionFormula>AND(
+   ISCHANGED( Status ) ,
+  ISPICKVAL( Status , &quot;Sales Qualified&quot;) ,
+ (ISBLANK( TEXT( Industry_Group__c  ) )  ||  ISBLANK( TEXT( Company_Size_New__c ) ))
+)</errorConditionFormula>
+    <errorMessage>Please fill in Industry Group and Company Size New fields</errorMessage>
+</ValidationRule>

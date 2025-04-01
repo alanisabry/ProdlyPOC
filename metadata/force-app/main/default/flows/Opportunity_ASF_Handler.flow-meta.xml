@@ -1,0 +1,1429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Action_Chatter_to_Solution_Owner</name>
+        <label>Action - Chatter to Solution Owner</label>
+        <locationX>1370</locationX>
+        <locationY>839</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>Decision_Update_opp_OLI_With_Contract_Info</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>varChatterSolutionOwner</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Notify_Legal_All_Parties_Sign_the_Order_Form</name>
+        <label>Notify Legal - All Parties Sign the Order Form</label>
+        <locationX>1370</locationX>
+        <locationY>3155</locationY>
+        <actionName>Opportunity.Notification_when_all_parties_Sign_the_Order_Form</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.Notification_when_all_parties_Sign_the_Order_Form</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Manager_Notification_Alert</name>
+        <label>Send Manager Notification Alert</label>
+        <locationX>1370</locationX>
+        <locationY>3863</locationY>
+        <actionName>Opportunity.DoA_Approval_Finalized_Manager_Notification</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Check_Account_Customer_Type_on_Opp_Closed_Won</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.DoA_Approval_Finalized_Manager_Notification</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Bypass_Automations</name>
+        <label>Bypass Automations?</label>
+        <locationX>842</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Closed_Lost_Opp</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$User.Id</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>frmBypassUserID</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Bypass_Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_Bypass_Process_TRUE</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+        <rules>
+            <name>Bypass_is_Changed_to_False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bypass_Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Bypass_Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Bypass is Changed to False</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Account_Customer_Type_on_Opp_Closed_Won</name>
+        <label>Check - Account Customer Type on Opp Closed Won</label>
+        <locationX>1502</locationX>
+        <locationY>4055</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Closed_Won</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_DAM_Products</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Closed Won</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_DAM_exists</name>
+        <label>Check - DAM exists?</label>
+        <locationX>1106</locationX>
+        <locationY>4271</locationY>
+        <defaultConnector>
+            <targetReference>Get_Standalone_GC_products</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Customer_Type_DAM</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_DAM_Products</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Customer_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>DAM Customer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Customer_Type_on_Account</targetReference>
+            </connector>
+            <label>Customer Type - DAM</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_GC_exists</name>
+        <label>Check - GC exists?</label>
+        <locationX>1370</locationX>
+        <locationY>4487</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Customer_Type_Standalone_GC</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Standalone_GC_products</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Customer_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_GC_Customer_Type_on_Account</targetReference>
+            </connector>
+            <label>Customer Type - Standalone GC</label>
+        </rules>
+        <rules>
+            <name>Customer_Type_is_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Customer_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Customer_Type_on_Account_0</targetReference>
+            </connector>
+            <label>Customer Type is Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Chatter_new_Project_for_Solution_Owner</name>
+        <label>Decision - Chatter new Project for Solution Owner</label>
+        <locationX>1502</locationX>
+        <locationY>731</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Update_opp_OLI_With_Contract_Info</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Chatter_New_Project_for_Solution_Owner</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Solution_Owner__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Solution_Owner__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Action_Chatter_to_Solution_Owner</targetReference>
+            </connector>
+            <label>Yes - Chatter New Project for Solution Owner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Check_DocuSign_Envelope_Completed_is_changed_checked</name>
+        <label>Decision - Check DocuSign Envelope Completed is changed/checked</label>
+        <locationX>1502</locationX>
+        <locationY>3047</locationY>
+        <defaultConnector>
+            <targetReference>Send_Customer_Billing_Onboarding_Form</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>DocuSign_Envelope_Completed_is_changed_checked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.DocuSign_Envelope_Completed__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.DocuSign_Envelope_Completed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Notify_Legal_All_Parties_Sign_the_Order_Form</targetReference>
+            </connector>
+            <label>DocuSign Envelope Completed is changed/checked</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Closed_Lost_Opp</name>
+        <label>Decision - Closed Lost Opp?</label>
+        <locationX>1502</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Chatter_new_Project_for_Solution_Owner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Closed_Lost_Opp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sub_Flow_Closed_Lost</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes - Closed Lost Opp</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_OEM_Set_on_Opportunity</name>
+        <label>Decision - OEM Set on Opportunity?</label>
+        <locationX>1502</locationX>
+        <locationY>2447</locationY>
+        <defaultConnector>
+            <targetReference>Set_Customer_Stage_to_Transferred</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_OEM_Set_on_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OEM__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.OEM_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OEM__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Account.OEM_Account__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_OEM</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes - OEM Set on Opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Opportunity_ARR_50k_Created</name>
+        <label>Decision - Opportunity ARR &gt; 50k Created?</label>
+        <locationX>1502</locationX>
+        <locationY>2147</locationY>
+        <defaultConnector>
+            <targetReference>Decision_OEM_Set_on_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Over_50k</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmOver50k</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sub_Flow_50k_On_Create_Alerts</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes - Over 50k</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Project_is_Signed_Off_Today_or_Earlier</name>
+        <label>Decision - Project is Signed Off Today or Earlier</label>
+        <locationX>1502</locationX>
+        <locationY>1439</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Sales_Qualifier_is_Changed_Is_an_Active_BDR</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Project_is_signed_off_today_or_earlier</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>fromProjectSignedOff</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Adopting</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes - Project is signed off today or earlier</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Sales_Qualifier_is_Changed_Is_an_Active_BDR</name>
+        <label>Decision - Sales Qualifier is Changed/ Is an Active BDR</label>
+        <locationX>1502</locationX>
+        <locationY>1847</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Opportunity_ARR_50k_Created</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Sales_Qualifier_is_Changed_Is_an_Active_BDR</name>
+            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5 AND 6</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business-Enterprise Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business - Expansion Portal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sales_Qualifier_New__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sales_Qualifier_New__r.Active_BDR__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.BDR_Owner__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Sales_Qualifier_New__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.BDR_Owner__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_BDR_Owner</targetReference>
+            </connector>
+            <label>Sales Qualifier is Changed/ Is an Active BDR</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Update_opp_OLI_With_Contract_Info</name>
+        <label>Decision - Update opp &amp; OLI With Contract Info?</label>
+        <locationX>1502</locationX>
+        <locationY>1031</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Project_is_Signed_Off_Today_or_Earlier</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Update_opp_OLI_With_Contract_Info</name>
+            <conditionLogic>(1 or 2 or 3) and 4 and 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Startdate_contract__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.End_date_contract__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Netsuite_Term__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Startdate_contract__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.End_date_contract__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_OLI</targetReference>
+            </connector>
+            <label>Yes - Update opp &amp; OLI With Contract Info</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Bypass_Process_TRUE</name>
+        <label>Opportunity Bypass Process = TRUE?</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>NO</defaultConnectorLabel>
+        <rules>
+            <name>YES_Opportunity_Bypass_Process_TRUE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bypass_Process__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Bypass_Process_to_False</targetReference>
+            </connector>
+            <label>YES</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>BODEV-1487: Send Customer Billing Onboarding Form when New Business or Expansion Portal Opp is moved to Signature Stage if a form has not been sent.
+For Renewal, the form is sent on Closed Won and the trigger event is specified in Opportunity [ALF] Closed Won flow.</description>
+        <name>Send_Customer_Billing_Onboarding_Form</name>
+        <label>Send Customer Billing Onboarding Form?</label>
+        <locationX>1502</locationX>
+        <locationY>3455</locationY>
+        <defaultConnector>
+            <targetReference>Send_Line_Manager_Notification_on_DoA_Approval_Request_Completion</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Do Not Send Form</defaultConnectorLabel>
+        <rules>
+            <name>Send_Form</name>
+            <conditionLogic>(1 OR 2) AND 3 AND 4 AND (8 OR (5 AND 6 AND 7)) AND (9 OR (10 AND 11 AND 12))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business-Enterprise Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business - Expansion Portal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Signature Stage</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Billing_Onboarding_Form_Sent_Timestamp__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OEM__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OEM__r.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.OEM_Acquia</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OEM__r.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.OEM_Workfront</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OEM__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.OEM_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.OEM_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.OEM_Account__r.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.OEM_Acquia</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.OEM_Account__r.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.OEM_Workfront</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sub_Flow_Send_Customer_Billing_Onboarding_Form</targetReference>
+            </connector>
+            <label>Send Form</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Send_Line_Manager_Notification_on_DoA_Approval_Request_Completion</name>
+        <label>Send Line Manager Notification on DoA Approval Request Completion</label>
+        <locationX>1502</locationX>
+        <locationY>3755</locationY>
+        <defaultConnector>
+            <targetReference>Check_Account_Customer_Type_on_Opp_Closed_Won</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Sales_Opp_Owner_and_Opp_status_updated</name>
+            <conditionLogic>1 AND (2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.DoA_Approval_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.DoA_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.DoA_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.Profile.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Manager_Notification_Alert</targetReference>
+            </connector>
+            <label>Sales Opp Owner and Opp status updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>This is created for Webdam customer transferred to Bynder</description>
+        <name>Set_Customer_Stage_to_Transferred</name>
+        <label>Set Customer Stage to Transferred</label>
+        <locationX>1502</locationX>
+        <locationY>2747</locationY>
+        <defaultConnector>
+            <targetReference>Decision_Check_DocuSign_Envelope_Completed_is_changed_checked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Ready_for_Transferred</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Platform__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Webdam</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Churn_ARR_Platform_Transfer__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_Account</targetReference>
+            </connector>
+            <label>Ready for Transferred?</label>
+        </rules>
+    </decisions>
+    <description>BODEV-4196 Too many SQL Query issue - Opportunity[ASF] Flow
+Updated the flow to remove Spotdraft  primary contact update element thats causing the issue.
+BODEV-4487 Add Customer Stage on Webdam platform accounts</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>frmAccountRecordtypeID</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.Platform__c} ==&apos;Webdam&apos;,&apos;0120P000000NGm5&apos;,&apos;0120P000000arv6&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>frmARRfromProducts</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.MRR_from_products__c} * 12</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>frmBypassUserID</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Process_Bypass_User}</expression>
+    </formulas>
+    <formulas>
+        <name>frmChangeDateCount</name>
+        <dataType>Number</dataType>
+        <expression>IF( ISBLANK({!$Record.Changed__c} ),1,{!$Record.Changed__c} + 1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>frmDoAApprovalDate</name>
+        <dataType>Date</dataType>
+        <expression>/* BODEV-753 populate date in GMT */
+
+DATE(
+  VALUE( MID( TEXT(NOW()), 1, 4)),
+  VALUE( MID( TEXT(NOW()), 6, 2)),
+  VALUE( MID( TEXT(NOW()), 9, 2))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmISNEW</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>frmMRRMovement</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+NOT(ISBLANK({!$Record.QA_Completed_Timestamp__c})),
+CONTAINS(TEXT({!$Record.StageName}), &quot;Closed&quot;)),
+OR(
+AND(
+ISCHANGED({!$Record.Renewal__c}),
+NOT(ISBLANK(PRIORVALUE({!$Record.Renewal__c})))),
+AND(
+ISCHANGED({!$Record.Churn__c}),
+NOT(ISBLANK(PRIORVALUE({!$Record.Churn__c})))),
+AND(
+ISCHANGED({!$Record.Expansion__c}),
+NOT(ISBLANK(PRIORVALUE({!$Record.Expansion__c})))),
+AND(
+ISCHANGED({!$Record.Contraction__c}),
+NOT(ISBLANK(PRIORVALUE({!$Record.Contraction__c})))),
+AND(
+ISCHANGED({!$Record.New_MRR__c}),
+NOT(ISBLANK(PRIORVALUE({!$Record.New_MRR__c})))),
+AND(
+ISCHANGED({!$Record.Internal_Transfer__c}),
+NOT(ISBLANK(PRIORVALUE({!$Record.Internal_Transfer__c})))),
+AND(
+ISCHANGED({!$Record.Churn_Platform_churn__c}),
+NOT(ISBLANK(PRIORVALUE({!$Record.Churn_Platform_churn__c})))),
+AND(
+ISCHANGED({!$Record.New_MRR_Platform_transfer__c}),
+NOT(ISBLANK(PRIORVALUE({!$Record.New_MRR_Platform_transfer__c}))))
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmNULL</name>
+        <dataType>Number</dataType>
+        <expression>NULL</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>frmOtherFinanceFieldsChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+NOT(ISBLANK({!$Record.QA_Completed_Timestamp__c})),
+CONTAINS(TEXT({!$Record.StageName}), &quot;Closed&quot;)),
+OR(
+AND(
+ISCHANGED({!$Record.CloseDate}),
+NOT(ISCHANGED({!$Record.QA_Completed_Timestamp__c})),
+PRIORVALUE({!$Record.CloseDate}) &lt; TODAY()),
+AND(
+ISCHANGED({!$Record.CloseDate}),
+PRIORVALUE({!$Record.CloseDate}) &lt; {!$Record.CloseDate}),
+ISCHANGED({!$Record.End_date_contract__c}),
+ISCHANGED({!$Record.Startdate_contract__c}),
+AND(
+ISCHANGED({!$Record.MRR_from_Products__c}),
+PRIORVALUE({!$Record.MRR_from_Products__c}) &lt;&gt; {!$Record.MRR_from_Products__c})
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmOver50k</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+  {!$Record.Email_Alert_50k_Sent__c} = FALSE,
+  OR(ISPICKVAL({!$Record.Type}, &quot;New Business-Enterprise Cloud&quot;), ISPICKVAL({!$Record.Type}, &quot;New Business - Expansion Portal&quot;)),
+  OR(
+    AND(ISNEW(), 
+      OR(
+        AND(ISPICKVAL({!$Record.CurrencyIsoCode}, &quot;AED&quot;), {!$Record.MRR_from_Products__c} &gt; 16666), 
+        AND(NOT(ISPICKVAL({!$Record.CurrencyIsoCode}, &quot;AED&quot;)), {!$Record.MRR_from_Products__c}  &gt; 4166))),
+    
+     AND(ISCHANGED({!$Record.MRR_from_Products__c} ), 
+         OR(AND(ISPICKVAL({!$Record.CurrencyIsoCode}, &quot;AED&quot;),{!$Record.MRR_from_Products__c}  &gt; 16666), 
+          AND(NOT(ISPICKVAL({!$Record.CurrencyIsoCode}, &quot;AED&quot;)), {!$Record.MRR_from_Products__c}   &gt; 4166))))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmSetRecordType</name>
+        <dataType>String</dataType>
+        <expression>IF(
+TEXT({!$Record.Type}) = &quot;New Business-Enterprise Cloud&quot;, &quot;0120P000000QxSt&quot;,
+IF(
+TEXT({!$Record.Type}) = &quot;New Business - Expansion Portal&quot;, &quot;0120P000000QxSt&quot;,
+IF(
+TEXT({!$Record.Type}) = &quot;Existing Business-Renewal&quot;, &quot;0120P000000QxSy&quot;,
+IF(
+TEXT({!$Record.Type}) = &quot;Existing Business-Upsell&quot;, &quot;0120P000000QxT3&quot;,
+IF(
+TEXT({!$Record.Type}) = &quot;Existing Business - Internal Transfer&quot;, &quot;0120P000000QxT3&quot;,
+IF(
+TEXT({!$Record.Type}) = &quot;Existing Business-Professional Services&quot;, &quot;0120P000000R2w1&quot;,
+IF(
+TEXT({!$Record.Type}) = &quot;Existing Business - Platform Transfer&quot;, &quot;0120P000000QxSt&quot;,
+IF(
+TEXT({!$Record.Type}) = &quot;Referral&quot;, &quot;0123g000000bpTw&quot;, &quot;&quot;))))))))</expression>
+    </formulas>
+    <formulas>
+        <name>frmTODAYPLUS120</name>
+        <dataType>Date</dataType>
+        <expression>today() + 120</expression>
+    </formulas>
+    <formulas>
+        <name>frmTODAYPLUS60</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 60</expression>
+    </formulas>
+    <formulas>
+        <name>fromProjectSignedOff</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+ISPICKVAL({!$Record.Type}, &quot;New Business-Enterprise Cloud&quot;),
+ISPICKVAL({!$Record.Type}, &quot;New Business - Expansion Portal&quot;),
+ISPICKVAL({!$Record.Type}, &quot;Existing Business - Platform Transfer&quot;)),
+ISCHANGED({!$Record.Project_Sign_off_Date__c}),
+NOT(ISBLANK({!$Record.Project_Sign_off_Date__c})),
+{!$Record.Project_Sign_off_Date__c} &lt;= TODAY(),
+ISPICKVAL({!$Record.Account.Customer_Stage__c}, &quot;Onboarding&quot;),
+{!$Record.CloseDate} &gt;= DATE(2019,08,27),
+{!$Record.current_user__c} &lt;&gt; &apos;0050P000007hH92&apos;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Subsidiary</name>
+        <dataType>String</dataType>
+        <expression>IF(ISPICKVAL({!$Record.SpotDraft_Subsidiary__c},&quot;Bynder B.V.&quot;),{!$Label.Bynder_BV_Subsidiary},
+IF(ISPICKVAL({!$Record.SpotDraft_Subsidiary__c},&quot;Bynder LLC&quot;),{!$Label.Bynder_LLC_Subsidiary},
+IF(ISPICKVAL({!$Record.SpotDraft_Subsidiary__c},&quot;Bynder Ltd&quot;),{!$Label.Bynder_Ltd_Subsidiary},
+IF(ISPICKVAL({!$Record.SpotDraft_Subsidiary__c},&quot;Bynder Pty Ltd&quot;),{!$Label.Bynder_Pty_Ltd_Subsidiary},NULL))))</expression>
+    </formulas>
+    <interviewLabel>Opportunity [ASF] Handler {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity [ASF] Handler</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_DAM_Products</name>
+        <label>Get DAM Products</label>
+        <locationX>1106</locationX>
+        <locationY>4163</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_DAM_exists</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Product2Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.DAM_ProductID</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Product2Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.DAM_AI_ProductID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Standalone_GC_products</name>
+        <label>Get Standalone GC products</label>
+        <locationX>1370</locationX>
+        <locationY>4379</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_GC_exists</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Product2Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Standalone_CW_Adv_Product_ID</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Product2Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Standalone_CW_Basic_Product_ID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Account_Adopting</name>
+        <label>Update - Account - Adopting</label>
+        <locationX>1370</locationX>
+        <locationY>1547</locationY>
+        <connector>
+            <targetReference>Update_Contacts</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Customer_Stage__c</field>
+            <value>
+                <stringValue>Adopting</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account_BDR_Owner</name>
+        <label>Update Account BDR Owner</label>
+        <locationX>1370</locationX>
+        <locationY>1955</locationY>
+        <connector>
+            <targetReference>Decision_Opportunity_ARR_50k_Created</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>BDR_Owner__c</field>
+            <value>
+                <elementReference>$Record.Sales_Qualifier_New__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account_OEM</name>
+        <label>Update - Account OEM</label>
+        <locationX>1370</locationX>
+        <locationY>2555</locationY>
+        <connector>
+            <targetReference>Set_Customer_Stage_to_Transferred</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OEM_Account__c</field>
+            <value>
+                <elementReference>$Record.OEM__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Bypass_Process_to_False</name>
+        <label>Update Bypass Process to False</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Bypass_Process__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Contacts</name>
+        <label>Update Contacts</label>
+        <locationX>1370</locationX>
+        <locationY>1655</locationY>
+        <connector>
+            <targetReference>Decision_Sales_Qualifier_is_Changed_Is_an_Active_BDR</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Active CS</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Sales Engaged</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Marketing Engaged</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Upsell Prospecting</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Active Opp</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Active CS</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Customer_Type_on_Account</name>
+        <label>Update Customer Type on Account</label>
+        <locationX>842</locationX>
+        <locationY>4379</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Customer_Type__c</field>
+            <value>
+                <stringValue>DAM Customer</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Customer_Type_on_Account_0</name>
+        <label>Update Customer Type on Account</label>
+        <locationX>1370</locationX>
+        <locationY>4595</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Customer_Type__c</field>
+            <value>
+                <stringValue>DAM Customer</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_GC_Customer_Type_on_Account</name>
+        <label>Update GC Customer Type on Account</label>
+        <locationX>1106</locationX>
+        <locationY>4595</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Customer_Type__c</field>
+            <value>
+                <stringValue>Standalone Content Workflow</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_OLI</name>
+        <label>Update OLI</label>
+        <locationX>1370</locationX>
+        <locationY>1139</locationY>
+        <connector>
+            <targetReference>Sub_Flow_Contract_Term_Calculation</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>For_Renewal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Item_End_Date__c</field>
+            <value>
+                <elementReference>$Record.End_date_contract__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Item_Start_Date__c</field>
+            <value>
+                <elementReference>$Record.Startdate_contract__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>OpportunityLineItem</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>1370</locationX>
+        <locationY>3263</locationY>
+        <connector>
+            <targetReference>Send_Customer_Billing_Onboarding_Form</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>DocuSign_Envelope_Completed__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Set the Customer Stage = Transferred</description>
+        <name>Update_the_Account</name>
+        <label>Update the Account</label>
+        <locationX>1370</locationX>
+        <locationY>2855</locationY>
+        <connector>
+            <targetReference>Decision_Check_DocuSign_Envelope_Completed_is_changed_checked</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Customer_Stage__c</field>
+            <value>
+                <stringValue>Transferred</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>716</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Bypass_Automations</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Sub_Flow_50k_On_Create_Alerts</name>
+        <label>Sub Flow - 50k+ On Create Alerts</label>
+        <locationX>1370</locationX>
+        <locationY>2255</locationY>
+        <connector>
+            <targetReference>Decision_OEM_Set_on_Opportunity</targetReference>
+        </connector>
+        <flowName>Opportunity_ALF_Invoked_Deal_50k_Created</flowName>
+        <inputAssignments>
+            <name>varOpportunityRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Sub_Flow_Closed_Lost</name>
+        <label>Sub Flow - Closed Lost</label>
+        <locationX>1370</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Decision_Chatter_new_Project_for_Solution_Owner</targetReference>
+        </connector>
+        <flowName>Opportunity_ALF_Invoked_Closed_Lost</flowName>
+        <inputAssignments>
+            <name>varOpportunityRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Sub_Flow_Contract_Term_Calculation</name>
+        <label>Sub Flow - Contract Term Calculation</label>
+        <locationX>1370</locationX>
+        <locationY>1247</locationY>
+        <connector>
+            <targetReference>Decision_Project_is_Signed_Off_Today_or_Earlier</targetReference>
+        </connector>
+        <flowName>Contract_Term_Calculation</flowName>
+        <inputAssignments>
+            <name>Var_EndDate</name>
+            <value>
+                <elementReference>$Record.End_date_contract__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_Opportunity</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_StartDate</name>
+            <value>
+                <elementReference>$Record.Startdate_contract__c</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <description>BODEV-1487: Call the auto-launched flow to send out Customer Billing Onboarding Form</description>
+        <name>Sub_Flow_Send_Customer_Billing_Onboarding_Form</name>
+        <label>Sub Flow - Send Customer Billing Onboarding Form</label>
+        <locationX>1370</locationX>
+        <locationY>3563</locationY>
+        <connector>
+            <targetReference>Send_Line_Manager_Notification_on_DoA_Approval_Request_Completion</targetReference>
+        </connector>
+        <flowName>Opportunity_ALF_Invoked_Send_Customer_Onboarding_Form</flowName>
+        <inputAssignments>
+            <name>TXT_Opp_ID</name>
+            <value>
+                <elementReference>$Record.Opportunity_ID_18_digits__c</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>varChatterSolutionOwner</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>#[New Solution Owner]
+@[{!$Record.Solution_Owner__c}] You have been selected as solution owner for this opportunity.</text>
+    </textTemplates>
+    <variables>
+        <name>NewBusinessNewOLI</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <name>NewBusinessOLI</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <name>renewalOLI</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <name>varContactStatusCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>varOLICollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+</Flow>

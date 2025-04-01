@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Questions__c</fullName>
+    <label>Questions</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>How do I download a single asset?</fullName>
+                <default>false</default>
+                <label>How do I download a single asset?</label>
+            </value>
+            <value>
+                <fullName>How do I create a collection?</fullName>
+                <default>false</default>
+                <label>How do I create a collection?</label>
+            </value>
+            <value>
+                <fullName>How do I share assets?</fullName>
+                <default>false</default>
+                <label>How do I share assets?</label>
+            </value>
+            <value>
+                <fullName>How do I edit my Profile?</fullName>
+                <default>false</default>
+                <label>How do I edit my Profile?</label>
+            </value>
+            <value>
+                <fullName>How do I search using filters?</fullName>
+                <default>false</default>
+                <label>How do I search using filters?</label>
+            </value>
+            <value>
+                <fullName>How do I save and share filters?</fullName>
+                <default>false</default>
+                <label>How do I save and share filters?</label>
+            </value>
+            <value>
+                <fullName>How do I edit a collection?</fullName>
+                <default>false</default>
+                <label>How do I edit a collection?</label>
+            </value>
+            <value>
+                <fullName>How do I download multiple assets?</fullName>
+                <default>false</default>
+                <label>How do I download multiple assets?</label>
+            </value>
+            <value>
+                <fullName>How do I add a News Item?</fullName>
+                <default>false</default>
+                <label>How do I add a News Item?</label>
+            </value>
+            <value>
+                <fullName>How do I search for active assets?</fullName>
+                <default>false</default>
+                <label>How do I search for active assets?</label>
+            </value>
+            <value>
+                <fullName>How do I search using the search bar or tags?</fullName>
+                <default>false</default>
+                <label>How do I search using the search bar or tags?</label>
+            </value>
+            <value>
+                <fullName>How do I delete assets?</fullName>
+                <default>false</default>
+                <label>How do I delete assets?</label>
+            </value>
+            <value>
+                <fullName>How do I upload assets?</fullName>
+                <default>false</default>
+                <label>How do I upload assets?</label>
+            </value>
+            <value>
+                <fullName>How do I change the Language settings?</fullName>
+                <default>false</default>
+                <label>How do I change the Language settings?</label>
+            </value>
+            <value>
+                <fullName>How do I manage Permission Profiles?</fullName>
+                <default>false</default>
+                <label>How do I manage Permission Profiles?</label>
+            </value>
+            <value>
+                <fullName>How do I use the Transfer tool?</fullName>
+                <default>false</default>
+                <label>How do I use the Transfer tool?</label>
+            </value>
+            <value>
+                <fullName>How do I add a User?</fullName>
+                <default>false</default>
+                <label>How do I add a User?</label>
+            </value>
+            <value>
+                <fullName>How do I add Quick links?</fullName>
+                <default>false</default>
+                <label>How do I add Quick links?</label>
+            </value>
+            <value>
+                <fullName>How do I archive an asset?</fullName>
+                <default>false</default>
+                <label>How do I archive an asset?</label>
+            </value>
+            <value>
+                <fullName>How do I manage Change History?</fullName>
+                <default>false</default>
+                <label>How do I manage Change History?</label>
+            </value>
+            <value>
+                <fullName>How do I find Statistics?</fullName>
+                <default>false</default>
+                <label>How do I find Statistics?</label>
+            </value>
+            <value>
+                <fullName>How do I manage Tags?</fullName>
+                <default>false</default>
+                <label>How do I manage Tags?</label>
+            </value>
+            <value>
+                <fullName>Survey</fullName>
+                <default>false</default>
+                <label>Survey</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

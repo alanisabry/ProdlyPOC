@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Database_location_required_w_portal_ID</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  NOT(ISCHANGED(Upsells_created_button__c)),
+  NOT(ISCHANGED(One_Off_Upsells_created_button__c)),
+  NOT(ISCHANGED(Portal_ID__c)),
+  NOT(ISCHANGED(Portal_URL__c)),
+  NOT(Contains($Profile.Name,&quot;Legal&quot;)), 
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+  NOT($Profile.Name = &quot;System Administrator&quot;), 
+
+  Text(Platform__c)=&quot;Bynder&quot;,
+  NOT(ISPICKVAL(Type, &quot;Ex-customer&quot;)),
+  NOT(ISBLANK(Portal_ID__c)),
+  ISBLANK(Database__c)
+)</errorConditionFormula>
+    <errorDisplayField>Database__c</errorDisplayField>
+    <errorMessage>Please select the database location.</errorMessage>
+</ValidationRule>

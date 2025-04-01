@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllADraftUpsellOrders</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>Sales_Office__c</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ORDERS.ACTIVATED_DATE</columns>
+    <columns>Opportunity_Type__c</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>Netsuite_Link__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ORDERS.STATUS_CODE</field>
+        <operation>equals</operation>
+        <value>D</value>
+    </filters>
+    <filters>
+        <field>Opportunity_Type__c</field>
+        <operation>contains</operation>
+        <value>Upsell</value>
+    </filters>
+    <label>All Draft Upsell Orders</label>
+</ListView>

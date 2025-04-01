@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_being_merged__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>There is a time delay in the process that merges order products. If an interview is scheduled, this will be true thus preventing upsell being merged multiple times.</description>
+    <inlineHelpText>There is a time delay in the process that merges order products. If an interview is scheduled, this will be true thus preventing upsell being merged multiple times.</inlineHelpText>
+    <label>Products being merged to Order</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

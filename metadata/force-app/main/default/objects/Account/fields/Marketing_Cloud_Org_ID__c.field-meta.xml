@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Cloud_Org_ID__c</fullName>
+    <description>BODEV-166: Field to capture customer&apos;s Marketing Cloud Org ID, which is required to submit orders to Salesforce</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When the customer purchases SFMC Connector, need to capture the customer&apos;s Marketing Cloud Org ID here.</inlineHelpText>
+    <label>Salesforce Org ID</label>
+    <length>120</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

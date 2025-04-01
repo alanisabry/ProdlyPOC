@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Information_Validated__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Indicates if the account information is validated or not</inlineHelpText>
+    <label>Account Information Validated</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

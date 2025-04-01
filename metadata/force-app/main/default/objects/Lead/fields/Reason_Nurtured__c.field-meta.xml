@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Nurtured__c</fullName>
+    <label>Reason Nurtured</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unresponsive</fullName>
+                <default>false</default>
+                <label>Unresponsive</label>
+            </value>
+            <value>
+                <fullName>Project on Hold</fullName>
+                <default>false</default>
+                <label>Project on Hold</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>Not Appropriate Contact</fullName>
+                <default>false</default>
+                <label>Not Appropriate Contact</label>
+            </value>
+            <value>
+                <fullName>No Current Product Fit</fullName>
+                <default>false</default>
+                <label>No Current Product Fit</label>
+            </value>
+            <value>
+                <fullName>Current Company Size</fullName>
+                <default>false</default>
+                <label>Current Company Size</label>
+            </value>
+            <value>
+                <fullName>Auto Nurtured after 90 days</fullName>
+                <default>false</default>
+                <label>Auto Nurtured after 90 days</label>
+            </value>
+            <value>
+                <fullName>Under other DAM Vendor Contract</fullName>
+                <default>false</default>
+                <label>Under other DAM Vendor Contract</label>
+            </value>
+            <value>
+                <fullName>Same Company</fullName>
+                <default>false</default>
+                <label>Same Company</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Current Customer</fullName>
+                <default>false</default>
+                <label>Current Customer</label>
+            </value>
+            <value>
+                <fullName>Open Opp</fullName>
+                <default>false</default>
+                <label>Open Opp</label>
+            </value>
+            <value>
+                <fullName>Partnerships</fullName>
+                <default>false</default>
+                <label>Partnerships</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Unresponsive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Project on Hold</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Budget</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Not Appropriate Contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>No Current Product Fit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Current Company Size</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Auto Nurtured after 90 days</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Under other DAM Vendor Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Same Company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Not Interested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Current Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Open Opp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales 3: Nurture</controllingFieldValue>
+            <valueName>Partnerships</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

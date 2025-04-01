@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Uptime_this_month__c</fullName>
+    <formula>((86400*
+
+CASE(MONTH(TODAY()), 
+1,31,
+2,IF( MOD(YEAR(TODAY()) , 4) = 0,29,28), 
+3,31,
+4,30, 
+5,31, 
+6,30, 
+7,31, 
+8,31, 
+9,30, 
+10,31, 
+11,30, 
+12,31,0)
+
+
+)-Downtime_this_month__c)/(86400*
+
+
+CASE(MONTH(TODAY()), 
+1,31,
+2,IF( MOD(YEAR(TODAY()) , 4) = 0,29,28), 
+3,31,
+4,30, 
+5,31, 
+6,30, 
+7,31, 
+8,31, 
+9,30, 
+10,31, 
+11,30, 
+12,31,0)
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Uptime % this month</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

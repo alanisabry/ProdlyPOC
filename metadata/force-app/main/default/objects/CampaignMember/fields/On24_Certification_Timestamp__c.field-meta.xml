@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On24_Certification_Timestamp__c</fullName>
+    <description>Date and time user successfully passed certification widget</description>
+    <label>On24 Certification Timestamp</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

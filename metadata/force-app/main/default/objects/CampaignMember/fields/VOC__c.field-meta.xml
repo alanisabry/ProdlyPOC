@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VOC__c</fullName>
+    <description>wd field</description>
+    <formula>IF(NOT(ISBLANK(VOC_Date__c)),TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>VOC</label>
+    <type>Checkbox</type>
+</CustomField>

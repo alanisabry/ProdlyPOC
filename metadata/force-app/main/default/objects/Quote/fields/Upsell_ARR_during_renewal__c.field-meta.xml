@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upsell_ARR_during_renewal__c</fullName>
+    <description>Used to store the ARR of upsell products (New or Existing Products with different Sales Price/Default Price/ Part of Package?/ Part of Min commit?). Pricing factors are not applied on this ARR.</description>
+    <label>Upsell ARR during renewal</label>
+    <summarizedField>QuoteLineItem.Total_Sales_Price_ARR_One_off__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.Pricing_Factors_to_be_Applied__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteLineItem.For_Renewal__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

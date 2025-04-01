@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_size_from_account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Company size from account (Deprecated)</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Contacts2</relationshipLabel>
+    <relationshipName>Account</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

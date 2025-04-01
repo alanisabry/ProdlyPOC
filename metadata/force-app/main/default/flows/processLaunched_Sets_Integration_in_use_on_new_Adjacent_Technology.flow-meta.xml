@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Checks whether the products were found.</description>
+        <name>Found_products</name>
+        <label>Found products?</label>
+        <locationX>182</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Products_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>rec_col_Products</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_Adjacent_Tech</targetReference>
+            </connector>
+            <label>Products found</label>
+        </rules>
+    </decisions>
+    <interviewLabel>processLaunched: Sets &quot;Integration in use?&quot; on new Adjacent Technology {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>processLaunched: Sets &quot;Integration in use?&quot; on new Adjacent Technology</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Finds all products that are related to the Integration record.</description>
+        <name>Products_related_to_the_Integrations</name>
+        <label>Products related to the Integrations</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_products</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Integration__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>txt_Integration</elementReference>
+            </value>
+        </filters>
+        <object>Product2</object>
+        <outputReference>rec_col_Products</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <description>Sets &quot;Integration in use?&quot; to True</description>
+        <name>Update_the_Adjacent_Tech</name>
+        <label>Update the Adjacent Tech</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>txt_AdjacentTechnology</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Integration_in_use__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Adjacent_Technology__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Products_related_to_the_Integrations</targetReference>
+        </connector>
+    </start>
+    <status>Obsolete</status>
+    <variables>
+        <description>Contains products that are related to the Integration from the Adjacent Technology.</description>
+        <name>rec_col_Products</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Product2</objectType>
+    </variables>
+    <variables>
+        <description>Contains the ID of the Adjacent Technology.</description>
+        <name>txt_AdjacentTechnology</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Contains the ID of the Integration record related to the AdjacentTech record that triggered the process.</description>
+        <name>txt_Integration</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

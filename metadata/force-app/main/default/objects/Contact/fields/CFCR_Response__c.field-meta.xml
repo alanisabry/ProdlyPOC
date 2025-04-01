@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CFCR_Response__c</fullName>
+    <description>wd field
+Indicates if you need to add a sales campaign to work this contact or to create an opportunity. Add an additional response only if you need to create an additional opportunity.</description>
+    <externalId>false</externalId>
+    <formula>IF ( 
+OR( 
+ISPICKVAL( Status__c , &quot;Open&quot;), 
+ISPICKVAL( Status__c , &quot;Unqualified&quot;), 
+ISPICKVAL( Status__c , &quot;Recycled&quot;), 
+ISPICKVAL( Status__c , &quot;Customer&quot;)), 
+IMAGE(&quot;/resource/1493318320000/fccrm_Add_Campaign_Image&quot;,&quot;Add a Response&quot;,16,180), 
+IF ( 
+ISPICKVAL( Status__c, &quot;Active Opportunity (System Value)&quot;), 
+IMAGE(&quot;/resource/1493318320000/fccrm_Additional_Response_Image&quot;,&quot;Additional Opportunity Requires Response&quot;,16,180), 
+IMAGE(&quot;resource/1493318320000/fccrm_Has_Campaign_Image&quot;,&quot;Has Response&quot;,16,180)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates if you need to add a sales campaign to work this contact or to create an opportunity. Add an additional response only if you need to create an additional opportunity.</inlineHelpText>
+    <label>Response:</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

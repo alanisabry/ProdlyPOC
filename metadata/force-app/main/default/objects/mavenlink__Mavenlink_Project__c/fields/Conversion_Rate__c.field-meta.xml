@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conversion_Rate__c</fullName>
+    <description>Conversion rate of the original contract value to EUR</description>
+    <externalId>false</externalId>
+    <formula>CURRENCYRATE(TEXT(CurrencyIsoCode))</formula>
+    <label>Conversion Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>5</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

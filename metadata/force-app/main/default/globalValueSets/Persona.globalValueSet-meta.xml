@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Decision Maker (Marketing)</fullName>
+        <default>false</default>
+        <label>Decision Maker (Marketing)</label>
+    </customValue>
+    <customValue>
+        <fullName>Decision Maker (Digital)</fullName>
+        <default>false</default>
+        <label>Decision Maker (Digital)</label>
+    </customValue>
+    <customValue>
+        <fullName>Decision Maker (Exec)</fullName>
+        <default>false</default>
+        <label>Decision Maker (Exec)</label>
+    </customValue>
+    <customValue>
+        <fullName>Initiator</fullName>
+        <default>false</default>
+        <label>Initiator</label>
+    </customValue>
+    <customValue>
+        <fullName>Influencer (Digital)</fullName>
+        <default>false</default>
+        <label>Influencer (Digital)</label>
+    </customValue>
+    <customValue>
+        <fullName>Influencer (Creative)</fullName>
+        <default>false</default>
+        <label>Influencer (Creative)</label>
+    </customValue>
+    <description>BDOEV-1285: Persona field for Leads/Contacts</description>
+    <masterLabel>Persona</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

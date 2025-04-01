@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_ons__c</fullName>
+    <label>Add ons</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Additional Brands</fullName>
+                <default>false</default>
+                <label>Additional Brands</label>
+            </value>
+            <value>
+                <fullName>Additional Storage</fullName>
+                <default>false</default>
+                <label>Additional Storage</label>
+            </value>
+            <value>
+                <fullName>Archival Storage</fullName>
+                <default>false</default>
+                <label>Archival Storage</label>
+            </value>
+            <value>
+                <fullName>Webdam Connector for Creative Cloud User Licenses</fullName>
+                <default>false</default>
+                <label>Webdam Connector for Creative Cloud User Licenses</label>
+            </value>
+            <value>
+                <fullName>Webdam Connector for Salesforce</fullName>
+                <default>false</default>
+                <label>Webdam Connector for Salesforce</label>
+            </value>
+            <value>
+                <fullName>Webdam Connector for Sitecore</fullName>
+                <default>false</default>
+                <label>Webdam Connector for Sitecore</label>
+            </value>
+            <value>
+                <fullName>Webdam Dynamic Templates</fullName>
+                <default>false</default>
+                <label>Webdam Dynamic Templates</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dev_info_required_Integration_in_use</fullName>
+    <active>false</active>
+    <description>If live, how long did development take? is required when Integration in use is checked.</description>
+    <errorConditionFormula>Integration_in_use__c &amp;&amp; ISBLANK(If_live_how_long_did_development_take__c)</errorConditionFormula>
+    <errorMessage>Please fill &apos;If live, how long did development take?&apos; when &apos;Integration in use&apos; is checked or Bynder has an out-of-the-box integration for this software.</errorMessage>
+</ValidationRule>

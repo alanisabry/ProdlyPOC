@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_Additional_limit_products__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Used to store the no of additional limit products associated to the parent custom solution in the product rules.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Counts the number of dependant products added as optional in the product rules linked to the product.</inlineHelpText>
+    <label># of Additional limit products</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

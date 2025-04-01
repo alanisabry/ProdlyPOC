@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Renewal_Opp_Product_removal</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+Allow_Product_Merge__c = FALSE,
+NOT(CONTAINS($Profile.Name, &quot;System Administrator&quot;)),
+NOT(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+ISPICKVAL(Type,&apos;Existing Business-Renewal&apos;),
+ISCHANGED(of_opportunity_products__c),
+PRIORVALUE(of_opportunity_products__c) &gt; of_opportunity_products__c
+)</errorConditionFormula>
+    <errorMessage>Cannot remove products from Renewal Opportunity. Please use a downsell opportunity to make adjustments. For queries, contact Mandy Van Rijn.</errorMessage>
+</ValidationRule>

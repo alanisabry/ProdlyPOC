@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>List_Price_ARR_One_off__c</fullName>
+    <description>BODEV-585: ARR value of List Price</description>
+    <formula>IF( For_Renewal__c , List_Price__c * 12, List_Price__c )</formula>
+    <label>List Price ARR/One-off</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

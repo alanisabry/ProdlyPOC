@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MK_Customer_Fit_Signals__c</fullName>
+    <description>Reasons for the Customer Fit score
+Signals can be changed on MadKudu&apos;s platform app.madkudu.com</description>
+    <inlineHelpText>Reasons for the MK Customer Fit score.
+Signals can be changed on MadKudu&apos;s platform</inlineHelpText>
+    <label>MK Customer Fit Signals</label>
+    <length>1054</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

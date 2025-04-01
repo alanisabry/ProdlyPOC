@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Default_Price_ARR__c</fullName>
+    <description>Used to store the sum of initial default price of all recurring OLI&apos;s on opportunity.</description>
+    <label>Initial Default Price ARR</label>
+    <summarizedField>OpportunityLineItem.Total_Initial_Default_Price_ARR_One_off__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Term__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

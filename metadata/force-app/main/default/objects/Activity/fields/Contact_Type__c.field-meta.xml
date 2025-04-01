@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Type__c</fullName>
+    <label>Contact Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Call</fullName>
+                <default>false</default>
+                <label>Call</label>
+            </value>
+            <value>
+                <fullName>Customer: Important Date</fullName>
+                <default>false</default>
+                <label>Customer: Important Date</label>
+            </value>
+            <value>
+                <fullName>Customer Check-in</fullName>
+                <default>false</default>
+                <label>Customer Check-in</label>
+            </value>
+            <value>
+                <fullName>Customer Discovery Call</fullName>
+                <default>false</default>
+                <label>Customer Discovery Call</label>
+            </value>
+            <value>
+                <fullName>Customer Interest</fullName>
+                <default>false</default>
+                <label>Customer Interest</label>
+            </value>
+            <value>
+                <fullName>Demo</fullName>
+                <default>false</default>
+                <label>Demo</label>
+            </value>
+            <value>
+                <fullName>Discovery Call</fullName>
+                <default>false</default>
+                <label>Discovery Call</label>
+            </value>
+            <value>
+                <fullName>Dynamic Template Test</fullName>
+                <default>false</default>
+                <label>Dynamic Template Test</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Face-to-Face Meeting</fullName>
+                <default>false</default>
+                <label>Face-to-Face Meeting</label>
+            </value>
+            <value>
+                <fullName>IT/Security Question</fullName>
+                <default>false</default>
+                <label>IT/Security Question</label>
+            </value>
+            <value>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+                <label>LinkedIn</label>
+            </value>
+            <value>
+                <fullName>Meeting Booked</fullName>
+                <default>false</default>
+                <label>Meeting Booked</label>
+            </value>
+            <value>
+                <fullName>Online Meeting</fullName>
+                <default>false</default>
+                <label>Online Meeting</label>
+            </value>
+            <value>
+                <fullName>Product Question</fullName>
+                <default>false</default>
+                <label>Product Question</label>
+            </value>
+            <value>
+                <fullName>Trial Account</fullName>
+                <default>false</default>
+                <label>Trial Account</label>
+            </value>
+            <value>
+                <fullName>Drift Chat Conversation</fullName>
+                <default>false</default>
+                <label>Drift Chat Conversation</label>
+            </value>
+            <value>
+                <fullName>Card/Letter/Mail</fullName>
+                <default>false</default>
+                <label>Card/Letter/Mail</label>
+            </value>
+            <value>
+                <fullName>Video Brand Studio Demo</fullName>
+                <default>false</default>
+                <label>Video Brand Studio Demo</label>
+            </value>
+            <value>
+                <fullName>Postal</fullName>
+                <default>false</default>
+                <label>Postal</label>
+            </value>
+            <value>
+                <fullName>Partner Introduction</fullName>
+                <default>false</default>
+                <label>Partner Introduction</label>
+            </value>
+            <value>
+                <fullName>Partner Check In</fullName>
+                <default>false</default>
+                <label>Partner Check In</label>
+            </value>
+            <value>
+                <fullName>Booked in SalesLoft</fullName>
+                <default>false</default>
+                <label>Booked in SalesLoft</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

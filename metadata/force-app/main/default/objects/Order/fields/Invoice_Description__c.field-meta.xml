@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Description__c</fullName>
+    <description>Notes to be included on the customer invoice.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Visible to the customer: Notes to be included on the customer invoice.</inlineHelpText>
+    <label>Note on invoice</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

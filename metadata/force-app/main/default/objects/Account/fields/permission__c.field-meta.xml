@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>permission__c</fullName>
+    <inlineHelpText>Total use: 
+
+Restricted use:
+
+Totally forbidden:</inlineHelpText>
+    <label>Permission to use:</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Limited use</fullName>
+                <default>false</default>
+                <label>Limited use</label>
+            </value>
+            <value>
+                <fullName>Totally forbidden</fullName>
+                <default>false</default>
+                <label>Totally forbidden</label>
+            </value>
+            <value>
+                <fullName>Total use</fullName>
+                <default>false</default>
+                <label>Total use</label>
+            </value>
+            <value>
+                <fullName>Prior written consent needed</fullName>
+                <default>false</default>
+                <label>Prior written consent needed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

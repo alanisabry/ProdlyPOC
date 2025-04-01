@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conversations_started__c</fullName>
+    <description>The total number of conversations started by this user.</description>
+    <inlineHelpText>The total number of conversations started by this user.</inlineHelpText>
+    <label>Conversations started</label>
+    <summaryFilterItems>
+        <field>Community_Member_Activity__c.Name</field>
+        <operation>equals</operation>
+        <value>Conversation started</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Community_Member_Activity__c.Community_Member__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

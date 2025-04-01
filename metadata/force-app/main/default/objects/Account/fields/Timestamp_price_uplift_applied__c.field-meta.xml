@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timestamp_price_uplift_applied__c</fullName>
+    <description>Used to capture the timestamp when price uplift on renewal is set as &apos;Yes&apos;</description>
+    <label>Timestamp price uplift applied</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

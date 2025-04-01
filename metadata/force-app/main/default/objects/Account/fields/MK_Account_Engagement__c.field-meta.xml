@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MK_Account_Engagement__c</fullName>
+    <description>Reasons for the MK Account Engagement score, and latest activities of the account. 
+Signals customizable on MadKudu&apos;s platform app.madkudu.com</description>
+    <externalId>false</externalId>
+    <formula>IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;,&quot;&quot;,0,0) +
+CASE(MK_Account_Engagement_Segment__c ,
+&apos;very high&apos;,
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20) +
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20) +
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20),
+&apos;high&apos;,
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20) +
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20),
+&apos;medium&apos;,
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20),
+&apos;low&apos;,
+IMAGE(&quot;https://cdn.madkudu.com/images/snowflake.png&quot;, &quot;Snowflake&quot;, 20, 20),
+&apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Reasons for the MK Account Engagement score, and latest activities of the account. 
+Signals customizable on MadKudu&apos;s platform</inlineHelpText>
+    <label>MK Account Engagement</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

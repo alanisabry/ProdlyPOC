@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adobe_Creative_Cloud_Plugin_min_price</fullName>
+    <active>true</active>
+    <description>Adobe Creative Cloud Plugin minimum price for a license is 20 USD/EUR</description>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+NOT(Quantity&lt;0),
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)), 
+NOT(CONTAINS($Profile.Name, &quot;Finance&quot;)),
+NOT(ISPICKVAL(Opportunity.Type,&quot;Existing Business-Renewal&quot;)),
+CONTAINS(Product2.Name,&quot;Adobe CC Users&quot;),
+NOT(CreatedDate&gt;Now()-0.0007),
+NOT(ISPICKVAL(Opportunity.Standard_Package_Name__c,&quot;Enterprise&quot; )),
+NOT(ISPICKVAL(Opportunity.Standard_Package_Name__c,&quot;Corporate&quot; )),
+(CURRENCYRATE(Opportunity.Currency_Text__c)*(TotalPrice/Quantity))&lt;20,
+(CURRENCYRATE(Opportunity.Currency_Text__c)*(TotalPrice/Quantity))&gt;0)</errorConditionFormula>
+    <errorMessage>The minimum price for an Adobe Creative Cloud Plugin is 20 USD/EUR per licence.</errorMessage>
+</ValidationRule>

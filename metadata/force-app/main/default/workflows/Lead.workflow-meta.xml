@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_MQL_TASK</fullName>
+        <description>New MQL TASK</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/NewMQLAssignmentTask</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Change_Livechat_lead_source</fullName>
+        <field>LeadSource</field>
+        <literalValue>Call-in/chat</literalValue>
+        <name>Change Livechat lead source</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_status_to_Nurture</fullName>
+        <field>Status</field>
+        <literalValue>Nurture</literalValue>
+        <name>Change status to Nurture</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_MQL</fullName>
+        <field>MQL__c</field>
+        <literalValue>1</literalValue>
+        <name>Check MQL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ENTERPRISE</fullName>
+        <field>SMB_ENTERPRISE__c</field>
+        <literalValue>Enterprise</literalValue>
+        <name>ENTERPRISE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ENTERPRISE2</fullName>
+        <field>SMB_ENTERPRISE__c</field>
+        <literalValue>Enterprise</literalValue>
+        <name>ENTERPRISE2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>First_Lead_Owner_Team</fullName>
+        <field>First_Lead_Owner_Team__c</field>
+        <formula>TEXT(Owner:User.BDR_Team__c)</formula>
+        <name>First Lead Owner Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>First_Lead_Owner_Timestamp</fullName>
+        <field>First_Lead_Owner_Timestamp__c</field>
+        <formula>NOW()</formula>
+        <name>First Lead Owner Timestamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>First_Owner</fullName>
+        <field>First_Lead_Owner__c</field>
+        <formula>Owner:User.FirstName+&quot; &quot;+Owner:User.LastName</formula>
+        <name>First Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mid_Market</fullName>
+        <field>SMB_ENTERPRISE__c</field>
+        <literalValue>Mid-Market</literalValue>
+        <name>Mid-Market</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ORBIT</fullName>
+        <description>Update field value to Orbit when</description>
+        <field>SMB_ENTERPRISE__c</field>
+        <literalValue>Orbit</literalValue>
+        <name>ORBIT</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_Timestamp_Change</fullName>
+        <field>Lead_Owner_Change_Timestamp__c</field>
+        <formula>NOW()</formula>
+        <name>Owner Timestamp Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SMB</fullName>
+        <description>Switch picklist to SMB when employee less 500</description>
+        <field>SMB_ENTERPRISE__c</field>
+        <literalValue>SMB</literalValue>
+        <name>SMB</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SQL_Checkbox</fullName>
+        <field>Sales_Qualified__c</field>
+        <literalValue>1</literalValue>
+        <name>SQL Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Nurture</fullName>
+        <field>Status</field>
+        <literalValue>Nurture</literalValue>
+        <name>Sales Nurture</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Timestamp_First_Activity</fullName>
+        <field>Timestamp_First_Activity__c</field>
+        <formula>Now()</formula>
+        <name>Timestamp First Activity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Timestamp_MQL</fullName>
+        <field>Timestamp_MQL__c</field>
+        <formula>NOW()</formula>
+        <name>Timestamp MQL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Timestamp_Nurture</fullName>
+        <field>Timestamp_Nurture__c</field>
+        <formula>TODAY ()</formula>
+        <name>Timestamp Nurture</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Lead_Owner</fullName>
+        <field>OwnerId</field>
+        <lookupValue>leads@bynder.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Update Lead Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>smb2</fullName>
+        <field>SMB_ENTERPRISE__c</field>
+        <literalValue>SMB</literalValue>
+        <name>SMB/ENTERPRISE2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>AppcuesOnLeadCreateUpdate_Z1LsFRf</fullName>
+        <apiVersion>37.0</apiVersion>
+        <endpointUrl>https://90e4a627-0b3c-4443-a474-3a0dbd493491-850f88cd2ea911d.integration-hook.com</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>hubspot@bynder.com</integrationUser>
+        <name>AppcuesOnLeadCreateUpdate_Z1LsFRf</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>TrayOnLeadMQLChange_oS9ue</fullName>
+        <apiVersion>55.0</apiVersion>
+        <endpointUrl>https://a5d8c5f0-1b57-4b07-81bd-a27745dbc1ae-86c45ae3d2404fb.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>hubspot@bynder.com</integrationUser>
+        <name>TrayOnLeadMQLChange_oS9ue</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>TrayOnLeadStatusChange_21R71n</fullName>
+        <apiVersion>55.0</apiVersion>
+        <endpointUrl>https://d8f82dc1-3cdd-4841-b367-2a80501b1bb7-9633ca4b088c6a7.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>kamalt@grazitti.com.bynder</integrationUser>
+        <name>TrayOnLeadStatusChange_21R71n</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>trayOnleadMQLChange_ZpLnvH</fullName>
+        <apiVersion>55.0</apiVersion>
+        <endpointUrl>https://ab379c24-9ef5-4b53-877d-8b289b977750-40083e09ac8cfae.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>kamalt@grazitti.com.bynder</integrationUser>
+        <name>trayOnleadMQLChange_ZpLnvH</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>AppcuesOnLeadCreateUpdate_Z1LsFRf</fullName>
+        <actions>
+            <name>AppcuesOnLeadCreateUpdate_Z1LsFRf</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <formula>!ISBLANK(Id)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change Livechat lead source</fullName>
+        <actions>
+            <name>Change_Livechat_lead_source</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>LiveChat</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Owner Timestamp</fullName>
+        <actions>
+            <name>Owner_Timestamp_Change</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Sets a timestamp when lead owner is changed</description>
+        <formula>AND(ISCHANGED(OwnerId),  $User.Id &lt;&gt; &quot;0050P000007hH92&quot;, Owner:User.Id&lt;&gt; &quot;005U0000002Yo5Y&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>S5%3A Unresponsive %3E Nurture if no activity</fullName>
+        <actions>
+            <name>Sales_Nurture</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Days_since_last_activity__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>30</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Sales 5: Unresponsive</value>
+        </criteriaItems>
+        <description>If a lead is in Sales 5: Unresponsive with no activity for 30 days, add to Sales Nurture</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sets %22Interested%22 to true</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Sales 4a: Interested</value>
+        </criteriaItems>
+        <description>Sets the field interested to true if lead is Sales 4a</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Timestamp Exit Date</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Sales 3a: Not appropriate contact,Sales 4b: Not Interested,Sales 5: Unresponsive,Nurture,Unqualified</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Timestamp Marketing 1</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Marketing 1: Not assessed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update LS 1 and LS 2 number fields</fullName>
+        <active>false</active>
+        <formula>OR (
+IsNew (),
+IsChanged (LastModifiedDate))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>New_Lead_Call</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>A new inbound lead has been automatically assigned to you.
+Please follow up as soon as possible. 
+
+Cheers
+
+Marketing</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New Lead - Call</subject>
+    </tasks>
+</Workflow>

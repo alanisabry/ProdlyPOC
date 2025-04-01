@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Leads_Gartner_Marketing_Symposium1</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>Industry_ICP__c</columns>
+    <columns>BDR_Completed__c</columns>
+    <columns>MQL__c</columns>
+    <columns>Sales_Qualified__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Company_Size_New__c</columns>
+    <columns>Lead_ID_18_digits__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Leads - Gartner Marketing Symposium</label>
+</ListView>

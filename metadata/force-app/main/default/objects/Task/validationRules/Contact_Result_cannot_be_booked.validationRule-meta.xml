@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Result_cannot_be_booked</fullName>
+    <active>true</active>
+    <description>Contact Result cannot be booked for completed calls or meetings</description>
+    <errorConditionFormula>AND (
+NOT(Contains(Current_User_Profile__c,&quot;Webdam&quot;)),
+ISPICKVAL(Contact_Result__c, &quot;Booked&quot;),
+OR (
+ISPICKVAL (Contact_Type__c, &quot;Call&quot;),
+ISPICKVAL (Contact_Type__c, &quot;Demo / Online Meeting&quot;),
+ISPICKVAL (Contact_Type__c, &quot;Face-to-Face Meeting&quot;)),
+ISPICKVAL (Status, &quot;Completed&quot;))</errorConditionFormula>
+    <errorMessage>The contact result for completed calls or meetings cannot be &quot;Booked&quot;. Please adjust the contact result.</errorMessage>
+</ValidationRule>

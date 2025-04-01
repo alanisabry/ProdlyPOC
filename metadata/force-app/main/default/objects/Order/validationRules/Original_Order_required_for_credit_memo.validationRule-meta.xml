@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_Order_required_for_credit_memo</fullName>
+    <active>false</active>
+    <description>If the total order value is less than 0, the original order field must be populated.</description>
+    <errorConditionFormula>AND(Total_Order_Value__c&lt;0,
+OR(
+ISCHANGED(Status),
+ISCHANGED(Approval_Status__c)),
+ISBLANK( Original_Invoice_Netsuite_ID__c))</errorConditionFormula>
+    <errorMessage>The original order field is required for credit memos.</errorMessage>
+</ValidationRule>

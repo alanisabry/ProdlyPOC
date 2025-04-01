@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>dlrs__LookupRollupSummary2__mdt</name>
+    </customMetadataTypeAccesses>
+    <description>BODEV-75: Permission set for non-admin users to set up RingLead Trigger configuration.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>RingLead Trigger Configuration</label>
+</PermissionSet>

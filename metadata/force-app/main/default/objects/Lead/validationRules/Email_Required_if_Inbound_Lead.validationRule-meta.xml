@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Required_if_Inbound_Lead</fullName>
+    <active>true</active>
+    <description>The Email field is required if the Source field is set to Inbound.</description>
+    <errorConditionFormula>AND(
+NOT(Contains($Profile.Name, &quot;System Administrator&quot;)), 
+ISPICKVAL(Source__c,&quot;inbound&quot;),
+ISBLANK( Email ))</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>Email field is required</errorMessage>
+</ValidationRule>

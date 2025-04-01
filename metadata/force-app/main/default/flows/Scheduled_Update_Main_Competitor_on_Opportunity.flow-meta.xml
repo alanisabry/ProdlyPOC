@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Competitors</name>
+        <label>Add Competitors</label>
+        <locationX>704</locationX>
+        <locationY>792</locationY>
+        <assignmentItems>
+            <assignToReference>CompetitorsForOpportunity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AddCompetitor</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Key_Competitor_on_Tracker</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the Current_Main_Competitors variable with the Main Competitors custom field from the opportunity</description>
+        <name>Get_Current_Main_Competitors_Value</name>
+        <label>Get Current Main Competitors Value</label>
+        <locationX>440</locationX>
+        <locationY>468</locationY>
+        <assignmentItems>
+            <assignToReference>Current_Main_Competitors</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Gong__Primary_Opportunity__r.Gong__MainCompetitors__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Key_Competitor_on_Tracker</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Checks if the value taken from the tracker records already exists on the opportunity record</description>
+        <name>Competitor_already_exist_on_opportunity</name>
+        <label>Competitor already exist on opportunity?</label>
+        <locationX>616</locationX>
+        <locationY>684</locationY>
+        <defaultConnector>
+            <targetReference>Add_Competitors</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Competitor_already_exists_on_opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Current_Main_Competitors</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Check_Key_Competitor_on_Tracker.Gong__Tracker_Phrase__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Key_Competitor_on_Tracker</targetReference>
+            </connector>
+            <label>Competitor already exists on opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Competitor_to_add_from_tracker</name>
+        <label>Competitor to add from tracker?</label>
+        <locationX>440</locationX>
+        <locationY>1068</locationY>
+        <defaultConnector>
+            <targetReference>Update_Primary_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update Main Competitor</defaultConnectorLabel>
+        <rules>
+            <name>No_competitor_to_add</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CompetitorsForOpportunity</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>No competitor to add</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Records_found</name>
+        <label>Records found?</label>
+        <locationX>176</locationX>
+        <locationY>360</locationY>
+        <defaultConnector>
+            <targetReference>Get_Current_Main_Competitors_Value</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_records_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_key_competitor_trackers</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>No records found</label>
+        </rules>
+    </decisions>
+    <description>Bodev - 4284 - Key Competitors mentioned on Opportunity</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AddCompetitor</name>
+        <dataType>String</dataType>
+        <expression>IF (ISBLANK({!CompetitorsForOpportunity}), 
+{!Check_Key_Competitor_on_Tracker.Gong__Tracker_Phrase__c}, 
+{!CompetitorsForOpportunity} + &quot;, &quot;+ {!Check_Key_Competitor_on_Tracker.Gong__Tracker_Phrase__c})</expression>
+    </formulas>
+    <formulas>
+        <description>The updated Main Competitors custom field value, after the flow was executed</description>
+        <name>Updated_Competitors_Value</name>
+        <dataType>String</dataType>
+        <expression>If (ISBLANK({!Current_Main_Competitors}), {!CompetitorsForOpportunity},
+{!Current_Main_Competitors} &amp; &apos;, &apos; &amp; {!CompetitorsForOpportunity})</expression>
+    </formulas>
+    <interviewLabel>Scheduled: Update Main Competitor on Opportunity {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Scheduled: Update Main Competitor on Opportunity</label>
+    <loops>
+        <name>Check_Key_Competitor_on_Tracker</name>
+        <label>Check Key Competitor on Tracker</label>
+        <locationX>440</locationX>
+        <locationY>576</locationY>
+        <collectionReference>Get_key_competitor_trackers</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Competitor_already_exist_on_opportunity</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Competitor_to_add_from_tracker</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_key_competitor_trackers</name>
+        <label>Get key competitor trackers</label>
+        <locationX>176</locationX>
+        <locationY>252</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Records_found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Key Competitors</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Gong__Gong_Interaction__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Gong__Tracker__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update the Main Competitors custom field and add the competitor name</description>
+        <name>Update_Primary_Opportunity</name>
+        <label>Update Primary Opportunity</label>
+        <locationX>572</locationX>
+        <locationY>1176</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Gong__Primary_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Gong__MainCompetitors__c</field>
+            <value>
+                <elementReference>Updated_Competitors_Value</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_key_competitor_trackers</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Process_for_Key_Competitors__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Gong__Primary_Opportunity__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>Gong__Gong_Call__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-01-28</startDate>
+            <startTime>01:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>CompetitorsForOpportunity</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Current_Main_Competitors</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

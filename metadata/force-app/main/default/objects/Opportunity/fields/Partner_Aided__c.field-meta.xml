@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Aided__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>This deal was majorly influenced by a partner (either technology, solution or referral)</inlineHelpText>
+    <label>Partner Aided</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

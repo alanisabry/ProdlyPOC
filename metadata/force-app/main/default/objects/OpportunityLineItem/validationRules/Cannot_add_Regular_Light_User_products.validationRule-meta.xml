@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Regular_Light_User_products</fullName>
+    <active>true</active>
+    <description>Single Regular User and Light User shouldn&apos;t be used as the tier-priced and the batch User products were introduced.
+
+BODEV-3830: the tier-priced Regular User products deprecated, thus single Regular User can be added.</description>
+    <errorConditionFormula>/*
+    BODEV-3830: single Regular User is exempted from the validation. It can be added to New Biz Opps.
+*/
+
+AND(
+  NOT($Profile.Name = &quot;System Administrator&quot;),
+  ISNEW(),
+  ISPICKVAL(Opportunity.Type,&apos;New Business-Enterprise Cloud&apos;),
+  Product2.Product_ID_18_digits__c=&apos;01t0P000002EFL9QAO&apos;, /* Light User */
+  NOT(Part_of_a_package__c)
+)</errorConditionFormula>
+    <errorMessage>Light User Product cannot be added as a product to New Business or Upsell opportunities. Please use the batch Light User Products.</errorMessage>
+</ValidationRule>

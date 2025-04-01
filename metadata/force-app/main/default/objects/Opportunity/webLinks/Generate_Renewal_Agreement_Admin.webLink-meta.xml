@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Renewal_Agreement_Admin</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Renewal Agreement - Admin</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Opportunity.Id}
+
+&amp;QueryId=[MRR]a3y0P000000LD8B,
+[ARR]a3y3g0000013Zy8
+
+&amp;TemplateId=a463g000000g9IxAAI
+
+&amp;SC1=SalesforceFile
+&amp;SC0=1
+&amp;Culture=en-US
+&amp;DefaultPDF=0
+&amp;OFN={!Today()} - {!Account.Name} - Renewal agreement
+&amp;BML=Generating+Bynder+Renewal+Agreement</url>
+</WebLink>

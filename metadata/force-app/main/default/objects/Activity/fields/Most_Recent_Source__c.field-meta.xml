@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Most_Recent_Source__c</fullName>
+    <description>BODEV-921: Task field to capture the most recent source</description>
+    <label>Most Recent Source</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ABM Influenced</fullName>
+                <default>false</default>
+                <label>ABM Influenced</label>
+            </value>
+            <value>
+                <fullName>Behavioural (Outbound) MQL</fullName>
+                <default>false</default>
+                <label>Behavioural (Outbound) MQL</label>
+            </value>
+            <value>
+                <fullName>CTA (Inbound) MQL</fullName>
+                <default>false</default>
+                <label>CTA (Inbound) MQL</label>
+            </value>
+            <value>
+                <fullName>Customer Behavioural MQL (CDR)</fullName>
+                <default>false</default>
+                <label>Customer Behavioural MQL (CDR)</label>
+            </value>
+            <value>
+                <fullName>Customer CTA MQL (CDR)</fullName>
+                <default>false</default>
+                <label>Customer CTA MQL (CDR)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Partnerships</fullName>
+                <default>false</default>
+                <label>Partnerships</label>
+            </value>
+            <value>
+                <fullName>Platform Transfer</fullName>
+                <default>false</default>
+                <label>Platform Transfer</label>
+            </value>
+            <value>
+                <fullName>Prospecting Account Campaign</fullName>
+                <default>false</default>
+                <label>Prospecting Account Campaign</label>
+            </value>
+            <value>
+                <fullName>Recycled Inbound (Inbound &gt; Outbound)</fullName>
+                <default>false</default>
+                <label>Recycled Inbound/Outbound</label>
+            </value>
+            <value>
+                <fullName>Subsidiary Account Prospecting (CDR)</fullName>
+                <default>false</default>
+                <label>Subsidiary Account Prospecting (CDR)</label>
+            </value>
+            <value>
+                <fullName>Tradeshow</fullName>
+                <default>false</default>
+                <label>Tradeshow</label>
+            </value>
+            <value>
+                <fullName>Upsell Account Prospecting (CDR)</fullName>
+                <default>false</default>
+                <label>Upsell Account Prospecting (CDR)</label>
+            </value>
+            <value>
+                <fullName>User Gem</fullName>
+                <default>false</default>
+                <label>User Gem</label>
+            </value>
+            <value>
+                <fullName>Outbound Reengaged</fullName>
+                <default>false</default>
+                <label>Outbound Reengaged</label>
+            </value>
+            <value>
+                <fullName>Outbound Cold</fullName>
+                <default>false</default>
+                <label>Outbound Cold</label>
+            </value>
+            <value>
+                <fullName>CDR Customer Tradeshow</fullName>
+                <default>false</default>
+                <label>CDR Customer Tradeshow</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

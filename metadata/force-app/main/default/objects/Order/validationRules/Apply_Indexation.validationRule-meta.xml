@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apply_Indexation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+MRR__c&gt;0,
+IsReductionOrder=FALSE,
+NOT(CONTAINS(Opportunity_Type__c, &quot;Upsell&quot;)),
+OR(Indexation__c != &quot;Price Uplift On Renewal&quot;,AND(Indexation__c = &quot;Price Uplift On Renewal&quot;,NOT(ISNULL(Account.Cumulative_Indexation__c)))),
+Indexation__c!=&quot;Not Applicable&quot;,
+NOT(ISPICKVAL(Account.Indexation__c,&quot;No&quot;)),
+NOT(ISPICKVAL(Account.Indexation__c,&quot;&quot;)),
+Apply_Indexation__c= FALSE,
+Indexation_Applied__c = FALSE,
+ISPICKVAL(Status,&quot;Activated&quot;),
+ISCHANGED(Status),
+NOT(Account.Subsidiary_lookup__r.Name =&quot;Bynder Software S.L.&quot;),
+NOT(Account.Subsidiary_lookup__r.Name =&quot;Bynder Software FZ-LLC&quot;)
+)</errorConditionFormula>
+    <errorMessage>Please add indexation to this order by checking the &apos;Apply Indexation&apos; field.</errorMessage>
+</ValidationRule>

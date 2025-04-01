@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Customer_Success</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Customer_Success</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>bob.hickey@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>bryan.strickland@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>don.fakkert@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>eveline.ter.elst@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>heidi.lasker@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>jasmine.obando@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>jason.davidson@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>kevin.lorch@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>laura.mcclurg@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>matt.jackson@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>sharon.mata@bynder.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>MRR__c</field>
+        <field>MRR_from_Products__c</field>
+        <field>Startdate_contract__c</field>
+        <field>End_date_contract__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bianca.oliveira@bynder.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sharon.mata@bynder.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Sets approvers and allows them to accept or reject the approval request.</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Account.OEM__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Submit the opportunity for approval</label>
+        <name>Submit_for_approval</name>
+    </approvalStep>
+    <description>Process responsible for submitting an opportunity for approval.</description>
+    <emailTemplate>unfiled$public/Opportunity_Submitted_for_Approval</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+of_opportunity_products__c &gt; 0,
+OR(
+MRR_from_Products__c &gt;= 0,
+AND(NOT(ISBLANK(Loss_Reason_Detail__c)),
+NOT(ISBLANK(TEXT(Primary_Loss_Reason__c))))
+),
+OR(
+ROUND(MRR__c,2) = Round(MRR_from_Products__c,2),
+AND(
+ISBLANK(MRR__c), MRR_from_Products__c = 0)
+),
+OR(
+ROUND(One_off_from_Products__c, 2) = ROUND(One_off__c,2),
+AND(
+ISBLANK(One_off__c), One_off_from_Products__c = 0)
+),
+OR(
+of_products_MRR__c = 0,
+AND(
+of_products_MRR__c &gt; 0,
+NOT(ISBLANK(End_date_contract__c)),
+NOT(ISBLANK(Startdate_contract__c))
+)
+),
+OR(
+SOf__c = &quot;San Mateo&quot;,
+SOf__c = &quot;San Carlos&quot;,
+Customisation_Required__c = FALSE,
+AND(
+Customisation_Required__c = TRUE,
+NOT(ISBLANK(Due_Date_of_Customisations__c)),
+NOT(ISBLANK(Product_Customisation_Required__c)),
+NOT(ISBLANK(Product_Sign_Off_Owner__c))
+)
+),
+OR(
+AND(
+OR(
+CONTAINS(TEXT(Type), &quot;New Business&quot;),
+ISPICKVAL(Type, &quot;Existing Business - Platform Transfer&quot;)),
+NOT(DAY(End_date_contract__c)=DAY(Startdate_contract__c)),
+OR( Opportunity_Competitor_Counter__c &gt; 0 , Check_Opportunity_Competitor__c = &quot;N/A&quot;),
+OR(
+AND(
+OR(TEXT(Account.BillingCountryCode) &lt;&gt; &quot;US&quot;,
+NOT(ISBLANK(Account.BillingState))),
+NOT(ISBLANK(Account.Bill_to_Contact_Email__c)),
+NOT(ISBLANK(Account.BillingCity)),
+NOT(ISBLANK( Account.Billing_Account_Name__c )),
+NOT(ISBLANK(Account.BillingStreet))
+),
+NOT(ISBLANK(TEXT(Account.OEM__c)))
+),
+NOT(ISBLANK(TEXT(Account.PO_Needed__c))),
+OR(
+NOT(ISBLANK(Account.Database__c)),
+Platform__c = &quot;Webdam&quot;),
+OR(
+NOT(ISBLANK(Main_Objective_1__c)),
+NOT(ISBLANK(Main_Objective_2__c)),
+NOT(ISBLANK(Main_Objective_3__c))),
+OR(
+NOT(ISBLANK(TEXT(Account.OEM__c))),
+AND(
+NOT(ISBLANK(TEXT(Notice_period_months__c))),
+NOT(ISBLANK(Invoice_period__c))
+)
+),
+OR(
+NOT(ISBLANK(Contract_Renewal_Term__c)),
+NOT(Contract_Renewal_Term__c = 0)),
+OR(
+SOf__c = &quot;San Mateo&quot;,
+SOf__c = &quot;San Carlos&quot;,
+ISPICKVAL(Solutions_Required__c, &quot;No&quot;),
+AND(
+ISPICKVAL(Solutions_Required__c,&quot;Yes&quot;),
+OR(
+AND(Out_of_the_box_Solution__c=TRUE,Customisation_Required__c=FALSE),
+AND(Out_of_the_box_Solution__c=FALSE,Customisation_Required__c=TRUE)))
+),
+NOT(ISBLANK(TEXT(Use_Case__c))),
+NOT(ISBLANK(TEXT(Primary_Win_Reason__c))),
+NOT(ISBLANK(Win_Reason_Detail__c))
+),
+AND(
+OR(
+ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;),
+ISPICKVAL(Type, &quot;Existing Business - Internal Transfer&quot;)),
+OR(TEXT(Account.BillingCountryCode) &lt;&gt; &quot;US&quot;,
+NOT(ISBLANK(Account.BillingState))),
+OR(
+SOf__c = &quot;San Mateo&quot;,
+SOf__c = &quot;San Carlos&quot;,
+One_off__c &lt;= 0,
+ISBLANK(One_off__c),
+AND(
+One_off__c &gt; 0,
+OR(
+ISPICKVAL(Solutions_Required__c, &quot;No&quot;),
+ISPICKVAL(Solutions_Required__c,&quot;Yes&quot;)
+)
+)
+)
+),
+AND(
+OR(ISPICKVAL(Type, &quot;Existing Business-Upsell&quot;),ISPICKVAL(Type, &quot;Existing Business-Professional Services&quot;)),
+OR(
+SOf__c = &quot;San Mateo&quot;,
+SOf__c = &quot;San Carlos&quot;,
+One_off__c &lt;= 0,
+ISBLANK(One_off__c),
+AND(
+One_off__c &gt; 0,
+OR(
+ISPICKVAL(Solutions_Required__c, &quot;No&quot;),
+AND(
+ISPICKVAL(Solutions_Required__c,&quot;Yes&quot;),
+OR(
+AND(Out_of_the_box_Solution__c=TRUE,Customisation_Required__c=FALSE),
+AND(Out_of_the_box_Solution__c=FALSE,Customisation_Required__c=TRUE)))))
+)
+)
+),
+OR(
+Check_SFDC_Partnership_Details__c = &quot;N/A&quot;,
+NOT(ISBLANK(Account.Marketing_Cloud_Org_ID__c))
+),
+CONTAINS( Check_DoA__c , &quot;YES&quot;),
+CONTAINS( Check_Account_Deployment__c , &quot;YES&quot;),
+OR(
+OR(NOT(ISBLANK(TEXT(Account.OEM__c))),
+AND(
+NOT(CONTAINS(TEXT(Type), &quot;New Business&quot;)),
+NOT(ISPICKVAL(Type, &quot;Existing Business-Upsell&quot;)),
+NOT(ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;))
+)),
+Account.IsDecisionMakerandChampionadded__c=TRUE
+)
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approval_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Closed_Won_Finance_to_True</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Email_Alert_Submission_has_been_approved</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Stage_to_Closed_Won</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Timestamp_QA_completed</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Approval_Status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Counter_From_QA_to_Open</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Email_Alert_Submission_has_been_rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Timestamp_QA_rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Approval_Status_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Email_Alert_Opportunity_submitted_for_approval</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Timestamp_Oppty_submitted_for_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Sales QA Approval</label>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>Approval_Status_Not_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Counter_From_QA_to_Open</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Timestamp_QA_rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

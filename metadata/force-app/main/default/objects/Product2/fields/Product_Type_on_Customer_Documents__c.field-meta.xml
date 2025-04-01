@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type_on_Customer_Documents__c</fullName>
+    <description>BODEV-2750 Renewal Agreement - Demo &amp; fixes 
+Created this field for Customer Document Purpose</description>
+    <label>Product Type on Customer Documents</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Add-ons</fullName>
+                <default>false</default>
+                <label>Add-ons</label>
+            </value>
+            <value>
+                <fullName>Contract</fullName>
+                <default>false</default>
+                <label>Contract</label>
+            </value>
+            <value>
+                <fullName>Core</fullName>
+                <default>false</default>
+                <label>Core</label>
+            </value>
+            <value>
+                <fullName>Core &amp; Modules</fullName>
+                <default>false</default>
+                <label>Core &amp; Modules</label>
+            </value>
+            <value>
+                <fullName>Included</fullName>
+                <default>false</default>
+                <label>Included</label>
+            </value>
+            <value>
+                <fullName>Included portal feature</fullName>
+                <default>false</default>
+                <label>Included portal feature</label>
+            </value>
+            <value>
+                <fullName>Integration</fullName>
+                <default>false</default>
+                <label>Integration</label>
+            </value>
+            <value>
+                <fullName>Integrations</fullName>
+                <default>false</default>
+                <label>Integrations</label>
+            </value>
+            <value>
+                <fullName>Module</fullName>
+                <default>false</default>
+                <label>Module</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Services</fullName>
+                <default>false</default>
+                <label>Services</label>
+            </value>
+            <value>
+                <fullName>Standalone</fullName>
+                <default>false</default>
+                <label>Standalone</label>
+            </value>
+            <value>
+                <fullName>Success Package</fullName>
+                <default>false</default>
+                <label>Success Package</label>
+            </value>
+            <value>
+                <fullName>Transactional</fullName>
+                <default>false</default>
+                <label>Transactional</label>
+            </value>
+            <value>
+                <fullName>Users &amp; Storage</fullName>
+                <default>false</default>
+                <label>Users &amp; Storage</label>
+            </value>
+            <value>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+                <label>Professional Services</label>
+            </value>
+            <value>
+                <fullName>Solutions</fullName>
+                <default>false</default>
+                <label>Solutions</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

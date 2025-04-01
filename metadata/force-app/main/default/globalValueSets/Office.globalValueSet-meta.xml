@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Amsterdam</fullName>
+        <default>false</default>
+        <label>Amsterdam</label>
+    </customValue>
+    <customValue>
+        <fullName>Barcelona</fullName>
+        <default>false</default>
+        <label>Barcelona</label>
+    </customValue>
+    <customValue>
+        <fullName>Boston</fullName>
+        <default>false</default>
+        <label>Boston</label>
+    </customValue>
+    <customValue>
+        <fullName>Dubai</fullName>
+        <default>false</default>
+        <label>Dubai</label>
+    </customValue>
+    <customValue>
+        <fullName>London</fullName>
+        <default>false</default>
+        <label>London</label>
+    </customValue>
+    <customValue>
+        <fullName>Melbourne</fullName>
+        <default>false</default>
+        <label>Melbourne</label>
+    </customValue>
+    <customValue>
+        <fullName>Remote</fullName>
+        <default>false</default>
+        <label>Remote</label>
+    </customValue>
+    <customValue>
+        <fullName>San Carlos</fullName>
+        <default>false</default>
+        <label>San Carlos</label>
+    </customValue>
+    <customValue>
+        <fullName>San Mateo</fullName>
+        <default>false</default>
+        <label>San Mateo</label>
+    </customValue>
+    <description>List of Bynder offices</description>
+    <masterLabel>Office</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

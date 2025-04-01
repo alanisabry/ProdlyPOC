@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UK_Leads_Strategic_Contactable</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>Sales_Region__c</columns>
+    <columns>Lead_Free__c</columns>
+    <columns>SMB_ENTERPRISE__c</columns>
+    <columns>Marketing_Source__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SMB_ENTERPRISE__c</field>
+        <operation>equals</operation>
+        <value>Strategic</value>
+    </filters>
+    <filters>
+        <field>Sales_Region__c</field>
+        <operation>equals</operation>
+        <value>UK</value>
+    </filters>
+    <filters>
+        <field>Lead_Free__c</field>
+        <operation>contains</operation>
+        <value>Yes</value>
+    </filters>
+    <label>UK Leads Strategic Contactable</label>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SpotDraft_Manual_Discount__c</fullName>
+    <description>Created this field to calculate manual discounts applied on OLI</description>
+    <externalId>false</externalId>
+    <formula>MAX(Default_Price_ARR__c * Quantity, Sales_Price_ARR__c * Quantity ) - (Sales_Price_ARR__c * Quantity)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SpotDraft Manual Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

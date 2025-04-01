@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Stage__c</fullName>
+    <label>Customer Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>new_customer</fullName>
+                <default>false</default>
+                <label>New Customer</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Adopting</fullName>
+                <default>false</default>
+                <label>Adopting</label>
+            </value>
+            <value>
+                <fullName>Auto-Pilot</fullName>
+                <default>false</default>
+                <label>Optimizing</label>
+            </value>
+            <value>
+                <fullName>on_hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Cancelling</fullName>
+                <default>false</default>
+                <label>Cancelling</label>
+            </value>
+            <value>
+                <fullName>Churned</fullName>
+                <default>false</default>
+                <label>Churned</label>
+            </value>
+            <value>
+                <fullName>Transferring to Bynder</fullName>
+                <default>false</default>
+                <label>Transferring to Bynder</label>
+            </value>
+            <value>
+                <fullName>Transferred</fullName>
+                <default>false</default>
+                <label>Transferred</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Usage_Required</fullName>
+    <active>true</active>
+    <description>BODEV-1451: At least one of the Account Usage field should be ticked when adding an Account to a hierarchy</description>
+    <errorConditionFormula>AND(
+  /* Exempted for Admin and Automated System */
+  NOT($Profile.Name = &quot;System Administrator&quot;),
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+
+  /* When adding an Account to a hierarchy */
+  ISCHANGED( ParentId ),
+  NOT(ISNULL( ParentId )),
+
+  /* None of Account Usage fields is ticked */
+  NOT( Account_Usage_Billing_Relationship__c ),
+  NOT( Account_Usage_Legal_Relationship__c ),
+  NOT( Account_Usage_Marketing_Relationship__c ),
+  NOT( Account_Usage_Portal_Relationship__c )
+)</errorConditionFormula>
+    <errorMessage>When adding an Account to a hierarchy, at least one of the Account Usage fields must be ticked to indicate its usage.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_CSM_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>BO-1794 : Used for commission calculation in SPIFF</description>
+    <label>Opp CSM Owner</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Opportunities6</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

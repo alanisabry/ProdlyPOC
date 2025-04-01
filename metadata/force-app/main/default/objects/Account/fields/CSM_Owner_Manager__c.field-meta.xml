@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Owner_Manager__c</fullName>
+    <description>BODEV-3803 Create CSM Owner Manager Field on Account</description>
+    <externalId>false</externalId>
+    <formula>CSM_Owner__r.Manager_Name__c</formula>
+    <label>CSM Owner Manager (Deprecated)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

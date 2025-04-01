@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_create_indexation_credit_memo</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISNEW(),
+    OR(
+        Original_Order__r.Indexation__c != $Label.Apply_or_waive_indexation ,
+        AND(TEXT(Original_Order__r.Status) != &quot;Activated&quot;,Original_Order__r.Indexation__c = $Label.Apply_or_waive_indexation)
+    ),
+    ISPICKVAL(Credit_Memo_Type__c,&quot;Indexation&quot;)
+)</errorConditionFormula>
+    <errorMessage>Credit memo for indexation cannot be created for the original order invoice period.</errorMessage>
+</ValidationRule>

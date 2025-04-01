@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Downsell</name>
+        <label>Assign - Downsell</label>
+        <locationX>1898</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Contraction__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmDownsell_Contraction</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Internal_Transfer</name>
+        <label>Assign - Internal Transfer</label>
+        <locationX>2690</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Internal_Transfer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarOpptyRecord.MRR_from_Products__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Internal_Transfer_Contraction</name>
+        <label>Assign - Internal Transfer Contraction</label>
+        <locationX>2426</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Internal_Transfer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BasePriceMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Contraction__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ContractionMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Internal_Transfer_Expansion</name>
+        <label>Assign - Internal Transfer Expansion</label>
+        <locationX>2162</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Internal_Transfer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BasePriceMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Expansion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ExpansionMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_New_Business_Cloud</name>
+        <label>Assign - New Business Cloud</label>
+        <locationX>1106</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.New_MRR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarOpptyRecord.MRR_from_Products__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_New_Business_Expansion</name>
+        <label>Assign - New Business - Expansion</label>
+        <locationX>1370</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Expansion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarOpptyRecord.MRR_from_Products__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Platform_Transfer</name>
+        <label>Assign - Platform Transfer</label>
+        <locationX>3482</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.New_MRR_Platform_transfer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarOpptyRecord.MRR_from_Products__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Platform_Transfer_Contraction</name>
+        <label>Assign - Platform Transfer Contraction</label>
+        <locationX>3218</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.New_MRR_Platform_transfer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BasePriceMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Contraction__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ContractionMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Platform_Transfer_Expansion</name>
+        <label>Assign - Platform Transfer Expansion</label>
+        <locationX>2954</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.New_MRR_Platform_transfer__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BasePriceMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Expansion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ExpansionMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Renewal</name>
+        <label>Assign - Renewal</label>
+        <locationX>842</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Renewal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>renewalMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Indexation_ARR_when_renewal_is_closed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>indexationARR</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Renewal_Contraction</name>
+        <label>Assign - Renewal Contraction</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Contraction__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ContractionMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Renewal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>renewalMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Renewal_Uplift_ARR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>renewalUpliftARR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Indexation_ARR_when_renewal_is_closed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>indexationARR</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Renewal_Expansion</name>
+        <label>Assign - Renewal Expansion</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Expansion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ExpansionMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Renewal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>renewalMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Renewal_Uplift_ARR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>renewalUpliftARR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Indexation_ARR_when_renewal_is_closed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>indexationARR</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Renewal_Uplift</name>
+        <label>Assign - Renewal Uplift</label>
+        <locationX>578</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Renewal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>renewalMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Renewal_Uplift_ARR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>renewalUpliftARR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Indexation_ARR_when_renewal_is_closed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>indexationARR</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Upsell</name>
+        <label>Assign - Upsell</label>
+        <locationX>1634</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>VarOpptyRecord.Expansion__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarOpptyRecord.MRR_from_Products__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Populate_MRR_Movement_Field</name>
+        <label>Populate MRR Movement Field?</label>
+        <locationX>2910</locationX>
+        <locationY>134</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Populate_MRR_Movement_Field</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>frmPopulateMRRField</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Which_movement_type</targetReference>
+            </connector>
+            <label>Yes - Populate MRR Movement Field</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_movement_type</name>
+        <label>Which movement type?</label>
+        <locationX>1898</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Update_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Renewal_Expansion</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Expansionx1</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Renewal_Expansion</targetReference>
+            </connector>
+            <label>Renewal Expansion</label>
+        </rules>
+        <rules>
+            <name>Renewal_Contraction</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Contractionx1</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Renewal_Contraction</targetReference>
+            </connector>
+            <label>Renewal Contraction</label>
+        </rules>
+        <rules>
+            <name>Renewal_Uplift</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>renewalUpliftARR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Renewal_Uplift</targetReference>
+            </connector>
+            <label>Renewal Uplift</label>
+        </rules>
+        <rules>
+            <name>Only_Renewal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>renewalMRR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Renewal</targetReference>
+            </connector>
+            <label>Only Renewal</label>
+        </rules>
+        <rules>
+            <name>New_Business_Cloud</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business-Enterprise Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_New_Business_Cloud</targetReference>
+            </connector>
+            <label>New Business - Cloud</label>
+        </rules>
+        <rules>
+            <name>New_Business_Expansion</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business - Expansion Portal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_New_Business_Expansion</targetReference>
+            </connector>
+            <label>New Business - Expansion</label>
+        </rules>
+        <rules>
+            <name>Upsell</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.MRR_from_Products__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Upsell</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Upsell</targetReference>
+            </connector>
+            <label>Upsell</label>
+        </rules>
+        <rules>
+            <name>Downsell</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.MRR_from_Products__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Upsell</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Downsell</targetReference>
+            </connector>
+            <label>Downsell</label>
+        </rules>
+        <rules>
+            <name>Internal_Transfer_Expansion</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business - Internal Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ExpansionMRR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>BasePriceARR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Internal_Transfer_Expansion</targetReference>
+            </connector>
+            <label>Internal Transfer - Expansion</label>
+        </rules>
+        <rules>
+            <name>Internal_Transfer_Contraction</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business - Internal Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ContractionMRR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>BasePriceARR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Internal_Transfer_Contraction</targetReference>
+            </connector>
+            <label>Internal Transfer - Contraction</label>
+        </rules>
+        <rules>
+            <name>Internal_Transfer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business - Internal Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Internal_Transfer</targetReference>
+            </connector>
+            <label>Internal Transfer</label>
+        </rules>
+        <rules>
+            <name>Platform_Transfer_Expansion</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business - Platform Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ExpansionMRR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>BasePriceARR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Platform_Transfer_Expansion</targetReference>
+            </connector>
+            <label>Platform Transfer - Expansion</label>
+        </rules>
+        <rules>
+            <name>Platform_Transfer_Contraction</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business - Platform Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ContractionMRR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>BasePriceARR</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Platform_Transfer_Contraction</targetReference>
+            </connector>
+            <label>Platform Transfer - Contraction</label>
+        </rules>
+        <rules>
+            <name>Platform_Transfer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarOpptyRecord.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business - Platform Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Platform_Transfer</targetReference>
+            </connector>
+            <label>Platform Transfer</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>BasePriceARR</name>
+        <dataType>Currency</dataType>
+        <expression>{!VarOpptyRecord.Original_Renewal_ARR__c}+
+{!VarOpptyRecord.Cumulative_Indexation_amount__c}+
+{!VarOpptyRecord.Upcoming_Indexation_amount__c}+
+{!VarOpptyRecord.Renewal_Uplift_amount__c}</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>BasePriceMRR</name>
+        <dataType>Currency</dataType>
+        <expression>{!BasePriceARR}/12</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>BasePriceWithDroppedDiscounts</name>
+        <dataType>Currency</dataType>
+        <expression>{!VarOpptyRecord.Initial_Default_Price_ARR__c}+
+{!VarOpptyRecord.Cumulative_Indexation_amount__c}+
+{!VarOpptyRecord.Upcoming_Indexation_amount__c}+
+{!VarOpptyRecord.Renewal_Uplift_amount__c}</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>ContractionMRR</name>
+        <dataType>Currency</dataType>
+        <expression>IF({!VarOpptyRecord.ARR__c} - ({!BasePriceARR} - {!VarOpptyRecord.Renewal_Uplift_amount__c} - {!UpcomingIndexationAfterThreshold})   &lt; 0, ({!BasePriceARR} - {!VarOpptyRecord.Renewal_Uplift_amount__c} - {!UpcomingIndexationAfterThreshold} - {!VarOpptyRecord.ARR__c})/12 ,0)</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>Contractionx1</name>
+        <dataType>Currency</dataType>
+        <expression>ROUND({!ContractionMRR},1)</expression>
+        <scale>1</scale>
+    </formulas>
+    <formulas>
+        <name>ExpansionMRR</name>
+        <dataType>Currency</dataType>
+        <expression>IF({!VarOpptyRecord.ARR__c} - {!BasePriceARR} &gt;= 0, 
+        ({!VarOpptyRecord.ARR__c} - {!BasePriceARR} )/12
+ ,0
+)</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>Expansionx1</name>
+        <dataType>Currency</dataType>
+        <expression>ROUND({!ExpansionMRR},1)</expression>
+        <scale>1</scale>
+    </formulas>
+    <formulas>
+        <name>frmDownsell_Contraction</name>
+        <dataType>Currency</dataType>
+        <expression>ABS( {!VarOpptyRecord.MRR_from_Products__c} )</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>frmPopulateMRRField</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(CONTAINS(LOWER({!VarOpptyRecord.Name}), &quot;one-time discount&quot;)),   
+NOT(CONTAINS(LOWER({!VarOpptyRecord.Name}), &quot;true up&quot;))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>indexationARR</name>
+        <dataType>Currency</dataType>
+        <expression>{!UpcomingIndexationOnRenewalMovements} +
+
+   IF(NOT(ISBLANK({!VarOpptyRecord.Indexation_reported_in_previous_contract__c})), 
+       {!VarOpptyRecord.Cumulative_Indexation_amount__c} - 
+       {!VarOpptyRecord.Indexation_reported_in_previous_contract__c},
+       {!VarOpptyRecord.Cumulative_Indexation_amount__c}
+    )</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <description>Initial ARR difference on renewal, Initial default price - Original renewal ARR</description>
+        <name>InitialARRDiffFromPrevContract</name>
+        <dataType>Currency</dataType>
+        <expression>{!VarOpptyRecord.Initial_Default_Price_ARR__c} - {!VarOpptyRecord.Original_Renewal_ARR__c}</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>renewalMRR</name>
+        <dataType>Currency</dataType>
+        <expression>IF(NOT(ISBLANK({!VarOpptyRecord.Indexation_reported_in_previous_contract__c})) &amp;&amp; {!VarOpptyRecord.Indexation_reported_in_previous_contract__c} &gt;0, {!VarOpptyRecord.Original_Renewal_Amount__c}+{!VarOpptyRecord.Indexation_reported_in_previous_contract__c}/12,
+{!VarOpptyRecord.Original_Renewal_Amount__c})</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>renewalUpliftARR</name>
+        <dataType>Currency</dataType>
+        <expression>/* If the base price is greater than ARR, discount is given on the opportunity
+1. If the discount is within the dropped discounts or there are no discounts dropped from previous contract, Renewal uplift amount is recognised as Renewal Uplift ARR
+*/
+IF({!BasePriceWithDroppedDiscounts} &gt; {!VarOpptyRecord.ARR__c},
+      IF({!BasePriceWithDroppedDiscounts} -  {!VarOpptyRecord.ARR__c} &lt; 
+               {!InitialARRDiffFromPrevContract} &amp;&amp; ROUND({!InitialARRDiffFromPrevContract},0) !=0,
+              {!VarOpptyRecord.Renewal_Uplift_amount__c},
+              IF({!BasePriceWithDroppedDiscounts} -  {!VarOpptyRecord.ARR__c} &lt; ({!InitialARRDiffFromPrevContract} +    
+                     {!VarOpptyRecord.Renewal_Uplift_amount__c}),
+                        {!VarOpptyRecord.Renewal_Uplift_amount__c}- ({!BasePriceWithDroppedDiscounts} -  
+                          {!VarOpptyRecord.ARR__c} -{!InitialARRDiffFromPrevContract} ),
+                         0
+                      )
+       
+         ),
+{!VarOpptyRecord.Renewal_Uplift_amount__c}
+)</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>UpcomingIndexationAfterThreshold</name>
+        <dataType>Currency</dataType>
+        <expression>/*
+ If the upcoming indexation is greater than 2%, the discount allowance is the amount over the threshold 2% otherwise 0
+*/
+IF(NOT(ISBLANK({!VarOpptyRecord.Applied_Upcoming_Indexation__c})) &amp;&amp; {!VarOpptyRecord.Applied_Upcoming_Indexation__c} &gt; 0.02,
+ {!VarOpptyRecord.Upcoming_Indexation_amount__c} - (({!VarOpptyRecord.Initial_Default_Price_ARR__c}+{!VarOpptyRecord.Cumulative_Indexation_amount__c})*0.02),
+0
+ )</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>UpcomingIndexationOnRenewalMovements</name>
+        <dataType>Currency</dataType>
+        <expression>IF({!Renewal_Contraction},
+{!VarOpptyRecord.Upcoming_Indexation_amount__c} - {!UpcomingIndexationAfterThreshold},
+IF({!Only_Renewal} &amp;&amp; ({!BasePriceWithDroppedDiscounts} - {!VarOpptyRecord.ARR__c}) &gt;  ({!VarOpptyRecord.Renewal_Uplift_amount__c}+{!InitialARRDiffFromPrevContract}),
+{!VarOpptyRecord.Upcoming_Indexation_amount__c} - ({!BasePriceWithDroppedDiscounts} - {!VarOpptyRecord.ARR__c} - ({!VarOpptyRecord.Renewal_Uplift_amount__c}+{!InitialARRDiffFromPrevContract})),
+{!VarOpptyRecord.Upcoming_Indexation_amount__c}
+)
+)</expression>
+        <scale>8</scale>
+    </formulas>
+    <interviewLabel>Opportunity [ALF] Invokded: Calculate Movement Type {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity [ALF] Invokded: Calculate Movement Type</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update - Opportunity</label>
+        <locationX>1898</locationX>
+        <locationY>542</locationY>
+        <inputReference>VarOpptyRecord</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>2784</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Populate_MRR_Movement_Field</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>VarOpptyRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Price_ARR__c</fullName>
+    <description>Returns Default Price of all MRR (recurring) products in ARR.</description>
+    <formula>Default_MRR_Price_from_Products__c * 12</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Default Price - ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Sandbox_URLs__c</fullName>
+    <description>BODEV-1076: Text field to capture URL(s) or Bynder sandbox(es) for the Partner.
+BODEV-1294: Field label renamed to Partner Bynder Sandbox URL as another field Partner Webdam Sandbox URL is created.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Text field to capture URL of Bynder sandbox for the Partner.</inlineHelpText>
+    <label>Partner Bynder Sandbox URL</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>New Business-Enterprise Cloud</fullName>
+        <default>false</default>
+        <label>New Business-Enterprise Cloud</label>
+    </standardValue>
+    <standardValue>
+        <fullName>New Business - Expansion Portal</fullName>
+        <default>false</default>
+        <label>New Business - Expansion Portal</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Existing Business-Renewal</fullName>
+        <default>false</default>
+        <label>Existing Business-Renewal</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Existing Business-Upsell</fullName>
+        <default>false</default>
+        <label>Existing Business-Upsell</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Existing Business - Internal Transfer</fullName>
+        <default>false</default>
+        <label>Existing Business - Internal Transfer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Existing Business-Professional Services</fullName>
+        <default>false</default>
+        <label>Existing Business-Professional Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Existing Business - Platform Transfer</fullName>
+        <default>false</default>
+        <label>Existing Business - Platform Transfer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Referral</fullName>
+        <default>false</default>
+        <label>Referral</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Topic_Title__c</fullName>
+    <description>The title of a topic on the community. This title can be changed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The title of a topic on the community. This title can be changed.</inlineHelpText>
+    <label>Topic Title</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

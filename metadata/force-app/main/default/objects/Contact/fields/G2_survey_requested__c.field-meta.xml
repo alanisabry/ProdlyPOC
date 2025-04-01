@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>G2_survey_requested__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Has Bynder requested the survey to be filled in by this contact?</description>
+    <inlineHelpText>Has Bynder requested the survey to be filled in by this contact?</inlineHelpText>
+    <label>G2 survey requested</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

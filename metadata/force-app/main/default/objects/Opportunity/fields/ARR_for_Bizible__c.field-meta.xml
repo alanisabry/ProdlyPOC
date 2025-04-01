@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ARR_for_Bizible__c</fullName>
+    <description>BODEV-4084 Integration User Marketing Access to Opportunity data &amp; ARR_for_Bizible__c Data
+Created this field to track ARR in EUR currency for Bizible reporting</description>
+    <externalId>false</externalId>
+    <label>ARR for Bizible (EUR)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

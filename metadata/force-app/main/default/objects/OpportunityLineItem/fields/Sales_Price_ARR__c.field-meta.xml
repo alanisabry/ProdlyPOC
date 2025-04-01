@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Price_ARR__c</fullName>
+    <description>BODEV-550: Users fill in their Sales Price in ARR to this field, which feeds into the standard field &quot;Sales price&quot;</description>
+    <label>Sales Price ARR/One-off</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Currency</type>
+</CustomField>

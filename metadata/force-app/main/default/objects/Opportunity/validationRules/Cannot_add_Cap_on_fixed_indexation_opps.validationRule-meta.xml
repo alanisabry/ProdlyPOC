@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Cap_on_fixed_indexation_opps</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Cap_Indexation_Rate__c) &amp;&amp;  Cap_Indexation_Rate__c !=null &amp;&amp;  ISPICKVAL(Account.Indexation_Type__c,&apos;Fixed&apos;)</errorConditionFormula>
+    <errorMessage>Cap Indexation Rate cannot be applied on contracts with fixed indexation type.</errorMessage>
+</ValidationRule>

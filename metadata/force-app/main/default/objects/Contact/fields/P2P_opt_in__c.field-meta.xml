@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>P2P_opt_in__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Bodev-4492 Add P2P interest opt-in field to Salesforce</description>
+    <inlineHelpText>Opt in for the Peer-to-Peer Mentorship Program</inlineHelpText>
+    <label>P2P opt-in</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

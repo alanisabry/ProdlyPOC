@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Delete_From_Package__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-363: Indicates whether an OLI belongs to package products that cannot be deleted or not. Used in validation rules for product configuration.
+Only System Admins have access.</description>
+    <label>Cannot Delete From Package</label>
+    <type>Checkbox</type>
+</CustomField>

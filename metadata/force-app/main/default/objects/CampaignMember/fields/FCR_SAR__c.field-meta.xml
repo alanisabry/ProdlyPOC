@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_SAR__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>wd field
+Set if this is a sales accepted response (sync from lead/contact status)</description>
+    <label>SAL</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Task</fullName>
+    <availability>online</availability>
+    <description>ACTIVE. Creates a Task record.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Log a Task</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/00T/e?title=Call&amp;who_id={!Account.Id} 
+&amp;what_id={!Opportunity.Id} 
+&amp;followup=1 
+&amp;retURL=%2F{!Opportunity.Id}</url>
+</WebLink>

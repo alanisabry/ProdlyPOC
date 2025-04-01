@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solutions_Present__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field to start collecting information on whether a solutions consultant&apos;s presence on an activity affects results</description>
+    <inlineHelpText>Was a solutions consultant present on the activity?</inlineHelpText>
+    <label>Solutions Present?</label>
+    <type>Checkbox</type>
+</CustomField>

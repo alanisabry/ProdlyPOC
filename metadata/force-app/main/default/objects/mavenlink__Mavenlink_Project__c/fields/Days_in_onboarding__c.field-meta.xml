@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_in_onboarding__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR(ISPICKVAL(mavenlink__Status__c, &quot;Completed&quot;), ISPICKVAL(mavenlink__Status__c, &quot;Closed&quot;)), PROJECT_SIGN_OFF_DATE__c - KICK_OFF_DATE__c, TODAY() - KICK_OFF_DATE__c)</formula>
+    <label>Days in Onboarding</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

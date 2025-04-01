@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>mavenlink__Project_BD_Created__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Will be automatically checked by the Mavenlink integration when a Business Development Project has been created.  Only when the Business Development project option is enabled in the configuration.</description>
+    <inlineHelpText>Will be automatically checked by the Mavenlink integration when a Business Development Project has been created.  Only when the Business Development project option is enabled in the configuration.</inlineHelpText>
+    <label>BD Project Created</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

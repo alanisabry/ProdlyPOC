@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Billing_Structure</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Status),
+NOT(ISCHANGED(Order_Netsuite_ID__c)),
+ISPICKVAL(Account.Invoice_Billing_Structure__c,&quot;&quot;),
+EffectiveDate = Opportunity.Startdate_contract__c)</errorConditionFormula>
+    <errorMessage>Please fill out the &apos;Invoice Billing Structure&apos; field on the account level.</errorMessage>
+</ValidationRule>

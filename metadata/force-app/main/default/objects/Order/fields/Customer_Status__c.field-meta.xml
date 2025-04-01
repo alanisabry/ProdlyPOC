@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Status__c</fullName>
+    <description>1 = New 2 = Existing. Corresponds to Netsuite &quot;Customer Status&quot; list values</description>
+    <externalId>false</externalId>
+    <formula>CASE(Text(Type),
+&quot;New Business-Enterprise Cloud&quot;,1,
+&quot;New Business - Expansion Portal&quot;,2,
+&quot;Existing Business-Renewal&quot;,2,
+&quot;Existing Business-Upsell&quot;,2,
+&quot;Existing Business - Internal Transfer&quot;,2,
+&quot;Existing Business - Platform Transfer&quot;, 2,
+&quot;Existing Business-Professional Services&quot;,2,2)</formula>
+    <label>Customer Status</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

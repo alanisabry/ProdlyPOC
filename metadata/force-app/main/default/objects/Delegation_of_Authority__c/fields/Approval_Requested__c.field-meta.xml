@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Requested__c</fullName>
+    <description>BODEV-76: Timestamp when DoA approval request was submitted</description>
+    <inlineHelpText>Timestamp when DoA approval request was submitted</inlineHelpText>
+    <label>Approval Requested</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

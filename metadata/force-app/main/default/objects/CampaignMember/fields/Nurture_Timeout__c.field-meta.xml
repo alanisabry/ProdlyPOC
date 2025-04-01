@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nurture_Timeout__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Set to true when the lead/contact was set to nurture time out and therefore this response was not processed by the system.</description>
+    <inlineHelpText>Set to true when the lead/contact was set to nurture time out and therefore this response was not processed by the system.</inlineHelpText>
+    <label>Nurture Timeout</label>
+    <type>Checkbox</type>
+</CustomField>

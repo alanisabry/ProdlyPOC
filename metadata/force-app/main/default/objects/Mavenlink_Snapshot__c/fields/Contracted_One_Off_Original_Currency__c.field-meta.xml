@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracted_One_Off_Original_Currency__c</fullName>
+    <description>Value of the original contract in the original contract&apos;s currency.</description>
+    <externalId>false</externalId>
+    <formula>Contracted_One_Off__c * Conversion_Rate__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Value of the original contract in the original contract&apos;s currency.</inlineHelpText>
+    <label>Contracted One Off - Original Currency</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

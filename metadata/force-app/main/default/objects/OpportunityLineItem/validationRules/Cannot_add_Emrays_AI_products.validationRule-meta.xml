@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Emrays_AI_products</fullName>
+    <active>true</active>
+    <description>Users cannot add Emrays AI subscription and Emrays AI one-off products to New Business or Upsell Opportunities.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;System Administrator&quot;),
+ISNEW(),
+Quantity &gt;0,
+OR(
+TEXT(Opportunity.Type) = &quot;New Business-Enterprise Cloud&quot;,
+TEXT(Opportunity.Type) = &quot;Existing Business-Upsell&quot;,
+TEXT(Opportunity.Type) = &quot;New Business - Expansion Portal&quot;
+),
+OR(
+Product2.Product_ID_18_digits__c = &apos;01t3g000000ShP6AAK&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t3g000000ShPBAA0&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot add Emrays AI subscription and Emrays AI one-off products to New business or Upsell opportunities.</errorMessage>
+</ValidationRule>

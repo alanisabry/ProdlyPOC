@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Default_Price_ARR__c</fullName>
+    <description>Sum of Total Initial Default Price ARR/One-off where Pricing Factors to be Applied? is TRUE</description>
+    <label>Initial Default Price ARR</label>
+    <summarizedField>QuoteLineItem.Total_Initial_Default_Price_ARR_One_off__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.Pricing_Factors_to_be_Applied__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_ID_Blank_Reason__c</fullName>
+    <description>BODEV-3271: Used to capture the reason for blank Portal ID on the account. Managed by RevOps team.</description>
+    <label>Portal ID Blank Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Sharing with Parent</fullName>
+                <default>false</default>
+                <label>Sharing with Parent</label>
+            </value>
+            <value>
+                <fullName>Transferred customer</fullName>
+                <default>false</default>
+                <label>Transferred customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

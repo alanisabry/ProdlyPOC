@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IT_Contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>For example a contact that is in charge of maintaining the domain, certificates, integrations etc. but not necessarily a support contact.
+GS NPS: No
+Newsletter: No</description>
+    <inlineHelpText>For example a contact that is in charge of maintaining the domain, certificates, integrations etc. but not necessarily a support contact.
+GS NPS: No
+Newsletter: No</inlineHelpText>
+    <label>IT Contact</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllActiveCampaigns</fullName>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>CAMPAIGN.START_DATE</columns>
+    <columns>CAMPAIGN.END_DATE</columns>
+    <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CAMPAIGN.CREATED_DATE</columns>
+    <columns>PARENT_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Target_Region__c</field>
+        <operation>equals</operation>
+        <value>APAC</value>
+    </filters>
+    <label>All Active Campaigns</label>
+</ListView>

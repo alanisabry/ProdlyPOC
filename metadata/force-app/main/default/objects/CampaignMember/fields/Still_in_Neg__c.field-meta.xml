@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Still_in_Neg__c</fullName>
+    <description>wd field
+Used by FCI</description>
+    <formula>CFCR_Current_Stage_in_Funnel__c = &quot;9. Neg&quot;</formula>
+    <inlineHelpText>Checked if Current Stage in Funnel is 9. Neg</inlineHelpText>
+    <label>Still in Neg</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_ARR__c</fullName>
+    <description>BODEV-4163 Calculates the Average Contract Value with the Length Ratio (Only New Business &amp; Upsells) and ARR</description>
+    <formula>Contract_Length_Ratio__c  *  ARR_manual__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

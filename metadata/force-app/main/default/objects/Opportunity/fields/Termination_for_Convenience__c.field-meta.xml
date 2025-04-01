@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Termination_for_Convenience__c</fullName>
+    <description>Should this opportunity be treated with special care e.g. opt out clause - BODEV-189</description>
+    <inlineHelpText>Should this opportunity be treated with special care e.g. opt out clause</inlineHelpText>
+    <label>Termination for Convenience</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Yes, after 1st Year</fullName>
+                <default>false</default>
+                <label>Yes, after 1st Year</label>
+            </value>
+            <value>
+                <fullName>Yes, after 2nd Year</fullName>
+                <default>false</default>
+                <label>Yes, after 2nd Year</label>
+            </value>
+            <value>
+                <fullName>Yes, after 3rd Year</fullName>
+                <default>false</default>
+                <label>Yes, after 3rd Year</label>
+            </value>
+            <value>
+                <fullName>Yes, other</fullName>
+                <default>false</default>
+                <label>Yes, other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

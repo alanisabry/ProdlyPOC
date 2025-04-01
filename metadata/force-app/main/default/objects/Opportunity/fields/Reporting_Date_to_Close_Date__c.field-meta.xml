@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Date_to_Close_Date__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This is needed to be able to manually identify the Expansion movements on certain Renewals that were recognised on Close Date rather than Reporting date</description>
+    <label>Reporting Date to Close Date</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

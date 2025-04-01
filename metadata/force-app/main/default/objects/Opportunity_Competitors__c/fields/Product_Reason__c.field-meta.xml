@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Reason__c</fullName>
+    <description>Product loss reason is required when Product Capabilities is set as the loss reason.</description>
+    <inlineHelpText>Product loss reason is required when Product Capabilities is set as the loss reason.</inlineHelpText>
+    <label>Product Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Reason__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DAM</fullName>
+                <default>false</default>
+                <label>DAM</label>
+            </value>
+            <value>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+                <label>Workflow</label>
+            </value>
+            <value>
+                <fullName>Digital Brand Templates</fullName>
+                <default>false</default>
+                <label>Digital Brand Templates</label>
+            </value>
+            <value>
+                <fullName>Print Brand Templates</fullName>
+                <default>false</default>
+                <label>Print Brand Templates</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines</fullName>
+                <default>false</default>
+                <label>Brand Guidelines</label>
+            </value>
+            <value>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+                <label>Analytics</label>
+            </value>
+            <value>
+                <fullName>API/Integrations</fullName>
+                <default>false</default>
+                <label>API/Integrations</label>
+            </value>
+            <value>
+                <fullName>File Type Support</fullName>
+                <default>false</default>
+                <label>File Type Support</label>
+            </value>
+            <value>
+                <fullName>Permissions</fullName>
+                <default>false</default>
+                <label>Permissions</label>
+            </value>
+            <value>
+                <fullName>AI Capabilities</fullName>
+                <default>false</default>
+                <label>AI Capabilities</label>
+            </value>
+            <value>
+                <fullName>Search</fullName>
+                <default>false</default>
+                <label>Search</label>
+            </value>
+            <value>
+                <fullName>Configurability</fullName>
+                <default>false</default>
+                <label>Configurability</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+                <label>Compliance</label>
+            </value>
+            <value>
+                <fullName>Language support</fullName>
+                <default>false</default>
+                <label>Language support</label>
+            </value>
+            <value>
+                <fullName>Asset tracking</fullName>
+                <default>false</default>
+                <label>Asset tracking</label>
+            </value>
+            <value>
+                <fullName>Usability</fullName>
+                <default>false</default>
+                <label>Usability</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>DAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Workflow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Digital Brand Templates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Print Brand Templates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Brand Guidelines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>API/Integrations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>File Type Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Permissions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>AI Capabilities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Search</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Configurability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Language support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Asset tracking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Usability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Capabilities within DAM</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

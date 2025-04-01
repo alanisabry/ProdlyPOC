@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_size_del__c</fullName>
+    <label>Company size from form (Deprecated)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mid-Market</fullName>
+                <default>false</default>
+                <label>Mid-Market</label>
+            </value>
+            <value>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+                <label>Enterprise</label>
+            </value>
+            <value>
+                <fullName>SMB</fullName>
+                <default>false</default>
+                <label>SMB</label>
+            </value>
+            <value>
+                <fullName>Large Enterprise</fullName>
+                <default>false</default>
+                <label>Large Enterprise</label>
+            </value>
+            <value>
+                <fullName>Fortune 500</fullName>
+                <default>false</default>
+                <label>Fortune 500</label>
+            </value>
+            <value>
+                <fullName>Local government</fullName>
+                <default>false</default>
+                <label>Local government</label>
+            </value>
+            <value>
+                <fullName>State government</fullName>
+                <default>false</default>
+                <label>State government</label>
+            </value>
+            <value>
+                <fullName>Federal government</fullName>
+                <default>false</default>
+                <label>Federal government</label>
+            </value>
+            <value>
+                <fullName>Non profit</fullName>
+                <default>false</default>
+                <label>Non profit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

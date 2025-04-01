@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SCC__c</fullName>
+    <description>Legal Field - Standard Contractual Clauses</description>
+    <inlineHelpText>Legal Field - Standard Contractual Clauses</inlineHelpText>
+    <label>SCC</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>Yes, v. 2021</fullName>
+                <default>false</default>
+                <label>Yes, v. 2021</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Check back later - set reminder</fullName>
+                <default>false</default>
+                <label>Check back later - set reminder</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

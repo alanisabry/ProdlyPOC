@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>The contact information for the support team for the integration. This should include the name, email address, and phone number of the support contact.</inlineHelpText>
+    <label>Support Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Integrations (Support Contact)</relationshipLabel>
+    <relationshipName>Integrations1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

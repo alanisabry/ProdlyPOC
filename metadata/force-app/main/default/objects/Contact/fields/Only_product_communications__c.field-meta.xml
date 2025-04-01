@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_product_communications__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-3472 : Used to identify the users opted for only product communications.</description>
+    <label>Only product communications</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

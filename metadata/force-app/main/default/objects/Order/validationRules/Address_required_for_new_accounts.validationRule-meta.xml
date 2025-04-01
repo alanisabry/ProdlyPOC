@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_required_for_new_accounts</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Status,&quot;Activated&quot;),
+ISBLANK(Account_Netsuite_ID__c),
+OR(ISBLANK(Billing_Street__c),
+ISBLANK(Billing_City__c)))</errorConditionFormula>
+    <errorMessage>Please enter the billing address on the account level.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason__c</fullName>
+    <description>Please indicate why the opportunity was lost to the competitor.</description>
+    <inlineHelpText>Please indicate why the opportunity was lost to the competitor.</inlineHelpText>
+    <label>Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agency Lost</fullName>
+                <default>false</default>
+                <label>Agency Lost</label>
+            </value>
+            <value>
+                <fullName>Analyst Feedback</fullName>
+                <default>false</default>
+                <label>Analyst Feedback</label>
+            </value>
+            <value>
+                <fullName>Blocker - Never got to Power/Key Stakeholders</fullName>
+                <default>false</default>
+                <label>Blocker - Never got to Power/Key Stakeholders</label>
+            </value>
+            <value>
+                <fullName>Cheaper Price/Better Offer</fullName>
+                <default>false</default>
+                <label>Cheaper Price/Better Offer</label>
+            </value>
+            <value>
+                <fullName>Contract Terms</fullName>
+                <default>false</default>
+                <label>Contract Terms</label>
+            </value>
+            <value>
+                <fullName>Customer References</fullName>
+                <default>false</default>
+                <label>Customer References</label>
+            </value>
+            <value>
+                <fullName>Existing Relationship with Competitor</fullName>
+                <default>false</default>
+                <label>Existing Relationship with Competitor</label>
+            </value>
+            <value>
+                <fullName>Integrations Support</fullName>
+                <default>false</default>
+                <label>Integrations Support</label>
+            </value>
+            <value>
+                <fullName>Legal/Payment Terms Blocker</fullName>
+                <default>false</default>
+                <label>Legal/Payment Terms Blocker</label>
+            </value>
+            <value>
+                <fullName>Other (explain in &quot;Detail&quot; field)</fullName>
+                <default>false</default>
+                <label>Other (explain in &quot;Detail&quot; field)</label>
+            </value>
+            <value>
+                <fullName>Product Capabilities within DAM</fullName>
+                <default>false</default>
+                <label>Product Capabilities within DAM</label>
+            </value>
+            <value>
+                <fullName>Service Offering</fullName>
+                <default>false</default>
+                <label>Service Offering</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_new_business_opportunities__c</fullName>
+    <description>Number of Open New Business Opportunities Including Expansion Portal Opps</description>
+    <inlineHelpText>Number of Open New Business Opportunities Including Expansion Portal Opps</inlineHelpText>
+    <label># of new business open opps</label>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>notEqual</operation>
+        <value>Closed Won, Closed Lost</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.Type</field>
+        <operation>equals</operation>
+        <value>New Business-Enterprise Cloud, New Business-Enterprise Cloud, New Business - Expansion Portal</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

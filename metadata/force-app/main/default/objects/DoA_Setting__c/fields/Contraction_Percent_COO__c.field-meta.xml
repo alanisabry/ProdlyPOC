@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contraction_Percent_COO__c</fullName>
+    <defaultValue>10</defaultValue>
+    <description>BODEV-673: Contraction % agains the total ARR below which Sales Manager or COO can approve.</description>
+    <label>Contraction Percent: COO</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

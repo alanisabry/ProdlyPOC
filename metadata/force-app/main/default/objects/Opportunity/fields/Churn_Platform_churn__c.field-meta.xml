@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Churn_Platform_churn__c</fullName>
+    <description>Platform churn counted when customer changes from one platform to the other (eg Webdam to Bynder), but does not leave the Bynder Group.</description>
+    <inlineHelpText>Platform churn counted when customer changes from one platform to the other (eg Webdam to Bynder), but does not leave the Bynder Group.</inlineHelpText>
+    <label>Churn: Platform Transfer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

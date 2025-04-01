@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_cannot_use_Forecast_Level_Omit</fullName>
+    <active>true</active>
+    <description>BO-1581: AEs should not be able to use &quot;Omit&quot; in Forecast Level field.</description>
+    <errorConditionFormula>AND(
+  CONTAINS( $Profile.Name, &quot;Sales&quot; ),
+  ISCHANGED( Forecast_Level__c ),
+  ISPICKVAL( Forecast_Level__c, &quot;Omit&quot;)
+)</errorConditionFormula>
+    <errorMessage>Omit cannot be used for Forecast Level. Please select other option.</errorMessage>
+</ValidationRule>

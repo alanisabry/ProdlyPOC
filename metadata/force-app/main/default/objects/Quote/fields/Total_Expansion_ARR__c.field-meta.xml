@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Expansion_ARR__c</fullName>
+    <description>Used to show the total expansion for commission calculation (excl. cumulative indexation)</description>
+    <formula>Renewal_Upsell_ARR__c +  Upcoming_Indexation_amount__c +  Renewal_Uplift_amount__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Expansion ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

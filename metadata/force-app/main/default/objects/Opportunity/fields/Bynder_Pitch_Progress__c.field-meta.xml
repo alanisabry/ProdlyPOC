@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bynder_Pitch_Progress__c</fullName>
+    <description>Reason why Bynder Pitch didn&apos;t succeed.</description>
+    <label>Bynder Pitch - Progress</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Committed to Competitor</fullName>
+                <default>false</default>
+                <label>Committed to Competitor</label>
+            </value>
+            <value>
+                <fullName>Homegrown Tool</fullName>
+                <default>false</default>
+                <label>Homegrown Tool</label>
+            </value>
+            <value>
+                <fullName>Lack of Features</fullName>
+                <default>false</default>
+                <label>Lack of Features</label>
+            </value>
+            <value>
+                <fullName>Merger</fullName>
+                <default>false</default>
+                <label>Merger</label>
+            </value>
+            <value>
+                <fullName>Webdam/Bynder Feature Parity</fullName>
+                <default>false</default>
+                <label>Webdam/Bynder Feature Parity</label>
+            </value>
+            <value>
+                <fullName>Negative Customer Experience</fullName>
+                <default>false</default>
+                <label>Negative Customer Experience</label>
+            </value>
+            <value>
+                <fullName>No Response</fullName>
+                <default>false</default>
+                <label>No Response</label>
+            </value>
+            <value>
+                <fullName>Not interested</fullName>
+                <default>false</default>
+                <label>Not interested</label>
+            </value>
+            <value>
+                <fullName>Pitched too late</fullName>
+                <default>false</default>
+                <label>Pitched too late</label>
+            </value>
+            <value>
+                <fullName>Price too High</fullName>
+                <default>false</default>
+                <label>Price too High</label>
+            </value>
+            <value>
+                <fullName>Price too Low</fullName>
+                <default>false</default>
+                <label>Price too Low</label>
+            </value>
+            <value>
+                <fullName>Refused Demo</fullName>
+                <default>false</default>
+                <label>Refused Demo</label>
+            </value>
+            <value>
+                <fullName>Remain on Webdam Platform</fullName>
+                <default>false</default>
+                <label>Remain on Webdam Platform</label>
+            </value>
+            <value>
+                <fullName>Other Loss Reason</fullName>
+                <default>false</default>
+                <label>Other Loss Reason</label>
+            </value>
+            <value>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <label>Competitor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

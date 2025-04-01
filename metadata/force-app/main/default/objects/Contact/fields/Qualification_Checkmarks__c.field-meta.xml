@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualification_Checkmarks__c</fullName>
+    <description>How many of the checkboxes in the &quot;BDR Qualification&quot; section are checked.</description>
+    <externalId>false</externalId>
+    <formula>IF(  Customer_owned_pain_points_surrounding_D__c , 1, 0) + 
+IF( On_Going_Project_Looking_At_DAM__c , 1, 0) + 
+IF( Budget_For_DAM_Project__c , 1, 0) + 
+IF( Timeline_For_Project_Implementation__c , 1, 0) + 
+IF( Compelling_Event__c , 1, 0) + 
+IF( Ideal_Customer_Profile__c , 1, 0)</formula>
+    <label>Qualification Checkmarks</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Primary_Deal__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>BODEV-4163 Populates the Upsell Oppotunities</description>
+    <label>Related Primary Deal (Step-Up)</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.Type</field>
+            <operation>equals</operation>
+            <value>Existing Business-Upsell</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Opportunities (Related Primary Deal (Step-Up))</relationshipLabel>
+    <relationshipName>Opportunities4</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

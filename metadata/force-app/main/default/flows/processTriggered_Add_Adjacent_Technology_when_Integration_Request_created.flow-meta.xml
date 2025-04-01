@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assigns field values for the new Adjacent Technology record.</description>
+        <name>New_Adjacent_Technology</name>
+        <label>New Adjacent Technology</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <assignmentItems>
+            <assignToReference>rec_AdjacentTechnology.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>txt_AccountID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>rec_AdjacentTechnology.Adjacent_Technology__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>txt_IntegrationID</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Adjacent_Technology</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Checks whether the Adjacent technology was found.</description>
+        <name>Adjacent_Technology_found</name>
+        <label>Adjacent Technology found?</label>
+        <locationX>182</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>rec_AdjacentTechnology</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Adjacent_Technology</targetReference>
+            </connector>
+            <label>Not found</label>
+        </rules>
+    </decisions>
+    <description>Automatically adds a new Adjacent Technology to the account in case an Integration request was created.</description>
+    <interviewLabel>processTriggered: Add Adjacent Technology when Integration Request created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>processTriggered: Add Adjacent Technology when Integration Request created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Add_Adjacent_Technology</name>
+        <label>Add Adjacent Technology</label>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
+        <inputReference>rec_AdjacentTechnology</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>Finds the Adjacent Technology on the account.</description>
+        <name>Adjacent_Technology</name>
+        <label>Adjacent Technology</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Adjacent_Technology_found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>txt_AccountID</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Adjacent_Technology__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>txt_IntegrationID</elementReference>
+            </value>
+        </filters>
+        <object>Adjacent_Technology__c</object>
+        <outputReference>rec_AdjacentTechnology</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Adjacent_Technology</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>rec_AdjacentTechnology</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Adjacent_Technology__c</objectType>
+    </variables>
+    <variables>
+        <description>Contains the ID of the Account, pushed from the process.</description>
+        <name>txt_AccountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Contains the ID of the Integration for the request, populated by the triggering process.</description>
+        <name>txt_IntegrationID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

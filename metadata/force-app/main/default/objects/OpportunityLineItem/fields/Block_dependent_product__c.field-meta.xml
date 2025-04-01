@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_dependent_product__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-363: indicates that the product doesn&apos;t require dependent products to be added. Used in automations that add dependent products.</description>
+    <label>Block dependent product?</label>
+    <type>Checkbox</type>
+</CustomField>

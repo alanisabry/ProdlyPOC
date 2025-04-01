@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Termination_of_Convenience_Detail_Needed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISCHANGED(Termination_for_Convenience__c) , NOT( ISPICKVAL(Termination_for_Convenience__c, &quot;No&quot;) ) , ISBLANK(Termination_for_Convenience_Details__c))</errorConditionFormula>
+    <errorDisplayField>Termination_for_Convenience_Details__c</errorDisplayField>
+    <errorMessage>Please provide the mandatory details of the Termination for Convenience, including the notice period, to confirm the notice date.</errorMessage>
+</ValidationRule>

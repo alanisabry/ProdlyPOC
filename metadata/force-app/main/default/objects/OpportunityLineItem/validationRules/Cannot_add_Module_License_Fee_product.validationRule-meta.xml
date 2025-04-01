@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Module_License_Fee_product</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISNEW(),
+Quantity &gt;0,
+NOT($User.Role_Name__c =&quot;Finance&quot;),
+TEXT(Opportunity.Type) != &quot;Existing Business-Renewal&quot;,
+Product2.Product_ID_18_digits__c = &apos;01t0P000002EFLCQA4&apos;
+)</errorConditionFormula>
+    <errorMessage>&quot;Module License Fee and Add-Ons&quot; product cannot be added to the opportunities.</errorMessage>
+</ValidationRule>

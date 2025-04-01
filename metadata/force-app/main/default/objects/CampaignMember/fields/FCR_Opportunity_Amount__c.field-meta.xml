@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Opportunity_Amount__c</fullName>
+    <description>wd field</description>
+    <formula>if( FCR_Dated_Opportunity_Amount__c !=0, FCR_Dated_Opportunity_Amount__c, FCR_Opportunity__r.Amount)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opportunity Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

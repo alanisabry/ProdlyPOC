@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MK_Customer_Fit_Score__c</fullName>
+    <description>MadKudu Customer Fit score (from 0 to 100)
+Predicts if this account looks like a potential customer based on the analysis of past customers and their firmo, demo, techno... enrichment.
+Scoring model controllable on MadKudu&apos;s platform app.madkudu.com</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Score from 0 to 100. Prioritize the ones with the highest score as they should be the best fit for your product</inlineHelpText>
+    <label>MK Customer Fit Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

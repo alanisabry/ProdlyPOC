@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Size_Grouped__c</fullName>
+    <description>GK: changed Micro resulting in Small, previously was Micro, BODEV-4034</description>
+    <externalId>false</externalId>
+    <formula>CASE( Company_Size_New__c ,
+&quot;Micro&quot;, &quot;Small&quot;, 
+&quot;SMB&quot;, &quot;Small&quot;,
+&quot;Mid-Market&quot;, &quot;Small&quot;,
+&quot;MM - Small&quot;, &quot;Small&quot;,
+&quot;MM - Large&quot;, &quot;Large&quot;,
+&quot;Enterprise&quot;, &quot;Large&quot;,
+&quot;Strategic&quot;, &quot;Large&quot;,
+&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Company Size Grouped</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

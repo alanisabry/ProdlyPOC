@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_since_Project_Sign_Off__c</fullName>
+    <description>BO-1299: Used to count the total number of days that have passed since the Full Project sign off date</description>
+    <externalId>false</externalId>
+    <formula>TODAY() - PROJECT_SIGN_OFF_DATE__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Days since Project Sign Off</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

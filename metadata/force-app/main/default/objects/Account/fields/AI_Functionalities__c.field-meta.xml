@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AI_Functionalities__c</fullName>
+    <description>BODEV-2792 New SF Field(s) AWS Rekognition &amp; DPA Legal
+BO-2125: Name change requested from “AI Functionalities“ to “Face Recognition Opt-in/out“</description>
+    <inlineHelpText>Select opt-in: when customer provides written statement confirming they would like to use Face Recognition. Select opt-out: when customer expresses they would not like to use Face Recognition. (Email and checkbox sufficient).</inlineHelpText>
+    <label>Face Recognition Opt-in/out</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Opt-in</fullName>
+                <default>false</default>
+                <label>Opt-in</label>
+            </value>
+            <value>
+                <fullName>Opt-out</fullName>
+                <default>false</default>
+                <label>Opt-out</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

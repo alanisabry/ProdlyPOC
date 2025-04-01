@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Reason_RFP</fullName>
+    <active>true</active>
+    <description>If the Risk Reason on Renewal Opportunities is RFP, than the RFP Received needs to be populated</description>
+    <errorConditionFormula>ISPICKVAL(Risk_Reasons__c , &apos;RFP&apos;)  &amp;&amp;  
+ISPICKVAL( RFP_received__c, &apos;&apos;)&amp;&amp; 
+ISPICKVAL(Type, &apos;Existing Business-Renewal&apos;)</errorConditionFormula>
+    <errorDisplayField>RFP_received__c</errorDisplayField>
+    <errorMessage>The risk reason is set to RFP. Please populate the RFP Received field.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_KPI_Movement_Gap__c</fullName>
+    <description>BODEV-2117: Formula to indicate the gap b/w Opp ARR and Sum of all the Sales KPI movement fields.</description>
+    <formula>IF(
+  IsClosed = FALSE ||
+  ( ISPICKVAL(StageName, &quot;Closed Lost&quot;) &amp;&amp; NOT(ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;)) ),
+  0,
+
+  ROUND(
+    ARR_manual__c -
+    (
+      New_ARR__c
+      + Expansion_ARR__c
+      - Contraction_ARR__c
+      + Churn_ARR__c
+      + Renewal_ARR__c
+      + IF( ISPICKVAL(StageName, &quot;Closed Lost&quot;), -1, 1) * Internal_Transfer_ARR__c
+      + New_ARR_Platform_transfer__c
+      + Churn_ARR_Platform_Transfer__c
+      + Indexation_ARR_when_renewal_is_closed__c 
+      + Renewal_Uplift_ARR__c
+    ),
+    0
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales KPI Movement Gap</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

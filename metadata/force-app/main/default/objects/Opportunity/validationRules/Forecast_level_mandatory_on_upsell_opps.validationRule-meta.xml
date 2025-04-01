@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_level_mandatory_on_upsell_opps</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Sales_Office__c,&quot;Amsterdam&quot;),
+ISPICKVAL(Forecast_Level__c,&quot;&quot;),
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)), 
+NOT($Profile.Name = &quot;Automated Process&quot;),
+CreatedDate&gt;Now()-0.0007, 
+OR(
+ISPICKVAL(Type,&quot;Existing Business-Professional Services &quot;),
+ISPICKVAL(Type,&quot;Existing Business-Upsell&quot;)),
+NOT(OR(
+ISNEW(),
+ISPICKVAL(StageName,&quot;Closed Lost&quot;),
+ISPICKVAL(StageName,&quot;Closed Won&quot;),
+CreatedDate&gt;Now()-0.0007 )))</errorConditionFormula>
+    <errorDisplayField>Forecast_Level__c</errorDisplayField>
+    <errorMessage>Please select a forecast level.</errorMessage>
+</ValidationRule>

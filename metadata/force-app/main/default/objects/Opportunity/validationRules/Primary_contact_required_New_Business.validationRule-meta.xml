@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_contact_required_New_Business</fullName>
+    <active>true</active>
+    <description>Primary contact on account is required to send the Bynder supplier form to customers at signature stage of New business opportunities. You can fill Primary Contact field from Single Pane of Glass button or “Billing Info” section of the Account.</description>
+    <errorConditionFormula>AND(ISCHANGED(StageName),
+    ISPICKVAL(StageName,&apos;Signature Stage&apos;),
+    ISBLANK(Account.Primary_Contact__c),
+    OR(ISPICKVAL(Type,&apos;New Business-Enterprise Cloud&apos;),ISPICKVAL(Type,&apos;New Business - Expansion Portal&apos;))
+)</errorConditionFormula>
+    <errorMessage>Primary contact on account is required to send the Bynder supplier form to customers at signature stage of New business opportunities.</errorMessage>
+</ValidationRule>

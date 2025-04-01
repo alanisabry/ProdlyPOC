@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllProducts</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>For_Contract_Renewals__c</columns>
+    <columns>Product_Type__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Product_Category__c</columns>
+    <columns>PRODUCT2.DESCRIPTION</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>Exclude_from_New_Business__c</columns>
+    <columns>Exclude_from_Upsells__c</columns>
+    <columns>Netsuite_New_Business_Item_Internal_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Products</label>
+</ListView>

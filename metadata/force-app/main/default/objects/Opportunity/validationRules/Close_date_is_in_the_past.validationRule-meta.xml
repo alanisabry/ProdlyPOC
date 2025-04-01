@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_date_is_in_the_past</fullName>
+    <active>true</active>
+    <description>The Close Date must be a future date.</description>
+    <errorConditionFormula>AND (
+CloseDate &lt; TODAY(),
+Close_Date_in_the_past__c = False,
+NOT(ISCHANGED(Close_Date_in_the_past__c)),
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+NOT(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT($User.DoA_Approver__c = TRUE),
+OR(ISPICKVAL(Type, &quot;New Business-Enterprise Cloud&quot;), ISPICKVAL(Type, &quot;New Business - Expansion Portal&quot;)),
+OR (
+ISPICKVAL(PRIORVALUE(StageName),&quot;Qualified&quot;),
+ISPICKVAL(PRIORVALUE(StageName),&quot;Demo&quot;),
+ISPICKVAL(PRIORVALUE(StageName),&quot;Proposal&quot;),
+ISPICKVAL(PRIORVALUE(StageName),&quot;VOC&quot;),
+ISPICKVAL(PRIORVALUE(StageName),&quot;Legal Review&quot;),
+ISPICKVAL(PRIORVALUE(StageName),&quot;Signature Stage&quot;),
+ISPICKVAL(StageName,&quot;Qualified&quot;),
+ISPICKVAL(StageName,&quot;Demo&quot;),
+ISPICKVAL(StageName,&quot;Proposal&quot;),
+ISPICKVAL(StageName,&quot;VOC&quot;),
+ISPICKVAL(StageName,&quot;Legal Review&quot;),
+ISPICKVAL(StageName,&quot;Signature Stage&quot;)
+))</errorConditionFormula>
+    <errorMessage>The close date cannot be in the past.</errorMessage>
+</ValidationRule>

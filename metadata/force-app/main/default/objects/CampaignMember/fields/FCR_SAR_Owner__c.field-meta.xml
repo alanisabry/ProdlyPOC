@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_SAR_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>wd field
+Owner at the time when the record status mapping to SAL is set on the lead, contact or opportunity.</description>
+    <label>SAL Owner</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>SAR_Campaign_Members</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

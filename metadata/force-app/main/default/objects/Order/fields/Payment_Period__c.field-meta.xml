@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Period__c</fullName>
+    <description>The Netsuite internal ID of the payment period. Can be found here: 
+
+https://system.eu2.netsuite.com/app/common/otherlists/accountingotherlists.nl?tname=terms&amp;sortcol=&amp;sortdir=ASC&amp;csv=HTML&amp;OfficeXML=F&amp;pdf=&amp;size=1000&amp;showall=F&amp;_eml_nkey_=243375169#</description>
+    <externalId>false</externalId>
+    <formula>CASE(Opportunity.Payment_Period__c,
+&quot;Due on receipt&quot;,4,
+&quot;15 days&quot;,25,
+&quot;30 days&quot;,2,
+&quot;45 days&quot;,7,
+&quot;60 days&quot;,3,
+&quot;75 days&quot;,5,
+&quot;90 days&quot;,8,
+&quot;120 days&quot;,9,
+&quot;150 days&quot;,33,
+&quot;180 days&quot;,32,
+&quot;30 Days ME&quot;, 29,
+&quot;60 Days ME&quot;, 30,
+&quot;90 Days ME&quot;, 31,0)</formula>
+    <inlineHelpText>The Netsuite internal ID of the payment period.</inlineHelpText>
+    <label>Payment Period</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

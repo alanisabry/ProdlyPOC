@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Bynder_B_V</name>
+        <label>Assign - Bynder B.V.</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varAccountRecord.Governing_Law__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Law of the Netherlands</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Bynder_FZ_LLC</name>
+        <label>Assign - Bynder FZ LLC</label>
+        <locationX>842</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varAccountRecord.Governing_Law__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Laws of the DIFC</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Bynder_LLC</name>
+        <label>Assign - Bynder LLC</label>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varAccountRecord.Governing_Law__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Laws of the State of Delaware</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Bynder_LTD</name>
+        <label>Assign - Bynder LTD.</label>
+        <locationX>578</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varAccountRecord.Governing_Law__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Laws of England and Wales</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Decision_Check_Subsidiary_Governing_Law</name>
+        <label>Decision - Check Subsidiary &amp; Governing Law</label>
+        <locationX>578</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Bynder_B_V</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varAccountRecord.Governing_Law__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Law of the Netherlands</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varAccountRecord.Subsidiary_lookup__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>a5U0d0000015ldV</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Bynder_B_V</targetReference>
+            </connector>
+            <label>Bynder B.V.</label>
+        </rules>
+        <rules>
+            <name>Bynder_LLC</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varAccountRecord.Governing_Law__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Law of the State of Delaware</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varAccountRecord.Subsidiary_lookup__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>a5U0d000000DhqN</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Bynder_LLC</targetReference>
+            </connector>
+            <label>Bynder LLC</label>
+        </rules>
+        <rules>
+            <name>Bynder_Ltd</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varAccountRecord.Governing_Law__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Laws of England and Wales</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varAccountRecord.Subsidiary_lookup__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>a5U0d000000DhqS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Bynder_LTD</targetReference>
+            </connector>
+            <label>Bynder Ltd.</label>
+        </rules>
+        <rules>
+            <name>Bynder_FZ_LLC</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varAccountRecord.Governing_Law__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Laws of the DIFC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varAccountRecord.Subsidiary_lookup__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>a5U0d000000DhqX</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Bynder_FZ_LLC</targetReference>
+            </connector>
+            <label>Bynder FZ-LLC</label>
+        </rules>
+    </decisions>
+    <description>Invoked from Account [ASF] Handler</description>
+    <interviewLabel>Account [ALF] Invoked: Set Governing Law {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account [ALF] Invoked: Set Governing Law</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update - Account</label>
+        <locationX>578</locationX>
+        <locationY>494</locationY>
+        <inputReference>varAccountRecord</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decision_Check_Subsidiary_Governing_Law</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>varAccountRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+</Flow>

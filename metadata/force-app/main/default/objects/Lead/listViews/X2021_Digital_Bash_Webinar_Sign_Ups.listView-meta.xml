@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2021_Digital_Bash_Webinar_Sign_Ups</fullName>
+    <columns>Lead_ID_18_digits__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>Company_Size_New__c</columns>
+    <columns>Industry_Group__c</columns>
+    <columns>Industry_ICP__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.COUNTRY_CODE</columns>
+    <columns>Lead_write_up__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>2021 Digital Bash Webinar - Sign Ups</label>
+</ListView>

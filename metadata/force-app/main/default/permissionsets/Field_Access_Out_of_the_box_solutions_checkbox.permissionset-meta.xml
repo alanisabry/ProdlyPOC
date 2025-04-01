@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission to edit the Out of the box solutions checkbox on opportunity.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Customisation_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Out_of_the_box_Solution__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Field Access: Out of the box solutions checkbox</label>
+    <license>Salesforce</license>
+</PermissionSet>

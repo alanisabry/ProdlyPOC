@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Content_Management_Solution_Other</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(Contains($Profile.Name,&quot;System Administrator&quot;)), 
+INCLUDES(Content_Management_Solution_CMS__c , &quot;Other&quot;), 
+ISBLANK(Content_Management_Solution__c ))</errorConditionFormula>
+    <errorMessage>If &quot;Other&quot; is selected in &apos;Content Management Solution&apos; field, please specify the software that is being used in the &apos;CMS Other&apos; field.</errorMessage>
+</ValidationRule>

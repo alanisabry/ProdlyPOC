@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Main_Objective__c</fullName>
+    <description>Indicates whether at leas one main objective entered or not.</description>
+    <externalId>false</externalId>
+    <formula>IF( 
+MainObjectiveEntered__c = FALSE,
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;), 
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Green: Okay
+Red: Please enter at least one main objective.</inlineHelpText>
+    <label>Check - Main Objective</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

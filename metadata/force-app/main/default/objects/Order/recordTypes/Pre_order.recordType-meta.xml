@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_order</fullName>
+    <active>true</active>
+    <description>For pre-orders that are created on open opportunities. Won&apos;t be synced to NetSuite.</description>
+    <label>Pre-order</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Credit_Memo_Reason__c</picklist>
+        <values>
+            <fullName>Billing Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billing Cycle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billing Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Churn Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compensation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Churned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discount In Opportunity Not Applied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Invoicing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Distress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Bynder Subsidiary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Customer Subsidiary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal Pricing Negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Tax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Split One-Off and Recurring Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Term</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Credit_Memo_Type__c</picklist>
+        <values>
+            <fullName>Administrative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indexation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Status__c</picklist>
+        <values>
+            <fullName>Billed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fully Applied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid In Full</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Approval</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voided</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Activated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Pre-Order</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Waive_Indexation_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved - Credit Memo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Waive_Indexation_Reason__c</picklist>
+        <values>
+            <fullName>Billing Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billing Cycle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billing Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Churn Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compensation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Churned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discount In Opportunity Not Applied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Invoicing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Distress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Bynder Subsidiary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Customer Subsidiary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal Pricing Negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Tax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Split One-Off and Recurring Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Term</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Waive_Indexation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

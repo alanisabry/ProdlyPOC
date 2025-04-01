@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BDR_cannot_update_sales_qualifier</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(NOT(ISCHANGED(Status__c)),
+AND(ISCHANGED(Status__c),
+NOT(ISPICKVAL(Status__c,&apos;Sales Qualified&apos;))
+)
+),
+ISCHANGED(Sales_Qualifier__c),
+$User.Active_BDR__c
+)</errorConditionFormula>
+    <errorMessage>Sales qualifier cannot be updated, please reach out to your manager.</errorMessage>
+</ValidationRule>

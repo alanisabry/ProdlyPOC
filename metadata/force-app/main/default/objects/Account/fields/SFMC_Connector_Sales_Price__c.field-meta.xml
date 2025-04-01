@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFMC_Connector_Sales_Price__c</fullName>
+    <description>BODEV-81: Field to capture current Sales Price of SFMC Connector. This needs to be stored in Account level so that system can identify if Sales Price fo SFMC Connector is changed on renewal, in which case we need to adjust existing order when Bynder owes 20% of connector for this customer. Updated by Flow &quot;Create SFMC Connector Order Case&quot;.</description>
+    <label>SFMC Connector Sales Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>6</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

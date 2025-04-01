@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_before_without_opportunity__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This call happened before the related Opportunity was created or there is no related Opportunity. BODEV-4040</description>
+    <label>Created before or without opportunity</label>
+    <type>Checkbox</type>
+</CustomField>

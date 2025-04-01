@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_city</fullName>
+    <active>false</active>
+    <description>User city must be Amsterdam, Boston, London, Dubai, San Mateo</description>
+    <errorConditionFormula>AND(
+IsActive=TRUE,
+NOT(
+OR(
+City=&quot;&quot;,
+City=&quot;Amsterdam&quot;,
+City=&quot;Boston&quot;,
+City=&quot;London&quot;,
+City=&quot;Dubai&quot;,
+City=&quot;San Mateo&quot;)))</errorConditionFormula>
+    <errorMessage>City must be Amsterdam, Boston, London, Dubai or San Mateo</errorMessage>
+</ValidationRule>

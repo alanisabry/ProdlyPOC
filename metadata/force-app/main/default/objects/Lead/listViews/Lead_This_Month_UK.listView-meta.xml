@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_This_Month_UK</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 and (6 or 7 or 8)</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>SMB_ENTERPRISE__c</columns>
+    <columns>Source__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Orbit User,SMB Orbit</value>
+    </filters>
+    <filters>
+        <field>Marketing_Source__c</field>
+        <operation>notEqual</operation>
+        <value>Outbound</value>
+    </filters>
+    <filters>
+        <field>LEAD.LEAD_SOURCE</field>
+        <operation>equals</operation>
+        <value>Contact Form,Demo,Demo Request,Drift,Quote Request,Trial,Trial Sign-up</value>
+    </filters>
+    <filters>
+        <field>LEAD.LEAD_SOURCE</field>
+        <operation>equals</operation>
+        <value>Webinar request,Webinar Sign-up,Web Download,Whitepaper Download,Webdam Microsite Demo</value>
+    </filters>
+    <filters>
+        <field>LEAD.LEAD_SOURCE</field>
+        <operation>equals</operation>
+        <value>Webdam Microsite Contact,Drift</value>
+    </filters>
+    <label>Lead This Month - UK</label>
+</ListView>

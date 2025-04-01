@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Customisation_Required__c</fullName>
+    <description>To show what customisation is required for a SOW</description>
+    <inlineHelpText>What customisation is required for the SOW/Opportunity?</inlineHelpText>
+    <label>Product Customisation Required</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

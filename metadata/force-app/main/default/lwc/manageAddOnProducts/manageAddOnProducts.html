@@ -1,0 +1,93 @@
+<template>
+        <lightning-modal-header label={headerLabel}></lightning-modal-header>
+        <lightning-modal-body>          
+            <div class="slds-card__body pbBody cart-body">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col"></th>
+                            <th class="long-cell" scope="col">
+                                <div class="slds-truncate" title={productInfo.label}>{productInfo.label}</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title={defaultPriceLabel}>{defaultPriceLabel}</div>
+                            </th>
+                            
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title={salesPriceLabel}>{salesPriceLabel}</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title={lineItemInfo.fields.Quantity.label}>{lineItemInfo.fields.Quantity.label}</div>
+                            </th>
+            
+                        </tr>
+                    </thead>
+                    <tbody lwc:if={loadingCart}>
+                        <tr if:true={noLineItems}>
+                            <td colspan="8" class="zero-state slds-text-color_destructive slds-text-align_center">
+                                All the additional limit products are added to the opportunity. You can update the products from the selected products list.
+                            </td>
+                        </tr>
+                        <tr for:each={addOnsCart} for:item="lineItem" key={lineItem.index} class={lineItem.classes}>
+                            <td>
+                            <a href="javascript:void(0);" lwc:if={lineItem.isAdded} data-index={lineItem.index} title="Undo Add" onclick={undoAddClick}>Undo</a>
+                            <a href="javascript:void(0);" lwc:else data-index={lineItem.index} title="Add" onclick={handleAddClick}>Add</a>
+                            
+                           </td>
+                            <td data-label={productInfo.label}>
+                                <div class="slds-truncate wrapped">{lineItem.PricebookEntry.Product2.Product_Name__c}</div>
+                            </td>
+                            <td data-label={defaultPriceLabel}>
+                    
+                                <div class="slds-truncate">
+                                    <p>
+                                        <lightning-formatted-number
+                                            value={lineItem.form.Default_Price_ARR__c}
+                                            format-style="currency"
+                                            currency-code={triggeringRecord.currencyIsoCode}
+                                            currency-display-as="code"
+                                        ></lightning-formatted-number>
+                                    </p>
+        
+                                </div>
+                            </td>
+                            <td data-label={salesPriceLabel}>
+                    
+                                <div class="slds-truncate">
+                                    <p>
+                                        <lightning-formatted-number
+                                            value={lineItem.form.Sales_Price_ARR__c}
+                                            format-style="currency"
+                                            currency-code={triggeringRecord.currencyIsoCode}
+                                            currency-display-as="code"
+                                        ></lightning-formatted-number>
+                                    </p>
+        
+                                </div>
+                            </td>
+                            <td data-label={lineItemInfo.fields.Quantity.label}>
+                                <lightning-input
+                                    type="number"
+                                    name="Quantity"
+                                    data-index={lineItem.index}
+                                    value={lineItem.form.Quantity}
+                                    label=""
+                                    variant="label-hidden"
+                                    step="0.001"
+                                    disabled={lineItem.isAdded}
+                                    onblur={onFieldBlur}
+                                    required
+                                ></lightning-input>
+                            </td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+            <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+            <lightning-button label="Save" onclick={handleSave}></lightning-button>
+        </lightning-modal-footer>
+</template>

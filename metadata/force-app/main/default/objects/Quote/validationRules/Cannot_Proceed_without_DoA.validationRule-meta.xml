@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Proceed_without_DoA</fullName>
+    <active>true</active>
+    <description>Validation rule to prevent Quote from moving beyond Draft without DoA approved.</description>
+    <errorConditionFormula>AND(
+/* Exempt System/Admin profiels */
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+
+
+/* Exempt OEM deals */
+NOT(AND(
+NOT(ISBLANK(Opportunity.OEM__c)),
+OR( Opportunity.OEM__r.Name = &quot;Workfront&quot;, Opportunity.OEM__r.Name = &quot;Acquia&quot; )
+)),
+
+/* Block moving to Legal Review or later Stage without DoA fianlized */
+ISCHANGED(Status),
+OR(
+ISPICKVAL(Status, &quot;Price Finalised&quot;),
+ISPICKVAL(Status, &quot;Signed&quot;)
+),
+NOT(ISPICKVAL(DoA_Approval_Status__c, &quot;Approved&quot;)),
+NOT(ISPICKVAL(DoA_Approval_Status__c, &quot;Not Required&quot;))
+)</errorConditionFormula>
+    <errorMessage>You need to finalize the prices and terms in order to proceed beyond Draft stage. Please use &quot;Finalize Prices &amp; Terms&quot; feature.</errorMessage>
+</ValidationRule>

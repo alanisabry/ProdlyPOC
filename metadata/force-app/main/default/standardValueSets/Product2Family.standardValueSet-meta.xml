@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>(Seat pricing) User License</fullName>
+        <default>false</default>
+        <label>(Seat pricing) User License</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Add- Ons</fullName>
+        <default>false</default>
+        <label>Add- Ons</label>
+    </standardValue>
+    <standardValue>
+        <fullName>AI Enrichment</fullName>
+        <default>false</default>
+        <label>AI Enrichment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Analytics</fullName>
+        <default>false</default>
+        <label>Analytics</label>
+    </standardValue>
+    <standardValue>
+        <fullName>API</fullName>
+        <default>false</default>
+        <label>API</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Authentication</fullName>
+        <default>false</default>
+        <label>Authentication</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Brand Guidelines</fullName>
+        <default>false</default>
+        <label>Brand Guidelines</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Branding</fullName>
+        <default>false</default>
+        <label>Branding</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Brand Store</fullName>
+        <default>false</default>
+        <label>Brand Store</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Connected Ecosystem</fullName>
+        <default>false</default>
+        <label>Connected Ecosystem</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Connected Ecosystem downstream</fullName>
+        <default>false</default>
+        <label>Connected Ecosystem downstream</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Connected Ecosystem upstream</fullName>
+        <default>false</default>
+        <label>Connected Ecosystem upstream</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Connected Ecosystem various</fullName>
+        <default>false</default>
+        <label>Connected Ecosystem various</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Creation</fullName>
+        <default>false</default>
+        <label>Content Creation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Distribution</fullName>
+        <default>false</default>
+        <label>Content Distribution</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Experience</fullName>
+        <default>false</default>
+        <label>Content Experience</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Hub</fullName>
+        <default>false</default>
+        <label>Content Hub</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Operations</fullName>
+        <default>false</default>
+        <label>Content Operations</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Workflow</fullName>
+        <default>false</default>
+        <label>Content Workflow</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Core</fullName>
+        <default>false</default>
+        <label>Core</label>
+    </standardValue>
+    <standardValue>
+        <fullName>DAM</fullName>
+        <default>false</default>
+        <label>DAM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Desktop integration</fullName>
+        <default>false</default>
+        <label>Desktop integration</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discount</fullName>
+        <default>false</default>
+        <label>Discount</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Dynamic Asset Transformation</fullName>
+        <default>false</default>
+        <label>Dynamic Asset Transformation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GatherContent</fullName>
+        <default>false</default>
+        <label>GatherContent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Import</fullName>
+        <default>false</default>
+        <label>Import</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Infrastructure</fullName>
+        <default>false</default>
+        <label>Infrastructure</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Modules</fullName>
+        <default>false</default>
+        <label>Modules</label>
+    </standardValue>
+    <standardValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>None</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Onboarding</fullName>
+        <default>false</default>
+        <label>Onboarding</label>
+    </standardValue>
+    <standardValue>
+        <fullName>One-off configuration and set-up fees</fullName>
+        <default>false</default>
+        <label>One-off configuration and set-up fees</label>
+    </standardValue>
+    <standardValue>
+        <fullName>One-off success plan</fullName>
+        <default>false</default>
+        <label>One-off success plan</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PaaS</fullName>
+        <default>false</default>
+        <label>PaaS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partner Services</fullName>
+        <default>false</default>
+        <label>Partner Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Payment fee</fullName>
+        <default>false</default>
+        <label>Payment fee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>POD template creation</fullName>
+        <default>false</default>
+        <label>POD template creation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Portal Adoption</fullName>
+        <default>false</default>
+        <label>Portal Adoption</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Portal features</fullName>
+        <default>false</default>
+        <label>Portal features</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Product Information Management</fullName>
+        <default>false</default>
+        <label>Product Information Management</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <label>Professional Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sandbox</fullName>
+        <default>false</default>
+        <label>Sandbox</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Storage</fullName>
+        <default>false</default>
+        <label>Storage</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Storage, Traffic and Backup</fullName>
+        <default>false</default>
+        <label>Storage, Traffic and Backup</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Studio</fullName>
+        <default>false</default>
+        <label>Studio</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Success Package</fullName>
+        <default>false</default>
+        <label>Success Package</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Traffic</fullName>
+        <default>false</default>
+        <label>Traffic</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Users</fullName>
+        <default>false</default>
+        <label>Users</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Workflow</fullName>
+        <default>false</default>
+        <label>Workflow</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sum_of_quantities__c</fullName>
+    <description>Indicates the quantity of all products. Used for the validation rule to prohibit editing orders that have been reviewed.</description>
+    <label>Sum of quantities</label>
+    <summarizedField>OrderItem.Quantity</summarizedField>
+    <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

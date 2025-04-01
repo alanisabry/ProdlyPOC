@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Churn_Lost_Renewals</fullName>
+    <active>true</active>
+    <description>On Lost renewal opportunities only Churn field can be filled in.</description>
+    <errorConditionFormula>AND(
+CloseDate &gt;= DATE(2020,3,9),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;),
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+OR(
+AND(
+ISCHANGED(Churn__c),
+NOT(ISBLANK(Churn__c)),
+NOT(ROUND(Churn__c, 2) = ROUND(IF(NOT(ISNULL(Indexation_reported_in_previous_contract__c)),(Original_Renewal_ARR__c+Indexation_reported_in_previous_contract__c)/12,Original_Renewal_Amount__c), 2))),
+AND(
+ISCHANGED(Churn_Platform_churn__c),
+NOT(ISBLANK(Churn_Platform_churn__c)),
+NOT(ROUND(Churn_Platform_churn__c, 2) = ROUND(IF(NOT(ISNULL(Indexation_reported_in_previous_contract__c)),(Original_Renewal_ARR__c+Indexation_reported_in_previous_contract__c)/12,Original_Renewal_Amount__c), 2))),
+AND(
+ISCHANGED(Internal_Transfer__c),
+NOT(ISBLANK(Internal_Transfer__c)),
+NOT(ROUND(Internal_Transfer__c, 2) = ROUND(IF(NOT(ISNULL(Indexation_reported_in_previous_contract__c)),(-(Original_Renewal_ARR__c+Indexation_reported_in_previous_contract__c)/12),-Original_Renewal_Amount__c), 2))),
+NOT(ISBLANK(Expansion__c)),
+NOT(ISBLANK(Contraction__c)),
+NOT(ISBLANK(Renewal__c)),
+NOT(ISBLANK(New_MRR__c)),
+NOT(ISBLANK(New_MRR_Platform_transfer__c))
+)
+)</errorConditionFormula>
+    <errorDisplayField>Churn__c</errorDisplayField>
+    <errorMessage>For lost renewals, only the Churn field should be filled and it should match MRR from products.</errorMessage>
+</ValidationRule>

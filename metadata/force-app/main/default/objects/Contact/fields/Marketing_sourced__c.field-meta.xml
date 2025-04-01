@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_sourced__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Lead that results out of a campaign that was sponsored by marketing, e.g. events, global campaigns, website visitors</description>
+    <label>Marketing sourced</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

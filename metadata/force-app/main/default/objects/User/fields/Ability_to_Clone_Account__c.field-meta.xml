@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ability_to_Clone_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-1599: Checkbox to control the visibility of &quot;Clone Account&quot; button on Account Lightning Record Page.</description>
+    <inlineHelpText>Tick this checkbox to enable Clone Account for non-admin profile users.</inlineHelpText>
+    <label>Ability to Clone Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

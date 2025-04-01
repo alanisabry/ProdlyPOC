@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_MRR_Platform_transfer__c</fullName>
+    <description>New MRR counted when customer changes from one platform to the other (eg Webdam to Bynder), but does not leave the Bynder Group.</description>
+    <inlineHelpText>New MRR counted when customer changes from one platform to the other (eg Webdam to Bynder), but does not leave the Bynder Group.</inlineHelpText>
+    <label>New MRR: Platform transfer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

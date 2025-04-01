@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>mavenlink__Mavenlink_Create_Projects_No__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When checked Mavenlink Projects will NOT be automatically created for this Opportunity at any Opportunity Stage.</description>
+    <inlineHelpText>When checked Mavenlink Projects will NOT be automatically created for this Opportunity at any Opportunity Stage.</inlineHelpText>
+    <label>Do Not Create Project(s)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

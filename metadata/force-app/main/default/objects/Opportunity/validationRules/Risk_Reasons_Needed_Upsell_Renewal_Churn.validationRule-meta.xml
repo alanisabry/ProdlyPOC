@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Reasons_Needed_Upsell_Renewal_Churn</fullName>
+    <active>true</active>
+    <description>If Forecast level is &quot;At risk&quot; or &quot;Churn&quot;, the Risk Reasons field should be filled in.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;Automated Process&quot;),
+ISCHANGED(Forecast_Level__c),
+OR(ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;), ISPICKVAL(Type, &quot;Existing Business-Upsell&quot;)),
+OR(ISPICKVAL(Forecast_Level__c, &quot;At risk&quot;), ISPICKVAL(Forecast_Level__c, &quot;At risk - conservative&quot;), ISPICKVAL(Forecast_Level__c, &quot;Churn&quot;)),
+ISBLANK(TEXT(Risk_Reasons__c))
+)</errorConditionFormula>
+    <errorDisplayField>Risk_Reasons__c</errorDisplayField>
+    <errorMessage>Please fill in &quot;Risk Reasons&quot; for the selected forecast level.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Notice_Email_Address__c</fullName>
+    <description>Email address for customer notices.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Email address for customer notices.</inlineHelpText>
+    <label>Customer Notice Email Address</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

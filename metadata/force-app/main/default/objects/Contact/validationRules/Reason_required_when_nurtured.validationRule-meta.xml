@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_required_when_nurtured</fullName>
+    <active>true</active>
+    <description>Required field if Contact status = Sales 3:Nurture</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;System Administrator&quot;),
+ISCHANGED(Status__c),
+TEXT(Status__c) = &quot;Sales 3: Nurture&quot;,
+ISPICKVAL(Reason_Nurtured__c, &quot;&quot;),
+DATEVALUE( CreatedDate )&gt; DATE(2018,11,15),
+NOT(ISNEW()),
+NOT(ISCHANGED( Completed_Activities__c )),
+NOT(ISCHANGED(timestamp_first_meeting_webinar__c)),
+NOT(ISCHANGED(OwnerId)),
+NOT(ISCHANGED(Timestamp_Contact_Owner_Change__c)),
+NOT(ISCHANGED(CRMGAC__Total_Closed_Tasks__c)),
+NOT(ISCHANGED(CRMGAC__Total_Event_Duration__c)),
+NOT(ISCHANGED(CRMGAC__Total_Open_Tasks__c)),
+NOT(ISCHANGED(CRMGAC__Total_Past_Due_Tasks__c)),
+NOT(ISCHANGED(CRMGAC__Total_Tasks__c)),
+NOT(ISCHANGED(CRMGAC__Completed_Events__c)),
+NOT(CreatedDate&gt;Now()-0.0007),
+NOT(ISCHANGED(OwnerId)),
+NOT(ISCHANGED(First_Contact_Owner__c))
+)</errorConditionFormula>
+    <errorDisplayField>Reason_Nurtured__c</errorDisplayField>
+    <errorMessage>Please complete the Reason Nurtured field.</errorMessage>
+</ValidationRule>

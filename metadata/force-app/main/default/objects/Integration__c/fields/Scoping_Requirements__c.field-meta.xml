@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scoping_Requirements__c</fullName>
+    <inlineHelpText>The scoping and requirements for the integration. This should include a list of the features that the integration needs to support, as well as any limitations or constraints.</inlineHelpText>
+    <label>Scoping/Requirements</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

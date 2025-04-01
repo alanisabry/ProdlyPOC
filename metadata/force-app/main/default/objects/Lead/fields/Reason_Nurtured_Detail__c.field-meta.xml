@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Nurtured_Detail__c</fullName>
+    <description>Further detail on why this lead is not ready to be converted to an opportunity (yet).</description>
+    <inlineHelpText>Further detail on why this lead is not ready to be converted to an opportunity (yet).</inlineHelpText>
+    <label>Reason Nurtured Detail</label>
+    <length>500</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Html</type>
+    <visibleLines>15</visibleLines>
+</CustomField>

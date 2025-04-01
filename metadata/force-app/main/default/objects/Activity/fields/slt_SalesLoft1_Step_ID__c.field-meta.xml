@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>slt_SalesLoft1_Step_ID__c</fullName>
+    <description>BODEV-2926 New custom field created to map data from Salesloft</description>
+    <externalId>false</externalId>
+    <label>SalesLoft Step ID</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CFCR_Current_Stage_in_Funnel__c</fullName>
+    <description>wd field
+indicates if a response is active in the funnel or not.</description>
+    <externalId>false</externalId>
+    <formula>IF ( 
+OR( 
+ISPICKVAL(FCR_Response_Status__c, &quot;&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Referred to Partner&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Convert to Prospect&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Convert to Contact&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Resolved - No Action Required&quot; ),
+ISPICKVAL(FCR_Response_Status__c, &quot;Resolved - Merged&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Unqualified&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Recycled&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Resolved - Already Engaged&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Unmapped&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Resolved - Opportunity Lost&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Resolved - Opportunity Won&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Unmapped&quot; ),
+ISPICKVAL(FCR_Response_Status__c, &quot;Customer&quot; ), 
+ISPICKVAL(FCR_Response_Status__c, &quot;Not a Response&quot;)),&quot;Not Active in Funnel&quot; , 
+
+IF( Neg__c = TRUE, &quot;9. Neg&quot;,
+IF( VOC__c = TRUE, &quot;8. VOC&quot;,
+IF( Prop__c = TRUE, &quot;7. Prop&quot;,
+IF( Demo__c, &quot;6. Demo&quot;,
+IF( FCR_SQR__c = TRUE, &quot;5. Opp&quot;, 
+IF( FCRM_FCR_SAL__c = TRUE, &quot;4. SAL&quot;, 
+IF( FCR_SAR__c = TRUE, &quot;3. SQL&quot;, 
+IF( FCR_QR__c = TRUE, &quot;2. MQL&quot;, 
+IF( FCR_Inquiry_Target__c = TRUE, &quot;1. Inquiry&quot;, 
+&quot;&quot;) 
+)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>indicates if a response is active in the funnel or not.</inlineHelpText>
+    <label>Current Stage in Funnel</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

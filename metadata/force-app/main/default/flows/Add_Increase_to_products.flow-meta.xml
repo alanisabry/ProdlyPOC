@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assign new price to the loop OLI.</description>
+        <name>Assign_New_price</name>
+        <label>Assign New price</label>
+        <locationX>481</locationX>
+        <locationY>48</locationY>
+        <assignmentItems>
+            <assignToReference>LoopOLI.UnitPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PriceIncreased</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Price</targetReference>
+        </connector>
+    </assignments>
+    <formulas>
+        <name>PriceIncreased</name>
+        <dataType>Currency</dataType>
+        <expression>{!LoopOLI.Original_Price__c} + ({!LoopOLI.Original_Price__c} * {!Increase_Percentage}/100)</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Add Increase to products {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Add Increase to products</label>
+    <loops>
+        <description>Loop over each product in the list, where LoopOLI variable represent a product on each iteration.</description>
+        <name>OLIs_1_by_1</name>
+        <label>OLIs 1 by 1</label>
+        <locationX>308</locationX>
+        <locationY>50</locationY>
+        <assignNextValueToReference>LoopOLI</assignNextValueToReference>
+        <collectionReference>OLIs</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_New_price</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Get all opportunity products from the opportunity where the field &quot;Apply Overall Increase&quot; was changed.</description>
+        <name>OLIs</name>
+        <label>OLIs</label>
+        <locationX>169</locationX>
+        <locationY>48</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>OLIs_1_by_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>curOpportunity</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>UnitPrice</queriedFields>
+        <queriedFields>Original_Price__c</queriedFields>
+        <queriedFields>Quantity</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update loop OLI, which updates the corresponding opportunity product on the opportunity.</description>
+        <name>Update_Price</name>
+        <label>Update Price</label>
+        <locationX>480</locationX>
+        <locationY>193</locationY>
+        <connector>
+            <targetReference>OLIs_1_by_1</targetReference>
+        </connector>
+        <inputReference>LoopOLI</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>49</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>OLIs</targetReference>
+        </connector>
+    </start>
+    <status>Obsolete</status>
+    <variables>
+        <name>curOpportunity</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Increase_Percentage</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>LoopOLI</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Content__c</fullName>
+    <label>Activity Content</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Contact_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Discovery Call</fullName>
+                <default>false</default>
+                <label>Discovery Call</label>
+            </value>
+            <value>
+                <fullName>IT/Security Review</fullName>
+                <default>false</default>
+                <label>IT/Security Review</label>
+            </value>
+            <value>
+                <fullName>Pricing Discussion</fullName>
+                <default>false</default>
+                <label>Pricing Discussion</label>
+            </value>
+            <value>
+                <fullName>Solutions Scope</fullName>
+                <default>false</default>
+                <label>Solutions Scope</label>
+            </value>
+            <value>
+                <fullName>Proposal Review</fullName>
+                <default>false</default>
+                <label>Proposal Review</label>
+            </value>
+            <value>
+                <fullName>Procurement / Negotiations</fullName>
+                <default>false</default>
+                <label>Procurement / Negotiations</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>--None--</fullName>
+                <default>false</default>
+                <label>--None--</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Online Meeting</controllingFieldValue>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <controllingFieldValue>Face-to-Face Meeting</controllingFieldValue>
+            <valueName>Discovery Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Online Meeting</controllingFieldValue>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <controllingFieldValue>Face-to-Face Meeting</controllingFieldValue>
+            <valueName>IT/Security Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Online Meeting</controllingFieldValue>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <controllingFieldValue>Face-to-Face Meeting</controllingFieldValue>
+            <valueName>Pricing Discussion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Online Meeting</controllingFieldValue>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <controllingFieldValue>Face-to-Face Meeting</controllingFieldValue>
+            <valueName>Solutions Scope</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Online Meeting</controllingFieldValue>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <controllingFieldValue>Face-to-Face Meeting</controllingFieldValue>
+            <valueName>Proposal Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Online Meeting</controllingFieldValue>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <controllingFieldValue>Face-to-Face Meeting</controllingFieldValue>
+            <valueName>Procurement / Negotiations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Online Meeting</controllingFieldValue>
+            <controllingFieldValue>Call</controllingFieldValue>
+            <controllingFieldValue>Face-to-Face Meeting</controllingFieldValue>
+            <valueName>Legal</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

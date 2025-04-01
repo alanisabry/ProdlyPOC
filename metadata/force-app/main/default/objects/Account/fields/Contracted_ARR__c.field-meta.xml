@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracted_ARR__c</fullName>
+    <description>Used to store the sum of ARR on active contracts and open renewals.</description>
+    <label>Contracted ARR</label>
+    <summarizedField>Opportunity.ARR_Reports__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.Counted_for_Contracted_ARR__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

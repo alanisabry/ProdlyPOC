@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_to_First_Activity_h__c</fullName>
+    <description>Hours between Timestamp First Activity and Contact Create Date</description>
+    <externalId>false</externalId>
+    <formula>(Timestamp_First_Activity__c  -  CreatedDate )*24</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Hours between Timestamp First Activity and Contact Create Date</inlineHelpText>
+    <label>Time to First Activity (h)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

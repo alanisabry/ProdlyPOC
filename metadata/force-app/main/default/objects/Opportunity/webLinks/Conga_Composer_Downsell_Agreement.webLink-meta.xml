@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Downsell_Agreement</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://bynder--apxtconga4.na110.visual.force.com/a443g000000HLNmAAO
+27-Dec-2021 09:13:05 PM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Downsell Agreement</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Opportunity.Id}
+
+&amp;QueryId=[ONEOFF]a3y0P000000LDTx,
+[ARR]0Q_063MAK143053
+
+&amp;TemplateId=0T_034MAK135810
+
+&amp;OFN={!Opportunity.Year_Now__c}+{!Opportunity.Month__c}+{!Opportunity.day_today__c}+{!Account.Name}+Amendment+Agreement
+&amp;SC0=1
+&amp;SC1=SalesforceFile
+&amp;BML=Generating+Amendment+Agreement
+&amp;Culture=en-US
+&amp;DefaultPDF=0
+&amp;DS7=1</url>
+    <width>900</width>
+</WebLink>

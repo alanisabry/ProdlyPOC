@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Opportunity_Closed_Won__c</fullName>
+    <description>wd field
+Evaluates to &quot;True&quot; if Opportunity is Won - else is blank. Requires that the opportunity name is populated.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+NOT(ISBLANK( FCR_Opportunity__c )),
+FCR_Opportunity__r.IsWon = True), &quot;True&quot;, null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Evaluates to &quot;True&quot; if Opportunity is Won - else is blank. Requires that the opportunity name is populated.</inlineHelpText>
+    <label>Opportunity Closed Won</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

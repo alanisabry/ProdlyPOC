@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing</fullName>
+    <active>true</active>
+    <description>Form to collect financial info for billing</description>
+    <label>Billing</label>
+    <picklistValues>
+        <picklist>PO_Needed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>ERROR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Form Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Form Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Form Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Form Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Form Synced</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Taxable_Status__c</picklist>
+        <values>
+            <fullName>Exempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taxable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

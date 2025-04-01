@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Summary__c</fullName>
+    <description>BODEV-632: Formula text field to show the summary of Opp stats with icons. Icons stored in Static Resources.</description>
+    <externalId>false</externalId>
+    <formula>/*
+  Opportunity Summary consists of 3 parts
+  1. Lock icon (when the Opp is locked for pending approval)
+  2. Opp type
+  3. Won/Lost (when the Opp is closed)
+*/
+
+IF(
+  ISPICKVAL(Approval_Status__c, &quot;Pending&quot;) || ISPICKVAL(DoA_Approval_Status__c, &quot;Pending&quot;),
+  IMAGE(&apos;/resource/Icon_Lock&apos;, &quot;Locked&quot;, 25,25) &amp; &quot; &quot;,
+  &quot;&quot;
+)
+
+&amp;
+
+IMAGE(
+  &apos;/resource/Icon_&apos; &amp;
+  CASE(TEXT(Type),
+  &quot;New Business-Enterprise Cloud&quot;, &quot;New_Business&quot;,
+    &quot;New Business - Expansion Portal&quot;, &quot;New_Business&quot;,
+    &quot;Existing Business-Renewal&quot;, &quot;Renewal&quot;,
+    &quot;Existing Business-Upsell&quot;, &quot;Upsell&quot;,
+    &quot;Existing Business - Internal Transfer&quot;, &quot;Transfer&quot;,
+    &quot;Existing Business - Platform Transfer&quot;, &quot;Transfer&quot;,
+    &quot;Existing Business-Professional Services&quot;, &quot;Professional_Service&quot;,
+    &quot;Referral&quot;, &quot;Referral&quot;,
+    &quot;&quot;
+  ),
+  &quot;Opp Type&quot;,
+  25, 110
+)
+
+&amp;
+
+IF(
+  ISPICKVAL(StageName, &quot;Closed Won&quot;),
+  &quot; &quot; &amp; IMAGE(&apos;/resource/Icon_Won&apos;, &quot;Won&quot;, 25, 38),
+  &quot;&quot;
+) &amp;
+IF(
+  ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+  &quot; &quot; &amp; IMAGE(&apos;/resource/Icon_Lost&apos;, &quot;Lost&quot;, 30, 45),
+  &quot;&quot;
+)</formula>
+    <label>Opportunity Summary</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

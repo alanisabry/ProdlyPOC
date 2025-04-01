@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enterprise_Pricing_Shown_to_Customer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BO-2151 New field: &quot;Enterprise Pricing Shown to Customer&quot; This is where AEs flag when they have presented enterprise pricing to a customer.</description>
+    <label>Enterprise Pricing Shown to Customer</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

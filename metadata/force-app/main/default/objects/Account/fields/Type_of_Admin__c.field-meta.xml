@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Admin__c</fullName>
+    <label>Type of Admin</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Red: needs a lot of handholding</fullName>
+                <default>false</default>
+                <label>Red: needs a lot of handholding</label>
+            </value>
+            <value>
+                <fullName>Yellow: Mostly independent</fullName>
+                <default>false</default>
+                <label>Yellow: Mostly independent</label>
+            </value>
+            <value>
+                <fullName>Green: Proficient on DAM</fullName>
+                <default>false</default>
+                <label>Green: Proficient on DAM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

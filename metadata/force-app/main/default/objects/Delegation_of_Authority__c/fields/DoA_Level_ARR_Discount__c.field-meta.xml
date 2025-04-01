@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DoA_Level_ARR_Discount__c</fullName>
+    <description>BODEV-76: Indicates which DoA level is required for ARR discount</description>
+    <inlineHelpText>Indicates which DoA level is required for ARR discount</inlineHelpText>
+    <label>DoA Level: ARR Discount</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>DoA_Level</valueSetName>
+    </valueSet>
+</CustomField>

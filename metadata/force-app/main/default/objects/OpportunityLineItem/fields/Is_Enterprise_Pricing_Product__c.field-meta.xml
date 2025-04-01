@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Enterprise_Pricing_Product__c</fullName>
+    <description>BODEV-4313: A formula field to indicate if the product is for Enterprise Pricing or not. This is a temporary field.</description>
+    <formula>/*
+    A formula field to return if the line item is an Enterprise Pricing proudct.
+    This formula was needed in order to create a roll-up summary field on Opp to count up
+    # of Enterprise Pricing products.
+    In order to use this attribute in the roll-up summary field, the formula has to be based on
+    Product Name to avoid object reference.
+*/
+
+OR(
+    CONTAINS(Name_rus__c, &quot;Content Operations Ultimate&quot;),
+    CONTAINS(Name_rus__c, &quot;DAM Essentials&quot;),
+    CONTAINS(Name_rus__c, &quot;DAM Advanced&quot;),
+    CONTAINS(Name_rus__c, &quot;DAM Ultimate&quot;),
+    CONTAINS(Name_rus__c, &quot;DAM Custom&quot;),
+    CONTAINS(Name_rus__c, &quot;CX Omnichannel Essentials&quot;),
+    CONTAINS(Name_rus__c, &quot;CX Omnichannel Advanced&quot;),
+    CONTAINS(Name_rus__c, &quot;CX Omnichannel Ultimate&quot;),
+    CONTAINS(Name_rus__c, &quot;CX Omnichannel Custom&quot;),
+    CONTAINS(Name_rus__c, &quot;CX User Community Essentials&quot;),
+    CONTAINS(Name_rus__c, &quot;CX User Community Ultimate&quot;),
+    CONTAINS(Name_rus__c, &quot;CX User Community Custom&quot;),
+    CONTAINS(Name_rus__c, &quot;Content Operations Essentials&quot;),
+    CONTAINS(Name_rus__c, &quot;Content Operations Advanced&quot;),
+    CONTAINS(Name_rus__c, &quot;Content Operations Custom&quot;),
+    CONTAINS(Name_rus__c, &quot;Premier Plus Success Package&quot;),
+    CONTAINS(Name_rus__c, &quot;DAM Essentials setup&quot;),
+    CONTAINS(Name_rus__c, &quot;DAM Advanced setup&quot;),
+    CONTAINS(Name_rus__c, &quot;DAM Ultimate setup&quot;),
+    CONTAINS(Name_rus__c, &quot;DAM Custom setup&quot;),
+    CONTAINS(Name_rus__c, &quot;CX Omnichannel Essentials setup&quot;),
+    CONTAINS(Name_rus__c, &quot;CX Omnichannel Advanced setup&quot;),
+    CONTAINS(Name_rus__c, &quot;CX Omnichannel Ultimate setup&quot;),
+    CONTAINS(Name_rus__c, &quot;CX Omnichannel Custom setup&quot;),
+    CONTAINS(Name_rus__c, &quot;CX User Community Essentials setup&quot;),
+    CONTAINS(Name_rus__c, &quot;CX User Community Advanced setup&quot;),
+    CONTAINS(Name_rus__c, &quot;CX User Community Ultimate setup&quot;),
+    CONTAINS(Name_rus__c, &quot;CX User Community Custom setup&quot;),
+    CONTAINS(Name_rus__c, &quot;Content Operations Essentials setup&quot;),
+    CONTAINS(Name_rus__c, &quot;Content Operations Advanced setup&quot;),
+    CONTAINS(Name_rus__c, &quot;Content Operations Ultimate setup&quot;),
+    CONTAINS(Name_rus__c, &quot;Content Operations Custom setup&quot;),
+    CONTAINS(Name_rus__c, &quot;Batch of 1M assets&quot;),
+    CONTAINS(Name_rus__c, &quot;Batch of 5 Billion asset requests&quot;),
+    CONTAINS(Name_rus__c, &quot;Batch of 500TB traffic&quot;),
+    CONTAINS(Name_rus__c, &quot;Batch of 10 Guides/Landing Pages&quot;),
+    CONTAINS(Name_rus__c, &quot;1 theme&quot;),
+    CONTAINS(Name_rus__c, &quot;Batch of 1K Workflows started&quot;),
+    CONTAINS(Name_rus__c, &quot;Batch of 10K Content Creations&quot;)
+)</formula>
+    <label>Is Enterprise Pricing Product</label>
+    <type>Checkbox</type>
+</CustomField>

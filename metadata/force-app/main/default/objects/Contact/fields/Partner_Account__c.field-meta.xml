@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Account__c</fullName>
+    <description>BODEV-3499: Used to store the value of &apos;Partner Account Form&apos; on lead. Mapped and filled during lead conversion.</description>
+    <inlineHelpText>Partner Account Form on Lead</inlineHelpText>
+    <label>Partner Account</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

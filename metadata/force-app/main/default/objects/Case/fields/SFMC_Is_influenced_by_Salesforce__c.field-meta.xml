@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFMC_Is_influenced_by_Salesforce__c</fullName>
+    <description>BODEV-81: a formula to indicate whether the associated Opportunity was influenced by Salesforce.</description>
+    <formula>OR(
+AND(
+  NOT(ISBLANK( Opportunity__r.OEM__c )),
+  CONTAINS(Opportunity__r.OEM__r.Name, &quot;Salesforce&quot;)
+),
+Is_SF_added_as_other_partner__c 
+)</formula>
+    <inlineHelpText>If the associated opportunity have Salesforce in Partner Account field, that means the opportunity was influenced by Salesforce.</inlineHelpText>
+    <label>Is influenced by Salesforce</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

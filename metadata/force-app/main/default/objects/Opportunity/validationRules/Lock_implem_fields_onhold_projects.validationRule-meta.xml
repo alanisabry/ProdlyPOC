@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_implem_fields_onhold_projects</fullName>
+    <active>true</active>
+    <description>The opportunity is frozen when the Projects on Hold field is true. Changes can be made by the Finance, Legal and Operations teams only.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(StageName,&quot;Closed Won&quot;),
+PRIORVALUE(Project_On_Hold__c) = TRUE,
+NOT(ISNEW()), 
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)), 
+NOT(CONTAINS($Profile.Name,&quot;[Bynder] Legal&quot;)), 
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(OR( 
+ISCHANGED(number_of_draft_Orders__c),
+ISCHANGED(of_Activated_Orders__c ),
+ISCHANGED(Link_to_Projects__c), 
+ISCHANGED(Onboarding_Project_Manager_1__c), 
+ISCHANGED(Onboarding_Project_Manager_2__c), 
+ISCHANGED(Reason_for_delay__c), 
+ISCHANGED(Customisation_Required__c), 
+ISCHANGED(Notice_period_months__c)))
+)</errorConditionFormula>
+    <errorMessage>Only Finance, Legal and Operations can edit projects with implementation status &quot;On-Hold&quot;. Please contact one of them to make changes.</errorMessage>
+</ValidationRule>

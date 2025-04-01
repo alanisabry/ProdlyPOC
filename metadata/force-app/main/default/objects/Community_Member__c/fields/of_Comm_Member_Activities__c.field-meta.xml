@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_Comm_Member_Activities__c</fullName>
+    <description>BODEV-1636: Roll-up summary to filter out Community Member without Activities in reports.</description>
+    <label># of Comm. Member Activities</label>
+    <summaryForeignKey>Community_Member_Activity__c.Community_Member__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

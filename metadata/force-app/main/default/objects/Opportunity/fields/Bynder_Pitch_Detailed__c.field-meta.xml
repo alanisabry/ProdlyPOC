@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bynder_Pitch_Detailed__c</fullName>
+    <description>Add details if necessary regarding the pitching of Bynder.</description>
+    <inlineHelpText>Add details if necessary regarding the pitching of Bynder.</inlineHelpText>
+    <label>Bynder Pitch - Detailed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

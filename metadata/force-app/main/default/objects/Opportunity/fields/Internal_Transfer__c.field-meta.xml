@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Transfer__c</fullName>
+    <description>Used to track MRR office and currency changes.</description>
+    <inlineHelpText>Used to track MRR office and currency changes.</inlineHelpText>
+    <label>Internal Transfer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Currency</type>
+</CustomField>

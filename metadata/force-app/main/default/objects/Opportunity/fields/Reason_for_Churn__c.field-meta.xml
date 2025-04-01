@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Churn__c</fullName>
+    <description>What was the high level reason for the churn.</description>
+    <inlineHelpText>Known: &quot;Notice sent on time&quot;
+Unexpected: &quot;Notice sent after last notice date&quot;
+Uncontrollable: &quot;Bankrupt or M&amp;A&quot;
+Platform Transfer: &quot;Moved from Webdam to Flagship&quot;
+Write off: &quot;Finance only should pick this option&quot;
+Internal Transfer: &quot;Moved from OEM to Webdam&quot;</inlineHelpText>
+    <label>Reason for Churn</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Known</fullName>
+                <default>false</default>
+                <label>Known</label>
+            </value>
+            <value>
+                <fullName>Unexpected</fullName>
+                <default>false</default>
+                <label>Unexpected</label>
+            </value>
+            <value>
+                <fullName>Uncontrollable</fullName>
+                <default>false</default>
+                <label>Uncontrollable</label>
+            </value>
+            <value>
+                <fullName>Platform Transfer</fullName>
+                <default>false</default>
+                <label>Platform Transfer</label>
+            </value>
+            <value>
+                <fullName>Write Off</fullName>
+                <default>false</default>
+                <label>Write Off</label>
+            </value>
+            <value>
+                <fullName>Internal Transfer</fullName>
+                <default>false</default>
+                <label>Internal Transfer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

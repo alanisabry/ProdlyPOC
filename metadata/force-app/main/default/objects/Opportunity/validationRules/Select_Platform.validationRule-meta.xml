@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Select_Platform</fullName>
+    <active>true</active>
+    <description>Platform mandatory for San Mateo opps in VOC when no price book selected</description>
+    <errorConditionFormula>AND(NOT($Profile.Name = &quot;Automated Process&quot;),
+ISBLANK(Pricebook2Id),
+ISPICKVAL(Account.OEM__c,&quot;&quot;),
+ISPICKVAL(Pick_Platform__c,&quot;&quot;),
+OR(ISPICKVAL(Sales_Office__c, &quot;San Mateo&quot;),ISPICKVAL(Sales_Office__c, &quot;San Carlos&quot;)),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(Contains($Profile.Name,&quot;System Administrator&quot;)), 
+OR(ISPICKVAL(Type, &quot;New Business-Enterprise Cloud&quot;), 
+ISPICKVAL(Type, &quot;New Business - Expansion Portal&quot;),
+ISPICKVAL(Type, &quot;Existing Business - Platform Transfer&quot;)),
+OR(
+ISPICKVAL(StageName,&quot;Legal Review&quot;),
+ISPICKVAL(StageName,&quot;Closed Won&quot;),
+ISPICKVAL(StageName,&quot;Signature Stage&quot;),
+ISPICKVAL(StageName,&quot;VOC&quot;)), 
+NOT(OR( 
+ISPICKVAL(StageName,&quot;Closed Lost&quot;),
+ISNEW(), 
+CreatedDate&gt;Now()-0.001, 
+ISCHANGED(Demo_Date__c),
+ISCHANGED(Prop_Date__c),
+ISCHANGED(VOC_Date__c),
+ISCHANGED(Legal_review_date__c),
+ISCHANGED(Signature_Stage_Date__c),
+ISCHANGED(Demo_Completed_Inbound__c), 
+ISCHANGED(Demo_Completed_Outbound__c), 
+ISCHANGED(Demo_Completed_Timestamp__c)) 
+))</errorConditionFormula>
+    <errorDisplayField>Pick_Platform__c</errorDisplayField>
+    <errorMessage>Please select a platform for this opportunity.</errorMessage>
+</ValidationRule>

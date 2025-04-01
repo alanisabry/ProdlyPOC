@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ARR_Discount__c</fullName>
+    <description>BODEV-76: Stores the calculated discount % on ARR against the sum of default price</description>
+    <inlineHelpText>Stores the calculated discount % on ARR against the sum of default price. Only includes products with positive quantity.</inlineHelpText>
+    <label>ARR Discount (%)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

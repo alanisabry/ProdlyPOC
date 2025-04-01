@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Customer_Key_Contacts__c</fullName>
+    <description>BODEV-2173: Check field to indicate whether the key contacts are specified under the Account.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  AND(
+    OR(
+      ISPICKVAL(Type, &quot;New Business-Enterprise Cloud&quot;), 
+      ISPICKVAL(Type,&apos;New Business - Expansion Portal&apos;),
+      ISPICKVAL(Type,&apos;Existing Business-Renewal&apos;),
+      ISPICKVAL(Type,&apos;Existing Business-Upsell&apos;)
+    ),
+    NOT(Account.IsDecisionMakerandChampionadded__c)
+  ),
+  IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;), 
+  IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;)
+)</formula>
+    <inlineHelpText>Under the Account, at least one Contact should be specified as Champion and Decision Maker each.</inlineHelpText>
+    <label>Check - Customer Key Contacts</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

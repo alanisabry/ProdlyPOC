@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewCloseDate__c</fullName>
+    <formula>IF( End_date_contract__c - Notice_period_Days__c+2 &lt; TODAY(), TODAY(), End_date_contract__c - Notice_period_Days__c+2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>NewCloseDate</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

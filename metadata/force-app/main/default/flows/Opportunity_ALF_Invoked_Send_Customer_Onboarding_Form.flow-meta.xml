@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Send Customer Onboarding Form link to the customer contact.</description>
+        <name>Send_Form_Email_New_Business</name>
+        <label>Send Form Email - New Business</label>
+        <locationX>578</locationX>
+        <locationY>782</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Assign_Sent_Email_Info_to_Form_New_Business</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>TXT_TEMP_Email_Body_New_Business</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>TXT_Send_to_Recipient_List</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$Label.Customer_Onboarding_Form_Sender_Email_Billing</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>TXT_Email_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>Send Customer Onboarding Form link to the customer contact.</description>
+        <name>Send_Form_Email_Renewal</name>
+        <label>Send Form Email - Renewal</label>
+        <locationX>842</locationX>
+        <locationY>782</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Assign_Sent_Email_Info_to_Form</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>TXT_TEMP_Email_Body_Renewal</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>TXT_Send_to_Recipient_List</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$Label.Customer_Onboarding_Form_Sender_Email_Billing</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>TXT_Email_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assign default fields such as Record Type and lookup to Account/Opportunity for the new Customer Onboarding Form record.</description>
+        <name>Assign_Default_Fields_to_Form</name>
+        <label>Assign Default Fields to Form</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Account.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opp.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Customer_Onboarding_Form_Record_Type_Billing</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Form</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update the form to indicate Email was not sent because Sent to Email was not set properly (Primary Contact&apos;s email missing, etc.).</description>
+        <name>Assign_Form_Fields_Email_Address_Not_Found</name>
+        <label>Assign Form Fields - Email Address Not Found</label>
+        <locationX>314</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>ERROR</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Status_Note__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>ERROR: Send to email not set properly.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Update_Form</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update the Status Note to indicate Email was not sent because the custom setting for Customer Onboarding Form feature was disabled.</description>
+        <name>Assign_Form_Fields_Email_Disabled</name>
+        <label>Assign Form Fields - Email Disabled</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>ERROR</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Status_Note__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>ERROR: External email is disabled.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Update_Form</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign Email info to the Form record.</description>
+        <name>Assign_Sent_Email_Info_to_Form</name>
+        <label>Assign Sent Email Info to Form</label>
+        <locationX>842</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Sent_Email_Body__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TXT_TEMP_Email_Body_Renewal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Form Sent</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Form_Sent_Email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TXT_Send_to_Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Form_Sent_CC_Email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TXT_Send_to_CC_Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Form_Sent_Timestamp__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Form_URL__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Billing_Onboarding_Form_Form_Base_URL</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Timestamp_to_Opp_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign Email info to the Form record.</description>
+        <name>Assign_Sent_Email_Info_to_Form_New_Business</name>
+        <label>Assign Sent Email Info to Form - New Business</label>
+        <locationX>578</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Sent_Email_Body__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TXT_TEMP_Email_Body_New_Business</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Form Sent</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Form_Sent_Email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TXT_Send_to_Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Form_Sent_CC_Email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TXT_Send_to_CC_Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Form_Sent_Timestamp__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Form_URL__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Billing_Onboarding_Form_New_Form_Base_URL</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>REC_New_Form.Actual_Form_URL__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TXT_Form_URL</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Timestamp_to_Opp_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Timestamp_to_Opp_0</name>
+        <label>Assign Timestamp to Opp</label>
+        <locationX>578</locationX>
+        <locationY>1082</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Opp.Billing_Onboarding_Form_Sent_Timestamp__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opp_0</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Check whether the custom setting parameter is on, and whether Send to Email is properly set</description>
+        <name>Ready_to_send_email</name>
+        <label>Ready to send email?</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <defaultConnectorLabel>Default</defaultConnectorLabel>
+        <rules>
+            <name>No_External_Email_Disabled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BOOL_External_Email_Enabled</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opp.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Form_Fields_Email_Disabled</targetReference>
+            </connector>
+            <label>No - External Email Disabled</label>
+        </rules>
+        <rules>
+            <name>No_Send_to_Email_Not_Set</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>TXT_Send_to_Email</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>ERROR</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>TXT_Send_to_Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opp.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Form_Fields_Email_Address_Not_Found</targetReference>
+            </connector>
+            <label>No - Send to Email Not Set</label>
+        </rules>
+        <rules>
+            <name>Yes_New_Business</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>TXT_Send_to_Email</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opp.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business-Enterprise Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opp.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business - Expansion Portal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Form_Email_New_Business</targetReference>
+            </connector>
+            <label>Yes - New Business</label>
+        </rules>
+        <rules>
+            <name>Yes_Renewal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TXT_Send_to_Email</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>ERROR</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opp.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Form_Email_Renewal</targetReference>
+            </connector>
+            <label>Yes - Renewal</label>
+        </rules>
+    </decisions>
+    <description>BODEV-4268
+Changes to Email Subject &amp; Body
+BODEV-4279
+updated the API version to 61</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Boolean formula to indicate sending emails to external email address is enabled or not.
+It is enabled when 1) the current org is Production, or 2) the specific Custom Setting for this feature is ticked.</description>
+        <name>BOOL_External_Email_Enabled</name>
+        <dataType>Boolean</dataType>
+        <expression>/*
+  External emails should be sent only when
+  1) the current org is Production, or
+  2) the corresponding Custom Setting for this feature is ticked.
+*/
+
+OR(
+  {!$Organization.Id} = {!$Label.Production_Org_ID},
+  {!$Setup.External_Email_Activation_Setting__c.Customer_Billing_Onboarding_Form__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>TXT_Email_Subject</name>
+        <dataType>String</dataType>
+        <expression>  CASE( TEXT( {!Get_Opp.Type} ),
+    &quot;New Business-Enterprise Cloud&quot;, &quot;Bynder Customer Form&quot;,
+    &quot;New Business - Expansion Portal&quot;, &quot;Bynder Customer Form&quot;,
+    &quot;Existing Business-Renewal&quot;, &quot;Bynder Customer Form Verification&quot;,
+    &quot;&quot;
+  )</expression>
+    </formulas>
+    <formulas>
+        <description>Google Form URL incl. pre-filled value extracted from associated records.</description>
+        <name>TXT_Form_URL</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Billing_Onboarding_Form_New_Form_Base_URL} &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Billing_Entity_Name} &amp; URLENCODE( {!Get_Account.Billing_Account_Name__c} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Street} &amp; URLENCODE( {!Get_Account.BillingStreet} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_City} &amp; URLENCODE( {!Get_Account.BillingCity} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Postal_Code} &amp; URLENCODE( {!Get_Account.BillingPostalCode} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_State} &amp; URLENCODE( {!Get_Account.BillingState} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Country} &amp; URLENCODE( {!Get_Account.BillingCountry} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_VAT_Number} &amp; URLENCODE( {!Get_Account.VAT_number__c} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Billing_Email} &amp; URLENCODE( {!Get_Account.Bill_to_Contact_Email__c} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Billing_CC_Email} &amp; URLENCODE( {!Get_Account.Billing_cc_email__c} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Account_Payable_Email} &amp; URLENCODE( {!Get_Account.Credit_Control_Reminder_Email__c} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_PO_Needed} &amp; URLENCODE( TEXT( {!Get_Account.PO_Needed__c} ) ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_PO_Requester_Email} &amp; URLENCODE( {!Get_Account.PO_Requestor__c} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Billing_Phone} &amp; URLENCODE( {!Get_Account.Billing_Phone_Number__c} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Invoice_Delivery_Method} &amp; URLENCODE( TEXT( {!Get_Account.Invoice_Delivery_Method__c} ) ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Split_Invoice} &amp; IF( {!Get_Opp.Split_one_off_subscription_invoice__c}, &quot;Yes&quot;, &quot;No&quot;) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Form_ID} &amp; casesafeid( {!REC_New_Form.Id} ) &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Account_ID} &amp; {!Get_Account.Account_ID_18_digits__c} &amp;
+{!$Label.Billing_Onboarding_Form_Q_ID_Opportunity_ID} &amp; {!Get_Opp.Opportunity_ID_18_digits__c}</expression>
+    </formulas>
+    <formulas>
+        <description>Email addresses to be CCed in the email.</description>
+        <name>TXT_Send_to_CC_Email</name>
+        <dataType>String</dataType>
+        <expression>/*
+  For Renewal, include CSM Owner in CC.
+  Also if Primary Contact email is found and Bill to Contact Email is not blank, add Bill to Contact Email in CC as well.
+ For New business, include opportunity owner in CC.
+*/
+
+CASE( TEXT( {!Get_Opp.Type} ),
+  &quot;Existing Business-Renewal&quot;,
+    IF( ISNULL( {!Get_Account.CSM_Owner_Email__c} ), NULL, {!Get_Account.CSM_Owner_Email__c} ) +
+    IF(
+      ISNULL( {!Get_Primary_Contact_on_Account.Id} ) ||
+      ISBLANK( {!Get_Primary_Contact_on_Account.Email} ) ||
+      ISBLANK( {!Get_Account.Bill_to_Contact_Email__c} ),
+      IF( ISNULL( {!Get_Account.CSM_Owner_Email__c} ), NULL, &quot;,&quot; ) + 
+      {!Get_Account.Bill_to_Contact_Email__c},
+      NULL
+    ),
+    &quot;New Business-Enterprise Cloud&quot;,
+    {!Get_Opp.Owner.Email},
+    &quot;New Business - Expansion Portal&quot;,
+    {!Get_Opp.Owner.Email},
+  NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Recipient email address to send Customer Onboarding Form</description>
+        <name>TXT_Send_to_Email</name>
+        <dataType>String</dataType>
+        <expression>/*
+  Renewal: Primary Contact&apos;s email and Bill to Contact Email on the Account
+  If both email address fields are blank, return &quot;ERROR&quot;.
+   New Business: Primary Contact&apos;s email
+*/
+
+CASE( TEXT( {!Get_Opp.Type} ),
+  &quot;Existing Business-Renewal&quot;,
+      IF(
+        ISNULL( {!Get_Primary_Contact_on_Account.Id} ) || ISBLANK( {!Get_Primary_Contact_on_Account.Email} ),
+        IF(
+          ISBLANK( {!Get_Account.Bill_to_Contact_Email__c} ),
+          &quot;ERROR&quot;,
+          {!Get_Account.Bill_to_Contact_Email__c}
+        ),
+        {!Get_Primary_Contact_on_Account.Email}
+      ),
+    &quot;New Business-Enterprise Cloud&quot;,
+    {!Get_Primary_Contact_on_Account.Email},
+    &quot;New Business - Expansion Portal&quot;,
+    {!Get_Primary_Contact_on_Account.Email},
+  NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Recipient emails concatenated and separated by comma</description>
+        <name>TXT_Send_to_Recipient_List</name>
+        <dataType>String</dataType>
+        <expression>{!TXT_Send_to_Email} +
+IF( ISNULL( {!TXT_Send_to_CC_Email} ), NULL,  &quot;,&quot; + {!TXT_Send_to_CC_Email} ) +
+&quot;,&quot; + {!$Label.Customer_Onboarding_Form_Sender_Email_Billing}</expression>
+    </formulas>
+    <interviewLabel>Opportunity [ALF] Invoked: Send Customer Onboarding Form {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity [ALF] Invoked: Send Customer Onboarding Form</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Create a new Customer Onboarding Form record.
+Form record has to be created before sending email in order to embed Record ID in the pre-filled form URL.</description>
+        <name>Create_Form</name>
+        <label>Create Form</label>
+        <locationX>578</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Ready_to_send_email</targetReference>
+        </connector>
+        <inputReference>REC_New_Form</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>578</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Primary_Contact_on_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opp.Account_ID_18_digits__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Opp</name>
+        <label>Get Opp</label>
+        <locationX>578</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TXT_Opp_ID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Primary Contact specified on Account</description>
+        <name>Get_Primary_Contact_on_Account</name>
+        <label>Get Primary Contact on Account</label>
+        <locationX>578</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Default_Fields_to_Form</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Account.Primary_Contact__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <sortField>Id</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update Form with Status and Form Sent Timestamp</description>
+        <name>Update_Form</name>
+        <label>Update Form</label>
+        <locationX>578</locationX>
+        <locationY>1298</locationY>
+        <inputReference>REC_New_Form</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opp_0</name>
+        <label>Update Opp</label>
+        <locationX>578</locationX>
+        <locationY>1190</locationY>
+        <connector>
+            <targetReference>Update_Form</targetReference>
+        </connector>
+        <inputReference>Get_Opp</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opp</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Text template for email body for New Business</description>
+        <name>TXT_TEMP_Email_Body_New_Business</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Congratulations!&lt;/p&gt;&lt;p&gt;You’re almost a Bynder customer, and we can’t wait to have you on board.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;We kindly request that you complete &lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;or confirm your details in &lt;/span&gt;our Supplier Form so that we can help make your experience with Bynder a great one. Having access to your latest company information and contact details helps ensure seamless invoicing and payment.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;); font-size: var(--lwc-fontSize3,0.8125rem); color: var(--lwc-colorTextWeak,rgb(68, 68, 68)); background-color: var(--lwc-colorBackgroundInput,rgb(255, 255, 255));&quot;&gt;A&lt;/strong&gt;&lt;strong&gt;ction Item&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Please complete the Bynder Supplier Form at your earliest convenience.All details and instructions on how to complete the Supplier Form are included in the form.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;{!TXT_Form_URL}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Google Form - Bynder Customer Form&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please reach out to your Bynder contact or invoices@bynder.com with any questions about the form or the intake process. We look forward to continuing our partnership.&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Text template for email body for Renewal</description>
+        <name>TXT_TEMP_Email_Body_Renewal</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Dear Bynder Customer,&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;As part of our renewal process, we would like to make sure that we always have your latest company information and contact details to ensure a seamless renewal, invoicing and payment experience. If a purchase order is required please reach out to your customer success manager to provide you with a pro-forma invoice.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;We kindly request that you review the information that we currently have in our system and to please update it where you see information is outdated. All details and instructions on how to complete the document are included in the form.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Action Item&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Please complete the Bynder Supplier Form at your earliest convenience. Details and instructions for completing the form are included in the form.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;{!TXT_Form_URL}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Google Form - Bynder Customer Form&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please don’t hesitate to reach out to your Customer Success Manager or invoices@bynder.com for questions about this form. Thank you for your continued partnership.&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>Record variable for a new Customer Onboarding Form record.</description>
+        <name>REC_New_Form</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Customer_Onboarding_Form__c</objectType>
+    </variables>
+    <variables>
+        <name>REC_Primary_Contact_Role</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityContactRole</objectType>
+    </variables>
+    <variables>
+        <description>Target Opportunity ID. Input variable.</description>
+        <name>TXT_Opp_ID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

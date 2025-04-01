@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failed_Syncs</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>ORDERS.END_DATE</columns>
+    <columns>ACTIVATEDBY_USER.ALIAS</columns>
+    <columns>ORDERS.ACTIVATED_DATE</columns>
+    <columns>Total_Order_Value__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ORDERS.STATUS</field>
+        <operation>equals</operation>
+        <value>Activated</value>
+    </filters>
+    <filters>
+        <field>Order_Netsuite_ID__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Failed Syncs</label>
+</ListView>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_DoA_Fields_after_Approval</fullName>
+    <active>true</active>
+    <description>Validation rule to prevent users from changing DoA related fields once DoA process is completed.</description>
+    <errorConditionFormula>AND(
+/* Exempt System/Admin users */
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+NOT(Contains($Profile.Name,&quot;Finance&quot;)),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+
+/* Block changes on DoA fields after DoA is finalized */
+OR(
+ISPICKVAL(DoA_Approval_Status__c, &quot;Approved&quot;),
+ISPICKVAL(DoA_Approval_Status__c, &quot;Not Required&quot;)
+),
+OR(
+NOT(ISBLANK(PRIORVALUE(ARR__c))) &amp;&amp; ROUND(PRIORVALUE(ARR__c), 8) &lt;&gt; ROUND(ARR__c, 8),
+NOT(ISBLANK(PRIORVALUE(One_off__c))) &amp;&amp; ROUND(PRIORVALUE(One_off__c), 8) &lt;&gt; ROUND(One_off__c, 8),
+ISCHANGED(Paymet_Period__c),
+ISCHANGED(Invoice_Period__c),
+ISCHANGED(Waive_Indexation__c)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot change DoA related fields (Product prices/quantities, Invoice Period, Payment Period,Waive Indexation) once DoA process is approved.
+If you need to change these information, click “Unlock Prices &amp; Terms&quot; button to clear the current DoA.</errorMessage>
+</ValidationRule>

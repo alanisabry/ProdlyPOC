@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_term_formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(Opportunity__r.Payment_Period__c), 
+&quot;15 days&quot;, 15,
+&quot;30 days&quot;, 30,
+&quot;45 days&quot;, 45,
+&quot;60 days&quot;, 60,
+&quot;75 days&quot;, 75,
+&quot;90 days&quot;, 90,
+&quot;120 days&quot;, 120,
+&quot;150 days&quot;, 150,
+&quot;180 days&quot;, 180,
+&quot;30 Days ME&quot;, 60,
+&quot;60 Days ME&quot;, 90,
+&quot;90 Days ME&quot;, 120, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Payment term test doa 25</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

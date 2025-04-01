@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upsell_Owner_Qualifier_Must_Be_Different</fullName>
+    <active>true</active>
+    <description>For Upsells, sales qualifier and owner cannot be the same person.</description>
+    <errorConditionFormula>AND(
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+  ISPICKVAL(Type, &quot;Existing Business-Upsell&quot;),
+  OR(
+    ISCHANGED(Sales_Qualifier_New__c),
+    ISCHANGED(OwnerId)),
+  Sales_Qualifier_New__r.User_ID_18_digits__c = Owner_ID_18_digits__c
+)</errorConditionFormula>
+    <errorDisplayField>Sales_Qualifier_New__c</errorDisplayField>
+    <errorMessage>Upsell Owner and Sales Qualifier cannot be the same person.</errorMessage>
+</ValidationRule>

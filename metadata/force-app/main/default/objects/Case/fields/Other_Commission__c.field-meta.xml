@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Commission__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+NOT(ISBLANK(TEXT( Account.Other_Commission__c ))),
+TEXT(Account.Other_Commission__c),
+IF(
+
+AND(NOT(Opportunity__r.of_SFLWC_Connector__c &gt; 0),NOT( Opportunity__r.of_SFMC_Connector__c &gt;0),NOT( Opportunity__r.of_SFCC_Connector__c &gt;0),NOT( ISPICKVAL(Opportunity__r.StageName,&quot;Closed Lost&quot; )),OR(
+SFMC_Is_from_Salesforce_Lead__c,
+SFMC_Is_influenced_by_Salesforce__c)
+
+),
+
+&quot;20% of ARR&quot;,
+
+&apos;&apos;
+)
+)</formula>
+    <inlineHelpText>Whether Bynder owes 20% of ARR.</inlineHelpText>
+    <label>SF OEM Partner Commission</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Indexation_Rates</name>
+        <label>Add Indexation Rates</label>
+        <locationX>138</locationX>
+        <locationY>756</locationY>
+        <assignmentItems>
+            <assignToReference>SumofIndexationRates</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Indexation_Rates.Indexation_Rate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LoopCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Indexation_Rates</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_if_indexation_rates_exist</name>
+        <label>Check if indexation rates exist?</label>
+        <locationX>182</locationX>
+        <locationY>516</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Rates_exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Indexation_Rates</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Indexation_Rates</targetReference>
+            </connector>
+            <label>Rates exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>First_day_of_the_month</name>
+        <label>First day of the month?</label>
+        <locationX>380</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>First_day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isFirstDay</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Indexation_Rates</targetReference>
+            </connector>
+            <label>First day</label>
+        </rules>
+    </decisions>
+    <description>Used for calculating the average of the indexation rates which will be used as current indexation rate of the year for the subsidiary.
+The flow is scheduled to run daily but the logic is executed on the first day of the month.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AvgIndexationRate</name>
+        <dataType>Number</dataType>
+        <expression>{!SumofIndexationRates}/{!LoopCount}</expression>
+        <scale>1</scale>
+    </formulas>
+    <formulas>
+        <name>indexationAvgEndDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(YEAR({!$Flow.CurrentDate}) &gt;=2023,
+DATE(YEAR({!$Flow.CurrentDate})-1,VALUE({!$Label.IndexationAvgEndMonth}),01),
+DATE(YEAR({!$Flow.CurrentDate})-1,VALUE(&apos;12&apos;),01)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>indexationAvgStartDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(YEAR({!$Flow.CurrentDate}) &gt;= 2023,
+DATE(YEAR({!$Flow.CurrentDate})-2,VALUE({!$Label.IndexationAvgStartMonth}),01),
+DATE(YEAR({!$Flow.CurrentDate})-1,VALUE(&apos;01&apos;),01)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>isFirstDay</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(DAY({!$Flow.CurrentDate})=1,true,false)</expression>
+    </formulas>
+    <interviewLabel>Scheduled: Calculate Average Indexation rate of the year {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Scheduled: Calculate average indexation rate of the year</label>
+    <loops>
+        <name>Loop_Indexation_Rates</name>
+        <label>Loop Indexation Rates</label>
+        <locationX>50</locationX>
+        <locationY>636</locationY>
+        <collectionReference>Get_Indexation_Rates</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Indexation_Rates</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Subsidiary</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Indexation_Rates</name>
+        <label>Get Indexation Rates</label>
+        <locationX>182</locationX>
+        <locationY>396</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_indexation_rates_exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Subsidiary__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Indexation_First_Date__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>indexationAvgStartDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Indexation_First_Date__c</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>indexationAvgEndDate</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Indexation_Rate__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Subsidiary</name>
+        <label>Update Subsidiary</label>
+        <locationX>50</locationX>
+        <locationY>972</locationY>
+        <inputAssignments>
+            <field>Current_Avg_Indexation_Rate__c</field>
+            <value>
+                <elementReference>AvgIndexationRate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>First_day_of_the_month</targetReference>
+        </connector>
+        <object>Subsidiaries__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2022-09-07</startDate>
+            <startTime>12:15:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>LoopCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>SumofIndexationRates</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>1</scale>
+    </variables>
+</Flow>

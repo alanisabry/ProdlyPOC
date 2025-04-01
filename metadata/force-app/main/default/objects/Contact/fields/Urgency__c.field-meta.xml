@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Urgency__c</fullName>
+    <description>mkto wd fields</description>
+    <externalId>false</externalId>
+    <formula>CASE( MIN(MAX(Urgency_Value__c, 0),3),
+0, IMAGE(&quot;https://app.marketo.com/images/icons/fire0.png&quot;,&quot;0&quot;),
+1, IMAGE(&quot;https://app.marketo.com/images/icons/fire1.png&quot;,&quot;1&quot;),
+2, IMAGE(&quot;https://app.marketo.com/images/icons/fire2.png&quot;,&quot;2&quot;),
+3, IMAGE(&quot;https://app.marketo.com/images/icons/fire3.png&quot;,&quot;3&quot;),
+&quot;&quot;)</formula>
+    <label>Urgency</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

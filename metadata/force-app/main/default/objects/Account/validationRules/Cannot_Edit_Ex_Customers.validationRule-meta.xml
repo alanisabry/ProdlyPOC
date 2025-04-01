@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_Ex_Customers</fullName>
+    <active>true</active>
+    <description>BODEV-885: Ex-Customer Accounts should not be edited except by Operations</description>
+    <errorConditionFormula>AND(
+  /* Profile Exceptions */
+  CASE($Profile.Name,
+    &quot;System Administrator&quot;, 0,
+    &quot;[Bynder] System Administrator&quot;, 0,
+    &quot;[Bynder] Sisense User&quot;, 0,
+    &quot;[Bynder] Finance&quot;, 0,
+    &quot;B2BMA Integration User&quot;, 0,
+    1
+  ) = 1,
+
+  /* RingLead Trigger */
+  NOT($User.Id = &quot;0053g000000y0ha&quot;),
+
+  /* Automated Process */
+  NOT($User.Alias = &quot;autoproc&quot;),
+
+  /* Exempt background system changes */
+  NOT(ISCHANGED(Upsells_created_button__c)),
+  NOT(ISCHANGED(One_Off_Upsells_created_button__c)),
+  NOT(ISCHANGED(Timestamp_Last_Contact_Added__c)),
+
+  NOT(ISNEW()),
+  OR(
+    NOT(ISCHANGED(Type)) &amp;&amp; ISPICKVAL(Type, &quot;Ex-customer&quot;),
+    ISCHANGED(Type) &amp;&amp; ISPICKVAL(PRIORVALUE(Type), &quot;Ex-customer&quot;)
+  )
+)</errorConditionFormula>
+    <errorMessage>Ex-customer Accounts should not be edited. If needed, please contact Operations team.</errorMessage>
+</ValidationRule>

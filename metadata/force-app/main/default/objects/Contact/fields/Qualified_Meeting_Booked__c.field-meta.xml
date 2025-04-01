@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualified_Meeting_Booked__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-3658: Indicates if a meeting booked with Qualified.</description>
+    <label>Qualified Meeting Booked</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

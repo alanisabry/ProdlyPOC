@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ABM_G2_AccountOwnerID</fullName>
+        <categories>ABM, Owner ID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ABM_G2_AccountOwnerID</shortDescription>
+        <value>0053g000000zubXAAQ</value>
+    </labels>
+    <labels>
+        <fullName>AI_Search_Experience_Product</fullName>
+        <categories>Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AI Search Experience Product</shortDescription>
+        <value>01tRo0000001he1IAA</value>
+    </labels>
+    <labels>
+        <fullName>AWS_OEM_Account_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AWS OEM Account ID</shortDescription>
+        <value>0011700001WuxpDAAR</value>
+    </labels>
+    <labels>
+        <fullName>Allbound_Integration_User_ID</fullName>
+        <categories>Allbound</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Allbound Integration User ID</shortDescription>
+        <value>0053g00000108baAAA</value>
+    </labels>
+    <labels>
+        <fullName>Apply_or_waive_indexation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apply or waive indexation</shortDescription>
+        <value>Can be applied or waived</value>
+    </labels>
+    <labels>
+        <fullName>Basic_Support_Package_US_Only</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Basic Support Package (US Only)</shortDescription>
+        <value>01t0d000004YNZcAAO</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Form_Base_URL</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Form Base URL</shortDescription>
+        <value>https://docs.google.com/forms/d/e/1FAIpQLSdyBjYtxPdNhUzcqpM2QWG-YVmgs-TCiz90FOYLAvEVe2gRaw/viewform?usp=pp_url</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_New_Form_Base_URL</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - New Form Base URL</shortDescription>
+        <value>https://docs.google.com/forms/d/e/1FAIpQLSeBMSIp2RPdKmB1pirgV7UA7qWuFA4PsZh5wYz_bLiLbSIrew/viewform?usp=pp_url</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Account_ID</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Account ID</shortDescription>
+        <value>&amp;entry.657943362=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Account_Payable_Email</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Account Payable Email</shortDescription>
+        <value>&amp;entry.614101388=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Billing_CC_Email</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Billing CC Email</shortDescription>
+        <value>&amp;entry.245879110=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Billing_Email</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Billing Email</shortDescription>
+        <value>&amp;entry.629391367=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Billing_Entity_Name</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Billing Entity Name</shortDescription>
+        <value>&amp;entry.13007356=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Billing_First_Name</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Billing First Name</shortDescription>
+        <value>&amp;entry.1000775678=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Billing_Last_Name</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Billing Last Name</shortDescription>
+        <value>&amp;entry.1794521880=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Billing_Phone</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Billing Phone</shortDescription>
+        <value>&amp;entry.706813680=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_City</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - City</shortDescription>
+        <value>&amp;entry.1900467679=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Country</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Country</shortDescription>
+        <value>&amp;entry.1548862327=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Form_ID</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Form ID</shortDescription>
+        <value>&amp;entry.1446710833=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Invoice_Delivery_Method</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Invoice Delivery Method</shortDescription>
+        <value>&amp;entry.668544238=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Opportunity_ID</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Opportunity ID</shortDescription>
+        <value>&amp;entry.469142364=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_PO_Needed</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - PO Needed?</shortDescription>
+        <value>&amp;entry.299820948=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_PO_Requester_Email</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - PO Requester Email</shortDescription>
+        <value>&amp;entry.1004774771=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Postal_Code</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Postal Code</shortDescription>
+        <value>&amp;entry.804326530=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Split_Invoice</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Split Invoice</shortDescription>
+        <value>&amp;entry.443839440=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_State</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - State</shortDescription>
+        <value>&amp;entry.746643662=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Street</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID -  Street</shortDescription>
+        <value>&amp;entry.1768079975=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_Tax_Status</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Onboarding Form - Q ID - Tax Status</shortDescription>
+        <value>&amp;entry.41620191=</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Onboarding_Form_Q_ID_VAT_Number</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing_Onboarding_Form_Q_ID_VAT_Number</shortDescription>
+        <value>&amp;entry.547102716=</value>
+    </labels>
+    <labels>
+        <fullName>Bronze_Support_Package_EMEA_Only</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bronze Support Package (EMEA Only)</shortDescription>
+        <value>01t0P000005EhYmQAK</value>
+    </labels>
+    <labels>
+        <fullName>Bynder_17_PB_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bynder 17 PB Id</shortDescription>
+        <value>01s0P000000vL7AQAU</value>
+    </labels>
+    <labels>
+        <fullName>Bynder_BV_Subsidiary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bynder BV Subsidiary</shortDescription>
+        <value>a5U0d0000015ldVEAQ</value>
+    </labels>
+    <labels>
+        <fullName>Bynder_Integrations_Integrations_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bynder Integrations Integrations Id</shortDescription>
+        <value>0053g000000htF8AAI</value>
+    </labels>
+    <labels>
+        <fullName>Bynder_LLC_Subsidiary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bynder LLC Subsidiary</shortDescription>
+        <value>a5U0d000000DhqNEAS</value>
+    </labels>
+    <labels>
+        <fullName>Bynder_Ltd_Subsidiary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bynder Ltd Subsidiary</shortDescription>
+        <value>a5U0d000000DhqSEAS</value>
+    </labels>
+    <labels>
+        <fullName>Bynder_Pty_Ltd_Subsidiary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bynder Pty Ltd Subsidiary</shortDescription>
+        <value>a5U3g000000TN5rEAG</value>
+    </labels>
+    <labels>
+        <fullName>Conga_Enterprise_Onboarding_Package_Content</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Conga Enterprise Onboarding Package Content</shortDescription>
+        <value>Online kick-off workshop
+System configuration
+Single Sign-On (SSO) configuration
+Multiple Single Sign-On (Multi-SSO) configuration
+Standard theming
+Custom URL
+Permissions and access rights setup
+Taxonomy setup
+AI Search Experience setup
+Admin User Training (Up to 8 hours)</value>
+    </labels>
+    <labels>
+        <fullName>Conga_Professional_Onboarding_Package_Content</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Conga Professional Onboarding Package Content</shortDescription>
+        <value>Online kick-off workshop
+System configuration
+Single Sign-On (SSO) configuration
+Multiple Single Sign-On (Multi-SSO) configuration
+Standard theming
+Custom URL setup
+Permissions and access rights setup
+Taxonomy setup
+AI Search Experience setup
+Admin User Training (Up to 4 hours)</value>
+    </labels>
+    <labels>
+        <fullName>Conga_Workgroup_Onboarding_Package_Content</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Conga Workgroup Onboarding Package Content</shortDescription>
+        <value>Online kick-off workshop
+System configuration
+Single Sign-On (SSO) configuration
+Multiple Single Sign-On (Multi-SSO) configuration
+Standard theming
+Custom URL setup
+Taxonomy setup
+Default permissions and access rights setup
+Admin User Training (Up to 2 hours)</value>
+    </labels>
+    <labels>
+        <fullName>Conga_Workgroup_Plus_Onboarding_Package_Content</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Conga Workgroup Plus Onboarding Package Content</shortDescription>
+        <value>Online kick-off workshop
+System configuration
+Single Sign-On (SSO) configuration
+Multiple Single Sign-On (Multi-SSO) configuration
+Standard theming
+Custom URL setup
+Taxonomy setup
+AI Search Experience setup
+Default permissions and access rights setup
+Admin User Training (Up to 2 hours)</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Record_Type_ID_Customer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Record Type ID: Customer</shortDescription>
+        <value>0123g000000Xds4</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Record_Type_ID_Prospect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Record Type ID: Prospect</shortDescription>
+        <value>0123g000000Xds5</value>
+    </labels>
+    <labels>
+        <fullName>Create_ML_projects</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create ML projects</shortDescription>
+        <value>0050P0000074ZHH, &quot;Matt Griffiths&quot;
+005U0000003lFwb, &quot;Don Fakkert&quot;
+0050P000006nxb3, &quot;Grace Schaefer&quot;</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Onboarding_Form_Record_Type_Billing</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Onboarding Form Record Type - Billing</shortDescription>
+        <value>0123g000000TWi0AAG</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Onboarding_Form_Sender_Email_Billing</fullName>
+        <categories>Customer Onboarding Form - Billing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Onboarding Form Sender Email - Billing</shortDescription>
+        <value>invoices@bynder.com</value>
+    </labels>
+    <labels>
+        <fullName>DAM_AI_ProductID</fullName>
+        <categories>Product IDs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DAM+AI_ProductID</shortDescription>
+        <value>01tRo000000TIb3IAG</value>
+    </labels>
+    <labels>
+        <fullName>DAM_ProductID</fullName>
+        <categories>Product IDs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DAM_ProductID</shortDescription>
+        <value>01t0P000002EFLFQA4</value>
+    </labels>
+    <labels>
+        <fullName>Diamond_Support_Package</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Diamond Support Package</shortDescription>
+        <value>01t0P000005EhYDQA0</value>
+    </labels>
+    <labels>
+        <fullName>Discount_on_One_Off_Product</fullName>
+        <categories>Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Discount on One-Off Product</shortDescription>
+        <value>01t0P0000059vroQAA</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Region</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA Region</shortDescription>
+        <value>Amsterdam, Barcelona, Dubai, London</value>
+    </labels>
+    <labels>
+        <fullName>Enterprise_Pricing_Super_Users_Group_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enterprise Pricing Super Users Group ID</shortDescription>
+        <value>00GO900000DTDaKMAX</value>
+    </labels>
+    <labels>
+        <fullName>Enterprise_Success_Package</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enterprise Success Package</shortDescription>
+        <value>01t3g000000i8UCAAY</value>
+    </labels>
+    <labels>
+        <fullName>Enterprise_Support_Package_US_Only</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enterprise Support Package (US Only)</shortDescription>
+        <value>01tU0000002q18cIAA</value>
+    </labels>
+    <labels>
+        <fullName>Gold_Support_Package_EMEA_Only</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Gold Support Package (EMEA Only)</shortDescription>
+        <value>01t0P000005EhYXQA0</value>
+    </labels>
+    <labels>
+        <fullName>Gold_Support_Plan</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Gold Support Plan</shortDescription>
+        <value>01t0P000005JJ9bQAG</value>
+    </labels>
+    <labels>
+        <fullName>IndexationAvgEndMonth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IndexationAvgEndMonth</shortDescription>
+        <value>07</value>
+    </labels>
+    <labels>
+        <fullName>IndexationAvgStartMonth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IndexationAvgStartMonth</shortDescription>
+        <value>08</value>
+    </labels>
+    <labels>
+        <fullName>Linkedin_Chemical_and_Energy_and_Agriculture</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Linkedin - Chemical and Energy and Agriculture</shortDescription>
+        <value>Chemicals,
+Dairy,
+Environmental Services,
+Farming,
+Fishery,
+Mining &amp; Metals,
+Oil &amp; Energy,
+Ranching,
+Renewables &amp; Environment,
+Utilities</value>
+    </labels>
+    <labels>
+        <fullName>OEM_Acquia</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OEM_Acquia</shortDescription>
+        <value>Acquia</value>
+    </labels>
+    <labels>
+        <fullName>OEM_Workfront</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OEM_Workfront</shortDescription>
+        <value>Workfront</value>
+    </labels>
+    <labels>
+        <fullName>OLIIdPrefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OLIIdPrefix</shortDescription>
+        <value>00k</value>
+    </labels>
+    <labels>
+        <fullName>Operations</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operations</shortDescription>
+        <value>005U0000002YFEQ || // Robbert
+005U0000003lFx5 || // Wisse
+0050P000006oI3w || // Michiel
+005U0000006irlT || // John
+0050P000006nvHz; // Alex</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Competitor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unknown Opportunity Competitor</shortDescription>
+        <value>a3BO90000019wsDMAQ</value>
+    </labels>
+    <labels>
+        <fullName>Org_base_URL_Lightning</fullName>
+        <categories>Org</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Org base URL - Lightning</shortDescription>
+        <value>https://bynder.lightning.force.com</value>
+    </labels>
+    <labels>
+        <fullName>Other_Opportunity_Competitor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Other Opportunity Competitor</shortDescription>
+        <value>a3BO9000001OPkfMAG</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Enterprise_AED</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Enterprise_AED</shortDescription>
+        <value>0063g00000DJQ6ZAAX</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Enterprise_AUD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Enterprise_AUD</shortDescription>
+        <value>0063g00000CbPe8AAF</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Enterprise_EUR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Enterprise_EUR</shortDescription>
+        <value>0060d00001sNoBHAA0</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Enterprise_GBP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Enterprise_GBP</shortDescription>
+        <value>0060d00001sNoImAAK</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Enterprise_USD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Enterprise_USD</shortDescription>
+        <value>0060d00001sNoN8AAK</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Professional_AED</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Professional_AED</shortDescription>
+        <value>0063g00000DJQ3kAAH</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Professional_AUD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Professional_AUD</shortDescription>
+        <value>0063g00000CbPPuAAN</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Professional_EUR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Professional_EUR</shortDescription>
+        <value>0060P00000fTUbBQAW</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Professional_GBP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Professional_GBP</shortDescription>
+        <value>0060P00000fTWt3QAG</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Professional_USD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Professional_USD</shortDescription>
+        <value>0060P00000fTUbkQAG</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_AED</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Workgroup_AED</shortDescription>
+        <value>0063g00000DJPerAAH</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_AUD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Workgroup_AUD</shortDescription>
+        <value>0063g00000CbPE8AAN</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_EUR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Workgroup_EUR</shortDescription>
+        <value>0060P00000fTUb6QAG</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_GBP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Workgroup_GBP</shortDescription>
+        <value>0060P00000fTUbVQAW</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_Plus_AED</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Opp ID Workgroup Plus AED</shortDescription>
+        <value>006Ro000001NwSXIA0</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_Plus_AUD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Opp ID Workgroup Plus AUD</shortDescription>
+        <value>006Ro000001Np9JIAS</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_Plus_EUR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Opp ID Workgroup Plus EUR</shortDescription>
+        <value>006Ro000001No0LIAS</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_Plus_GBP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Opp ID Workgroup Plus GBP</shortDescription>
+        <value>006Ro000001NedjIAC</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_Plus_USD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Opp ID Workgroup Plus USD</shortDescription>
+        <value>006Ro000001NoRlIAK</value>
+    </labels>
+    <labels>
+        <fullName>Package_Opp_ID_Workgroup_USD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package_Opp_ID_Workgroup_USD</shortDescription>
+        <value>0060P00000fTUbaQAG</value>
+    </labels>
+    <labels>
+        <fullName>Platinum_Support_Plan</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Platinum Support Plan</shortDescription>
+        <value>01t0P000005JJ9cQAG</value>
+    </labels>
+    <labels>
+        <fullName>Plus_Success_Package</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Plus Success Package</shortDescription>
+        <value>01t3g000000i8UHAAY</value>
+    </labels>
+    <labels>
+        <fullName>Plus_Support_Package_US_Only</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Plus Support Package (US Only)</shortDescription>
+        <value>01t0d000004YNZhAAO</value>
+    </labels>
+    <labels>
+        <fullName>Pre_Order_Record_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pre-Order Record Type</shortDescription>
+        <value>0123g000000kDg7</value>
+    </labels>
+    <labels>
+        <fullName>Premier_Success_Package</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Premier Success Package</shortDescription>
+        <value>01t3g000000i8UMAAY</value>
+    </labels>
+    <labels>
+        <fullName>Premier_Support_Package</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Premier Support Package</shortDescription>
+        <value>01t0d000004YNZmAAO</value>
+    </labels>
+    <labels>
+        <fullName>Process_Bypass_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Process Bypass User</shortDescription>
+        <value>0050P000007hH92</value>
+    </labels>
+    <labels>
+        <fullName>Production_Org_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Production Org ID</shortDescription>
+        <value>00DO900000EUGnF</value>
+    </labels>
+    <labels>
+        <fullName>QLIIdPrefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QLIIdPrefix</shortDescription>
+        <value>0QL</value>
+    </labels>
+    <labels>
+        <fullName>ROW_Indexation_Product_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ROW - Indexation Product Name</shortDescription>
+        <value>Indexation</value>
+    </labels>
+    <labels>
+        <fullName>ROW_Indexation_Waiver_Product_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ROW - Indexation Waiver Product Name</shortDescription>
+        <value>Indexation Waiver</value>
+    </labels>
+    <labels>
+        <fullName>Receipents_of_duplicate_NS_ID_email</fullName>
+        <categories>Finance</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Receipents of duplicate NS ID email</shortDescription>
+        <value>michael.muller@bynder.com</value>
+    </labels>
+    <labels>
+        <fullName>Restful_API_Product</fullName>
+        <categories>Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Restful API Product</shortDescription>
+        <value>01t0P000002EFLJQA4</value>
+    </labels>
+    <labels>
+        <fullName>SFCC_Partner_Source</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFCC Partner Source</shortDescription>
+        <value>B2C Commerce (SFCC)</value>
+    </labels>
+    <labels>
+        <fullName>SFCC_Salesforce_Account_Record_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFCC Salesforce Account Record ID</shortDescription>
+        <value>0010P00001nzFnp</value>
+    </labels>
+    <labels>
+        <fullName>SFLWC_Partner_Source</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFLWC Partner Source</shortDescription>
+        <value>Bynder Digital Asset Management (DAM) for Salesforce - Lightning Web Component</value>
+    </labels>
+    <labels>
+        <fullName>SFLWC_Salesforce_Account_Record_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFLWC Salesforce Account Record ID</shortDescription>
+        <value>001U000000o3hTdIAI</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Connector_Order_Case_Notify_Only_User</fullName>
+        <categories>SFMC, Connector</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC Connector Order Case Notify Only User</shortDescription>
+        <value>0053g000000UIi6AAG</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Connector_Order_Case_Notify_Only_User_2</fullName>
+        <categories>SFMC, Connector</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC Connector Order Case Notify Only User 2</shortDescription>
+        <value>005Ro000004YHP7IAO</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Connector_Order_Case_Owner_ID</fullName>
+        <categories>SFMC, Connector</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC Connector Order Case Owner ID</shortDescription>
+        <value>0050P000007V4P6QAK</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Connector_Order_Case_Record_Type_ID</fullName>
+        <categories>SFMC, Connector</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC Connector Order Case Record Type ID</shortDescription>
+        <value>0123g000000kDcK</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Connector_Order_Case_Sub_Owner_ID</fullName>
+        <categories>SFMC, Connector</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC Connector Order Case Sub Owner ID</shortDescription>
+        <value>0050d000006SMmv</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Partner_Source</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC Partner Source</shortDescription>
+        <value>Bynder Digital Asset Management (DAM) for Salesforce Marketing Cloud</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Salesforce_Account_Record_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC Salesforce Account Record ID</shortDescription>
+        <value>0010P00001xSClM</value>
+    </labels>
+    <labels>
+        <fullName>SPG_Opp_Buying_Committee_tab_header</fullName>
+        <categories>SPG</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SPG_Opp_Buying Committee tab header</shortDescription>
+        <value>Please add everyone present as part of the buying group on this deal.</value>
+    </labels>
+    <labels>
+        <fullName>SPG_Opp_Competitors_tab_header</fullName>
+        <categories>SPG</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SPG_Opp_Competitors tab header</shortDescription>
+        <value>Please list all of the competitors you are up against on this deal. If there are no competitors, please select no competitor from the list, if unknown select Unknown.</value>
+    </labels>
+    <labels>
+        <fullName>SPG_Opp_CurrentVendor_tab_header</fullName>
+        <categories>SPG</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SPG_Opp_CurrentVendor tab header</shortDescription>
+        <value>Please add the solution the prospect is currently using. If using Internal Servers please select this from the list. If you need to remove or change, please navigate to the competitor&apos;s tab on the Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Silver_Support_Package_EMEA_Only</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Silver Support Package (EMEA Only)</shortDescription>
+        <value>01t0P000005EhYhQAK</value>
+    </labels>
+    <labels>
+        <fullName>Silver_Support_Plan</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Silver Support Plan</shortDescription>
+        <value>01t0P000005JJATQA4</value>
+    </labels>
+    <labels>
+        <fullName>Standalone_CW_Adv_Product_ID</fullName>
+        <categories>Product IDs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Standalone CW Adv_Product ID</shortDescription>
+        <value>01t3g000000dfxDAAQ</value>
+    </labels>
+    <labels>
+        <fullName>Standalone_CW_Basic_Product_ID</fullName>
+        <categories>Product IDs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Standalone CW Basic_Product ID</shortDescription>
+        <value>01t3g000000dfx8AAA</value>
+    </labels>
+    <labels>
+        <fullName>Standard_Success_Package</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Standard Success Package</shortDescription>
+        <value>01t3g000000i8URAAY</value>
+    </labels>
+    <labels>
+        <fullName>Standart_PB_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Standart PB Id</shortDescription>
+        <value>01sU0000000KLJlIAO</value>
+    </labels>
+    <labels>
+        <fullName>Starter_Success_Package</fullName>
+        <categories>Support Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Starter Success Package</shortDescription>
+        <value>01t3g000000cjbiAAA</value>
+    </labels>
+    <labels>
+        <fullName>Subscription_Discount_Product</fullName>
+        <categories>Flow Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscription Discount Product</shortDescription>
+        <value>01t0P000002EGGlQAO</value>
+    </labels>
+    <labels>
+        <fullName>Subsidiary_Amsterdam</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subsidiary_Amsterdam</shortDescription>
+        <value>a5U0d0000015ldVEAQ</value>
+    </labels>
+    <labels>
+        <fullName>Subsidiary_Dubai</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subsidiary_Dubai</shortDescription>
+        <value>a5U0d000000DhqXEAS</value>
+    </labels>
+    <labels>
+        <fullName>Subsidiary_London</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subsidiary_London</shortDescription>
+        <value>a5U0d000000DhqSEAS</value>
+    </labels>
+    <labels>
+        <fullName>Subsidiary_Melbourne</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subsidiary_Melbourne</shortDescription>
+        <value>a5U3g000000TN5rEAG</value>
+    </labels>
+    <labels>
+        <fullName>Subsidiary_US</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subsidiary_US</shortDescription>
+        <value>a5U0d000000DhqNEAS</value>
+    </labels>
+    <labels>
+        <fullName>USA_Region</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>USA Region</shortDescription>
+        <value>Boston, San Carlos, San Mateo</value>
+    </labels>
+    <labels>
+        <fullName>US_Indexation_Product_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>US - Indexation Product Name</shortDescription>
+        <value>Yearly Price Uplift</value>
+    </labels>
+    <labels>
+        <fullName>US_Indexation_Waiver_Product_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>US - Indexation Waiver Product Name</shortDescription>
+        <value>Yearly Price Uplift Waiver</value>
+    </labels>
+    <labels>
+        <fullName>UserID_Bynder_User</fullName>
+        <categories>User ID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserID_Bynder_User</shortDescription>
+        <value>005U0000003lkkpIAA</value>
+    </labels>
+    <labels>
+        <fullName>UserID_Idle</fullName>
+        <categories>User ID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserID_Idle_User</shortDescription>
+        <value>0053g000000zubXAAQ</value>
+    </labels>
+    <labels>
+        <fullName>UserID_Leads</fullName>
+        <categories>User ID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserID_Leads</shortDescription>
+        <value>005U0000002Yo5YIAS</value>
+    </labels>
+    <labels>
+        <fullName>UserID_Marketing_Admin</fullName>
+        <categories>User ID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserID_Marketing_Admin</shortDescription>
+        <value>0050d000006PE52AAG</value>
+    </labels>
+    <labels>
+        <fullName>oppIdPrefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>oppIdPrefix</shortDescription>
+        <value>006</value>
+    </labels>
+    <labels>
+        <fullName>quoteIdPrefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>quoteIdPrefix</shortDescription>
+        <value>0Q0</value>
+    </labels>
+</CustomLabels>

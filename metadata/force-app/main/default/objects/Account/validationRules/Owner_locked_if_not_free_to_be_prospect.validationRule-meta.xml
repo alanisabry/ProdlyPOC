@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_locked_if_not_free_to_be_prospect</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(Contains($Profile.Name,&quot;System Administrator&quot;)), 
+NOT(Current_User__c=OwnerId),
+CONTAINS(Account_free_to_be_prospected__c,&quot;Red&quot;),
+ISCHANGED(OwnerId))</errorConditionFormula>
+    <errorMessage>This account is locked to the current owner. Please contact the current owner or the operations team to request changes.</errorMessage>
+</ValidationRule>

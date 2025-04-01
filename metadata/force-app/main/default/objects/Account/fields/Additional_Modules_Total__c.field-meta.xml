@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Modules_Total__c</fullName>
+    <externalId>false</externalId>
+    <formula>Has_Digital_Brand_Templates_Advanced__c +  Has_Digital_Brand_Templates__c +  Has_Brand_Guidelines__c +  Has_Brand_Guidelines_Advanced__c +  Has_creative_workflow__c +  Has_Video_Brand_Studio__c +  Has_Video_Brand_Studio_Advanced__c +  Has_Brand_Templates__c +  Has_Advanced_Analytics__c +  Has_Analytics__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Additional Modules Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

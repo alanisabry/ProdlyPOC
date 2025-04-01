@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Community Member Activity is matched to an Account based on the Contact of the Community Member the activity relates to.</description>
+    <inlineHelpText>Community Member Activity is matched to an Account based on the Contact of the Community Member the activity relates to.</inlineHelpText>
+    <label>Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Community Member Activities</relationshipLabel>
+    <relationshipName>Community_Member_Activities_Account</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

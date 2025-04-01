@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Expansion_on_Renewal</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  CloseDate &gt;= DATE(2020,3,9),
+  NOT(OEM__r.Name = &quot;Workfront&quot;),
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+  NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+  ISPICKVAL(StageName, &quot;Closed Won&quot;),
+  ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;),
+  OR(
+   AND(
+   OR(
+       ISCHANGED(Renewal__c),
+       ISCHANGED(Expansion__c),
+       ISCHANGED(Contraction__c)),
+       NOT(ROUND(Renewal__c, 2) + ROUND(Renewal_Uplift_ARR__c/12, 2) + ROUND(Indexation_ARR_when_renewal_is_closed__c/12, 2) - ROUND(Contraction__c, 2)  = ROUND(MRR__c, 2))
+       ),
+   AND(
+   OR(
+       ISCHANGED(Renewal__c),
+       ISCHANGED(Expansion__c),
+       ISCHANGED(Contraction__c)),
+       NOT(ROUND(Renewal__c, 2) + ROUND(Expansion__c, 2) + ROUND(Renewal_Uplift_ARR__c/12, 2) + ROUND(Indexation_ARR_when_renewal_is_closed__c/12, 2)  = ROUND(MRR__c, 2))
+       ),
+   AND(
+     ISCHANGED(Churn_Platform_churn__c),
+     NOT(ISBLANK(Churn_Platform_churn__c)),
+     NOT(ROUND(Churn_Platform_churn__c , 2)= ROUND(MRR__c, 2))),
+   NOT(ISBLANK(New_MRR__c)),
+   NOT(ISBLANK(Churn__c)),
+   NOT(ISBLANK(Internal_Transfer__c)),
+   NOT(ISBLANK(New_MRR_Platform_transfer__c))
+   )
+)</errorConditionFormula>
+    <errorDisplayField>Renewal__c</errorDisplayField>
+    <errorMessage>For renewal opportunities, only the Renewal and Expansion fields should be filled and their sum should match MRR from products.</errorMessage>
+</ValidationRule>

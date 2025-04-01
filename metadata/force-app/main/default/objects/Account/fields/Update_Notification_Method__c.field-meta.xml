@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Notification_Method__c</fullName>
+    <label>Update Notification Method</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not in agreement</fullName>
+                <default>false</default>
+                <label>Not in agreement</label>
+            </value>
+            <value>
+                <fullName>Made in writing signed by authorized representative</fullName>
+                <default>false</default>
+                <label>Made in writing signed by authorized representative</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Online terms</fullName>
+                <default>false</default>
+                <label>Online terms</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

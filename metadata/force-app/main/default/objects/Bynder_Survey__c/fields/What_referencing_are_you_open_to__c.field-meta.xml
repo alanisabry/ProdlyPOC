@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_referencing_are_you_open_to__c</fullName>
+    <label>What referencing are you open to?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Joining the Bynder Community</fullName>
+                <default>false</default>
+                <label>Joining the Bynder Community</label>
+            </value>
+            <value>
+                <fullName>Posting a social media post about Bynder</fullName>
+                <default>false</default>
+                <label>Posting a social media post about Bynder</label>
+            </value>
+            <value>
+                <fullName>Peer to Peer Support</fullName>
+                <default>false</default>
+                <label>Peer to Peer Support</label>
+            </value>
+            <value>
+                <fullName>Leaving a G2 Review</fullName>
+                <default>false</default>
+                <label>Leaving a G2 Review</label>
+            </value>
+            <value>
+                <fullName>Speaking at an event (in person or virtual)</fullName>
+                <default>false</default>
+                <label>Speaking at an event (in person or virtual)</label>
+            </value>
+            <value>
+                <fullName>Public Customer Story</fullName>
+                <default>false</default>
+                <label>Public Customer Story</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

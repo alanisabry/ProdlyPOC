@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>Accepted</fullName>
+        <default>false</default>
+        <label>Accepted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>AI in Marketing Theatre</fullName>
+        <default>false</default>
+        <label>AI in Marketing Theatre</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Attended</fullName>
+        <default>false</default>
+        <label>Attended</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Attended Demo Session</fullName>
+        <default>false</default>
+        <label>Attended Demo Session</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Attended On-demand</fullName>
+        <default>false</default>
+        <label>Attended On-demand</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Attended Session</fullName>
+        <default>false</default>
+        <label>Attended Session</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Attended Sponsored Session</fullName>
+        <default>false</default>
+        <label>Attended Sponsored Session</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Attendee</fullName>
+        <default>false</default>
+        <label>Attendee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Booth Scan</fullName>
+        <default>false</default>
+        <label>Booth Scan</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Booth Scans</fullName>
+        <default>false</default>
+        <label>Booth Scans</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Connect</fullName>
+        <default>false</default>
+        <label>Connect</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Connected</fullName>
+        <default>false</default>
+        <label>Connected</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Demo at Booth</fullName>
+        <default>false</default>
+        <label>Demo at Booth</label>
+    </standardValue>
+    <standardValue>
+        <fullName>General Attendee</fullName>
+        <default>false</default>
+        <label>General Attendee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Happy Hour</fullName>
+        <default>false</default>
+        <label>Happy Hour</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hot Lead</fullName>
+        <default>false</default>
+        <label>Hot Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Masterclass Attendee</fullName>
+        <default>false</default>
+        <label>Masterclass Attendee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Meeting booked</fullName>
+        <default>false</default>
+        <label>Meeting booked</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Attended</fullName>
+        <default>false</default>
+        <label>Not Attended</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Contacted Yet</fullName>
+        <default>false</default>
+        <label>Not Contacted Yet</label>
+    </standardValue>
+    <standardValue>
+        <fullName>On-Demand</fullName>
+        <default>false</default>
+        <label>On-Demand</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Prospected</fullName>
+        <default>false</default>
+        <label>Prospected</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Registed for Session</fullName>
+        <default>false</default>
+        <label>Registed for Session</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Registered</fullName>
+        <default>false</default>
+        <label>Registered</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Responded</fullName>
+        <default>false</default>
+        <label>Responded</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sent</fullName>
+        <default>false</default>
+        <label>Sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Session Attendee</fullName>
+        <default>false</default>
+        <label>Session Attendee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Session Bookmarks</fullName>
+        <default>false</default>
+        <label>Session Bookmarks</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Streamed Online</fullName>
+        <default>false</default>
+        <label>Streamed Online</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Test</fullName>
+        <default>false</default>
+        <label>Test</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Viewed Live</fullName>
+        <default>false</default>
+        <label>Viewed Live</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Viewed Recorded</fullName>
+        <default>false</default>
+        <label>Viewed Recorded</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Virtual Booth Scan</fullName>
+        <default>false</default>
+        <label>Virtual Booth Scan</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Visited Booth</fullName>
+        <default>false</default>
+        <label>Visited Booth</label>
+    </standardValue>
+</StandardValueSet>

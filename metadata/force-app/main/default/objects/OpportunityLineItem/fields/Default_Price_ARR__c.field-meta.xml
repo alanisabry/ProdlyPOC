@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Price_ARR__c</fullName>
+    <description>Returns Default Price - ARR for the product.</description>
+    <formula>IF(Term__c &gt; 0,
+Default_Price__c * 12,
+Default_Price__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Default Price ARR/One-off</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integration_developed_by__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( CONTAINS( TEXT(Integration_approach__c) , &apos;Built by customer&apos;),
+&apos;Customer&apos;,
+IF(TEXT(Integration_approach__c) = &apos;Using offered integration&apos;,
+IF( Integration__r.Integration_Provider__r.Name = &apos;Bynder BV&apos;,
+&quot;Bynder&quot;,
+&quot;Bynder&apos;s partner&quot;
+),
+&quot;&quot;
+)
+)</formula>
+    <inlineHelpText>Who has developed the integration?</inlineHelpText>
+    <label>Integration developed by</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_after_DoA_Finalized</fullName>
+    <active>true</active>
+    <description>BODEV-76: Cannot add/change/remove products once DoA process has been finalized (Approved or Not Required).</description>
+    <errorConditionFormula>AND(
+  NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+
+  OR(
+    ISPICKVAL(Opportunity.DoA_Approval_Status__c, &quot;Approved&quot;),
+    ISPICKVAL(Opportunity.DoA_Approval_Status__c, &quot;Not Required&quot;)
+  ),
+
+  OR(
+    ISNEW(),
+    ISCHANGED( UnitPrice ),
+    ISCHANGED( Sales_Price_ARR__c ),
+    ISCHANGED( Quantity )
+  )
+
+)</errorConditionFormula>
+    <errorMessage>You cannot change product information once DoA process is finalized.
+If you need to change these information, click &quot;Finalize Prices &amp; Terms&quot; button again to clear the current DoA Approval Status.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,46 @@
+<!-- SPG Account -->
+<template>
+
+    <lightning-quick-action-panel header="Single Pane of Glass">
+        <div style="display:none">Keep this here for renderedCallback() support {recordId}</div>
+        <template if:true={hasModel}>
+
+            <lightning-tabset variant="scoped">
+                <lightning-tab label="Account Detail">
+                    <lightning-card title="Account Information" icon-name="standard:account_info">
+                        <lightning-record-form
+                            object-api-name="Account"
+                            record-id={model.accountId}
+                            fields={model.accountFields}
+                            columns={model.accountColumns}>
+                        </lightning-record-form>
+                    </lightning-card>
+                    <lightning-card title="Addresses" icon-name="standard:address">
+                        <lightning-record-form
+                            object-api-name="Account"
+                            record-id={model.accountId}
+                            fields={model.addressesFields}
+                            columns={model.accountColumns}>
+                        </lightning-record-form>
+                    </lightning-card>
+                </lightning-tab>
+                <lightning-tab label="Adjacent Technology">
+                    <c-adjacent-tech-info
+                        obj-api-name="Adjacent_Technology__c"
+                        icon-name="custom:custom99"
+                        title="Adjacent Technologies"
+                        objs={model.technologies}
+                        obj-fields={model.technologyFields}
+                        obj-columns={model.technologyColumns}
+                        add-label="Add Adjacent Technology"
+                        parent-lookup-api-name="Account__c"
+                        parent-record-id={model.accountId}
+                        onrecordsaved={handleRecordSaved}>
+                    </c-adjacent-tech-info>
+                </lightning-tab>
+            </lightning-tabset>
+
+        </template>
+    </lightning-quick-action-panel>
+
+</template>

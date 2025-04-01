@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_ID_required</fullName>
+    <active>true</active>
+    <description>Products need a Netsuite ID to be activated.</description>
+    <errorConditionFormula>AND(
+IsActive=TRUE,
+ISBLANK(Netsuite_New_Business_Item_Internal_ID__c))</errorConditionFormula>
+    <errorDisplayField>Netsuite_New_Business_Item_Internal_ID__c</errorDisplayField>
+    <errorMessage>Please enter the Netsuite ID for this product.</errorMessage>
+</ValidationRule>

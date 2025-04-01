@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_ideation_interaction_date__c</fullName>
+    <description>The last time this user submitted or voted for an idea on the community.</description>
+    <inlineHelpText>The last time this user submitted or voted for an idea on the community.</inlineHelpText>
+    <label>Last ideation interaction date</label>
+    <summarizedField>Community_Member_Activity__c.Activity_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Community_Member_Activity__c.Name</field>
+        <operation>contains</operation>
+        <value>Idea</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Community_Member_Activity__c.Community_Member__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Product</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DAM Essentials</fullName>
+                <default>true</default>
+                <label>DAM Essentials</label>
+            </value>
+            <value>
+                <fullName>DAM Advanced</fullName>
+                <default>false</default>
+                <label>DAM Advanced</label>
+            </value>
+            <value>
+                <fullName>DAM Ultimate</fullName>
+                <default>false</default>
+                <label>DAM Ultimate</label>
+            </value>
+            <value>
+                <fullName>DAM Custom</fullName>
+                <default>false</default>
+                <label>DAM Custom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

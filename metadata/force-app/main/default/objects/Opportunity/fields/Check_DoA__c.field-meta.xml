@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_DoA__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    /* Exempt unrelated Opp Types */
+    CASE(TEXT(Type),
+      &quot;New Business-Enterprise Cloud&quot;, 1,
+      &quot;New Business - Expansion Portal&quot;, 1,
+      &quot;Existing Business-Renewal&quot;, 1,
+      &quot;Existing Business-Upsell&quot;, 1,
+      &quot;Existing Business-Professional Services&quot;, 1,
+      0
+    ) = 0,
+
+    /* Exempt OEM deals */
+    AND(
+      NOT(ISBLANK(OEM__c)),
+      OR(
+        CONTAINS(Account.OEM_Account__r.Name,&quot;Acquia&quot;),
+        CONTAINS(Account.OEM_Account__r.Name,&quot;Workfront&quot;)
+      ),
+      NOT(CONTAINS(Account.OEM_Account__r.Name, &quot;Non OEM&quot;))
+    ),
+
+    /* Check DoA Approval Status */
+    ISPICKVAL( DoA_Approval_Status__c , &quot;Approved&quot;),
+    ISPICKVAL( DoA_Approval_Status__c , &quot;Not Required&quot;)
+  ),
+  IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;),
+  IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;)
+)</formula>
+    <inlineHelpText>DoA Approval Status must be Approved or Not Required.</inlineHelpText>
+    <label>Check - DoA</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

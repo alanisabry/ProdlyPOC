@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_invoice_email_automatically</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Account.Send_invoice_email_automatically__c,&quot;&quot;),
+ISPICKVAL(Status,&quot;Activated&quot;))</errorConditionFormula>
+    <errorMessage>Please fill out the Send invoice email automatically field on the account level.</errorMessage>
+</ValidationRule>

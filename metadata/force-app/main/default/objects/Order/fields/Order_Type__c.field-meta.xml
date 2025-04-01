@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Type, &quot;Pre-Order&quot;), &quot;Pre-Order&quot;, 
+  IF(Total_Order_Value__c&lt;0, &quot;Credit Memo&quot;, &quot;Sales Order&quot;)
+  )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Order Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

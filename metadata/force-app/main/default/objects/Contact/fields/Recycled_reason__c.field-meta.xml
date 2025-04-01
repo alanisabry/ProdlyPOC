@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recycled_reason__c</fullName>
+    <description>Webdam field</description>
+    <inlineHelpText>Must specify a recycled reason if contact is recycled.</inlineHelpText>
+    <label>Recycled reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Could Not Connect</fullName>
+                <default>false</default>
+                <label>Could Not Connect</label>
+            </value>
+            <value>
+                <fullName>Not a Priority</fullName>
+                <default>false</default>
+                <label>Not a Priority</label>
+            </value>
+            <value>
+                <fullName>Already Has DAM &amp; Satisfied</fullName>
+                <default>false</default>
+                <label>Already Has DAM &amp; Satisfied</label>
+            </value>
+            <value>
+                <fullName>Auto-Recycled</fullName>
+                <default>false</default>
+                <label>Auto-Recycled</label>
+            </value>
+            <value>
+                <fullName>No Budget</fullName>
+                <default>false</default>
+                <label>No Budget</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

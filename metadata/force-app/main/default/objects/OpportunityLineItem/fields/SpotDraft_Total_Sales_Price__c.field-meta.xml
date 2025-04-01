@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SpotDraft_Total_Sales_Price__c</fullName>
+    <description>Created this field to Round Sales Price by 2 decimals for SpotDraft Calculation.</description>
+    <externalId>false</externalId>
+    <formula>Sales_Price_ARR__c * Quantity</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SpotDraft Total Sales Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

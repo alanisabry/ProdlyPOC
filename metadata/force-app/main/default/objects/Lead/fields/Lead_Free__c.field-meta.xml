@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Free__c</fullName>
+    <description>Red: Lead being worked. Only to be contacted by owner.
+Yellow: No activity in last 35 days. Please consult lead owner before contacting.
+Green: No activity in the last 45 days. Lead free to be contacted.</description>
+    <externalId>false</externalId>
+    <formula>IF(OR(
+Days_since_last_activity__c &lt; 35, 
+TODAY() - DATEVALUE(Lead_Owner_Change_Timestamp__c) &lt; 15,
+TODAY() - DATEVALUE(CreatedDate) &lt; 15,
+of_future_events__c&gt;0,
+of_future_tasks__c&gt;0),
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;), 
+
+IF(AND(
+
+OR(
+ISNULL(Days_since_last_activity__c),
+Days_since_last_activity__c &gt; 45), 
+OR(
+AND(
+ISBLANK(of_future_events__c),
+ISBLANK(of_future_tasks__c)),
+AND(
+of_future_events__c=0,
+of_future_tasks__c=0))),
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;),
+
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRde&quot;,&quot;Maybe&quot;)))</formula>
+    <inlineHelpText>Red: Lead being worked. Only to be contacted by owner.
+Yellow: No activity in last 35 days. Please consult lead owner before contacting.
+Green: No activity in the last 45 days. Lead free to be contacted.</inlineHelpText>
+    <label>Lead Free to be Contacted?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

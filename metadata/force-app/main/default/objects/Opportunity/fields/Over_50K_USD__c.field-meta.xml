@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Over_50K_USD__c</fullName>
+    <description>BODEV-2405: Checkbox to flag when ARR is more than USD 50k (latest conversion rate). This is used for reporting on Clari.</description>
+    <formula>ARR_manual__c / CURRENCYRATE(TEXT(CurrencyIsoCode)) * CURRENCYRATE(&quot;USD&quot;) &gt;= 50000</formula>
+    <label>Over 50K USD</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

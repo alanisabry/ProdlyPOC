@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_ARR__c</fullName>
+    <description>Returns Renewal ARR value of the product line.</description>
+    <formula>IF(
+  AND(
+    For_Renewal__c = TRUE,
+    ISPICKVAL(Opportunity.Type, &quot;Existing Business-Renewal&quot;),
+    ISPICKVAL(Opportunity.StageName, &quot;Closed Won&quot;)
+  ),
+  Original_Price_ARR_OneOff__c *  Quantity,
+  NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Renewal ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,8 @@
+<apex:page standardController="Opportunity" lightningStylesheets="true">
+
+    <apex:pageBlock title="Create New Opportunity">
+        <apex:pageBlockSection >
+            Creating new Opportunities may only be done from an Account or Contact record.
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

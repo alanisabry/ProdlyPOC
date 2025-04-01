@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_New_Business_Renewals__c</fullName>
+    <label># of New Business &amp; Renewals</label>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>equals</operation>
+        <value>Closed Won</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.Type</field>
+        <operation>equals</operation>
+        <value>New Business-Enterprise Cloud, Existing Business-Renewal, New Business - Expansion Portal, Existing Business - Platform Transfer</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

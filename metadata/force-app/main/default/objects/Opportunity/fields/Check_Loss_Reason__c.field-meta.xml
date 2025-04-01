@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Loss_Reason__c</fullName>
+    <description>Indicates whether Primary Loss Reason and Loss Reason Detail are entered or not. Part of Sales QA process.</description>
+    <externalId>false</externalId>
+    <formula>IF( 
+AND(
+MRR__c&lt;0,
+OR( 
+Loss_Reason_Entered__c = FALSE, 
+ISBLANK(TEXT(Primary_Loss_Reason__c)))), 
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;), 
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Green: Okay 
+Red: Please select Primary Loss Reason and enter Loss Reason Detail.</inlineHelpText>
+    <label>Check - Loss Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

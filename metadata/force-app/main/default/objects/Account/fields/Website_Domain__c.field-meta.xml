@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Domain__c</fullName>
+    <description>BODEV-542: For the details of this Formula, please see: https://bynder.atlassian.net/l/c/q3Sc5z5s</description>
+    <externalId>false</externalId>
+    <formula>IF(FIND(&quot;/&quot;,(IF(OR(BEGINS(Website, &quot;http://www&quot;),BEGINS(Website, &quot;https://www&quot;), BEGINS(Website, &quot;www.&quot;)),
+SUBSTITUTE(Website, LEFT(Website, FIND(&quot;.&quot;, Website)), NULL),
+
+IF(BEGINS(Website, &quot;http://&quot;),
+MID(Website, FIND(&apos;http://&apos;, Website, 1)+7, (LEN(Website) - FIND(&apos;http://&apos;, Website, 1)+7)),
+
+IF(BEGINS(Website, &quot;https://&quot;),
+MID(Website, FIND(&apos;https://&apos;, Website, 1)+8, (LEN(Website) - FIND(&apos;https://&apos;, Website, 1)+8)), Website)))
+
+))&gt;0, LOWER(LEFT((IF(OR(BEGINS(Website, &quot;http://www&quot;),BEGINS(Website, &quot;https://www&quot;), BEGINS(Website, &quot;www.&quot;)),
+SUBSTITUTE(Website, LEFT(Website, FIND(&quot;.&quot;, Website)), NULL),
+
+IF(BEGINS(Website, &quot;http://&quot;),
+MID(Website, FIND(&apos;http://&apos;, Website, 1)+7, (LEN(Website) - FIND(&apos;http://&apos;, Website, 1)+7)),
+
+IF(BEGINS(Website, &quot;https://&quot;),
+MID(Website, FIND(&apos;https://&apos;, Website, 1)+8, (LEN(Website) - FIND(&apos;https://&apos;, Website, 1)+8)), Website)))), FIND(&quot;/&quot;,(IF(OR(BEGINS(Website, &quot;http://www&quot;),BEGINS(Website, &quot;https://www&quot;), BEGINS(Website, &quot;www.&quot;)),
+SUBSTITUTE(Website, LEFT(Website, FIND(&quot;.&quot;, Website)), NULL),
+
+IF(BEGINS(Website, &quot;http://&quot;),
+MID(Website, FIND(&apos;http://&apos;, Website, 1)+7, (LEN(Website) - FIND(&apos;http://&apos;, Website, 1)+7)),
+
+IF(BEGINS(Website, &quot;https://&quot;),
+MID(Website, FIND(&apos;https://&apos;, Website, 1)+8, (LEN(Website) - FIND(&apos;https://&apos;, Website, 1)+8)), Website))))) - 1)), LOWER(IF(OR(BEGINS(Website, &quot;http://www&quot;),BEGINS(Website, &quot;https://www&quot;), BEGINS(Website, &quot;www.&quot;)),
+SUBSTITUTE(Website, LEFT(Website, FIND(&quot;.&quot;, Website)), NULL),
+
+IF(BEGINS(Website, &quot;http://&quot;),
+MID(Website, FIND(&apos;http://&apos;, Website, 1)+7, (LEN(Website) - FIND(&apos;http://&apos;, Website, 1)+7)),
+
+IF(BEGINS(Website, &quot;https://&quot;),
+MID(Website, FIND(&apos;https://&apos;, Website, 1)+8, (LEN(Website) - FIND(&apos;https://&apos;, Website, 1)+8)), Website)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Website Domain</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

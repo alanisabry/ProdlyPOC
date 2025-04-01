@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_Set_Customer_Stage__c</fullName>
+    <formula>AND( 
+CloseDate &gt;=  DATE(2019,8,27),
+Startdate_contract__c &gt;=  CloseDate,
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISBLANK(Project_Sign_off_Date__c),
+Startdate_contract__c &lt;= TODAY(),
+ISPICKVAL(Account.Customer_Stage__c,&quot;New_Customer&quot;),
+OR(CONTAINS(TEXT(Type), &quot;New Business&quot;), CONTAINS(TEXT(Type), &quot;Platform Transfer&quot;))
+)</formula>
+    <label>Flow: Set Customer Stage</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

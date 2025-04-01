@@ -1,0 +1,44 @@
+<apex:page standardController="Lead">
+    <html>
+    <head>
+    <script>
+        setTimeout(() => {
+            var loader = document.getElementById('loader');
+            var embed = document.getElementById('embed');
+    
+            loader.style.visibility = 0;
+            embed.style.visibility = 1;
+        }, 2000);
+    </script>
+    <style>
+        div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        #loader {
+            display: flex;
+            background: linear-gradient(to right, rgb(39, 57, 93) 0%, rgb(69, 118, 217) 51%, rgb(39, 57, 93) 100%);
+        }
+        #loader img {
+            width: 25%;
+            height: auto;
+            margin: auto;
+        }
+        #embed {
+            visibility: 0;
+        }
+    </style>
+    </head>
+    <body>
+    <div id="loader">
+    <img src="https://app.madkudu.com/media/images/MadKudu-Logo-Secondary-Text-White.svg" alt="MadKudu logo" />
+    </div>
+    <div id="embed">
+    <apex:iframe src=" https://embed.madkudu.com/dashboard/lead?id={!Lead.id}" width="100%" scrolling="true" height="1500px" id="mkAccountActivity"/>
+</div>
+</body>
+</html>
+</apex:page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCRM_FCR_SAL__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>wd field
+Used by FCI</description>
+    <inlineHelpText>Status Flips to Sales Accepted</inlineHelpText>
+    <label>SAL</label>
+    <type>Checkbox</type>
+</CustomField>

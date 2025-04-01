@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Goal_Time_to_Value__c</fullName>
+    <description>Indicates the goal date of MVP based on the Project Type</description>
+    <formula>KICK_OFF_DATE__c + CASE(Project_Type_SM__c,
+&quot;Midmarket Workgroup (Flagship)&quot;, 45,
+&quot;Standard Onboarding (Webdam)&quot;, 45,
+&quot;Starter (Flagship)&quot;, 56,
+&quot;Custom - Additional Module Implementation&quot;, 56,
+&quot;Workstream Onboarding (Webdam)&quot;, 60,
+&quot;Midmarket Professional (Flagship)&quot;, 60,
+&quot;Enterprise Onboarding (Webdam)&quot;, 90,
+&quot;Enterprise (Flagship)&quot;, 90,
+&quot;Elite Onboarding (Webdam)&quot;, 90,
+&quot;8 Session Asset Bank Audit&quot;,70,
+&quot;12 Session Asset Bank Audit&quot;,98,
+&quot;5 Session Workflow Audit&quot;,49,
+null)</formula>
+    <inlineHelpText>Indicates the goal date of MVP based on the Project Type</inlineHelpText>
+    <label>Goal Time to Value</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

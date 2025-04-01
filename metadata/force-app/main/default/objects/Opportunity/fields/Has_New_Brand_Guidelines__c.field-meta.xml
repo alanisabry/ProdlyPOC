@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_New_Brand_Guidelines__c</fullName>
+    <description>Field that indicates how many Advanced and/or Basic Brand Guidelines the opportunity has. Used in the calculations on the Account level.</description>
+    <label>Has New Brand Guidelines</label>
+    <summarizedField>OpportunityLineItem.Quantity</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Name_rus__c</field>
+        <operation>contains</operation>
+        <value>Brand Guidelines (BG)</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Name_rus__c</field>
+        <operation>notEqual</operation>
+        <value>Brand Guidelines (BG)</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.For_Renewal_Mapped__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

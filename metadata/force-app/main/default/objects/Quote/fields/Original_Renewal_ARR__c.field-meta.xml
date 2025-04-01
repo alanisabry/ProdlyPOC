@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_Renewal_ARR__c</fullName>
+    <description>Used to store the Original Renewal ARR of the renewal opportunity associated with the quote.</description>
+    <formula>Opportunity.Original_Renewal_ARR__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Original Renewal ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

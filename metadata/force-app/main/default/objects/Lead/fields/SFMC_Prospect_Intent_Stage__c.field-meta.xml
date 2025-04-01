@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFMC_Prospect_Intent_Stage__c</fullName>
+    <description>BODEV-1358: Segmentation field created for SFMC. Maintained by RingLead.</description>
+    <label>SFMC Prospect Intent Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>SFMC_Prospect_Intent_Stage</valueSetName>
+    </valueSet>
+</CustomField>

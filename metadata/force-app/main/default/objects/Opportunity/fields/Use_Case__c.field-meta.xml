@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Case__c</fullName>
+    <description>Please define a singular Main Use-Case for the portal for Analysis purposes</description>
+    <inlineHelpText>Please define a singular Main Use-Case for the portal for Analysis purposes</inlineHelpText>
+    <label>Primary Use Case</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Brand/Rebrand</fullName>
+                <default>false</default>
+                <label>Brand/Rebrand</label>
+            </value>
+            <value>
+                <fullName>Marketing and Creative</fullName>
+                <default>false</default>
+                <label>Marketing and Creative</label>
+            </value>
+            <value>
+                <fullName>Product</fullName>
+                <default>false</default>
+                <label>Product</label>
+            </value>
+            <value>
+                <fullName>Partner Portals</fullName>
+                <default>false</default>
+                <label>Partner Portals</label>
+            </value>
+            <value>
+                <fullName>Sales Enablement</fullName>
+                <default>false</default>
+                <label>Sales Enablement</label>
+            </value>
+            <value>
+                <fullName>Integrations</fullName>
+                <default>false</default>
+                <label>Integrations</label>
+            </value>
+            <value>
+                <fullName>E-Commerce</fullName>
+                <default>false</default>
+                <label>E-Commerce</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

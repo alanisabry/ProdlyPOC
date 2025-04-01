@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_ClosedOpRevenueModel3__c</fullName>
+    <description>wd field 
+Deprecated Field - Use the Campaign Influence Detail object to report on Campaign Influence metrics</description>
+    <inlineHelpText>Deprecated Field - Use the Campaign Influence Detail object to report on Campaign Influence metrics</inlineHelpText>
+    <label>Deprecated</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <type>Currency</type>
+</CustomField>

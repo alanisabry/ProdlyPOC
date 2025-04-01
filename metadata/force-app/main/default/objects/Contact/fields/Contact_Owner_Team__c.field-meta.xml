@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Owner_Team__c</fullName>
+    <description>Based on Contact owner Sales team or  BDR Team</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Owner.Sales_Team__c)),
+Owner.Sales_Team__c,
+IF(NOT(ISBLANK(TEXT(Owner.BDR_Team__c))),
+TEXT(Owner.BDR_Team__c),
+&apos;&apos;
+)
+)</formula>
+    <label>Contact Owner Team</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Silicon_Publishing</fullName>
+    <active>true</active>
+    <description>BO-1465: Remove Access to Adobe CC Users (Silicon Publishing) for Sales Team</description>
+    <errorConditionFormula>AND( NOT($Profile.Name = &quot;System Administrator&quot;),OR(ISPICKVAL( Opportunity.Type, &quot;New Business-Enterprise Cloud&quot;),ISPICKVAL( Opportunity.Type, &quot;New Business - Expansion Portal&quot;) ), Product2.Product_ID_18_digits__c = &apos;01t0P000002FJq7QAG&apos;)</errorConditionFormula>
+    <errorMessage>Cannot add Adobe CC Users (Silicon Publishing) on New Business opportunities. Please use LinkrUI.</errorMessage>
+</ValidationRule>

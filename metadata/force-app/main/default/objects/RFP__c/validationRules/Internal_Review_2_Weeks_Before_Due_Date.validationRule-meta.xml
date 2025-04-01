@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Review_2_Weeks_Before_Due_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT( ISNULL( Internal_Review_Due_Date__c ))
+&amp;&amp; NOT( ISNULL( RFP_Due_Date__c ) )
+&amp;&amp; Internal_Review_Due_Date__c &gt; RFP_Due_Date__c - 14</errorConditionFormula>
+    <errorDisplayField>Internal_Review_Due_Date__c</errorDisplayField>
+    <errorMessage>Internal Review Date should be 2 weeks prior to RFP Due Date</errorMessage>
+</ValidationRule>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solution_Owner_mandatory_for_newbusiness</fullName>
+    <active>true</active>
+    <description>Solutions are always required for new business opportunities. The relevant Byndie should be added as a Solution Owner.</description>
+    <errorConditionFormula>AND ( 
+NOT($Profile.Name = &quot;Automated Process&quot;),
+Platform__c=&quot;Bynder&quot;, 
+NOT(ISNEW()),
+NOT(CreatedDate&gt;Now()-0.0007),
+
+NOT( 
+OR (
+ISCHANGED(Demo_Completed_Outbound__c), 
+ISCHANGED(Solution_Required_in_Flow__c),
+Solution_Required_in_Flow__c = True, 
+CONTAINS($Profile.Name,&quot;Finance&quot;), 
+CONTAINS($Profile.Name,&quot;System Administrator&quot;),
+$Profile.Name = &quot;Automated Process&quot;,
+CONTAINS($Profile.Name,&quot;[Bynder] Legal&quot;))), 
+
+OR(ISPICKVAL(Type, &quot;New Business-Enterprise Cloud&quot;), 
+ISPICKVAL(Type, &quot;New Business - Expansion Portal&quot;),
+ISPICKVAL(Type, &quot;Existing Business - Platform Transfer&quot;)),
+
+ISBLANK(Solution_Owner__c),
+NOT(ISPICKVAL(Solutions_Required__c,&quot;No&quot;)),
+
+OR(
+NOT(ISPICKVAL(StageName,&quot;Qualified&quot;))),
+NOT(ISPICKVAL(StageName,&quot;Closed Lost&quot;)))</errorConditionFormula>
+    <errorMessage>A solution owner is mandatory for new business opportunities - please fill out this field.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Billing_Details__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+AND(
+ISBLANK(TEXT(Account.OEM__c)),
+OR(
+AND(
+ISPICKVAL(Account.BillingCountryCode, &quot;US&quot;),
+ISBLANK(Account.BillingState)),
+ISBLANK(Account.Bill_to_Contact_Email__c), 
+ISBLANK(Account.BillingCity),
+ISBLANK(Account.BillingStreet),
+ISBLANK(Account.BillingCountry),
+ISBLANK(Account.Billing_Account_Name__c))),
+
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;), 
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;))</formula>
+    <inlineHelpText>Green: Okay
+Red: The following fields are required on the account level - billing account name, bill to contact email, billing address, bill to contact first &amp; bill to contact last name.</inlineHelpText>
+    <label>Check - Billing Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

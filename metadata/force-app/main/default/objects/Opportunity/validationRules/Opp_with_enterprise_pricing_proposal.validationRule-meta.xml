@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_with_enterprise_pricing_proposal</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(StageName),
+NOT(ISPICKVAL(Type,&quot;Referral&quot;)),
+ISBLANK(TEXT(Opportunity_with_value_based_pricing__c)),
+OR(
+ISPICKVAL(StageName, &quot;Proposal&quot;),
+ISPICKVAL(StageName, &quot;VOC&quot;),
+ISPICKVAL(StageName, &quot;Legal Review&quot;),
+ISPICKVAL(StageName, &quot;Signature Stage&quot;),
+ISPICKVAL(StageName, &quot;Closed Won&quot;))
+)</errorConditionFormula>
+    <errorMessage>Please fill in the &quot;Opportunity with value-based pricing?&quot; field before moving to Proposal stage</errorMessage>
+</ValidationRule>

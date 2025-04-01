@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Draft_Order_of_Active_Opportunity__c</fullName>
+    <description>Indicates that this OLI belongs to a draft order of an active opportunity. Used in the flow &quot;Opportunity to Order&quot;.</description>
+    <formula>IF(
+  AND(
+    Order.Opportunity.Contract_IsActive__c = True,
+    ISPICKVAL(Order.Status, &apos;Draft&apos;),
+    Order.IsReductionOrder = False,
+    OR(
+      ISPICKVAL(Order.Opportunity.Type, &apos;New Business-Enterprise Cloud&apos;),
+      ISPICKVAL(Order.Opportunity.Type, &apos;Existing Business-Renewal&apos;),
+      ISPICKVAL(Order.Opportunity.Type, &apos;New Business - Expansion Portal&apos;))),
+  TRUE,
+  FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Draft Order of Active Opportunity?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

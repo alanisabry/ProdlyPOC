@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_ICP__c</fullName>
+    <description>BODEV-2393 include fileds un campaign with campaign members reporting</description>
+    <formula>IF( NOT(ISBLANK(ContactId)), Contact.Account.Industry_ICP__c,
+Lead.Industry_ICP__c)</formula>
+    <label>Industry ICP</label>
+    <type>Checkbox</type>
+</CustomField>

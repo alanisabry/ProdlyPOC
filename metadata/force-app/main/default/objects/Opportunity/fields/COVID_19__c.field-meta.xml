@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COVID_19__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Tick this box if we have lost this revenue due to COVID-19 specifically.</description>
+    <inlineHelpText>Please tick this box if we have lost this revenue due to COVID-19 specifically and specify in the Loss Reason Detail field</inlineHelpText>
+    <label>COVID-19</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_Allocated_STT_Minutes__c</fullName>
+    <label># of Allocated STT Minutes</label>
+    <summarizedField>Opportunity.of_Allocated_STT_Minutes__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.Contract_IsActive__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFMC_Is_from_Salesforce_Lead__c</fullName>
+    <description>BODEV-81: Formula to flag if the associated opportunity or account was derived from a lead referred by Salesforce</description>
+    <formula>OR(
+  /*
+    Pattern 1: Opportunity Lead Source is Direct Partnership and 
+    Salesforce is specified in Partner Account field
+  */
+  AND(
+    NOT(ISBLANK(Opportunity__c)),
+    ISPICKVAL(Opportunity__r.LeadSource, &quot;Direct Partnership&quot;),
+    NOT(ISBLANK(Opportunity__r.OEM__c)),
+    CONTAINS(Opportunity__r.OEM__r.Name, &quot;Salesforce&quot;)
+  ),
+
+  /* 
+    Pattern 2: Account Source is Direct Partnership and
+    Salesforce is specified in Partner Account field
+  */
+  AND(
+    ISPICKVAL(Account.AccountSource , &quot;Direct Partnership&quot;),
+    NOT(ISBLANK(Account.OEM_Account__c)),
+    CONTAINS(Account.OEM_Account__r.Name, &quot;Salesforce&quot;)
+  ),
+
+  /*
+    Pattern 3: Either Account Source or Opportunity Lead Source is AppExchange
+    (Partner Account is not checked, as in this case obviously the original lead is from SFDC)
+  */
+  OR(
+    ISPICKVAL(Opportunity__r.LeadSource, &quot;AppExchange - Marketing Cloud&quot;),
+    ISPICKVAL(Account.AccountSource , &quot;AppExchange - Marketing Cloud&quot;),
+    ISPICKVAL(Opportunity__r.LeadSource, &quot;AppExchange - Commerce Cloud&quot;),
+    ISPICKVAL(Account.AccountSource , &quot;AppExchange - Commerce Cloud&quot;),
+    ISPICKVAL(Opportunity__r.LeadSource, &quot;AppExchange - LWC&quot;),
+    ISPICKVAL(Account.AccountSource , &quot;AppExchange - LWC&quot;)
+  )
+)</formula>
+    <inlineHelpText>If Lead Source/Account Source of the associated opportunity/account is &quot;Direct Partnership&quot; and Salesforce is specified in Partner Account field, that means the opportunity/account was derived from a lead referred by Salesforce.</inlineHelpText>
+    <label>Is from Salesforce Lead</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

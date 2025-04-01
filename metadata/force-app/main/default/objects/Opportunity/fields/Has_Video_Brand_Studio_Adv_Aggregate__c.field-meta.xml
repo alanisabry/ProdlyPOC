@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Video_Brand_Studio_Adv_Aggregate__c</fullName>
+    <label>Has Video Brand Studio Adv Aggregate</label>
+    <summarizedField>OpportunityLineItem.quantity_rounded__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Name_rus__c</field>
+        <operation>equals</operation>
+        <value>Video Brand Studio advanced</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Account_moved_to_one2many_strategy</fullName>
+        <ccEmails>service@bynder.com</ccEmails>
+        <description>Account moved to one2many-strategy</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/one2many_strategy</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Website_with_the_Domain</fullName>
+        <field>Website</field>
+        <formula>Website_Domain__c</formula>
+        <name>Update Website with the Domain</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>TrayOnAccountFieldsChange_2nYT8Y</fullName>
+        <apiVersion>37.0</apiVersion>
+        <endpointUrl>https://1705cd6b-cf3f-47ca-b9f9-31dcd2bc910a-78738ea762010b6.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>hubspot@bynder.com</integrationUser>
+        <name>TrayOnAccountFieldsChange_2nYT8Y</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>TrayOnAccountFieldsChange_WWMha</fullName>
+        <apiVersion>37.0</apiVersion>
+        <endpointUrl>https://f176ea79-2bc4-40ca-8306-c43f71b9bba8-7801ddf764a241e.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>hubspot@bynder.com</integrationUser>
+        <name>TrayOnAccountFieldsChange_WWMha</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>TrayOnAccountFieldsChange_ZtEbzj</fullName>
+        <apiVersion>37.0</apiVersion>
+        <endpointUrl>https://69141635-39b8-4ee1-84d1-8ca076a919d8-55659a8ada58f5d.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>hubspot@bynder.com</integrationUser>
+        <name>TrayOnAccountFieldsChange_ZtEbzj</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>TrayOnAccountFlow_acvNU</fullName>
+        <apiVersion>55.0</apiVersion>
+        <endpointUrl>https://29c9dd9a-d9dc-4d89-abef-a140b88db3a7-9c53310eee51522.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>bynder-integrations@bynder.com</integrationUser>
+        <name>TrayOnAccountFlow_acvNU</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>TrayOnAccountFieldsChange_2nYT8Y</fullName>
+        <actions>
+            <name>TrayOnAccountFieldsChange_2nYT8Y</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Name) || ISCHANGED(OEM_Account__c) || ISCHANGED(BillingCity) || ISCHANGED(BillingState) || ISCHANGED(BillingCountryCode) || ISCHANGED(BillingPostalCode) || ISCHANGED(Account_ID_18_digits__c) || ISCHANGED(BillingStreet) || ISCHANGED(Invoice_Upload_Portal__c) || ISCHANGED(Platform__c) || ISCHANGED(Subsidiary_lookup__c) || ISCHANGED(Netsuite_Internal_ID__c) || ISCHANGED(CurrencyIsoCode) || ISCHANGED(CSM_Owner__c) || ISCHANGED(Type) || ISCHANGED(Credit_Control_Reminder_Email__c) || ISCHANGED(PO_Needed__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>TrayOnAccountFieldsChange_WWMha</fullName>
+        <actions>
+            <name>TrayOnAccountFieldsChange_WWMha</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Name) || ISCHANGED(OEM_Account__c) || ISCHANGED(BillingCity) || ISCHANGED(BillingState) || ISCHANGED(BillingCountryCode) || ISCHANGED(BillingPostalCode) || ISCHANGED(Account_ID_18_digits__c) || ISCHANGED(BillingStreet) || ISCHANGED(Invoice_Upload_Portal__c) || ISCHANGED(Platform__c) || ISCHANGED(Subsidiary_lookup__c) || ISCHANGED(Netsuite_Internal_ID__c) || ISCHANGED(CurrencyIsoCode) || ISCHANGED(CSM_Owner__c) || ISCHANGED(Type) || ISCHANGED(Credit_Control_Reminder_Email__c) || ISCHANGED(Billing_Account_Name__c) || ISCHANGED(Bill_to_Contact_Email__c) || ISCHANGED(Billing_cc_email__c) || ISCHANGED(Invoice_Delivery_Method__c) || ISCHANGED(Send_invoice_email_automatically__c) || ISCHANGED(VAT_number__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>TrayOnAccountFieldsChange_ZtEbzj</fullName>
+        <actions>
+            <name>TrayOnAccountFieldsChange_ZtEbzj</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Name) || ISCHANGED(OEM_Account__c) || ISCHANGED(BillingCity) || ISCHANGED(BillingState) || ISCHANGED(BillingCountryCode) || ISCHANGED(BillingPostalCode) || ISCHANGED(Account_ID_18_digits__c) || ISCHANGED(BillingStreet) || ISCHANGED(Invoice_Upload_Portal__c) || ISCHANGED(Platform__c) || ISCHANGED(Subsidiary_lookup__c) || ISCHANGED(Netsuite_Internal_ID__c) || ISCHANGED(CurrencyIsoCode) || ISCHANGED(CSM_Owner__c) || ISCHANGED(Type) || ISCHANGED(Credit_Control_Reminder_Email__c) || ISCHANGED(Billing_Account_Name__c) || ISCHANGED(Bill_to_Contact_Email__c) || ISCHANGED(Billing_cc_email__c) || ISCHANGED(Invoice_Delivery_Method__c) || ISCHANGED(Send_invoice_email_automatically__c) || ISCHANGED(VAT_number__c) || ISCHANGED(PO_Needed__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Website with Domain</fullName>
+        <actions>
+            <name>Update_Website_with_the_Domain</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Website_Domain__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Please_set_the_IPR_usage_for_this_new_customer</fullName>
+        <assignedTo>legal@bynder.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>Dear Legal,
+
+A new customer has been signed!
+
+Could you help us out filling in the fields under the section &quot;Use of Customer logo, name, other customer information (Legal; IP)&quot;? Also note the Approved Bynder Wizard Consent Form checkbox.
+
+Thanks.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Please set the IPR usage for this new customer</subject>
+    </tasks>
+</Workflow>

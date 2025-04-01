@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Package_Products_Quantity_Limits</fullName>
+    <active>true</active>
+    <description>For new business opportunities, the quantity of Packaged Storage/User Products can not exceed the limit.</description>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+NOT(CONTAINS($Profile.Name, &quot;System Administrator&quot;)), 
+CONTAINS( TEXT( Opportunity.Type ) , &quot;New Business&quot;), 
+
+( 
+(Part_of_a_package__c = TRUE
+&amp;&amp;
+ Quantity  &lt; 0)
+ || 
+
+(Part_of_a_package__c = TRUE
+ &amp;&amp; 
+ISPICKVAL(Opportunity.Standard_Package_Name__c, &quot;Workgroup&quot;) 
+ &amp;&amp; 
+ OR(
+     AND( Product2.Name= &quot;Admin User&quot;,  Quantity &gt; 2,  (ISPICKVAL( Opportunity.CurrencyIsoCode , &quot;EUR&quot;) || ISPICKVAL( Opportunity.CurrencyIsoCode , &quot;GBP&quot;)   )),
+     AND( Product2.Name= &quot;Admin User&quot;,  Quantity &gt; 2,  (ISPICKVAL( Opportunity.CurrencyIsoCode , &quot;USD&quot;) || ISPICKVAL( Opportunity.CurrencyIsoCode , &quot;AUD&quot;)   )),
+     AND( Product2.Name= &quot;Regular User&quot;,  Quantity &gt; 10 ),
+     AND( Product2.Name= &quot;Light Users&quot;,  Quantity &gt; 100 ),
+     AND( Product2.Name= &quot;TB Storage&quot;,  Quantity &gt; 1 )
+    )
+)
+ ||
+
+(Part_of_a_package__c = TRUE
+ &amp;&amp; 
+ISPICKVAL(Opportunity.Standard_Package_Name__c, &quot;Professional&quot;) 
+ &amp;&amp; 
+ OR(
+     AND( Product2.Name= &quot;Admin User&quot;,  Quantity &gt; 5 ),
+     AND( Product2.Name= &quot;Regular User&quot;,  Quantity &gt; 20 ),
+     AND( Product2.Name= &quot;Light Users&quot;,  Quantity &gt; 500 ),
+     AND( Product2.Name= &quot;TB Storage&quot;,  Quantity &gt; 2 )
+    )
+)
+ ||
+
+(Part_of_a_package__c = TRUE
+ &amp;&amp; 
+ISPICKVAL(Opportunity.Standard_Package_Name__c, &quot;Enterprise&quot;) 
+ &amp;&amp; 
+ OR(
+     AND( Product2.Name= &quot;Admin User&quot;,  Quantity &gt; 15 ),
+     AND( Product2.Name= &quot;Regular User&quot;,  Quantity &gt; 100 ),
+     AND( Product2.Name= &quot;Light Users&quot;,  Quantity &gt; 1000 ),
+     AND( Product2.Name= &quot;TB Storage&quot;,  Quantity &gt; 5 )
+    )
+)
+ || 
+
+(Part_of_a_package__c = TRUE
+ &amp;&amp; 
+ISPICKVAL(Opportunity.Standard_Package_Name__c, &quot;Starter&quot;) 
+ &amp;&amp; 
+ OR(
+     AND( Product2.Name= &quot;Admin/Regular Users&quot;,  Quantity &gt; 10 ),
+     AND( Product2.Name= &quot;Light Users&quot;,  Quantity &gt; 50 ),
+     AND( Product2.Name= &quot;TB Storage&quot;,  Quantity &gt; 3 )
+    )
+)
+)
+
+)</errorConditionFormula>
+    <errorMessage>Cannot exceed your max packaged quantity in your order form</errorMessage>
+</ValidationRule>

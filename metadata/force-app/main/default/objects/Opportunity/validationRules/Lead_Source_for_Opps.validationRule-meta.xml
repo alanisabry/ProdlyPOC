@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_for_Opps</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(Contains($Profile.Name,&quot;System Administrator&quot;)), 
+NOT(Contains($Profile.Name,&quot;Finance&quot;)), 
+
+ISPICKVAL( LeadSource , &quot;&quot; ), 
+OR(ISPICKVAL(Type , &quot;New Business-Enterprise Cloud&quot; ), 
+ISPICKVAL(Type , &quot;New Business - Expansion Portal&quot; ),
+ISPICKVAL(Type , &quot;Existing Business - Platform Transfer&quot; ))
+)</errorConditionFormula>
+    <errorMessage>A lead source is required for new business.</errorMessage>
+</ValidationRule>

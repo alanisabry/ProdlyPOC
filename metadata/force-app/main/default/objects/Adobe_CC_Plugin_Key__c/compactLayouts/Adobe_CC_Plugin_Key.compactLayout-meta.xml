@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adobe_CC_Plugin_Key</fullName>
+    <fields>Name</fields>
+    <fields>Opportunity__c</fields>
+    <fields>Start_Date__c</fields>
+    <fields>Expired_Date__c</fields>
+    <fields>Duration__c</fields>
+    <fields>Key_given__c</fields>
+    <label>Adobe CC Plugin Key</label>
+</CompactLayout>

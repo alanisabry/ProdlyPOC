@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indexation_First_Date__c</fullName>
+    <description>The first date of the month for which this indexation rate applies to.</description>
+    <formula>DATE(VALUE(LEFT(Year_and_Month__c,4)),VALUE(Right(Year_and_Month__c,2)),01)</formula>
+    <inlineHelpText>The first date of the month for which this indexation rate applies to.</inlineHelpText>
+    <label>Indexation First Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

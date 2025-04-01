@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indexation_reported_in_previous_contract__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Used to capture the indexation reported in the previous contract</description>
+    <inlineHelpText>Indexation amount reported as movements for sales KPI at the order level in the previous contract.</inlineHelpText>
+    <label>Indexation reported in previous contract</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

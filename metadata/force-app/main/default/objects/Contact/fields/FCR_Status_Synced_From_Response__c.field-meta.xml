@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Status_Synced_From_Response__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>wd field
+Administrative field that indicates that the status of this contact was set during response sync.</description>
+    <label>Status Synced From Response</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

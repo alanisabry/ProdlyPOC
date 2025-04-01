@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_has_unscoped_users__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>https://docs.google.com/spreadsheets/d/1dUdw3YKe2bs_DKdAdo9aElgPPxtkqE0JHqMvTrhXYps/edit?usp=sharing</description>
+    <inlineHelpText>When this box is checked, the account has unscoped users in the active contract</inlineHelpText>
+    <label>Contract has unscoped users</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

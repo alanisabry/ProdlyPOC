@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Contract_Conga</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Contract</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Opportunity.Id}
+
+&amp;QueryId=[WorkgroupQuery]a3y3g000001ADcB,
+[ProfessionalConga]a3y3g000001ADcG,
+[EnterpriseConga]a3y3g000001ADcL,
+[LineitemQueryMRR]a3y3g000001OLAk,
+[ContentworkflowQuery]a3y3g000001OLccAAG,
+[OneoffQuery]a3y3g000001OLfM,
+[PckoneoffDis]a3y3g000001WU8n,
+[NonpackageQuery]a3y3g000001OLfg,
+[OneoffnonpckgQuery]a3y3g000001OLsL,
+[PckarrDis]a3y3g000001WU8s,
+[PackagerecurngQuery]a3y3g000001OLsQ,
+[NonpckgrecurngQuery]a3y3g000001OLsV,
+[OneoffdiscalQuery]a3y3g000001OLsa,
+[PckgfeemrrQuery]a3y3g000001OLsf,
+[PckgfeeoneoffQuery]a3y3g000001OLsk,
+[AproductsoneoffQuery]a3y3g000001OLsp,
+[AproductmrrQuery]a3y3g000001OLsq,
+[DiscountmrrQuery]a3y3g000001OLtC,
+[SuccesspckgQuery]a3y3g000001OLtH,
+[AusrpricingQuery]a3y3g000001OLtM,
+[AusGBPQuery]a3y3g000001WUAO,
+[AusUSDQuery]a3y3g000001WUAT,
+[AusAUDQuery]a3y3g000001WUAU,
+[AstorageQuery]a3y3g000001OLtR,
+[GBPstrageQuery]a3y3g000000ZgaN,
+[USDstrageQuery]a3y3g000000ZgaS,
+[AUDstrageQuery]a3y3g000000ZgaX,
+[TcsoneoffQuery]a3y3g000001OLtW,
+[TcsdiscountQuery]a3y3g000001OLtb,
+[TcsmrrQuery]a3y3g000001OLtg,
+[TcsdisrcrngQuery]a3y3g000001OLtl,
+[TcsdisnrcrngQuery]a3y3g000001OLtq,
+[TcsdismrrQuery]a3y3g000001WU8x,
+[OnboardingQuery]a3y3g000001WU9G,
+[StndpckgQuery]a3y3g000001WU9V,
+[CWsetupQuery]a3y3g000001WU9a,
+[BGsetupQuery]a3y3g000001WU9f,
+[PBTsetupQuery]a3y3g000001WU9k,
+[StsetupQuery]a3y3g000001WU9l,
+[CNWsetupQuery]a3y3g000001WU9p,
+[Asset1tbQuery]a3y3g000001WU9u,
+[Asset2tbQuery]a3y3g000001WUB2,
+[MassuplerQuery]a3y3g000001WU9z,
+[CustomthmQuery]a3y3g000001WUA4,
+[Training2hrQuery]a3y3g000001WUA9,
+[ApipluginQuery]a3y3g000001WUAE,
+[OpenassetQuery]a3y3g000001WUAJ,
+[AdobeccQuery]a3y3g000001WUB7,
+[DATsetupQuery]a3y3g000001WUBC,
+[BynderDAMQuery]a3y3g000001WUAY,
+[BguidelineQuery]a3y3g000001WUAZ,
+[CworkflowQuery]a3y3g000001WUAa,
+[DBTemplateQuery]a3y3g000001WUAd,
+[PBTemplateQuery]a3y3g000001WUAi,
+[StudioQuery]a3y3g000001WUAn,
+[ContentWQuery]a3y3g000001WUAs,
+[PDurationQuery]a3y3g000001WUAx,
+[AkeneoQuery]a3y3g000001WUBH,
+[BGAdvQuery]a3y3g000000Zgac,
+[BGEntQuery]a3y3g000000Zgah,
+[CWAdvQuery]a3y3g000000Zgam,
+[StdAdvQuery]a3y3g000000Zgar
+
+
+
+
+
+
+&amp;TemplateID={!Opportunity.Conga_Order_Form_Id__c}
+&amp;SC0=1
+&amp;SC1=SalesforceFile
+&amp;OFN={!Today()} - {!Account.Name} - Order Form
+&amp;BML=Generating+Bynder+Order+Form
+&amp;DS7=1</url>
+</WebLink>

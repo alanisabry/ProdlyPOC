@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bynder_One_Off_Costs__c</fullName>
+    <inlineHelpText>Bynder One-Off Costs (only needed for 1st integration)</inlineHelpText>
+    <label>Bynder One-Off Costs</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

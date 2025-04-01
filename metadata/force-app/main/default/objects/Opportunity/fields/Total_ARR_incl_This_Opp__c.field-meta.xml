@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_ARR_incl_This_Opp__c</fullName>
+    <description>BODEV-355: adds the ‘Current ARR’ (from account), and the ARR of the opportunity</description>
+    <formula>Account.Current_ARR__c + IF(ISPICKVAL(StageName, &quot;Closed Lost&quot;) || Contract_IsActive__c, 0,  ARR_manual__c)
+
+/*
+  If Contract is active, ARR for the Opp is already included in Current ARR.
+  If Lost, ARR for the Opp should not be included.
+*/</formula>
+    <inlineHelpText>Adds the ‘Current ARR’ (from account), and the ARR of the opportunity (if the Opp is lost, then simply returns Current ARR).</inlineHelpText>
+    <label>Total ARR incl. This Opp</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

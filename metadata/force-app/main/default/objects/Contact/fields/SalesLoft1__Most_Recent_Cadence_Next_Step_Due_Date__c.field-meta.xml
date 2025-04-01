@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesLoft1__Most_Recent_Cadence_Next_Step_Due_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Next SalesLoft step due date.</description>
+    <label>Most Recent Cadence - Next Step Due Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Price_Discount__c</fullName>
+    <description>Indicates the discount from the List Price. For example, if Default Price is the same as List Price, than the discount is 0%.</description>
+    <formula>IF(ListPrice = 0, 0, (ListPrice - Default_Price__c) / ListPrice)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Default Price Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <type>Percent</type>
+</CustomField>

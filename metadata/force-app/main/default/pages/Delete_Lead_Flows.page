@@ -1,0 +1,19 @@
+<apex:page standardController="Lead" > 
+<apex:form > 
+  <apex:actionFunction name="quickSave" action="{!quickSave}" oncomplete="standardConvert();"/> 
+  <apex:actionFunction name="standardConvert" 
+    action="{!URLFOR($Action.Lead.Convert, lead.id, [retURL=$CurrentPage.parameters.retURL], true)}" />
+  <script language="JavaScript"> 
+    var previousOnload = window.onload; 
+    window.onload = function() { 
+      if (previousOnload) previousOnload(); 
+      fixLead(); 
+    } 
+    function fixLead() { 
+      var elemCancelWorkflow = document.getElementById('{!$Component.cancelWorkflow}'); 
+      elemCancelWorkflow.checked = true; 
+      quickSave(); 
+    } 
+  </script> 
+</apex:form> 
+</apex:page>

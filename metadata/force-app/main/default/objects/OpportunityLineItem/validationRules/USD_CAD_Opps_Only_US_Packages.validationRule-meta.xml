@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>USD_CAD_Opps_Only_US_Packages</fullName>
+    <active>false</active>
+    <description>If currency is USD or CAD, only US support packages can be used.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(CurrencyIsoCode, &quot;CAD&quot;), ISPICKVAL(CurrencyIsoCode, &quot;USD&quot;)),
+OR(Product2.Id = &apos;01t0P000005EhYm&apos;,
+Product2.Id = &quot;01t0P000005EhYh&quot;,
+Product2.Id = &quot;01t0P000005EhYX&quot;)
+)</errorConditionFormula>
+    <errorMessage>Please use US support packages (Basic, Plus, and Enterprise).</errorMessage>
+</ValidationRule>

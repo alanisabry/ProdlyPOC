@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DUNS_Number__c</fullName>
+    <description>The Dun &amp; Bradstreet D-U-N-S® (Data Universal Numbering System) Number is a unique nine-digit identifier for businesses that is associated with a business’s Live Business Identity which may help evaluate potential partners</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Dun &amp; Bradstreet D-U-N-S® (Data Universal Numbering System) Number is a unique nine-digit identifier for businesses that is associated with a business’s Live Business Identity which may help evaluate potential partners</inlineHelpText>
+    <label>DUNS Number</label>
+    <precision>9</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

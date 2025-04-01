@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_required_when_unqualified</fullName>
+    <active>true</active>
+    <description>Required field if Contact status = Unqualified</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;System Administrator&quot;),
+TEXT( Status__c ) = &quot;Unqualified&quot;,
+ISCHANGED(Status__c),
+NOT(ISNEW()),
+ISPICKVAL(Reason_Unqualified__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Reason_Unqualified__c</errorDisplayField>
+    <errorMessage>Please complete the Reason Unqualified field.</errorMessage>
+</ValidationRule>

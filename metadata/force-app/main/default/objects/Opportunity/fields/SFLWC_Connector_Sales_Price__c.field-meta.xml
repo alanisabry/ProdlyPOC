@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFLWC_Connector_Sales_Price__c</fullName>
+    <label>SFLWC Connector Sales Price</label>
+    <summarizedField>OpportunityLineItem.UnitPrice</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Name_rus__c</field>
+        <operation>equals</operation>
+        <value>Salesforce Lightning Web Component</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

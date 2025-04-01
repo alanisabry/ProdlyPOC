@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DAT_Inbound_Leads_Lead</fullName>
+    <filterScope>Queue</filterScope>
+    <label>DAT Inbound Leads</label>
+    <queue>DAT_Inbound_Leads</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

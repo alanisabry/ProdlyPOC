@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjacent_Technology__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>If technology is not listed, please select other and add name below.</inlineHelpText>
+    <label>Adjacent Technology (Deprecated)</label>
+    <referenceTo>Integration__c</referenceTo>
+    <relationshipLabel>Adjacent Technologies (Dep)</relationshipLabel>
+    <relationshipName>Adjacent_Technologies_Dep</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

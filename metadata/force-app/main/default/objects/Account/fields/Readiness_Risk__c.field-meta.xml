@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Readiness_Risk__c</fullName>
+    <label>Readiness Risk</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Timelines (written or verbal) not scoped properly</fullName>
+                <default>false</default>
+                <label>Timelines (written or verbal) not scoped properly</label>
+            </value>
+            <value>
+                <fullName>Lack of use case</fullName>
+                <default>false</default>
+                <label>Lack of use case</label>
+            </value>
+            <value>
+                <fullName>Not enough resources on clients end</fullName>
+                <default>false</default>
+                <label>Not enough resources on clients end</label>
+            </value>
+            <value>
+                <fullName>Wrong contact</fullName>
+                <default>false</default>
+                <label>Wrong contact</label>
+            </value>
+            <value>
+                <fullName>Custom dev</fullName>
+                <default>false</default>
+                <label>Custom dev</label>
+            </value>
+            <value>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+                <label>Professional Services</label>
+            </value>
+            <value>
+                <fullName>Unrealistic expectations</fullName>
+                <default>false</default>
+                <label>Unrealistic expectations</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

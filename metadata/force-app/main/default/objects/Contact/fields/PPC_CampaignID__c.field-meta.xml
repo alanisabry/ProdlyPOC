@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PPC_CampaignID__c</fullName>
+    <description>Webdam field
+&quot;Used for keyword analysis. Use utm_campaign to identify a specific product promotion or strategic campaign. This can be used to capture the Adword CampaignID&quot;</description>
+    <label>PPC CampaignID</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

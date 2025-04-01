@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <description>Used to identify the product associated with the license key.</description>
+    <label>Product</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adobe CC Users (Silicon Publishing)</fullName>
+                <default>false</default>
+                <label>Adobe CC Users (Silicon Publishing)</label>
+            </value>
+            <value>
+                <fullName>Adobe CC Users (LinkrUI)</fullName>
+                <default>false</default>
+                <label>Adobe CC Users (LinkrUI)</label>
+            </value>
+            <value>
+                <fullName>Microsoft Office 365 Users</fullName>
+                <default>false</default>
+                <label>Microsoft Office 365 Users</label>
+            </value>
+            <value>
+                <fullName>Google Workspace Users</fullName>
+                <default>false</default>
+                <label>Google Workspace Users</label>
+            </value>
+            <value>
+                <fullName>LinkrUI Adobe Express Users</fullName>
+                <default>false</default>
+                <label>LinkrUI Adobe Express Users</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Purchased_Price_ARR__c</fullName>
+    <description>BODEV-2680 Build - Min Commit controls
+Field to track Initial Purchased Price ARR of products</description>
+    <label>Initial Purchased Price ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Currency</type>
+</CustomField>

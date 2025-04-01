@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_Ex_Customer__c</fullName>
+    <formula>AND(
+ISBLANK(Account.Current_Contract_End_Date_New__c),
+ISPICKVAL(StageName,&quot;Closed Lost&quot;),
+ISPICKVAL( Type, &quot;Existing Business-Renewal&quot;),
+Startdate_contract__c  &lt;= Today(),
+End_date_contract__c &gt; TODAY(),
+OR(
+NOT(ISPICKVAL(Account.Type, &quot;Ex-customer&quot;)),
+NOT(ISPICKVAL(Account.Customer_Stage__c , &quot;Churned&quot;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Flow: Ex-customer</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

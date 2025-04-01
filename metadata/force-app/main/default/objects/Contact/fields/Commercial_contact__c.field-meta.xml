@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>The &apos;Primary commercial contact&apos; is allowed to be approached by 1. Customer Succes (regarding upsells and Account Management) and by 2. Marketing (for customer nurturing)</inlineHelpText>
+    <label>Commercial contact</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

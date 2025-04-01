@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_reasons__c</fullName>
+    <description>Indicate the reason discount is given on this deal.</description>
+    <label>Discount reasons</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Address escalation</fullName>
+                <default>false</default>
+                <label>Address escalation</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>Drive expansion</fullName>
+                <default>false</default>
+                <label>Drive expansion</label>
+            </value>
+            <value>
+                <fullName>Multi-Year Renewal</fullName>
+                <default>false</default>
+                <label>Multi-Year Renewal</label>
+            </value>
+            <value>
+                <fullName>Non-Profit</fullName>
+                <default>false</default>
+                <label>Non-Profit</label>
+            </value>
+            <value>
+                <fullName>Original contract discount</fullName>
+                <default>false</default>
+                <label>Original contract discount</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Prevent churn</fullName>
+                <default>false</default>
+                <label>Prevent churn</label>
+            </value>
+            <value>
+                <fullName>Product Limitations</fullName>
+                <default>false</default>
+                <label>Product Limitations</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

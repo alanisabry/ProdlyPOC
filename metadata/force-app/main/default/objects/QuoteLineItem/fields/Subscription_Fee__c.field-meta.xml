@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subscription_Fee__c</fullName>
+    <description>Created this field for Conga Renewal Agreement purposes &amp; updated the data type to Number to avoid numbers displaying in Corporate Currency.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ 	(ISBLANK( Renewal_OLI_ID__c ) &amp;&amp; ISBLANK( Upsell_OLI_ID__c ) &amp;&amp;  For_Renewal__c  = TRUE) || 
+ 	(ISBLANK( Renewal_OLI_ID__c ) &amp;&amp;  NOT(ISBLANK( Upsell_OLI_ID__c )) &amp;&amp;  For_Renewal__c  = TRUE), 
+ 	MAX( Total_Default_Price_ARR_One_off__c ,  Total_Sales_Price_ARR_One_off__c ), 
+ 	Total_Initial_Default_Price_ARR_One_off__c +  Cumulative_Indexation_Amount__c
+ 	)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Subscription Fee</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

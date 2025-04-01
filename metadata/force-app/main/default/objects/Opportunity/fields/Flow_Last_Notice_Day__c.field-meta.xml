@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_Last_Notice_Day__c</fullName>
+    <formula>AND(
+NOT(ISPICKVAL(Approval_Status__c,&quot;Rejected&quot;)),
+NOT(ISPICKVAL(Approval_Status__c,&quot;Pending&quot;)),
+Stop_automatic_renewal__c = FALSE,
+ISPICKVAL(Account.Automatic_Renewal__c, &quot;Yes&quot;), 
+ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;),
+NOT(ISBLANK(Last_Notice_Day__c)),
+NOT(ISPICKVAL(StageName, &quot;Closed Won&quot;)), 
+NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;)), 
+OR(
+Last_Notice_Day__c  =  Today()+30,
+Last_Notice_Day__c  =  Today()+3,
+Last_Notice_Day__c  &lt;=  Today()-1))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Flow: Last Notice Day</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

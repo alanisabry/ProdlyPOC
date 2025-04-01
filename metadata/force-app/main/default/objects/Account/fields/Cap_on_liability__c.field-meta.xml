@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cap_on_liability__c</fullName>
+    <label>Cap on liability</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not in agreement</fullName>
+                <default>false</default>
+                <label>Not in agreement</label>
+            </value>
+            <value>
+                <fullName>v11limited to 12 months of license fees or €5000. Indirect damages excluded</fullName>
+                <default>false</default>
+                <label>v11limited to 12 months of license fees or €5000. Indirect damages excluded</label>
+            </value>
+            <value>
+                <fullName>v12 (including for indemnities) limited to 12 months of license fees, except where must be unlimited by law. Indirect damages excluded.</fullName>
+                <default>false</default>
+                <label>v12 (including for indemnities) limited to 12 months of license fees, except where must be unlimited by law. Indirect damages excluded.</label>
+            </value>
+            <value>
+                <fullName>v13 limited to the total amount of Subscription Fee (excluding VAT) owed under this Agreement for the twelve (12) month period immediately preceding the final event giving rise to such liability. Indirect damages excluded</fullName>
+                <default>false</default>
+                <label>v13 limited to the total amount of Subscription Fee (excluding VAT) owed under this Agreement for the twelve (12) month period immediately preceding the final event giving rise to such liability. Indirect damages excluded</label>
+            </value>
+            <value>
+                <fullName>Other. Cap negotiated by customer</fullName>
+                <default>false</default>
+                <label>Other. Cap negotiated by customer</label>
+            </value>
+            <value>
+                <fullName>v.14 limited to the Subscription Fee payable by Customer to Bynder in the twelve months prior to the event giving rise to the claim. Indirect damages excluded.</fullName>
+                <default>false</default>
+                <label>v.14 limited to the Subscription Fee payable by Customer to Bynder in the twelve months prior to the event giving rise to the claim. Indirect damages excluded.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,28 @@
+<template>
+    <div class="slds-notify_container toast" if:true={toastMessage}>
+        <div class={toastClasses} role="status">
+            <lightning-icon
+                icon-name={toastIcon}
+                class="slds-m-right_small slds-no-flex slds-align-top"
+                variant="inverse"
+                size="small"
+            ></lightning-icon>
+            <div class="slds-notify__content">
+                <h2 class="slds-text-heading_small">
+                    {toastMessage.title}
+                </h2>
+                <lightning-formatted-rich-text if:true={toastMessage.message} value={toastMessage.message}></lightning-formatted-rich-text>
+            </div>
+            <div class="slds-notify__close" if:true={toastMessage.dismissible}>
+                <lightning-button-icon
+                    icon-name="utility:close"
+                    alternative-text="Close"
+                    title="Close"
+                    onclick={toastCloseClick}
+                    variant="bare-inverse"
+                    size="medium"
+                ></lightning-button-icon>
+            </div>
+        </div>
+    </div>
+</template>

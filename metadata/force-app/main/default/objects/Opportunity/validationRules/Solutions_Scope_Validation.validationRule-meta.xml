@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solutions_Scope_Validation</fullName>
+    <active>true</active>
+    <description>New business &amp; upsell opportunities must have one of the out-of-the-box or the customisation checkboxes ticked to close the opportunity.  If customisation is required, then the additional fields must be filled.</description>
+    <errorConditionFormula>AND(
+NOT(Contains($Profile.Name,&quot;System Administrator&quot;)), 
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(Contains($Profile.Name,&quot;Finance&quot;)), 
+Platform__c=&quot;Bynder&quot;, 
+NOT(ISNEW()),
+ISPICKVAL(Solutions_Required__c,&quot;Yes&quot;),
+
+NOT(
+OR( 
+ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;),
+OR(ISPICKVAL(Sales_Office__c, &quot;San Mateo&quot;),ISPICKVAL(Sales_Office__c, &quot;San Carlos&quot;)),
+ISCHANGED(Demo_Completed_Outbound__c),
+CONTAINS($Profile.Name,&quot;System Administrator&quot;), 
+CONTAINS($Profile.Name,&quot;[Bynder] Legal&quot;))), 
+
+OR(
+ISPICKVAL (StageName, &quot;Closed Won&quot;),
+ISPICKVAL (StageName, &quot;Legal Review&quot;),
+ISPICKVAL (StageName, &quot;Signature Stage&quot;)), 
+
+
+OR(AND(Out_of_the_box_Solution__c=FALSE,Customisation_Required__c=FALSE),
+
+AND(Out_of_the_box_Solution__c=TRUE,Customisation_Required__c=TRUE))
+
+)</errorConditionFormula>
+    <errorMessage>Please select either the &apos;Out of the box Solution&apos; or the &apos;Customisation Required&apos; field. If customisation is required then please fill out the Solutions Scope section.</errorMessage>
+</ValidationRule>

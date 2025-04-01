@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X_UG_Tier_1__c</fullName>
+    <description>BODEV-1100: Mark UserGem Leads as Tier 1 prospects based on the current Lead info
+BODEV-1192: Replaced with a manual checkbox field so that RingLead can manage it.</description>
+    <formula>AND(
+  ISPICKVAL( LeadSource , &quot;UserGems&quot; ),
+
+  CASE( TEXT( Region__c ),
+    &quot;Northern Europe&quot;, 1,
+    &quot;DACH&quot;, 1,
+    &quot;UK&quot;, 1,
+    &quot;Southern Europe&quot;, 1,
+    &quot;US/CA&quot;, 1,
+    0
+  ) = 1,
+
+  Industry_ICP__c,
+
+  cbit_Employees__c  &gt; 49,
+
+  OR(
+    NOT(ISBLANK( UG_Past_Contact_Role__c ) ),
+
+    AND(
+      CASE( TEXT( Seniority__c ),
+        &quot;Executive&quot;, 1,
+        &quot;Director&quot;, 1,
+        &quot;Manager&quot;, 1,
+        &quot;&quot;, 1,
+        0
+      ) = 1,
+
+      CASE( TEXT( Job_Area_New__c ),
+        &quot;DAM Management&quot;, 1,
+        &quot;Brand&quot;, 1,
+        &quot;Digital&quot;, 1,
+        &quot;Communications&quot;, 1,
+        &quot;Marketing General&quot;, 1,
+        &quot;Creative&quot;, 1,
+        &quot;IT/ICT&quot;, 1,
+        &quot;&quot;, 1,
+        0
+      ) = 1
+    )
+  ), 
+
+  UG_Days_b_w_Past_Cont_Start_Move__c &gt;= 90
+
+)</formula>
+    <inlineHelpText>Mark UserGem Leads as Tier 1 prospects based on the current Lead info (Lead Source, Region, Industry ICP, Employees, Seniority, Job Area - New, UG - Past Contact Role, UG - Days b/w Past Cont. Start &amp; Move)</inlineHelpText>
+    <label>[Dep] UG - Tier 1</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

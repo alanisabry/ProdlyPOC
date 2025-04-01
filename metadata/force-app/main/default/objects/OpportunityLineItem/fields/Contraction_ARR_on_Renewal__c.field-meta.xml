@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contraction_ARR_on_Renewal__c</fullName>
+    <description>BODEV-2718: Formula to return Contraction ARR on Renewal. Contraction field has to be split because of too long compiled size.</description>
+    <formula>IF(
+    /* Contraction can be shown only on Recurring Product under Won Opp */
+    AND(
+        ISPICKVAL(Opportunity.StageName, &quot;Closed Won&quot;),
+        For_Renewal__c = TRUE,
+        ISPICKVAL(Opportunity.Type, &quot;Existing Business-Renewal&quot;)
+    ),
+    MAX(
+        0,
+        /*
+            Contraction is recognised only when manual discount from the Renewal Base Price is beyond
+            Renewal Uplift amount + Indexation Discont Allowance + increase from expired discount from the previous contract.
+        */
+        IF(
+            Renewal_Base_Total_Price_ARR__c - Total_Sales_Price_ARR__c &lt;=
+            Renewal_Uplift_amount__c + Indexation_Discount_Allowance__c +
+            IF(ISBLANK(Initial_Default_Price_ARR_One_off__c), 0, (Initial_Default_Price_ARR_One_off__c - Original_Price_ARR_OneOff__c) * Quantity),
+            0,
+            /*
+                The excess of manual discount beyonde the factors above is marked as Contraction.
+            */
+            Renewal_Base_Total_Price_ARR__c - Total_Sales_Price_ARR__c - Renewal_Uplift_amount__c - Indexation_Discount_Allowance__c -
+            IF(ISBLANK(Initial_Default_Price_ARR_One_off__c), 0, (Initial_Default_Price_ARR_One_off__c - Original_Price_ARR_OneOff__c) * Quantity)
+        )
+    ),
+    NULL
+)</formula>
+    <label>Contraction ARR on Renewal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Currency</type>
+</CustomField>

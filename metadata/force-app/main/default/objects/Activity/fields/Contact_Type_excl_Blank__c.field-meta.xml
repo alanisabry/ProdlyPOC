@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Type_excl_Blank__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+	AND(ISBLANK(TEXT(Contact_Type__c)),CONTAINS(Subject,&quot;Email:&quot;)),
+	&quot;Email&quot;,
+	IF(
+		AND(ISBLANK(TEXT(Contact_Type__c)),CONTAINS(Subject,&quot;LinkedIn&quot;)),
+		&quot;LinkedIn&quot;,
+	IF(
+		AND(ISBLANK(TEXT(Contact_Type__c)),CONTAINS(Subject,&quot;InMail&quot;)),
+		&quot;LinkedIn&quot;,
+        IF(
+		AND(ISBLANK(TEXT(Contact_Type__c)),CONTAINS(Subject,&quot;Chorus&quot;)),
+		&quot;Chorus Meeting&quot;,
+
+        IF(
+		AND(ISBLANK(TEXT(Contact_Type__c)),CONTAINS(Subject,&quot;Drift&quot;)),
+		&quot;Drift&quot;,
+		TEXT(Contact_Type__c))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contact Type excl Blank</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

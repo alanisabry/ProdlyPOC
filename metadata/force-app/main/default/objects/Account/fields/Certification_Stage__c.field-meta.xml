@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certification_Stage__c</fullName>
+    <description>BODEV-4335 DoA Refinement - Build: Partner Attributes</description>
+    <inlineHelpText>Used by the Partner Success Team to track where a Partner is in the Certification process. A Partner in the stage Implementation Expert, Growth/Adoption Partner, or Strategic Solution Partner is considered Certified.</inlineHelpText>
+    <label>Certification Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>Certified Agreement Signed</fullName>
+                <default>false</default>
+                <label>Certified Agreement Signed</label>
+            </value>
+            <value>
+                <fullName>Trained</fullName>
+                <default>false</default>
+                <label>Trained</label>
+            </value>
+            <value>
+                <fullName>Implementation Expert</fullName>
+                <default>false</default>
+                <label>Implementation Expert</label>
+            </value>
+            <value>
+                <fullName>Growth/Adoption Partner</fullName>
+                <default>false</default>
+                <label>Growth/Adoption Partner</label>
+            </value>
+            <value>
+                <fullName>Strategic Service Partner</fullName>
+                <default>false</default>
+                <label>Strategic Service Partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

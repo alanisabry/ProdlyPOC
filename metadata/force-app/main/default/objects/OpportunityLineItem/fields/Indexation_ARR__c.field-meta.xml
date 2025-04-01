@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indexation_ARR__c</fullName>
+    <description>BODEV-2718: Indexation ARR for Product-level Sales KPI. The entire Cumulative Indexation is reported here. Upcoming Indexation can be offset with manual discount beyond Renewal Uplift up to minimum 2% Upcoming Indexation.</description>
+    <formula>IF(
+    AND(
+        ISPICKVAL(Opportunity.StageName, &quot;Closed Won&quot;),
+        For_Renewal__c = TRUE,
+        ISPICKVAL(Opportunity.Type, &quot;Existing Business-Renewal&quot;)
+    ),
+    /*
+        Cumulative Indexation amount is always counted.
+        Unless manual discount is larger than Renewal Uplift amount, the entire Upcoming Indexation amount is recognised.
+        Otherwise the discount beyond Renewal Uplift amount is offset with Upcoming Indexation amount.
+        However, it can be only wihtin the indexation discount allowance. The excess will go for Contraction.
+    */
+    Cumulative_Indexation_amount__c +
+    IF(
+        Renewal_Base_Total_Price_ARR__c - Total_Sales_Price_ARR__c
+        + MAX(0, IF(ISBLANK(Initial_Default_Price_ARR_One_off__c),0,(Original_Price_ARR_OneOff__c - Initial_Default_Price_ARR_One_off__c)* Quantity)) &lt;= Renewal_Uplift_amount__c,
+        MAX(
+            /* Minimum Upcoming Indexation to be recognised */
+            Upcoming_Indexation_amount__c - Indexation_Discount_Allowance__c,
+            Upcoming_Indexation_amount__c
+        ),
+        MAX(
+            /* Minimum Upcoming Indexation to be recognised */
+            Upcoming_Indexation_amount__c - Indexation_Discount_Allowance__c,
+
+            /* Upcoming Indexation can be offset with the discount beyond Renewal Uplift amount */
+            Upcoming_Indexation_amount__c -
+            (
+                (Renewal_Base_Total_Price_ARR__c - Total_Sales_Price_ARR__c)
+                + MAX(0, IF(ISBLANK(Initial_Default_Price_ARR_One_off__c),0,(Original_Price_ARR_OneOff__c - Initial_Default_Price_ARR_One_off__c)* Quantity))
+                - IF(Renewal_Uplift_amount__c&lt;0, 0,Renewal_Uplift_amount__c)
+            )
+        )
+    ),
+    NULL
+)</formula>
+    <inlineHelpText>Indexation ARR for Product-level Sales KPI</inlineHelpText>
+    <label>Indexation ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Currency</type>
+</CustomField>

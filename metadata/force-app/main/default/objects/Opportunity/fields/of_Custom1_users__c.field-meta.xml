@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_Custom1_users__c</fullName>
+    <description>Used in &apos;# of Custom1 users&apos; rollup summary field on account.</description>
+    <label>Licensed Custom1 users</label>
+    <summarizedField>OpportunityLineItem.of_Custom1_Users_Mapped__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Name_rus__c</field>
+        <operation>equals</operation>
+        <value>Bynder Custom1 User</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

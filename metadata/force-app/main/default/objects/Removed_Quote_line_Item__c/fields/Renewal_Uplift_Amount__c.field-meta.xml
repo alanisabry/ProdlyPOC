@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Uplift_Amount__c</fullName>
+    <formula>IF( Pricing_Factors_to_be_Applied__c &amp;&amp; Quote__r.Price_Uplift_on_Renewal_percentage__c !=null,
+(Total_Initial_Default_Price_ARR_One_off__c + Cumulative_Indexation_Amount__c + Upcoming_Indexation_Amount__c) * Quote__r.Price_Uplift_on_Renewal_percentage__c,
+0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Renewal Uplift Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

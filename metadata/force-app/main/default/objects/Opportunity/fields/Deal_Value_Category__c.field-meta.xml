@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Value_Category__c</fullName>
+    <description>BODEV-4539 New Field on Opportunity Table to Track Opportunity Deal Size
+Categorize deals based on their Original Renewal ARR and ARR values. This field enables quick filtering and reporting for Clari.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ISPICKVAL(Type, &quot;Existing Business-Professional Services&quot;),
+NULL, /* Exclude Professional Services - No ARR Calculation */
+
+IF(
+OR(
+ARR_manual__c &lt; 0,
+Original_Renewal_ARR__c &lt; 0
+),
+NULL, /* Exclude negative ARR values */
+
+IF(
+OR(
+AND(
+ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;),
+(Original_Renewal_ARR__c / CURRENCYRATE(TEXT(CurrencyIsoCode))) * CURRENCYRATE(&quot;USD&quot;) &gt;= 100000
+),
+AND(
+NOT(ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;)),
+(ARR_manual__c / CURRENCYRATE(TEXT(CurrencyIsoCode))) * CURRENCYRATE(&quot;USD&quot;) &gt;= 100000
+)
+),
+&quot;100K+ USD&quot;,
+
+IF(
+OR(
+AND(
+ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;),
+(Original_Renewal_ARR__c / CURRENCYRATE(TEXT(CurrencyIsoCode))) * CURRENCYRATE(&quot;USD&quot;) &gt;= 50000
+),
+AND(
+NOT(ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;)),
+(ARR_manual__c / CURRENCYRATE(TEXT(CurrencyIsoCode))) * CURRENCYRATE(&quot;USD&quot;) &gt;= 50000
+)
+),
+&quot;50-100K USD&quot;,
+&quot;Under 50K USD&quot;
+)
+)
+)
+)</formula>
+    <label>Deal Value Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

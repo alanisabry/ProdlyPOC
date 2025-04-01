@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department__c</fullName>
+    <description>Department and Region of User (for Sales Ops Budgeting)</description>
+    <label>Budget Department</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>US Sales</fullName>
+                <default>false</default>
+                <label>US Sales</label>
+            </value>
+            <value>
+                <fullName>EMEA Sales</fullName>
+                <default>false</default>
+                <label>EMEA Sales</label>
+            </value>
+            <value>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <label>OEM</label>
+            </value>
+            <value>
+                <fullName>EMEA CSM</fullName>
+                <default>false</default>
+                <label>EMEA CSM</label>
+            </value>
+            <value>
+                <fullName>US CSM</fullName>
+                <default>false</default>
+                <label>US CSM</label>
+            </value>
+            <value>
+                <fullName>EMEA SAM</fullName>
+                <default>false</default>
+                <label>EMEA SAM</label>
+            </value>
+            <value>
+                <fullName>US SAM</fullName>
+                <default>false</default>
+                <label>US SAM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

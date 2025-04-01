@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ROW_AFrica</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>Sales_Region__c</columns>
+    <columns>Sales_Subregion__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Subregion__c</field>
+        <operation>equals</operation>
+        <value>ROW - Africa</value>
+    </filters>
+    <filters>
+        <field>Sales_Region__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>ROW AFrica</label>
+    <sharedTo>
+        <group>Operations</group>
+    </sharedTo>
+</ListView>

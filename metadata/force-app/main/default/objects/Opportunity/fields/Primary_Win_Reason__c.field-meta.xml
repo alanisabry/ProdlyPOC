@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Win_Reason__c</fullName>
+    <description>What was the Main Reason that the Prospect chose Bynder?</description>
+    <inlineHelpText>What was the Main Reason that the Prospect chose Bynder?</inlineHelpText>
+    <label>Primary Win Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Win_Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agency reference</fullName>
+                <default>false</default>
+                <label>Agency reference</label>
+            </value>
+            <value>
+                <fullName>AI Capabilities</fullName>
+                <default>false</default>
+                <label>AI Capabilities</label>
+            </value>
+            <value>
+                <fullName>Analyst feedback</fullName>
+                <default>false</default>
+                <label>Analyst feedback</label>
+            </value>
+            <value>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+                <label>Analytics</label>
+            </value>
+            <value>
+                <fullName>API</fullName>
+                <default>false</default>
+                <label>API</label>
+            </value>
+            <value>
+                <fullName>Asset tracking</fullName>
+                <default>false</default>
+                <label>Asset tracking</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines</fullName>
+                <default>false</default>
+                <label>Brand Guidelines</label>
+            </value>
+            <value>
+                <fullName>Company</fullName>
+                <default>false</default>
+                <label>Company</label>
+            </value>
+            <value>
+                <fullName>Configurability</fullName>
+                <default>false</default>
+                <label>Configurability</label>
+            </value>
+            <value>
+                <fullName>Contract terms</fullName>
+                <default>false</default>
+                <label>Contract terms</label>
+            </value>
+            <value>
+                <fullName>Customer Base</fullName>
+                <default>false</default>
+                <label>Customer Base</label>
+            </value>
+            <value>
+                <fullName>DAM</fullName>
+                <default>false</default>
+                <label>DAM</label>
+            </value>
+            <value>
+                <fullName>Digital Brand Templates</fullName>
+                <default>false</default>
+                <label>Digital Brand Templates</label>
+            </value>
+            <value>
+                <fullName>File Type support</fullName>
+                <default>false</default>
+                <label>File Type support</label>
+            </value>
+            <value>
+                <fullName>Integrations</fullName>
+                <default>false</default>
+                <label>Integrations</label>
+            </value>
+            <value>
+                <fullName>Integrations support</fullName>
+                <default>false</default>
+                <label>Integrations support</label>
+            </value>
+            <value>
+                <fullName>Language support</fullName>
+                <default>false</default>
+                <label>Language support</label>
+            </value>
+            <value>
+                <fullName>Mobile App</fullName>
+                <default>false</default>
+                <label>Mobile App</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Partner Internal DAM</fullName>
+                <default>false</default>
+                <label>Partner Internal DAM</label>
+            </value>
+            <value>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+                <label>Partner Referral</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Permissions</fullName>
+                <default>false</default>
+                <label>Permissions</label>
+            </value>
+            <value>
+                <fullName>Platform</fullName>
+                <default>false</default>
+                <label>Platform</label>
+            </value>
+            <value>
+                <fullName>Previous User</fullName>
+                <default>false</default>
+                <label>Previous User</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Print Brand Templates</fullName>
+                <default>false</default>
+                <label>Print Brand Templates</label>
+            </value>
+            <value>
+                <fullName>Reference</fullName>
+                <default>false</default>
+                <label>Reference</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>RFP Responses</fullName>
+                <default>false</default>
+                <label>RFP Responses</label>
+            </value>
+            <value>
+                <fullName>Sales Process</fullName>
+                <default>false</default>
+                <label>Sales Process</label>
+            </value>
+            <value>
+                <fullName>Scalability</fullName>
+                <default>false</default>
+                <label>Scalability</label>
+            </value>
+            <value>
+                <fullName>Search</fullName>
+                <default>false</default>
+                <label>Search</label>
+            </value>
+            <value>
+                <fullName>Security</fullName>
+                <default>false</default>
+                <label>Security</label>
+            </value>
+            <value>
+                <fullName>Services</fullName>
+                <default>false</default>
+                <label>Services</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>Usability</fullName>
+                <default>false</default>
+                <label>Usability</label>
+            </value>
+            <value>
+                <fullName>Use Case Fit</fullName>
+                <default>false</default>
+                <label>Use Case Fit</label>
+            </value>
+            <value>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+                <label>Workflow</label>
+            </value>
+            <value>
+                <fullName>Commercials</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commercials</label>
+            </value>
+            <value>
+                <fullName>Product</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product</label>
+            </value>
+            <value>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Service</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Company reputation</controllingFieldValue>
+            <valueName>Company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer references</controllingFieldValue>
+            <valueName>Customer Base</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer references</controllingFieldValue>
+            <valueName>Reference</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Integrations</controllingFieldValue>
+            <valueName>API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Integrations</controllingFieldValue>
+            <valueName>Integrations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Market reputation</controllingFieldValue>
+            <valueName>Agency reference</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Market reputation</controllingFieldValue>
+            <valueName>Analyst feedback</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Market reputation</controllingFieldValue>
+            <valueName>Partner Internal DAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Market reputation</controllingFieldValue>
+            <valueName>Partner Referral</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Market reputation</controllingFieldValue>
+            <valueName>Previous User</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>AI Capabilities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Asset tracking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Brand Guidelines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Configurability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>DAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Digital Brand Templates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>File Type support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Language support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Mobile App</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Permissions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Platform</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Print Brand Templates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Scalability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Search</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Security</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Usability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Use Case Fit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Workflow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales support</controllingFieldValue>
+            <valueName>Contract terms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales support</controllingFieldValue>
+            <valueName>Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales support</controllingFieldValue>
+            <valueName>Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales support</controllingFieldValue>
+            <valueName>RFP Responses</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales support</controllingFieldValue>
+            <valueName>Sales Process</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service offering</controllingFieldValue>
+            <valueName>Integrations support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service offering</controllingFieldValue>
+            <valueName>Onboarding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service offering</controllingFieldValue>
+            <valueName>Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service offering</controllingFieldValue>
+            <valueName>Support</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

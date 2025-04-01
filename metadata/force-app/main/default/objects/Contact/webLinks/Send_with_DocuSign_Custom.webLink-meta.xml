@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_with_DocuSign_Custom</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send with DocuSign</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!URLFOR(&apos;/apex/dsfs__DocuSign_CreateEnvelope&apos;, null, [SourceID = Contact.Id,
+RC=&apos;&apos;,RSL=&apos;&apos;,RSRO=&apos;&apos;,RROS=&apos;&apos;,CCRM=&apos;&apos;,CCTM=&apos;&apos;,CRCL=&apos;&apos;,CRL=&quot;LoadDefaultContacts~1&quot;+ &quot;,Email~&quot; + User.Email + &quot;;FirstName~&quot; + User.FirstName +&quot;;LastName~&quot; + User.LastName+&quot;;RoutingOrder~4&quot;+&quot;;Role~Signer 2&quot;, DST=&apos;&apos;,CCNM=&apos;&apos;,LA=&apos;0&apos;,LF=&apos;0&apos;,CEM=&apos;&apos;,CES=&apos;[FirstName] [LastName] ([Email]) has sent you a DocuSign Signature request&apos;,SRS=&apos;&apos;,STB=&apos;&apos;,SSB=&apos;&apos;,SES=&apos;&apos;,SEM=&apos;&apos;,SRS=&apos;&apos;,SCS=&apos;&apos;,RES=&apos;&apos; ])}</url>
+</WebLink>

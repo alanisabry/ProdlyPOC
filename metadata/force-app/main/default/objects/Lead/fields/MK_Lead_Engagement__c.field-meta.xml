@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MK_Lead_Engagement__c</fullName>
+    <description>Measures the level of engagement of this person on your website, product and marketing content, looking at behavior correlated to conversion
+3 flames: Very high, 2 flames: High, 1 star: Medium, 1 snowflake: low</description>
+    <externalId>false</externalId>
+    <formula>IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;,&quot;&quot;,0,0) +
+CASE(MK_Lead_Engagement_Segment__c ,
+&apos;very high&apos;, 
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20) + 
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20) + 
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20),
+&apos;high&apos;, 
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20) + 
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20),
+&apos;medium&apos;, 
+IMAGE(&quot;https://cdn.madkudu.com/images/fire.png&quot;, &quot;Fire&quot;, 20, 20),
+&apos;low&apos;,
+IMAGE(&quot;https://cdn.madkudu.com/images/snowflake.png&quot;, &quot;Snowflake&quot;, 20, 20),
+&apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Measures the level of engagement of this person on your website, product and marketing content, looking at behavior correlated to conversion.
+3 flames: Very high, 2 flames: High, 1 star: Medium, 1 snowflake: low</inlineHelpText>
+    <label>MK Lead Engagement</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_delete_package_products</fullName>
+    <active>false</active>
+    <description>BODEV-363: Prohibits package products from being deleted.</description>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+NOT(CONTAINS($Profile.Name, &quot;System Administrator&quot;)),
+ISCHANGED(of_package_products_cannot_be_deleted__c),
+PRIORVALUE(of_package_products_cannot_be_deleted__c) &gt; of_package_products_cannot_be_deleted__c,
+Allow_Removing_Package_Products__c = False
+)</errorConditionFormula>
+    <errorMessage>Cannot delete package products.</errorMessage>
+</ValidationRule>

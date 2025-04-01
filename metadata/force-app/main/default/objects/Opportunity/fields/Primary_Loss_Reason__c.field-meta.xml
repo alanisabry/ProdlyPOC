@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Loss_Reason__c</fullName>
+    <label>Primary Loss Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Loss_Category__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Acquia migration to Widen</fullName>
+                <default>false</default>
+                <label>Acquia migration to Widen</label>
+            </value>
+            <value>
+                <fullName>Lack of change management/governance</fullName>
+                <default>false</default>
+                <label>Lack of change management/governance</label>
+            </value>
+            <value>
+                <fullName>Agency Lost</fullName>
+                <default>false</default>
+                <label>Agency Lost</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Details not provided by OEM</fullName>
+                <default>false</default>
+                <label>Details not provided by OEM</label>
+            </value>
+            <value>
+                <fullName>Features</fullName>
+                <default>false</default>
+                <label>Features</label>
+            </value>
+            <value>
+                <fullName>Insufficient Budget Available</fullName>
+                <default>false</default>
+                <label>Insufficient Budget Available</label>
+            </value>
+            <value>
+                <fullName>Internal Misalignment</fullName>
+                <default>false</default>
+                <label>Internal Misalignment</label>
+            </value>
+            <value>
+                <fullName>Internal Transfer</fullName>
+                <default>false</default>
+                <label>Internal Transfer</label>
+            </value>
+            <value>
+                <fullName>Lack of Communication</fullName>
+                <default>false</default>
+                <label>Lack of Communication</label>
+            </value>
+            <value>
+                <fullName>Lack of Innovation</fullName>
+                <default>false</default>
+                <label>Lack of Innovation</label>
+            </value>
+            <value>
+                <fullName>Lack of Payment</fullName>
+                <default>false</default>
+                <label>Lack of Payment</label>
+            </value>
+            <value>
+                <fullName>Lack of product development</fullName>
+                <default>false</default>
+                <label>Lack of product development</label>
+            </value>
+            <value>
+                <fullName>Lost/Change Key Stakeholders</fullName>
+                <default>false</default>
+                <label>Lost/Change Key Stakeholders</label>
+            </value>
+            <value>
+                <fullName>Lost key advocate</fullName>
+                <default>false</default>
+                <label>Lost key advocate</label>
+            </value>
+            <value>
+                <fullName>Lost Momentum</fullName>
+                <default>false</default>
+                <label>Lost Momentum</label>
+            </value>
+            <value>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+                <label>Lost to Competitor</label>
+            </value>
+            <value>
+                <fullName>Migrated to Bynder direct</fullName>
+                <default>false</default>
+                <label>Migrated to Bynder direct</label>
+            </value>
+            <value>
+                <fullName>Migrated to Webdam direct</fullName>
+                <default>false</default>
+                <label>Migrated to Webdam direct</label>
+            </value>
+            <value>
+                <fullName>Never implemented</fullName>
+                <default>false</default>
+                <label>Never implemented</label>
+            </value>
+            <value>
+                <fullName>No DAM need</fullName>
+                <default>false</default>
+                <label>No DAM need</label>
+            </value>
+            <value>
+                <fullName>No Management Backing for Project/Budget</fullName>
+                <default>false</default>
+                <label>No Management Backing for Project/Budget</label>
+            </value>
+            <value>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <label>OEM</label>
+            </value>
+            <value>
+                <fullName>OEM lost entire customer account</fullName>
+                <default>false</default>
+                <label>OEM lost entire customer account</label>
+            </value>
+            <value>
+                <fullName>Opp Error</fullName>
+                <default>false</default>
+                <label>Opp Error</label>
+            </value>
+            <value>
+                <fullName>Organisational Restructure</fullName>
+                <default>false</default>
+                <label>Organisational Restructure</label>
+            </value>
+            <value>
+                <fullName>Other (explain in &apos;loss reason detail&apos; field)</fullName>
+                <default>false</default>
+                <label>Other (explain in &apos;loss reason detail&apos; field)</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Pricing/Budget</fullName>
+                <default>false</default>
+                <label>Pricing/Budget</label>
+            </value>
+            <value>
+                <fullName>Project on-hold</fullName>
+                <default>false</default>
+                <label>Project on-hold</label>
+            </value>
+            <value>
+                <fullName>Renewal Discount</fullName>
+                <default>false</default>
+                <label>Renewal Discount</label>
+            </value>
+            <value>
+                <fullName>Status Quo/No Decision/Stay w/current</fullName>
+                <default>false</default>
+                <label>Status Quo/No Decision/Stay w/current</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>Value/ROI not Convincing</fullName>
+                <default>false</default>
+                <label>Value/ROI not Convincing</label>
+            </value>
+            <value>
+                <fullName>Workfront migration to Adobe Assets (AEM)</fullName>
+                <default>false</default>
+                <label>Workfront migration to Adobe Assets (AEM)</label>
+            </value>
+            <value>
+                <fullName>Workfront migration to Adobe Assets Essentials (AEM light version)</fullName>
+                <default>false</default>
+                <label>Workfront migration to Adobe Assets Essentials (AEM light version)</label>
+            </value>
+            <value>
+                <fullName>Wrong Expectations</fullName>
+                <default>false</default>
+                <label>Wrong Expectations</label>
+            </value>
+            <value>
+                <fullName>Stakeholder Change</fullName>
+                <default>false</default>
+                <label>Stakeholder Change</label>
+            </value>
+            <value>
+                <fullName>M&amp;A</fullName>
+                <default>false</default>
+                <label>M&amp;A</label>
+            </value>
+            <value>
+                <fullName>Layoffs</fullName>
+                <default>false</default>
+                <label>Layoffs</label>
+            </value>
+            <value>
+                <fullName>Lack of ROI</fullName>
+                <default>false</default>
+                <label>Lack of ROI</label>
+            </value>
+            <value>
+                <fullName>No Project</fullName>
+                <default>false</default>
+                <label>No Project</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Customer Experience</controllingFieldValue>
+            <valueName>Lack of change management/governance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Experience</controllingFieldValue>
+            <valueName>Lack of Communication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Experience</controllingFieldValue>
+            <valueName>Wrong Expectations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Funnel error</controllingFieldValue>
+            <valueName>Opp Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lost deal</controllingFieldValue>
+            <valueName>Lost to Competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>Agency Lost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <controllingFieldValue>Organisational change</controllingFieldValue>
+            <valueName>Insufficient Budget Available</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>Lost/Change Key Stakeholders</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>Lost Momentum</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>No DAM need</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>No Management Backing for Project/Budget</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>Organisational Restructure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>Other (explain in &apos;loss reason detail&apos; field)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>Project on-hold</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>Status Quo/No Decision/Stay w/current</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>Unknown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No decision</controllingFieldValue>
+            <valueName>Value/ROI not Convincing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organisational change</controllingFieldValue>
+            <valueName>Bankruptcy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organisational change</controllingFieldValue>
+            <valueName>Internal Transfer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organisational change</controllingFieldValue>
+            <valueName>Lack of Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organisational change</controllingFieldValue>
+            <valueName>Stakeholder Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organisational change</controllingFieldValue>
+            <valueName>M&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organisational change</controllingFieldValue>
+            <valueName>Layoffs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product related</controllingFieldValue>
+            <valueName>Features</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product related</controllingFieldValue>
+            <valueName>Lack of Innovation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product related</controllingFieldValue>
+            <valueName>Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product related</controllingFieldValue>
+            <valueName>Lack of ROI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Acquia migration to Widen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Details not provided by OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Lack of product development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Lost key advocate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Migrated to Bynder direct</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Migrated to Webdam direct</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Never implemented</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>OEM lost entire customer account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Pricing/Budget</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Workfront migration to Adobe Assets (AEM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>Workfront migration to Adobe Assets Essentials (AEM light version)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

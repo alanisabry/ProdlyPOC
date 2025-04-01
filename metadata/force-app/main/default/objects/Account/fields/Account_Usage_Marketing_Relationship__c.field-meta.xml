@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Usage_Marketing_Relationship__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-1451: Checkbox field to indicate why the Account was created.</description>
+    <inlineHelpText>If this Account is created for marketing purpose (email targeting, etc.), tick this field.</inlineHelpText>
+    <label>Account Usage - Marketing Relationship</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

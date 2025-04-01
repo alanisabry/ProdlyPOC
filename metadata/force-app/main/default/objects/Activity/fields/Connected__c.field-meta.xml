@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connected__c</fullName>
+    <description>BODEV-1692 (formula updated): Checkbox for calculating how often we are speaking with Prospects. Tasks are created from SalesLoft/Drift/etc.</description>
+    <formula>CONTAINS(Subject, &quot;Reply&quot;) ||
+CONTAINS(Subject, &quot;Conversation in Drift&quot;) ||
+CONTAINS(Subject, &quot;Default personal meeting&quot;) ||
+CONTAINS(Subject, &quot;Call: connected&quot;) ||
+CONTAINS(Subject, &quot;Meeting booked with Drift&quot;) ||
+CONTAINS(Subject, &quot;Discovery call&quot;) ||
+CONTAINS(Subject, &quot;Disco call&quot;) ||
+CONTAINS(Subject, &quot;Chorus -&quot;) ||
+CONTAINS(Subject, &quot;Demo&quot;) ||
+CONTAINS(Subject, &quot;Zoom call&quot;)</formula>
+    <inlineHelpText>Is this a reply?</inlineHelpText>
+    <label>Connected</label>
+    <type>Checkbox</type>
+</CustomField>

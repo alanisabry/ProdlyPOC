@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( 
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)), 
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(ISPICKVAL(Type, &apos;Referral&apos;)),
+CloseDate&gt;DATE(2020,02,04),
+OR(
+ISPICKVAL(StageName,&quot;Closed Lost&quot;),
+AND(
+MRR__c&lt;0,
+ISPICKVAL(StageName,&quot;Closed Won&quot;))),
+OR(ISPICKVAL(Loss_Category__c,&quot;&quot;),
+ISPICKVAL(Primary_Loss_Reason__c,&quot;&quot;),
+AND(
+  NOT(ISPICKVAL(Primary_Loss_Reason__c,&quot;Lost to Competitor&quot;)),
+  (Loss_Reason_Detail__c=&quot;&quot;))))</errorConditionFormula>
+    <errorDisplayField>Loss_Category__c</errorDisplayField>
+    <errorMessage>&apos;Loss Category&apos;, &apos;Primary Loss Reason&apos; &amp; &apos;Loss Reason Detail&apos; must be entered once opportunity is Closed Lost or MRR is less than 0.</errorMessage>
+</ValidationRule>

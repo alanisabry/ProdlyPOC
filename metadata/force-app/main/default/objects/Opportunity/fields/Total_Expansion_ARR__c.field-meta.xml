@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Expansion_ARR__c</fullName>
+    <description>BODEV-2281: field to show the total expansion for commission calculation (excl. cumulative indexation)</description>
+    <formula>/*
+  Formula field to capture sum of the following;
+  - Renewal Upsell ARR (expansion or contraction coming from products/price changes made by CSM)
+  - Renewal Uplift Amount (for this period)
+  - Upcoming Indexation Amount
+
+  The formula should not return values for irrelevant Opp types.
+*/
+
+IF(
+  OR(
+    ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;), ISPICKVAL(Type, &quot;Existing Business-Upsell&quot;),
+    ISPICKVAL(Type, &quot;New Business - Expansion Portal&quot;), ISPICKVAL(Type, &quot;Existing Business-Professional Services&quot;)
+  ),
+  Renewal_Upsell_ARR__c +  Renewal_Uplift_amount__c +  Upcoming_Indexation_amount__c,
+  IF(
+    ISPICKVAL(Type, &quot;Existing Business - Internal Transfer&quot;) || ISPICKVAL(Type, &quot;Existing Business - Platform Transfer&quot;),
+    Expansion_ARR__c -  Contraction_ARR__c,
+    0
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Renewal, Upsell, Portal Expansion: Sum of Renewal Upsell ARR + Renewal Uplift Amount + Upcoming Indexation Amount.
+Transfers: Expansion ARR - Contraction ARR</inlineHelpText>
+    <label>Total Expansion ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

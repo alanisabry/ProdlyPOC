@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Asset_Storage__c</fullName>
+    <inlineHelpText>Where will you store your company&apos;s assets going forward?</inlineHelpText>
+    <label>Company Asset&apos;s Storage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>a non-DAM file storage (i.e. Dropbox, Box, G-drive, Sharepoint</fullName>
+                <default>false</default>
+                <label>a non-DAM file storage (i.e. Dropbox, Box, G-drive, Sharepoint</label>
+            </value>
+            <value>
+                <fullName>an internal solution</fullName>
+                <default>false</default>
+                <label>an internal solution</label>
+            </value>
+            <value>
+                <fullName>Brandfolder</fullName>
+                <default>false</default>
+                <label>Brandfolder</label>
+            </value>
+            <value>
+                <fullName>Frontify</fullName>
+                <default>false</default>
+                <label>Frontify</label>
+            </value>
+            <value>
+                <fullName>Adobe Experience Manager</fullName>
+                <default>false</default>
+                <label>Adobe Experience Manager</label>
+            </value>
+            <value>
+                <fullName>Canto</fullName>
+                <default>false</default>
+                <label>Canto</label>
+            </value>
+            <value>
+                <fullName>Canva</fullName>
+                <default>false</default>
+                <label>Canva</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

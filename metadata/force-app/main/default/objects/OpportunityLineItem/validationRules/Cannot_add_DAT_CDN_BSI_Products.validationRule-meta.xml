@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_DAT_CDN_BSI_Products</fullName>
+    <active>true</active>
+    <description>Users should not add Bynder Stock Imagery Connectors/Dynamic Asset Transformation/CDN Reference &amp; SNS Notifications products to New business or Upsell opportunities.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;System Administrator&quot;),
+ISNEW(),
+Quantity &gt;0,
+OR(
+TEXT(Opportunity.Type) = &quot;New Business-Enterprise Cloud&quot;,
+TEXT(Opportunity.Type) = &quot;Existing Business-Upsell&quot;,
+TEXT(Opportunity.Type) = &quot;New Business - Expansion Portal&quot;
+),
+OR(
+Product2.Product_ID_18_digits__c = &apos;01t3g000000n07EAAQ&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t3g000000S9w9AAC&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t3g000000dESuAAM&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot add Bynder Stock Imagery Connectors/Dynamic Asset Transformation/CDN Reference &amp; SNS Notifications products to New business or Upsell opportunities.</errorMessage>
+</ValidationRule>

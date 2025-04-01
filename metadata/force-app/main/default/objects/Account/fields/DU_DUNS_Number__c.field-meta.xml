@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DU_DUNS_Number__c</fullName>
+    <description>The Domestic Ultimate is the highest entity within an organization and is identified by a nine-digit Domestic Ultimate D-U-N-S Number. All companies that are part of the same corporate structure as the Domestic Ultimate are identified by the same Domestic Ultimate D-U-N-S Number.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Domestic Ultimate is the highest entity within an organization and is identified by a nine-digit Domestic Ultimate D-U-N-S Number. All companies that are part of the same corporate structure as the Domestic Ultimate are identified by the same Domestic Ultimate D-U-N-S Number.</inlineHelpText>
+    <label>DU DUNS Number</label>
+    <precision>9</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>The contact information for the commercial team for the integration. This should include the name, email address, and phone number of the commercial contact.</inlineHelpText>
+    <label>Commercial Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Integrations</relationshipLabel>
+    <relationshipName>Integrations</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

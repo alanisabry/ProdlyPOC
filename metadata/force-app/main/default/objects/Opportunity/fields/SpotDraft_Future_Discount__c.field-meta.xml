@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SpotDraft_Future_Discount__c</fullName>
+    <description>Created this field to map the discount% to the Additional User Pricing/Module section on SpotDraft</description>
+    <inlineHelpText>Add a Future discount % to be shown on Additional User/Storage pricing tables</inlineHelpText>
+    <label>SpotDraft Future Discount %</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

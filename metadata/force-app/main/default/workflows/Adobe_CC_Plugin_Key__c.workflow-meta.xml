@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Adobe_CC_Activation_Key_Available2</fullName>
+        <ccEmails>jiska@bynder.com</ccEmails>
+        <description>Adobe CC Activation Key Available</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>almar.ruisch@bynder.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Send_email_when_Adobe_CC_Key_is_available</template>
+    </alerts>
+    <alerts>
+        <fullName>Adobe_CC_Activation_Key_Available3</fullName>
+        <description>Adobe CC Activation Key Available</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Send_email_when_Adobe_CC_Key_is_available</template>
+    </alerts>
+    <alerts>
+        <fullName>Adobe_CC_Activation_Key_Available4</fullName>
+        <ccEmails>taryn@bynder.com</ccEmails>
+        <description>Adobe CC Activation Key Available - Boston and San Mateo</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grace.sherman@bynder.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mgoel@bynder.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Send_email_when_Adobe_CC_Key_is_available</template>
+    </alerts>
+    <alerts>
+        <fullName>Adobe_CC_Activation_Key_Available5</fullName>
+        <ccEmails>jiska@bynder.com</ccEmails>
+        <description>Adobe CC Activation Key Available - London</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>almar.ruisch@bynder.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Send_email_when_Adobe_CC_Key_is_available</template>
+    </alerts>
+    <alerts>
+        <fullName>Adobe_CC_Activation_Key_Reduced</fullName>
+        <description>Adobe CC Activation Key Reduced</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Send_email_when_Adobe_CC_Key_is_reduced</template>
+    </alerts>
+</Workflow>

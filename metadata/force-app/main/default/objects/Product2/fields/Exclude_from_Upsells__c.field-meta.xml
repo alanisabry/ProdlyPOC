@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclude_from_Upsells__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to identify if the product should be allowed for Upsell opportunities(Only upsells and not on downsell) or not.</description>
+    <label>Exclude from Upsells</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

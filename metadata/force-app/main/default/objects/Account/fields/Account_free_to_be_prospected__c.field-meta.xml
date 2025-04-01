@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_free_to_be_prospected__c</fullName>
+    <description>Red: Account being worked. Only to be contacted by owner. 
+Green: No Closed Lost deal in &gt;180 days, no Contacts have been added in &gt;7 days, account created &gt;60 days ago, no activity on the account in &gt;60 days, no owner change &gt;42 days</description>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+AND(NOT(ISBLANK(Max_Closed_Lost_Date__c)),Max_Closed_Lost_Date__c + 180 &gt; TODAY(), NOT(ISBLANK(Current_Vendor__c))),
+OR(ISPICKVAL(Type,&quot;Customer&quot;),
+ISPICKVAL(Type,&quot;Competitor&quot;),
+ISPICKVAL(Type,&quot;Partner&quot;)
+),
+AND(
+	OR(NOT(ISBLANK(BDR_Owner__c)),
+		AND(OwnerId != &quot;0053g000000zubX&quot;,
+		OwnerId != &quot;005U0000002Yo5Y&quot;)
+		),
+OR(
+TODAY() - Timestamp_Last_Contact_Added__c &lt; 7,
+TODAY() - Timestamp_Owner_Last_Changed__c &lt; 21,
+TODAY() - Timestamp_BDR_Owner_Last_Changed__c &lt; 21,
+TODAY() - DATEVALUE(CreatedDate) &lt;21,
+TODAY() - LastActivityDate &lt; 60,
+of_future_events__c&gt;0,
+of_future_tasks__c&gt;0
+)
+)
+
+),
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;),
+
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;)
+)</formula>
+    <inlineHelpText>Red: Account being worked. Only to be contacted by owner. 
+Green: No Closed Lost deal in &gt;180 days, no Contacts have been added in &gt;7 days, account created &gt;60 days ago, no activity on the account in &gt;60 days, no owner change &gt;42 days</inlineHelpText>
+    <label>Account free to be prospected</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

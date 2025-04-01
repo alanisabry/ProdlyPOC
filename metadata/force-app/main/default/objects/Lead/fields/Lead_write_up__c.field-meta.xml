@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_write_up__c</fullName>
+    <inlineHelpText>Please provide a qualitative summary of the lead discussion. Try to bring in all possible information about the BANT or qualifying questions below.</inlineHelpText>
+    <label>LEAD WRITE UP</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Html</type>
+    <visibleLines>50</visibleLines>
+</CustomField>

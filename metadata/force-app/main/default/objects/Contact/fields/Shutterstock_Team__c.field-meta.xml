@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shutterstock_Team__c</fullName>
+    <label>Shutterstock Team</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporate - Ryan&apos;s team</fullName>
+                <default>false</default>
+                <label>Corporate - Ryan&apos;s team</label>
+            </value>
+            <value>
+                <fullName>Agency - Paula&apos;s team</fullName>
+                <default>false</default>
+                <label>Agency - Paula&apos;s team</label>
+            </value>
+            <value>
+                <fullName>Media / Editorial - Candice&apos;s team</fullName>
+                <default>false</default>
+                <label>Media / Editorial - Candice&apos;s team</label>
+            </value>
+            <value>
+                <fullName>Entertainment / Production - Stephen&apos;s team</fullName>
+                <default>false</default>
+                <label>Entertainment / Production - Stephen&apos;s team</label>
+            </value>
+            <value>
+                <fullName>Inside Sales</fullName>
+                <default>false</default>
+                <label>Inside Sales</label>
+            </value>
+            <value>
+                <fullName>International	International</fullName>
+                <default>false</default>
+                <label>International	International</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

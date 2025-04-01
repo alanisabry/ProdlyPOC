@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Length_Ratio__c</fullName>
+    <description>BODEV-4163 Calculates the Contract Length Ratio = Upsell and New Business of the Opportunity
+This field calculates the proportion of the current opportunity’s contract duration relative to the original (primary) contract duration [FOR STEP-UP Deals]</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ISPICKVAL(Type, &quot;Existing Business-Upsell&quot;),
+/* For Upsell, if the Related Primary Deal exists and its Contract Duration is valid, calculate ratio */
+IF(
+AND(
+NOT(ISBLANK(Related_Primary_Deal__c)),
+NOT(ISBLANK(Related_Primary_Deal__r.Netsuite_Term__c)),
+Related_Primary_Deal__r.Netsuite_Term__c &gt; 0
+),
+(Netsuite_Term__c / Related_Primary_Deal__r.Netsuite_Term__c),
+1
+),
+/* For New Business Enterprise Cloud and Renewal, always return 1 */
+1
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This field calculates the proportion of the current opportunity’s contract duration relative to the original (primary) contract duration [FOR STEP-UP Deals]</inlineHelpText>
+    <label>Contract Length Ratio</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

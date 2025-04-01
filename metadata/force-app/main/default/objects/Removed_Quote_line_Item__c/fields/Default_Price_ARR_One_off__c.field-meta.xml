@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Price_ARR_One_off__c</fullName>
+    <description>&quot;Default Price in ARR or One-off per unit. Price increase/discount of Sales Price ARR/One-off is assessed agains this field.
+When the line item is created from...
+1) the Renewal Opp, then copy Initial Default Price ARR/One-off field,
+2) any of Upsell/Downsell Opp, then copy Sales Price ARR/One-off field,
+3) Price Book, then copy List Price * IF(For Renewal, 12, 1)
+This value can be updated immediately on creation due to the pricing factors applied on Quote creation.&quot;</description>
+    <label>Default Price ARR/One-off</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

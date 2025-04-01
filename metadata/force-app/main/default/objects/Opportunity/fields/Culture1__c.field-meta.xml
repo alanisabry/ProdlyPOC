@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Culture1__c</fullName>
+    <description>Culture field used for Conga Composer</description>
+    <externalId>false</externalId>
+    <formula>CASE(CurrencyIsoCode,&quot;EUR&quot;,&quot;fr-FR&quot;,&quot;USD&quot;,&quot;en-US&quot;,&quot;GBP&quot;,&quot;en-UK&quot;,&quot;NZD&quot;,&quot;en-NZ&quot;,&quot;CAD&quot;,&quot;en-CA&quot;,&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Culture</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

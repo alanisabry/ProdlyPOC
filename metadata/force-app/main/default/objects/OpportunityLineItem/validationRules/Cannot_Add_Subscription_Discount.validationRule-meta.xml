@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Add_Subscription_Discount</fullName>
+    <active>true</active>
+    <description>Temporary validation rule to prevent users from adding Subscription Discount.</description>
+    <errorConditionFormula>AND(
+  ISNEW(),
+  NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+  NOT(CONTAINS($Profile.Name, &quot;System Administrator&quot;)),
+  NOT(CONTAINS($Profile.Name, &quot;Finance&quot;)),
+
+  Product2.Name = &quot;Subscription discount&quot;
+)</errorConditionFormula>
+    <errorMessage>Subscription Discount product should not be used any more. Please use &quot;Change Sales Price&quot; feature to apply an overall discount.</errorMessage>
+</ValidationRule>

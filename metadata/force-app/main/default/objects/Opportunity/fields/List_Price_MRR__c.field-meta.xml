@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>List_Price_MRR__c</fullName>
+    <description>List price of all MRR products</description>
+    <label>List Price - MRR</label>
+    <summarizedField>OpportunityLineItem.Total_Product_List_Price__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.For_Renewal_Mapped__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Price_ARR__c</fullName>
+    <label>Default Price ARR</label>
+    <summarizedField>QuoteLineItem.Total_Default_Price_ARR_One_off__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.For_Renewal__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

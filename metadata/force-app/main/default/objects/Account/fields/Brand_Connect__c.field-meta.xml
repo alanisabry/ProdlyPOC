@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brand_Connect__c</fullName>
+    <description>wd field</description>
+    <label>Brand Connect</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Brand Connect Basic</fullName>
+                <default>false</default>
+                <label>Brand Connect Basic</label>
+            </value>
+            <value>
+                <fullName>Brand Connect Basic - Unlimited Assets</fullName>
+                <default>false</default>
+                <label>Brand Connect Basic - Unlimited Assets</label>
+            </value>
+            <value>
+                <fullName>Brand Connect Plus - Professional Edition</fullName>
+                <default>false</default>
+                <label>Brand Connect Plus - Professional Edition</label>
+            </value>
+            <value>
+                <fullName>Brand Connect Plus - Enterprise Edition</fullName>
+                <default>false</default>
+                <label>Brand Connect Plus - Enterprise Edition</label>
+            </value>
+            <value>
+                <fullName>Brand Connect</fullName>
+                <default>false</default>
+                <label>Brand Connect</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

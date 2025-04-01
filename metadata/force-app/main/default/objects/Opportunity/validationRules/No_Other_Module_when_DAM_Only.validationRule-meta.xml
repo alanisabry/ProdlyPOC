@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Other_Module_when_DAM_Only</fullName>
+    <active>true</active>
+    <description>BODEV-2714: a validation rule to block other modules to be selected when DAM only is selected in Module Opportunity field.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Type,&quot;New Business-Enterprise Cloud&quot;),
+    ISCHANGED(Module_Opportunity__c),
+    INCLUDES(Module_Opportunity__c, &quot;DAM only&quot;),
+
+    /* Check if the field contains more than one value selected */
+    IF(INCLUDES(Module_Opportunity__c, &quot;DAM only&quot;), 1, 0) +
+    IF(INCLUDES(Module_Opportunity__c, &quot;Content Workflow&quot;), 1, 0) +
+    IF(INCLUDES(Module_Opportunity__c, &quot;Studio&quot;), 1, 0) +
+    IF(INCLUDES(Module_Opportunity__c, &quot;Brand Guidelines&quot;), 1, 0) +
+    IF(INCLUDES(Module_Opportunity__c, &quot;Dynamic Asset Transformation&quot;), 1, 0) +
+    IF(INCLUDES(Module_Opportunity__c, &quot;Asset Workflow&quot;), 1, 0) +
+    IF(INCLUDES(Module_Opportunity__c, &quot;Emrays&quot;), 1, 0) +
+ IF(INCLUDES(Module_Opportunity__c, &quot;CX Omnichannel&quot;), 1, 0) +
+ IF(INCLUDES(Module_Opportunity__c, &quot;CX User Community&quot;), 1, 0) +
+ IF(INCLUDES(Module_Opportunity__c, &quot;Content Operations&quot;), 1, 0) 
+
+
+
+&gt; 1
+)</errorConditionFormula>
+    <errorDisplayField>Module_Opportunity__c</errorDisplayField>
+    <errorMessage>When DAM only is selected, you cannot select other modules in Module Opportunity field. Please deselect other modules.</errorMessage>
+</ValidationRule>

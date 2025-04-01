@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject></baseObject>
+    <category>admin</category>
+    <deployed>true</deployed>
+    <description>To know how many users go between Lightning and Classic</description>
+    <label>LightningToggleMetrics</label>
+    <sections>
+        <masterLabel>LightningToggleMetrics</masterLabel>
+    </sections>
+</ReportType>

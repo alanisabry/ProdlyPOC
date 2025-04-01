@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>notice_view_Maddy</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Customer_Notice_Email_Address__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Customer</value>
+    </filters>
+    <filters>
+        <field>Customer_Notice_Email_Address__c</field>
+        <operation>notContain</operation>
+        <value>@</value>
+    </filters>
+    <filters>
+        <field>CSM_Owner__c</field>
+        <operation>equals</operation>
+        <value>Madeleine Rowe</value>
+    </filters>
+    <label>notice view Maddy</label>
+</ListView>

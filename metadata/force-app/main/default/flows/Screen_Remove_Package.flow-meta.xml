@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Updates value on the opportunity that removes package products.</description>
+        <name>Allow_removing_package_products</name>
+        <label>Allow removing package products</label>
+        <locationX>1030</locationX>
+        <locationY>210</locationY>
+        <assignmentItems>
+            <assignToReference>record_Opportunity.Allow_Removing_Package_Products__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Sets certain package fields on the opportunity to &quot;blank&quot;. Disables the possibility to remove package products.</description>
+        <name>Unset_package_fields_on_Opportunity</name>
+        <label>Unset package fields on Opportunity</label>
+        <locationX>1475</locationX>
+        <locationY>224</locationY>
+        <assignmentItems>
+            <assignToReference>record_Opportunity.Allow_Removing_Package_Products__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>record_Opportunity.MM_Standardised_Package__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>record_Opportunity.Standard_Package_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity_Blank_Fields</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Checks if the opportunity is actually a package.</description>
+        <name>Package_NB_opportunity</name>
+        <label>Package NB opportunity?</label>
+        <locationX>532</locationX>
+        <locationY>208</locationY>
+        <defaultConnector>
+            <targetReference>Delete_products_from_the_Products_list</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_package_opportunity</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>record_Opportunity.MM_Standardised_Package__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>record_Opportunity.Standard_Package_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>record_Opportunity.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business-Enterprise Cloud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>record_Opportunity.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Business - Expansion Portal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Opportunity_Products</targetReference>
+            </connector>
+            <label>Yes, package opportunity</label>
+        </rules>
+    </decisions>
+    <description>Flow that allows users to remove package opportunities from their New Business opportunities.</description>
+    <interviewLabel>Screen: Remove Package {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Screen: Remove Package</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordDeletes>
+        <description>Removes package products</description>
+        <name>Delete_package_products</name>
+        <label>Delete package products</label>
+        <locationX>1318</locationX>
+        <locationY>209</locationY>
+        <connector>
+            <targetReference>Unset_package_fields_on_Opportunity</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Opportunity_error_screen_0</targetReference>
+        </faultConnector>
+        <inputReference>records_OpportunityProducts</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_Opportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>406</locationX>
+        <locationY>207</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Package_NB_opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>curOpportunity</elementReference>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <outputReference>record_Opportunity</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Standard_Package_Name__c</queriedFields>
+        <queriedFields>MM_Standardised_Package__c</queriedFields>
+        <queriedFields>Type</queriedFields>
+        <queriedFields>Allow_Removing_Package_Products__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>All Opportunity products from the package opportunity.</description>
+        <name>Get_Opportunity_Products</name>
+        <label>Get Opportunity Products</label>
+        <locationX>752</locationX>
+        <locationY>210</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>intro_Confirm_removing_package</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>curOpportunity</elementReference>
+            </value>
+        </filters>
+        <object>OpportunityLineItem</object>
+        <outputReference>records_OpportunityProducts</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <description>Allows removing package products.</description>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>1177</locationX>
+        <locationY>209</locationY>
+        <connector>
+            <targetReference>Delete_package_products</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Opportunity_error_screen</targetReference>
+        </faultConnector>
+        <inputReference>record_Opportunity</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Final Opportunity update</description>
+        <name>Update_Opportunity_Blank_Fields</name>
+        <label>Update Opportunity</label>
+        <locationX>1638</locationX>
+        <locationY>210</locationY>
+        <faultConnector>
+            <targetReference>Opportunity_error_screen</targetReference>
+        </faultConnector>
+        <inputReference>record_Opportunity</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>Delete_products_from_the_Products_list</name>
+        <label>Delete products from the Products list.</label>
+        <locationX>545</locationX>
+        <locationY>50</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>intro_Delete_Non_Package_Products</name>
+            <fieldText>&lt;p&gt;Your opportunity doesn&apos;t have a package. Please delete products using the Opportunity record page.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>User&apos;s confirmation that they&apos;ll remove all products.</description>
+        <name>intro_Confirm_removing_package</name>
+        <label>Confirm removing package</label>
+        <locationX>904</locationX>
+        <locationY>210</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Allow_removing_package_products</targetReference>
+        </connector>
+        <fields>
+            <name>txt_intro_DeletePackageProducts</name>
+            <fieldText>&lt;p&gt;Please confirm that you want to delete products from your package opportunity.&lt;/p&gt;&lt;p&gt;Note that clicking &quot;Next&quot; will remove &lt;b&gt;&lt;u&gt;all&lt;/u&gt;&lt;/b&gt; products from your opportunity, and it won&apos;t be possible to restore them. &lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Opportunity_error_screen</name>
+        <label>Opportunity error screen</label>
+        <locationX>1424</locationX>
+        <locationY>500</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Errormessage</name>
+            <fieldText>&lt;p&gt;An error occurred while updating the opportunity.Please correct the issues and try again.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Error Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(215, 7, 7);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Opportunity_error_screen_0</name>
+        <label>Opportunity product error screen</label>
+        <locationX>1104</locationX>
+        <locationY>447</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Errormessage_0</name>
+            <fieldText>&lt;p&gt;An error occurred while deleting the opportunity products.Please correct the issues and try again.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Error Message:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(215, 7, 7);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;﻿&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>189</locationY>
+        <connector>
+            <targetReference>Get_Opportunity</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Contains the ID of the current opportunity.</description>
+        <name>curOpportunity</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Contains current opportunity.</description>
+        <name>record_Opportunity</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>Contain all Opportunity Products.</description>
+        <name>records_OpportunityProducts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+</Flow>

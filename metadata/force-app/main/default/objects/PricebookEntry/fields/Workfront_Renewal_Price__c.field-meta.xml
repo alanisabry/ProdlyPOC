@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workfront_Renewal_Price__c</fullName>
+    <description>Stores the list price specific to Workfront OEM(From 2nd Year).</description>
+    <label>Workfront Renewal Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>true</trackHistory>
+    <type>Currency</type>
+</CustomField>

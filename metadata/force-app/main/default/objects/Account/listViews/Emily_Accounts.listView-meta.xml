@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Emily_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_free_to_be_prospected__c</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Jansson</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.INDUSTRY</field>
+        <operation>equals</operation>
+        <value>Consumer Brands</value>
+    </filters>
+    <label>Emily Accounts</label>
+</ListView>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_SFDC_Partnership_Details__c</fullName>
+    <description>BODEV-822: Check if fields for SFDC partnership related details are filled.
+Do not change &quot;N/A&quot; part. This is used in Check Readiness flow to determine if the Opp is related to SFDC Partnership in the flow.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+
+/*
+Scenarios when SFMC/SFCC/SFLWC Connector order is needed
+1. New Business
+1-a. With Connector
+1-b. Lead was from SFDC or influenced by SFDC
+2. Upsell/Downsell
+2-a. With Connector
+2-b. Already owes 20% ARR, and Opp MRR is not 0
+3. Renewal
+3-a. Already owes 20% ARR, and ARR is changed
+3-b. Already owes 20% Connector, and Connector Sales Price is changed
+*/
+
+IF(
+/* - - - - - - - - - - New Business - - - - - - - - - - */
+CONTAINS(TEXT(Type), &quot;New Business&quot;),
+OR(
+of_SFMC_Connector__c &lt;&gt; 0,
+of_SFCC_Connector__c &lt;&gt; 0,
+of_SFLWC_Connector__c &lt;&gt; 0,
+AND(
+NOT(ISBLANK(OEM__c)),
+CONTAINS(OEM__r.Name, &quot;Salesforce&quot;)
+),
+CONTAINS(TEXT(LeadSource), &quot;AppExchange&quot;)
+),
+
+IF(
+/* - - - - - - - - - - Upsell/Downsell - - - - - - - - - - */
+ISPICKVAL(Type, &quot;Existing Business-Upsell&quot;),
+OR(
+of_SFMC_Connector__c &lt;&gt; 0,
+of_SFCC_Connector__c &lt;&gt; 0,
+of_SFLWC_Connector__c &lt;&gt; 0,
+AND(
+ISPICKVAL(Account.SFMC_Commission__c, &quot;20% of ARR&quot;),
+MRR__c &lt;&gt; 0
+),
+AND(
+ISPICKVAL(Account.SFCC_Commission__c, &quot;20% of ARR&quot;),
+MRR__c &lt;&gt; 0
+),
+AND(
+ISPICKVAL(Account.SFLWC_Commission__c, &quot;20% of ARR&quot;),
+MRR__c &lt;&gt; 0
+)
+
+),
+
+IF(
+/* - - - - - - - - - - Renewal - - - - - - - - - - */
+ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;),
+OR(
+AND(
+ISPICKVAL(Account.SFMC_Commission__c, &quot;20% of ARR&quot;),
+MRR__c &lt;&gt; Original_Renewal_Amount__c
+),
+AND(
+ISPICKVAL(Account.SFMC_Commission__c, &quot;20% of Connector&quot;),
+SFMC_Connector_Sales_Price__c &lt;&gt;
+Account.SFMC_Connector_Sales_Price__c
+),
+AND(
+ISPICKVAL(Account.SFCC_Commission__c, &quot;20% of ARR&quot;),
+MRR__c &lt;&gt; Original_Renewal_Amount__c
+),
+AND(
+ISPICKVAL(Account.SFCC_Commission__c, &quot;20% of Connector&quot;),
+SFCC_Connector_Sales_Price__c &lt;&gt;
+Account.SFCC_Connector_Sales_Price__c
+),
+AND(
+ISPICKVAL(Account.SFLWC_Commission__c, &quot;20% of ARR&quot;),
+MRR__c &lt;&gt; Original_Renewal_Amount__c
+),
+AND(
+ISPICKVAL(Account.SFLWC_Commission__c, &quot;20% of Connector&quot;),
+SFLWC_Connector_Sales_Price__c &lt;&gt;
+Account.SFLWC_Connector_Sales_Price__c
+)
+),
+FALSE
+)
+)
+),
+IF(
+ISBLANK( Account.Marketing_Cloud_Org_ID__c ),
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;),
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;)
+),
+&quot;N/A&quot;
+)</formula>
+    <inlineHelpText>If Salesforce partnership related, then make sure Account has Salesforce Org ID filled.</inlineHelpText>
+    <label>Check - SFDC Partnership Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

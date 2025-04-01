@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Additional_User_Pricing__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-2162 Fix other items in the Order Form - Created this field to only query certain products (Checkbox -True) and display it in the Additional user pricing section in the Order form.</description>
+    <label>Conga Additional User Pricing</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

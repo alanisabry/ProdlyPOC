@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MRR_fixed_exch__c</fullName>
+    <externalId>false</externalId>
+    <formula>(MRR__c *  IF(ISPICKVAL(CurrencyIsoCode,&quot;USD&quot;)  , 1/1.11059, 0))+(MRR__c *  IF(ISPICKVAL(CurrencyIsoCode,&quot;AUD&quot;)  , 1/1.477695, 0))+(MRR__c *  IF(ISPICKVAL(CurrencyIsoCode,&quot;CAD&quot;)  , 1/1.48185, 0))+(MRR__c *  IF(ISPICKVAL(CurrencyIsoCode,&quot;CHF&quot;)  , 1/1.06841, 0))+(MRR__c *  IF(ISPICKVAL(CurrencyIsoCode,&quot;GBP&quot;)  , 1/0.72651, 0))+(MRR__c *  IF(ISPICKVAL(CurrencyIsoCode,&quot;ZAR&quot;)  , 1/14.1605, 0))+(MRR__c *  IF(ISPICKVAL(CurrencyIsoCode,&quot;EUR&quot;)  , 1, 0)+(MRR__c *  IF(ISPICKVAL(CurrencyIsoCode,&quot;SEK&quot;)  , 1/9.358955, 0)))+(MRR__c * IF(ISPICKVAL(CurrencyIsoCode,&quot;AED&quot;) , 1/4.07918, 0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>MRR (fixed exch)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

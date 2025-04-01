@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bynder_Support_Opt_in__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Field set by customer portal administrator in portal. Synced from Bynder.</description>
+    <inlineHelpText>Field set by customer portal administrator in portal. Synced from Bynder.</inlineHelpText>
+    <label>Bynder Support Opt-in</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

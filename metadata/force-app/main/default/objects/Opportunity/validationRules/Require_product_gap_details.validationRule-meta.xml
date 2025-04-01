@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_product_gap_details</fullName>
+    <active>true</active>
+    <description>Product gap details needs to be updated every time Product Gaps field is updated.</description>
+    <errorConditionFormula>AND(
+/* Exempting AutoProcess */
+NOT($Profile.Name = &quot;Automated Process&quot;),
+
+OR(
+/*On Opportunity creation */
+AND(ISNEW(), NOT(ISBLANK(Product_Gaps__c)),
+Product_Gap_Details__c = null),
+
+/*On Opportunity update */
+AND(ISCHANGED(Product_Gaps__c),
+NOT(ISCHANGED(Product_Gap_Details__c)))
+)
+)</errorConditionFormula>
+    <errorDisplayField>Product_Gap_Details__c</errorDisplayField>
+    <errorMessage>Please update the Product Gap Details when Product Gaps is updated.</errorMessage>
+</ValidationRule>

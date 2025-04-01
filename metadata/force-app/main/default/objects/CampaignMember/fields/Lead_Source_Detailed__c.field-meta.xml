@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Detailed__c</fullName>
+    <description>wd field</description>
+    <label>Lead Source Detailed</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Close</fullName>
+                <default>false</default>
+                <label>Close</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live 2014</fullName>
+                <default>false</default>
+                <label>HOW Design Live 2014</label>
+            </value>
+            <value>
+                <fullName>CASE List 01/08/09</fullName>
+                <default>false</default>
+                <label>CASE List 01/08/09</label>
+            </value>
+            <value>
+                <fullName>CA Schools - Mar/Comm</fullName>
+                <default>false</default>
+                <label>CA Schools - Mar/Comm</label>
+            </value>
+            <value>
+                <fullName>Web Search - US Univ</fullName>
+                <default>false</default>
+                <label>Web Search - US Univ</label>
+            </value>
+            <value>
+                <fullName>UPAA List</fullName>
+                <default>false</default>
+                <label>UPAA List</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>CoSIDA</fullName>
+                <default>false</default>
+                <label>CoSIDA</label>
+            </value>
+            <value>
+                <fullName>Jigsaw</fullName>
+                <default>false</default>
+                <label>Jigsaw</label>
+            </value>
+            <value>
+                <fullName>MDR</fullName>
+                <default>false</default>
+                <label>MDR</label>
+            </value>
+            <value>
+                <fullName>UCDA 2010</fullName>
+                <default>false</default>
+                <label>UCDA 2010</label>
+            </value>
+            <value>
+                <fullName>Visistat</fullName>
+                <default>false</default>
+                <label>Visistat</label>
+            </value>
+            <value>
+                <fullName>Love Your Brand Virtual Event</fullName>
+                <default>false</default>
+                <label>Love Your Brand Virtual Event</label>
+            </value>
+            <value>
+                <fullName>Elance Lead Gen</fullName>
+                <default>false</default>
+                <label>Elance Lead Gen</label>
+            </value>
+            <value>
+                <fullName>Danaher Companies</fullName>
+                <default>false</default>
+                <label>Danaher Companies</label>
+            </value>
+            <value>
+                <fullName>eMotion Customers</fullName>
+                <default>false</default>
+                <label>eMotion Customers</label>
+            </value>
+            <value>
+                <fullName>Tour &amp; Travel</fullName>
+                <default>false</default>
+                <label>Tour &amp; Travel</label>
+            </value>
+            <value>
+                <fullName>Pepsico Brands</fullName>
+                <default>false</default>
+                <label>Pepsico Brands</label>
+            </value>
+            <value>
+                <fullName>Cloud Vendors</fullName>
+                <default>false</default>
+                <label>Cloud Vendors</label>
+            </value>
+            <value>
+                <fullName>Dreamforce/Cloud</fullName>
+                <default>false</default>
+                <label>Dreamforce/Cloud</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+                <label>LinkedIn</label>
+            </value>
+            <value>
+                <fullName>Other web source</fullName>
+                <default>false</default>
+                <label>Other web source</label>
+            </value>
+            <value>
+                <fullName>UCDA 2012 Riverside</fullName>
+                <default>false</default>
+                <label>UCDA 2012 Riverside</label>
+            </value>
+            <value>
+                <fullName>Brand Management in Higher Ed Webinar</fullName>
+                <default>false</default>
+                <label>Brand Management in Higher Ed Webinar</label>
+            </value>
+            <value>
+                <fullName>Brandworkz</fullName>
+                <default>false</default>
+                <label>Brandworkz</label>
+            </value>
+            <value>
+                <fullName>CASE V 2012</fullName>
+                <default>false</default>
+                <label>CASE V 2012</label>
+            </value>
+            <value>
+                <fullName>Application - Referral Partner</fullName>
+                <default>false</default>
+                <label>Application - Referral Partner</label>
+            </value>
+            <value>
+                <fullName>Application - Technology Partner</fullName>
+                <default>false</default>
+                <label>Application - Technology Partner</label>
+            </value>
+            <value>
+                <fullName>Application - Reseller Partner</fullName>
+                <default>false</default>
+                <label>Application - Reseller Partner</label>
+            </value>
+            <value>
+                <fullName>Referral - Referral Partner</fullName>
+                <default>false</default>
+                <label>Referral - Referral Partner</label>
+            </value>
+            <value>
+                <fullName>Capterra</fullName>
+                <default>false</default>
+                <label>Capterra</label>
+            </value>
+            <value>
+                <fullName>Mobile App Form</fullName>
+                <default>false</default>
+                <label>Mobile App Form</label>
+            </value>
+            <value>
+                <fullName>BrightTALK Lead Gen</fullName>
+                <default>false</default>
+                <label>BrightTALK Lead Gen</label>
+            </value>
+            <value>
+                <fullName>BRITE Conference 2015</fullName>
+                <default>false</default>
+                <label>BRITE Conference 2015</label>
+            </value>
+            <value>
+                <fullName>MarTech 2015</fullName>
+                <default>false</default>
+                <label>MarTech 2015</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live 2015</fullName>
+                <default>false</default>
+                <label>HOW Design Live 2015</label>
+            </value>
+            <value>
+                <fullName>BMA Conference 2015</fullName>
+                <default>false</default>
+                <label>BMA Conference 2015</label>
+            </value>
+            <value>
+                <fullName>Henry Stewart DAM NY 2015</fullName>
+                <default>false</default>
+                <label>Henry Stewart DAM NY 2015</label>
+            </value>
+            <value>
+                <fullName>Henry Stewart DAM EU 2015</fullName>
+                <default>false</default>
+                <label>Henry Stewart DAM EU 2015</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live 2016</fullName>
+                <default>false</default>
+                <label>HOW Design Live 2016</label>
+            </value>
+            <value>
+                <fullName>Filled Out Partner Contact Form</fullName>
+                <default>false</default>
+                <label>Filled Out Partner Contact Form</label>
+            </value>
+            <value>
+                <fullName>Netline</fullName>
+                <default>false</default>
+                <label>Netline</label>
+            </value>
+            <value>
+                <fullName>2013 HOW DAM Forum</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2013 HOW DAM Forum</label>
+            </value>
+            <value>
+                <fullName>AIGA 2016</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AIGA 2016</label>
+            </value>
+            <value>
+                <fullName>AIGA Conference 2015</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AIGA Conference 2015</label>
+            </value>
+            <value>
+                <fullName>AIGA Conference 2015 (1)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AIGA Conference 2015 (1)</label>
+            </value>
+            <value>
+                <fullName>Adobe Max 2017</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adobe Max 2017</label>
+            </value>
+            <value>
+                <fullName>Argyle 2016-06 SF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Argyle 2016-06 SF</label>
+            </value>
+            <value>
+                <fullName>Bing SEM PPC Content Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bing SEM PPC Content Request</label>
+            </value>
+            <value>
+                <fullName>Bing SEM PPC Demo Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bing SEM PPC Demo Request</label>
+            </value>
+            <value>
+                <fullName>Brand Connect Features Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Brand Connect Features Page</label>
+            </value>
+            <value>
+                <fullName>Brand Management Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Brand Management Page</label>
+            </value>
+            <value>
+                <fullName>CASE District VII 2013 Registrants</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CASE District VII 2013 Registrants</label>
+            </value>
+            <value>
+                <fullName>Capterra Content Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Capterra Content Request</label>
+            </value>
+            <value>
+                <fullName>Capterra Demo Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Capterra Demo Page</label>
+            </value>
+            <value>
+                <fullName>Capterra Pricing Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Capterra Pricing Page</label>
+            </value>
+            <value>
+                <fullName>Capterra Trial Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Capterra Trial Page</label>
+            </value>
+            <value>
+                <fullName>Capterra Workstream Demo Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Capterra Workstream Demo Page</label>
+            </value>
+            <value>
+                <fullName>Cloud Security Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cloud Security Page</label>
+            </value>
+            <value>
+                <fullName>Contact Us Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contact Us Page</label>
+            </value>
+            <value>
+                <fullName>Content Marketing World 2016</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Content Marketing World 2016</label>
+            </value>
+            <value>
+                <fullName>Creative Operations Exchange 2017</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Creative Operations Exchange 2017</label>
+            </value>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Data.com</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Data.com</label>
+            </value>
+            <value>
+                <fullName>Digital Asset Management Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Digital Asset Management Page</label>
+            </value>
+            <value>
+                <fullName>Elance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Elance</label>
+            </value>
+            <value>
+                <fullName>Elance Lead Gen - Top 100 Brands</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Elance Lead Gen - Top 100 Brands</label>
+            </value>
+            <value>
+                <fullName>Events Contact Us Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Events Contact Us Page</label>
+            </value>
+            <value>
+                <fullName>Facebook PPC- Adobe Max Creative Brief Guide</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Facebook PPC- Adobe Max Creative Brief Guide</label>
+            </value>
+            <value>
+                <fullName>Facebook PPC- Free Demo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Facebook PPC- Free Demo</label>
+            </value>
+            <value>
+                <fullName>Fear No Deadline - Workstream Webinar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fear No Deadline - Workstream Webinar</label>
+            </value>
+            <value>
+                <fullName>Forrester Consumer Marketing 2017</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Forrester Consumer Marketing 2017</label>
+            </value>
+            <value>
+                <fullName>G2Crowd Demo Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>G2Crowd Demo Page</label>
+            </value>
+            <value>
+                <fullName>Google Remarketing Display</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Google Remarketing Display</label>
+            </value>
+            <value>
+                <fullName>Google SEM PPC Content Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Google SEM PPC Content Request</label>
+            </value>
+            <value>
+                <fullName>Google SEM PPC Demo Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Google SEM PPC Demo Request</label>
+            </value>
+            <value>
+                <fullName>HOW Design 2016</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HOW Design 2016</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live 2017</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HOW Design Live 2017</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live�2013</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HOW Design Live�2013</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live��_2013</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HOW Design Live��_2013</label>
+            </value>
+            <value>
+                <fullName>Henry Stewart NY 2016</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Henry Stewart NY 2016</label>
+            </value>
+            <value>
+                <fullName>Henry Stewart NY 2017</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Henry Stewart NY 2017</label>
+            </value>
+            <value>
+                <fullName>How Design Conference�2013</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>How Design Conference�2013</label>
+            </value>
+            <value>
+                <fullName>How Design Conference��_2013</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>How Design Conference��_2013</label>
+            </value>
+            <value>
+                <fullName>Integrate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integrate</label>
+            </value>
+            <value>
+                <fullName>Integrations Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integrations Page</label>
+            </value>
+            <value>
+                <fullName>JM Database List</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>JM Database List</label>
+            </value>
+            <value>
+                <fullName>Linkedin PPC - Core Four Guide</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Linkedin PPC - Core Four Guide</label>
+            </value>
+            <value>
+                <fullName>Linkedin PPC- Creative Brief Guide</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Linkedin PPC- Creative Brief Guide</label>
+            </value>
+            <value>
+                <fullName>Linkedin PPC- Creative Brief Guide Lead Gen Form</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Linkedin PPC- Creative Brief Guide Lead Gen Form</label>
+            </value>
+            <value>
+                <fullName>Linkedin.com</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Linkedin.com</label>
+            </value>
+            <value>
+                <fullName>MarTech SF 2017</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MarTech SF 2017</label>
+            </value>
+            <value>
+                <fullName>March 2014 - WebDAM Contributor &amp; Admin List</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>March 2014 - WebDAM Contributor &amp; Admin List</label>
+            </value>
+            <value>
+                <fullName>Nurtured to Life</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Nurtured to Life</label>
+            </value>
+            <value>
+                <fullName>One-time use CASE DVII 2011 List</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>One-time use CASE DVII 2011 List</label>
+            </value>
+            <value>
+                <fullName>Organic Content Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Organic Content Request</label>
+            </value>
+            <value>
+                <fullName>PPC Content Request Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PPC Content Request Page</label>
+            </value>
+            <value>
+                <fullName>Phone Verified</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Phone Verified</label>
+            </value>
+            <value>
+                <fullName>Pre-event demo list</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pre-event demo list</label>
+            </value>
+            <value>
+                <fullName>Pre-event opt-in list</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pre-event opt-in list</label>
+            </value>
+            <value>
+                <fullName>Project Management Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Project Management Page</label>
+            </value>
+            <value>
+                <fullName>PureB2B</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PureB2B</label>
+            </value>
+            <value>
+                <fullName>SFDC Report</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SFDC Report</label>
+            </value>
+            <value>
+                <fullName>Scanned at booth</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Scanned at booth</label>
+            </value>
+            <value>
+                <fullName>Sitecore New York</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sitecore New York</label>
+            </value>
+            <value>
+                <fullName>Sitecore Seattle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sitecore Seattle</label>
+            </value>
+            <value>
+                <fullName>TEST change</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TEST change</label>
+            </value>
+            <value>
+                <fullName>Training Webinar- The New WebDAM Experience (Attended)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Training Webinar- The New WebDAM Experience (Attended)</label>
+            </value>
+            <value>
+                <fullName>UCDA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>UCDA</label>
+            </value>
+            <value>
+                <fullName>WebDam Training Webinar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>WebDam Training Webinar</label>
+            </value>
+            <value>
+                <fullName>Webcast - New WebDAM Launch 2013 (Attended)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webcast - New WebDAM Launch 2013 (Attended)</label>
+            </value>
+            <value>
+                <fullName>Webcast - New WebDAM Launch 2013 (Registered)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webcast - New WebDAM Launch 2013 (Registered)</label>
+            </value>
+            <value>
+                <fullName>Webdam Demo Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webdam Demo Page</label>
+            </value>
+            <value>
+                <fullName>Webdam Features Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webdam Features Page</label>
+            </value>
+            <value>
+                <fullName>Webdam Pricing Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webdam Pricing Page</label>
+            </value>
+            <value>
+                <fullName>Webdam Product Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webdam Product Page</label>
+            </value>
+            <value>
+                <fullName>Webinar Registration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webinar Registration</label>
+            </value>
+            <value>
+                <fullName>Webinar Registration Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webinar Registration Page</label>
+            </value>
+            <value>
+                <fullName>Workstream Product Page</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Workstream Product Page</label>
+            </value>
+            <value>
+                <fullName>dam-how-to-select-dam</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>dam-how-to-select-dam</label>
+            </value>
+            <value>
+                <fullName>emarketer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>emarketer</label>
+            </value>
+            <value>
+                <fullName>facebook-content-request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>facebook-content-request</label>
+            </value>
+            <value>
+                <fullName>https://www.linkedin.com/pub/bill-furtkevic/3/452/41b</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>https://www.linkedin.com/pub/bill-furtkevic/3/452/41b</label>
+            </value>
+            <value>
+                <fullName>linkedin-content-request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>linkedin-content-request</label>
+            </value>
+            <value>
+                <fullName>marketingprofs</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>marketingprofs</label>
+            </value>
+            <value>
+                <fullName>webinar_registration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>webinar_registration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

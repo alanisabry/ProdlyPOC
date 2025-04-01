@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VOC_to_Neg__c</fullName>
+    <description>wd field
+Used by FCI</description>
+    <externalId>false</externalId>
+    <formula>Neg_Date__c - VOC_Date__c</formula>
+    <inlineHelpText># Days from VOC to Negotiations - Evaluates to blank if VOC Date is blank.</inlineHelpText>
+    <label>VOC to Neg</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

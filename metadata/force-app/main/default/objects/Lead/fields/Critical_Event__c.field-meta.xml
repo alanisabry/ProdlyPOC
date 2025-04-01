@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Critical_Event__c</fullName>
+    <inlineHelpText>Is there a critical event? E.g. contract of existing supplier is due in december. Or a new solution needs to be in place before the next Fashion Week.</inlineHelpText>
+    <label>Critical Event</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

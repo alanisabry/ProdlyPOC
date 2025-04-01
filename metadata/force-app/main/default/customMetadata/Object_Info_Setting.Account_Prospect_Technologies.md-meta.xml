@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Account Prospect Technologies</label>
+    <protected>false</protected>
+    <values>
+        <field>Display_Columns__c</field>
+        <value xsi:type="xsd:string">2</value>
+    </values>
+    <values>
+        <field>Fields__c</field>
+        <value xsi:type="xsd:string">Account__c,Technology__c, Integration__c,If_Other_enter_name_here__c, Customer_s_partner_bulding_integration__c, If_live_how_long_did_development_take__c,How_are_they_connected__c,What_benefits_have_they_seen__c</value>
+    </values>
+    <values>
+        <field>Record_Type__c</field>
+        <value xsi:type="xsd:string">Prospect</value>
+    </values>
+    <values>
+        <field>Section__c</field>
+        <value xsi:type="xsd:string">Adjacent Technologies</value>
+    </values>
+    <values>
+        <field>Target_Object__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+</CustomMetadata>

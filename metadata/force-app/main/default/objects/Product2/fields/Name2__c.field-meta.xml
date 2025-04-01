@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name2__c</fullName>
+    <inlineHelpText>Field used in the product selector screen to make a distinction between legacy and new Brand Guidelines in the Bynder &apos;19 pricebook.</inlineHelpText>
+    <label>Name2</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

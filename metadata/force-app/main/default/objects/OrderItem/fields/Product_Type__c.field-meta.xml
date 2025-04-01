@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    Part_of_a_package__c &amp;&amp; ISPICKVAL(Product2.Product_Type__c, &quot;Add-on&quot;),
+    &quot;Included&quot;,
+    IF(
+        ISPICKVAL(Product2.Product_Type__c, &quot;Integrations &amp; Add-ons&quot;),
+        &quot;Integrations&quot;,
+        TEXT(Product2.Product_Type__c)
+    )
+)</formula>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

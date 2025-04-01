@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_New__c</fullName>
+    <description>BODEV-4222 SF - QW - Legal Fields Optimisation
+Created this new field for Insurance as we were not able to map the picklist values from Insurance (historical contracts) field &amp; legal wants to access this info.</description>
+    <label>Insurance</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes, Waiver of subrogation</fullName>
+                <default>false</default>
+                <label>Yes, Waiver of subrogation</label>
+            </value>
+            <value>
+                <fullName>Yes, Additional Insured</fullName>
+                <default>false</default>
+                <label>Yes, Additional Insured</label>
+            </value>
+            <value>
+                <fullName>Yes, general insurance clause</fullName>
+                <default>false</default>
+                <label>Yes, general insurance clause</label>
+            </value>
+            <value>
+                <fullName>Yes, both Waiver of subrogation &amp; Additional Insured</fullName>
+                <default>false</default>
+                <label>Yes, both Waiver of subrogation &amp; Additional Insured</label>
+            </value>
+            <value>
+                <fullName>No insurance clause</fullName>
+                <default>false</default>
+                <label>No insurance clause</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

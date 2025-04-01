@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upcoming_Indexation_amount__c</fullName>
+    <description>Used to store the upcoming indexation applied to product pricing.</description>
+    <formula>IF( Pricing_factors_applied_on_OLI__c &amp;&amp; NOT(ISBLANK( Opportunity.Applied_Upcoming_Indexation__c )),
+( Total_Initial_Default_Price_ARR_One_off__c + Cumulative_Indexation_amount__c )*
+Opportunity.Applied_Upcoming_Indexation__c,
+0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Upcoming Indexation amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

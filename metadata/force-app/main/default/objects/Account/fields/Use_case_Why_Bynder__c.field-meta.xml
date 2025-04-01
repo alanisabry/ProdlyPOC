@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_case_Why_Bynder__c</fullName>
+    <inlineHelpText>This field pulls from Mavenlink - the Onboarding Managers will briefly describe the client’s use case for Bynder when they are finished with implementation.</inlineHelpText>
+    <label>Use case - &quot;Why Bynder?&quot;</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

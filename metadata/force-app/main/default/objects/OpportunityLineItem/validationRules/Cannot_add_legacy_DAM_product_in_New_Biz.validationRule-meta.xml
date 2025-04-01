@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_legacy_DAM_product_in_New_Biz</fullName>
+    <active>true</active>
+    <description>BODEV-2911: For New Business, the legacy DAM Product (01t0P000002EFLFQA4) is only available for Workgroup package. For other packages and non-package Opps, the new DAM product with AI Search Experience (01tRo000000TIb3IAG) should be used.</description>
+    <errorConditionFormula>AND(
+    /* Exempt System/Admin profiels */
+    NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+    NOT($Profile.Name = &quot;Automated Process&quot;),
+
+    /* Only applicable for New Business */
+    ISPICKVAL(Opportunity.Type, &quot;New Business-Enterprise Cloud&quot;),
+
+    /* Block when the legacy DAM product is added, and the Opp is NOT Workgroup package */
+    NOT(ISPICKVAL(Opportunity.Standard_Package_Name__c, &quot;Workgroup&quot;)),
+    ISNEW(),
+    Product2.Product_ID_18_digits__c = &quot;01t0P000002EFLFQA4&quot;
+)</errorConditionFormula>
+    <errorMessage>The legacy DAM Product (without AI Search Experience) is only available for Workgroup package. In other situation, please add &quot;Bynder DAM + AI Search Experience&quot; instead.</errorMessage>
+</ValidationRule>

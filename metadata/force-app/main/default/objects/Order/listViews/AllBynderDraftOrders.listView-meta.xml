@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllBynderDraftOrders</fullName>
+    <columns>ORDERS.ORDER_NUMBER</columns>
+    <columns>Sales_Office__c</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ORDERS.EFFECTIVE_DATE</columns>
+    <columns>ORDERS.END_DATE</columns>
+    <columns>ORDERS.STATUS</columns>
+    <columns>CONTRACT.CONTRACT_NUMBER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ORDERS.STATUS_CODE</field>
+        <operation>equals</operation>
+        <value>D</value>
+    </filters>
+    <filters>
+        <field>Platform__c</field>
+        <operation>equals</operation>
+        <value>Bynder</value>
+    </filters>
+    <label>All Bynder Draft Orders</label>
+</ListView>

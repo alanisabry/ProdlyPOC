@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFMC_Connector_Sales_Price__c</fullName>
+    <description>BODEV-81: Field to capture current Sales Price of SFMC Connector associated to this Opp. This needs to be stored in Opp level so that system can compare and identify on renewal whether Sales Price of SFMC Connector on this Opp is changed from that from the previous contract stored at Account level, in which case we need to adjust existing order when Bynder owes 20% of connector for this customer.</description>
+    <label>SFMC Connector Sales Price</label>
+    <summarizedField>OpportunityLineItem.UnitPrice</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Name_rus__c</field>
+        <operation>equals</operation>
+        <value>Salesforce Marketing Cloud Connector</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

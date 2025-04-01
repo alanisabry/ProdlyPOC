@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Roles__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+  Power_User__c = TRUE, &quot;Power User&quot; + BR(), &quot;&quot;) &amp;
+IF( 
+  Executive_Sponsor__c = TRUE, &quot;Champion&quot; + BR(), &quot;&quot;) &amp;
+IF( 
+  Support_contact__c = TRUE, &quot;Support Contact&quot; + BR(), &quot;&quot;) &amp;
+IF(
+  Decision_Maker__c = TRUE, &quot;Decision Maker&quot; + BR(), &quot;&quot;) &amp;
+IF( 
+  Project_Owner__c = TRUE, &quot;Project Owner&quot; + BR(), &quot;&quot;) &amp;
+IF( 
+  Legal__c = TRUE, &quot;Legal&quot; + BR(), &quot;&quot;) &amp; 
+IF( 
+  IT_Contact__c = TRUE, &quot;IT Contact&quot; + BR(), &quot;&quot;) &amp;
+IF( 
+  Procurement__c = TRUE, &quot;Procurement&quot; + BR(), &quot;&quot;) &amp;
+IF( 
+  Stakeholder__c = TRUE, &quot;Stakeholder&quot; + BR(), &quot;&quot;) &amp;
+IF( 
+  Finance__c = TRUE, &quot;Finance&quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contact Roles</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

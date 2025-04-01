@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UK_TeamA_Not_Contacted_Yet_Jun17</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.INDUSTRY</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>days_created_ago__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Sales 1: Not Contacted yet</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>ymati,ahuds,miki</value>
+    </filters>
+    <filters>
+        <field>days_created_ago__c</field>
+        <operation>lessThan</operation>
+        <value>300</value>
+    </filters>
+    <filters>
+        <field>LEAD.INDUSTRY</field>
+        <operation>equals</operation>
+        <value>Services</value>
+    </filters>
+    <label>UK-TeamA-Not Contacted Yet- Jun17</label>
+</ListView>

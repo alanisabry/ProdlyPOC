@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expansion_ARR__c</fullName>
+    <description>BODEV-2718: Returns Expansion ARR value for this product line, except for Renewal Opps. Expansion on Renewal is recognised in Expansion_ARR_on_Renewal__c field due to the compiled size.</description>
+    <formula>IF(
+    /* Expansion can be shown only on Recurring Product under Won Opp */
+    AND(
+        ISPICKVAL(Opportunity.StageName, &quot;Closed Won&quot;),
+        For_Renewal__c = TRUE
+    ),
+    IF(
+        /* Positive ARR on Upsell or Expansion Portal */
+        AND(
+            ISPICKVAL(Opportunity.Type, &quot;Existing Business-Upsell&quot;) ||
+            ISPICKVAL(Opportunity.Type, &quot;New Business - Expansion Portal&quot;),
+            Total_Sales_Price_ARR__c &gt; 0
+        ),
+        Total_Sales_Price_ARR__c,
+        /* Expansion on Platform Transfer or OEM&gt;Direct Transfer */
+        IF(
+            AND(
+                /* Expansion recognised only when ARR before Transfer is specified
+                and the line item ARR is larger than Previous OEM ARR for the line item */
+                ISPICKVAL(Opportunity.Type, &quot;Existing Business - Internal Transfer&quot;) ||
+                ISPICKVAL(Opportunity.Type, &quot;Existing Business - Platform Transfer&quot;),
+                Opportunity.Original_Renewal_ARR__c &gt; 0,
+                Previous_OEM_ARR__c != 0,
+                Total_Sales_Price_ARR__c &gt; Previous_OEM_ARR__c
+            ),
+            Total_Sales_Price_ARR__c - Previous_OEM_ARR__c,
+            NULL
+        )
+    ),
+    NULL
+)</formula>
+    <inlineHelpText>Expansion ARR of the line item, excluding Expansion on Renewal (which can be found in Expansion ARR on Renewal field).</inlineHelpText>
+    <label>Expansion ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_ARR_when_products_added</fullName>
+    <active>true</active>
+    <description>The rule prohibits changing manually the ARR field when the opportunity has products.</description>
+    <errorConditionFormula>AND(
+ NOT( $User.User_ID_18_digits__c = &quot;0053g000000htF8AAI&quot;),
+ NOT(Contains($Profile.Name,&quot;System Administrator&quot;)),
+ of_products_MRR__c &gt; 0,  
+ ISCHANGED(ARR_manual__c),
+ ROUND(ARR_manual__c, 2) &lt;&gt; ROUND(MRR_from_Products__c*12, 2) 
+)</errorConditionFormula>
+    <errorDisplayField>ARR_manual__c</errorDisplayField>
+    <errorMessage>Please edit ARR by updating products.</errorMessage>
+</ValidationRule>

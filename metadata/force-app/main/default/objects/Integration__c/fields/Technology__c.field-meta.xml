@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Technology__c</fullName>
+    <inlineHelpText>The technology that the application integrates with.</inlineHelpText>
+    <label>Technology</label>
+    <referenceTo>Technology__c</referenceTo>
+    <relationshipLabel>Integrations</relationshipLabel>
+    <relationshipName>Integrations</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

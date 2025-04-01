@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Downtime_seconds_this_month__c</fullName>
+    <description>Downtime of the customers database.</description>
+    <externalId>false</externalId>
+    <formula>Database__r.Downtime_this_month__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Downtime of the customers database.</inlineHelpText>
+    <label>Downtime seconds this month</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

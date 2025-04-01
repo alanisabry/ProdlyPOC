@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Value_Open__c</fullName>
+    <description>wd field
+Amount of related open opportunity. Based on standard opportunity Amount field.</description>
+    <formula>IF( 
+AND(
+NOT(ISBLANK( FCR_Opportunity__c )), 
+FCR_Opportunity__r.IsClosed = False
+) , FCR_Opportunity_Amount__c , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Amount of related open opportunity. Based on standard opportunity Amount field.</inlineHelpText>
+    <label>Opportunity Value Open</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Nurture_Timeout__c</fullName>
+    <description>wd field
+Nurture timeout date for this contact.</description>
+    <inlineHelpText>Indicates the earliest date this contact can promote out of nurture for follow up.</inlineHelpText>
+    <label>Nurture Timeout</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

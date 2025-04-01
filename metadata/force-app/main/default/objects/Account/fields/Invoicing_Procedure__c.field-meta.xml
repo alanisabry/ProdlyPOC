@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoicing_Procedure__c</fullName>
+    <label>Invoicing Procedure</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Reimbursable expenses shall be invoiced by Bynder to Customer within one (1) month of the last day of travel.</fullName>
+                <default>false</default>
+                <label>Reimbursable expenses shall be invoiced by Bynder to Customer within one (1) month of the last day of travel.</label>
+            </value>
+            <value>
+                <fullName>Reimbursable expenses shall be invoiced by Bynder to Customer within seven (7) days of the last day of travel.</fullName>
+                <default>false</default>
+                <label>Reimbursable expenses shall be invoiced by Bynder to Customer within seven (7) days of the last day of travel.</label>
+            </value>
+            <value>
+                <fullName>Not in agreement</fullName>
+                <default>false</default>
+                <label>Not in agreement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

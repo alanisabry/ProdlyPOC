@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Review_non_standard_billing</fullName>
+    <active>false</active>
+    <description>If account has non-standard billing, the order must be reviewed</description>
+    <errorConditionFormula>AND(
+Total_Order_Value__c&gt;0,
+Non_Standard_Billing_Terms_Reviewed__c=FALSE,
+ISPICKVAL(Account.Invoice_Billing_Structure__c,&quot;Non-Standard&quot;),
+ISPICKVAL(Status,&quot;Activated&quot;),
+ISCHANGED(Status))</errorConditionFormula>
+    <errorDisplayField>Non_Standard_Billing_Terms_Reviewed__c</errorDisplayField>
+    <errorMessage>This account has non-standard billing terms. Please check the &apos;Non Standard Billing Terms Reviewed &apos; checkbox to confirm that this order has been compared to the billing terms.</errorMessage>
+</ValidationRule>

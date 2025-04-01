@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_start_date_approval_required__c</fullName>
+    <formula>IF( Opportunity__r.Subscription_Start_Date__c &gt; (Opportunity__r.Startdate_contract__c + ( 30 +
+/* Calculate the number of days left in the month of the Contract Start Date*/
+CASE(
+  MONTH(Opportunity__r.Startdate_contract__c),
+  1, 31 - DAY(Opportunity__r.Startdate_contract__c),
+  2, IF(MOD(YEAR(Opportunity__r.Startdate_contract__c), 4) = 0, 29 - DAY(Opportunity__r.Startdate_contract__c), 28 - DAY(Opportunity__r.Startdate_contract__c)),
+  3, 31 - DAY(Opportunity__r.Startdate_contract__c),
+  4, 30 - DAY(Opportunity__r.Startdate_contract__c),
+  5, 31 - DAY(Opportunity__r.Startdate_contract__c),
+  6, 30 - DAY(Opportunity__r.Startdate_contract__c),
+  7, 31 - DAY(Opportunity__r.Startdate_contract__c),
+  8, 31 - DAY(Opportunity__r.Startdate_contract__c),
+  9, 30 - DAY(Opportunity__r.Startdate_contract__c),
+  10, 31 - DAY(Opportunity__r.Startdate_contract__c),
+  11, 30 - DAY(Opportunity__r.Startdate_contract__c),
+  12, 31 - DAY(Opportunity__r.Startdate_contract__c),
+  0
+))), TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Project start date approval required?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

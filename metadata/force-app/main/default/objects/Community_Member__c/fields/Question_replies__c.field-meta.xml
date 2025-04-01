@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Question_replies__c</fullName>
+    <description>The total number of replies this user has added to questions.</description>
+    <inlineHelpText>The total number of replies this user has added to questions.</inlineHelpText>
+    <label>Question replies</label>
+    <summaryFilterItems>
+        <field>Community_Member_Activity__c.Name</field>
+        <operation>equals</operation>
+        <value>Question replied</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Community_Member_Activity__c.Community_Member__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>allInternalUsers</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Ultimate_DoA_Level__c</field>
+        <field>MRR__c</field>
+        <field>One_off__c</field>
+        <field>Invoice_period__c</field>
+        <field>Payment_Period__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Ultimate_DoA_Approver__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>don.fakkert@bynder.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <description>BODEV-673: This step is deprecated as there is always only 1 approver per request.</description>
+        <entryCriteria>
+            <formula>/*
+ BODEV-673: Deprecated as both ARR/One-off discount go to Sales Manager
+*/
+
+/*
+
+ISPICKVAL(Latest_DoA__r.Ultimate_DoA_Level__c, &quot;Sales Manager&quot;)
+&amp;&amp;
+Latest_DoA__r.VP_CS_Approval_Required__c
+&amp;&amp;
+Sales_Office_Grouped__c = &quot;EMEA&quot;
+
+*/
+
+FALSE</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>DoA: Sales Manager + VP of CS EMEA</label>
+        <name>DoA_Sales_Manager_VP_of_CS_EMEA</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Ultimate_DoA_Approver__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>heidi.lasker@bynder.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <description>BODEV-673: This step is deprecated as there is always only 1 approver per request.</description>
+        <entryCriteria>
+            <formula>/*
+BODEV-673: Deprecated as both ARR/One-off discount go to Sales Manager
+*/
+
+/*
+
+
+/*
+ISPICKVAL(Latest_DoA__r.Ultimate_DoA_Level__c, &quot;Sales Manager&quot;)
+&amp;&amp;
+Latest_DoA__r.VP_CS_Approval_Required__c
+&amp;&amp;
+Sales_Office_Grouped__c = &quot;US&quot;
+*/
+
+FALSE</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>DoA: Sales Manager + VP of CS US</label>
+        <name>DoA_Sales_Manager_VP_of_CS_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Ultimate_DoA_Approver__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>BODEV-673: All approval process should always enter this step.</description>
+        <entryCriteria>
+            <formula>TRUE</formula>
+        </entryCriteria>
+        <label>DoA: Ultimate DoA Approver Only</label>
+        <name>DoA_Ultimate_DoA_Approver_Only</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>BODEV-76: Approval process for Delegation of Authority (DoA)
+
+BODEV-1391: Deprecated &amp; Replaced with the approval process (Delegation of Authority Approval)</description>
+    <emailTemplate>unfiled$public/DoA_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>FALSE</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>DoA_Approval_Finalized</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Set_DoA_Approval_Status_Accepted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>DoA_Approval_Finalized</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Set_DoA_Approval_Status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Set_DoA_Approval_Status_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Delegation of Authority</label>
+    <processOrder>3</processOrder>
+    <recallActions>
+        <action>
+            <name>Set_DoA_Approval_Status_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

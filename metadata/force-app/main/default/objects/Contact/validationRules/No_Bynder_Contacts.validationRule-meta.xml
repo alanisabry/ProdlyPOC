@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Bynder_Contacts</fullName>
+    <active>true</active>
+    <description>BCC to Salesforce assigns tasks to internal emloyees</description>
+    <errorConditionFormula>AND(
+ISNEW(),
+Contains(Email, &quot;@bynder.com&quot;))</errorConditionFormula>
+    <errorMessage>Bynder employees should not be added to Salesforce to prevent incorrect syncing of emails.</errorMessage>
+</ValidationRule>

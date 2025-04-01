@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Message_to_Channel</name>
+        <label>Send Message to Channel</label>
+        <locationX>176</locationX>
+        <locationY>758</locationY>
+        <actionName>slackPostMessage</actionName>
+        <actionType>slackPostMessage</actionType>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>slackAppIdForToken</name>
+            <value>
+                <stringValue>A028VJ1KG3G</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>T0314UPQ458</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>userIdForToken</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackConversationId</name>
+            <value>
+                <stringValue>C08FLGV1Y5V</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessage</name>
+            <value>
+                <elementReference>varMessageBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Member_Details_to_Collection</name>
+        <label>Add Member Details to Collection</label>
+        <locationX>264</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>MemeberNameRoleCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>MemberNameRole</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_RFP_Team_Collection</targetReference>
+        </connector>
+    </assignments>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <environments>Default</environments>
+    <formulas>
+        <name>MemberNameRole</name>
+        <dataType>String</dataType>
+        <expression>&quot;Member Name: &quot; &amp; {!Loop_through_RFP_Team_Collection.Team_Member__r.FirstName}  &amp; &quot; &quot; &amp;{!Loop_through_RFP_Team_Collection.Team_Member__r.LastName} &amp; BR() &amp; BR() &amp; 
+&quot;Member Role: &quot; &amp; TEXT({!Loop_through_RFP_Team_Collection.Member_Role__c}) &amp; BR() &amp; BR()</expression>
+    </formulas>
+    <formulas>
+        <name>varMessageBody</name>
+        <dataType>String</dataType>
+        <expression>&quot;Hello,&quot; &amp; BR() &amp; BR() &amp; 
+&quot;Opportunity: &quot; &amp; {!Get_RFP_Details.Opportunity__r.Name} &amp; BR() &amp; 
+&quot;Account: &quot; &amp; {!Get_RFP_Details.Account__r.Name} &amp; BR() &amp; BR() &amp; 
+&quot;⚠️ *This Renewal Opportunity is at Risk as it requires an RFP.*&quot; &amp; BR() &amp; BR()&amp;
+&quot;*RFP Details: *&quot; &amp; BR() &amp; BR() &amp; 
+&quot;*Current Account State:* &quot; &amp; TEXT({!Get_RFP_Details.Current_Account_State__c}) &amp;BR() &amp; BR() &amp; 
+&quot;*RFP Due Date:* &quot; &amp; TEXT({!Get_RFP_Details.RFP_Due_Date__c}) &amp;BR() &amp; BR() &amp; 
+&quot;*Internal Review Due Date:* &quot; &amp; TEXT({!Get_RFP_Details.Internal_Review_Due_Date__c}) &amp;BR() &amp; BR() &amp; 
+&quot;*What prompted the RFP?* &quot; &amp; {!Get_RFP_Details.What_Prompted_the_RFP__c} &amp;BR() &amp; BR() &amp; 
+&quot;*Deal Context &amp; Key Themes:* &quot; &amp; {!Get_RFP_Details.Deal_Context_Key_Themes__c} &amp;BR() &amp; BR() &amp; 
+&quot;*Additional Commercial Support Reason:* &quot; &amp; {!Get_RFP_Details.Additional_Commercial_Support_Reason__c} &amp;BR() &amp; BR() &amp; 
+&quot;*Account Profile Link:* &quot; &amp; {!Get_RFP_Details.Account_Profile_Link__c}&amp;BR() &amp; BR() &amp; 
+&quot;*RFP Folder Link:* &quot; &amp; {!Get_RFP_Details.RFP_Folder_Link__c} &amp;BR() &amp; BR() &amp; 
+&quot;*RFP Team Members:* &quot;&amp;BR() &amp;BR()  &amp; {!MemeberNameRoleCollection} &amp;BR() &amp; BR() &amp; 
+&quot;🔗 *RFP Record:* &quot; &amp; &quot;https://bynder--partialsbx.sandbox.lightning.force.com/&quot; &amp; {!Get_RFP_Details.Id}</expression>
+    </formulas>
+    <interviewLabel>Send RFP Details to Slack - Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send RFP Details to Slack - Screen Flow</label>
+    <loops>
+        <name>Loop_through_RFP_Team_Collection</name>
+        <label>Loop through RFP Team Collection</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <collectionReference>Get_RFP_Team_Memebers</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Member_Details_to_Collection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Main_Screen</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_RFP_Details</name>
+        <label>Get RFP Details</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_RFP_Team_Memebers</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RFP__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_RFP_Team_Memebers</name>
+        <label>Get RFP Team Memebers</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_RFP_Team_Collection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RFP__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_RFP_Details.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>RFP_Team__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Main_Screen</name>
+        <label>Main Screen</label>
+        <locationX>176</locationX>
+        <locationY>650</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Send_Message_to_Channel</targetReference>
+        </connector>
+        <fields>
+            <name>ConfirmationMessage</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px; font-family: sans-serif; color: rgb(244, 2, 2);&quot;&gt;You&apos;re about to share this RFP details with all Slack Channel members.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; font-family: sans-serif; color: rgb(244, 2, 2);&quot;&gt;Are you sure?&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Proceed</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_RFP_Details</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>MemeberNameRoleCollection</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesLoft1__Active_Account__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If Account has an activity logged within the last 30 days, this field will return a value of 1.</description>
+    <externalId>false</externalId>
+    <formula>IF( TODAY () - LastActivityDate &lt;= 30, 1,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Account</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

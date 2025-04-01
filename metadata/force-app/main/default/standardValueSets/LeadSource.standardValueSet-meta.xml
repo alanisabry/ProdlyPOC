@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Account mapping</fullName>
+        <default>false</default>
+        <label>Account mapping</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Account Tracking</fullName>
+        <default>false</default>
+        <label>Account Tracking</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Analyst Referral</fullName>
+        <default>false</default>
+        <label>Analyst Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Apollo</fullName>
+        <default>false</default>
+        <label>Apollo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>AppExchange - Commerce Cloud</fullName>
+        <default>false</default>
+        <label>AppExchange - Commerce Cloud</label>
+    </standardValue>
+    <standardValue>
+        <fullName>AppExchange - LWC</fullName>
+        <default>false</default>
+        <label>AppExchange - LWC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>AppExchange - Marketing Cloud</fullName>
+        <default>false</default>
+        <label>AppExchange - Marketing Cloud</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Blog/Newsletter</fullName>
+        <default>false</default>
+        <label>Blog/Newsletter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BrightTALK Channel - 19272</fullName>
+        <default>false</default>
+        <label>BrightTALK Channel - 19272</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bynder Connect On-demand</fullName>
+        <default>false</default>
+        <label>Bynder Connect On-demand</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bynder Marketplace</fullName>
+        <default>false</default>
+        <label>Bynder Marketplace</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Clari</fullName>
+        <default>false</default>
+        <label>Clari</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Cold Outbound</fullName>
+        <default>false</default>
+        <label>Cold Outbound</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Consumer Brands Content Hub</fullName>
+        <default>false</default>
+        <label>Consumer Brands Content Hub</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contact Form</fullName>
+        <default>false</default>
+        <label>Contact Form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Workflow Standalone Contact Sales</fullName>
+        <default>false</default>
+        <label>Content Workflow Standalone Contact Sales</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Workflow Standalone Demo</fullName>
+        <default>false</default>
+        <label>Content Workflow Standalone Demo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Workflow Standalone Download</fullName>
+        <default>false</default>
+        <label>Content Workflow Standalone Download</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Content Workflow Standalone Trial</fullName>
+        <default>false</default>
+        <label>Content Workflow Standalone Trial</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Referral</fullName>
+        <default>false</default>
+        <label>Customer Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Trial Guidelines</fullName>
+        <default>false</default>
+        <label>Customer Trial Guidelines</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Webinar</fullName>
+        <default>false</default>
+        <label>Customer Webinar</label>
+    </standardValue>
+    <standardValue>
+        <fullName>DAT Demo Request</fullName>
+        <default>false</default>
+        <label>DAT Demo Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Demo Request</fullName>
+        <default>false</default>
+        <label>Demo Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Demo Request Studio</fullName>
+        <default>false</default>
+        <label>Demo Request Studio</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Direct Partnership</fullName>
+        <default>false</default>
+        <label>Direct Partnership</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Drift</fullName>
+        <default>false</default>
+        <label>Drift</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Event - Bynder Hosted</fullName>
+        <default>false</default>
+        <label>Event - Bynder Hosted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Event - Partner Hosted</fullName>
+        <default>false</default>
+        <label>Event - Partner Hosted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Existing Customer</fullName>
+        <default>false</default>
+        <label>Existing Customer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>G2Crowd Intent</fullName>
+        <default>false</default>
+        <label>G2Crowd Intent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Incoming Call</fullName>
+        <default>false</default>
+        <label>Incoming Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>InfoGenie</fullName>
+        <default>false</default>
+        <label>InfoGenie</label>
+    </standardValue>
+    <standardValue>
+        <fullName>LeadIQ</fullName>
+        <default>false</default>
+        <label>LeadIQ</label>
+    </standardValue>
+    <standardValue>
+        <fullName>List company</fullName>
+        <default>false</default>
+        <label>List company</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Marketing Sourced List</fullName>
+        <default>false</default>
+        <label>Marketing Sourced List</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Monster Quiz</fullName>
+        <default>false</default>
+        <label>Monster Quiz</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OEM Registration</fullName>
+        <default>false</default>
+        <label>OEM Registration</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OnBrand</fullName>
+        <default>false</default>
+        <label>OnBrand</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Orbit Registration</fullName>
+        <default>false</default>
+        <label>Orbit Registration</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partner Prospect</fullName>
+        <default>false</default>
+        <label>Partner Prospect</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Public Tender</fullName>
+        <default>false</default>
+        <label>Public Tender</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Quote Request</fullName>
+        <default>false</default>
+        <label>Quote Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RevenueBase</fullName>
+        <default>false</default>
+        <label>RevenueBase</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TechTarget Intent List</fullName>
+        <default>false</default>
+        <label>TechTarget Intent List</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tradeshows</fullName>
+        <default>false</default>
+        <label>Tradeshows</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trial Sign-up</fullName>
+        <default>false</default>
+        <label>Trial Sign-up</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Unassessed</fullName>
+        <default>false</default>
+        <label>Unassessed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>UserGems</fullName>
+        <default>false</default>
+        <label>UserGems</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webdam Microsite Contact</fullName>
+        <default>false</default>
+        <label>Webdam Microsite Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webdam Microsite Demo</fullName>
+        <default>false</default>
+        <label>Webdam Microsite Demo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webdam Microsite Quote Request</fullName>
+        <default>false</default>
+        <label>Webdam Microsite Quote Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webinar - Bynder Hosted</fullName>
+        <default>false</default>
+        <label>Webinar - Bynder Hosted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webinar - Partner Hosted</fullName>
+        <default>false</default>
+        <label>Webinar - Partner Hosted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webinar Sign-up</fullName>
+        <default>false</default>
+        <label>Webinar Sign-up</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Whitepaper Download</fullName>
+        <default>false</default>
+        <label>Whitepaper Download</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Zoominfo</fullName>
+        <default>false</default>
+        <label>Zoominfo</label>
+    </standardValue>
+</StandardValueSet>

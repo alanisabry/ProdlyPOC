@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Opportunity_Closed_Date__c</fullName>
+    <description>wd field</description>
+    <formula>FCR_Opportunity__r.CloseDate</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opportunity Closed Date</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

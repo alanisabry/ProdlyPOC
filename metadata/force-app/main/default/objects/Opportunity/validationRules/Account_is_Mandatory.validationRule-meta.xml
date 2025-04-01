@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_is_Mandatory</fullName>
+    <active>true</active>
+    <description>Users can still create Opps from &quot;New&quot; button, and on that layout Opps can be cerated without having Accounts. This VR is to prevent it from happening.</description>
+    <errorConditionFormula>AND(
+  ISNEW(),
+  ISBLANK( AccountId )
+)</errorConditionFormula>
+    <errorMessage>Opportunities should not be created from &quot;New&quot; button. Please create either through 1) Lead Conversion, 2) &quot;New Business&quot; button on Contact, 3) &quot;New Upsell&quot; button on an Account.</errorMessage>
+</ValidationRule>

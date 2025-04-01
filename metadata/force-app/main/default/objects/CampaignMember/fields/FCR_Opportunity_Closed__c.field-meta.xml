@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Opportunity_Closed__c</fullName>
+    <description>wd field</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+NOT(ISBLANK( FCR_Opportunity__c )),
+FCR_Opportunity__r.IsClosed = True), &quot;True&quot;, null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opportunity Closed</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

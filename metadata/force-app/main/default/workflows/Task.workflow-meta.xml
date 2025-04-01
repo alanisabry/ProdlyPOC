@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_daily_reminder_for_open_discovery_calls</fullName>
+        <description>Send daily reminder for open discovery calls</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Send_daily_reminder_for_open_discovery_calls</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Log_a_call_no_answer</fullName>
+        <field>Contact_Result__c</field>
+        <literalValue>No answer from line</literalValue>
+        <name>Log a call - no answer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Save_Date</fullName>
+        <field>New_activity_completed__c</field>
+        <formula>Now()</formula>
+        <name>Save Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Timestamp_Activity_Completed</fullName>
+        <field>Timestamp_Activity_Completed__c</field>
+        <formula>Now()</formula>
+        <name>Timestamp Activity Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Activity_Completed_Date</fullName>
+        <field>Activity_Completed_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Activity Completed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Call - No answer</fullName>
+        <actions>
+            <name>Log_a_call_no_answer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Contact_Result__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Subject</field>
+            <operation>equals</operation>
+            <value>Call: No Answer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Current_User__c</field>
+            <operation>notEqual</operation>
+            <value>0050P000007hH92</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Timestamp Activity Completed</fullName>
+        <actions>
+            <name>Timestamp_Activity_Completed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(ISPICKVAL(Status,&quot;Completed&quot;),  $User.Id &lt;&gt; &quot;0050P000007hH92&quot;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

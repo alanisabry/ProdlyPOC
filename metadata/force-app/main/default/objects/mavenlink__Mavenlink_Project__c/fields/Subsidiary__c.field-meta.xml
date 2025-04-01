@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subsidiary__c</fullName>
+    <description>The contracting Bynder entity for the associated account.</description>
+    <externalId>false</externalId>
+    <formula>/*Subsidiary is a lookup field, so requires a CASE or IF formula to show actual value*/
+
+mavenlink__Account__r.Subsidiary_lookup__r.Name</formula>
+    <inlineHelpText>The contracting Bynder entity for the associated account.</inlineHelpText>
+    <label>Subsidiary</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

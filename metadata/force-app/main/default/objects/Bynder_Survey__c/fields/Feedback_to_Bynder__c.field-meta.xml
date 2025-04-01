@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feedback_to_Bynder__c</fullName>
+    <inlineHelpText>Any other feedback you&apos;d like to provide to Bynder Leadership?</inlineHelpText>
+    <label>Feedback to Bynder Leadership</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

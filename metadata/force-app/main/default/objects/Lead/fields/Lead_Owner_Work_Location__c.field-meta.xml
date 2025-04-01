@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Owner_Work_Location__c</fullName>
+    <description>BODEV-341: Formula field to represent Lead Owner&apos;s Work Location so that an appropriate field update for Hours since MQL till Fist Activity will be triggered in Main Process - Lead</description>
+    <externalId>false</externalId>
+    <formula>TEXT( Owner:User.Work_Location__c )</formula>
+    <label>Lead Owner Work Location</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

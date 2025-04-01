@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Reasons__c</fullName>
+    <description>Reason why the Forecast level is set to &quot;At Risk&quot; or &quot;Churn&quot;.</description>
+    <inlineHelpText>Reason why the Forecast level is set to &quot;At Risk&quot; or &quot;Churn&quot;.</inlineHelpText>
+    <label>Risk Reasons</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Forecast_Level__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adoption / Engagement</fullName>
+                <default>false</default>
+                <label>Adoption / Engagement</label>
+            </value>
+            <value>
+                <fullName>Features</fullName>
+                <default>false</default>
+                <label>Features</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>RFP</fullName>
+                <default>false</default>
+                <label>RFP</label>
+            </value>
+            <value>
+                <fullName>Lack of Communication</fullName>
+                <default>false</default>
+                <label>Lack of Communication</label>
+            </value>
+            <value>
+                <fullName>Wrong Expectations</fullName>
+                <default>false</default>
+                <label>Wrong Expectations</label>
+            </value>
+            <value>
+                <fullName>Lack of change management/governance</fullName>
+                <default>false</default>
+                <label>Lack of change management/governance</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Insufficient Budget available</fullName>
+                <default>false</default>
+                <label>Insufficient Budget available</label>
+            </value>
+            <value>
+                <fullName>Internal Transfer</fullName>
+                <default>false</default>
+                <label>Internal Transfer</label>
+            </value>
+            <value>
+                <fullName>Lack of Payment</fullName>
+                <default>false</default>
+                <label>Lack of Payment</label>
+            </value>
+            <value>
+                <fullName>Stakeholder Change</fullName>
+                <default>false</default>
+                <label>Stakeholder Change</label>
+            </value>
+            <value>
+                <fullName>M&amp;A</fullName>
+                <default>false</default>
+                <label>M&amp;A</label>
+            </value>
+            <value>
+                <fullName>Layoffs</fullName>
+                <default>false</default>
+                <label>Layoffs</label>
+            </value>
+            <value>
+                <fullName>Lack of Innovation</fullName>
+                <default>false</default>
+                <label>Lack of Innovation</label>
+            </value>
+            <value>
+                <fullName>Lack of ROI</fullName>
+                <default>false</default>
+                <label>Lack of ROI</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>COVID-19</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COVID-19</label>
+            </value>
+            <value>
+                <fullName>Lost Key Personnel / Lost DAM Admin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lost Key Personnel / Lost DAM Admin</label>
+            </value>
+            <value>
+                <fullName>Need</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Need</label>
+            </value>
+            <value>
+                <fullName>No Reason Given</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Reason Given</label>
+            </value>
+            <value>
+                <fullName>Organisational Change</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Organisational Change</label>
+            </value>
+            <value>
+                <fullName>Other (explain in &apos;risk reason&apos; detail)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other (explain in &apos;risk reason&apos; detail)</label>
+            </value>
+            <value>
+                <fullName>Overall Customer Experience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Overall Customer Experience</label>
+            </value>
+            <value>
+                <fullName>Payment / Legal Default</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Payment / Legal Default</label>
+            </value>
+            <value>
+                <fullName>Unresponsive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unresponsive</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Adoption / Engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Features</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>RFP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Lack of Communication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Wrong Expectations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Lack of change management/governance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Bankruptcy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Insufficient Budget available</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Internal Transfer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Lack of Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Stakeholder Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>M&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Layoffs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Lack of Innovation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>At risk</controllingFieldValue>
+            <controllingFieldValue>Churn</controllingFieldValue>
+            <controllingFieldValue>At risk - conservative</controllingFieldValue>
+            <valueName>Lack of ROI</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

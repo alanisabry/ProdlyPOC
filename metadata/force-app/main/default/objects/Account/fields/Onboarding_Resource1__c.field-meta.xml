@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Resource1__c</fullName>
+    <label>Onboarding Resource</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adeline Tan</fullName>
+                <default>false</default>
+                <label>Adeline Tan</label>
+            </value>
+            <value>
+                <fullName>Brett McGaffigan Masters</fullName>
+                <default>false</default>
+                <label>Brett McGaffigan Masters</label>
+            </value>
+            <value>
+                <fullName>Carey MacDonald</fullName>
+                <default>false</default>
+                <label>Carey MacDonald</label>
+            </value>
+            <value>
+                <fullName>Courtney Lyons</fullName>
+                <default>false</default>
+                <label>Courtney Lyons</label>
+            </value>
+            <value>
+                <fullName>Eileen Ford-Holstege</fullName>
+                <default>false</default>
+                <label>Eileen Ford-Holstege</label>
+            </value>
+            <value>
+                <fullName>Emily Castle</fullName>
+                <default>false</default>
+                <label>Emily Castle</label>
+            </value>
+            <value>
+                <fullName>Jesse Fiorito</fullName>
+                <default>false</default>
+                <label>Jesse Fiorito</label>
+            </value>
+            <value>
+                <fullName>Karishma Phansalkar</fullName>
+                <default>false</default>
+                <label>Karishma Phansalkar</label>
+            </value>
+            <value>
+                <fullName>Lana Nguyen</fullName>
+                <default>false</default>
+                <label>Lana Nguyen</label>
+            </value>
+            <value>
+                <fullName>Lauren Casnave</fullName>
+                <default>false</default>
+                <label>Lauren Casnave</label>
+            </value>
+            <value>
+                <fullName>Mohit Goel</fullName>
+                <default>false</default>
+                <label>Mohit Goel</label>
+            </value>
+            <value>
+                <fullName>Rob Faulds</fullName>
+                <default>false</default>
+                <label>Rob Faulds</label>
+            </value>
+            <value>
+                <fullName>Saba Younus</fullName>
+                <default>false</default>
+                <label>Saba Younus</label>
+            </value>
+            <value>
+                <fullName>Taryn Oconnell</fullName>
+                <default>false</default>
+                <label>Taryn Oconnell</label>
+            </value>
+            <value>
+                <fullName>Christi Tsai</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Christi Tsai</label>
+            </value>
+            <value>
+                <fullName>Priyanka Patil</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Priyanka Patil</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

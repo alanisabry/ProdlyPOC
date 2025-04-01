@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workfront_List_Price_ARR_One_off__c</fullName>
+    <description>Stores the list price ARR specific to Workfront OEM(1st Year).</description>
+    <formula>IF(Product2.For_Contract_Renewals__c = True &amp;&amp; NOT(ISBLANK(Workfront_List_Price__c)), Workfront_List_Price__c * 12,
+Workfront_List_Price__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Workfront List Price ARR/One-off</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

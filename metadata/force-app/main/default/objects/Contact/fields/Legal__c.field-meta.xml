@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Contacts part of the customer&apos;s Legal team.
+GS NPS: No
+Newsletter: No</description>
+    <inlineHelpText>Contacts part of the customer&apos;s Legal team.
+GS NPS: No
+Newsletter: No</inlineHelpText>
+    <label>Legal</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

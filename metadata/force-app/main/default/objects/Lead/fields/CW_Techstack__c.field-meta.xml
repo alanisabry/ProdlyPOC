@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CW_Techstack__c</fullName>
+    <description>BO-1759: Used to capture the qualification questions as part of CW standalone Trial demo flow.</description>
+    <externalId>false</externalId>
+    <label>What is your current tech stack</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

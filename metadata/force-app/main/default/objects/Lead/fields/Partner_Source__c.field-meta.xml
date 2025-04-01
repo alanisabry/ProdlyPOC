@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Source__c</fullName>
+    <description>Specifies source in case Lead Source is VASP/Partner.</description>
+    <inlineHelpText>Specifies source in case Lead Source is VASP/Partner.</inlineHelpText>
+    <label>Partner Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct Referral</fullName>
+                <default>false</default>
+                <label>Direct Referral</label>
+            </value>
+            <value>
+                <fullName>OEM Registration</fullName>
+                <default>false</default>
+                <label>OEM Registration</label>
+            </value>
+            <value>
+                <fullName>Account mapping</fullName>
+                <default>false</default>
+                <label>Account mapping</label>
+            </value>
+            <value>
+                <fullName>Webinar - Bynder Hosted</fullName>
+                <default>false</default>
+                <label>Webinar - Bynder Hosted</label>
+            </value>
+            <value>
+                <fullName>Webinar - Partner Hosted</fullName>
+                <default>false</default>
+                <label>Webinar - Partner Hosted</label>
+            </value>
+            <value>
+                <fullName>Event - Bynder Hosted</fullName>
+                <default>false</default>
+                <label>Event - Bynder Hosted</label>
+            </value>
+            <value>
+                <fullName>Event - Partner Hosted</fullName>
+                <default>false</default>
+                <label>Event - Partner Hosted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

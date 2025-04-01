@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_Is_Active_True__c</fullName>
+    <description>Used by the scheduled flow to set the contract to active.</description>
+    <formula>AND(
+ISPICKVAL(StageName,&quot;Closed Won&quot;),
+NOT(ISPICKVAL(Type, &quot;Existing Business-Professional Services&quot;)),
+Contract_IsActive__c = FALSE,
+Startdate_contract__c &lt;= Today(),
+End_date_contract__c &gt; TODAY())</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Used by the scheduled flow to set the contract to active.</inlineHelpText>
+    <label>Flow: Is Active True</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

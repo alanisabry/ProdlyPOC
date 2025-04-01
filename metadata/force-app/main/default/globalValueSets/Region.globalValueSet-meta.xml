@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Northern Europe</fullName>
+        <default>false</default>
+        <label>Northern Europe</label>
+    </customValue>
+    <customValue>
+        <fullName>DACH</fullName>
+        <default>false</default>
+        <label>DACH</label>
+    </customValue>
+    <customValue>
+        <fullName>UK</fullName>
+        <default>false</default>
+        <label>UK</label>
+    </customValue>
+    <customValue>
+        <fullName>Southern Europe</fullName>
+        <default>false</default>
+        <label>Southern Europe</label>
+    </customValue>
+    <customValue>
+        <fullName>Rest of Europe</fullName>
+        <default>false</default>
+        <label>Rest of Europe</label>
+    </customValue>
+    <customValue>
+        <fullName>US/CA</fullName>
+        <default>false</default>
+        <label>US/CA</label>
+    </customValue>
+    <customValue>
+        <fullName>APAC</fullName>
+        <default>false</default>
+        <label>APAC</label>
+    </customValue>
+    <customValue>
+        <fullName>MEA</fullName>
+        <default>false</default>
+        <label>MEA</label>
+    </customValue>
+    <customValue>
+        <fullName>LATAM</fullName>
+        <default>false</default>
+        <label>LATAM</label>
+    </customValue>
+    <customValue>
+        <fullName>Benelux</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Benelux</label>
+    </customValue>
+    <masterLabel>Region</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Standard_Terms__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is for agreements on our Standard Terms of Service with some override clauses added to the Standard Agreement. Add text of any override clauses from the Standard Agreement to the comments field.</description>
+    <inlineHelpText>This field is for agreements on our Standard Terms of Service with some override clauses added to the Standard Agreement. Add text of any override clauses from the Standard Agreement to the comments field.</inlineHelpText>
+    <label>Override Clause</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

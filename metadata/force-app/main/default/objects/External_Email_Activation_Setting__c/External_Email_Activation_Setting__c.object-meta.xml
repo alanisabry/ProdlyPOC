@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>BODEV-1487: In order to prevent emails from being sent to external parties (customers/partners) unexpectedly from Sandbox orgs, external emails should be sent only when the corresponding custom setting field is active.
+The settings should NEVER be active in production so that all Sandboxes will have False value in default. Production can be exempted from this check by checking the Org ID.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>External Email Activation Setting</label>
+    <visibility>Public</visibility>
+</CustomObject>

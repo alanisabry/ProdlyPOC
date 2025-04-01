@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recurring_Discount_field_is_mandatory_2</fullName>
+    <active>true</active>
+    <description>Recurring Discount field is mandatory if &quot;Apply overall discount&quot; field is not empty. Without line 2 and 3, the discount and renewal process would cause errors.</description>
+    <errorConditionFormula>AND (
+NOT($Profile.Name = &quot;System Administrator&quot;), 
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+NOT (ISPICKVAL(PRIORVALUE(Recurring_Discount__c),&quot;Yes&quot;)),
+NOT (ISPICKVAL(PRIORVALUE(Recurring_Discount__c),&quot;No&quot;)),
+ISPICKVAL(Recurring_Discount__c, &quot;&quot;),
+For_Renewal__c = TRUE,
+Discount_percentage__c  &gt; 0)</errorConditionFormula>
+    <errorDisplayField>Recurring_Discount__c</errorDisplayField>
+    <errorMessage>Please indicate whether this discount is recurring or not.</errorMessage>
+</ValidationRule>

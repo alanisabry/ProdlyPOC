@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outbound_Marketing_Source</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Marketing_Source__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>days_created_ago__c</columns>
+    <columns>Source__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Marketing_Source__c</field>
+        <operation>equals</operation>
+        <value>Outbound</value>
+    </filters>
+    <label>Outbound Marketing Source</label>
+</ListView>

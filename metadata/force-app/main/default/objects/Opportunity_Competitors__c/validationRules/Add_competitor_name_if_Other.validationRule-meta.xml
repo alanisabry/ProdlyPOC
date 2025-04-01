@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_competitor_name_if_Other</fullName>
+    <active>true</active>
+    <description>If the competitor is &apos;Other&apos; then this field must be filled out</description>
+    <errorConditionFormula>AND(Competitor__r.Name = &quot;Other&quot;,
+ISBLANK(Competitor_name_if_Other__c))</errorConditionFormula>
+    <errorMessage>Please indicate the name of the Competitor when &apos;Other&apos; is selected.</errorMessage>
+</ValidationRule>

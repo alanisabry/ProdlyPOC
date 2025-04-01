@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personal_Data_Breach_Notification_Perio__c</fullName>
+    <description>Timeframe for notifying customer of personal data breach.</description>
+    <inlineHelpText>Timeframe for notifying customer of personal data breach.</inlineHelpText>
+    <label>Personal Data Breach Notif Period</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Without undue delay</fullName>
+                <default>false</default>
+                <label>Without undue delay</label>
+            </value>
+            <value>
+                <fullName>12 hours</fullName>
+                <default>false</default>
+                <label>12 hours</label>
+            </value>
+            <value>
+                <fullName>24 hours</fullName>
+                <default>false</default>
+                <label>24 hours</label>
+            </value>
+            <value>
+                <fullName>48 hours</fullName>
+                <default>false</default>
+                <label>48 hours</label>
+            </value>
+            <value>
+                <fullName>72 hours</fullName>
+                <default>false</default>
+                <label>72 hours</label>
+            </value>
+            <value>
+                <fullName>Other (see comment)</fullName>
+                <default>false</default>
+                <label>Other (see comment)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

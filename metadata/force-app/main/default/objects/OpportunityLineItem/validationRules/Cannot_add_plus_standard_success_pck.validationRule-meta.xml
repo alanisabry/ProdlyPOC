@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_plus_standard_success_pck</fullName>
+    <active>true</active>
+    <description>Cannot add standard or plus success package products for Enterprise package.</description>
+    <errorConditionFormula>AND( 
+NOT(CONTAINS($Profile.Name,&apos;System Administrator&apos;)),
+ISPICKVAL(Opportunity.Standard_Package_Name__c, &quot;Enterprise&quot;), OR(Product2.Product_ID_18_digits__c = &apos;01t3g000000i8URAAY&apos;,Product2.Product_ID_18_digits__c = &apos;01t3g000000i8UHAAY&apos;))</errorConditionFormula>
+    <errorMessage>Cannot add Standard or Plus success package products for Enterprise package.</errorMessage>
+</ValidationRule>

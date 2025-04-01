@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won_Only_After_Approval</fullName>
+    <active>true</active>
+    <description>&quot;Closed Won&quot; stage cannot be selected without an approval.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name=&quot;System Administrator&quot;),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(ISPICKVAL(Type,&quot;Referral&quot;)),
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISCHANGED(StageName),
+NOT(ISPICKVAL(Approval_Status__c, &quot;Approved&quot;))
+)</errorConditionFormula>
+    <errorMessage>&quot;Closed Won&quot; stage cannot be selected without an approval. Please select the &quot;Submit for Approval&apos; button.</errorMessage>
+</ValidationRule>

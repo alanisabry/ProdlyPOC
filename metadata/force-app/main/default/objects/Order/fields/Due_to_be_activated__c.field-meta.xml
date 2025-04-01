@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Due_to_be_activated__c</fullName>
+    <description>True when order should be activated.</description>
+    <formula>IF(
+	AND(
+		NOT(Order_Type__c = &quot;Pre-Order&quot;),
+		Total_Order_Value__c &gt; 0,
+		OR(
+			/* - - - - - Orders on Renewal: 60 days before Order Start Date - - - - - */
+			AND(
+				EffectiveDate - 60 &lt;=TODAY(),
+				ISPICKVAL(Status, &quot;Draft&quot;),
+				ISPICKVAL(Opportunity.Type,&quot;Existing Business-Renewal&quot;)
+			),
+			/* - - - - - Orders on New Business (Not the first order of the contract): 60 days before Order Start Date - - - - -*/
+			AND(
+				EffectiveDate - 60 &lt;=TODAY(),
+				ISPICKVAL(Status, &quot;Draft&quot;),
+				NOT(Opportunity.Subscription_Start_Date__c = EffectiveDate),
+				OR(
+					ISPICKVAL(Opportunity.Type,&quot;New Business - Expansion Portal&quot;),
+                                        ISPICKVAL(Opportunity.Type,&quot;New Business-Enterprise Cloud&quot;),
+					ISPICKVAL(Opportunity.Type,&quot;Referral&quot;)
+				)
+			),
+			
+			/* - - - - - Orders on New Business (First order of the contract): 60 days before Order Start Date - - - - - */
+			AND(
+				EffectiveDate - 60 &lt;=TODAY(),
+				ISPICKVAL(Status, &quot;Draft&quot;),
+				Opportunity.Subscription_Start_Date__c=EffectiveDate,
+				OR(
+					ISPICKVAL(Opportunity.Type,&quot;New Business - Expansion Portal&quot;),
+					ISPICKVAL(Opportunity.Type,&quot;New Business-Enterprise Cloud&quot;),
+					ISPICKVAL(Opportunity.Type,&quot;Referral&quot;)
+				)
+			),
+			/* - - - - - Orders on Transfer: 60 days before Order Start Date - - - - -*/
+			AND(
+				EffectiveDate - 60 &lt;=TODAY(),
+				ISPICKVAL(Status, &quot;Draft&quot;),
+				OR(
+					ISPICKVAL(Opportunity.Type,&quot;Existing Business - Internal Transfer&quot;),
+					ISPICKVAL(Opportunity.Type,&quot;Existing Business - Platform Transfer&quot;)
+				)
+			),
+			/* - - - - - Upsell &amp; Prof. Service: 60 days before Order Start Date - - - - - */
+			AND(
+				EffectiveDate - 60 &lt;=TODAY(),
+				ISPICKVAL(Status, &quot;Draft&quot;),
+				OR(
+					ISPICKVAL(Opportunity.Type,&quot;Existing Business-Professional Services&quot;),
+					ISPICKVAL(Opportunity.Type,&quot;Existing Business-Upsell&quot;)
+				)
+			)
+		)
+	),
+	TRUE,
+	FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>True when order should be activated.</inlineHelpText>
+    <label>Due to be activated</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_off_Before_Discount__c</fullName>
+    <description>Sum of Total Price Before Discount Mapped of One-off line items.</description>
+    <label>One-off Before Discount</label>
+    <summarizedField>QuoteLineItem.Total_Price_Before_Discount_Mapped__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.For_Renewal__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

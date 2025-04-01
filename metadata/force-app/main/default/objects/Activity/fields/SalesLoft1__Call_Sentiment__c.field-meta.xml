@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesLoft1__Call_Sentiment__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The SalesLoft sentiment value that the user logged during the call.</description>
+    <externalId>false</externalId>
+    <label>Call Sentiment</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

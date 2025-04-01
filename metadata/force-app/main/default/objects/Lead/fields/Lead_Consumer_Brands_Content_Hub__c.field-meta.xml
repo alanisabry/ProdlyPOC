@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Consumer_Brands_Content_Hub__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-3881 Created this field to track if a lead is part of the Consumer Brands Content Hub Campaign</description>
+    <inlineHelpText>Lead is part of the Consumer Brands Content Hub Campaign?</inlineHelpText>
+    <label>Lead - Consumer Brands Content Hub</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

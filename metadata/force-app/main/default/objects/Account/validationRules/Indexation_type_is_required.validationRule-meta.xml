@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indexation_type_is_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Indexation__c)&amp;&amp;
+(ISPICKVAL(Indexation__c,&apos;Yes&apos;) || 
+ ISPICKVAL(Indexation__c,&apos;After Initial Term&apos;)) &amp;&amp; 
+ISPICKVAL(Indexation_Type__c,&apos;&apos;)</errorConditionFormula>
+    <errorDisplayField>Indexation_Type__c</errorDisplayField>
+    <errorMessage>Indexation type is required when indexation is selected as &apos;Yes&apos; or &apos;After Initial Term&apos; on account.</errorMessage>
+</ValidationRule>

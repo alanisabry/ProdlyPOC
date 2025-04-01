@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>BODEV-76: Custom Setting to store thresholds and approver user IDs for Delegation of Authority (DoA)</description>
+    <enableFeeds>false</enableFeeds>
+    <label>DoA Setting</label>
+    <visibility>Public</visibility>
+</CustomObject>

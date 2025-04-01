@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Expertise__c</fullName>
+    <label>Service Expertise</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admin as a service</fullName>
+                <default>false</default>
+                <label>Admin as a service</label>
+            </value>
+            <value>
+                <fullName>API Advice</fullName>
+                <default>false</default>
+                <label>API Advice</label>
+            </value>
+            <value>
+                <fullName>Custom Inegration</fullName>
+                <default>false</default>
+                <label>Custom Inegration</label>
+            </value>
+            <value>
+                <fullName>Goverance</fullName>
+                <default>false</default>
+                <label>Goverance</label>
+            </value>
+            <value>
+                <fullName>Asset Migration</fullName>
+                <default>false</default>
+                <label>Asset Migration</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines Fill</fullName>
+                <default>false</default>
+                <label>Brand Guidelines Fill</label>
+            </value>
+            <value>
+                <fullName>Studio template design</fullName>
+                <default>false</default>
+                <label>Studio template design</label>
+            </value>
+            <value>
+                <fullName>Content Strategy</fullName>
+                <default>false</default>
+                <label>Content Strategy</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

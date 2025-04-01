@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE_Involvement__c</fullName>
+    <inlineHelpText>What has been your involvement? Calls joined, assessments completed, custom templates created, POC, etc.</inlineHelpText>
+    <label>SE Involvement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RFP/Questionnaire</fullName>
+                <default>false</default>
+                <label>RFP/Questionnaire</label>
+            </value>
+            <value>
+                <fullName>Demo(s)</fullName>
+                <default>false</default>
+                <label>Demo(s)</label>
+            </value>
+            <value>
+                <fullName>Custom Demo (tailored)</fullName>
+                <default>false</default>
+                <label>Custom Demo (tailored)</label>
+            </value>
+            <value>
+                <fullName>POC Development</fullName>
+                <default>false</default>
+                <label>POC Development</label>
+            </value>
+            <value>
+                <fullName>Workshops (Deep Dives)</fullName>
+                <default>false</default>
+                <label>Workshops (Deep Dives)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

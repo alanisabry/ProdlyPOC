@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employees_Range__c</fullName>
+    <description>wd field</description>
+    <externalId>false</externalId>
+    <formula>IF(NumberOfEmployees = 0, &quot;&quot;,
+   IF(NumberOfEmployees &lt;= 100, &quot;Tier 1:  0-100&quot;, 
+     IF(NumberOfEmployees &lt;= 1000, &quot;Tier 2:  101-1000&quot;, 
+        IF(NumberOfEmployees &lt;= 5000, &quot;Tier 3:  1001-5000&quot;,&quot;Tier 4:  5000+&quot;
+        )
+      )
+   )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Employees Range (Deprecated)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

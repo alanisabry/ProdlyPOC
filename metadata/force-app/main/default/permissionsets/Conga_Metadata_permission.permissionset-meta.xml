@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>APXTConga4__Composer_Setting__mdt</name>
+    </customMetadataTypeAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>APXTConga4__Connected_App_Setting__mdt</name>
+    </customMetadataTypeAccesses>
+    <description>Needs to be assigned together with Conga Composer permission sets (for profiles that are not Solution Consultancy or Customer Succcess)</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Conga Metadata permission</label>
+    <license>Salesforce</license>
+</PermissionSet>

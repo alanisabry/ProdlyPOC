@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Topic_ID__c</fullName>
+    <description>The ID of a topic on the inSided community. This ID is unique per content type (question, conversation, article). You can use this when reporting to get data from a single topic even if the topic title has changed. Note: if the content type changes, then the topic ID will also change.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The ID of a topic on the inSided community. This ID is unique per content type (question, conversation, article). You can use this when reporting to get data from a single topic even if the topic title has changed. Note: if the content type changes, then</inlineHelpText>
+    <label>Topic ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

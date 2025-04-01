@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_update_quantity_enterprise_pckg</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Opportunity.Standard_Package_Name__c, &quot;Enterprise&quot;),
+  ISPICKVAL(Opportunity.Type, &quot;New Business-Enterprise Cloud&quot;),
+  ISCHANGED(Quantity),
+  NOT(ISNEW()),
+  OR(
+    Product2.Product_ID_18_digits__c = &apos;01t0P000002EFL7QAO&apos;, 
+    Product2.Product_ID_18_digits__c = &apos;01t0P000002EFL8QAO&apos;, 
+    Product2.Product_ID_18_digits__c = &apos;01t0P000002EFL9QAO&apos;, 
+    Product2.Product_ID_18_digits__c = &apos;01tU0000002q183IAA&apos;
+  )
+)</errorConditionFormula>
+    <errorMessage>Cannot change Quantity of Admin, Regular, Light users and Storage for Enterprise package.</errorMessage>
+</ValidationRule>

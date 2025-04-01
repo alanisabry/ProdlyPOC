@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFMC_Partner_Application_Name__c</fullName>
+    <description>BODEV-81: SFMC Connector Order</description>
+    <externalId>false</externalId>
+    <formula>&quot;Bynder Digital Asset Management (DAM) for Salesforce Marketing Cloud&quot;</formula>
+    <label>Partner Application Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

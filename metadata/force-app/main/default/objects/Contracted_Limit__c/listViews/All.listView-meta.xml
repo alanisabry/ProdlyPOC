@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Limit__c</columns>
+    <columns>Account__c</columns>
+    <columns>Original_Opportunity__c</columns>
+    <columns>Original_Opportunity_Product__c</columns>
+    <columns>Latest_Amendment_Opportunity__c</columns>
+    <columns>Latest_Amendment_Opportunity_Product__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Term_of_Contract__c</columns>
+    <columns>Month_of_Term__c</columns>
+    <columns>Value__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

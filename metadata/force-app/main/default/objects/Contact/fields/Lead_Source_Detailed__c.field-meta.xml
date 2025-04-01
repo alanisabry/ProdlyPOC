@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Detailed__c</fullName>
+    <description>Webdam field
+&quot;Brandworkz&quot;</description>
+    <label>Lead Source Detailed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>CASE List 01/08/09</fullName>
+                <default>false</default>
+                <label>CASE List 01/08/09</label>
+            </value>
+            <value>
+                <fullName>CA Schools - Mar/Comm</fullName>
+                <default>false</default>
+                <label>CA Schools - Mar/Comm</label>
+            </value>
+            <value>
+                <fullName>Web Search - US Univ</fullName>
+                <default>false</default>
+                <label>Web Search - US Univ</label>
+            </value>
+            <value>
+                <fullName>UPAA List</fullName>
+                <default>false</default>
+                <label>UPAA List</label>
+            </value>
+            <value>
+                <fullName>CoSIDA</fullName>
+                <default>false</default>
+                <label>CoSIDA</label>
+            </value>
+            <value>
+                <fullName>Jigsaw</fullName>
+                <default>false</default>
+                <label>Jigsaw</label>
+            </value>
+            <value>
+                <fullName>MDR</fullName>
+                <default>false</default>
+                <label>MDR</label>
+            </value>
+            <value>
+                <fullName>UCDA 2010</fullName>
+                <default>false</default>
+                <label>UCDA 2010</label>
+            </value>
+            <value>
+                <fullName>Visistat</fullName>
+                <default>false</default>
+                <label>Visistat</label>
+            </value>
+            <value>
+                <fullName>BrightTALK Lead Gen</fullName>
+                <default>false</default>
+                <label>BrightTALK Lead Gen</label>
+            </value>
+            <value>
+                <fullName>Love Your Brand Virtual Event</fullName>
+                <default>false</default>
+                <label>Love Your Brand Virtual Event</label>
+            </value>
+            <value>
+                <fullName>Elance Lead Gen</fullName>
+                <default>false</default>
+                <label>Elance Lead Gen</label>
+            </value>
+            <value>
+                <fullName>Elance Lead Gen - Top 100 Brands</fullName>
+                <default>false</default>
+                <label>Elance Lead Gen - Top 100 Brands</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+                <label>LinkedIn</label>
+            </value>
+            <value>
+                <fullName>Other web source</fullName>
+                <default>false</default>
+                <label>Other web source</label>
+            </value>
+            <value>
+                <fullName>Brandworkz</fullName>
+                <default>false</default>
+                <label>Brandworkz</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live 2013</fullName>
+                <default>false</default>
+                <label>HOW Design Live 2013</label>
+            </value>
+            <value>
+                <fullName>Capterra</fullName>
+                <default>false</default>
+                <label>Capterra</label>
+            </value>
+            <value>
+                <fullName>Mobile App Form</fullName>
+                <default>false</default>
+                <label>Mobile App Form</label>
+            </value>
+            <value>
+                <fullName>Referral - Referral Partner</fullName>
+                <default>false</default>
+                <label>Referral - Referral Partner</label>
+            </value>
+            <value>
+                <fullName>Application - Reseller Partner</fullName>
+                <default>false</default>
+                <label>Application - Reseller Partner</label>
+            </value>
+            <value>
+                <fullName>Application - Technology Partner</fullName>
+                <default>false</default>
+                <label>Application - Technology Partner</label>
+            </value>
+            <value>
+                <fullName>Application - Referral Partner</fullName>
+                <default>false</default>
+                <label>Application - Referral Partner</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live 2014</fullName>
+                <default>false</default>
+                <label>HOW Design Live 2014</label>
+            </value>
+            <value>
+                <fullName>BRITE Conference 2015</fullName>
+                <default>false</default>
+                <label>BRITE Conference 2015</label>
+            </value>
+            <value>
+                <fullName>MarTech 2015</fullName>
+                <default>false</default>
+                <label>MarTech 2015</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live 2015</fullName>
+                <default>false</default>
+                <label>HOW Design Live 2015</label>
+            </value>
+            <value>
+                <fullName>BMA Conference 2015</fullName>
+                <default>false</default>
+                <label>BMA Conference 2015</label>
+            </value>
+            <value>
+                <fullName>Henry Stewart DAM NY 2015</fullName>
+                <default>false</default>
+                <label>Henry Stewart DAM NY 2015</label>
+            </value>
+            <value>
+                <fullName>Henry Stewart DAM EU 2015</fullName>
+                <default>false</default>
+                <label>Henry Stewart DAM EU 2015</label>
+            </value>
+            <value>
+                <fullName>HOW Design Live 2016</fullName>
+                <default>false</default>
+                <label>HOW Design Live 2016</label>
+            </value>
+            <value>
+                <fullName>Netline</fullName>
+                <default>false</default>
+                <label>Netline</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

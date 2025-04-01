@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Cloud_Sync__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-1290: Boolean field to indicate whether this record is synced to Marketing Cloud.</description>
+    <inlineHelpText>If ticked, this record is in sync with Marketing Cloud.</inlineHelpText>
+    <label>Marketing Cloud Sync</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

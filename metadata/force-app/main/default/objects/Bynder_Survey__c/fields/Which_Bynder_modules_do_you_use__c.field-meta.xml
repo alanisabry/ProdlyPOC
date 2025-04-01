@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_Bynder_modules_do_you_use__c</fullName>
+    <label>Which Bynder modules do you use?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Digital Asset Management</fullName>
+                <default>false</default>
+                <label>Digital Asset Management</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines</fullName>
+                <default>false</default>
+                <label>Brand Guidelines</label>
+            </value>
+            <value>
+                <fullName>Asset Workflow</fullName>
+                <default>false</default>
+                <label>Asset Workflow</label>
+            </value>
+            <value>
+                <fullName>Studio</fullName>
+                <default>false</default>
+                <label>Studio</label>
+            </value>
+            <value>
+                <fullName>Dynamic Asset Transformation</fullName>
+                <default>false</default>
+                <label>Dynamic Asset Transformation</label>
+            </value>
+            <value>
+                <fullName>Print Brand Templates</fullName>
+                <default>false</default>
+                <label>Print Brand Templates</label>
+            </value>
+            <value>
+                <fullName>AI Search</fullName>
+                <default>false</default>
+                <label>AI Search</label>
+            </value>
+            <value>
+                <fullName>Bynder Analytics</fullName>
+                <default>false</default>
+                <label>Bynder Analytics</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

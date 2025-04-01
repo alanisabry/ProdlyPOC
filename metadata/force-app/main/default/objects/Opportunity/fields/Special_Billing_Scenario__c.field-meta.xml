@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_Billing_Scenario__c</fullName>
+    <description>Used to capture the scenarios which change the contract and subscription start and end dates.</description>
+    <inlineHelpText>Select the special billing scenario when there is a delay in subscription or invoicing and free months are agreed in the contract with the customer.</inlineHelpText>
+    <label>Special Billing Scenario</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Delayed Billing</fullName>
+                <default>false</default>
+                <label>Delayed Billing</label>
+            </value>
+            <value>
+                <fullName>Delayed Subscription</fullName>
+                <default>false</default>
+                <label>Delayed Subscription</label>
+            </value>
+            <value>
+                <fullName>Free Month Discount</fullName>
+                <default>false</default>
+                <label>Free Month Discount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

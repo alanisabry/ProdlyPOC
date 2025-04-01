@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Upsell_MRR_Autolaunched_Flow</fullName>
+    <availability>online</availability>
+    <description>ACTIVE. Calls a flow to create an Upsell RMR opportunity directly from the button.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Upsell - MRR</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/flow/Create_Upsell?VarT_Account={!Account.Account_ID_18_digits__c}&amp;retURL={!URLFOR(Account.Id)}</url>
+</WebLink>

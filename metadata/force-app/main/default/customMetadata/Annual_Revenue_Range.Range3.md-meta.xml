@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Range3</label>
+    <protected>false</protected>
+    <values>
+        <field>Annual_Revenue_Range__c</field>
+        <value xsi:type="xsd:string">$10M-$50M</value>
+    </values>
+    <values>
+        <field>Max_Revenue__c</field>
+        <value xsi:type="xsd:double">5.0E7</value>
+    </values>
+    <values>
+        <field>Min_Revenue__c</field>
+        <value xsi:type="xsd:double">1.0E7</value>
+    </values>
+</CustomMetadata>

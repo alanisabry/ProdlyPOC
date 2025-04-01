@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_VP_of_CS_US__c</fullName>
+    <description>BODEV-76: Email of VP CS of US to be used in notification action in the flow.</description>
+    <externalId>false</externalId>
+    <label>Email: VP of CS US</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

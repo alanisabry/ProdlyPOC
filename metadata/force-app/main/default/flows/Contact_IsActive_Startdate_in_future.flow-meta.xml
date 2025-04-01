@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_isActive_to_the_opportunity</name>
+        <label>Assign isActive to the opportunity</label>
+        <locationX>445</locationX>
+        <locationY>130</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Contract_IsActive__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <description>Is contract start date is greater than today.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Returns USD for USD Accounts and EUR for the rest</description>
+        <name>CurrencyForMetadata</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!recAccount.CurrencyIsoCode}) = &quot;USD&quot;, &quot;USD&quot;, &quot;EUR&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Returns Current ARR for metadata depending on the currency</description>
+        <name>CurrentARRForMetadata</name>
+        <dataType>Currency</dataType>
+        <expression>ROUND(IF(TEXT({!recAccount.CurrencyIsoCode}) = &quot;USD&quot;, {!recAccount.Current_ARR__c}, {!recAccount.Current_ARR_Converted__c}), 0)</expression>
+        <scale>4</scale>
+    </formulas>
+    <interviewLabel>Contact IsActive - Startdate in future {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact IsActive - Startdate in future</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Account_Record</name>
+        <label>Get Account Record</label>
+        <locationX>706</locationX>
+        <locationY>136</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assigns_Customer_Tier</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>recAccount</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CurrencyIsoCode</queriedFields>
+        <queriedFields>Current_ARR__c</queriedFields>
+        <queriedFields>Current_ARR_Converted__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>577</locationX>
+        <locationY>135</locationY>
+        <connector>
+            <targetReference>Get_Account_Record</targetReference>
+        </connector>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>79</locationX>
+        <locationY>54</locationY>
+        <connector>
+            <targetReference>Assign_isActive_to_the_opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Flow_Is_Active_True__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2020-01-27</startDate>
+            <startTime>03:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Calls flow that assigns customer tier.</description>
+        <name>Assigns_Customer_Tier</name>
+        <label>Assigns Customer Tier</label>
+        <locationX>870</locationX>
+        <locationY>136</locationY>
+        <flowName>autoLaunched_Updates_Customer_Tier</flowName>
+        <inputAssignments>
+            <name>curAccountID</name>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>numOpportunityAccountARR</name>
+            <value>
+                <elementReference>CurrentARRForMetadata</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>txt_OpportunityAccountCurrency</name>
+            <value>
+                <elementReference>CurrencyForMetadata</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <description>Indicates the Account that the activated opportunity belongs to.</description>
+        <name>recAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>recCustomerTier</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Customer_Tier__mdt</objectType>
+    </variables>
+</Flow>

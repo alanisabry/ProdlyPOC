@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Submitter_s_Email__c</fullName>
+    <description>BODEV-127: When Lead is coming from an external web-to-lead form for referral, User who enters the form should specify his/her email address for later analysis purpose.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When a Lead is submitted by an external web-to-lead form for referral, email address of the person who submitted the form will be captured in this field.</inlineHelpText>
+    <label>Lead Submitter&apos;s Email</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

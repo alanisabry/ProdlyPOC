@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Proceed_without_DoA</fullName>
+    <active>true</active>
+    <description>BODEV-76: Validation rule to prevent Opp from moving beyond VOC without DoA approved.</description>
+    <errorConditionFormula>AND(
+  /* Exempt System/Admin profiels */
+  NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+
+  /* Exempt unrelated Opp Types */
+  CASE(TEXT(Type),
+    &quot;New Business-Enterprise Cloud&quot;, 1,
+    &quot;New Business - Expansion Portal&quot;, 1,
+    &quot;Existing Business-Renewal&quot;, 1,
+    &quot;Existing Business-Upsell&quot;, 1,
+    &quot;Existing Business-Professional Services&quot;, 1,
+    0
+  ) = 1,
+
+  /* Exempt OEM deals */
+  NOT(AND(
+    NOT(ISBLANK(OEM__c)),
+    OR( OEM__r.Name = &quot;Workfront&quot;, OEM__r.Name = &quot;Acquia&quot; )
+  )),
+
+  /* Block moving to Legal Review or later Stage without DoA fianlized */
+  ISCHANGED(StageName),
+  OR(
+    ISPICKVAL(StageName, &quot;Legal Review&quot;),
+    ISPICKVAL(StageName, &quot;Signature Stage&quot;),
+    ISPICKVAL(StageName, &quot;Closed Won&quot;)
+  ),
+  AND(
+    NOT(ISPICKVAL(PRIORVALUE(StageName), &quot;Legal Review&quot;)),
+    NOT(ISPICKVAL(PRIORVALUE(StageName), &quot;Signature Stage&quot;))
+  ),
+  NOT(ISPICKVAL(DoA_Approval_Status__c, &quot;Approved&quot;)),
+  NOT(ISPICKVAL(DoA_Approval_Status__c, &quot;Not Required&quot;))
+)</errorConditionFormula>
+    <errorMessage>You need to finalize the prices and terms in order to proceed beyond VOC stage. Please use &quot;Finalize Prices &amp; Terms&quot; feature.</errorMessage>
+</ValidationRule>

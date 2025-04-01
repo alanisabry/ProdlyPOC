@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Select_Competitor</fullName>
+    <active>true</active>
+    <description>If the Primary Loss Reason is set to &apos;Competitor&apos; then a competitor record must be added to the opportunity.</description>
+    <errorConditionFormula>AND(
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+  NOT($Profile.Name = &quot;System Administrator&quot;),
+  of_opportunity_competitors_w_reason__c =0,
+  OR(
+    ISPICKVAL(Primary_Loss_Reason__c, &quot;Lost to Competitor&quot;),
+    AND(ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;),
+      ISPICKVAL(StageName, &quot;Closed Lost&quot;)
+      )))</errorConditionFormula>
+    <errorMessage>Please add a competitor via &quot;Competitor&quot; tab. For Closed Lost, make sure &quot;Did this competitor win the account?&quot; is &quot;Yes&quot;. 
+
+See documentation: https://bynder.atlassian.net/l/c/XsKT04zg</errorMessage>
+</ValidationRule>

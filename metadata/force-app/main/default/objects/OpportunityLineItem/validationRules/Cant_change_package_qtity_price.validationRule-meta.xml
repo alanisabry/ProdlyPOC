@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_change_package_qtity_price</fullName>
+    <active>false</active>
+    <description>BODEV-363: prohibits from changing Sales price and/or Quantity of immutable package products.</description>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+NOT(CONTAINS($Profile.Name, &quot;System Administrator&quot;)),
+NOT(ISNEW()),
+Cannot_Delete_From_Package__c = TRUE,
+ISCHANGED(Quantity)
+)</errorConditionFormula>
+    <errorMessage>Cannot change Sales price and Quantity of package products.</errorMessage>
+</ValidationRule>

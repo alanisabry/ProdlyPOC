@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_old_Brand_Guidelines_product</fullName>
+    <active>true</active>
+    <description>Cannot add old brand guidelines product to New business or Upsell opportunities. Please contact BizApps team or Product Marketing team to add the product to the opportunity.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;System Administrator&quot;),
+ISNEW(),
+Quantity &gt;0,
+OR(
+TEXT(Opportunity.Type) = &quot;New Business-Enterprise Cloud&quot;,
+TEXT(Opportunity.Type) = &quot;Existing Business-Upsell&quot;,
+TEXT(Opportunity.Type) = &quot;New Business - Expansion Portal&quot;
+),
+OR(
+Product2.Product_ID_18_digits__c = &apos;01t3g000000chp0AAA&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t0d000006Q75MAAS&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t3g000000S2WAAA0&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot add old brand guidelines product to New business or Upsell opportunities. Please contact BizApps team or Product Marketing team to add the product to the opportunity.</errorMessage>
+</ValidationRule>

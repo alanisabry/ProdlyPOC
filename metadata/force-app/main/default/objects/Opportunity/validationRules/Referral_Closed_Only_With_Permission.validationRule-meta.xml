@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Closed_Only_With_Permission</fullName>
+    <active>true</active>
+    <description>Only users with the permission set for closing referrals can set them to &quot;Closed Won&quot;.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name=&quot;System Administrator&quot;),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT($Permission.Close_Referrals),
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISCHANGED(StageName)
+)</errorConditionFormula>
+    <errorMessage>Only Partnership management can set referral opportunities to &quot;Closed Won&quot;.</errorMessage>
+</ValidationRule>

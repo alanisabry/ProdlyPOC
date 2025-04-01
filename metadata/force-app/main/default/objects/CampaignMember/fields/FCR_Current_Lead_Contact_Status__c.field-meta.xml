@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Current_Lead_Contact_Status__c</fullName>
+    <description>wd field
+Displays the current status of the related lead or contact. Looks at the standard lead status field or the Full Circle Insights Contact Status field.</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK( ContactId )), TEXT(Contact.FCR_Status__c) , TEXT(Lead.Status) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Displays the current status of the related lead or contact.</inlineHelpText>
+    <label>Current Lead/Contact Status</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VP_CS_Approval_Required__c</fullName>
+    <description>BODEV-76: Indicates whether additional approval from VP CS is required.
+BODEV-683: Deprecated as One-off approval also goes to Sales Director.</description>
+    <formula>/* 
+IF( ISPICKVAL( Ultimate_DoA_Level__c , &quot;Sales Manager&quot;) &amp;&amp; ISPICKVAL( DoA_Level_One_off_Discount__c , &quot;VP of Customer Success&quot;), TRUE, FALSE)
+*/
+
+FALSE</formula>
+    <inlineHelpText>When Ultimate DoA Level is Sales Manager and DoA Level: One-off discount is VP of CS, then additional approval from VP of CS is required in addition to approval from Sales Manager.</inlineHelpText>
+    <label>VP CS Approval Required?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

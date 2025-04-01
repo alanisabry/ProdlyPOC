@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Most_Recent_MQL__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-2271: Fields Needed for Lead Scoring Regression</description>
+    <label>Most Recent MQL</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

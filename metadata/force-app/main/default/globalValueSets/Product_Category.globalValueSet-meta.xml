@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Admin/Regular Users</fullName>
+        <default>false</default>
+        <label>Admin/Regular Users</label>
+    </customValue>
+    <customValue>
+        <fullName>Administrator User</fullName>
+        <default>false</default>
+        <label>Administrator User</label>
+    </customValue>
+    <customValue>
+        <fullName>Admin Users</fullName>
+        <default>false</default>
+        <label>Admin Users</label>
+    </customValue>
+    <customValue>
+        <fullName>Adobe Creative Connector</fullName>
+        <default>false</default>
+        <label>Adobe Creative Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>Adobe Creative Connector&quot;</fullName>
+        <default>false</default>
+        <label>Adobe Creative Connector&quot;</label>
+    </customValue>
+    <customValue>
+        <fullName>AI Enrichment</fullName>
+        <default>false</default>
+        <label>AI Enrichment</label>
+    </customValue>
+    <customValue>
+        <fullName>API</fullName>
+        <default>false</default>
+        <label>API</label>
+    </customValue>
+    <customValue>
+        <fullName>Authentication</fullName>
+        <default>false</default>
+        <label>Authentication</label>
+    </customValue>
+    <customValue>
+        <fullName>Brand Connect</fullName>
+        <default>false</default>
+        <label>Brand Connect</label>
+    </customValue>
+    <customValue>
+        <fullName>Brand Guidelines</fullName>
+        <default>false</default>
+        <label>Brand Guidelines</label>
+    </customValue>
+    <customValue>
+        <fullName>Brand Guidelines legacy</fullName>
+        <default>false</default>
+        <label>Brand Guidelines legacy</label>
+    </customValue>
+    <customValue>
+        <fullName>Branding</fullName>
+        <default>false</default>
+        <label>Branding</label>
+    </customValue>
+    <customValue>
+        <fullName>Brand Store</fullName>
+        <default>false</default>
+        <label>Brand Store</label>
+    </customValue>
+    <customValue>
+        <fullName>CDN</fullName>
+        <default>false</default>
+        <label>CDN</label>
+    </customValue>
+    <customValue>
+        <fullName>CMS Connector</fullName>
+        <default>false</default>
+        <label>CMS Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>Communications Connector</fullName>
+        <default>false</default>
+        <label>Communications Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>Connected Ecosystem</fullName>
+        <default>false</default>
+        <label>Connected Ecosystem</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Hub</fullName>
+        <default>false</default>
+        <label>Content Hub</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Workflow</fullName>
+        <default>false</default>
+        <label>Content Workflow</label>
+    </customValue>
+    <customValue>
+        <fullName>Contributor User</fullName>
+        <default>false</default>
+        <label>Contributor User</label>
+    </customValue>
+    <customValue>
+        <fullName>Custom CDN</fullName>
+        <default>false</default>
+        <label>Custom CDN</label>
+    </customValue>
+    <customValue>
+        <fullName>Custom Users</fullName>
+        <default>false</default>
+        <label>Custom Users</label>
+    </customValue>
+    <customValue>
+        <fullName>DAM</fullName>
+        <default>false</default>
+        <label>DAM</label>
+    </customValue>
+    <customValue>
+        <fullName>Desktop integration</fullName>
+        <default>false</default>
+        <label>Desktop integration</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Brand Templates</fullName>
+        <default>false</default>
+        <label>Digital Brand Templates</label>
+    </customValue>
+    <customValue>
+        <fullName>Dynamic Asset Transformation</fullName>
+        <default>false</default>
+        <label>Dynamic Asset Transformation</label>
+    </customValue>
+    <customValue>
+        <fullName>E-commerce Connector</fullName>
+        <default>false</default>
+        <label>E-commerce Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>End Users</fullName>
+        <default>false</default>
+        <label>End Users</label>
+    </customValue>
+    <customValue>
+        <fullName>Enterprise Success Package</fullName>
+        <default>false</default>
+        <label>Enterprise Success Package</label>
+    </customValue>
+    <customValue>
+        <fullName>Figma Connector</fullName>
+        <default>false</default>
+        <label>Figma Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>FTP Import module</fullName>
+        <default>false</default>
+        <label>FTP Import module</label>
+    </customValue>
+    <customValue>
+        <fullName>GatherContent</fullName>
+        <default>false</default>
+        <label>GatherContent</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration Hub</fullName>
+        <default>false</default>
+        <label>Integration Hub</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration Platform as a service</fullName>
+        <default>false</default>
+        <label>Integration Platform as a service</label>
+    </customValue>
+    <customValue>
+        <fullName>Light Users</fullName>
+        <default>false</default>
+        <label>Light Users</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Automation Connector</fullName>
+        <default>false</default>
+        <label>Marketing Automation Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>Monthly discount</fullName>
+        <default>false</default>
+        <label>Monthly discount</label>
+    </customValue>
+    <customValue>
+        <fullName>MS Office</fullName>
+        <default>false</default>
+        <label>MS Office</label>
+    </customValue>
+    <customValue>
+        <fullName>Multiple Months discount</fullName>
+        <default>false</default>
+        <label>Multiple Months discount</label>
+    </customValue>
+    <customValue>
+        <fullName>PaaS</fullName>
+        <default>false</default>
+        <label>PaaS</label>
+    </customValue>
+    <customValue>
+        <fullName>Payment fee</fullName>
+        <default>false</default>
+        <label>Payment fee</label>
+    </customValue>
+    <customValue>
+        <fullName>PIM Connector</fullName>
+        <default>false</default>
+        <label>PIM Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>Plus Success Package</fullName>
+        <default>false</default>
+        <label>Plus Success Package</label>
+    </customValue>
+    <customValue>
+        <fullName>Portal Adoption</fullName>
+        <default>false</default>
+        <label>Portal Adoption</label>
+    </customValue>
+    <customValue>
+        <fullName>Portal features</fullName>
+        <default>false</default>
+        <label>Portal features</label>
+    </customValue>
+    <customValue>
+        <fullName>Power User</fullName>
+        <default>false</default>
+        <label>Power User</label>
+    </customValue>
+    <customValue>
+        <fullName>Premier Success Package</fullName>
+        <default>false</default>
+        <label>Premier Success Package</label>
+    </customValue>
+    <customValue>
+        <fullName>Print Brand Templates</fullName>
+        <default>false</default>
+        <label>Print Brand Templates</label>
+    </customValue>
+    <customValue>
+        <fullName>Print Templates</fullName>
+        <default>false</default>
+        <label>Print Templates</label>
+    </customValue>
+    <customValue>
+        <fullName>Product Information Management Layer</fullName>
+        <default>false</default>
+        <label>Product Information Management Layer</label>
+    </customValue>
+    <customValue>
+        <fullName>Publishing Connector</fullName>
+        <default>false</default>
+        <label>Publishing Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>Regular Users</fullName>
+        <default>false</default>
+        <label>Regular Users</label>
+    </customValue>
+    <customValue>
+        <fullName>Reporting</fullName>
+        <default>false</default>
+        <label>Reporting</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce LWC</fullName>
+        <default>false</default>
+        <label>Salesforce LWC</label>
+    </customValue>
+    <customValue>
+        <fullName>Sandbox</fullName>
+        <default>false</default>
+        <label>Sandbox</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Management Connector</fullName>
+        <default>false</default>
+        <label>Social Management Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Studio Module</fullName>
+        <default>false</default>
+        <label>Social Studio Module</label>
+    </customValue>
+    <customValue>
+        <fullName>Standard Success Package</fullName>
+        <default>false</default>
+        <label>Standard Success Package</label>
+    </customValue>
+    <customValue>
+        <fullName>Starter Success Package</fullName>
+        <default>false</default>
+        <label>Starter Success Package</label>
+    </customValue>
+    <customValue>
+        <fullName>Stock provider</fullName>
+        <default>false</default>
+        <label>Stock provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Storage</fullName>
+        <default>false</default>
+        <label>Storage</label>
+    </customValue>
+    <customValue>
+        <fullName>Studio</fullName>
+        <default>false</default>
+        <label>Studio</label>
+    </customValue>
+    <customValue>
+        <fullName>Studio Users</fullName>
+        <default>false</default>
+        <label>Studio Users</label>
+    </customValue>
+    <customValue>
+        <fullName>Unlimited Storage</fullName>
+        <default>false</default>
+        <label>Unlimited Storage</label>
+    </customValue>
+    <customValue>
+        <fullName>Unlimited Users</fullName>
+        <default>false</default>
+        <label>Unlimited Users</label>
+    </customValue>
+    <customValue>
+        <fullName>User License</fullName>
+        <default>false</default>
+        <label>User License</label>
+    </customValue>
+    <customValue>
+        <fullName>User seats</fullName>
+        <default>false</default>
+        <label>User seats</label>
+    </customValue>
+    <customValue>
+        <fullName>Video Brand Studio</fullName>
+        <default>false</default>
+        <label>Video Brand Studio</label>
+    </customValue>
+    <customValue>
+        <fullName>Webdam Education edition</fullName>
+        <default>false</default>
+        <label>Webdam Education edition</label>
+    </customValue>
+    <customValue>
+        <fullName>Webdam Enterprise edition</fullName>
+        <default>false</default>
+        <label>Webdam Enterprise edition</label>
+    </customValue>
+    <customValue>
+        <fullName>Webdam license</fullName>
+        <default>false</default>
+        <label>Webdam license</label>
+    </customValue>
+    <customValue>
+        <fullName>Webdam Non-profit edition</fullName>
+        <default>false</default>
+        <label>Webdam Non-profit edition</label>
+    </customValue>
+    <customValue>
+        <fullName>Webdam Professional Edition</fullName>
+        <default>false</default>
+        <label>Webdam Professional Edition</label>
+    </customValue>
+    <customValue>
+        <fullName>Workflow</fullName>
+        <default>false</default>
+        <label>Workflow</label>
+    </customValue>
+    <customValue>
+        <fullName>Work Management Connector</fullName>
+        <default>false</default>
+        <label>Work Management Connector</label>
+    </customValue>
+    <customValue>
+        <fullName>Workstream Users</fullName>
+        <default>false</default>
+        <label>Workstream Users</label>
+    </customValue>
+    <description>BODEV-1965: 3rd layer of New Product Taxonomy</description>
+    <masterLabel>Product Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

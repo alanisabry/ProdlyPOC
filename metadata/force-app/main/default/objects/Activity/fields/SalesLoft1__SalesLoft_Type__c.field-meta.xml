@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesLoft1__SalesLoft_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(BEGINS(Subject,&apos;Email:&apos;),&apos;Email&apos;,
+IF(BEGINS(Subject,&apos;Sent Email:&apos;),&apos;Email&apos;,
+IF(BEGINS(Subject,&apos;Call&apos;),&apos;Call&apos;,
+IF(BEGINS(Subject,&apos;LinkedIn Sales Navigator: InMail&apos;),&apos;LinkedIn - InMail&apos;,
+IF(BEGINS(Subject,&apos;LinkedIn Sales Navigator: Research&apos;),&apos;LinkedIn - Research&apos;,
+IF(BEGINS(Subject,&apos;LinkedIn Sales Navigator: Connection Request&apos;),&apos;LinkedIn - Connection Request&apos;,
+IF(BEGINS(Subject,&apos;LinkedIn Sales Navigator: Ask for an Introduction&apos;),&apos;LinkedIn - Ask for an Introduction&apos;,
+IF(BEGINS(Subject,&apos;Meeting Booked:&apos;),&apos;Meeting&apos;,
+IF(BEGINS(Subject,&apos;Other:&apos;),&apos;Other&apos;,
+IF(BEGINS(Subject,&apos;Reply:&apos;),&apos;Reply&apos;,
+IF(BEGINS(Subject,&apos;Note&apos;),&apos;Note&apos;,
+IF(BEGINS(Subject,&apos;Hot Lead:&apos;),&apos;Hot Lead&apos;,
+IF(BEGINS(Subject,&apos;Recording:&apos;),&apos;Conversation Intelligence Recording&apos;,
+IF(BEGINS(Subject,&apos;Message:&apos;),&apos;Message&apos;,
+NULL))))))))))))))</formula>
+    <label>SalesLoft Type</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

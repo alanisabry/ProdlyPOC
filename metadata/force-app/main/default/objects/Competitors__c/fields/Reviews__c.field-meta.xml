@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reviews__c</fullName>
+    <defaultValue>&quot;Capterra: G2Crowd: Top10Reviews: Forrester: Gartner: IDC: RSG: &quot;</defaultValue>
+    <inlineHelpText>Capterra, G2Crowd, Top10Reviews, Forrester, Gartner, IDC,RSG</inlineHelpText>
+    <label>Reviews</label>
+    <length>30000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

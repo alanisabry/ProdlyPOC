@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Amount_ARR__c</fullName>
+    <description>Returns the discount amount from this opportunity.</description>
+    <formula>IF(ARR_manual__c &lt;  Default_Price_ARR__c,  Default_Price_ARR__c - ARR_manual__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Discount Amount - ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

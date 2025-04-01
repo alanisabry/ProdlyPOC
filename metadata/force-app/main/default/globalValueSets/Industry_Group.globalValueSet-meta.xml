@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Consumer Brands</fullName>
+        <default>false</default>
+        <label>Consumer Brands</label>
+    </customValue>
+    <customValue>
+        <fullName>Education and Government and Non-Profit</fullName>
+        <default>false</default>
+        <label>Education and Government and Non-Profit</label>
+    </customValue>
+    <customValue>
+        <fullName>Finance and Insurance</fullName>
+        <default>false</default>
+        <label>Finance and Insurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthcare</fullName>
+        <default>false</default>
+        <label>Healthcare</label>
+    </customValue>
+    <customValue>
+        <fullName>Hospitality and Recreation</fullName>
+        <default>false</default>
+        <label>Hospitality and Recreation</label>
+    </customValue>
+    <customValue>
+        <fullName>Industrials</fullName>
+        <default>false</default>
+        <label>Industrials</label>
+    </customValue>
+    <customValue>
+        <fullName>Legal and Real Estate</fullName>
+        <default>false</default>
+        <label>Legal and Real Estate</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing and Consulting and Media</fullName>
+        <default>false</default>
+        <label>Marketing and Consulting and Media</label>
+    </customValue>
+    <customValue>
+        <fullName>Technology</fullName>
+        <default>false</default>
+        <label>Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Transportation</fullName>
+        <default>false</default>
+        <label>Transportation</label>
+    </customValue>
+    <masterLabel>Industry Group</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

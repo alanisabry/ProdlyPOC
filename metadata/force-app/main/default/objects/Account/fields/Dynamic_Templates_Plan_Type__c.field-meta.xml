@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dynamic_Templates_Plan_Type__c</fullName>
+    <label>Dynamic Templates Plan Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Starter</fullName>
+                <default>false</default>
+                <label>Starter</label>
+            </value>
+            <value>
+                <fullName>Unlimited</fullName>
+                <default>false</default>
+                <label>Unlimited</label>
+            </value>
+            <value>
+                <fullName>Workfront - Unlimited</fullName>
+                <default>false</default>
+                <label>Workfront - Unlimited</label>
+            </value>
+            <value>
+                <fullName>Workfront - Starter</fullName>
+                <default>false</default>
+                <label>Workfront - Starter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

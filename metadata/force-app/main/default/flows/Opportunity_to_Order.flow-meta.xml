@@ -1,0 +1,3044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Adds the order product to the list of order products in the sObject collection variable.</description>
+        <name>Add_Order_Product_to_List</name>
+        <label>Add Order Product to List</label>
+        <locationX>397</locationX>
+        <locationY>2266</locationY>
+        <assignmentItems>
+            <assignToReference>listMRROrderProducts</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>oMRROrderProduct</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_MRR_Oppty_Products</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds the order product to the list of order products in the sObject collection variable.</description>
+        <name>Add_Order_Product_to_List_0</name>
+        <label>Add Order Product to List</label>
+        <locationX>987</locationX>
+        <locationY>2191</locationY>
+        <assignmentItems>
+            <assignToReference>listOneOffOrderProducts</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>oOneOffOrderProducts</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_One_Off_Oppty_Products_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds the order product to the list of order products in the sObject collection variable.</description>
+        <name>Add_Order_Product_to_List_0_0</name>
+        <label>Add Order Product to List</label>
+        <locationX>2372</locationX>
+        <locationY>530</locationY>
+        <assignmentItems>
+            <assignToReference>listOneOffOrderProducts</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>oOneOffOrderProducts</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_One_Off_Oppty_Products_0_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds the order product to the list of order products in the sObject collection variable.</description>
+        <name>Add_Order_Product_to_List_0_1</name>
+        <label>Add Order Product to List</label>
+        <locationX>1933</locationX>
+        <locationY>747</locationY>
+        <assignmentItems>
+            <assignToReference>listOneOffOrderProducts</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>oOneOffOrderProducts</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_One_Off_Oppty_Products_0_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds the order product to the list of order products in the sObject collection variable.</description>
+        <name>Add_Order_Product_to_List_1</name>
+        <label>Add Order Product to List</label>
+        <locationX>865</locationX>
+        <locationY>50</locationY>
+        <assignmentItems>
+            <assignToReference>listMRROrderProducts</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>oMRROrderProduct</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Oppty_Products_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds the order product to the list of order products in the sObject collection variable.</description>
+        <name>Add_Order_Product_to_List_1_1</name>
+        <label>Add Order Product to List</label>
+        <locationX>2383</locationX>
+        <locationY>1780</locationY>
+        <assignmentItems>
+            <assignToReference>listMRROrderProducts</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>oMRROrderProduct</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Oppty_Products_1_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Uses the opportunity’s or account’s field values to assign field values to the order.
+
+ACTION: Review the order fields assigned, and add/remove fields as needed.  
+
+If you need fields from another object, use a Fast Lookup element to store the fields in another sObject variable before this element in the flow, and then assign the stored values to the order here.</description>
+        <name>Assign_Order_Fields</name>
+        <label>Assign Order Fields</label>
+        <locationX>404</locationX>
+        <locationY>1713</locationY>
+        <assignmentItems>
+            <assignToReference>oOrder.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.EffectiveDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StartDateLoop</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.OpportunityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Pricebook2Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.Pricebook2Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.EndDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EndDateLoop</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.PoNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DefaultPoNumber_NonSpecialBilling</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.CurrencyIsoCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Invoice_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>InvoiceDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Order</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Uses the opportunity’s or account’s field values to assign field values to the order.
+
+ACTION: Review the order fields assigned, and add/remove fields as needed.  
+
+If you need fields from another object, use a Fast Lookup element to store the fields in another sObject variable before this element in the flow, and then assign the stored values to the order here.</description>
+        <name>Assign_Order_Fields_0</name>
+        <label>Assign Order Fields</label>
+        <locationX>603</locationX>
+        <locationY>2479</locationY>
+        <assignmentItems>
+            <assignToReference>oOrder.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.EffectiveDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StartDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.OpportunityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Pricebook2Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.Pricebook2Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.PoNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DefaultPoNumber_SpecialBilling</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.CurrencyIsoCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Invoice_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StartDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.EndDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StartDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Order_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Order_Fields_with_contract_end_date</name>
+        <label>Assign Order Fields with contract end date</label>
+        <locationX>777</locationX>
+        <locationY>516</locationY>
+        <assignmentItems>
+            <assignToReference>oOrder.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.EffectiveDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StartDateLoop</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.OpportunityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OpptyID</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Pricebook2Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.Pricebook2Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.EndDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EndDatewheneffectivedatestilldefault</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.PoNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DefaultPoNumber_NonSpecialBilling</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.CurrencyIsoCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Credit_Memo_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>downsellCreditMemoReason</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Credit_Memo_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>downsellCreditMemoType</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Order_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Order_Fields_with_next_effective_date_1</name>
+        <label>Assign Order Fields with next effective date -1</label>
+        <locationX>1082</locationX>
+        <locationY>356</locationY>
+        <assignmentItems>
+            <assignToReference>oOrder.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.EffectiveDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StartDateLoop</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.OpportunityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Pricebook2Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.Pricebook2Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.EndDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Effectivedateminus1</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.PoNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DefaultPoNumber_NonSpecialBilling</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.CurrencyIsoCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Credit_Memo_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>downsellCreditMemoType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Credit_Memo_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>downsellCreditMemoReason</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Order_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Order_Generated_Fields</name>
+        <label>Assign - Order Generated Fields</label>
+        <locationX>822</locationX>
+        <locationY>1526</locationY>
+        <assignmentItems>
+            <assignToReference>oOppty.Sales_Order_Generated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOppty.Products_being_merged__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Uses the opportunity product’s or order’s field values to assign field values to the order product.
+
+ACTION: Review the order product fields assigned, and add/remove fields as needed.  
+
+If you need fields from another object, use a Fast Lookup element to store the fields in another sObject variable before this element in the flow, and then assign the stored values to the order product here.</description>
+        <name>Assign_Order_Product_Fields</name>
+        <label>Assign Order Product Fields</label>
+        <locationX>537</locationX>
+        <locationY>2163</locationY>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.OrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOrder.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.PricebookEntryId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.PricebookEntryId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Quantity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.Quantity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.TotalPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.TotalPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.Discount_percentage__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Auto Generated</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.UnitPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UnitPriceNonUpsellMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.For_Contract_Renewals_mapped__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Part_of_a_package__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.Part_of_a_package__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Order_Product_to_List</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Uses the opportunity product’s or order’s field values to assign field values to the order product.
+
+ACTION: Review the order product fields assigned, and add/remove fields as needed.  
+
+If you need fields from another object, use a Fast Lookup element to store the fields in another sObject variable before this element in the flow, and then assign the stored values to the order product here.</description>
+        <name>Assign_Order_Product_Fields_0</name>
+        <label>Assign Order Product Fields</label>
+        <locationX>938</locationX>
+        <locationY>2421</locationY>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.OrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOrder.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.PricebookEntryId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.PricebookEntryId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Quantity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.Quantity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.TotalPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.TotalPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.Discount_percentage__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Auto Generated</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.UnitPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UnitPriceNonUpsellOneOff</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Part_of_a_package__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.Part_of_a_package__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Order_Product_to_List_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Uses the opportunity product’s or order’s field values to assign field values to the order product.
+
+ACTION: Review the order product fields assigned, and add/remove fields as needed.  
+
+If you need fields from another object, use a Fast Lookup element to store the fields in another sObject variable before this element in the flow, and then assign the stored values to the order product here.</description>
+        <name>Assign_Order_Product_Fields_0_0</name>
+        <label>Assign Order Product Fields</label>
+        <locationX>2551</locationX>
+        <locationY>575</locationY>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.OrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oDraftOrderIDs.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.PricebookEntryId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.PricebookEntryId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Quantity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.Quantity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.TotalPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.TotalPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.Discount_percentage__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Auto Generated</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.UnitPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UnitPriceNonUpsellOneOff</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Part_of_a_package__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.Part_of_a_package__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Order_Product_to_List_0_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Uses the opportunity product’s or order’s field values to assign field values to the order product.
+
+ACTION: Review the order product fields assigned, and add/remove fields as needed.  
+
+If you need fields from another object, use a Fast Lookup element to store the fields in another sObject variable before this element in the flow, and then assign the stored values to the order product here.</description>
+        <name>Assign_Order_Product_Fields_0_1</name>
+        <label>Assign Order Product Fields</label>
+        <locationX>1763</locationX>
+        <locationY>673</locationY>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.OrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOrder.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.PricebookEntryId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.PricebookEntryId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Quantity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.Quantity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.TotalPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.TotalPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.Discount_percentage__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Auto Generated</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.UnitPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UnitPriceNonUpsellOneOff</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOneOffOrderProducts.Part_of_a_package__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOneOffOpptyProducts.Part_of_a_package__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Order_Product_to_List_0_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Uses the opportunity product’s or order’s field values to assign field values to the order product.
+
+ACTION: Review the order product fields assigned, and add/remove fields as needed.  
+
+If you need fields from another object, use a Fast Lookup element to store the fields in another sObject variable before this element in the flow, and then assign the stored values to the order product here.</description>
+        <name>Assign_Order_Product_Fields_1</name>
+        <label>Assign Order Product Fields</label>
+        <locationX>1022</locationX>
+        <locationY>131</locationY>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.OrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOrder.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.PricebookEntryId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.PricebookEntryId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Quantity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.Quantity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.TotalPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.TotalPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.Discount_percentage__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Auto Generated</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.UnitPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UnitPriceNonUpsellMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.For_Contract_Renewals_mapped__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Part_of_a_package__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.Part_of_a_package__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Order_Product_to_List_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Uses the opportunity product’s or order’s field values to assign field values to the order product.
+
+ACTION: Review the order product fields assigned, and add/remove fields as needed.  
+
+If you need fields from another object, use a Fast Lookup element to store the fields in another sObject variable before this element in the flow, and then assign the stored values to the order product here.</description>
+        <name>Assign_Order_Product_Fields_1_1</name>
+        <label>Assign Order Product Fields</label>
+        <locationX>2381</locationX>
+        <locationY>1939</locationY>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.OrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oDraftOrderIDs.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.PricebookEntryId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.PricebookEntryId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Quantity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.Quantity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.TotalPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.TotalPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.Discount_percentage__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Auto Generated</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.UnitPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UnitPriceNonUpsellMRR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.For_Contract_Renewals_mapped__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oMRROrderProduct.Part_of_a_package__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oMRROpptyProduct.Part_of_a_package__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Order_Product_to_List_1_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns the original status of Order Reviewed</description>
+        <name>Assign_Order_Reviewed_Status</name>
+        <label>Assign Order Reviewed Status</label>
+        <locationX>1793</locationX>
+        <locationY>1276</locationY>
+        <assignmentItems>
+            <assignToReference>OriginalOrderReviwedStatus2</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oDraftOrderIDs.Order_Reviewed__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_the_Order_Reviewed_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign draft orders to the list to update later</description>
+        <name>Assign_Orders_to_the_List</name>
+        <label>Assign Orders to the List</label>
+        <locationX>1973</locationX>
+        <locationY>1457</locationY>
+        <assignmentItems>
+            <assignToReference>oDraftOrdersIDList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>oDraftOrderIDs</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Draft_Orders</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Original_Status_Back</name>
+        <label>Assign Original Status Back</label>
+        <locationX>2137</locationX>
+        <locationY>1543</locationY>
+        <assignmentItems>
+            <assignToReference>oDraftOrderIDs.Order_Reviewed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OriginalOrderReviwedStatus2</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Orders_to_the_List</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_to_list_to_delete</name>
+        <label>Assign to list to delete</label>
+        <locationX>3091</locationX>
+        <locationY>1849</locationY>
+        <assignmentItems>
+            <assignToReference>listMRROrderProductToDelete</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>DraftOLI</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Counter</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_to_list_to_update</name>
+        <label>Assign to list to update</label>
+        <locationX>2894</locationX>
+        <locationY>2034</locationY>
+        <assignmentItems>
+            <assignToReference>listMRROrderProductsToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>DraftOLI</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Counter</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Blank out the list of MRR order products so that duplicates are not created.</description>
+        <name>Blank_MRR_List</name>
+        <label>Blank out the MRR list</label>
+        <locationX>1512</locationX>
+        <locationY>467</locationY>
+        <assignmentItems>
+            <assignToReference>listMRROrderProducts</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EmptyoOrderProduct</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_one_offs_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Blank_Update_Counter</name>
+        <label>Blank Update Counter</label>
+        <locationX>2608</locationX>
+        <locationY>1775</locationY>
+        <assignmentItems>
+            <assignToReference>UpdateCounter</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Oppty_Products_1_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Empty_Order_Fields</name>
+        <label>Empty Order Fields</label>
+        <locationX>640</locationX>
+        <locationY>2315</locationY>
+        <assignmentItems>
+            <assignToReference>oOrder</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oEmptyOrder</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Order_Fields_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>If one off counter is greater than 1, the one offs have already been created.</description>
+        <name>Loop_Counter</name>
+        <label>One Off Counter</label>
+        <locationX>1037</locationX>
+        <locationY>1859</locationY>
+        <assignmentItems>
+            <assignToReference>LoopCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>listMRROrderProducts</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EmptyoOrderProduct</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oEmptyOrder</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Contract_Length_greater_than_Invoice_period</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>If one off counter is greater than 1, the one offs have already been created.</description>
+        <name>Loop_Counter_0_0</name>
+        <label>One Off Counter</label>
+        <locationX>2791</locationX>
+        <locationY>851</locationY>
+        <assignmentItems>
+            <assignToReference>LoopCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Oppty_Products_1_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>If one off counter is greater than 1, the one offs have already been created.</description>
+        <name>Loop_Counter_1</name>
+        <label>One Off Counter</label>
+        <locationX>1729</locationX>
+        <locationY>1167</locationY>
+        <assignmentItems>
+            <assignToReference>LoopCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>listMRROrderProducts</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EmptyoOrderProduct</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>listOneOffOrderProducts</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EmptyoOrderProduct</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Wait_1_second_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>New_Quantity</name>
+        <label>New Quantity</label>
+        <locationX>3261</locationX>
+        <locationY>2035</locationY>
+        <assignmentItems>
+            <assignToReference>DraftOLI.Quantity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NewQuantity</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_to_list_to_update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Next_Order_Start_Date</name>
+        <label>Next Order Start Date</label>
+        <locationX>1126</locationX>
+        <locationY>745</locationY>
+        <assignmentItems>
+            <assignToReference>NextEffectiveDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oDraftOrderEffectiveDates.EffectiveDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Draft_Orders_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Products_being_merged_True</name>
+        <label>Products being merged True</label>
+        <locationX>585</locationX>
+        <locationY>1019</locationY>
+        <assignmentItems>
+            <assignToReference>oOppty.Products_being_merged__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Does_upsell_contain_MRR</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Counter</name>
+        <label>Update Counter</label>
+        <locationX>2893</locationX>
+        <locationY>1854</locationY>
+        <assignmentItems>
+            <assignToReference>UpdateCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Draft_Order_OLIs</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>If one off counter is greater than 1, the one offs have already been created.</description>
+        <name>Add_one_offs</name>
+        <label>One off Counter</label>
+        <locationX>627</locationX>
+        <locationY>2079</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Counter</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yeah</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopCounter</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Special_Billing_Scenario__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Split_one_off_subscription_invoice__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_One_Off_Oppty_Products_0</targetReference>
+            </connector>
+            <label>Yeah</label>
+        </rules>
+        <rules>
+            <name>Special_Billing</name>
+            <conditionLogic>1 AND 4 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopCounter</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Special_Billing_Scenario__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Split_one_off_subscription_invoice__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.One_off_from_Products__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Empty_Order_Fields</targetReference>
+            </connector>
+            <label>Special Billing</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Add_one_offs_1</name>
+        <label>Add one offs?</label>
+        <locationX>1509</locationX>
+        <locationY>829</locationY>
+        <defaultConnector>
+            <targetReference>Wait_1_second_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yeah_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopCounter</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_One_Off_Oppty_Products_0_1</targetReference>
+            </connector>
+            <label>Yeah</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>All_necessary_orders_created</name>
+        <label>All necessary orders created?</label>
+        <locationX>571</locationX>
+        <locationY>1691</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Order_Generated_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopCounter</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>NumberofOrdersRequired</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Order_Fields</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Contract_Length_greater_than_Invoice_period</name>
+        <label>Contract Length greater than Invoice period?</label>
+        <locationX>797</locationX>
+        <locationY>1776</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Order_Generated_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>More_than_one_order_needed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oOppty.Netsuite_Term__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>oOppty.Invoice_period__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>All_necessary_orders_created</targetReference>
+            </connector>
+            <label>More than one order needed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_opp_contain_one_off_products</name>
+        <label>Does opp contain one off products?</label>
+        <locationX>2287</locationX>
+        <locationY>1073</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Oppty_Products_1_1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yas</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oOppty.of_products_One_Off_Items__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_counter_greater_than_sero</targetReference>
+            </connector>
+            <label>Yas</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_upsell_contain_MRR</name>
+        <label>Does upsell contain MRR</label>
+        <locationX>780</locationX>
+        <locationY>1021</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Order_Fields_with_contract_end_date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>MRR</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oOppty.of_products_MRR__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Draft_Orders_0</targetReference>
+            </connector>
+            <label>MRR</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Upsell</name>
+        <label>Is Upsell?</label>
+        <locationX>569</locationX>
+        <locationY>1380</locationY>
+        <defaultConnector>
+            <targetReference>All_necessary_orders_created</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Upsell</defaultConnectorLabel>
+        <rules>
+            <name>Upsell</name>
+            <conditionLogic>1 OR 2 OR (3 AND 4) OR 5</conditionLogic>
+            <conditions>
+                <leftValueReference>oOppty.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Professional Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Upsell</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business - Internal Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Upsell_Internal_Transfer_Opp__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referral</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Products_being_meregd</targetReference>
+            </connector>
+            <label>Upsell</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If one off counter is greater than 1, the one offs have already been created.</description>
+        <name>Loop_counter_greater_than_sero</name>
+        <label>One Off counter greater than zero?</label>
+        <locationX>2366</locationX>
+        <locationY>875</locationY>
+        <defaultConnector>
+            <targetReference>Loop_One_Off_Oppty_Products_0_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yarp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopCounter</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Oppty_Products_1_1</targetReference>
+            </connector>
+            <label>Yarp</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Lowest_Effective_Date</name>
+        <label>Lowest Effective Date</label>
+        <locationX>905</locationX>
+        <locationY>658</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Draft_Orders_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Yarr</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oDraftOrderEffectiveDates.EffectiveDate</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>NextEffectiveDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Next_Order_Start_Date</targetReference>
+            </connector>
+            <label>Yarr</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>BODEV-2462: Updated the decision node.
+Order(s) should be processed when Total Contract Value is not 0, or Upsell/Internal Transfer Opp has ARR product(s) (Swap, 100% discount: Still need to update existing draft orders).</description>
+        <name>Need_to_process_Orders</name>
+        <label>Need to process Orders?</label>
+        <locationX>96</locationX>
+        <locationY>778</locationY>
+        <defaultConnector>
+            <targetReference>Get_MRR_Oppty_Products</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Needed</name>
+            <conditionLogic>1 OR  ((2 OR 3) AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>oOppty.Total_Contract_Value__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business - Internal Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Upsell</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.of_products_MRR__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Account_Fields</targetReference>
+            </connector>
+            <label>Yes, Needed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Next_effective_Date_still_default</name>
+        <label>Next effective Date still default?</label>
+        <locationX>1075</locationX>
+        <locationY>571</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Default</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NextEffectiveDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <dateValue>2999-01-01</dateValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Order_Fields_with_contract_end_date</targetReference>
+            </connector>
+            <label>Yes Default</label>
+        </rules>
+        <rules>
+            <name>Not_Default</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NextEffectiveDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <dateValue>2999-01-01</dateValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Order_Fields_with_next_effective_date_1</targetReference>
+            </connector>
+            <label>Not Default</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>OLI_to_delete_is_blank</name>
+        <label>OLI to delete is blank?</label>
+        <locationX>1216</locationX>
+        <locationY>1697</locationY>
+        <defaultConnector>
+            <targetReference>Delete_Order_Products</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not blank</defaultConnectorLabel>
+        <rules>
+            <name>To_delete_is_blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>listMRROrderProductToDelete</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Draft_Orders</targetReference>
+            </connector>
+            <label>To delete is blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>OLI_to_update_is_blank</name>
+        <label>OLI to update is blank?</label>
+        <locationX>1431</locationX>
+        <locationY>1704</locationY>
+        <defaultConnector>
+            <targetReference>Update_Order_Products_from_list_to_update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, not blank</defaultConnectorLabel>
+        <rules>
+            <name>Yes_blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>listMRROrderProductsToUpdate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>OLI_to_delete_is_blank</targetReference>
+            </connector>
+            <label>Yes, blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>One_off_list_is_blank</name>
+        <label>One off list is blank?</label>
+        <locationX>1688</locationX>
+        <locationY>1711</locationY>
+        <defaultConnector>
+            <targetReference>Create_One_off_products</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Some one-offs</defaultConnectorLabel>
+        <rules>
+            <name>No_one_offs</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>listOneOffOrderProducts</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>OLI_to_update_is_blank</targetReference>
+            </connector>
+            <label>No one-offs</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Evaluates whether an order has already been generated from the opportunity.
+
+If an order has already been generated from the opportunity, a new order will not be generated.</description>
+        <name>OrderGenerated</name>
+        <label>Sales Order Generated?</label>
+        <locationX>94</locationX>
+        <locationY>399</locationY>
+        <defaultConnector>
+            <targetReference>Need_to_process_Orders</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Order Not Generated</defaultConnectorLabel>
+        <rules>
+            <name>Order_Generated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oOppty.Sales_Order_Generated__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Sales Order Generated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Product_Check</name>
+        <label>Product Check</label>
+        <locationX>3248</locationX>
+        <locationY>1696</locationY>
+        <defaultConnector>
+            <targetReference>Draft_Order_OLIs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Products_Match</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DraftOLI.PricebookEntryId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>oMRROpptyProduct.PricebookEntryId</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>DraftOLI.Unit_Price_with_Discount__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>OpportunityProductUnitPriceRounded</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>UpdateCounter</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>DraftOLI.Part_of_a_package__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>oMRROpptyProduct.Part_of_a_package__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Quantity_Zero</targetReference>
+            </connector>
+            <label>Products Match</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if there is a scheduled interview to merge the products</description>
+        <name>Products_being_meregd</name>
+        <label>Products being meregd</label>
+        <locationX>571</locationX>
+        <locationY>1198</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_being_mereged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oOppty.Products_being_merged__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Products_being_merged_True</targetReference>
+            </connector>
+            <label>Not being mereged</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Products_Pdated</name>
+        <label>Products Updated?</label>
+        <locationX>2588</locationX>
+        <locationY>1956</locationY>
+        <defaultConnector>
+            <targetReference>Blank_Update_Counter</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_products_updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>UpdateCounter</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Order_Product_Fields_1_1</targetReference>
+            </connector>
+            <label>No products updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Quantity_Zero</name>
+        <label>Quantity Zero</label>
+        <locationX>3251</locationX>
+        <locationY>1855</locationY>
+        <defaultConnector>
+            <targetReference>New_Quantity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Zero</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NewQuantity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_to_list_to_delete</targetReference>
+            </connector>
+            <label>Zero</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Is the upsell start date in line with the next sales order in the new business/renewal? If not, a sales order is required for the intrim period until it can be merged with a later order.
+But this should happen only when Total Contract Value is greater than 0. In case of 0 (Swap, 100% discount), a new Order is not needed.</description>
+        <name>Upsell_starts_when_next_order_starts</name>
+        <label>Upsell starts when next order starts?</label>
+        <locationX>1337</locationX>
+        <locationY>857</locationY>
+        <defaultConnector>
+            <targetReference>Wait_1_second_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Nope</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NextEffectiveDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>oOppty.Startdate_contract__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oOppty.Total_Contract_Value__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Next_effective_Date_still_default</targetReference>
+            </connector>
+            <label>Nope</label>
+        </rules>
+    </decisions>
+    <description>BODEV-4130 Orders not merged to draft order under Platform Transfer Opportunity
+Updated the flow to merge upsell orders to draft Platform Transfer Opportunity orders.
+BODEV-4335 Partner Commission Process Clean-up(No more in Use)</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>BODEV-1956: Set the Opportunity PO number only to the order where the Opportunity Start Date equals to the Order Start Date. The other orders should get blank value (null).
+The scenario for all the billing types, except Special Billing.</description>
+        <name>DefaultPoNumber_NonSpecialBilling</name>
+        <dataType>String</dataType>
+        <expression>IF({!oOppty.Startdate_contract__c}={!StartDateLoop},{!oOppty.PO_Number__c} , &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>BODEV-1956: Set the Opportunity PO number only to the order where the Opportunity Start Date equals to the Order Start Date. The other orders should get blank value (null).
+The scenario when special billing is applied (Then we compare the &quot;StartDate&quot; formula instead).</description>
+        <name>DefaultPoNumber_SpecialBilling</name>
+        <dataType>String</dataType>
+        <expression>IF({!oOppty.Startdate_contract__c}={!StartDate}, {!oOppty.PO_Number__c}, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Description of an order</description>
+        <name>Description</name>
+        <dataType>String</dataType>
+        <expression>IF({!oOppty.MRR__c} &lt; 0, TEXT({!oAccount.Platform__c}) + &quot; - &quot; + {!oOppty.Loss_Reason_Detail__c}, TEXT({!oAccount.Platform__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>downsellCreditMemoReason</name>
+        <dataType>String</dataType>
+        <expression>IF({!oOppty.ARR__c}&lt;0 &amp;&amp; TEXT({!oOppty.Type}) = &apos;Existing Business-Upsell&apos;,&apos;Downsell Contract Signed&apos;,&apos;&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>downsellCreditMemoType</name>
+        <dataType>String</dataType>
+        <expression>IF({!oOppty.ARR__c}&lt;0 &amp;&amp; TEXT({!oOppty.Type}) = &apos;Existing Business-Upsell&apos;,&apos;Administrative&apos;,&apos;&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>Effectivedateminus1</name>
+        <dataType>Date</dataType>
+        <expression>{!NextEffectiveDate}-1</expression>
+    </formulas>
+    <formulas>
+        <name>EndDateLoop</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    IF({!oOppty.of_products_MRR__c}=0,
+        /* Referral Opportunities only with one off product*/
+        IF(TEXT({!oOppty.Type})= &apos;Referral&apos;,{!oOppty.Startdate_contract__c},TODAY()),
+ /*------- Orders with MRR Products----*/ 
+        IF(AND(
+        {!LoopCounter}={!NumberofOrdersRequired}-1,
+        mod({!oOppty.Subscription_Term__c},1)&lt;&gt;0),
+        {!oOppty.End_date_contract__c},/*---- Last order of the contract--*/
+        IF({!oOppty.Subscription_Term__c}&lt;{!oOppty.Invoice_period__c},{!oOppty.End_date_contract__c},
+        DATE(
+        year({!StartDateLoop})
+        + floor((month({!StartDateLoop}) + {!oOppty.Invoice_period__c}-1)/12),
+        if( mod( month({!StartDateLoop}) + {!oOppty.Invoice_period__c} , 12 ) = 0, 12 , mod( month({!StartDateLoop}) + {!oOppty.Invoice_period__c} , 12 )),
+        min(
+        day({!StartDateLoop}),
+        case(
+        max( mod( month({!StartDateLoop}) + {!oOppty.Invoice_period__c} , 12 ) , 1),
+        9,30,
+        4,30,
+        6,30,
+        11,30,
+        2,if(mod(year({!StartDateLoop})
+        + floor((month({!StartDateLoop}) + (({!LoopCounter}  +1) * {!oOppty.Invoice_period__c})-1)/12),4)=0,29,28),
+        31
+        )
+        )
+        )-1 
+        )
+        )
+    )&gt; {!oOppty.End_date_contract__c}, {!oOppty.End_date_contract__c},
+        IF({!oOppty.of_products_MRR__c}=0,
+            /* Referral Opportunities only with one off product*/
+        IF(TEXT({!oOppty.Type})= &apos;Referral&apos;,{!oOppty.Startdate_contract__c},TODAY()),
+            IF(AND(
+            {!LoopCounter}={!NumberofOrdersRequired}-1,
+            mod({!oOppty.Subscription_Term__c},1)&lt;&gt;0),
+            {!oOppty.End_date_contract__c},
+            IF({!oOppty.Subscription_Term__c}&lt;{!oOppty.Invoice_period__c},{!oOppty.End_date_contract__c},
+            DATE(
+            year({!StartDateLoop})
+            + floor((month({!StartDateLoop}) + {!oOppty.Invoice_period__c}-1)/12),
+            if( mod( month({!StartDateLoop}) + {!oOppty.Invoice_period__c} , 12 ) = 0, 12 , mod( month({!StartDateLoop}) + {!oOppty.Invoice_period__c} , 12 )),
+            min(
+            day({!StartDateLoop}),
+            case(
+            max( mod( month({!StartDateLoop}) + {!oOppty.Invoice_period__c} , 12 ) , 1),
+            9,30,
+            4,30,
+            6,30,
+            11,30,
+            2,if(mod(year({!StartDateLoop})
+            + floor((month({!StartDateLoop}) + (({!LoopCounter}  +1) * {!oOppty.Invoice_period__c})-1)/12),4)=0,29,28),
+            31
+            )
+            )
+            )-1
+            ))
+        )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>EndDatewheneffectivedatestilldefault</name>
+        <dataType>Date</dataType>
+        <expression>IF({!oOppty.of_products_MRR__c}=0, TODAY(),{!oOppty.End_date_contract__c})</expression>
+    </formulas>
+    <formulas>
+        <name>InvoiceDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(ISPICKVAL({!oOppty.Special_Billing_Scenario__c},&quot;Delayed Billing&quot;) &amp;&amp; {!StartDateLoop} = {!oOppty.Startdate_contract__c},
+DATE(
+  YEAR( {!StartDateLoop} ) + FLOOR( ( MONTH ( {!StartDateLoop} ) + {!oOppty.of_Month_Delayed_Rent_Free__c} - 1 ) / 12 ),
+  MOD( MONTH ( {!StartDateLoop} ) + {!oOppty.of_Month_Delayed_Rent_Free__c} - 1 + 
+    IF( DAY ( {!StartDateLoop} ) &gt; CASE( MOD( MONTH( {!StartDateLoop} ) + {!oOppty.of_Month_Delayed_Rent_Free__c} - 1, 12 ) + 1, 
+      2, 28,
+      4, 30,
+      6, 30,
+      9, 30, 
+      11, 30,
+      31 ), 1, 0 ), 12 ) + 1,
+    IF( DAY( {!StartDateLoop} ) &gt; CASE( MOD( MONTH( {!StartDateLoop} ) + {!oOppty.of_Month_Delayed_Rent_Free__c} - 1, 12 ) + 1,
+      2, 28, 
+      4, 30, 
+      6, 30, 
+      9, 30, 
+      11, 30, 
+      31 ), 
+    1, DAY( {!StartDateLoop} )
+  )
+)
+,{!StartDateLoop})</expression>
+    </formulas>
+    <formulas>
+        <name>InvoiceStartDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(NOT(ISPICKVAL({!oOppty.Special_Billing_Scenario__c},&quot;Delayed Subscription&quot;) || ISPICKVAL({!oOppty.Special_Billing_Scenario__c},&quot;Free Month Discount&quot;)),{!StartDate},
+ DATE(
+  YEAR( {!StartDate} ) + FLOOR( ( MONTH ( {!StartDate} ) + {!oOppty.of_Month_Delayed_Rent_Free__c}  - 1 ) / 12 ),
+  MOD( MONTH ( {!StartDate} ) + {!oOppty.of_Month_Delayed_Rent_Free__c}  - 1 + 
+    IF( DAY ( {!StartDate} ) &gt; CASE( MOD( MONTH( {!StartDate} ) + {!oOppty.of_Month_Delayed_Rent_Free__c}  - 1, 12 ) + 1, 
+      2, 28,
+      4, 30,
+      6, 30,
+      9, 30, 
+      11, 30,
+      31 ), 1, 0 ), 12 ) + 1,
+    IF( DAY( {!StartDate} ) &gt; CASE( MOD( MONTH( {!StartDate} ) + {!oOppty.of_Month_Delayed_Rent_Free__c}  - 1, 12 ) + 1,
+      2, 28, 
+      4, 30, 
+      6, 30, 
+      9, 30, 
+      11, 30, 
+      31 ), 
+    1, DAY( {!StartDate} )
+  )
+) 
+  )</expression>
+    </formulas>
+    <formulas>
+        <description>Price of the MRR Opportunity product with discount</description>
+        <name>MRROpptyOLIWithDiscount</name>
+        <dataType>Currency</dataType>
+        <expression>{!oMRROpptyProduct.Default_Price__c} - ({!oMRROpptyProduct.Default_Price__c} * {!oMRROpptyProduct.Discount_percentage__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>NewQuantity</name>
+        <dataType>Number</dataType>
+        <expression>{!DraftOLI.Quantity}+{!oMRROpptyProduct.Quantity}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>Nowplus1second</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()+0.000011</expression>
+    </formulas>
+    <formulas>
+        <name>NumberofOrdersRequired</name>
+        <dataType>Number</dataType>
+        <expression>CEILING(
+IF(TEXT({!oOppty.Special_Billing_Scenario__c})=&apos;Free Month Discount&apos;,{!oOppty.Subscription_Term__c} - {!oOppty.of_Month_Delayed_Rent_Free__c},
+{!oOppty.Subscription_Term__c})/{!oOppty.Invoice_period__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>OneYearAfterOriginalStartDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(ISPICKVAL({!oOppty.Type}, &quot;New Business-Enterprise Cloud&quot;),
+
+IF(
+AND(
+MONTH({!oOppty.Startdate_contract__c}) = 2,
+DAY({!oOppty.Startdate_contract__c}) = 29
+),
+DATE(
+YEAR({!oOppty.Startdate_contract__c})+1,
+3,
+1),
+DATE(
+YEAR({!oOppty.Startdate_contract__c})+1,
+MONTH({!oOppty.Startdate_contract__c}),
+DAY({!oOppty.Startdate_contract__c})
+)
+),
+
+IF(
+AND(
+MONTH({!oAccount.Original_Contract_Start_Date__c}) = 2,
+DAY({!oAccount.Original_Contract_Start_Date__c}) = 29
+),
+DATE(
+YEAR({!oAccount.Original_Contract_Start_Date__c})+1,
+3,
+1),
+DATE(
+YEAR({!oAccount.Original_Contract_Start_Date__c})+1,
+MONTH({!oAccount.Original_Contract_Start_Date__c}),
+DAY({!oAccount.Original_Contract_Start_Date__c})
+)
+))</expression>
+    </formulas>
+    <formulas>
+        <name>OpportunityProductUnitPriceRounded</name>
+        <dataType>Currency</dataType>
+        <expression>ROUND({!oMRROpptyProduct.UnitPrice}, 4)</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <name>StartDateLoop</name>
+        <dataType>Date</dataType>
+        <expression>IF({!oOppty.of_products_MRR__c}=0,
+TODAY(),
+
+IF({!LoopCounter} = 0,{!InvoiceStartDate},
+
+DATE(
+year({!InvoiceStartDate})
++ floor((month({!InvoiceStartDate}) + ({!LoopCounter} * {!oOppty.Invoice_period__c})-1)/12)
+,
+if( mod( month({!InvoiceStartDate}) + ({!LoopCounter} * {!oOppty.Invoice_period__c}) , 12 ) = 0, 12 , mod( month({!InvoiceStartDate}) + ({!LoopCounter} * {!oOppty.Invoice_period__c}) , 12 ))
+,
+min(
+day({!InvoiceStartDate}),
+case(
+max( mod( month({!InvoiceStartDate}) + ({!LoopCounter} * {!oOppty.Invoice_period__c}) , 12 ) , 1),
+9,30,
+4,30,
+6,30,
+11,30,
+2,if(MOD(year({!InvoiceStartDate})
++ floor((month({!InvoiceStartDate}) + ({!LoopCounter} * {!oOppty.Invoice_period__c})-1)/12),4)=0,29,28),
+31
+)
+)
+)
+))</expression>
+    </formulas>
+    <formulas>
+        <name>SubscriptionStartDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(NOT(ISPICKVAL({!oOppty.Special_Billing_Scenario__c},&quot;Delayed Subscription&quot;)),{!StartDate},
+ DATE(
+  YEAR( {!StartDate} ) + FLOOR( ( MONTH ( {!StartDate} ) + {!oOppty.of_Month_Delayed_Rent_Free__c}  - 1 ) / 12 ),
+  MOD( MONTH ( {!StartDate} ) + {!oOppty.of_Month_Delayed_Rent_Free__c}  - 1 + 
+    IF( DAY ( {!StartDate} ) &gt; CASE( MOD( MONTH( {!StartDate} ) + {!oOppty.of_Month_Delayed_Rent_Free__c}  - 1, 12 ) + 1, 
+      2, 28,
+      4, 30,
+      6, 30,
+      9, 30, 
+      11, 30,
+      31 ), 1, 0 ), 12 ) + 1,
+    IF( DAY( {!StartDate} ) &gt; CASE( MOD( MONTH( {!StartDate} ) + {!oOppty.of_Month_Delayed_Rent_Free__c}  - 1, 12 ) + 1,
+      2, 28, 
+      4, 30, 
+      6, 30, 
+      9, 30, 
+      11, 30, 
+      31 ), 
+    1, DAY( {!StartDate} )
+  )
+) 
+  )</expression>
+    </formulas>
+    <formulas>
+        <name>TwoYearsAfterOriginalContractStartDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+  AND(
+    MONTH( {!oAccount.Original_Contract_Start_Date__c} ) = 2,
+    DAY( {!oAccount.Original_Contract_Start_Date__c} ) = 29,
+    NOT( 
+      OR( 
+        MOD( YEAR( {!oAccount.Original_Contract_Start_Date__c} ), 400 ) = 0, 
+        AND( 
+          MOD( YEAR( {!oAccount.Original_Contract_Start_Date__c} ), 4 ) = 0,
+          MOD( YEAR( {!oAccount.Original_Contract_Start_Date__c} ), 100 ) != 0
+        )
+      )
+    ) 
+  ),
+  DATE( YEAR( {!oAccount.Original_Contract_Start_Date__c} ) + 2, 3, 1),
+  DATE( YEAR( {!oAccount.Original_Contract_Start_Date__c} ) + 2, MONTH( {!oAccount.Original_Contract_Start_Date__c} ), DAY( {!oAccount.Original_Contract_Start_Date__c} ) )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>UnitPriceNonUpsellMRR</name>
+        <dataType>Currency</dataType>
+        <expression>/*
+  If a product is sold with discount, Default Price of Opp Line Item should be Unit Price of Order Line Item
+  and Discount % will be copied in order to obtain the final price at Order level.
+  If a product is sold at higher price than Default Price, Sales Price of Opp Line Item should be Unit Price of Order Line Item
+  and Discount % will be 0.
+  For discount products (Subscription Discount, Partner Referral Fee), the negative number specified at Sales Price of
+  Opp Line Item should be Unit Price of Order Lien Item.
+*/
+
+IF(
+  {!oMRROpptyProduct.Default_Price__c} &gt; {!oMRROpptyProduct.UnitPrice} &amp;&amp; {!oMRROpptyProduct.UnitPrice} &gt;= 0,
+  {!oMRROpptyProduct.Default_Price__c},
+  {!oMRROpptyProduct.UnitPrice}
+)</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>UnitPriceNonUpsellOneOff</name>
+        <dataType>Currency</dataType>
+        <expression>IF({!oOneOffOpptyProducts.Default_Price__c} &gt; {!oOneOffOpptyProducts.UnitPrice}, {!oOneOffOpptyProducts.Default_Price__c}, {!oOneOffOpptyProducts.UnitPrice})</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>VarF_NewOrderProductDiscount</name>
+        <dataType>Number</dataType>
+        <expression>{!oMRROpptyProduct.Discount} * 100</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>YearofContract</name>
+        <dataType>Number</dataType>
+        <expression>Ceiling(({!oOrder.EffectiveDate}-{!oOppty.Startdate_contract__c})/365)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>YearofContractMinusOne</name>
+        <dataType>Number</dataType>
+        <expression>(Ceiling(({!oOrder.EffectiveDate}-{!oOppty.Startdate_contract__c})/365))-1</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Opportunity to Order {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity to Order</label>
+    <loops>
+        <name>Draft_Order_OLIs</name>
+        <label>Draft Order OLIs</label>
+        <locationX>2893</locationX>
+        <locationY>1705</locationY>
+        <assignNextValueToReference>DraftOLI</assignNextValueToReference>
+        <collectionReference>Get_Draft_OLIIs</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Product_Check</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Products_Pdated</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Draft_Orders</name>
+        <label>Loop Draft Orders</label>
+        <locationX>1307</locationX>
+        <locationY>1414</locationY>
+        <assignNextValueToReference>oDraftOrderIDs</assignNextValueToReference>
+        <collectionReference>ListDraftOrderIDs</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Order_Reviewed_Status</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Wait_1_second</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Draft_Orders_0</name>
+        <label>Loop Draft Orders</label>
+        <locationX>1052</locationX>
+        <locationY>890</locationY>
+        <assignNextValueToReference>oDraftOrderEffectiveDates</assignNextValueToReference>
+        <collectionReference>ListDraftOrderIDs</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Lowest_Effective_Date</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Upsell_starts_when_next_order_starts</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Iterates through each opportunity product in the sObject collection variable.</description>
+        <name>Loop_MRR_Oppty_Products</name>
+        <label>Loop Oppty Products</label>
+        <locationX>397</locationX>
+        <locationY>2066</locationY>
+        <assignNextValueToReference>oMRROpptyProduct</assignNextValueToReference>
+        <collectionReference>listMRROpptyProducts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Order_Product_Fields</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_MRR_Order_Products</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Iterates through each opportunity product in the sObject collection variable.</description>
+        <name>Loop_One_Off_Oppty_Products_0</name>
+        <label>Loop Oppty Products</label>
+        <locationX>827</locationX>
+        <locationY>2126</locationY>
+        <assignNextValueToReference>oOneOffOpptyProducts</assignNextValueToReference>
+        <collectionReference>ListOneOffOpptyProducts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Order_Product_Fields_0</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_One_Off_Order_Products</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Iterates through each opportunity product in the sObject collection variable.</description>
+        <name>Loop_One_Off_Oppty_Products_0_0</name>
+        <label>Loop Oppty Products</label>
+        <locationX>2372</locationX>
+        <locationY>672</locationY>
+        <assignNextValueToReference>oOneOffOpptyProducts</assignNextValueToReference>
+        <collectionReference>ListOneOffOpptyProducts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Order_Product_Fields_0_0</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Loop_Counter_0_0</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Iterates through each opportunity product in the sObject collection variable.</description>
+        <name>Loop_One_Off_Oppty_Products_0_1</name>
+        <label>Loop Oppty Products</label>
+        <locationX>1768</locationX>
+        <locationY>834</locationY>
+        <assignNextValueToReference>oOneOffOpptyProducts</assignNextValueToReference>
+        <collectionReference>ListOneOffOpptyProducts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Order_Product_Fields_0_1</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_One_Off_Order_Products_1</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Iterates through each opportunity product in the sObject collection variable.</description>
+        <name>Loop_Oppty_Products_1</name>
+        <label>Loop Oppty Products</label>
+        <locationX>867</locationX>
+        <locationY>220</locationY>
+        <assignNextValueToReference>oMRROpptyProduct</assignNextValueToReference>
+        <collectionReference>listMRROpptyProducts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Order_Product_Fields_1</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Order_Products_1</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Iterates through each opportunity product in the sObject collection variable.</description>
+        <name>Loop_Oppty_Products_1_1</name>
+        <label>Loop Oppty Products</label>
+        <locationX>2527</locationX>
+        <locationY>1690</locationY>
+        <assignNextValueToReference>oMRROpptyProduct</assignNextValueToReference>
+        <collectionReference>listMRROpptyProducts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Draft_Order_OLIs</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Assign_Original_Status_Back</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Uses the field values that are stored in the sObject collection variable to create MRR order products.</description>
+        <name>Create_MRR_Order_Products</name>
+        <label>Create MRR Order Products</label>
+        <locationX>637</locationX>
+        <locationY>1904</locationY>
+        <connector>
+            <targetReference>Add_one_offs</targetReference>
+        </connector>
+        <inputReference>listMRROrderProducts</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <description>Uses the field values that are stored in the sObject collection variable to create order products.</description>
+        <name>Create_MRR_Order_Products_1_1</name>
+        <label>Create MRR Order Products</label>
+        <locationX>1894</locationX>
+        <locationY>1709</locationY>
+        <connector>
+            <targetReference>One_off_list_is_blank</targetReference>
+        </connector>
+        <inputReference>listMRROrderProducts</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_One_Off_Order_Products</name>
+        <label>Create One Off Order Products</label>
+        <locationX>1058</locationX>
+        <locationY>2026</locationY>
+        <connector>
+            <targetReference>Loop_Counter</targetReference>
+        </connector>
+        <inputReference>listOneOffOrderProducts</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_One_Off_Order_Products_1</name>
+        <label>Create One Off Order Products</label>
+        <locationX>1769</locationX>
+        <locationY>981</locationY>
+        <connector>
+            <targetReference>Loop_Counter_1</targetReference>
+        </connector>
+        <inputReference>listOneOffOrderProducts</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_One_off_products</name>
+        <label>Create One-off products</label>
+        <locationX>1581</locationX>
+        <locationY>1926</locationY>
+        <connector>
+            <targetReference>OLI_to_update_is_blank</targetReference>
+        </connector>
+        <inputReference>listOneOffOrderProducts</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <description>Uses the field values that are stored in the sObject variable to create an order.</description>
+        <name>Create_Order</name>
+        <label>Create Order</label>
+        <locationX>397</locationX>
+        <locationY>1871</locationY>
+        <connector>
+            <targetReference>Loop_MRR_Oppty_Products</targetReference>
+        </connector>
+        <inputReference>oOrder</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <description>Uses the field values that are stored in the sObject variable to create an order.</description>
+        <name>Create_Order_0</name>
+        <label>Create Order</label>
+        <locationX>779</locationX>
+        <locationY>2439</locationY>
+        <connector>
+            <targetReference>Loop_One_Off_Oppty_Products_0</targetReference>
+        </connector>
+        <inputReference>oOrder</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <description>Uses the field values that are stored in the sObject variable to create an order.</description>
+        <name>Create_Order_1</name>
+        <label>Create Order</label>
+        <locationX>863</locationX>
+        <locationY>362</locationY>
+        <connector>
+            <targetReference>Loop_Oppty_Products_1</targetReference>
+        </connector>
+        <inputReference>oOrder</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <description>Uses the field values that are stored in the sObject collection variable to create order products.</description>
+        <name>Create_Order_Products_1</name>
+        <label>Create Order Products</label>
+        <locationX>1513</locationX>
+        <locationY>230</locationY>
+        <connector>
+            <targetReference>Blank_MRR_List</targetReference>
+        </connector>
+        <inputReference>listMRROrderProducts</inputReference>
+    </recordCreates>
+    <recordDeletes>
+        <name>Delete_Order_Products</name>
+        <label>Delete Order Products</label>
+        <locationX>1152</locationX>
+        <locationY>1931</locationY>
+        <connector>
+            <targetReference>Update_Draft_Orders</targetReference>
+        </connector>
+        <inputReference>listMRROrderProductToDelete</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <description>Looks for all future sales orders of new business/renewals. The effective dates are then looped to identify the start date of the next sales order.</description>
+        <name>Draft_Orders_0</name>
+        <label>Draft Orders</label>
+        <locationX>1051</locationX>
+        <locationY>1011</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Draft_Orders_0</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND 3 AND (4 OR 5 OR 6 OR 9) AND 7 AND 8</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>oOppty.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>EffectiveDate</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>oOppty.Startdate_contract__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsReductionOrder</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>New Business-Enterprise Cloud</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business-Renewal</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>New Business - Expansion Portal</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Pre-Order</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business - Platform Transfer</stringValue>
+            </value>
+        </filters>
+        <object>Order</object>
+        <outputReference>ListDraftOrderIDs</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>EffectiveDate</queriedFields>
+        <queriedFields>Order_Reviewed__c</queriedFields>
+        <queriedFields>EndDate</queriedFields>
+        <queriedFields>OpportunityId</queriedFields>
+        <queriedFields>CurrencyIsoCode</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Queries the account on the opportunity, and stores selected account fields in an sObject variable.
+
+ACTION: Review the retrieved account fields, and add any additional fields that you need to the sObject variable.</description>
+        <name>Get_Account_Fields</name>
+        <label>Get Account Fields</label>
+        <locationX>359</locationX>
+        <locationY>762</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>oOppty.AccountId</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>oAccount</outputReference>
+        <queriedFields>Original_Contract_Start_Date__c</queriedFields>
+        <queriedFields>Platform__c</queriedFields>
+        <queriedFields>Type</queriedFields>
+        <queriedFields>Partner_Type__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Draft_OLIIs</name>
+        <label>Get Draft OLIIs</label>
+        <locationX>2074</locationX>
+        <locationY>1244</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_opp_contain_one_off_products</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>oDraftOrderIDs.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OrderItem</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>PricebookEntryId</queriedFields>
+        <queriedFields>Quantity</queriedFields>
+        <queriedFields>UnitPrice</queriedFields>
+        <queriedFields>Unit_Price_with_Discount__c</queriedFields>
+        <queriedFields>Part_of_a_package__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Looks up the opportunity products that are related to the opportunity, and stores selected field values in the sObject collection variable.
+
+ACTION: Review the retrieved opportunity product fields, and add additional fields as needed to the sObject collection variable.</description>
+        <name>Get_MRR_Oppty_Products</name>
+        <label>Get MRR Oppty Products</label>
+        <locationX>306</locationX>
+        <locationY>1101</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_One_Off_Products</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>For_Renewal_Mapped__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>oOppty.Id</elementReference>
+            </value>
+        </filters>
+        <object>OpportunityLineItem</object>
+        <outputReference>listMRROpptyProducts</outputReference>
+        <queriedFields>Quantity</queriedFields>
+        <queriedFields>TotalPrice</queriedFields>
+        <queriedFields>PricebookEntryId</queriedFields>
+        <queriedFields>Discount</queriedFields>
+        <queriedFields>UnitPrice</queriedFields>
+        <queriedFields>Default_Price__c</queriedFields>
+        <queriedFields>Discount_percentage__c</queriedFields>
+        <queriedFields>Part_of_a_package__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_One_Off_Products</name>
+        <label>Get One Off Products</label>
+        <locationX>306</locationX>
+        <locationY>1376</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Upsell</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>For_Renewal_Mapped__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OpptyID</elementReference>
+            </value>
+        </filters>
+        <object>OpportunityLineItem</object>
+        <outputReference>ListOneOffOpptyProducts</outputReference>
+        <queriedFields>Quantity</queriedFields>
+        <queriedFields>TotalPrice</queriedFields>
+        <queriedFields>Discount</queriedFields>
+        <queriedFields>PricebookEntryId</queriedFields>
+        <queriedFields>UnitPrice</queriedFields>
+        <queriedFields>Default_Price__c</queriedFields>
+        <queriedFields>Discount_percentage__c</queriedFields>
+        <queriedFields>Part_of_a_package__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Uses the Opportunity ID passed to the flow to look up the opportunity, and stores the selected opportunity fields in an sObject variable.
+
+ACTION: Review the retrieved opportunity fields, and add any additional fields that you need to the sObject variable.</description>
+        <name>Get_Opportunity_Fields</name>
+        <label>Get Opportunity Fields</label>
+        <locationX>272</locationX>
+        <locationY>352</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>OrderGenerated</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OpptyID</elementReference>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <outputReference>oOppty</outputReference>
+        <queriedFields>AccountId</queriedFields>
+        <queriedFields>Pricebook2Id</queriedFields>
+        <queriedFields>CloseDate</queriedFields>
+        <queriedFields>StageName</queriedFields>
+        <queriedFields>current_user__c</queriedFields>
+        <queriedFields>Invoice_period__c</queriedFields>
+        <queriedFields>Startdate_contract__c</queriedFields>
+        <queriedFields>Type</queriedFields>
+        <queriedFields>MRR__c</queriedFields>
+        <queriedFields>CurrencyIsoCode</queriedFields>
+        <queriedFields>of_products_One_Off_Items__c</queriedFields>
+        <queriedFields>PO_Number__c</queriedFields>
+        <queriedFields>End_date_contract__c</queriedFields>
+        <queriedFields>of_products_MRR__c</queriedFields>
+        <queriedFields>Related_Renewal_Opportunity__c</queriedFields>
+        <queriedFields>Opportunity_ID_18_digits__c</queriedFields>
+        <queriedFields>Total_Contract_Value__c</queriedFields>
+        <queriedFields>Products_being_merged__c</queriedFields>
+        <queriedFields>Sales_Order_Generated__c</queriedFields>
+        <queriedFields>Loss_Reason_Detail__c</queriedFields>
+        <queriedFields>Netsuite_Term__c</queriedFields>
+        <queriedFields>Upsell_Internal_Transfer_Opp__c</queriedFields>
+        <queriedFields>ARR__c</queriedFields>
+        <queriedFields>OEM__c</queriedFields>
+        <queriedFields>Partner_commission_on_this_deal__c</queriedFields>
+        <queriedFields>Special_Billing_Scenario__c</queriedFields>
+        <queriedFields>of_Month_Delayed_Rent_Free__c</queriedFields>
+        <queriedFields>Subscription_Term__c</queriedFields>
+        <queriedFields>Split_one_off_subscription_invoice__c</queriedFields>
+        <queriedFields>One_off_from_Products__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <description>Set Order Reviewed list to the default</description>
+        <name>Update_Draft_Orders</name>
+        <label>Update Draft Orders</label>
+        <locationX>1000</locationX>
+        <locationY>1555</locationY>
+        <connector>
+            <targetReference>Assign_Order_Generated_Fields</targetReference>
+        </connector>
+        <inputReference>oDraftOrdersIDList</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Order_Products_from_list_to_update</name>
+        <label>Update Order Products from list to update</label>
+        <locationX>1331</locationX>
+        <locationY>1529</locationY>
+        <connector>
+            <targetReference>OLI_to_delete_is_blank</targetReference>
+        </connector>
+        <inputReference>listMRROrderProductsToUpdate</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_Order_Reviewed_status</name>
+        <label>Update the Order Reviewed status</label>
+        <locationX>1923</locationX>
+        <locationY>1275</locationY>
+        <connector>
+            <targetReference>Get_Draft_OLIIs</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>oDraftOrderIDs.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Order_Reviewed__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Order</object>
+    </recordUpdates>
+    <start>
+        <locationX>84</locationX>
+        <locationY>152</locationY>
+        <connector>
+            <targetReference>Get_Opportunity_Fields</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>DraftOLI</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>EmptyoOrderProduct</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>listDraftOLIs</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>ListDraftOrderIDs</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Order</objectType>
+    </variables>
+    <variables>
+        <name>listMRROpptyProducts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <name>listMRROrderProducts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>listMRROrderProductsToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>listMRROrderProductToDelete</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>ListOneOffOpptyProducts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <name>listOneOffOrderProducts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>LoopCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>NextEffectiveDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2999-01-01</dateValue>
+        </value>
+    </variables>
+    <variables>
+        <name>oAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>oAdminFeeOrderItem</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>oAdminFeeProd</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>PricebookEntry</objectType>
+    </variables>
+    <variables>
+        <name>oDraftOrderEffectiveDates</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Order</objectType>
+    </variables>
+    <variables>
+        <name>oDraftOrderIDs</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Order</objectType>
+    </variables>
+    <variables>
+        <name>oDraftOrdersIDList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Order</objectType>
+    </variables>
+    <variables>
+        <name>oEmptyOrder</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Order</objectType>
+    </variables>
+    <variables>
+        <name>oMRROpptyProduct</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <name>oMRROrderProduct</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>oOneOffOpptyProducts</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <name>oOneOffOrderProducts</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>oOppty</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>oOrder</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Order</objectType>
+    </variables>
+    <variables>
+        <name>oOrderGenerated</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>OpptyID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OrderTotalAmount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <elementReference>oOrder.TotalAmount</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>oRelatedRenewal</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>OriginalOrderReviwedStatus2</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>StartDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>oOppty.Startdate_contract__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>UpdateCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <waits>
+        <name>Wait_1_second</name>
+        <label>Wait 1 second</label>
+        <locationX>1606</locationX>
+        <locationY>1605</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <name>X1_second_later</name>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Create_MRR_Order_Products_1_1</targetReference>
+            </connector>
+            <eventType>AlarmEvent</eventType>
+            <inputParameters>
+                <name>AlarmTime</name>
+                <value>
+                    <elementReference>Nowplus1second</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffset</name>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffsetUnit</name>
+            </inputParameters>
+            <label>1 second later</label>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Wait_1_second_0</name>
+        <label>Wait 1 second</label>
+        <locationX>1506</locationX>
+        <locationY>1211</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <name>After_1_second</name>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Loop_Draft_Orders</targetReference>
+            </connector>
+            <eventType>AlarmEvent</eventType>
+            <inputParameters>
+                <name>AlarmTime</name>
+                <value>
+                    <elementReference>Nowplus1second</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffset</name>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffsetUnit</name>
+            </inputParameters>
+            <label>After 1 second</label>
+        </waitEvents>
+    </waits>
+</Flow>

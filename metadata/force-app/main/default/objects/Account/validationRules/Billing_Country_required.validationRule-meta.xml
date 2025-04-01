@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Country_required</fullName>
+    <active>true</active>
+    <description>Billing Country needs to be filled in.</description>
+    <errorConditionFormula>AND(
+  ISBLANK(BillingCountry),
+  ISBLANK(OEM_Account__c),
+
+  OR(
+    NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+    $User.Id = &quot;005U0000003lkkp&quot;  /* NOT exempt Bynder User */
+  ),
+
+  $User.Id = &quot;0053g000000y0ha&quot;, /* Exempt RingLead Trigger dummy user */
+
+  NOT(ISCHANGED(Total_Bookings__c)),
+  NOT(ISCHANGED(of_new_business_opportunities__c)),
+  NOT(ISCHANGED(of_Opportunities__c )),
+  NOT(ISCHANGED(OEM__c)),
+  NOT(ISCHANGED(Upsells_created_button__c)),
+  NOT(ISCHANGED(One_Off_Upsells_created_button__c)),
+  NOT(ISCHANGED(Timestamp_Last_Contact_Added__c))
+)</errorConditionFormula>
+    <errorMessage>Billing Country (under Billing Address) is required.</errorMessage>
+</ValidationRule>

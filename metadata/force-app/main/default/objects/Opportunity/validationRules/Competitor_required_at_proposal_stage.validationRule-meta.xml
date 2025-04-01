@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor_required_at_proposal_stage</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+number_of_opportunity_competitors__c=0,
+ISCHANGED(StageName),
+NOT($Profile.Name = &quot;System Administrator&quot;),
+DATETIMEVALUE(CloseDate)&gt; DATETIMEVALUE(&quot;2019-12-01 17:00:00&quot;),
+OR(
+ISPICKVAL(Type,&quot;New Business-Enterprise Cloud&quot;),
+ISPICKVAL(Type,&quot;New Business - Expansion Portal&quot;),
+ISPICKVAL(Type,&quot;Existing Business - Platform Transfer&quot;)),
+OR(
+ISPICKVAL(StageName, &quot;Proposal&quot;),
+ISPICKVAL(StageName, &quot;VOC&quot;),
+ISPICKVAL(StageName, &quot;Legal Review&quot;),
+ISPICKVAL(StageName, &quot;Signature Stage&quot;),
+ISPICKVAL(StageName, &quot;Closed Won&quot;)))</errorConditionFormula>
+    <errorMessage>Please add a competitor to the opportunity by going to the Competitors tab and clicking ‘New’. See more here: https://bynder.atlassian.net/l/c/2CnyeQR8</errorMessage>
+</ValidationRule>

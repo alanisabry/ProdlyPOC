@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Start_date_after_end_date</fullName>
+    <active>true</active>
+    <description>Contract start date must come before the contract end date.</description>
+    <errorConditionFormula>And(
+NOT($Profile.Name = &quot;System Administrator&quot;), 
+Startdate_contract__c &gt; End_date_contract__c)</errorConditionFormula>
+    <errorMessage>Contract start date must come before the contract end date.</errorMessage>
+</ValidationRule>

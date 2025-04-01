@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Roles_Selected__c</fullName>
+    <description>BODEV-1063: Formula text field to concatenate Contact Roles selected.</description>
+    <externalId>false</externalId>
+    <formula>/* LEFT() is used to trim &quot;; &quot; at the end */
+
+LEFT(
+
+IF( Power_User__c , &quot;Power User; &quot;, &quot;&quot;)
+&amp;
+IF( Executive_Sponsor__c , &quot;Champion; &quot;, &quot;&quot;)
+&amp;
+IF( Support_contact__c , &quot;Support Contact; &quot;, &quot;&quot;)
+&amp;
+IF( Decision_Maker__c , &quot;Decision Maker; &quot;, &quot;&quot;)
+&amp;
+IF( Project_Owner__c , &quot;Project Owner; &quot;, &quot;&quot;)
+&amp;
+IF( Legal__c , &quot;Legal; &quot;, &quot;&quot;)
+&amp;
+IF( IT_Contact__c , &quot;IT Contact; &quot;, &quot;&quot;)
+&amp;
+IF( Procurement__c , &quot;Procurement; &quot;, &quot;&quot;)
+&amp;
+IF( Stakeholder__c , &quot;Stakeholder; &quot;, &quot;&quot;)
+&amp;
+IF( Finance__c , &quot;Finance; &quot;, &quot;&quot;)
+
+,
+
+LEN(
+IF( Power_User__c , &quot;Power User; &quot;, &quot;&quot;)
+&amp;
+IF( Executive_Sponsor__c , &quot;Champion; &quot;, &quot;&quot;)
+&amp;
+IF( Support_contact__c , &quot;Support Contact; &quot;, &quot;&quot;)
+&amp;
+IF( Decision_Maker__c , &quot;Decision Maker; &quot;, &quot;&quot;)
+&amp;
+IF( Project_Owner__c , &quot;Project Owner; &quot;, &quot;&quot;)
+&amp;
+IF( Legal__c , &quot;Legal; &quot;, &quot;&quot;)
+&amp;
+IF( IT_Contact__c , &quot;IT Contact; &quot;, &quot;&quot;)
+&amp;
+IF( Procurement__c , &quot;Procurement; &quot;, &quot;&quot;)
+&amp;
+IF( Stakeholder__c , &quot;Stakeholder; &quot;, &quot;&quot;)
+&amp;
+IF( Finance__c , &quot;Finance; &quot;, &quot;&quot;)
+) - 2
+
+)</formula>
+    <label>Contact Roles Selected</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

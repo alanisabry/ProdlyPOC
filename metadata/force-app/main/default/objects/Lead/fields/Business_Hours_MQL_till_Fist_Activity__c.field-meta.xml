@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Hours_MQL_till_Fist_Activity__c</fullName>
+    <description>BODEV-341: Field to store business hours between Timestamp MQL and Timestamp First Activity. This field is updated by Main Process - Lead.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field to store business hours between Timestamp MQL and Timestamp First Activity.</inlineHelpText>
+    <label>Business Hours: MQL till Fist Activity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

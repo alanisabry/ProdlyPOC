@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Used to make sure we can automatically invoice the OEM partner with the existing sales order flow</description>
+    <label>OEM / Partner</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Partner</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.Id</field>
+            <operation>notEqual</operation>
+            <valueField>$Source.AccountId</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Opportunities (OEM)</relationshipLabel>
+    <relationshipName>OEM</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Video_Brand_Studio_Advanced__c</fullName>
+    <description>BODEV-625: Indicates how many Advanced Video Brand Studio products this customer has on its active opportunities (DLRS)</description>
+    <inlineHelpText>Indicates how many Advanced Video Brand Studio products this customer has on its active opportunities</inlineHelpText>
+    <label>Has Video Brand Studio Advanced</label>
+    <summarizedField>Opportunity.Has_Video_Brand_Studio_Adv_Aggregate__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.Contract_IsActive__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

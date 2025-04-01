@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Anti_Virus_product</fullName>
+    <active>true</active>
+    <description>Users cannot add Anti Virus product to New Business or Upsell Opportunities.</description>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($Profile.Name,&apos;System Administrator&apos;)),
+ISNEW(),
+Quantity &gt;0,
+OR(
+TEXT(Opportunity.Type) = &quot;New Business-Enterprise Cloud&quot;,
+TEXT(Opportunity.Type) = &quot;Existing Business-Upsell&quot;,
+TEXT(Opportunity.Type) = &quot;New Business - Expansion Portal&quot;
+),
+Product2.Product_ID_18_digits__c = &apos;01tRo0000027oyDIAQ&apos;
+)</errorConditionFormula>
+    <errorMessage>Cannot add Anti Virus product to New business or Upsell opportunities. Please contact BizApps team or Product Marketing team to add the product to the opportunity.</errorMessage>
+</ValidationRule>

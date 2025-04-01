@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Name_for_the_Flow__c</fullName>
+    <description>BODEV-706: If the product is a user or storage and not part of the package, then the formula returns &quot;Additional ...&quot;  value.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+ Opportunity.MM_Standardised_Package__c = True,
+ (Part_of_a_package__c = False),
+ (Purchase_family__c = &quot;Storage Upgrade&quot; || Purchase_family__c = &quot;User Upgrade&quot;)),
+&quot;Additional &quot; &amp;  Name_rus__c, Name_rus__c)</formula>
+    <label>Product Name for the Flow</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

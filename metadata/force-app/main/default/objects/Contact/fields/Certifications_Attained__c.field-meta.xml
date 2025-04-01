@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certifications_Attained__c</fullName>
+    <label>Certifications Attained</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admin</fullName>
+                <default>false</default>
+                <label>Admin</label>
+            </value>
+            <value>
+                <fullName>Implementation</fullName>
+                <default>false</default>
+                <label>Implementation</label>
+            </value>
+            <value>
+                <fullName>Studio</fullName>
+                <default>false</default>
+                <label>Studio</label>
+            </value>
+            <value>
+                <fullName>Asset Workflow</fullName>
+                <default>false</default>
+                <label>Asset Workflow</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines</fullName>
+                <default>false</default>
+                <label>Brand Guidelines</label>
+            </value>
+            <value>
+                <fullName>Content Workflow</fullName>
+                <default>false</default>
+                <label>Content Workflow</label>
+            </value>
+            <value>
+                <fullName>DAT</fullName>
+                <default>false</default>
+                <label>DAT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

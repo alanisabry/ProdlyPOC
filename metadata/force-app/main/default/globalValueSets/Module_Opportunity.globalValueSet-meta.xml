@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>DAM only</fullName>
+        <default>false</default>
+        <label>DAM only</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Workflow</fullName>
+        <default>false</default>
+        <label>Content Workflow</label>
+    </customValue>
+    <customValue>
+        <fullName>Studio</fullName>
+        <default>false</default>
+        <label>Studio</label>
+    </customValue>
+    <customValue>
+        <fullName>Brand Guidelines</fullName>
+        <default>false</default>
+        <label>Brand Guidelines</label>
+    </customValue>
+    <customValue>
+        <fullName>Dynamic Asset Transformation</fullName>
+        <default>false</default>
+        <label>Dynamic Asset Transformation</label>
+    </customValue>
+    <customValue>
+        <fullName>Asset Workflow</fullName>
+        <default>false</default>
+        <label>Asset Workflow</label>
+    </customValue>
+    <customValue>
+        <fullName>Emrays</fullName>
+        <default>false</default>
+        <label>AI Search Experience</label>
+    </customValue>
+    <customValue>
+        <fullName>CX Omnichannel</fullName>
+        <default>false</default>
+        <label>CX Omnichannel</label>
+    </customValue>
+    <customValue>
+        <fullName>CX User Community</fullName>
+        <default>false</default>
+        <label>CX User Community</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Operations</fullName>
+        <default>false</default>
+        <label>Content Operations</label>
+    </customValue>
+    <customValue>
+        <fullName>Analytics</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Analytics</label>
+    </customValue>
+    <description>BODEV-2714: Multi-picklist to capture prospects&apos; interest on modules.
+
+A validation rule No_Other_Module_when_DAM_Only on Lead and Opportunity has the module names hardcoded in the formula because of technical limitation. When adding/changing/removing options for this picklist, the validation rule should be also updated.</description>
+    <masterLabel>Module Opportunity</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

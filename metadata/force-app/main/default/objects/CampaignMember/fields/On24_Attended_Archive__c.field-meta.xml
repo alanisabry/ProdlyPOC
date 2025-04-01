@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On24_Attended_Archive__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True/False if a user attended the archived/on-demand portion of this event</description>
+    <label>On24 Attended Archive</label>
+    <type>Checkbox</type>
+</CustomField>

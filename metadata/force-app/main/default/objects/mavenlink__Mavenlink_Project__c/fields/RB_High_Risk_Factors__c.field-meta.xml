@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RB_High_Risk_Factors__c</fullName>
+    <description>Used to capture the high risk factors. This field value is synced from Mavenlink through Mavenlink &lt;&gt; Salesforce integration.</description>
+    <label>RB High Risk Factors</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No stakeholder evident/stakeholder changed (sponsor level)</fullName>
+                <default>false</default>
+                <label>No stakeholder evident/stakeholder changed (sponsor level)</label>
+            </value>
+            <value>
+                <fullName>No value or use case at all</fullName>
+                <default>false</default>
+                <label>No value or use case at all</label>
+            </value>
+            <value>
+                <fullName>Disengaged during implementation (missed meetings, low priority, no motivation)</fullName>
+                <default>false</default>
+                <label>Disengaged during implementation (missed meetings, low priority, no motivation)</label>
+            </value>
+            <value>
+                <fullName>Decrease of scope</fullName>
+                <default>false</default>
+                <label>Decrease of scope</label>
+            </value>
+            <value>
+                <fullName>Indefinite postponement</fullName>
+                <default>false</default>
+                <label>Indefinite postponement</label>
+            </value>
+            <value>
+                <fullName>Friction in onboarding due to product</fullName>
+                <default>false</default>
+                <label>Friction in onboarding due to product</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

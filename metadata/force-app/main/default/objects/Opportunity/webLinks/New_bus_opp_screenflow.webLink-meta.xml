@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_bus_opp_screenflow</fullName>
+    <availability>online</availability>
+    <description>ACTIVE. Triggers a screenflow that creates a New Business opportunity.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Business opportunity</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/flow/Create_New_Business_opportunity_Screen_Flow?curContact={!Contact.Id}&amp;retURL={!URLFOR(Contact.Id)}</url>
+</WebLink>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compact_Layout_Opportunity_Standard</fullName>
+    <fields>Name</fields>
+    <fields>Opportunity_Summary__c</fields>
+    <fields>AccountId</fields>
+    <fields>CloseDate</fields>
+    <fields>ARR_manual__c</fields>
+    <fields>OwnerId</fields>
+    <fields>Forecast_Level__c</fields>
+    <label>Compact Layout - Opportunity - Standard</label>
+</CompactLayout>

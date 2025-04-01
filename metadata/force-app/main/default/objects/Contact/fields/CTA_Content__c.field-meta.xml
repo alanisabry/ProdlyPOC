@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTA_Content__c</fullName>
+    <description>BODEV-3355 : Added this field for Qualified</description>
+    <label>CTA Content</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>&lt;30 employee demo request</fullName>
+                <default>false</default>
+                <label>&lt;30 employee demo request</label>
+            </value>
+            <value>
+                <fullName>&lt;30 employee pricing request</fullName>
+                <default>false</default>
+                <label>&lt;30 employee pricing request</label>
+            </value>
+            <value>
+                <fullName>Callback Request</fullName>
+                <default>false</default>
+                <label>Callback Request</label>
+            </value>
+            <value>
+                <fullName>Content Workflow Demo</fullName>
+                <default>false</default>
+                <label>Content Workflow Demo</label>
+            </value>
+            <value>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+                <label>Demo Request</label>
+            </value>
+            <value>
+                <fullName>Pricing Request</fullName>
+                <default>false</default>
+                <label>Pricing Request</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

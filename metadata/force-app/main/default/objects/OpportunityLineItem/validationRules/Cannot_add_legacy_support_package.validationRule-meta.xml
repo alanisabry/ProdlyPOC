@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_legacy_support_package</fullName>
+    <active>true</active>
+    <description>Legacy support/success package products cannot be added to new business and upsell opportunities. Webdam Opps are exempted from this change.</description>
+    <errorConditionFormula>AND(
+  NOT($Profile.Name=&quot;System Administrator&quot;),
+  NOT( Opportunity.Platform__c = &quot;Webdam&quot; ), /* Excluding Webdam Opps */
+  ISNEW(),
+  Quantity &gt;0,
+  OR(
+    TEXT(Opportunity.Type) = &quot;New Business-Enterprise Cloud&quot;,
+    TEXT(Opportunity.Type) = &quot;Existing Business-Upsell&quot;
+  ),
+  OR(
+    Product2.Product_ID_18_digits__c =  $Label.Plus_Support_Package_US_Only,
+    Product2.Product_ID_18_digits__c =  $Label.Bronze_Support_Package_EMEA_Only,
+    Product2.Product_ID_18_digits__c =  $Label.Basic_Support_Package_US_Only,
+    Product2.Product_ID_18_digits__c =  $Label.Diamond_Support_Package,
+    Product2.Product_ID_18_digits__c =  $Label.Enterprise_Support_Package_US_Only,
+    Product2.Product_ID_18_digits__c =  $Label.Gold_Support_Package_EMEA_Only,
+    Product2.Product_ID_18_digits__c =  $Label.Premier_Support_Package,
+    Product2.Product_ID_18_digits__c =  $Label.Silver_Support_Package_EMEA_Only,
+    Product2.Product_ID_18_digits__c =  $Label.Platinum_Support_Plan,
+    Product2.Product_ID_18_digits__c =  $Label.Gold_Support_Plan,
+    Product2.Product_ID_18_digits__c =  $Label.Silver_Support_Plan
+  )
+)</errorConditionFormula>
+    <errorMessage>Support/Success Package product cannot be added to New business or Upsell opportunities.</errorMessage>
+</ValidationRule>

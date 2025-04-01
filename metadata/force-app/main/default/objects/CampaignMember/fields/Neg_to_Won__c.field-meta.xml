@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Neg_to_Won__c</fullName>
+    <description>wd field
+Used by FCI</description>
+    <externalId>false</externalId>
+    <formula>IF( FCR_Opportunity_Closed_Won__c = &quot;True&quot;, FCR_Opportunity_Closed_Date__c - Neg_Date__c , null )</formula>
+    <inlineHelpText># Days from Neg to Won - Evaluates to blank if Negotiation Date is blank.</inlineHelpText>
+    <label>Neg to Won</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

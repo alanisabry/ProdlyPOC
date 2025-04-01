@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indexation__c</fullName>
+    <description>Used to determine the status of the indexation on order.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+/* - - - - - Conditions for Indexation not applicable - - - - -
+- Order is not Sales Order
+- Opp is New Business (incl. Expansion portal, Internal/Platform Transfer) and Indexation is after initial term
+- Order start date is within 1 year since Original Subscription Start Date
+- Opp is Upsell
+- Opp is Prof. Service
+*/
+Order_Type__c =&quot;Credit Memo&quot; ||
+ISPICKVAL(Account.Indexation__c,&quot;&quot;) ||
+( OR(
+ISPICKVAL(Opportunity.Type,&quot;New Business-Enterprise Cloud&quot;),
+ISPICKVAL(Opportunity.Type,&quot;New Business - Expansion Portal&quot;),
+ISPICKVAL(Opportunity.Type,&quot;Existing Business - Internal Transfer&quot;),
+ISPICKVAL(Opportunity.Type,&quot;Existing Business - Platform Transfer&quot;)
+) &amp;&amp;
+ISPICKVAL(Account.Indexation__c,&quot;After Initial Term&quot;)
+) ||
+(
+ISPICKVAL(Account.Indexation__c,&quot;Yes&quot;) &amp;&amp;
+EffectiveDate &lt; IF(
+AND(
+MONTH(Account.Original_Subscription_Start_Date__c) = 2,
+DAY(Account.Original_Subscription_Start_Date__c) = 29
+),
+DATE( YEAR(Account.Original_Subscription_Start_Date__c) + 1, 3, 1),
+DATE( YEAR(Account.Original_Subscription_Start_Date__c) + 1, MONTH(Account.Original_Subscription_Start_Date__c), DAY(Account.Original_Subscription_Start_Date__c))
+)
+) ||
+ISPICKVAL(Opportunity.Type,&quot;Existing Business-Upsell&quot;) ||
+ISPICKVAL(Opportunity.Type,&quot;Existing Business-Professional Services&quot;) ||
+Indexation_applied_to_Opp_products__c ,
+&quot;Not Applicable&quot;,
+
+/* - - - - - Other patterns - - - - -
+Patterns where indexation is already waived or not to to applied
+- Account Indexation is No -&gt; Waived On Account
+- Waived on Opp level -&gt; Waived ON Contract
+- Waived on Order level (already approved) -&gt; Waived On Order
+- Waived via Credit Memo after activation -&gt; Waived On Credit Memo
+*/
+IF(
+ISPICKVAL(Account.Indexation__c,&quot;No&quot;),
+&quot;Waived On Account&quot;,
+IF(
+ISPICKVAL(Opportunity.Waive_Indexation__c,&quot;Yes&quot;),
+&quot;Waived On Contract&quot;,
+IF(
+ISPICKVAL(Opportunity.Waive_Indexation__c,&quot;First Year&quot;),
+&quot;Waived - First Year Of Contract&quot;,
+IF(
+ISPICKVAL( Waive_Indexation_Approval_Status__c,&quot;Approved&quot;),
+&quot;Waived On Order&quot;,
+IF(
+ISPICKVAL( Waive_Indexation_Approval_Status__c,&quot;Approved - Credit Memo&quot;),
+&quot;Waived On Credit Memo&quot;,
+/* - - - - - Conditions for waiving indexation on order- - - - -
+Patterns where indeation can or cannot be applied/waived
+- Order Start Date month does NOT match Subscription Start Date month -&gt; Cannot be waived
+- Otherwise -&gt; Can be applied or waived
+*/
+IF(
+MONTH(EffectiveDate) != MONTH(Opportunity.Subscription_Start_Date__c),
+IF(AND(MONTH(EffectiveDate) = 3,
+DAY(EffectiveDate) = 1
+)&amp;&amp; AND(
+MONTH(Opportunity.Subscription_Start_Date__c) = 2,
+DAY(Opportunity.Subscription_Start_Date__c) = 29
+),&quot;Can be applied or waived&quot;,
+&quot;Cannot be waived&quot;),
+&quot;Can be applied or waived&quot;
+)
+)
+)
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Specifies the status of indexation on the order.</inlineHelpText>
+    <label>Indexation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Type__c</fullName>
+    <label>Project Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Data I/E (Webdam)</fullName>
+                <default>false</default>
+                <label>Data I/E (Webdam)</label>
+            </value>
+            <value>
+                <fullName>Hours (Webdam)</fullName>
+                <default>false</default>
+                <label>Hours (Webdam)</label>
+            </value>
+            <value>
+                <fullName>Elite Onboarding (Webdam)</fullName>
+                <default>false</default>
+                <label>Elite Onboarding (Webdam)</label>
+            </value>
+            <value>
+                <fullName>Enterprise Onboarding (Webdam)</fullName>
+                <default>false</default>
+                <label>Enterprise Onboarding (Webdam)</label>
+            </value>
+            <value>
+                <fullName>Workstream Onboarding (Webdam)</fullName>
+                <default>false</default>
+                <label>Workstream Onboarding (Webdam)</label>
+            </value>
+            <value>
+                <fullName>Quickstart Onboarding (Webdam)</fullName>
+                <default>false</default>
+                <label>Quickstart Onboarding (Webdam)</label>
+            </value>
+            <value>
+                <fullName>Standard Onboarding (Webdam)</fullName>
+                <default>false</default>
+                <label>Standard Onboarding (Webdam)</label>
+            </value>
+            <value>
+                <fullName>Enterprise (Flagship)</fullName>
+                <default>false</default>
+                <label>Enterprise (Flagship)</label>
+            </value>
+            <value>
+                <fullName>Midmarket Workgroup (Flagship)</fullName>
+                <default>false</default>
+                <label>Midmarket Workgroup (Flagship)</label>
+            </value>
+            <value>
+                <fullName>Starter (flagship)</fullName>
+                <default>false</default>
+                <label>Starter (Flagship)</label>
+            </value>
+            <value>
+                <fullName>Midmarket Professional (Flagship)</fullName>
+                <default>false</default>
+                <label>Midmarket Professional (Flagship)</label>
+            </value>
+            <value>
+                <fullName>Custom - Additional Module Implementation</fullName>
+                <default>false</default>
+                <label>Custom - Additional Module Implementation</label>
+            </value>
+            <value>
+                <fullName>Custom - Onboarding One-off Hours</fullName>
+                <default>false</default>
+                <label>Custom - Onboarding One-off Hours</label>
+            </value>
+            <value>
+                <fullName>Custom - API / Integration Hours</fullName>
+                <default>false</default>
+                <label>Custom - API / Integration Hours</label>
+            </value>
+            <value>
+                <fullName>PS Asset Import/Export/Reporting (Bynder)</fullName>
+                <default>false</default>
+                <label>PS Asset Import/Export/Reporting (Bynder)</label>
+            </value>
+            <value>
+                <fullName>8 Session Asset Bank Audit</fullName>
+                <default>false</default>
+                <label>8 Session Asset Bank Audit</label>
+            </value>
+            <value>
+                <fullName>12 Session Asset Bank Audit</fullName>
+                <default>false</default>
+                <label>12 Session Asset Bank Audit</label>
+            </value>
+            <value>
+                <fullName>5 Session Workflow Audit</fullName>
+                <default>false</default>
+                <label>5 Session Workflow Audit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

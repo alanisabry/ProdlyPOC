@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Privacy_Addendum__c</fullName>
+    <description>BODEV-2943 Addition Salesforce dropdown selection
+BODEV-4343 added picklist values and helptext</description>
+    <inlineHelpText>Please select AI Addendum when the document does not contain a section on the CCPA. Please select CCPA/AI Addendum when the document contains a section on the CCPA.</inlineHelpText>
+    <label>Privacy Addendum</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes v.3</fullName>
+                <default>false</default>
+                <label>Yes v.3</label>
+            </value>
+            <value>
+                <fullName>Negotiated</fullName>
+                <default>false</default>
+                <label>Negotiated</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>AI Addendum</fullName>
+                <default>false</default>
+                <label>AI Addendum</label>
+            </value>
+            <value>
+                <fullName>AI Addendum Negotiated</fullName>
+                <default>false</default>
+                <label>AI Addendum Negotiated</label>
+            </value>
+            <value>
+                <fullName>CCPA/AI Addendum</fullName>
+                <default>false</default>
+                <label>CCPA/AI Addendum</label>
+            </value>
+            <value>
+                <fullName>CCPA/AI Addendum Negotiated</fullName>
+                <default>false</default>
+                <label>CCPA/AI Addendum Negotiated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason_Entered__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the field &quot;Loss Reason Detail&quot; is filled or not.</description>
+    <label>Loss Reason Entered</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

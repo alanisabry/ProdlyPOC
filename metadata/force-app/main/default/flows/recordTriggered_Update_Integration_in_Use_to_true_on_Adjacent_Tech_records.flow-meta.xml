@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Adds temporary variable to a list for the update.</description>
+        <name>Add_to_the_list_to_update</name>
+        <label>Add to the list to update</label>
+        <locationX>264</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>col_AdjacentTechnologiesToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>rec_AdjacentTechnology</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>For_every_Adjacent_Technology</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Stores values of each Adjacent Technology in a separate record.</description>
+        <name>Assign_value_to_a_temporary_record</name>
+        <label>Assign value to a temporary record</label>
+        <locationX>264</locationX>
+        <locationY>551</locationY>
+        <assignmentItems>
+            <assignToReference>rec_AdjacentTechnology.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_every_Adjacent_Technology.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>rec_AdjacentTechnology.Integration_in_use__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>rec_AdjacentTechnology.Created_automatically__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_the_list_to_update</targetReference>
+        </connector>
+    </assignments>
+    <description>This flow is triggered when a Product record has &quot;Integration&quot; field filled in. When it happens, the flow gets a list of related to that Integration Adjacent Technology records, loops over each and sets &quot;Integration in Use?&quot; to True.</description>
+    <interviewLabel>recordTriggered: Update &quot;Integration in Use?&quot; to true on Adjacent Tech records {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>recordTriggered: Update &quot;Integration in Use?&quot; to true on Adjacent Tech records</label>
+    <loops>
+        <description>Loops over the list of adjacent technologies</description>
+        <name>For_every_Adjacent_Technology</name>
+        <label>For every Adjacent Technology</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <collectionReference>col_AdjacentTechnologies</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_value_to_a_temporary_record</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Adjacent_Technologies</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Returns a collection of Adjacent Technology records related to the Integration.</description>
+        <name>Get_Adjacent_Technology</name>
+        <label>Get Adjacent Technology</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>For_every_Adjacent_Technology</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Adjacent_Technology__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Integration__c</elementReference>
+            </value>
+        </filters>
+        <object>Adjacent_Technology__c</object>
+        <outputReference>col_AdjacentTechnologies</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Integration_in_use__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <description>Updates all Adjacent tech records in one go.</description>
+        <name>Update_Adjacent_Technologies</name>
+        <label>Update Adjacent Technologies</label>
+        <locationX>176</locationX>
+        <locationY>887</locationY>
+        <inputReference>col_AdjacentTechnologiesToUpdate</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Adjacent_Technology</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Integration__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Product2</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <variables>
+        <description>Returns a list of Adjacent Technologies related to the Integration on the Product record.</description>
+        <name>col_AdjacentTechnologies</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Adjacent_Technology__c</objectType>
+    </variables>
+    <variables>
+        <description>List of Adjacent Technologies that will have to be updated.</description>
+        <name>col_AdjacentTechnologiesToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Adjacent_Technology__c</objectType>
+    </variables>
+    <variables>
+        <description>Temporary variable for an adjacent technology in the loop.</description>
+        <name>rec_AdjacentTechnology</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Adjacent_Technology__c</objectType>
+    </variables>
+</Flow>

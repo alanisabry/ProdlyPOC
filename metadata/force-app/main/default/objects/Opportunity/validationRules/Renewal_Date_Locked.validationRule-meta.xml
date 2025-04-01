@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Date_Locked</fullName>
+    <active>false</active>
+    <description>Renewal date locked.
+07/05/2021 Deprecated upon request by Mandy.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+Allow_End_Date_Update__c = False,
+
+OR(
+AND(ISPICKVAL(Type,&quot;Existing Business-Upsell&quot;),
+ISCHANGED(End_date_contract__c)),
+AND(
+OR(
+ISCHANGED(End_date_contract__c),
+ISCHANGED(Startdate_contract__c)),
+ISPICKVAL(Type,&quot;Existing Business-Renewal&quot;))),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(
+OR(CONTAINS($Profile.Name,&quot;System Administrator&quot;), $Permission.Edit_Upsell_Renewal_End_date)
+))</errorConditionFormula>
+    <errorMessage>Renewal dates and upsell end dates are locked. Please contact Mandy for changes.</errorMessage>
+</ValidationRule>

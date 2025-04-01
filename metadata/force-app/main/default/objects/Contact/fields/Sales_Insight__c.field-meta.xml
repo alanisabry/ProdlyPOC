@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Insight__c</fullName>
+    <description>mkto wd fields</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK (&quot;/apex/Contact_Full_List?id=&quot; &amp; Id, IMAGE(&quot;https://www.marketo.com/salesforce/images/applicationLink.png&quot;,&quot;Sales Insight&quot;))</formula>
+    <label>Sales Insight</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Renewal_Opp_Product_creation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+NOT(CONTAINS($Profile.Name, &quot;System Administrator&quot;)),
+NOT(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+Allow_Product_Merge__c= FALSE,
+ISPICKVAL(Opportunity.Type,&quot;Existing Business-Renewal&quot;),
+ISNEW()
+)</errorConditionFormula>
+    <errorMessage>Cannot add products for Renewal Opportunity. Please use an upsell/downsell opportunity to make adjustments. For queries, contact Mandy Van Rijn.</errorMessage>
+</ValidationRule>

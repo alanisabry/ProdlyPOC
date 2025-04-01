@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Out_of_box_or_Customisation__c</fullName>
+    <description>Green: Okay
+Red: Check either &quot;Out of the box&quot; or &quot;Customisation Required&quot; fields</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+ISPICKVAL(Solutions_Required__c,&quot;Yes&quot;),
+NOT( 
+OR( 
+ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;), 
+ISPICKVAL(Sales_Office__c, &quot;San Mateo&quot;),
+ISPICKVAL(Sales_Office__c, &quot;San Carlos&quot;))),
+OR(AND(Out_of_the_box_Solution__c=FALSE,Customisation_Required__c=FALSE), 
+AND(Out_of_the_box_Solution__c=TRUE,Customisation_Required__c=TRUE)) 
+),
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;), 
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Green: Okay
+Red: Check either &quot;Out of the box&quot; or &quot;Customisation Required&quot; fields</inlineHelpText>
+    <label>Check - Out of the box or Customisation?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

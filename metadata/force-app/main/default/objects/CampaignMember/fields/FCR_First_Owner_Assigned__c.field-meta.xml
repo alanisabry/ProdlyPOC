@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_First_Owner_Assigned__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>wd field</description>
+    <inlineHelpText>First Owner (non-queue) assigned a response.</inlineHelpText>
+    <label>First Owner Assigned</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Response_First_Owned</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

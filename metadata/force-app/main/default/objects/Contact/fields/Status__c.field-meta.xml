@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales 1: Open</fullName>
+                <default>false</default>
+                <label>Sales 1: Open</label>
+            </value>
+            <value>
+                <fullName>Sales 2: Prospecting</fullName>
+                <default>false</default>
+                <label>Sales 2: Prospecting</label>
+            </value>
+            <value>
+                <fullName>Sales 3: Nurture</fullName>
+                <default>false</default>
+                <label>Sales 3: Nurture</label>
+            </value>
+            <value>
+                <fullName>Sales Qualified</fullName>
+                <default>false</default>
+                <label>Sales Qualified</label>
+            </value>
+            <value>
+                <fullName>Converted to Opp</fullName>
+                <default>false</default>
+                <label>Converted to Opp</label>
+            </value>
+            <value>
+                <fullName>Unqualified</fullName>
+                <default>false</default>
+                <label>Unqualified</label>
+            </value>
+            <value>
+                <fullName>Completed Cadence</fullName>
+                <default>false</default>
+                <label>Completed Cadence</label>
+            </value>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>Ex-Customer</fullName>
+                <default>false</default>
+                <label>Ex-Customer</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Email Bounced</fullName>
+                <default>false</default>
+                <label>Email Bounced</label>
+            </value>
+            <value>
+                <fullName>Active Onboarding</fullName>
+                <default>false</default>
+                <label>Active Onboarding</label>
+            </value>
+            <value>
+                <fullName>Active CS</fullName>
+                <default>false</default>
+                <label>Active CS</label>
+            </value>
+            <value>
+                <fullName>Sales Engaged</fullName>
+                <default>false</default>
+                <label>Sales Engaged</label>
+            </value>
+            <value>
+                <fullName>Marketing Engaged</fullName>
+                <default>false</default>
+                <label>Marketing Engaged</label>
+            </value>
+            <value>
+                <fullName>Upsell Prospecting</fullName>
+                <default>false</default>
+                <label>Upsell Prospecting</label>
+            </value>
+            <value>
+                <fullName>Active Opp</fullName>
+                <default>false</default>
+                <label>Active Opp</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>CS Qualified</fullName>
+                <default>false</default>
+                <label>CS Qualified</label>
+            </value>
+            <value>
+                <fullName>Marketing 1: Open</fullName>
+                <default>false</default>
+                <label>Marketing 1: Open</label>
+            </value>
+            <value>
+                <fullName>Marketing 2: Marketing Qualified</fullName>
+                <default>false</default>
+                <label>Marketing 2: Marketing Qualified</label>
+            </value>
+            <value>
+                <fullName>Left Company</fullName>
+                <default>false</default>
+                <label>Left Company</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

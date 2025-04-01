@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Date__c</fullName>
+    <description>The date/time at which the activity occurred on the community.</description>
+    <inlineHelpText>The date/time at which the activity occurred on the community.</inlineHelpText>
+    <label>Activity Date</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

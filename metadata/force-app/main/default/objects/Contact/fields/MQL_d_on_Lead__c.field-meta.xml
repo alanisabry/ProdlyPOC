@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MQL_d_on_Lead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-3653: Indicates if a lead is MQLd or not before converting to contact.</description>
+    <label>MQL’d on Lead</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

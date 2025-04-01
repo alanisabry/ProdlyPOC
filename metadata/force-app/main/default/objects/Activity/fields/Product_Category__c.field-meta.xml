@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Category__c</fullName>
+    <label>Product Category</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adobe Creative Connector</fullName>
+                <default>false</default>
+                <label>Adobe Creative Connector</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines</fullName>
+                <default>false</default>
+                <label>Brand Guidelines</label>
+            </value>
+            <value>
+                <fullName>CMS Connector</fullName>
+                <default>false</default>
+                <label>CMS Connector</label>
+            </value>
+            <value>
+                <fullName>Content Workflow</fullName>
+                <default>false</default>
+                <label>Content Workflow</label>
+            </value>
+            <value>
+                <fullName>DAM</fullName>
+                <default>false</default>
+                <label>DAM</label>
+            </value>
+            <value>
+                <fullName>Digital Brand Templates</fullName>
+                <default>false</default>
+                <label>Digital Brand Templates</label>
+            </value>
+            <value>
+                <fullName>Dynamic Asset Transformation</fullName>
+                <default>false</default>
+                <label>Dynamic Asset Transformation</label>
+            </value>
+            <value>
+                <fullName>Expansion Portal</fullName>
+                <default>false</default>
+                <label>Expansion Portal</label>
+            </value>
+            <value>
+                <fullName>Marketing Automation Connector</fullName>
+                <default>false</default>
+                <label>Marketing Automation Connector</label>
+            </value>
+            <value>
+                <fullName>PIM Connector</fullName>
+                <default>false</default>
+                <label>PIM Connector</label>
+            </value>
+            <value>
+                <fullName>Print Brand Templates</fullName>
+                <default>false</default>
+                <label>Print Brand Templates</label>
+            </value>
+            <value>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+                <label>Reporting</label>
+            </value>
+            <value>
+                <fullName>Sandbox</fullName>
+                <default>false</default>
+                <label>Sandbox</label>
+            </value>
+            <value>
+                <fullName>Studio</fullName>
+                <default>false</default>
+                <label>Studio</label>
+            </value>
+            <value>
+                <fullName>Other: Explain in Comments</fullName>
+                <default>false</default>
+                <label>Other: Explain in Comments</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

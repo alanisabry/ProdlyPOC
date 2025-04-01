@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Lead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Check this box for the Business Lead for this account. The Business Lead should be the contact that leads the project and you work with on the day-to-day operations.</inlineHelpText>
+    <label>Business Lead</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

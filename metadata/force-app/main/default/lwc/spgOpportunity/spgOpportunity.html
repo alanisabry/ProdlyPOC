@@ -1,0 +1,187 @@
+<!-- SPG Opportunity -->
+<template>
+    <!-- <lightning-quick-action-panel header="Single Pane of Glass"> -->
+        <div style="display: none">Keep this here for renderedCallback() support {recordId}</div>
+        <template if:true={hasModel}>
+            <lightning-tabset variant="scoped">
+                <lightning-tab label="Opportunity Detail">
+                    <lightning-card title="Opportunity" icon-name="standard:opportunity">
+                        <div class="slds-p-around_medium">
+                            <ul class="slds-has-dividers_bottom-space">
+                                <lightning-tile type="media">
+                                    <ul>
+                                        <li class="slds-item">
+                                            <lightning-record-form
+                                                object-api-name="Opportunity"
+                                                record-id={model.opportunityId}
+                                                fields={model.opportunityFields}
+                                                columns={model.opportunityColumns}
+                                            >
+                                            </lightning-record-form>
+                                        </li>
+                                    </ul>
+                                </lightning-tile>
+                            </ul>
+                        </div>
+                    </lightning-card>
+                    <template if:true={showSpiced}>
+                        <lightning-card title="Spiced" icon-name="standard:calibration">
+                            <div class="slds-p-around_medium">
+                                <ul class="slds-has-dividers_bottom-space">
+                                    <lightning-tile type="media">
+                                        <ul>
+                                            <li class="slds-item">
+                                                <lightning-record-form
+                                                    object-api-name="Opportunity"
+                                                    record-id={model.opportunityId}
+                                                    fields={model.spicedFields}
+                                                    columns={model.spicedColumns}
+                                                >
+                                                </lightning-record-form>
+                                            </li>
+                                        </ul>
+                                    </lightning-tile>
+                                </ul>
+                            </div>
+                        </lightning-card>
+                    </template>
+                    <template if:true={isNewBusiness}>
+                        <lightning-card title="Opportunity Team" icon-name="standard:team_member">
+                            <div class="slds-p-around_medium">
+                                <ul class="slds-has-dividers_bottom-space">
+                                    <lightning-tile type="media">
+                                        <ul>
+                                            <li class="slds-item">
+                                                    <lightning-record-form
+                                                    object-api-name="Opportunity"
+                                                    record-id={model.opportunityId}
+                                                    fields={model.newBusinessTeamFields}
+                                                    columns={model.oppTeamColumns}
+                                                ></lightning-record-form>
+                                            </li>
+                                        </ul>
+                                    </lightning-tile>
+                                </ul>
+                            </div>
+                        </lightning-card>
+                    </template>
+                    <lightning-card title="Account Details" icon-name="standard:account_info">
+                        <div class="slds-p-around_medium">
+                            <ul class="slds-has-dividers_bottom-space">
+                                <lightning-tile type="media">
+                                    <ul>
+                                        <li class="slds-item">
+                                            <lightning-record-form
+                                                object-api-name="Account"
+                                                record-id={model.accountId}
+                                                fields={model.accountFields}
+                                                columns={model.accountColumns}
+                                            ></lightning-record-form>
+                                        </li>
+                                    </ul>
+                                </lightning-tile>
+                            </ul>
+                        </div>
+                    </lightning-card>
+                    <template if:true={isNewBusiness}>
+                        <lightning-card title="Opportunity RFP Info" icon-name="standard:quotes">
+                            <div class="slds-p-around_medium">
+                                <ul class="slds-has-dividers_bottom-space">
+                                    <lightning-tile type="media">
+                                        <ul>
+                                            <li class="slds-item">
+                                                    <lightning-record-form
+                                                    object-api-name="Opportunity"
+                                                    record-id={model.opportunityId}
+                                                    fields={model.opportunityNewBusinessFields}
+                                                    columns={model.accountColumns}
+                                                ></lightning-record-form>
+                                            </li>
+                                        </ul>
+                                    </lightning-tile>
+                                </ul>
+                            </div>
+                        </lightning-card>
+                        <lightning-card title="Solutions Scope" icon-name="standard:solution">
+                            <div class="slds-p-around_medium">
+                                <ul class="slds-has-dividers_bottom-space">
+                                    <lightning-tile type="media">
+                                        <ul>
+                                            <li class="slds-item">
+                                                    <lightning-record-form
+                                                    object-api-name="Opportunity"
+                                                    record-id={model.opportunityId}
+                                                    fields={model.newBusinessSolutionsFields}
+                                                    columns={model.oppSolutionsColumns}
+                                                ></lightning-record-form>
+                                            </li>
+                                        </ul>
+                                    </lightning-tile>
+                                </ul>
+                            </div>
+                        </lightning-card>
+                    </template>                    
+                </lightning-tab>
+                <lightning-tab label="Competitor(s)">
+                    <c-object-info-list
+                        obj-api-name="Opportunity_Competitors__c"
+                        icon-name="standard:account"
+                        title="Competitors"
+                        objs={model.competitors}
+                        obj-fields={model.competitorFields}
+                        obj-columns={model.competitorColumns}
+                        add-label="Add Competitor"
+                        tab-header={label.competitorsHeader}
+                        parent-lookup-api-name="Opportunity__c"
+                        parent-record-id={model.opportunityId}
+                        onrecordsaved={handleRecordSaved}
+                    ></c-object-info-list>
+                </lightning-tab>
+                <!-- <lightning-tab label="Partners">
+                    <c-object-info-list
+                        obj-api-name="OpportunityPartner"
+                        icon-name="standard:account"
+                        title="Partners"
+                        objs={model.partners}
+                        obj-fields={model.partnerFields}
+                        obj-columns={model.partnerColumns}
+                        add-label="Add Partner"
+                        parent-lookup-api-name="OpportunityId"
+                        parent-record-id={model.opportunityId}
+                        onrecordsaved={handleRecordSaved}
+                    ></c-object-info-list>
+                </lightning-tab> -->
+                <lightning-tab label="Buying Committee">
+                    <c-object-info-list
+                        obj-api-name="OpportunityContactRole"
+                        icon-name="standard:contact"
+                        title="Contacts"
+                        objs={model.contactRoles}
+                        obj-fields={model.contactRoleFields}
+                        obj-columns={model.contactRoleColumns}
+                        add-label="Add Contact Role"
+                        tab-header={label.buyingCommitteeHeader}
+                        parent-lookup-api-name="OpportunityId"
+                        parent-record-id={model.opportunityId}
+                        onrecordsaved={handleRecordSaved}
+                    ></c-object-info-list>
+                </lightning-tab>
+                <lightning-tab label="Current Vendor">
+                    <c-object-info-list
+                        obj-api-name="Opportunity_Competitors__c"
+                        icon-name="standard:account"
+                        title="Current Vendors"
+                        objs={model.currentVendors}
+                        obj-fields={model.competitorFields}
+                        obj-columns={model.competitorColumns}
+                        add-label="Add Current Vendor"
+                        tab-header={label.currentVendorHeader}
+                        parent-lookup-api-name="Opportunity__c"
+                        parent-record-id={model.opportunityId}
+                        onrecordsaved={handleRecordSaved}
+                    ></c-object-info-list>
+                </lightning-tab>
+            </lightning-tabset>
+        </template>
+    <!-- </lightning-quick-action-panel> -->
+</template>

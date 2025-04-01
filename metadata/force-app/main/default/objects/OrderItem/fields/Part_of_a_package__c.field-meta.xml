@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Part_of_a_package__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-2684: Checkbox to represent if the Order Item is a package product or not. Filled by Order creation flow.</description>
+    <label>Part of a package?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

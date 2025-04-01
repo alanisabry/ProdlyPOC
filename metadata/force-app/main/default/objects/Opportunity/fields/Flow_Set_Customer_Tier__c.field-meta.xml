@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_Set_Customer_Tier__c</fullName>
+    <description>Used by flow to evaluate when customer stage should be set</description>
+    <formula>AND(
+	CloseDate &gt;= DATE(2019,8,27),
+NOT(OR(ISPICKVAL(Account.Customer_Stage__c, &quot;On Hold&quot;),
+ISPICKVAL(Account.Customer_Stage__c, &quot;Cancelling&quot;),ISPICKVAL(Account.Customer_Stage__c, &quot;Churned&quot;),
+ISPICKVAL(Account.Customer_Stage__c, &quot;Auto-Pilot&quot;)
+)
+),
+NOT(ISBLANK(Project_Sign_off_Date__c)),
+OR(
+AND(
+Today() &gt;= Project_Sign_off_Date__c +90,
+OR(ISPICKVAL(Account.Customer_Tier__c, &quot;Tier_3&quot;),
+ISPICKVAL(Account.Customer_Tier__c, &quot;Tier_4&quot;))),
+AND(
+Today() &gt;= Project_Sign_off_Date__c +180,
+OR(ISPICKVAL(Account.Customer_Tier__c, &quot;Tier_1&quot;),
+ISPICKVAL(Account.Customer_Tier__c, &quot;Tier_2&quot;)))),
+OR(
+ISPICKVAL(Type, &quot;New Business-Enterprise Cloud&quot;),
+ISPICKVAL(Type, &quot;New Business - Expansion Portal&quot;),
+ISPICKVAL(Type, &quot;Existing Business - Platform Transfer&quot;))
+)</formula>
+    <inlineHelpText>Used by flow to evaluate when customer stage should be set</inlineHelpText>
+    <label>Flow: Set Customer Stage</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

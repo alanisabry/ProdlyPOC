@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_BDR_as_account_owner</fullName>
+    <active>true</active>
+    <description>On update, BDR should not be selected as an account owner.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISCHANGED(OwnerId),
+Owner.Active_BDR__c
+)</errorConditionFormula>
+    <errorMessage>BDRs cannot be account owners. If you are Prospecting an Account as a BDR please put yourself as BDR Owner.</errorMessage>
+</ValidationRule>

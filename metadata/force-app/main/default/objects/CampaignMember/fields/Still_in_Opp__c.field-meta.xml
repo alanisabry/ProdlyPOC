@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Still_in_Opp__c</fullName>
+    <description>wd field</description>
+    <formula>CFCR_Current_Stage_in_Funnel__c = &quot;5. Opp&quot;</formula>
+    <inlineHelpText>Checked if Current Stage in Funnel is 5.Opp</inlineHelpText>
+    <label>Still in Opp</label>
+    <type>Checkbox</type>
+</CustomField>

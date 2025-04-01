@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ML_project_can_be_created__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is set by &quot;Create ML project&quot; button to enable project creation in Mavenlink through the process builder.</description>
+    <label>ML project can be created</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

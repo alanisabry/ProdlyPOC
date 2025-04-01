@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFP_Received_required_in_New_Biz</fullName>
+    <active>true</active>
+    <description>BODEV-2170: RFP Received? field should be filled by Demo stage for New Business except OEM.</description>
+    <errorConditionFormula>AND(
+  /* Exempt System/Admin profiels */
+  NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+
+  /* New Business except OEM */
+  ISPICKVAL(Type, &quot;New Business-Enterprise Cloud&quot;),
+  OEM__r.Name != &quot;Workfront&quot;,
+  OEM__r.Name != &quot;Acquia&quot;,
+
+
+  /* Stage moving to VOC or later without RFP Received? filled */
+  ISCHANGED(StageName),
+  OR(
+    ISPICKVAL(StageName, &quot;Demo&quot;),
+    ISPICKVAL(StageName, &quot;Proposal&quot;),
+    ISPICKVAL(StageName, &quot;VOC&quot;),
+    ISPICKVAL(StageName, &quot;Legal Review&quot;),
+    ISPICKVAL(StageName, &quot;Signature Stage&quot;),
+    ISPICKVAL(StageName, &quot;Closed Won&quot;)
+  ),
+  TEXT(RFP_received__c) = &quot;&quot;
+)</errorConditionFormula>
+    <errorMessage>Please specify &quot;RFP Received?&quot; field to move to Demo stage.</errorMessage>
+</ValidationRule>

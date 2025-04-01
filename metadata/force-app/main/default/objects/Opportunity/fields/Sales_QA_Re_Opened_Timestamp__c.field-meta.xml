@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_QA_Re_Opened_Timestamp__c</fullName>
+    <description>Date and time when the opportunity was rejected during the approval process.</description>
+    <inlineHelpText>Date and time when the opportunity was rejected during the approval process.</inlineHelpText>
+    <label>Sales QA Re-Opened - Timestamp</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

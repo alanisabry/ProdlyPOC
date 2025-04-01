@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Sort_Order_SD__c</fullName>
+    <description>Created this field for sorting the products on the template - SpotDraft</description>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(PricebookEntry.Product2.Product_Type__c, &apos;Users &amp; Storage&apos;),1,
+IF( ISPICKVAL(PricebookEntry.Product2.Product_Type__c, &apos;Core &amp; Modules&apos;),2,
+IF( ISPICKVAL(PricebookEntry.Product2.Product_Type__c, &apos;Integrations&apos;),3,
+IF( ISPICKVAL(PricebookEntry.Product2.Product_Type__c, &apos;Success Package&apos;),4,
+IF( ISPICKVAL(PricebookEntry.Product2.Product_Type__c, &apos;Contract&apos;),5,
+IF( ISPICKVAL(PricebookEntry.Product2.Product_Type__c, &apos;Standalone&apos;),6,
+IF( ISPICKVAL(PricebookEntry.Product2.Product_Type__c, &apos;Professional Service&apos;),7,
+IF( ISPICKVAL(PricebookEntry.Product2.Product_Type__c, &apos;Add-ons&apos;),8,9))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SpotDraft Product Sort Order</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

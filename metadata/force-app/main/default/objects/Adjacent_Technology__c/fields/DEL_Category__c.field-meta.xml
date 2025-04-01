@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DEL_Category__c</fullName>
+    <label>[DEL] Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Content Delivery Networks</fullName>
+                <default>false</default>
+                <label>Content Delivery Networks</label>
+            </value>
+            <value>
+                <fullName>Content Management Solution</fullName>
+                <default>false</default>
+                <label>Content Management Solution</label>
+            </value>
+            <value>
+                <fullName>Content Operations</fullName>
+                <default>false</default>
+                <label>Content Operations</label>
+            </value>
+            <value>
+                <fullName>Customer Relationship Management</fullName>
+                <default>false</default>
+                <label>Customer Relationship Management</label>
+            </value>
+            <value>
+                <fullName>Design / Collaboration / Mark-Up Tools</fullName>
+                <default>false</default>
+                <label>Design / Collaboration / Mark-Up Tools</label>
+            </value>
+            <value>
+                <fullName>Digital Rights Management</fullName>
+                <default>false</default>
+                <label>Digital Rights Management</label>
+            </value>
+            <value>
+                <fullName>E-Commerce</fullName>
+                <default>false</default>
+                <label>E-Commerce</label>
+            </value>
+            <value>
+                <fullName>Email Marketing</fullName>
+                <default>false</default>
+                <label>Email Marketing</label>
+            </value>
+            <value>
+                <fullName>Learning Management System</fullName>
+                <default>false</default>
+                <label>Learning Management System</label>
+            </value>
+            <value>
+                <fullName>Marketing Automation</fullName>
+                <default>false</default>
+                <label>Marketing Automation</label>
+            </value>
+            <value>
+                <fullName>Product Information Management</fullName>
+                <default>false</default>
+                <label>Product Information Management</label>
+            </value>
+            <value>
+                <fullName>Project Management</fullName>
+                <default>false</default>
+                <label>Project Management</label>
+            </value>
+            <value>
+                <fullName>Sales enablement</fullName>
+                <default>false</default>
+                <label>Sales enablement</label>
+            </value>
+            <value>
+                <fullName>Social Media Management Tools</fullName>
+                <default>false</default>
+                <label>Social Media Management Tools</label>
+            </value>
+            <value>
+                <fullName>Stock images / Stock Vendor</fullName>
+                <default>false</default>
+                <label>Stock images / Stock Vendor</label>
+            </value>
+            <value>
+                <fullName>Storage Tools</fullName>
+                <default>false</default>
+                <label>Storage Tools</label>
+            </value>
+            <value>
+                <fullName>Video</fullName>
+                <default>false</default>
+                <label>Video</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

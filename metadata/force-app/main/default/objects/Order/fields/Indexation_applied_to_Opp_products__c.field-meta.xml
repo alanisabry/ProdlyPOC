@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indexation_applied_to_Opp_products__c</fullName>
+    <description>Used to indicate if the indexation on the order is already applied to opportunity products or waived at opportunity level.</description>
+    <formula>IF(TEXT(Opportunity.Type) = &apos;Existing Business-Renewal&apos; &amp;&amp;
+   (Opportunity.Upcoming_Indexation_amount__c !=0 || TEXT(Opportunity.Waive_Indexation__c)= &quot;First Year&quot;) 
+    &amp;&amp;
+     EffectiveDate &lt; IF(
+                        AND(
+                            MONTH(Opportunity.Startdate_contract__c) = 2,
+                            DAY(Opportunity.Startdate_contract__c) = 29
+                            ),
+                        DATE( YEAR(Opportunity.Startdate_contract__c) + 1, 3, 1),
+                        DATE( YEAR(Opportunity.Startdate_contract__c) + 1, 
+                              MONTH(Opportunity.Startdate_contract__c), 
+                              DAY(Opportunity.Startdate_contract__c))
+                        ),
+  true,
+  false  
+ )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Indexation added to Opp products/waived?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

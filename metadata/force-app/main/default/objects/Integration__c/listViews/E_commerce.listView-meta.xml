@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E_commerce</fullName>
+    <columns>NAME</columns>
+    <columns>Category__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Category__c</field>
+        <operation>equals</operation>
+        <value>E-Commerce</value>
+    </filters>
+    <label>E-commerce</label>
+</ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Inquiry_Target__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>wd field
+Has responded to a Marketing Campaign, or is a Sales Target</description>
+    <label>Inquiry</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Focus_Partner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-4335 DoA Refinement - Build: Partner Attributes</description>
+    <inlineHelpText>Focus partners are identified by Partner Managers.</inlineHelpText>
+    <label>Focus Partner</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

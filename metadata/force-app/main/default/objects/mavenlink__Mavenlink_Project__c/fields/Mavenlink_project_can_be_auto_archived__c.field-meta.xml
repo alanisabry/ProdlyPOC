@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mavenlink_project_can_be_auto_archived__c</fullName>
+    <description>BODEV-569: returns True when Project Sign-off date is more than 12 months ago and the project is completed.</description>
+    <formula>IF(
+AND(TEXT(mavenlink__Status__c) = &quot;Completed&quot;,  PROJECT_SIGN_OFF_DATE__c + 365 &lt; TODAY()), 
+True, False)</formula>
+    <label>Mavenlink project can be auto-archived?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

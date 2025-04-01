@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_delay__c</fullName>
+    <label>Reason for delay</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PS Import</fullName>
+                <default>false</default>
+                <label>PS Import</label>
+            </value>
+            <value>
+                <fullName>PS Theme</fullName>
+                <default>false</default>
+                <label>PS Theme</label>
+            </value>
+            <value>
+                <fullName>PS SSO</fullName>
+                <default>false</default>
+                <label>PS SSO</label>
+            </value>
+            <value>
+                <fullName>Ps Other</fullName>
+                <default>false</default>
+                <label>Ps Other</label>
+            </value>
+            <value>
+                <fullName>Custom Development</fullName>
+                <default>false</default>
+                <label>Custom Development</label>
+            </value>
+            <value>
+                <fullName>Client commitment</fullName>
+                <default>false</default>
+                <label>Client commitment</label>
+            </value>
+            <value>
+                <fullName>Client commitment - Waiting for input</fullName>
+                <default>false</default>
+                <label>Client commitment - Waiting for input</label>
+            </value>
+            <value>
+                <fullName>Client commitment - Waiting for sign off</fullName>
+                <default>false</default>
+                <label>Client commitment - Waiting for sign off</label>
+            </value>
+            <value>
+                <fullName>Client’s decision</fullName>
+                <default>false</default>
+                <label>Client’s decision</label>
+            </value>
+            <value>
+                <fullName>Project on hold</fullName>
+                <default>false</default>
+                <label>Project on hold</label>
+            </value>
+            <value>
+                <fullName>Unclear expectations</fullName>
+                <default>false</default>
+                <label>Unclear expectations</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

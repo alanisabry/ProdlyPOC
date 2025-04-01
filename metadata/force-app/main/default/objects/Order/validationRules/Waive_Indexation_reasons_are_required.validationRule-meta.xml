@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Waive_Indexation_reasons_are_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(Waive_Indexation__c) = &quot;Yes&quot; &amp;&amp; ( ISPICKVAL(Waive_Indexation_Reason__c,&quot;&quot;) ||  ISNULL(Waive_Indexation_Reason_Detail__c))</errorConditionFormula>
+    <errorMessage>Waive Indexation Reason and Detail are required to waive indexation on the order.</errorMessage>
+</ValidationRule>

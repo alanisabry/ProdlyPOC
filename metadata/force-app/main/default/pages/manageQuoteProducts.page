@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-10-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page standardController="Quote" lightningStylesheets="true">
+    <head>
+        <apex:slds />
+    </head>
+    <apex:includeLightning />
+    <div id="lightning" />
+    <script>
+        $Lightning.use('c:manageOpportunityProductsApp', function() {
+            $Lightning.createComponent('c:manageQuoteProducts',
+                { recordId: '{!$CurrentPage.parameters.id}' },
+                'lightning',
+                function(cmp) {}
+            );
+        });
+    </script>
+</apex:page>

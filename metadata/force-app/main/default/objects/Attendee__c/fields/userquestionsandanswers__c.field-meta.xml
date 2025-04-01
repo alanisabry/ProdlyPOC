@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>userquestionsandanswers__c</fullName>
+    <description>This tag lists the questions asked by the user and answers from presenters</description>
+    <label>userquestionsandanswers</label>
+    <length>3600</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

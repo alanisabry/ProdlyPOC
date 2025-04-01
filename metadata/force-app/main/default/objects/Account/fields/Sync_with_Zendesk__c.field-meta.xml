@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sync_with_Zendesk__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>System field to trigger bulk sync with Zendesk (required for the new integration)</description>
+    <label>Sync with Zendesk</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Closed_RecordType_Opportunities</fullName>
+    <active>true</active>
+    <description>Opportunities are locked once the Status is set to &apos;Closed Won&apos; or &apos;Closed Lost&apos;. Changes can be made by the Operations and Finance teams only.</description>
+    <errorConditionFormula>AND( 
+OR(AND(RecordType.DeveloperName = &quot;Closed&quot;,NOT(ISCHANGED(RecordTypeId))),TEXT(PRIORVALUE(StageName)) = &quot;Closed Won&quot;,TEXT(PRIORVALUE(StageName)) = &quot;Closed Lost&quot;),
+NOT(LastModifiedDate&gt;Now()-0.00007),
+NOT(OR($Profile.Name=&quot;System Administrator&quot;, $Permission.Open_Closed_Opportunities)),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(ISCHANGED(number_of_draft_Orders__c)),
+NOT(ISCHANGED(of_Activated_Orders__c )),
+OR(
+ISCHANGED(CloseDate),
+ISCHANGED(StageName),
+ISCHANGED(CurrencyIsoCode),
+ISCHANGED(ForecastCategoryName),
+ISCHANGED(Approval_Status__c),
+AND(
+ISCHANGED(Name),
+NOT(CONTAINS($Profile.Name, &quot;Finance&quot;)))))</errorConditionFormula>
+    <errorMessage>Only Operations can edit opportunities in stage &quot;Closed Won/Lost&quot;. Please contact one of them to make changes.</errorMessage>
+</ValidationRule>

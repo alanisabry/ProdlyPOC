@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Plan__c</fullName>
+    <label>Support Plan</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Basic</fullName>
+                <default>false</default>
+                <label>Basic</label>
+            </value>
+            <value>
+                <fullName>Bronze</fullName>
+                <default>false</default>
+                <label>Bronze</label>
+            </value>
+            <value>
+                <fullName>Custom SLA</fullName>
+                <default>false</default>
+                <label>Custom SLA</label>
+            </value>
+            <value>
+                <fullName>Diamond</fullName>
+                <default>false</default>
+                <label>Diamond</label>
+            </value>
+            <value>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+                <label>Enterprise</label>
+            </value>
+            <value>
+                <fullName>Gold</fullName>
+                <default>false</default>
+                <label>Gold</label>
+            </value>
+            <value>
+                <fullName>Platinum</fullName>
+                <default>false</default>
+                <label>Platinum</label>
+            </value>
+            <value>
+                <fullName>Plus</fullName>
+                <default>false</default>
+                <label>Plus</label>
+            </value>
+            <value>
+                <fullName>Premier</fullName>
+                <default>false</default>
+                <label>Premier</label>
+            </value>
+            <value>
+                <fullName>Silver</fullName>
+                <default>false</default>
+                <label>Silver</label>
+            </value>
+            <value>
+                <fullName>Starter</fullName>
+                <default>false</default>
+                <label>Starter</label>
+            </value>
+            <value>
+                <fullName>Standard Success Package</fullName>
+                <default>false</default>
+                <label>Standard Success Package</label>
+            </value>
+            <value>
+                <fullName>Plus Success Package</fullName>
+                <default>false</default>
+                <label>Plus Success Package</label>
+            </value>
+            <value>
+                <fullName>Enterprise Success Package</fullName>
+                <default>false</default>
+                <label>Enterprise Success Package</label>
+            </value>
+            <value>
+                <fullName>Premier Success Package</fullName>
+                <default>false</default>
+                <label>Premier Success Package</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

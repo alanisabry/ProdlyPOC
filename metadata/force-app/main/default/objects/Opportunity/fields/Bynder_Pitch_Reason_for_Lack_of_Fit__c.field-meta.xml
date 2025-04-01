@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bynder_Pitch_Reason_for_Lack_of_Fit__c</fullName>
+    <description>Details of why Bynder Pitch didn&apos;t succeed.</description>
+    <label>Bynder Pitch - Reason for Lack of Fit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DAM Features</fullName>
+                <default>false</default>
+                <label>DAM Features</label>
+            </value>
+            <value>
+                <fullName>Folders</fullName>
+                <default>false</default>
+                <label>Folders</label>
+            </value>
+            <value>
+                <fullName>Guidelines Features</fullName>
+                <default>false</default>
+                <label>Guidelines Features</label>
+            </value>
+            <value>
+                <fullName>Integrations</fullName>
+                <default>false</default>
+                <label>Integrations</label>
+            </value>
+            <value>
+                <fullName>Metadata Templates*</fullName>
+                <default>false</default>
+                <label>Metadata Templates*</label>
+            </value>
+            <value>
+                <fullName>Multi-brand</fullName>
+                <default>false</default>
+                <label>Multi-brand</label>
+            </value>
+            <value>
+                <fullName>Multi-theme</fullName>
+                <default>false</default>
+                <label>Multi-theme</label>
+            </value>
+            <value>
+                <fullName>Workflow Features</fullName>
+                <default>false</default>
+                <label>Workflow Features</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Committed to Competitor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Committed to Competitor</label>
+            </value>
+            <value>
+                <fullName>Homegrown Tool</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Homegrown Tool</label>
+            </value>
+            <value>
+                <fullName>Lack of Features</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lack of Features</label>
+            </value>
+            <value>
+                <fullName>Merger</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Merger</label>
+            </value>
+            <value>
+                <fullName>Webdam/Bynder Feature Parity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webdam/Bynder Feature Parity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

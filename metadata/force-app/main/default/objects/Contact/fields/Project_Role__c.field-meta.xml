@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Role__c</fullName>
+    <inlineHelpText>Answer on Queston: What is your current role in this project?</inlineHelpText>
+    <label>Project Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Decision maker</fullName>
+                <default>false</default>
+                <label>Decision maker</label>
+            </value>
+            <value>
+                <fullName>Project Manager</fullName>
+                <default>false</default>
+                <label>Project Manager</label>
+            </value>
+            <value>
+                <fullName>End user</fullName>
+                <default>false</default>
+                <label>End user</label>
+            </value>
+            <value>
+                <fullName>Consultant/Advisor</fullName>
+                <default>false</default>
+                <label>Consultant/Advisor</label>
+            </value>
+            <value>
+                <fullName>Procurement/Buyer</fullName>
+                <default>false</default>
+                <label>Procurement/Buyer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

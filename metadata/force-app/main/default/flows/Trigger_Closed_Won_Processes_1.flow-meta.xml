@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Create_Renewal_and_Orders</name>
+        <label>Create Renewal and Orders</label>
+        <locationX>374</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>FALSE_Create Renewal and Orders</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_Create_Renewal_and_Orders</name>
+            <conditionLogic>(1 OR 5) AND 4 AND (2 OR 3) AND 6</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Closed_Won_Finance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sales_Order_Generated__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Products_Renewed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referral</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.current_user__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>0050P000007hH92</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Renewal_and_Orders</targetReference>
+            </connector>
+            <label>TRUE_Create Renewal and Orders</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the Trigger Closed Won Processes process using multiple criteria.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>UpdateAccountPlatform</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.Platform__c} == &apos;Webdam&apos;,&apos;0120P000000NGm5&apos;,&apos;0120P000000arv6&apos;)</expression>
+    </formulas>
+    <formulas>
+        <description>Approval Finalized Date (GMT)</description>
+        <name>UpdateLatestDOADate</name>
+        <dataType>Date</dataType>
+        <expression>/* BODEV-753 populate date in GMT */
+
+DATE(
+  VALUE( MID( TEXT(NOW()), 1, 4)),
+  VALUE( MID( TEXT(NOW()), 6, 2)),
+  VALUE( MID( TEXT(NOW()), 9, 2))
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Approval Finalized Time</description>
+        <name>UpdateLatestDOATime</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <name>UpdateStagePriorToClosingField</name>
+        <dataType>String</dataType>
+        <expression>PRIORVALUE({!$Record.StageName} )</expression>
+    </formulas>
+    <interviewLabel>Trigger Closed Won Processes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Trigger Closed Won Processes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Create_Renewal_Order</name>
+            <connector>
+                <targetReference>Create_Renewal_and_Orders</targetReference>
+            </connector>
+            <label>Create Renewal and Orders Path</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <recordField>LastModifiedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <subflows>
+        <name>Renewal_and_Orders</name>
+        <label>Renewal and Orders</label>
+        <locationX>242</locationX>
+        <locationY>384</locationY>
+        <flowName>Opportunity_ALF_Invoked_Renewals_Order_Upsell_to_Renewal</flowName>
+        <inputAssignments>
+            <name>varOpportunityRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

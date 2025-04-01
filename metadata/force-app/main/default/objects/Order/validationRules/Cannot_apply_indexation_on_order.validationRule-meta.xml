@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_apply_indexation_on_order</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Apply_Indexation__c) &amp;&amp;
+Apply_Indexation__c &amp;&amp;
+(Indexation__c =&quot;Not Applicable&quot; || Indexation__c =&quot;Waived On Account&quot;)</errorConditionFormula>
+    <errorMessage>Indexation cannot be applied on this order.</errorMessage>
+</ValidationRule>

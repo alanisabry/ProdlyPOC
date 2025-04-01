@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CFCR_Industry_Formula__c</fullName>
+    <description>wd field
+Displays Industry of related lead or Account.</description>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISBLANK(ContactId)), text( Contact.Account.Industry),
+text(Lead.Industry))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Displays Industry of related lead or Account.</inlineHelpText>
+    <label>Industry Formula</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

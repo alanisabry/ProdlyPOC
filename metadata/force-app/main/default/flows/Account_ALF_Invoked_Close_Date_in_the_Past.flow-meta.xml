@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Add_Updated_Opps_to_Collection</name>
+        <label>Assign - Add Updated Opps to Collection</label>
+        <locationX>576</locationX>
+        <locationY>557</locationY>
+        <assignmentItems>
+            <assignToReference>varUpdateOppsCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Opportunities_to_Update</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Opportunities_to_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_New_Opp_values</name>
+        <label>Assign - New Opp values</label>
+        <locationX>413</locationX>
+        <locationY>557</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Opportunities_to_Update.Close_Date_in_the_past__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Add_Updated_Opps_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Decision_Opportunities_Found</name>
+        <label>Decision - Opportunities Found?</label>
+        <locationX>168</locationX>
+        <locationY>339</locationY>
+        <defaultConnectorLabel>Skip Process</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Opportunities_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunities</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Opportunities_to_Update</targetReference>
+            </connector>
+            <label>Yes - Opportunities Found</label>
+        </rules>
+    </decisions>
+    <description>Collects opportunities to check the &quot;Close date in the past&quot; boolean. Launched via the Account [ASF] Handler flow.</description>
+    <interviewLabel>Account [ALF] Invoked: {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account [ALF] Invoked: Close Date in the Past</label>
+    <loops>
+        <name>Loop_Opportunities_to_Update</name>
+        <label>Loop - Opportunities to Update</label>
+        <locationX>421</locationX>
+        <locationY>346</locationY>
+        <collectionReference>Get_Opportunities</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_New_Opp_values</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Opportunities</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Opportunities</name>
+        <label>Get - Opportunities</label>
+        <locationX>176</locationX>
+        <locationY>192</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_Opportunities_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varAccountRecord.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CloseDate</field>
+            <operator>LessThan</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business-Renewal</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opportunities</name>
+        <label>Update - Opportunities</label>
+        <locationX>673</locationX>
+        <locationY>347</locationY>
+        <inputReference>varUpdateOppsCollection</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Opportunities</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>varAccountRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>varUpdateOppsCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

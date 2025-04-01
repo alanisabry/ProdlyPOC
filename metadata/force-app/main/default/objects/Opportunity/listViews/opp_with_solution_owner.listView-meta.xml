@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>opp_with_solution_owner</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Solution_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>notEqual</operation>
+        <value>Existing Business-Renewal</value>
+    </filters>
+    <filters>
+        <field>Solution_Owner__c</field>
+        <operation>equals</operation>
+        <value>Adam Pinkham</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Closed Lost - No Decision,Closed Lost - Competitor</value>
+    </filters>
+    <label>opp with solution owner</label>
+</ListView>

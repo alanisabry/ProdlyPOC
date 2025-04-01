@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indexation_Last_Date__c</fullName>
+    <description>The last date of the month for which this indexation rate applies to.</description>
+    <formula>DATE(Year(Indexation_First_Date__c),MONTH(Indexation_First_Date__c),
+CASE(VALUE(RIGHT(Year_and_Month__c,2)),
+9,30,
+4,30,
+6,30,
+11,30,
+2,IF(MOD(VALUE(LEFT(Year_and_Month__c,4)),4)=0,29,28),
+31)
+)</formula>
+    <inlineHelpText>The last date of the month for which this indexation rate applies to.</inlineHelpText>
+    <label>Indexation Last Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

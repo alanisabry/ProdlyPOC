@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_partner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Partnership where they bring us in the loop when projects arise. Bynder does sales trajectory and partner gets kick back fee</inlineHelpText>
+    <label>Referral partner</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

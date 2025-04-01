@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Order_Form_Id__c</fullName>
+    <description>CONGA USE - Hidden field that determines the ID of the correct Conga Template for Order Form based on Region.</description>
+    <externalId>false</externalId>
+    <formula>CASE( Account.Subsidiary_lookup__r.Name,
+  &quot;Bynder B.V.&quot;, &quot;a463g000001MpahAAC&quot;,
+  &quot;Bynder LLC&quot;, &quot;a463g000001MpamAAC&quot;,
+  &quot;Bynder Ltd.&quot;, &quot;a463g000001MpaiAAC&quot;,
+  &quot;Bynder Pty Ltd&quot;, &quot;a463g000001MpanAAC&quot;,
+  CASE(Sales_Office__c,
+  &quot;San Mateo&quot;, &quot;a463g000001MpamAAC&quot;,
+  &quot;San Carlos&quot;, &quot;a463g000001MpamAAC&quot;,
+  &quot;Boston&quot;, &quot;a463g000001MpamAAC&quot;,
+  &quot;Amsterdam&quot;, &quot;a463g000001MpahAAC&quot;,
+  &quot;London&quot;, &quot;a463g000001MpaiAAC&quot;,
+  &quot;Melbourne&quot;, &quot;a463g000001MpanAAC&quot;,
+NULL
+ )
+)</formula>
+    <label>Conga Order Form Id</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

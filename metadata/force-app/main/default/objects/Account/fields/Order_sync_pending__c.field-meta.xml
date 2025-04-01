@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_sync_pending__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-1813: Only One Activated Order Per Opp Pending</description>
+    <label>Order sync pending</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

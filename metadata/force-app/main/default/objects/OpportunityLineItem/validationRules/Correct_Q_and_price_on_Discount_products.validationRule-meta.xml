@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Correct_Q_and_price_on_Discount_products</fullName>
+    <active>true</active>
+    <description>Quantity in discount products should always be 1 and the sales price should always be negative</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;System Administrator&quot;),
+OR(
+Product2.Product_ID_18_digits__c = &apos;01t0P000002EGGlQAO&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t0P0000059vroQAA&apos;),
+OR(
+AND(
+Quantity&lt;&gt;1,
+Quantity&lt;&gt;-1),
+Sales_Price_ARR__c&gt;=0,
+Discount&lt;&gt;0)
+)</errorConditionFormula>
+    <errorMessage>Quantity has to be 1,Sales Price has to be negative and discount (percentage) should be 0</errorMessage>
+</ValidationRule>

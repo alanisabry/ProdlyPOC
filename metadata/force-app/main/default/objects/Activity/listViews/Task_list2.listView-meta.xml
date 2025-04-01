@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_list2</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+    <columns>TASK.SUBJECT</columns>
+    <columns>TASK.WHO_NAME</columns>
+    <columns>TASK.WHAT_NAME</columns>
+    <columns>TASK.DUE_DATE</columns>
+    <columns>TASK.STATUS</columns>
+    <columns>BDR_old__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TASK.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>startsWith</operation>
+        <value>Hy</value>
+    </filters>
+    <filters>
+        <field>TASK.STATUS</field>
+        <operation>equals</operation>
+        <value>Not Started,In Progress,Waiting on someone else,Deferred</value>
+    </filters>
+    <filters>
+        <field>BDR_old__c</field>
+        <operation>notEqual</operation>
+        <value>Gautier Roy</value>
+    </filters>
+    <filters>
+        <field>BDR_old__c</field>
+        <operation>notEqual</operation>
+        <value>Floris van Nieuwland</value>
+    </filters>
+    <filters>
+        <field>BDR_old__c</field>
+        <operation>notEqual</operation>
+        <value>Serena Vlieger</value>
+    </filters>
+    <label>Hylke - Task list</label>
+</ListView>

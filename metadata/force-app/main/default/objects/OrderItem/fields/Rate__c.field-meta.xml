@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rate__c</fullName>
+    <description>Total contract price. Mapped to field &apos;Rate&apos; in Netsuite.</description>
+    <formula>IF(  For_Contract_Renewals__c= FALSE,UnitPrice*(1-Discount__c), UnitPrice*Order.Netsuite_Term__c*(1-Discount__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total contract price. Mapped to field &apos;Rate&apos; in Netsuite.</inlineHelpText>
+    <label>Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

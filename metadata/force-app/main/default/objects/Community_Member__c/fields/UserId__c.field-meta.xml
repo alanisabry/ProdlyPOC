@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserId__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>The User ID is the unique identifier for an inSided User account.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>The User ID is the unique identifier for an inSided User account.</inlineHelpText>
+    <label>UserId</label>
+    <length>128</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_cc_email__c</fullName>
+    <description>Used in addition to the Bill to Contact Email address.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used in addition to the Bill to Contact Email address.</inlineHelpText>
+    <label>Billing cc email</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

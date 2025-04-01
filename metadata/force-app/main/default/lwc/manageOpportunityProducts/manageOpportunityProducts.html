@@ -1,0 +1,536 @@
+<template>
+<div class="container">
+<lightning-spinner if:true={showSpinner} size="medium" alternative-text="Loading"></lightning-spinner>
+<c-fw-toast></c-fw-toast>
+<template lwc:if={invokePricingFlow}>
+    <lightning-flow 
+        flow-api-name='Calculate_Price_Screen_Flow'
+        flow-input-variables={inputVariables}
+        onstatuschange={handleStatusChange}
+    >
+    </lightning-flow>
+</template>
+<!-- Page Contents require a record -->
+<template if:true={initialized}>
+
+<!-- Header Bar -->
+<div class="bPageTitle">
+    <div class="ptBody secondaryPalette brandSecondaryBrd">
+        <div class="content">
+            <lightning-icon
+                class="pageTitleIcon"
+                icon-name="standard:opportunity"
+                alternative-text="Opportunity"
+                title="Opportunity"
+            ></lightning-icon>
+            <h1 class="pageType">Manage Products</h1><span class="titleSeparatingColon">:</span>
+            <h2 class="pageDescription">{record.Name}</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Top-Level Info -->
+<div class="pricebookInfo">
+    <p>
+        <label>Pricebook:</label>
+        <span>{record.Pricebook2.Name}</span>
+    </p>
+    <p if:true={multipleCurrencies}>
+        <label>Currency:</label>
+        <span>{record.CurrencyIsoCode}</span>
+    </p>
+</div>
+<template  lwc:if={disableSave}>
+    <div class="slds-box slds-theme_shade slds-theme_alert-texture slds-align_absolute-center">
+        <lightning-icon
+                class="pageTitleIcon"
+                icon-name="utility:info"
+                alternative-text="Info"
+                title="Info"
+            ></lightning-icon>
+        <p>Pricing for one or more products has to be recalculated, <Strong>click on 'Calculate Prices' before saving.</Strong></p>
+    </div>
+</template>
+
+<!-- Selected Products -->
+<article class="slds-card marker__select-products">
+    <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">Selected {productInfo.labelPlural}</h2>
+            </div>
+            <div class="slds-no-flex">
+                <lightning-button label="Calculate Prices" title="Calculate Prices" lwc:if={showEnterpriseTab} disabled={disableCalculatePrices} onclick={calculatePricesClick}></lightning-button> &nbsp;
+                <lightning-button label="Save" title="Save" class="slds-m-right_x-small" disabled={disableSave} onclick={saveClick}></lightning-button>
+                <lightning-button label="Cancel" title="Cancel" onclick={cancelClick}></lightning-button>
+               
+            </div>
+        </header>
+    </div>
+    <div class="slds-card__body pbBody cart-body">
+        <lightning-spinner if:true={loadingCart} size="medium" alternative-text="Loading"></lightning-spinner>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col"></th>
+                    <th class="long-cell" scope="col">
+                        <div class="slds-truncate" title={productInfo.label}>{productInfo.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={oppLineItemInfo.fields.Default_Price_ARR__c.label}>{oppLineItemInfo.fields.Default_Price_ARR__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={oppLineItemInfo.fields.Quantity.label}>{oppLineItemInfo.fields.Quantity.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={oppLineItemInfo.fields.Sales_Price_ARR__c.label}>{oppLineItemInfo.fields.Sales_Price_ARR__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={oppLineItemInfo.fields.Recurring_Discount__c.label}>{oppLineItemInfo.fields.Recurring_Discount__c.label}</div>
+                    </th>
+                    <th class="long-cell" scope="col">
+                        <div class="slds-truncate" title={oppLineItemInfo.fields.Description.label}>{oppLineItemInfo.fields.Description.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={oppLineItemInfo.fields.Part_of_a_package__c.label}>{oppLineItemInfo.fields.Part_of_a_package__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={oppLineItemInfo.fields.Part_of_Min_Commit__c.label}>{oppLineItemInfo.fields.Part_of_Min_Commit__c.label}</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody if:false={loadingCart}>
+                <tr if:true={noLineItems}>
+                    <td colspan="8" class="zero-state">
+                        There are currently no line items on this Opportunity. You can search and add products from the list below.
+                    </td>
+                </tr>
+                <tr for:each={shoppingCart} for:item="lineItem" key={lineItem.index} class={lineItem.classes}>
+                    <td>
+                        <!-- Existing item -->
+                        <span lwc:if={lineItem.Id}>
+                            <a href="javascript:void(0);" if:false={lineItem.isDeleted} data-index={lineItem.index} title="Remove" onclick={removeClick}>Remove</a>
+                            <a href="javascript:void(0);" if:true={lineItem.isDeleted} data-index={lineItem.index} title="Undo Remove" onclick={undoRemoveClick}>Undo</a>
+                        </span>
+
+                        <!-- New item -->
+                            <span lwc:else>
+                        <a href="javascript:void(0);"  data-index={lineItem.index} title="Delete" onclick={removeClick}>Delete</a>
+                    </span>
+                    &nbsp;&nbsp;
+                    <span>
+                    <a href="javascript:void(0);" if:true={lineItem.hasAddOn}  data-index={lineItem.index} title="Configure" onclick={handleClick}>Configure</a>
+                </span>
+                    </td>
+                    <td data-label={productInfo.label}>
+                        <div class="slds-truncate wrapped">{lineItem.PricebookEntry.Product2.Product_Name__c}</div>
+                    </td>
+                    <td data-label={oppLineItemInfo.fields.Default_Price_ARR__c.label}>
+                        <div class="slds-truncate">
+                            <p>
+                                <lightning-formatted-number
+                                    value={lineItem.form.Default_Price_ARR__c}
+                                    format-style="currency"
+                                    currency-code={record.CurrencyIsoCode}
+                                    currency-display-as="code"
+                                ></lightning-formatted-number>
+                            </p>
+                            <p if:false={isDefaultCurrency}>
+                                (<lightning-formatted-number
+                                    value={lineItem.ConvertedDefaultPriceARR}
+                                    format-style="currency"
+                                    currency-code={defaultCurrency}
+                                    currency-display-as="code"
+                                ></lightning-formatted-number>)
+                            </p>
+                        </div>
+                    </td>
+                    <td data-label={oppLineItemInfo.fields.Quantity.label}>
+                        <lightning-input
+                            type="number"
+                            name="Quantity"
+                            data-index={lineItem.index}
+                            value={lineItem.form.Quantity}
+                            label=""
+                            variant="label-hidden"
+                            step="0.001"
+                            disabled={lineItem.isDeleted}
+                            onblur={onFieldBlur}
+                            onchange={onQuantityChange}
+                            required
+                        ></lightning-input>
+                    </td>
+                    <td data-label={oppLineItemInfo.fields.Sales_Price_ARR__c.label}>
+                        <lightning-input
+                            type="number"
+                            name="Sales_Price_ARR__c"
+                            data-index={lineItem.index}
+                            value={lineItem.form.Sales_Price_ARR__c}
+                            label=""
+                            variant="label-hidden"
+                            step="0.00000001"
+                            disabled={lineItem.isDeleted}
+                            onblur={onFieldBlur}
+                            onchange={onSalesPriceChange}
+                            required
+                        ></lightning-input>
+                    </td>
+                    <td data-label={oppLineItemInfo.fields.Recurring_Discount__c.label} >                     
+                        <lightning-combobox
+                            dropdown-alignment="auto"
+                            label=""
+                            data-index={lineItem.index}
+                            name="Recurring_Discount__c"
+                            value={lineItem.form.Recurring_Discount__c}
+                            placeholder="--None--"
+                            onblur={onFieldBlur}
+                            options={recurringDiscountValues}
+                            onchange={onRecurringDiscountChange}
+                            required={lineItem.required}
+                            message-when-value-missing = "Please select recurring discount"
+                            variant="label-hidden"
+                            >
+                            
+                        </lightning-combobox>
+                    </td>
+                    <td data-label={oppLineItemInfo.fields.Description.label}>
+                        <lightning-input
+                            type="text"
+                            name="Description"
+                            data-index={lineItem.index}
+                            label=""
+                            variant="label-hidden"
+                            value={lineItem.form.Description}
+                            disabled={lineItem.isDeleted}
+                            onblur={onFieldBlur}
+                        >
+                        </lightning-input>
+                    </td>
+                    <td data-label={oppLineItemInfo.fields.Part_of_a_package__c.label}>
+                        <lightning-input
+                            type="checkbox"
+                            name="Part of a package?"
+                            data-index={lineItem.index}
+                            label=""
+                            variant="label-hidden"
+                            checked={lineItem.form.Part_of_a_package__c}
+                            onchange={onPartOfPackageChanged}
+                            disabled={disablePartOfPackageCheckbox}
+                            onblur={onFieldBlur}
+                        >
+                        </lightning-input>
+                    </td>
+                    <td data-label={oppLineItemInfo.fields.Part_of_Min_Commit__c.label}>
+                        <lightning-input
+                            type="checkbox"
+                            name="Part of Min Commit?"
+                            data-index={lineItem.index}
+                            label=""
+                            variant="label-hidden"
+                            checked={lineItem.form.Part_of_Min_Commit__c}
+                            onchange={onPartOfMinCommitChanged}
+                            disabled={disablePartOfMinCommitCheckbox}
+                            onblur={onFieldBlur}
+                        >
+                        </lightning-input>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class="slds-card__footer">
+        <lightning-button label="Save" title="Save" class="slds-m-right_x-small" disabled={disableSave} onclick={saveClick}></lightning-button>
+        <lightning-button label="Cancel" title="Cancel" onclick={cancelClick}></lightning-button>
+    </footer>
+</article>
+
+<!-- Search for Products -->
+    <!--Tab for products with pricing models Standard or Standard & Enterprise at the product level -->
+<template lwc:if={showEnterpriseTab}>
+<lightning-tabset>
+<lightning-tab label="Standard Pricing" id="std_pricing">
+<article class="slds-card">
+    <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title search-header-item">Search for {productInfo.labelPlural}:</h2>
+                <lightning-input
+                    type="text"
+                    class="search-header-item"
+                    label=""
+                    variant="label-hidden"
+                    placeholder="Type in a search query"
+                    onchange={searchQueryChanged}
+                >
+                </lightning-input>
+            </div>
+        </header>
+    </div>
+    <div class="slds-card__body pbBody">
+        <lightning-spinner if:true={loadingProducts} size="medium" alternative-text="Loading"></lightning-spinner>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={productInfo.fields.Product_Name__c.label}>{productInfo.fields.Product_Name__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={priceBookEntryInfo.fields.List_Price_ARR_One_off__c.label}>{priceBookEntryInfo.fields.List_Price_ARR_One_off__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={productInfo.fields.For_Contract_Renewals__c.label}>{productInfo.fields.For_Contract_Renewals__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={productInfo.fields.Family.label}>{productInfo.fields.Family.label}</div>
+                    </th>
+                    <th class="" scope="col" style="width: 75px !important;">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr if:true={noAvailableProducts}>
+                    <td colspan="5" class="zero-state">
+                        No products found matching search query.
+                    </td>
+                </tr>
+                <tr for:each={standardPricingProducts} for:item="pbe" key={pbe.Id}>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate wrapped">{pbe.Product2.Product_Name__c}</div>
+                    </td>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate">
+                            <p>
+                                <lightning-formatted-number
+                                    value={pbe.List_Price_ARR_One_off__c}
+                                    format-style="currency"
+                                    currency-code={record.CurrencyIsoCode}
+                                    currency-display-as="code"
+                                ></lightning-formatted-number>
+                            </p>
+                            <p if:false={isDefaultCurrency}>
+                                (<lightning-formatted-number
+                                    value={pbe.ConvertedUnitPriceARR}
+                                    format-style="currency"
+                                    currency-code={defaultCurrency}
+                                    currency-display-as="code"
+                                ></lightning-formatted-number>)
+                            </p>
+                        </div>
+                    </td>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate wrapped">
+                            <lightning-icon
+                                icon-name="utility:check"
+                                size="small"
+                                if:true={pbe.Product2.For_Contract_Renewals__c}
+                            >
+                            </lightning-icon>
+                        </div>
+                    </td>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate wrapped">{pbe.Product2.Family}</div>
+                    </td>
+                    <td style="width: 75px">
+                        <lightning-button label="Select" title="Select" data-index={pbe.index} onclick={selectProductClick}></lightning-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="slds-text-color_error slds-p-left_small slds-p-top_small" if:true={resultsError}>
+            {resultsError}
+        </div>
+    </div>
+</article>
+</lightning-tab>
+<!--Tab for products with pricing models Enterprise or Standard & Enterprise at the product level -->
+
+<lightning-tab label="Enterprise Pricing" id="ent_pricing">
+<article class="slds-card">
+    <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title search-header-item">Search for {productInfo.labelPlural}:</h2>
+                <lightning-input
+                    type="text"
+                    class="search-header-item"
+                    label=""
+                    variant="label-hidden"
+                    placeholder="Type in a search query"
+                    onchange={searchQueryChanged}
+                >
+                </lightning-input>
+            </div>
+        </header>
+    </div>
+    <div class="slds-card__body pbBody">
+        <lightning-spinner if:true={loadingProducts} size="medium" alternative-text="Loading"></lightning-spinner>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={productInfo.fields.Product_Name__c.label}>{productInfo.fields.Product_Name__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={priceBookEntryInfo.fields.List_Price_ARR_One_off__c.label}>{priceBookEntryInfo.fields.List_Price_ARR_One_off__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={productInfo.fields.For_Contract_Renewals__c.label}>{productInfo.fields.For_Contract_Renewals__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={productInfo.fields.Family.label}>{productInfo.fields.Family.label}</div>
+                    </th>
+                    <th class="" scope="col" style="width: 75px !important;">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr if:true={noAvailableProducts}>
+                    <td colspan="5" class="zero-state">
+                        No products found matching search query.
+                    </td>
+                </tr>
+                <tr for:each={enterprisePricingProducts} for:item="pbe" key={pbe.Id}>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate wrapped">{pbe.Product2.Product_Name__c}</div>
+                    </td>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate">
+                            <p>
+                                <lightning-formatted-number
+                                    value={pbe.List_Price_ARR_One_off__c}
+                                    format-style="currency"
+                                    currency-code={record.CurrencyIsoCode}
+                                    currency-display-as="code"
+                                ></lightning-formatted-number>
+                            </p>
+                            <p if:false={isDefaultCurrency}>
+                                (<lightning-formatted-number
+                                    value={pbe.ConvertedUnitPriceARR}
+                                    format-style="currency"
+                                    currency-code={defaultCurrency}
+                                    currency-display-as="code"
+                                ></lightning-formatted-number>)
+                            </p>
+                        </div>
+                    </td>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate wrapped">
+                            <lightning-icon
+                                icon-name="utility:check"
+                                size="small"
+                                if:true={pbe.Product2.For_Contract_Renewals__c}
+                            >
+                            </lightning-icon>
+                        </div>
+                    </td>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate wrapped">{pbe.Product2.Family}</div>
+                    </td>
+                    <td style="width: 75px">
+                        <lightning-button label="Select" title="Select" data-index={pbe.index} onclick={selectProductClick}></lightning-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="slds-text-color_error slds-p-left_small slds-p-top_small" if:true={tooManyProducts}>
+            {tooManyProducts}
+        </div>
+    </div>
+</article>
+</lightning-tab>    
+</lightning-tabset>
+</template>
+<template lwc:else>
+<article class="slds-card">
+    <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title search-header-item">Search for {productInfo.labelPlural}:</h2>
+                <lightning-input
+                    type="text"
+                    class="search-header-item"
+                    label=""
+                    variant="label-hidden"
+                    placeholder="Type in a search query"
+                    onchange={searchQueryChanged}
+                >
+                </lightning-input>
+            </div>
+        </header>
+    </div>
+    <div class="slds-card__body pbBody">
+        <lightning-spinner if:true={loadingProducts} size="medium" alternative-text="Loading"></lightning-spinner>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={productInfo.fields.Product_Name__c.label}>{productInfo.fields.Product_Name__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={priceBookEntryInfo.fields.List_Price_ARR_One_off__c.label}>{priceBookEntryInfo.fields.List_Price_ARR_One_off__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={productInfo.fields.For_Contract_Renewals__c.label}>{productInfo.fields.For_Contract_Renewals__c.label}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title={productInfo.fields.Family.label}>{productInfo.fields.Family.label}</div>
+                    </th>
+                    <th class="" scope="col" style="width: 75px !important;">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr if:true={noAvailableProducts}>
+                    <td colspan="5" class="zero-state">
+                        No products found matching search query.
+                    </td>
+                </tr>
+                <tr for:each={standardPricingProducts} for:item="pbe" key={pbe.Id}>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate wrapped">{pbe.Product2.Product_Name__c}</div>
+                    </td>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate">
+                            <p>
+                                <lightning-formatted-number
+                                    value={pbe.List_Price_ARR_One_off__c}
+                                    format-style="currency"
+                                    currency-code={record.CurrencyIsoCode}
+                                    currency-display-as="code"
+                                ></lightning-formatted-number>
+                            </p>
+                            <p if:false={isDefaultCurrency}>
+                                (<lightning-formatted-number
+                                    value={pbe.ConvertedUnitPriceARR}
+                                    format-style="currency"
+                                    currency-code={defaultCurrency}
+                                    currency-display-as="code"
+                                ></lightning-formatted-number>)
+                            </p>
+                        </div>
+                    </td>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate wrapped">
+                            <lightning-icon
+                                icon-name="utility:check"
+                                size="small"
+                                if:true={pbe.Product2.For_Contract_Renewals__c}
+                            >
+                            </lightning-icon>
+                        </div>
+                    </td>
+                    <td data-label={productInfo.fields.Product_Name__c.label}>
+                        <div class="slds-truncate wrapped">{pbe.Product2.Family}</div>
+                    </td>
+                    <td style="width: 75px">
+                        <lightning-button label="Select" title="Select" data-index={pbe.index} onclick={selectProductClick}></lightning-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="slds-text-color_error slds-p-left_small slds-p-top_small" if:true={resultsError}>
+            {resultsError}
+        </div>
+    </div>
+</article>
+</template>
+</template>
+</div>
+</template>

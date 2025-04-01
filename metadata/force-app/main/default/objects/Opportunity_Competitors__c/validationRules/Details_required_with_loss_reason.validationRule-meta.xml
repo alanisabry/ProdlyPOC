@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Details_required_with_loss_reason</fullName>
+    <active>true</active>
+    <description>Details must be filled out if loss reason is filled out</description>
+    <errorConditionFormula>AND(NOT(ISPICKVAL(Reason__c,&quot;&quot;)),ISBLANK(Details__c))</errorConditionFormula>
+    <errorMessage>When a loss reason is selected, please fill out the details section.</errorMessage>
+</ValidationRule>

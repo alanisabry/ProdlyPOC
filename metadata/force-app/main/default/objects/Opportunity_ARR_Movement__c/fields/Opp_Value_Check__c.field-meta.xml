@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_Value_Check__c</fullName>
+    <description>Formula text field to indicate mismatch with Opp-level vaues.</description>
+    <externalId>false</externalId>
+    <formula>/*
+  Check if Amount and Reporting Date is matching with those of Opp-level values.
+*/
+
+IF( ISPICKVAL( Status__c , &quot;Obsolete&quot;), &quot;Obsolete&quot;,
+
+  IF( ROUND(Amount__c, IF(ISPICKVAL(Movement_Type__c, &quot;Indexation&quot;), 0, 2) ) =
+    ROUND( CASE( TEXT( Movement_Type__c ),
+      &quot;New ARR&quot;, Opportunity__r.New_ARR__c,
+      &quot;New ARR: OEM&quot;, Opportunity__r.New_ARR__c,
+      &quot;Expansion&quot;, Opportunity__r.Expansion_ARR__c,
+      &quot;Contraction&quot;, Opportunity__r.Contraction_ARR__c,
+      &quot;Churn&quot;, Opportunity__r.Churn_ARR__c,
+      &quot;Renewal&quot;, Opportunity__r.Renewal_ARR__c,
+      &quot;Internal Transfer&quot;, Opportunity__r.Internal_Transfer_ARR__c,
+      &quot;New ARR: Platform Transfer&quot;, Opportunity__r.New_ARR_Platform_transfer__c,
+      &quot;Churn: Platform Transfer&quot;, Opportunity__r.Churn_ARR_Platform_Transfer__c,
+      &quot;Renewal Uplift&quot;, Opportunity__r.Renewal_Uplift_ARR__c,
+      &quot;Indexation&quot;,
+        IF(
+          ISBLANK(Order__c),
+          Opportunity__r.Indexation_ARR_when_renewal_is_closed__c,
+          IF(
+            ISPICKVAL(Opportunity__r.Account.Indexation__c,&quot;No&quot;) ||
+            ISPICKVAL(Opportunity__r.Waive_Indexation__c,&quot;Yes&quot;) ||
+            ISPICKVAL(Opportunity__r.Waive_Indexation__c,&quot;First Year&quot;) ||
+            ISPICKVAL(Order__r.Waive_Indexation_Approval_Status__c,&quot;Approved&quot;),
+            Order__r.MRR__c / (1 + Order__r.Previous_Indexation_Rate__c) * Order__r.Previous_Indexation_Rate__c * 12,
+            Order__r.MRR__c / ( (1 + Order__r.Current_Indexation_Rate__c) * (1 + Order__r.Previous_Indexation_Rate__c) ) *
+              ( (1 + Order__r.Current_Indexation_Rate__c) * (1 + Order__r.Previous_Indexation_Rate__c) - 1) * 12
+          )
+        ),
+      0
+    ), IF(ISPICKVAL(Movement_Type__c, &quot;Indexation&quot;), 0, 2) ), &quot;&quot;, &quot;Amount&quot;
+  )
+
+  &amp; &quot;-&quot; &amp;
+
+  IF( Reporting_Date__c =  Opportunity__r.Max_Actual_Date__c , &quot;&quot;,
+    IF(
+      CONTAINS( TEXT(Movement_Type__c), &quot;Transfer&quot;) &amp;&amp;
+      Reporting_Date__c =
+      IF(
+        Opportunity__r.Reporting_Date_to_Close_Date__c || Opportunity__r.CloseDate &gt; Opportunity__r.Startdate_contract__c ,
+        Opportunity__r.CloseDate, Opportunity__r.Startdate_contract__c
+      ),
+      &quot;&quot;,
+      IF(
+        ISPICKVAL(Movement_Type__c, &quot;Indexation&quot;) &amp;&amp; NOT(ISBLANK(Order__c)) &amp;&amp;
+        Reporting_Date__c = IF(DATEVALUE(Order__r.ActivatedDate) &lt;= Order__r.EffectiveDate, Order__r.EffectiveDate, DATEVALUE(Order__r.ActivatedDate)),
+        &quot;&quot;,
+        &quot;Date&quot;
+      )
+    )
+  )
+
+  &amp; &quot;-&quot; &amp;
+  
+  IF( TEXT(CurrencyIsoCode) = TEXT(Opportunity__r.CurrencyIsoCode), &quot;&quot;, &quot;Currency&quot;)
+
+  &amp; &quot;-&quot; &amp;
+  
+  IF(
+    OR(
+      TEXT( Movement_Type__c ) = &quot;New ARR&quot; &amp;&amp; TEXT(Opportunity__r.Account.OEM__c) &lt;&gt; &quot;&quot; ,
+      TEXT( Movement_Type__c ) = &quot;New ARR: OEM&quot; &amp;&amp; TEXT(Opportunity__r.Account.OEM__c) = &quot;&quot;
+    ), &quot;OEM&quot;, &quot;&quot;
+  )
+
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opp Value Check</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

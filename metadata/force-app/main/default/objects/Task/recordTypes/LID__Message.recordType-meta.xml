@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LID__Message</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>LID__Tasks</compactLayoutAssignment>
+    <description>Record type for LinkedIn messages (sent to connections)</description>
+    <label>LinkedIn Message</label>
+    <picklistValues>
+        <picklist>Activity_Content__c</picklist>
+        <values>
+            <fullName>--None--</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT%2FSecurity Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing Discussion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procurement %2F Negotiations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solutions Scope</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BDR_old__c</picklist>
+        <values>
+            <fullName>Floris van Nieuwland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gautier Roy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Julia Hoch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marko</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rinske</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Serena Vlieger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vince Duc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contact_Result__c</picklist>
+        <values>
+            <fullName>Call back requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connect request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conversation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Left Message</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting booked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No answer from line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not appropriate contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passed to Sales Exec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting%2Fmessage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quality Conversation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rescheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar booked</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contact_Stage__c</picklist>
+        <values>
+            <fullName>Contact Identified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contact_Type__c</picklist>
+        <values>
+            <fullName>Booked in SalesLoft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Card%2FLetter%2FMail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Check-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer%3A Important Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drift Chat Conversation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dynamic Template Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Face-to-Face Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT%2FSecurity Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting Booked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Check In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Introduction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Postal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video Brand Studio Demo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Created_by_automation_rule__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Task on Nurture %26 Project on Hold</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Last_Touch__c</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drawing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Message</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Postal%2Eio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified chat flip</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified meeting booked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesloft Meeting Booked</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Most_Recent_Source__c</picklist>
+        <values>
+            <fullName>ABM Influenced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Behavioural %28Outbound%29 MQL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDR Customer Tradeshow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CTA %28Inbound%29 MQL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Reengaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnerships</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting Account Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tradeshow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Gem</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Category__c</picklist>
+        <values>
+            <fullName>Adobe Creative Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Guidelines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CMS Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Brand Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dynamic Asset Transformation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expansion Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Automation Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other%3A Explain in Comments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PIM Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print Brand Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sandbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Studio</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Waiting on someone else</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>test</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PortalRequired</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Invoice_Delivery_Method__c,&quot;Upload&quot;),
+ISCHANGED(Invoice_Delivery_Method__c),
+ISBLANK(OEM_Account__c),
+ISBLANK(Invoice_Upload_Portal__c))</errorConditionFormula>
+    <errorDisplayField>Invoice_Upload_Portal__c</errorDisplayField>
+    <errorMessage>Please enter the invoice upload portal URL.</errorMessage>
+</ValidationRule>

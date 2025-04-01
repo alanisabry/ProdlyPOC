@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upcoming_Indexation_amount__c</fullName>
+    <description>Renewal Year 1 Indexation amount calculated based on ((Initial Default Price ARR+Cumulative Indexation amount)*Applied Upcoming Indexation %) which is added to product pricing.</description>
+    <formula>IF(Pricing_Factors_Applied__c &amp;&amp; NOT(ISBLANK(Applied_Upcoming_Indexation__c)),
+/* -- Initial Default Price ARR will be 0 in few closed opps as the initial default price is not updated on OLI&apos;s, in that case Original Renewal ARR is used for calculation -- */
+
+(IF(Initial_Default_Price_ARR__c =0, Original_Renewal_ARR__c ,Initial_Default_Price_ARR__c)
++ Cumulative_Indexation_amount__c)* Applied_Upcoming_Indexation__c,
+0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Upcoming Indexation amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

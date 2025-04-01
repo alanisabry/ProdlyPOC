@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_URL_without_Prefix</fullName>
+    <active>false</active>
+    <description>BODEV-1668: Validation rule to ensure Portal URL entered without http:// nor https://
+
+2022-09-08 Deactivated as Portal URL can be synced from Mavenlink with http:// or https://, which could cause validation error on later updates.</description>
+    <errorConditionFormula>AND(
+  NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+  OR(
+    CONTAINS( Portal_URL__c , &quot;http://&quot;),
+    CONTAINS( Portal_URL__c , &quot;https://&quot;)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Portal_URL__c</errorDisplayField>
+    <errorMessage>Enter Portal URL without http:// or https://</errorMessage>
+</ValidationRule>

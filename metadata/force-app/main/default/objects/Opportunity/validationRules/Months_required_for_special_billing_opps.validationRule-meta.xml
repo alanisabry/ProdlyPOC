@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Months_required_for_special_billing_opps</fullName>
+    <active>true</active>
+    <description># of Month delayed/rent free is required for special billing scenarios</description>
+    <errorConditionFormula>(NOT(ISBLANK(TEXT(Special_Billing_Scenario__c))) &amp;&amp; 
+ (ISNULL( of_Month_Delayed_Rent_Free__c)  || of_Month_Delayed_Rent_Free__c = 0 || of_Month_Delayed_Rent_Free__c &gt; Netsuite_Term__c)) || (ISBLANK(TEXT(Special_Billing_Scenario__c)) &amp;&amp; NOT(ISNULL( of_Month_Delayed_Rent_Free__c)))</errorConditionFormula>
+    <errorMessage>Please enter the valid values in Special billing scenario or # of month delayed/rent free on opportunity.</errorMessage>
+</ValidationRule>

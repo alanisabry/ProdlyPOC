@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Child_Category__c</fullName>
+    <inlineHelpText>The child category of the technology platform enables in the ecosystem</inlineHelpText>
+    <label>Child Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ABM</fullName>
+                <default>false</default>
+                <label>ABM</label>
+            </value>
+            <value>
+                <fullName>Advocacy Loyalty &amp; Referrals</fullName>
+                <default>false</default>
+                <label>Advocacy Loyalty &amp; Referrals</label>
+            </value>
+            <value>
+                <fullName>Affiliate Marketing &amp; Management</fullName>
+                <default>false</default>
+                <label>Affiliate Marketing &amp; Management</label>
+            </value>
+            <value>
+                <fullName>Agile &amp; Lean Management</fullName>
+                <default>false</default>
+                <label>Agile &amp; Lean Management</label>
+            </value>
+            <value>
+                <fullName>Audience/Marketing Data &amp; Data Enhancement</fullName>
+                <default>false</default>
+                <label>Audience/Marketing Data &amp; Data Enhancement</label>
+            </value>
+            <value>
+                <fullName>Budgeting &amp; Finance</fullName>
+                <default>false</default>
+                <label>Budgeting &amp; Finance</label>
+            </value>
+            <value>
+                <fullName>Business/Customer Intelligence &amp; Data Science</fullName>
+                <default>false</default>
+                <label>Business/Customer Intelligence &amp; Data Science</label>
+            </value>
+            <value>
+                <fullName>Call Analytics &amp; Management</fullName>
+                <default>false</default>
+                <label>Call Analytics &amp; Management</label>
+            </value>
+            <value>
+                <fullName>Channel Partner &amp; Local Marketing</fullName>
+                <default>false</default>
+                <label>Channel Partner &amp; Local Marketing</label>
+            </value>
+            <value>
+                <fullName>CMS &amp; Web Experience Management</fullName>
+                <default>false</default>
+                <label>CMS &amp; Web Experience Management</label>
+            </value>
+            <value>
+                <fullName>Collaboration</fullName>
+                <default>false</default>
+                <label>Collaboration</label>
+            </value>
+            <value>
+                <fullName>Community &amp; Reviews</fullName>
+                <default>false</default>
+                <label>Community &amp; Reviews</label>
+            </value>
+            <value>
+                <fullName>Content Marketing</fullName>
+                <default>false</default>
+                <label>Content Marketing</label>
+            </value>
+            <value>
+                <fullName>CRM</fullName>
+                <default>false</default>
+                <label>CRM</label>
+            </value>
+            <value>
+                <fullName>Customer Data Platform</fullName>
+                <default>false</default>
+                <label>Customer Data Platform</label>
+            </value>
+            <value>
+                <fullName>Customer Experience Service &amp; Success</fullName>
+                <default>false</default>
+                <label>Customer Experience Service &amp; Success</label>
+            </value>
+            <value>
+                <fullName>DAM &amp; MRM &amp; PIM</fullName>
+                <default>false</default>
+                <label>DAM &amp; MRM &amp; PIM</label>
+            </value>
+            <value>
+                <fullName>Dashboards &amp; Data Visualization</fullName>
+                <default>false</default>
+                <label>Dashboards &amp; Data Visualization</label>
+            </value>
+            <value>
+                <fullName>Display &amp; Programmatic Advertising</fullName>
+                <default>false</default>
+                <label>Display &amp; Programmatic Advertising</label>
+            </value>
+            <value>
+                <fullName>DMP</fullName>
+                <default>false</default>
+                <label>DMP</label>
+            </value>
+            <value>
+                <fullName>eCommerce Marketing</fullName>
+                <default>false</default>
+                <label>eCommerce Marketing</label>
+            </value>
+            <value>
+                <fullName>eCommerce Platforms &amp; Carts</fullName>
+                <default>false</default>
+                <label>eCommerce Platforms &amp; Carts</label>
+            </value>
+            <value>
+                <fullName>Email Marketing</fullName>
+                <default>false</default>
+                <label>Email Marketing</label>
+            </value>
+            <value>
+                <fullName>Events, Meetings &amp; Webinars</fullName>
+                <default>false</default>
+                <label>Events, Meetings &amp; Webinars</label>
+            </value>
+            <value>
+                <fullName>Governance Compliance And Privacy</fullName>
+                <default>false</default>
+                <label>Governance Compliance And Privacy</label>
+            </value>
+            <value>
+                <fullName>Influencers</fullName>
+                <default>false</default>
+                <label>Influencers</label>
+            </value>
+            <value>
+                <fullName>Interactive Content</fullName>
+                <default>false</default>
+                <label>Interactive Content</label>
+            </value>
+            <value>
+                <fullName>Ipaas Cloud/Data Integration &amp; Tag Management</fullName>
+                <default>false</default>
+                <label>Ipaas Cloud/Data Integration &amp; Tag Management</label>
+            </value>
+            <value>
+                <fullName>Live Chat &amp; Chatbots</fullName>
+                <default>false</default>
+                <label>Live Chat &amp; Chatbots</label>
+            </value>
+            <value>
+                <fullName>Marketing Analytics Performance &amp; Attribution</fullName>
+                <default>false</default>
+                <label>Marketing Analytics Performance &amp; Attribution</label>
+            </value>
+            <value>
+                <fullName>Marketing Automation &amp; Campaign/Lead Management</fullName>
+                <default>false</default>
+                <label>Marketing Automation &amp; Campaign/Lead Management</label>
+            </value>
+            <value>
+                <fullName>Mobile &amp; Web Analytics</fullName>
+                <default>false</default>
+                <label>Mobile &amp; Web Analytics</label>
+            </value>
+            <value>
+                <fullName>Mobile Apps</fullName>
+                <default>false</default>
+                <label>Mobile Apps</label>
+            </value>
+            <value>
+                <fullName>Mobile Marketing</fullName>
+                <default>false</default>
+                <label>Mobile Marketing</label>
+            </value>
+            <value>
+                <fullName>Native/Content Advertising</fullName>
+                <default>false</default>
+                <label>Native/Content Advertising</label>
+            </value>
+            <value>
+                <fullName>Optimization Personalization &amp; Testing</fullName>
+                <default>false</default>
+                <label>Optimization Personalization &amp; Testing</label>
+            </value>
+            <value>
+                <fullName>PR</fullName>
+                <default>false</default>
+                <label>PR</label>
+            </value>
+            <value>
+                <fullName>Print</fullName>
+                <default>false</default>
+                <label>Print</label>
+            </value>
+            <value>
+                <fullName>Product Management</fullName>
+                <default>false</default>
+                <label>Product Management</label>
+            </value>
+            <value>
+                <fullName>Projects &amp; Workflow</fullName>
+                <default>false</default>
+                <label>Projects &amp; Workflow</label>
+            </value>
+            <value>
+                <fullName>Retail, Proximity &amp; IOT</fullName>
+                <default>false</default>
+                <label>Retail, Proximity &amp; IOT</label>
+            </value>
+            <value>
+                <fullName>Sales Automation Enablement &amp; Intelligence</fullName>
+                <default>false</default>
+                <label>Sales Automation Enablement &amp; Intelligence</label>
+            </value>
+            <value>
+                <fullName>Search &amp; Social Advertising</fullName>
+                <default>false</default>
+                <label>Search &amp; Social Advertising</label>
+            </value>
+            <value>
+                <fullName>SEO</fullName>
+                <default>false</default>
+                <label>SEO</label>
+            </value>
+            <value>
+                <fullName>Social Media Marketing &amp; Monitoring</fullName>
+                <default>false</default>
+                <label>Social Media Marketing &amp; Monitoring</label>
+            </value>
+            <value>
+                <fullName>Talent Management</fullName>
+                <default>false</default>
+                <label>Talent Management</label>
+            </value>
+            <value>
+                <fullName>Vendor Analysis &amp; Management</fullName>
+                <default>false</default>
+                <label>Vendor Analysis &amp; Management</label>
+            </value>
+            <value>
+                <fullName>Video Advertising</fullName>
+                <default>false</default>
+                <label>Video Advertising</label>
+            </value>
+            <value>
+                <fullName>Video Marketing</fullName>
+                <default>false</default>
+                <label>Video Marketing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Counted_for_Contracted_ARR__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to flag if the opportunity ARR is counted for &apos;Contracted ARR&apos; calculation on account.</description>
+    <label>Counted for Contracted ARR</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

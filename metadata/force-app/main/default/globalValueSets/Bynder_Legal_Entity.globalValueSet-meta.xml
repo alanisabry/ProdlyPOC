@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Bynder B.V.</fullName>
+        <default>false</default>
+        <label>Bynder B.V.</label>
+    </customValue>
+    <customValue>
+        <fullName>Bynder LLC</fullName>
+        <default>false</default>
+        <label>Bynder LLC</label>
+    </customValue>
+    <customValue>
+        <fullName>Bynder Ltd</fullName>
+        <default>false</default>
+        <label>Bynder Ltd</label>
+    </customValue>
+    <customValue>
+        <fullName>Bynder Pty Ltd</fullName>
+        <default>false</default>
+        <label>Bynder Pty Ltd</label>
+    </customValue>
+    <customValue>
+        <fullName>Bynder Software FZ-LLC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Bynder Software FZ-LLC</label>
+    </customValue>
+    <description>BODEV-3453: List of Bynder Legal Entity that could be used for commercial signature</description>
+    <masterLabel>Bynder Legal Entity</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

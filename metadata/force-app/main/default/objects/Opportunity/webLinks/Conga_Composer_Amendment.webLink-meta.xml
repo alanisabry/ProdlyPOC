@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Amendment</fullName>
+    <availability>online</availability>
+    <description>ACTIVE. Generates a Webdam Amendment agreement from Opportunity via Conga Composer.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Webdam Amendment  X</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Opportunity.Id}
+
+&amp;QueryId=[arr]a3y3g0000013Zy8,
+[mrr2]a3y0d000001Hyda,
+[oneoff2]a3y0d000001Hydf,
+[owner]a3y0d000000HhPc
+
+&amp;TemplateId=a460d000000DEsd
+
+&amp;OFN={!Opportunity.Year_Now__c}&quot;0&quot;{!Opportunity.Month__c}{!Opportunity.day_today__c}+{!Account.Name}+Amendment
+&amp;BML=Generating+Webdam+Amendment
+&amp;CurrencyCulture={!Opportunity.Culture1__c}
+&amp;DS7=0</url>
+</WebLink>

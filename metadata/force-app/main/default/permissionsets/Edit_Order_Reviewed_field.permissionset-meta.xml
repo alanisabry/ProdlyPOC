@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission set that allows editing the field "Order Reviewed".</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Order.Order_Reviewed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Edit Order Reviewed field</label>
+</PermissionSet>

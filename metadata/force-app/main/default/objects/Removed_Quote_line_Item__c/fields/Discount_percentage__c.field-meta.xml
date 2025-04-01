@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_percentage__c</fullName>
+    <description>Calculation of Discount Percentage based on Sales Price ARR/One-Off and Default Price ARR/One-Off</description>
+    <formula>IF( Default_Price_ARR_One_off__c = 0,
+0,
+IF( Sales_Price_ARR_One_off__c &gt; Default_Price_ARR_One_off__c, 0,
+( Default_Price_ARR_One_off__c - Sales_Price_ARR_One_off__c) / Default_Price_ARR_One_off__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Discount (%)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

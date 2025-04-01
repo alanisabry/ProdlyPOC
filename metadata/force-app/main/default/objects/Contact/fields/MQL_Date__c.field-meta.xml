@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MQL_Date__c</fullName>
+    <description>Webdam field
+&quot;This field will be auto-populated by Marketo when the contact record reaches MQL. This will be updated every time the contact changes to MQL.&quot;</description>
+    <label>MQL Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

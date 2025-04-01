@@ -1,0 +1,10 @@
+<template>
+    <c-opportunity-products-table record-id = {recordId}
+        onshowaddremoveproducts={handleShowAddRemoveProducts}>
+    </c-opportunity-products-table>
+
+    <template if:true={showManageOpportunityProducts}>
+        <c-manage-opportunity-products record-id={recordId}>
+        </c-manage-opportunity-products>
+    </template>
+</template>

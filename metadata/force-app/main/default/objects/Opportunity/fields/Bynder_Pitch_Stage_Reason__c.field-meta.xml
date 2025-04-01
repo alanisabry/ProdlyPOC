@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bynder_Pitch_Stage_Reason__c</fullName>
+    <description>Select an outcome of why Bynder was or wasn’t pitched</description>
+    <inlineHelpText>Select an outcome of why Bynder was or wasn’t pitched</inlineHelpText>
+    <label>Bynder Pitch - Stage/Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Bynder_pitch__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Migrating to Bynder</fullName>
+                <default>false</default>
+                <label>Migrating to Bynder</label>
+            </value>
+            <value>
+                <fullName>Determined not a fit</fullName>
+                <default>false</default>
+                <label>Determined not a fit</label>
+            </value>
+            <value>
+                <fullName>Not interested</fullName>
+                <default>false</default>
+                <label>Not interested</label>
+            </value>
+            <value>
+                <fullName>Pitched too late</fullName>
+                <default>false</default>
+                <label>Pitched too late</label>
+            </value>
+            <value>
+                <fullName>No budget</fullName>
+                <default>false</default>
+                <label>No budget</label>
+            </value>
+            <value>
+                <fullName>Demo Scheduled/ Complete</fullName>
+                <default>false</default>
+                <label>Demo Scheduled/ Complete</label>
+            </value>
+            <value>
+                <fullName>Competitor/Homegrown Tool</fullName>
+                <default>false</default>
+                <label>Competitor/Homegrown Tool</label>
+            </value>
+            <value>
+                <fullName>Email mention</fullName>
+                <default>false</default>
+                <label>Email mention</label>
+            </value>
+            <value>
+                <fullName>Lack of Features</fullName>
+                <default>false</default>
+                <label>Lack of Features</label>
+            </value>
+            <value>
+                <fullName>Pricing Presented</fullName>
+                <default>false</default>
+                <label>Pricing Presented</label>
+            </value>
+            <value>
+                <fullName>Refused Demo</fullName>
+                <default>false</default>
+                <label>Refused Demo</label>
+            </value>
+            <value>
+                <fullName>Solutions Demo</fullName>
+                <default>false</default>
+                <label>Solutions Demo</label>
+            </value>
+            <value>
+                <fullName>Organizational Changes</fullName>
+                <default>false</default>
+                <label>Organizational Changes</label>
+            </value>
+            <value>
+                <fullName>Still Assessing</fullName>
+                <default>false</default>
+                <label>Still Assessing</label>
+            </value>
+            <value>
+                <fullName>Unresponsive</fullName>
+                <default>false</default>
+                <label>Unresponsive</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Migrating to Bynder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Demo Scheduled/ Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Email mention</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Pricing Presented</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Refused Demo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Solutions Demo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Determined not a fit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Not interested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>No budget</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Competitor/Homegrown Tool</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Lack of Features</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Organizational Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Still Assessing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Unresponsive</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

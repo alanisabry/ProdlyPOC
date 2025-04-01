@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_CascadeParent__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>wd field
+Reference to cascaded parent campaign</description>
+    <inlineHelpText>Indicates the parent campaign if this campaign was created as the result of a repeat response.</inlineHelpText>
+    <label>Campaign Parent</label>
+    <referenceTo>Campaign</referenceTo>
+    <relationshipLabel>Cascaded Campaigns</relationshipLabel>
+    <relationshipName>CascadeParent</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

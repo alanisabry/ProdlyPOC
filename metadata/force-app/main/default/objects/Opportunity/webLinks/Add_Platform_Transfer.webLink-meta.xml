@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Platform_Transfer</fullName>
+    <availability>online</availability>
+    <description>ACTIVE. Used on the Account layouts to add Platform Transfer opportunity to the account. Triggers a Screen Flow.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Add Platform Transfer</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/flow/Create_Platform_Transfer_opportunity?
+curAccount={!Account.Id}&amp;retURL={!URLFOR(Account.Id)}</url>
+</WebLink>

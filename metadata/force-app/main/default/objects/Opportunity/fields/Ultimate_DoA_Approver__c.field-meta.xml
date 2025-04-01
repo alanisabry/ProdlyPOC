@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ultimate_DoA_Approver__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>BODEV-76: Lookup to the User who is determined to be Ultimate DoA Approver. This field is updated by Flow &quot;Screen: Trigger Opportunity DoA process&quot;</description>
+    <label>Ultimate DoA Approver</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>OpportunitiesForDoA</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesLoft1__Primary_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Primary Contact Associated with Opportunity.</description>
+    <label>SalesLoft Primary Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Opportunity Primary Contact</relationshipLabel>
+    <relationshipName>Opportunity_Primary_Contact</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

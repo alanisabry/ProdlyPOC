@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adoption_CSM__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>CSM owner who is part of the Success Squad but was involved in the implementation of the customer from the start.</description>
+    <inlineHelpText>CSM owner who is part of the Success Squad but was involved in the implementation of the customer from the start.</inlineHelpText>
+    <label>Adoption CSM</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Adoption_CSM</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Website_Seeker</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Company Website Hunter</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>var website = &apos;{!JSENCODE(Lead.Website)}&apos;;
+var email = &apos;{!Lead.Email}&apos;;
+var company = &apos;{!JSENCODE(Lead.Company)}&apos;;
+var targetURL = &apos;&apos;;
+
+
+
+if(website != &apos;&apos;){
+
+    // CHECK IF WE NEED TO ADD http:// OR NOT
+    if(website.indexOf(&apos;//&apos;) != -1)
+        targetURL = website;
+    else
+        targetURL = &apos;http://&apos; + website;
+}
+
+
+
+else if(email != &apos;&apos;){
+
+    var domain = email.substring(email.indexOf(&apos;@&apos;) + 1,email.length);
+
+    // WE FILTER OUT COMMON EMAIL DOMAINS
+    if(domain!=&apos;gmail.com&apos; &amp;&amp; domain!=&apos;yahoo.com&apos; &amp;&amp; domain!=&apos;hotmail.com&apos; &amp;&amp; domain!=&apos;me.com&apos; &amp;&amp; domain!=&apos;excite.com&apos; &amp;&amp; domain!=&apos;aol.com&apos;)
+    targetURL = &apos;http://&apos; + domain;
+}
+
+
+
+if(targetURL==&apos;&apos;){
+
+    targetURL = &apos;http://&apos;;
+
+    
+    company = company.replace(/\&amp;/g,&apos;and&apos;);
+
+    targetURL += company.replace(/[^a-zA-Z0-9|\-]/g,&apos;&apos;) + &apos;.com&apos;;
+
+}
+
+
+
+window.open(targetURL,&apos;_blank&apos;,&apos;&apos;,false);</url>
+</WebLink>

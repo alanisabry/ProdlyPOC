@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ON24CN__LastUpdated__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This will let me know how recent and relevant the &quot;ON24 Engagement Level&quot; and &quot;ON24 Business Interests&quot; field data is.</description>
+    <label>ON24 Last Updated</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

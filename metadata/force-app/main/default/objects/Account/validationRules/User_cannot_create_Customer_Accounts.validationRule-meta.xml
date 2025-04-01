@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_cannot_create_Customer_Accounts</fullName>
+    <active>true</active>
+    <description>Sales/CSMs can&apos;t create Customer accounts directly. Customer accounts must have closed won opportunities.</description>
+    <errorConditionFormula>ISNEW()
+ &amp;&amp; 
+OR(RecordType.Name = &quot;Customer&quot;, RecordType.Name = &quot;Webdam&quot;)
+ &amp;&amp; 
+OR(CONTAINS($Profile.Name,&quot;Customer Success&quot;), CONTAINS($Profile.Name,&quot;Sales&quot;))</errorConditionFormula>
+    <errorMessage>You can&apos;t create a new customer account directly. Please contact Salesforce Admins if needed.</errorMessage>
+</ValidationRule>

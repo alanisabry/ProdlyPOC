@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integration__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Name of the integration</inlineHelpText>
+    <label>Integration</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Integration__c.Technology__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Technology__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Integration__c</referenceTo>
+    <relationshipLabel>Adjacent Technologies (Integration)</relationshipLabel>
+    <relationshipName>Adjacent_Technologies1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

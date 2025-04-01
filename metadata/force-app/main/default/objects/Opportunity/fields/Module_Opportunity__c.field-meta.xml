@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Module_Opportunity__c</fullName>
+    <description>BODEV-2714: Multi-picklist to capture prospects&apos; interest on modules.</description>
+    <inlineHelpText>Please select which module(s) the prospect/customer is interested in.</inlineHelpText>
+    <label>Module Opportunity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Module_Opportunity</valueSetName>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BDR_old__c</fullName>
+    <label>BDR responsible</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Floris van Nieuwland</fullName>
+                <default>false</default>
+                <label>Floris van Nieuwland</label>
+            </value>
+            <value>
+                <fullName>Gautier Roy</fullName>
+                <default>false</default>
+                <label>Gautier Roy</label>
+            </value>
+            <value>
+                <fullName>Marko</fullName>
+                <default>false</default>
+                <label>Marko</label>
+            </value>
+            <value>
+                <fullName>Rinske</fullName>
+                <default>false</default>
+                <label>Rinske</label>
+            </value>
+            <value>
+                <fullName>Serena Vlieger</fullName>
+                <default>false</default>
+                <label>Serena Vlieger</label>
+            </value>
+            <value>
+                <fullName>Vince Duc</fullName>
+                <default>false</default>
+                <label>Vince Duc</label>
+            </value>
+            <value>
+                <fullName>Julia Hoch</fullName>
+                <default>false</default>
+                <label>Julia Hoch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Change__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Discount_percentage__c&gt;0, &quot;-&quot;&amp;TEXT(ROUND(Discount_percentage__c*100, 3)) &amp; &quot;%&quot;,
+IF( Default_Price_ARR_One_off__c = 0, &quot;0%&quot;,
+IF( Sales_Price_ARR_One_off__c &gt; Default_Price_ARR_One_off__c,
+&quot;+&quot;&amp;TEXT(ABS(ROUND(((Default_Price_ARR_One_off__c - Sales_Price_ARR_One_off__c) / Default_Price_ARR_One_off__c) * 100, 3)))&amp;&quot;%&quot;,
+&quot;0%&quot;)))</formula>
+    <label>Price Change</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

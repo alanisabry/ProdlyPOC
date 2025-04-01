@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Readiness</fullName>
+    <availability>online</availability>
+    <description>ACTIVE. From Opportunity layouts triggers a Screen Flow that helps with checking whether an opportunity is ready to be submitted for approval or not.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Check Readiness</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Check_Opportunity_readiness?
+curOpportunity={!Opportunity.Id}&amp;BillingCity={!Account.BillingCity}&amp;BillingEmail={!Account.Bill_to_Contact_Email__c}&amp;BillingPostalCode={!Account.BillingPostalCode}&amp;BillingStateProvince={!Account.BillingState}&amp;BillingStreet={!Account.BillingStreet}&amp;Billing_Country={!Account.BillingCountry}&amp;retURL={!URLFOR(Opportunity.Id)}</url>
+</WebLink>

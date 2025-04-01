@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>no_internal_id</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Customer</value>
+    </filters>
+    <filters>
+        <field>Current_MRR_new__c</field>
+        <operation>greaterThan</operation>
+        <value>EUR 0</value>
+    </filters>
+    <label>no internal id</label>
+</ListView>

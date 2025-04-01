@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Category_RUS__c</fullName>
+    <description>BODEV-3780: Used to identify the transactional products added to the opportunity. Used in the rollup summary fields &apos;# of products - Storage&apos; and &apos;# of products - Users&apos; on the opportunity.</description>
+    <externalId>false</externalId>
+    <label>Product Category</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

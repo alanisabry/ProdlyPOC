@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Date_Criteria_Field_2__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Select the date field to be compared for adding reporting date on Opportunity ARR Movement records.</inlineHelpText>
+    <label>Reporting Date Criteria Field 2</label>
+    <metadataRelationshipControllingField>Sales_KPI_Conditions__mdt.Parent_Object__c</metadataRelationshipControllingField>
+    <referenceTo>FieldDefinition</referenceTo>
+    <relationshipLabel>Sales_KPI_Conditions3</relationshipLabel>
+    <relationshipName>Sales_KPI_Conditions3</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

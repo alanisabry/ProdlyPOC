@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Price_Before_Discount__c</fullName>
+    <description>Show the total ARR/One-off price incl. all pricing factors and manual increase, but not discount.</description>
+    <formula>Total_Base_Price_ARR_One_off__c + MAX( Total_Additional_Price_Change__c ,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Price Before Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

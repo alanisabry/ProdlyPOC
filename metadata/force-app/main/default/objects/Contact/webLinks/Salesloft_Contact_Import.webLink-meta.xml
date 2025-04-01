@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesloft_Contact_Import</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Salesloft Contact Import</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>var contacts = {!GETRECORDIDS( $ObjectType.Contact )}; 
+
+var myurl = &quot;https://app.salesloft.com/app/import/crm?contact=&quot; + contacts;
+
+window.open(myurl,&apos;_blank&apos;);</url>
+</WebLink>

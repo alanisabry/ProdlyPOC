@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_pricing_MSA__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-2752 New Account Field: Preferred pricing MSA (true/false)</description>
+    <label>Preferred pricing MSA</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

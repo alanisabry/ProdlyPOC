@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On24_External_Event_User_ID__c</fullName>
+    <description>Hidden registration field typically used to store external platform IDs</description>
+    <externalId>false</externalId>
+    <label>On24 External Event User ID</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

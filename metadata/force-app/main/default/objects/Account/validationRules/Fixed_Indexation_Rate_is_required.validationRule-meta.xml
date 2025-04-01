@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fixed_Indexation_Rate_is_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Indexation_Type__c) &amp;&amp; 
+ ISPICKVAL(Indexation_Type__c,&apos;Fixed&apos;) &amp;&amp;
+ ISBLANK(Fixed_Indexation_Rate__c)</errorConditionFormula>
+    <errorDisplayField>Fixed_Indexation_Rate__c</errorDisplayField>
+    <errorMessage>Fixed indexation rate is required on accounts with indexation type as fixed.</errorMessage>
+</ValidationRule>

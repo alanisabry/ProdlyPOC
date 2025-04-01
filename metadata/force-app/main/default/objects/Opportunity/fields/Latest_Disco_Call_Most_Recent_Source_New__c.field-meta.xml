@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_Disco_Call_Most_Recent_Source_New__c</fullName>
+    <label>Latest Disco Call Most Recent Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ABM Influenced</fullName>
+                <default>false</default>
+                <label>ABM Influenced</label>
+            </value>
+            <value>
+                <fullName>Behavioural (Outbound) MQL</fullName>
+                <default>false</default>
+                <label>Behavioural (Outbound) MQL</label>
+            </value>
+            <value>
+                <fullName>Cold Outbound (Individual)</fullName>
+                <default>false</default>
+                <label>Cold Outbound (Individual)</label>
+            </value>
+            <value>
+                <fullName>CTA (Inbound) MQL</fullName>
+                <default>false</default>
+                <label>CTA (Inbound) MQL</label>
+            </value>
+            <value>
+                <fullName>Customer Behavioural MQL (CDR)</fullName>
+                <default>false</default>
+                <label>Customer Behavioural MQL (CDR)</label>
+            </value>
+            <value>
+                <fullName>Customer CTA MQL (CDR)</fullName>
+                <default>false</default>
+                <label>Customer CTA MQL (CDR)</label>
+            </value>
+            <value>
+                <fullName>Drift</fullName>
+                <default>false</default>
+                <label>Drift</label>
+            </value>
+            <value>
+                <fullName>Drift Influenced Outbounding</fullName>
+                <default>false</default>
+                <label>Drift Influenced Outbounding</label>
+            </value>
+            <value>
+                <fullName>Intent/Web engagement</fullName>
+                <default>false</default>
+                <label>Intent/Web engagement</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Partnerships</fullName>
+                <default>false</default>
+                <label>Partnerships</label>
+            </value>
+            <value>
+                <fullName>Platform Transfer</fullName>
+                <default>false</default>
+                <label>Platform Transfer</label>
+            </value>
+            <value>
+                <fullName>Prospecting Account Campaign</fullName>
+                <default>false</default>
+                <label>Prospecting Account Campaign</label>
+            </value>
+            <value>
+                <fullName>Recycled Inbound (Inbound &gt; Outbound)</fullName>
+                <default>false</default>
+                <label>Recycled Inbound (Inbound &gt; Outbound)</label>
+            </value>
+            <value>
+                <fullName>Subsidiary Account Prospecting (CDR)</fullName>
+                <default>false</default>
+                <label>Subsidiary Account Prospecting (CDR)</label>
+            </value>
+            <value>
+                <fullName>Tradeshow</fullName>
+                <default>false</default>
+                <label>Tradeshow</label>
+            </value>
+            <value>
+                <fullName>Upsell Account Prospecting (CDR)</fullName>
+                <default>false</default>
+                <label>Upsell Account Prospecting (CDR)</label>
+            </value>
+            <value>
+                <fullName>User Gem</fullName>
+                <default>false</default>
+                <label>User Gem</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

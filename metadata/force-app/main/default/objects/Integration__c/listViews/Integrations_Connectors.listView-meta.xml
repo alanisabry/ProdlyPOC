@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integrations_Connectors</fullName>
+    <columns>NAME</columns>
+    <columns>Built_by_1__c</columns>
+    <columns>Category__c</columns>
+    <columns>Status__c</columns>
+    <columns>Bynder_product__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Integration_Type__c</columns>
+    <columns>Integration_summary_notes__c</columns>
+    <columns>In_revision__c</columns>
+    <columns>OBJECT_ID</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>contains</operation>
+        <value>In development,Live</value>
+    </filters>
+    <label>Integrations &amp; Connectors</label>
+</ListView>

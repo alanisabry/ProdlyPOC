@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MK_Lead_Grade_Score__c</fullName>
+    <description>Combination of the MK Customer Fit score and the MK Lead Engagement score.
+Range from 0 to 100</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Score from 0 to 100. Prioritize the highest-scored leads. 
+Combination of the MK Customer Fit score and the MK Lead Engagement score.</inlineHelpText>
+    <label>MK Lead Grade Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

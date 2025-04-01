@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Movement_Type__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Select the movement type</inlineHelpText>
+    <label>Movement Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Churn</fullName>
+                <default>true</default>
+                <label>Churn</label>
+            </value>
+            <value>
+                <fullName>Churn: Platform Transfer</fullName>
+                <default>false</default>
+                <label>Churn: Platform Transfer</label>
+            </value>
+            <value>
+                <fullName>Contraction</fullName>
+                <default>false</default>
+                <label>Contraction</label>
+            </value>
+            <value>
+                <fullName>Expansion</fullName>
+                <default>false</default>
+                <label>Expansion</label>
+            </value>
+            <value>
+                <fullName>Internal Transfer</fullName>
+                <default>false</default>
+                <label>Internal Transfer</label>
+            </value>
+            <value>
+                <fullName>New ARR</fullName>
+                <default>false</default>
+                <label>New ARR</label>
+            </value>
+            <value>
+                <fullName>New ARR: OEM</fullName>
+                <default>false</default>
+                <label>New ARR: OEM</label>
+            </value>
+            <value>
+                <fullName>New ARR: Platform Transfer</fullName>
+                <default>false</default>
+                <label>New ARR: Platform Transfer</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <label>Renewal</label>
+            </value>
+            <value>
+                <fullName>Renewal Uplift</fullName>
+                <default>false</default>
+                <label>Renewal Uplift</label>
+            </value>
+            <value>
+                <fullName>Indexation</fullName>
+                <default>false</default>
+                <label>Indexation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Match_VAT_Number__c</fullName>
+    <description>Indicates whether the submitted value matches the current value on Account/Opportunity.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  ISBLANK( VAT_Number__c ) || ISBLANK( Account__r.VAT_number__c ), &quot;&quot;,
+  IF(
+    VAT_Number__c = Account__r.VAT_number__c,
+    IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;),
+    IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;) + &quot; &quot; + Account__r.VAT_number__c
+  )
+)</formula>
+    <label>Match? - VAT Number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

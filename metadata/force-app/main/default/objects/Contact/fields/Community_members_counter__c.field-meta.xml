@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Community_members_counter__c</fullName>
+    <description>Number of community members linked to this Contact.</description>
+    <inlineHelpText>Number of community members linked to this Contact.</inlineHelpText>
+    <label>Community members counter</label>
+    <summaryForeignKey>Community_Member__c.Contact__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UG_Past_Acc_Original_Cont_Start_Date__c</fullName>
+    <description>BODEV-1100: UserGem Past Account&apos;s Original Contract Start Date</description>
+    <formula>IF(
+  OR(
+    ISBLANK( UserGems__PastAccount__c ),
+    ISBLANK( UserGems__PastAccount__r.Original_Contract_Start_Date__c )
+  ),
+  NULL,
+  UserGems__PastAccount__r.Original_Contract_Start_Date__c
+)</formula>
+    <label>UG - Past Acc. Original Cont. Start Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

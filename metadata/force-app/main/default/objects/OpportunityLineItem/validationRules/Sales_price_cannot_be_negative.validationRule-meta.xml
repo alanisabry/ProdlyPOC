@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_price_cannot_be_negative</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+NOT(ISBLANK(UnitPrice)),
+NOT(ISNEW()),
+UnitPrice&lt;0,
+NOT(CONTAINS(Product2.Name, &quot;discount&quot;)), 
+NOT(CONTAINS(Product2.Name, &quot;Discount&quot;)),
+NOT(CONTAINS(Product2.Name, &quot;Step-up&quot;)), 
+NOT(CONTAINS(Product2.Name,&quot;Partner Referral Fee&quot;))
+)</errorConditionFormula>
+    <errorMessage>Sales price cannot be negative for non-discount products.</errorMessage>
+</ValidationRule>

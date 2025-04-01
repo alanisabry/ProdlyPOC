@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Part_of_a_package__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the product was added to the opportunity as a part of a standard package or not.</description>
+    <label>Part of a package?</label>
+    <type>Checkbox</type>
+</CustomField>

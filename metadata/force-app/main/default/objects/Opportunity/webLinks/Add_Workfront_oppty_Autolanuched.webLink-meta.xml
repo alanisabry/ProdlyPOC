@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Workfront_oppty_Autolanuched</fullName>
+    <availability>online</availability>
+    <description>ACTIVE. Triggers a flow that adds a Workfront opportunity to the account.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Add Workfront oppty</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/flow/Webdam_New_OEM_opportunity?VarT_AccountId={!Account.Account_ID_18_digits__c}&amp;WorkfrontSelected=1&amp;retURL={!URLFOR(Account.Id)}</url>
+</WebLink>

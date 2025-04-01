@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>For_Renewal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-3370 : Indicate whether the product is recurring or one-off.
+Map Product2Id &gt; For Contract Renewal on creation. Has to be a manual field for roll-up summary fields.</description>
+    <label>For Renewal</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

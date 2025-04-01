@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>How_to_re_position_competitor__c</fullName>
+    <inlineHelpText>Admit that their product is good... but only for specific uses or quote their customer&apos;s (not-so-great) experience.</inlineHelpText>
+    <label>How to re-position competitor</label>
+    <length>30000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

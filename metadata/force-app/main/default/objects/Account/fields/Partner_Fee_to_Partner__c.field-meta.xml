@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Fee_to_Partner__c</fullName>
+    <description>BODEV-4335 DoA Refinement - Build: Partner Attributes
+This field is for Partner Sales team to manage Partner information. This is to capture the percentage of the referral fee that Bynder owes to Partner.</description>
+    <inlineHelpText>This field indicates the % Bynder pays to the partner for closed won deals the partner sourced or the % of revenue share due. If the % can vary, the highest possible % is entered.</inlineHelpText>
+    <label>Partner Fee % to Partner</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

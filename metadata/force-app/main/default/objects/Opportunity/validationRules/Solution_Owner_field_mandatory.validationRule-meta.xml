@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solution_Owner_field_mandatory</fullName>
+    <active>true</active>
+    <description>If the Solutions Required field is set to &apos;Yes&apos;, then the relevant Byndie should be added as a Solution Owner.</description>
+    <errorConditionFormula>AND ( 
+NOT($Profile.Name = &quot;Automated Process&quot;),
+Platform__c=&quot;Bynder&quot;, 
+
+NOT( 
+OR( 
+ISCHANGED(Demo_Completed_Outbound__c), 
+ISCHANGED(Solution_Required_in_Flow__c),
+Solution_Required_in_Flow__c = True,
+$Profile.Name = &quot;Automated Process&quot;,
+CONTAINS($Profile.Name,&quot;System Administrator&quot;), 
+CONTAINS($Profile.Name,&quot;Finance&quot;), 
+CONTAINS($Profile.Name,&quot;[Bynder] Legal&quot;))), 
+
+ISPICKVAL(Solutions_Required__c, &quot;Yes&quot;),
+ISBLANK(Solution_Owner__c))</errorConditionFormula>
+    <errorMessage>Please enter the Solution Owner</errorMessage>
+</ValidationRule>

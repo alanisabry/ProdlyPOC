@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Webdam</fullName>
+    <active>true</active>
+    <label>Webdam</label>
+    <picklistValues>
+        <picklist>Conga_Family__c</picklist>
+        <values>
+            <fullName>Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modules and Add-Ons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One-Off Items</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Storage%2C Traffic%2C and Backup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Type of User</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Conga_Product_Unit_of_Measure__c</picklist>
+        <values>
+            <fullName>Per Batch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlimited</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Family</picklist>
+        <values>
+            <fullName>%28Seat pricing%29 User License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AI Enrichment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add- Ons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analytics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authentication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Guidelines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Branding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem downstream</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem upstream</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem various</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Creation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Distribution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Hub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dynamic Asset Transformation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GatherContent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Import</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infrastructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One-off configuration and set-up fees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One-off success plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POD template creation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal Adoption</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal features</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Information Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sandbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Storage%2C Traffic and Backup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traffic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workflow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Integration_Platform__c</picklist>
+        <values>
+            <fullName>Integrations Hub</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pricing_Availability__c</picklist>
+        <values>
+            <fullName>Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard %26 Enterprise</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pricing_Type__c</picklist>
+        <values>
+            <fullName>Normal Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Pricing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Category_New__c</picklist>
+        <values>
+            <fullName>AI Enrichment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admin Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admin%2FRegular Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Administrator User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adobe Creative Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adobe Creative Connector%22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authentication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Guidelines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Guidelines legacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Branding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CMS Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Hub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contributor User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom CDN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Brand Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dynamic Asset Transformation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-commerce Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>End Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FTP Import module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Figma Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GatherContent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Hub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Platform as a service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Light Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Automation Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple Months discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PIM Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plus Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal Adoption</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal features</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premier Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print Brand Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Information Management Layer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce LWC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sandbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Management Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Studio Module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Starter Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stock provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Studio Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlimited Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlimited Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User seats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video Brand Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam Education edition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam Enterprise edition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam Non-profit edition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam Professional Edition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam license</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Management Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workstream Users</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Category__c</picklist>
+        <values>
+            <fullName>AI Enrichment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admin Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admin%2FRegular Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Administrator User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adobe Creative Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analytics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authentication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Guidelines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Guidelines legacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Branding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bynder Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bynder Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CMS Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CX Omnichannel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CX User Community</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Hub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Workflow Standalone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contributor User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Design Tools</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Brand Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dynamic Asset Transformation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-commerce Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>End Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FTP Import module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Figma Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GatherContent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Go4Flow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guidelines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Platform as a service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Light %2B Template User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Light Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Automation Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mass Uploader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Office Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multi-Media Module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multi-Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple Months discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office Documents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Asset Bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PIM Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plus Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal Adoption</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal features</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premier Plus Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premier Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premier Success Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print Brand Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Information Management Layer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Layer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sandbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Management Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Studio Module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Starter Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stock provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Studio Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>URL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlimited Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlimited Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upload infrastructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User seats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video Brand Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam Education edition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam Enterprise edition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam Non-profit edition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam Professional Edition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webdam license</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Management Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workstream Users</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Family_New__c</picklist>
+        <values>
+            <fullName>AI Enrichment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analytics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authentication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Guidelines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Branding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem downstream</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem upstream</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Ecosystem various</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Creation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Hub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GatherContent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Import</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PaaS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal Adoption</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal features</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Information Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sandbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traffic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workflow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Type_New__c</picklist>
+        <values>
+            <fullName>Add-on</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transactional</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Type__c</picklist>
+        <values>
+            <fullName>Add-ons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core %26 Modules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standalone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transactional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Users %26 Storage</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Type_on_Customer_Documents__c</picklist>
+        <values>
+            <fullName>Add-ons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core %26 Modules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Included</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Included portal feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standalone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transactional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Users %26 Storage</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Purchase_family__c</picklist>
+        <values>
+            <fullName>Integration%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Module%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Service%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Storage Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Upgrade</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QuantityUnitOfMeasure</picklist>
+        <values>
+            <fullName>Each</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit_of_Measure_SD__c</picklist>
+        <values>
+            <fullName>Per Batch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlimited</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

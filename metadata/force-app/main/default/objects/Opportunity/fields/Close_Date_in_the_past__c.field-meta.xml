@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Date_in_the_past__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>A checkbox that is used for the process. If a close date of one or more related opportunities is in the past, then it sets to &quot;True&quot; and helps with avoiding triggering a validation rule.</description>
+    <label>Close Date in the past</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

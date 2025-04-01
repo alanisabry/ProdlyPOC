@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Date_OLI__c</fullName>
+    <description>Returns Reporting Date for this product line item depending on its value and opportunity&apos;s type.
+
+The formula was once defined in order to manage different Reporting Date for OLIs under one Opp depending on Movemenet Type. But the requirement has changed and this field is not required at the moment. All OLI follows the same Reporting Date as Opp (22 Sep 2023)</description>
+    <formula>/*
+IF(
+  ISPICKVAL(Opportunity.Type, &quot;New Business-Enterprise Cloud&quot;) ||
+  ISPICKVAL(Opportunity.Type, &quot;New Business - Expansion Portal&quot;) ||
+  AND(
+    Expansion_ARR__c  &lt;&gt; 0 || Contraction_ARR__c &lt;&gt; 0,
+    TEXT(Opportunity.Type) &lt;&gt; &quot;Existing Business-Renewal&quot;
+  ),
+  Opportunity.CloseDate,
+  IF(
+    Opportunity.Startdate_contract__c &gt; Opportunity.CloseDate,
+    Opportunity.Startdate_contract__c,
+    Opportunity.CloseDate
+  )
+)
+*/
+
+TODAY()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>[Deprecated] Reporting Date - OLI</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

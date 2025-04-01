@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_must_be_added_before_VOC</fullName>
+    <active>true</active>
+    <description>BODEV-1972: Products should be already added in the opportunity before moving to the VOC stage.</description>
+    <errorConditionFormula>AND( 
+OR(ISPICKVAL(Type,&quot;New Business-Enterprise Cloud&quot;),ISPICKVAL(Type,&quot;New Business - Expansion Portal&quot;)),
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+of_opportunity_products__c = 0, 
+ISCHANGED(StageName), 
+OR(ISPICKVAL(StageName, &quot;VOC&quot;),
+ISPICKVAL(StageName, &quot;Legal Review&quot;),
+ISPICKVAL(StageName, &quot;Signature Stage&quot;),
+ISPICKVAL(StageName, &quot;Closed Won&quot;)))</errorConditionFormula>
+    <errorMessage>Please add opportunity products. Products should be added before the VOC stage.</errorMessage>
+</ValidationRule>

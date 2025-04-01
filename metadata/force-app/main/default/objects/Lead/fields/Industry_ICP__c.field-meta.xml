@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_ICP__c</fullName>
+    <formula>IF(
+AND(
+OR(ISPICKVAL (Industry_Group__c, &quot;Technology&quot;),
+ISPICKVAL (Industry_Group__c, &quot;Consumer Brands&quot;),
+ISPICKVAL (Industry_Group__c, &quot;Finance and Insurance&quot;),
+ISPICKVAL (Industry_Group__c, &quot;Healthcare&quot;),
+ISPICKVAL (Industry_Group__c, &quot;Industrials&quot;))),
+
+TRUE, FALSE)</formula>
+    <label>Industry ICP</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

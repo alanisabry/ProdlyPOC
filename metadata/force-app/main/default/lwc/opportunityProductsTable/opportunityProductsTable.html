@@ -1,0 +1,57 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+
+    <template if:false={isLoading}>
+        <div class="button-container slds-grid slds-grid_align-end slds-m-bottom_small">
+            <lightning-button
+                label="Add/Remove Products"
+                onclick={handleAddRemoveProducts}
+                class="slds-m-right_small">
+            </lightning-button>
+            <lightning-button
+                label="Change Sales Price"
+                variant="brand"
+                class="slds-m-right_small">
+            </lightning-button>
+        </div>
+        <lightning-card title="Recurring Products" icon-name="custom:custom63">
+            <template if:true={renewalProducts.length}>
+                <div style="overflow-x: auto;">
+                    <lightning-datatable
+                        key-field="id"
+                        data={renewalProducts}
+                        columns={columns}
+                        onsort={handleSort}
+                        sorted-by={sortedBy}
+                        sorted-direction={sortedDirection}
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                </div>
+            </template>
+            <template if:false={renewalProducts.length}>
+                <p class="slds-p-horizontal_small">No Renewal Products Found.</p>
+            </template>
+        </lightning-card>
+
+        <lightning-card title="One-Off Products" icon-name="custom:custom63">
+            <template if:true={nonRenewalProducts.length}>
+                <div style="overflow-x: auto;">
+                    <lightning-datatable
+                        key-field="id"
+                        data={nonRenewalProducts}
+                        columns={columns}
+                        onsort={handleSort}
+                        sorted-by={sortedBy}
+                        sorted-direction={sortedDirection}
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                </div>
+            </template>
+            <template if:false={nonRenewalProducts.length}>
+                <p class="slds-p-horizontal_small">No One-Off Products Found.</p>
+            </template>
+        </lightning-card>
+    </template>
+</template>

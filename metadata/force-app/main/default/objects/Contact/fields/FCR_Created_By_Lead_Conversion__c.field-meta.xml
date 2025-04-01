@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Created_By_Lead_Conversion__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>wd field
+Set to false by default this value is mapped from lead on conversion.</description>
+    <inlineHelpText>Set to true if contact was created from lead conversion.</inlineHelpText>
+    <label>Created By Lead Conversion</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

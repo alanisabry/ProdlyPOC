@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_project_finish_date_required</fullName>
+    <active>false</active>
+    <description>If Project Completion field is set to 100%, the Actual Project Finish date Phase 1 field (and the Actual Project Finish date Phase 2 where applicable) must be filled out.</description>
+    <errorConditionFormula>AND (
+NOT($Profile.Name = &quot;System Administrator&quot;), 
+NOT($Profile.Name = &quot;Automated Process&quot;),
+project_completion__c = 1,
+    OR (
+       AND(
+          NOT(ISBLANK( PLANNED_Project_Finish_date__c)),
+          ISBLANK(Actual_Project_Finish_date__c)),
+       AND(
+         NOT(ISBLANK(PLANNED_Project_Finish_date_Phase_2__c)),
+         ISBLANK( Actual_Project_Finish_Phase_2__c ))))</errorConditionFormula>
+    <errorMessage>Please enter the actual project finish date(s).</errorMessage>
+</ValidationRule>

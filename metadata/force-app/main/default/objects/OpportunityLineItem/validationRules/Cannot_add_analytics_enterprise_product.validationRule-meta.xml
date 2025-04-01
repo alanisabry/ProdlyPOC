@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_analytics_enterprise_product</fullName>
+    <active>false</active>
+    <description>Analytics enterprise product can only be added by BizApps or RevOps team.
+
+BODEV-2341: The validation rule is no longer needed. So deactivated.</description>
+    <errorConditionFormula>AND(NOT(CONTAINS($Profile.Name,&apos;System Administrator&apos;)),
+     ISNEW(),
+     Product2.Product_ID_18_digits__c=&apos;01t3g000000SxYWAA0&apos;
+  )</errorConditionFormula>
+    <errorMessage>Please contact BizApps or RevOps team to add the Analytics Enterprise product.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_auto_activation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Prevents the auto activation of the order.</description>
+    <inlineHelpText>Prevents the auto activation of the order.</inlineHelpText>
+    <label>Stop Auto Activation</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_uplift_percentage_is_required</fullName>
+    <active>true</active>
+    <description>Price uplift percentage on the account should be entered or cleared based on the value in Price uplift on renewal?</description>
+    <errorConditionFormula>ISCHANGED(Price_Uplift_On_Renewal__c) &amp;&amp;
+(
+/* Price uplift is &apos;Yes&apos; and Price uplift percentage is blank or zero */
+(
+TEXT(Price_Uplift_On_Renewal__c) = &apos;Yes&apos; &amp;&amp;
+(ISBLANK(Price_Uplift_on_Renewal_percentage__c) || Price_Uplift_on_Renewal_percentage__c &lt;=0)
+) ||
+/* Price uplift is &apos;No&apos; or blank and Price uplift percentage has a value */
+(TEXT(Price_Uplift_On_Renewal__c) != &apos;Yes&apos; &amp;&amp;
+NOT(ISBLANK(Price_Uplift_on_Renewal_percentage__c)))
+)</errorConditionFormula>
+    <errorMessage>Please adjust the price uplift percentage accordingly after changing the price uplift on renewal decision on the account.</errorMessage>
+</ValidationRule>

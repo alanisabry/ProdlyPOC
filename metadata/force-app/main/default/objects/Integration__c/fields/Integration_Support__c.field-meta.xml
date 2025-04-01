@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integration_Support__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>The name of the company that provides support around the integration. This could include phone support, email support, or online support</inlineHelpText>
+    <label>Integration Support</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Integrations (Integration Support)</relationshipLabel>
+    <relationshipName>Integrations2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

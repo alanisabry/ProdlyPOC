@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Upsell_One_Off_Autolaunched</fullName>
+    <availability>online</availability>
+    <description>ACTIVE. Calls a flow to create an One-Off upsell record directly from the button.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Upsell - Professional Services</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/flow/Create_Upsell_Opportunity_One_Off?VarT_AccountID={!Account.Account_ID_18_digits__c}&amp;retURL={!URLFOR(Account.Id)}</url>
+</WebLink>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Marketing 1: Open</fullName>
+        <default>true</default>
+        <label>Marketing 1: Open</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Marketing 2: Marketing Qualified</fullName>
+        <default>false</default>
+        <label>Marketing 2: Marketing Qualified</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales 1: Open</fullName>
+        <default>false</default>
+        <label>Sales 1: Open</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales 2: Prospecting</fullName>
+        <default>false</default>
+        <label>Sales 2: Prospecting</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales 3: Nurture</fullName>
+        <default>false</default>
+        <label>Sales 3: Nurture</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales Qualified</fullName>
+        <default>false</default>
+        <label>Sales Qualified</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Unqualified</fullName>
+        <default>false</default>
+        <label>Unqualified</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Converted</fullName>
+        <default>false</default>
+        <label>Converted</label>
+        <converted>true</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Bounced</fullName>
+        <default>false</default>
+        <label>Email Bounced</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Completed Cadence</fullName>
+        <default>false</default>
+        <label>Completed Cadence</label>
+        <converted>false</converted>
+    </standardValue>
+</StandardValueSet>

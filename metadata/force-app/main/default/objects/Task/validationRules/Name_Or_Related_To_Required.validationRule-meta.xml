@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_Or_Related_To_Required</fullName>
+    <active>true</active>
+    <description>Requires a user to connect the task to either a contact or opportunity.</description>
+    <errorConditionFormula>AND(
+NOT(Contains($Profile.Name,&quot;System Administrator&quot;)),
+ISBLANK(WhoId), ISBLANK(WhatId)
+)</errorConditionFormula>
+    <errorMessage>Please select either a related Lead/Contact (&quot;Name&quot;) or Opportunity (&quot;Related to&quot;).</errorMessage>
+</ValidationRule>

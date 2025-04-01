@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>TrayOnAccountFieldsChange_Z2bTSGU</name>
+        <label>TrayOnAccountFieldsChange_Z2bTSGU</label>
+        <locationX>100</locationX>
+        <locationY>400</locationY>
+        <actionName>04kRo0000001c6TNotFound</actionName>
+        <actionType>outboundMessage</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <label>TrayOnAccountFieldsChange_Z2bTSGU</label>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>TrayOnAccountFieldsChange_Z2bTSGU</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.Name}) || ISCHANGED({!$Record.OEM_Account__c}) || ISCHANGED({!$Record.BillingCity}) || ISCHANGED({!$Record.BillingState}) || ISCHANGED({!$Record.BillingCountryCode}) || ISCHANGED({!$Record.BillingPostalCode}) || ISCHANGED({!$Record.Account_ID_18_digits__c}) || ISCHANGED({!$Record.BillingStreet}) || ISCHANGED({!$Record.Invoice_Upload_Portal__c}) || ISCHANGED({!$Record.Platform__c}) || ISCHANGED({!$Record.Subsidiary_lookup__c}) || ISCHANGED({!$Record.Netsuite_Internal_ID__c}) || ISCHANGED({!$Record.CurrencyIsoCode}) || ISCHANGED({!$Record.CSM_Owner__c}) || ISCHANGED({!$Record.Type}) || ISCHANGED({!$Record.Credit_Control_Reminder_Email__c}) || ISCHANGED({!$Record.Billing_Account_Name__c}) || ISCHANGED({!$Record.Bill_to_Contact_Email__c}) || ISCHANGED({!$Record.Billing_cc_email__c}) || ISCHANGED({!$Record.Invoice_Delivery_Method__c}) || ISCHANGED({!$Record.Send_invoice_email_automatically__c}) || ISCHANGED({!$Record.VAT_number__c}) || ISCHANGED({!$Record.PO_Requestor__c})</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

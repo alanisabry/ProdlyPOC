@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not Required</fullName>
+        <default>true</default>
+        <label>Not Required</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Manager</fullName>
+        <default>false</default>
+        <label>Sales Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>VP of Customer Success</fullName>
+        <default>false</default>
+        <label>VP of Customer Success</label>
+    </customValue>
+    <customValue>
+        <fullName>COO</fullName>
+        <default>false</default>
+        <label>COO</label>
+    </customValue>
+    <customValue>
+        <fullName>Pricing Committee</fullName>
+        <default>false</default>
+        <label>Pricing Committee</label>
+    </customValue>
+    <customValue>
+        <fullName>CFO + CEO</fullName>
+        <default>false</default>
+        <label>CFO + CEO</label>
+    </customValue>
+    <customValue>
+        <fullName>Board</fullName>
+        <default>false</default>
+        <label>Board</label>
+    </customValue>
+    <description>BODEV-76: List of different level of DoA approvers.</description>
+    <masterLabel>DoA Level</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

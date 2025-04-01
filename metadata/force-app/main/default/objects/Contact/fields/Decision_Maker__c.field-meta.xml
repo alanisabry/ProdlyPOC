@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decision_Maker__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Contacts important in the decision making process to buy/keep Bynder (e.g. management).
+GS NPS: Yes
+Newsletter: Yes</description>
+    <inlineHelpText>Contacts important in the decision making process to buy/keep Bynder (e.g. management).
+GS NPS: Yes
+Newsletter: Yes</inlineHelpText>
+    <label>Decision Maker</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

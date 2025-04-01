@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>SMB</fullName>
+        <default>false</default>
+        <label>SMB</label>
+    </customValue>
+    <customValue>
+        <fullName>Mid-Market</fullName>
+        <default>false</default>
+        <label>Mid-Market</label>
+    </customValue>
+    <customValue>
+        <fullName>MM - Small</fullName>
+        <default>false</default>
+        <label>MM - Small</label>
+    </customValue>
+    <customValue>
+        <fullName>MM - Large</fullName>
+        <default>false</default>
+        <label>MM - Large</label>
+    </customValue>
+    <customValue>
+        <fullName>Enterprise</fullName>
+        <default>false</default>
+        <label>Enterprise</label>
+    </customValue>
+    <customValue>
+        <fullName>Strategic</fullName>
+        <default>false</default>
+        <label>Strategic</label>
+    </customValue>
+    <customValue>
+        <fullName>Micro</fullName>
+        <default>false</default>
+        <label>Micro</label>
+    </customValue>
+    <masterLabel>Company Size</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

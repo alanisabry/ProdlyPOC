@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bizible2__Bizible_Attribution_SyncType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Choose which criteria to use Campaign Members as Bizible Touchpoints. This should be used for offline touchpoints only.</description>
+    <inlineHelpText>Choose which criteria to use Campaign Members as Bizible Touchpoints. This should be used for offline touchpoints only.</inlineHelpText>
+    <label>Enable Bizible Touchpoints</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Include all Campaign Members</fullName>
+                <default>false</default>
+                <label>Include all Campaign Members</label>
+            </value>
+            <value>
+                <fullName>Include only &quot;Responded&quot; Campaign Members</fullName>
+                <default>false</default>
+                <label>Include only &quot;Responded&quot; Campaign Members</label>
+            </value>
+            <value>
+                <fullName>Exclude all Campaign Members</fullName>
+                <default>false</default>
+                <label>Exclude all Campaign Members</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

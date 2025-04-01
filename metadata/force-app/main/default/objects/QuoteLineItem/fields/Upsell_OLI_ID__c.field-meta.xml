@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upsell_OLI_ID__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>BODEV-3370 : Used to store the OLI of the Upsell associated with QLI</description>
+    <label>Upsell OLI ID</label>
+    <referenceTo>OpportunityLineItem</referenceTo>
+    <relationshipLabel>Upsell Line Items</relationshipLabel>
+    <relationshipName>Upsell_Line_Items</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

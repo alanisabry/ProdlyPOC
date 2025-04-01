@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Indexation_Rate__c</fullName>
+    <description>Indexation rate of the past year of activated date used in indexation rate calculation. Eg., If order is activated is 2022, this field stores the average of indexation rates of 2021.</description>
+    <inlineHelpText>Indexation rate of the previous year of activated date used in indexation rate calculation.</inlineHelpText>
+    <label>Current Indexation Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

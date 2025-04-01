@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Regular_User_Enterprise_pckg</fullName>
+    <active>true</active>
+    <description>Cannot add Regular User (1-25),Regular User (26-50) &amp; Regular User (51+) products for Enterprise package.</description>
+    <errorConditionFormula>AND(
+  NOT($Profile.Name = &quot;System Administrator&quot;),
+  ISPICKVAL(Opportunity.Standard_Package_Name__c, &quot;Enterprise&quot;), 
+  ISPICKVAL(Opportunity.Type, &quot;New Business-Enterprise Cloud&quot;),
+  ISNEW(),
+  OR(
+    Product2.Product_ID_18_digits__c = &apos;01t3g000000i8U2AAI&apos;,
+    Product2.Product_ID_18_digits__c = &apos;01t3g000000i8U7AAI&apos;, 
+    Product2.Product_ID_18_digits__c = &apos;01t3g000000i8U3AAI&apos;
+  )
+)</errorConditionFormula>
+    <errorMessage>Cannot add Regular User (1-25),Regular User (26-50) &amp; Regular User (51+) products for Enterprise package.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_Renewal_Item_Internal_ID__c</fullName>
+    <description>Internal ID of the renewal item in Netsuite.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Internal ID of the renewal item in Netsuite.</inlineHelpText>
+    <label>Netsuite Renewal Item Internal ID</label>
+    <length>10</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

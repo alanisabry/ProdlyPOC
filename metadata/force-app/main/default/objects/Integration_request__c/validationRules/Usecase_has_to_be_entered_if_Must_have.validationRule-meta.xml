@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Usecase_has_to_be_entered_if_Must_have</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ Integration_request_note__c=&quot;&quot;,
+ OR(
+   ISPICKVAL(Customer_priority__c,&quot;Must have&quot;),
+   ISPICKVAL(Customer_priority__c, &quot;Should Have&quot;),
+   ISPICKVAL(Customer_priority__c, &quot;Nice to Have&quot;)
+ )
+)</errorConditionFormula>
+    <errorDisplayField>Integration_request_note__c</errorDisplayField>
+    <errorMessage>Please enter the usecase.</errorMessage>
+</ValidationRule>

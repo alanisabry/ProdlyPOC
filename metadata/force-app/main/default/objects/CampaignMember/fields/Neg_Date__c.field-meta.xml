@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Neg_Date__c</fullName>
+    <description>wd field</description>
+    <formula>/* Deleted this formula and set the value as blank as opportunity is deleted FCR_Opportunity__r.Neg_Date__c */
+
+DATEVALUE(&quot;&quot;)</formula>
+    <label>Neg Date</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

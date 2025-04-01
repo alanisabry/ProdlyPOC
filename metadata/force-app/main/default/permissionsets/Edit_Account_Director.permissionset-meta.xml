@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>BODEV-1700 - This permission set allows users to edit "Account director" field on Accounts.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Account_Director__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Edit Account Director</label>
+</PermissionSet>

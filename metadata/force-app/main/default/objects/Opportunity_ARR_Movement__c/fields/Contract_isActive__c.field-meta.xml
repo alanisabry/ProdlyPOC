@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_isActive__c</fullName>
+    <description>Indicates whether the contract is active or not.</description>
+    <formula>Opportunity__r.Contract_IsActive__c</formula>
+    <label>Contract isActive</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

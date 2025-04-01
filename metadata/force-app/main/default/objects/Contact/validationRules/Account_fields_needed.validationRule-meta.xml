@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_fields_needed</fullName>
+    <active>true</active>
+    <description>User cannot SQL a contact when the fields on Account (Company Size New, Subregion) are not filled.</description>
+    <errorConditionFormula>AND(
+NOT(Contains($Profile.Name, &quot;System Administrator&quot;)),
+ISPICKVAL( Status__c ,&quot;Sales Qualified&quot;),
+OR(
+  ISPICKVAL(Account.Sales_Region__c,&quot;&quot;),
+  ISPICKVAL(Account.Company_Size_New__c ,&quot;&quot;)
+)
+)</errorConditionFormula>
+    <errorMessage>Please fill in Company Size and Subregion Account level first.</errorMessage>
+</ValidationRule>

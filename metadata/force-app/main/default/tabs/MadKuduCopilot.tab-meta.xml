@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>MadKudu Copilot allows you to understand any relevant activity that happened in your book of accounts. Don&apos;t miss anything thanks to the MadKudu playbooks! The Copilot allows you to slide and dice in your book of accounts to understand who is active and what you should mention when reaching out.</description>
+    <label>MadKuduCopilot</label>
+    <motif>Custom43: Jewel</motif>
+    <page>MadKuduCopilot</page>
+</CustomTab>

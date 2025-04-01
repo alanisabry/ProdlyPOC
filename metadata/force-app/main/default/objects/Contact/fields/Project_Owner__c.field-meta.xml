@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Owner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Contacts heavily involved in the implementation and could also be involved in the purchasing of Bynder.
+GS NPS: No
+Newsletter: Yes</description>
+    <inlineHelpText>Contacts heavily involved in the implementation and could also be involved in the purchasing of Bynder.
+GS NPS: No
+Newsletter: Yes</inlineHelpText>
+    <label>Project Owner</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>allInternalUsers</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>ARR_manual__c</field>
+        <field>Discount_Amount_ARR__c</field>
+        <field>One_off__c</field>
+        <field>Owner</field>
+        <field>Ultimate_DoA_Level__c</field>
+        <field>MRR__c</field>
+        <field>Payment_Period__c</field>
+        <field>Invoice_period__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_indexation_approval_status</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>jean-marie.arnould@bynder.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Approve indexation waiver on opportunity</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Opportunity.Waive_Indexation__c</field>
+                <operation>equals</operation>
+                <value>Yes,First Year</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Waive Indexation Approval</label>
+        <name>Waive_Indexation_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>heidi.lasker@bynder.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Contract Term Approval</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND (3 AND 4)</booleanFilter>
+            <criteriaItems>
+                <field>Opportunity.Type</field>
+                <operation>equals</operation>
+                <value>Existing Business-Renewal</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Netsuite_Term__c</field>
+                <operation>lessThan</operation>
+                <value>12</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Ultimate_DoA_Level__c</field>
+                <operation>notEqual</operation>
+                <value>Sales Manager</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Ultimate_DoA_Level__c</field>
+                <operation>notEqual</operation>
+                <value>COO</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Contract Term Less Than 1 Year</label>
+        <name>Contract_Term_Less_Than_1_Year</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Ultimate_DoA_Approver__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>BODEV-673: All approval process should always enter this step.</description>
+        <entryCriteria>
+            <booleanFilter>1 AND(( 2 AND 3) OR 4)</booleanFilter>
+            <criteriaItems>
+                <field>Opportunity.Ultimate_DoA_Approver__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Waive_Indexation__c</field>
+                <operation>equals</operation>
+                <value>Yes,First Year</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Ultimate_DoA_Level__c</field>
+                <operation>notEqual</operation>
+                <value>Pricing Committee</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Opportunity.Waive_Indexation__c</field>
+                <operation>notEqual</operation>
+                <value>Yes,First Year</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>DoA: Ultimate DoA Approver Only</label>
+        <name>DoA_Ultimate_DoA_Approver_Only</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>BODEV-76: Approval process for Delegation of Authority (DoA) 
+BODEV-1391: Approval process for waiving the indexation on opportunity
+BODEV-3990: New DoA Criteria: Renewal&lt;1y for CCO approval</description>
+    <emailTemplate>unfiled$public/DoA_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>FALSE</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>DoA_Approval_Finalized</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Set_DoA_Approval_Status_Accepted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>DoA_Approval_Finalized</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Set_DoA_Approval_Status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Set_DoA_Approval_Status_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Delegation of Authority Approval  V1</label>
+    <processOrder>3</processOrder>
+    <recallActions>
+        <action>
+            <name>Set_DoA_Approval_Status_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

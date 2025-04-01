@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_factors_applied__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to check if the pricing factors are applied or not</description>
+    <inlineHelpText>If checked, Pricing factors are applied. Original Renewal ARR is the base price on which the pricing factors are applied.</inlineHelpText>
+    <label>Pricing factors applied?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

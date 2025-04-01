@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>First point of contact for Bynder Support on Client side. (e.g. when Supports reaches out for SSL Renewal or needs to escalate questions from end-users).
+GS NPS: No
+Newsletter: Yes</description>
+    <inlineHelpText>First point of contact for Bynder Support on Client side. (e.g. when Supports reaches out for SSL Renewal or needs to escalate questions from end-users).
+GS NPS: No
+Newsletter: Yes</inlineHelpText>
+    <label>Support contact</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospect_Reference__c</fullName>
+    <defaultValue>&quot;Never&quot;</defaultValue>
+    <description>Webdam field
+The CSM is responsible for maintaining the data in this field. In cases where &quot;with approval&quot; is selected, always check with the CSM.</description>
+    <inlineHelpText>The CSM is responsible for maintaining the data in this field. In cases where &quot;with approval&quot; is selected, always check with the CSM.</inlineHelpText>
+    <label>Prospect Reference</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>With CSM Approval</fullName>
+                <default>false</default>
+                <label>With CSM Approval</label>
+            </value>
+            <value>
+                <fullName>Never</fullName>
+                <default>false</default>
+                <label>Never</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

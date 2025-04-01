@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drift_opt_in__c</fullName>
+    <description>BODEV-2384 1x text field, 1x workflow in SF for email marketing opt-in(Drift’s SF integration doesn’t support field mapping to checkbox fields)</description>
+    <externalId>false</externalId>
+    <label>Drift opt-in</label>
+    <length>10</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

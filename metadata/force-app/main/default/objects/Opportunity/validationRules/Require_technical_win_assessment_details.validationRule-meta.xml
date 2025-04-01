@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_technical_win_assessment_details</fullName>
+    <active>true</active>
+    <description>Technical Win Assessment details needs to be updated every time Technical Win Assessment field is updated.</description>
+    <errorConditionFormula>AND(
+/* Exempting AutoProcess */
+    NOT($Profile.Name = &quot;Automated Process&quot;),
+
+    OR(
+    /*On Opportunity creation */
+        AND(ISNEW(), 
+            NOT(ISPICKVAL(Technical_Win_Assessment__c,&apos;&apos;)),
+            NOT(ISPICKVAL(Technical_Win_Assessment__c,&apos;Meets all requirements&apos;)),
+            Technical_Win_Assessment_Details__c = null), 
+
+    /*On Opportunity update */
+        AND(ISCHANGED(Technical_Win_Assessment__c),
+            NOT(ISPICKVAL(Technical_Win_Assessment__c,&apos;Meets all requirements&apos;)),
+            NOT(ISCHANGED(Technical_Win_Assessment_Details__c)))
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Technical_Win_Assessment_Details__c</errorDisplayField>
+    <errorMessage>Please update the Technical Win Assessment details when Technical Win Assessment is updated.</errorMessage>
+</ValidationRule>

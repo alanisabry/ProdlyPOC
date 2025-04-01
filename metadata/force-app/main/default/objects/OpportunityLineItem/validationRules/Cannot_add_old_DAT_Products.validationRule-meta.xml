@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_old_DAT_Products</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;System Administrator&quot;),
+ISNEW(),
+Quantity &gt;0,
+OR(
+TEXT(Opportunity.Type) = &quot;New Business-Enterprise Cloud&quot;,
+TEXT(Opportunity.Type) = &quot;Existing Business-Upsell&quot;,
+TEXT(Opportunity.Type) = &quot;New Business - Expansion Portal&quot;
+),
+OR(
+Product2.Product_ID_18_digits__c = &apos;01t3g000000ShvlAAC&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t3g000000ShvqAAC&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t3g000000ShvvAAC&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t3g000000Shw0AAC&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t3g000000Shw5AAC&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot add Old Dynamic Asset Transformation products to New business or Upsell opportunities. Use these products instead DAT Base (&lt;10M), DAT Premium (10M&lt;100M), DAT Elite (100M&lt;500M),DAT Custom (500M+).</errorMessage>
+</ValidationRule>

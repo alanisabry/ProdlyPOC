@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_Contacts_Not_Unqualified__c</fullName>
+    <description>BODEV-1037: # of Contacts not unqualified. Filled by DLRS.</description>
+    <externalId>false</externalId>
+    <label># of Contacts Not Unqualified</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

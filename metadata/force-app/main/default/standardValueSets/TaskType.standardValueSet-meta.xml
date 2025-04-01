@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Customer: Important Date</fullName>
+        <default>false</default>
+        <label>Customer: Important Date</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Check-in</fullName>
+        <default>false</default>
+        <label>Customer Check-in</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Demo</fullName>
+        <default>false</default>
+        <label>Demo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discovery Call</fullName>
+        <default>false</default>
+        <label>Discovery Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Dynamic Template Test</fullName>
+        <default>false</default>
+        <label>Dynamic Template Test</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IT/Security Question</fullName>
+        <default>false</default>
+        <label>IT/Security Question</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Product Question</fullName>
+        <default>false</default>
+        <label>Product Question</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trial Account</fullName>
+        <default>false</default>
+        <label>Trial Account</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Drift Chat Conversation</fullName>
+        <default>false</default>
+        <label>Drift Chat Conversation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Letter</fullName>
+        <default>false</default>
+        <label>Letter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Postal</fullName>
+        <default>false</default>
+        <label>Postal</label>
+    </standardValue>
+    <standardValue>
+        <fullName>test</fullName>
+        <default>false</default>
+        <label>Test</label>
+    </standardValue>
+</StandardValueSet>

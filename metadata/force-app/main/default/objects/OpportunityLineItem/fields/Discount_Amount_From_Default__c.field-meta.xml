@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Amount_From_Default__c</fullName>
+    <description>Indicates the package discount: difference between List Price and Default price.</description>
+    <formula>IF(Default_Price__c &lt; ListPrice,
+0,
+(Default_Price__c - ListPrice) * Quantity)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Discount Amount (From Default)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <type>Currency</type>
+</CustomField>

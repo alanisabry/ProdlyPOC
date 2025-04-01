@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Content_Management_Solution_CMS__c</fullName>
+    <label>Content Management Solution (CMS)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>WordPress</fullName>
+                <default>false</default>
+                <label>WordPress</label>
+            </value>
+            <value>
+                <fullName>Drupal</fullName>
+                <default>false</default>
+                <label>Drupal</label>
+            </value>
+            <value>
+                <fullName>Drupal 8</fullName>
+                <default>false</default>
+                <label>Drupal 8</label>
+            </value>
+            <value>
+                <fullName>Sitecore</fullName>
+                <default>false</default>
+                <label>Sitecore</label>
+            </value>
+            <value>
+                <fullName>Adobe AEM (Adobe Experience Manager)</fullName>
+                <default>false</default>
+                <label>Adobe AEM (Adobe Experience Manager)</label>
+            </value>
+            <value>
+                <fullName>Adobe Scene7</fullName>
+                <default>false</default>
+                <label>Adobe Scene7</label>
+            </value>
+            <value>
+                <fullName>SharePoint</fullName>
+                <default>false</default>
+                <label>SharePoint</label>
+            </value>
+            <value>
+                <fullName>Ektron</fullName>
+                <default>false</default>
+                <label>Ektron</label>
+            </value>
+            <value>
+                <fullName>Omniupdate</fullName>
+                <default>false</default>
+                <label>Omniupdate</label>
+            </value>
+            <value>
+                <fullName>Craft CMS</fullName>
+                <default>false</default>
+                <label>Craft CMS</label>
+            </value>
+            <value>
+                <fullName>Shopify</fullName>
+                <default>false</default>
+                <label>Shopify</label>
+            </value>
+            <value>
+                <fullName>Magento</fullName>
+                <default>false</default>
+                <label>Magento</label>
+            </value>
+            <value>
+                <fullName>dotCMS</fullName>
+                <default>false</default>
+                <label>dotCMS</label>
+            </value>
+            <value>
+                <fullName>Sitefinity</fullName>
+                <default>false</default>
+                <label>Sitefinity</label>
+            </value>
+            <value>
+                <fullName>SiteExecutive</fullName>
+                <default>false</default>
+                <label>SiteExecutive</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Kentico</fullName>
+                <default>false</default>
+                <label>Kentico</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

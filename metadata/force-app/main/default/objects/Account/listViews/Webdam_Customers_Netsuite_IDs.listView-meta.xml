@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Webdam_Customers_Netsuite_IDs</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY_CODE</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>Netsuite_Internal_ID__c</columns>
+    <columns>Netsuite_Link__c</columns>
+    <columns>Current_MRR_new__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Platform__c</field>
+        <operation>equals</operation>
+        <value>Webdam</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Customer,Ex-customer</value>
+    </filters>
+    <label>Webdam Customers Netsuite IDs</label>
+</ListView>

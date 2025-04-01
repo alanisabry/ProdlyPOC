@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fields__c</fullName>
+    <description>A comma delimited list of API field names for the target SObject and record type.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>A comma delimited list of API field names for the target SObject and record type.</inlineHelpText>
+    <label>Fields</label>
+    <length>2000</length>
+    <type>LongTextArea</type>
+    <visibleLines>8</visibleLines>
+</CustomField>

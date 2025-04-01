@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_CSM_Owner_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>BODEV-4490: Used to store the manager of the CSM Owner on the account. This field is used in Catalyst and Thoughtspot.</description>
+    <label>Account CSM Owner Manager</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Accounts5</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

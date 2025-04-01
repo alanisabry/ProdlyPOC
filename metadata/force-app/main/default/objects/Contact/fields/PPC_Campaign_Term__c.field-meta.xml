@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PPC_Campaign_Term__c</fullName>
+    <description>Webdam field
+&quot;Used for paid search. Use utm_term to note the keywords for this ad.&quot;</description>
+    <label>PPC Campaign Term</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

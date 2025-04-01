@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Period_Cannot_be_Zero</fullName>
+    <active>true</active>
+    <description>Invoice Period cannot be 0.</description>
+    <errorConditionFormula>AND(
+NOT(Contains($Profile.Name,&quot;System Administrator&quot;)),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+Invoice_period__c=0)</errorConditionFormula>
+    <errorMessage>Invoice Period cannot be 0.</errorMessage>
+</ValidationRule>

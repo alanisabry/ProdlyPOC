@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_delete_OLI_on_Renewals_ClosedWon</fullName>
+    <active>true</active>
+    <description>Prevents users from deleting opportunity products after an opportunity is closed or a renewal</description>
+    <errorConditionFormula>AND(
+  OR(
+    AND(
+      ISPICKVAL(Type,&quot;Existing Business-Renewal&quot;),
+      NOT($Permission.Edit_products_on_renewals),
+      ISCHANGED(MRR_from_Products__c)
+    ),
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    ISPICKVAL(StageName, &quot;Closed Lost&quot;)
+  ),
+  NOT(CreatedDate&gt;Now()-0.0007), 
+  NOT(ISNEW()),
+  Allow_Product_Merge__c=FALSE,
+  NOT($Profile.Name =&quot;System Administrator&quot;), 
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+  of_opportunity_products__c &lt;&gt;PRIORVALUE(of_opportunity_products__c )
+)</errorConditionFormula>
+    <errorMessage>Products cannot be changed on renewals or closed opportunities.</errorMessage>
+</ValidationRule>

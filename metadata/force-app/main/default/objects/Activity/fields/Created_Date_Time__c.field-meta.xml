@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_Date_Time__c</fullName>
+    <description>Date time value when activity was created.</description>
+    <formula>CreatedDate</formula>
+    <inlineHelpText>Date time value when activity was created.</inlineHelpText>
+    <label>Created Date/Time</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ARR_Before_Discount__c</fullName>
+    <description>Sum of Total Price Before Discount Mapped of ARR line items.</description>
+    <label>ARR Before Discount</label>
+    <summarizedField>QuoteLineItem.Total_Price_Before_Discount_Mapped__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.For_Renewal__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

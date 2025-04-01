@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>For_Renewal__c</fullName>
+    <description>BODEV-76: Flag to indicate if a product is subscription product or one-off product</description>
+    <formula>Product__r.For_Contract_Renewals__c</formula>
+    <label>For Renewal</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

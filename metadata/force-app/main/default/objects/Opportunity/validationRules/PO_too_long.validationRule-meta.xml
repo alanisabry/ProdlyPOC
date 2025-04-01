@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_too_long</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;Automated Process&quot;),
+ISCHANGED(PO_Number__c),
+LEN(PO_Number__c) &gt; 45)</errorConditionFormula>
+    <errorDisplayField>PO_Number__c</errorDisplayField>
+    <errorMessage>PO should be 45 characters or fewer.</errorMessage>
+</ValidationRule>

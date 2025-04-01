@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFMC_Commission__c</fullName>
+    <description>BODEV-81: Identify whether Bynder owes higher or lower commission to Salesforce. Updated by Flow &quot;Create SFMC Connector Order Case&quot;.</description>
+    <label>SFMC Commission</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>20% of ARR</fullName>
+                <default>false</default>
+                <label>20% of ARR</label>
+            </value>
+            <value>
+                <fullName>20% of Connector</fullName>
+                <default>false</default>
+                <label>20% of Connector</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

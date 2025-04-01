@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Contact_Type__c</fullName>
+    <description>Webdam field</description>
+    <label>Customer Contact Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Primary Administrator</fullName>
+                <default>false</default>
+                <label>Primary Administrator</label>
+            </value>
+            <value>
+                <fullName>Secondary Administrator</fullName>
+                <default>false</default>
+                <label>Secondary Administrator</label>
+            </value>
+            <value>
+                <fullName>Contributor</fullName>
+                <default>false</default>
+                <label>Contributor</label>
+            </value>
+            <value>
+                <fullName>Technical Contact</fullName>
+                <default>false</default>
+                <label>Technical Contact</label>
+            </value>
+            <value>
+                <fullName>Executive Contact</fullName>
+                <default>false</default>
+                <label>Executive Contact</label>
+            </value>
+            <value>
+                <fullName>Executive Sponsor</fullName>
+                <default>false</default>
+                <label>Executive Sponsor</label>
+            </value>
+            <value>
+                <fullName>WebDAM Employee</fullName>
+                <default>false</default>
+                <label>WebDAM Employee</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Ambassador</fullName>
+                <default>false</default>
+                <label>Ambassador</label>
+            </value>
+            <value>
+                <fullName>WebDAM DB Admin</fullName>
+                <default>false</default>
+                <label>WebDAM DB Admin</label>
+            </value>
+            <value>
+                <fullName>Outage Notification Contact</fullName>
+                <default>false</default>
+                <label>Outage Notification Contact</label>
+            </value>
+            <value>
+                <fullName>C-Level</fullName>
+                <default>false</default>
+                <label>C-Level</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

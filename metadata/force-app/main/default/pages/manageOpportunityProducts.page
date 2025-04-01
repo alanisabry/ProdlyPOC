@@ -1,0 +1,19 @@
+<apex:page standardController="Opportunity" lightningStylesheets="true">
+    
+     <head>
+        <apex:slds />
+    </head>
+    <apex:includeLightning />
+
+    <div id="lightning" />
+
+    <script>
+        $Lightning.use('c:manageOpportunityProductsApp', function() {
+            $Lightning.createComponent('c:manageOpportunityProducts',
+                { recordId: '{!$CurrentPage.parameters.id}' },
+                'lightning',
+                function(cmp) {}
+            );
+        });
+    </script>
+</apex:page>

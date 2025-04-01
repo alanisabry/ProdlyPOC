@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_ICP__c</fullName>
+    <description>BO-873: In order to create a consolidated report on activities on both Leads and Contacts with certain conditions on this information</description>
+    <formula>IF(
+  ISBLANK(WhoId),
+  FALSE,
+  IF(
+    LEFT(WhoId, 3) = &apos;00Q&apos;, /* WhoId is Lead */
+    Lead__r.Industry_ICP__c,
+    Contact__r.Account.Industry_ICP__c
+  )
+)</formula>
+    <label>Industry ICP</label>
+    <type>Checkbox</type>
+</CustomField>

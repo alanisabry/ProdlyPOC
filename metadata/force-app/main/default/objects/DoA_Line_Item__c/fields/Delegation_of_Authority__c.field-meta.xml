@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delegation_of_Authority__c</fullName>
+    <description>BODEV-76: Master lookup to DoA record</description>
+    <label>Delegation of Authority</label>
+    <referenceTo>Delegation_of_Authority__c</referenceTo>
+    <relationshipLabel>DoA Line Items</relationshipLabel>
+    <relationshipName>DoA_Line_Items</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Edit_products_on_renewals</name>
+    </customPermissions>
+    <description>Permission set that allows editing products on renewal opportunities.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Edit Products on Renewal Opportunities</label>
+</PermissionSet>

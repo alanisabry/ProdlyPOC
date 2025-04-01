@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SQL_d_on_Lead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-1322: Checkbox to indicate Contact had been Sales Qualified when it was a Lead. Filled by Lead Conversion mapped from Sales Qualified field.</description>
+    <label>SQL’d on Lead</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Size_New__c</fullName>
+    <description>BO-873: In order to create a consolidated report on activities on both Leads and Contacts with certain conditions on this information</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  ISBLANK(WhoId) ,
+  &quot;&quot;,
+  IF(
+    LEFT(WhoId, 3) = &apos;00Q&apos;, /* WhoId is Lead */
+    TEXT(Lead__r.Company_Size_New__c),
+    TEXT(Contact__r.Account.Company_Size_New__c)
+  )
+)</formula>
+    <label>Company Size New</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

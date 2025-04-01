@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SpotDraft_Subsidiary__c</fullName>
+    <description>BODEV-3453: Picklist to specify the default Legal Entity when initiating SpotDraft workflows. When a SpotDraft workflow is completed, the final Legal Entity selected will be synced back.</description>
+    <label>SpotDraft Subsidiary</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Bynder_Legal_Entity</valueSetName>
+    </valueSet>
+</CustomField>

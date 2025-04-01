@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contraction_ARR_Forecasted_Reported__c</fullName>
+    <description>BODEV-3809: a consolidated field for forecast and actual reporting. The field should return the actual Contraction ARR when closed, and the forecasted Contraction value when open, depending on Opp type.</description>
+    <formula>IF(
+    /* When lost, no Contraction reported */
+    ISPICKVAL(StageName,&quot;Closed Lost&quot;),
+    0,
+    IF(
+        /* When won, return Contraction ARR */
+        ISPICKVAL(StageName, &quot;Closed Won&quot;),
+        - Contraction_ARR__c,
+        /* When open, return value depending on Opp type */
+        CASE(TEXT(Type),
+            &quot;Existing Business-Upsell&quot;, MIN(ARR_manual__c, 0),
+            &quot;Existing Business-Professional Services&quot;, MIN(ARR_manual__c, 0),
+            &quot;Existing Business-Renewal&quot;,
+                /*
+                    Contraction on Renewal is recognised only when manual discount is given after pricing factors AND
+                    the discount is larger than the offset allowance (Dropped discount + Renewal Uplift amount + Upcoming indexation beyond 2%).
+                    In this case, the excess beyond the offset allowance will be recognised as Contraction when closed.
+                    In any other case, no Contraction will be recognised.
+                */
+                - MAX(
+                    /* Discount after pricing factros */
+                    (
+                        Initial_Default_Price_ARR__c * (1 + Applied_Cumulative_Indexation__c) * (1 + Applied_Upcoming_Indexation__c) * (1 + Price_Uplift_on_Renewal_percentage__c) - ARR_manual__c
+                    )
+                    -
+                    /* Offset allowance */
+                    (
+                        (Initial_Default_Price_ARR__c - Original_Renewal_ARR__c) + Renewal_Uplift_amount__c + 
+                        IF(Applied_Upcoming_Indexation__c &gt; 0, Upcoming_Indexation_amount__c / Applied_Upcoming_Indexation__c * MAX(Applied_Upcoming_Indexation__c - 0.02, 0), 0)
+                    ),
+                    0
+                ),
+            0
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contraction ARR Forecasted/Reported</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

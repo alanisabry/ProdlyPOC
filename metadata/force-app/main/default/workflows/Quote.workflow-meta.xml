@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>DoA_Approval_Finalized_Quote</fullName>
+        <description>DoA Approval Finalized - Quote</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/DoA_Approval_Request_Finalized_Quote</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Set_DoA_Approval_Status_Approved_Quote</fullName>
+        <field>DoA_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set DoA Approval Status Approved - Quote</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_DoA_Approval_Status_Pending_on_Quote</fullName>
+        <field>DoA_Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Set DoA Approval Status Pending on Quote</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_DoA_Approval_Status_Recalled_Quote</fullName>
+        <field>DoA_Approval_Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>Set DoA Approval Status Recalled - Quote</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_DoA_Approval_Status_Rejected_Quote</fullName>
+        <field>DoA_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set DoA Approval Status Rejected - Quote</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Quote_Status_to_Price_Finalised</fullName>
+        <field>Status</field>
+        <literalValue>Price Finalised</literalValue>
+        <name>Set Quote Status to Price Finalised</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_indexation_approval_status_Quote</fullName>
+        <field>DoA_Approval_Status__c</field>
+        <literalValue>Indexation Waiver Approved</literalValue>
+        <name>Update indexation approval status-Quote</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Growth_Planner_Sheet_Tray_Workflow</fullName>
+        <apiVersion>60.0</apiVersion>
+        <endpointUrl>https://10abced3-a836-4b32-b278-365ebf7675e5.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>sabry.alani@bynder.com</integrationUser>
+        <name>Growth Planner Sheet Tray Workflow</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+</Workflow>

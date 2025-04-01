@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certification_Declaration__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox to capture submitter&apos;s consent/declaration on submitted information. Actual clause should be specified in each form presented to customer.</description>
+    <label>Certification Declaration</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

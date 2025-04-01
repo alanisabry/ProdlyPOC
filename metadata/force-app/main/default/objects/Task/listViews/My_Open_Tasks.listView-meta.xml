@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Tasks</fullName>
+    <columns>WHO_NAME</columns>
+    <columns>SUBJECT</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>DUE_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>DUE_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <filters>
+        <field>STATUS</field>
+        <operation>equals</operation>
+        <value>Not Started</value>
+    </filters>
+    <label>My Open Tasks - This Month [BDR/CDR]</label>
+</ListView>

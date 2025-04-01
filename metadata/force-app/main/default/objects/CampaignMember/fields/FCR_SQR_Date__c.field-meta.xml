@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_SQR_Date__c</fullName>
+    <description>wd fields
+Date SQL Set (Converted to Opportunity)</description>
+    <label>SQL Date</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

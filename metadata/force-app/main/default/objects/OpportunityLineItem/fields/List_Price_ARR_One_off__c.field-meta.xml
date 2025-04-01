@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>List_Price_ARR_One_off__c</fullName>
+    <description>Returns the List Price in ARR for recurring products and One-off for non-recurring products.</description>
+    <formula>IF( For_Renewal__c = True, ListPrice * 12, ListPrice)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>List Price ARR/One-off</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Currency</type>
+</CustomField>

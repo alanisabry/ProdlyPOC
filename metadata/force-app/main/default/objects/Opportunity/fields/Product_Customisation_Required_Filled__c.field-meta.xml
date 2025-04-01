@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Customisation_Required_Filled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the field &quot;Product Customisation Required&quot; filled or not.</description>
+    <label>Product Customisation Required Filled</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserGems__UG_Past_Infos__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>UG - Past Infos</label>
+    <referenceTo>UserGems__UserGems__c</referenceTo>
+    <relationshipLabel>Contact UG Past Infos</relationshipLabel>
+    <relationshipName>Contact_UG_Past_Infos</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_CascadeID__c</fullName>
+    <description>wd field
+This formula field is used to simplify queries for cascaded campaignmembers.
+First part is the campaignID if there is no parent, or the parent campaignID if there is. Second part is the contactID if present, otherwise the lead ID</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Campaign.FCR_CascadeParent__c), CampaignId , Campaign.FCR_CascadeParent__c ) + BLANKVALUE( ContactId , LeadId )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Admin_CascadeID</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

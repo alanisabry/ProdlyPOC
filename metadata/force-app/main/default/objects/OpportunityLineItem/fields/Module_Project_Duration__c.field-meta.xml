@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Module_Project_Duration__c</fullName>
+    <description>Created this new field for SpotDraft - SOW Project Duration</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(OR(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup Plus&apos;)),
+OR(PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t0P000002EFLFQA4&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01tRo000000TIb3IAG&apos;)),8, /*DAM or DAM + AI Search Experience*/
+IF(AND(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Professional&apos;),
+OR(PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t0P000002EFLFQA4&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01tRo000000TIb3IAG&apos;)),12,
+IF(AND(OR(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Enterprise&apos;),ISBLANK(TEXT(Opportunity.Standard_Package_Name__c))),
+OR(PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t0P000002EFLFQA4&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01tRo000000TIb3IAG&apos;)),16,
+
+IF(AND(OR(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup Plus&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Professional&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Enterprise&apos;),ISBLANK(TEXT(Opportunity.Standard_Package_Name__c)))
+,OR(PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01tRo000005zNBJIA2&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01tRo000005zNJNIA2&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01tRo000005zNODIA2&apos;)),2, /*BG*/
+
+IF(
+AND(OR(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup Plus&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Professional&apos;)),
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t0P000002EFLGQA4&apos;),4,
+IF(AND(OR(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Enterprise&apos;),ISBLANK(TEXT(Opportunity.Standard_Package_Name__c))),
+PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t0P000002EFLGQA4&apos;),6, /*Asset Workflow*/
+
+IF(AND(OR(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup Plus&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Professional&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Enterprise&apos;),ISBLANK(TEXT(Opportunity.Standard_Package_Name__c)))
+,OR(PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000chp5AAA&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t0d000006PqK9AAK&apos;)),4, /*DBT*/
+
+IF(AND(OR(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup Plus&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Professional&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Enterprise&apos;),ISBLANK(TEXT(Opportunity.Standard_Package_Name__c)))
+,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t0P000002EGGgQAO&apos;),4, /*PBT*/
+
+
+IF(AND(OR(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup Plus&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Professional&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Enterprise&apos;),ISBLANK(TEXT(Opportunity.Standard_Package_Name__c)))
+,OR(PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000SF8cAAG&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000SF8hAAG&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000SF8mAAG&apos;)),4, /*Studio*/
+
+
+IF(AND(OR(ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Workgroup Plus&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Professional&apos;),ISPICKVAL(Opportunity.Standard_Package_Name__c,&apos;Enterprise&apos;),ISBLANK(TEXT(Opportunity.Standard_Package_Name__c))),
+OR(PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000d7I0AAI&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000d7I5AAI&apos;,PricebookEntry.Product2.Product_ID_18_digits__c = &apos;01t3g000000d7K1AAI&apos;)),2,0)))))))))) /*Content Workflow*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SpotDraft Module Project Duration</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

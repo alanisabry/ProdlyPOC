@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MK_Customer_Fit__c</fullName>
+    <description>MadKudu Customer Fit scoring.
+3 stars: Very good, 2 stars: good, 1 star: medium, 1 cross: low.
+Predicts if this contact looks like a potential customer based on the analysis of past customers and their firmo, demo, techno enrichment</description>
+    <externalId>false</externalId>
+    <formula>IMAGE(&quot;https://cdn.madkudu.com/images/star.png&quot;,&quot;&quot;,0,0) +
+CASE(MK_Customer_Fit_Segment__c,
+&apos;very good&apos;,
+IMAGE(&quot;https://cdn.madkudu.com/images/star.png&quot;, &quot;Star&quot;, 20, 20) +
+IMAGE(&quot;https://cdn.madkudu.com/images/star.png&quot;, &quot;Star&quot;, 20, 20) +
+IMAGE(&quot;https://cdn.madkudu.com/images/star.png&quot;, &quot;Star&quot;, 20, 20),
+&apos;good&apos;,
+IMAGE(&quot;https://cdn.madkudu.com/images/star.png&quot;, &quot;Star&quot;, 20, 20) +
+IMAGE(&quot;https://cdn.madkudu.com/images/star.png&quot;, &quot;Star&quot;, 20, 20),
+&apos;medium&apos;,
+IMAGE(&quot;https://cdn.madkudu.com/images/star.png&quot;, &quot;Star&quot;, 20, 20),
+&apos;low&apos;,
+IMAGE(&quot;https://cdn.madkudu.com/images/cross.png&quot;, &quot;Cross&quot;, 20, 20),
+&apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Predicts if this contact looks like a potential customer based on the analysis of past customers and their firmo, demo, techno... enrichment
+3 stars: Very good, 2 stars: good, 1 star: medium, 1 cross: low</inlineHelpText>
+    <label>MK Customer Fit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

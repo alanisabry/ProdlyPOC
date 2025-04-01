@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Still_in_Demo__c</fullName>
+    <description>wd field
+Checked if Current Stage in Funnel is 6. Demo</description>
+    <formula>CFCR_Current_Stage_in_Funnel__c = &quot;6. Demo&quot;</formula>
+    <inlineHelpText>Used by FCI</inlineHelpText>
+    <label>Still in Demo</label>
+    <type>Checkbox</type>
+</CustomField>

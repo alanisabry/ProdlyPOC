@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upsell_Internal_Transfer_Opp__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Should this opp be treated as an upsell?</description>
+    <inlineHelpText>Please check the box If this opp should be treated as an Upsell(Downsell). If this opp should be treated as a Renewal, leave this box unchecked.</inlineHelpText>
+    <label>Upsell Internal Transfer Opp?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

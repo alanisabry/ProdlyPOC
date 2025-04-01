@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Owner_Email__c</fullName>
+    <description>BODEV-1669: Add CSM Owner email to Order to pass it to NetSuite. Used for the invoice reminder process.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  Account.CSM_Owner__c = &quot;0050d000006PCLm&quot; || /* Bynder Success Squad */
+  Account.CSM_Owner__c = &quot;0050d000006PBk2&quot;, /* Webdam Success Squad */
+  &quot;&quot;,
+  Account.CSM_Owner_Email__c
+)
+
+/* Do not sync Success Squad email when they are CSM Owner */</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CSM Owner Email</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

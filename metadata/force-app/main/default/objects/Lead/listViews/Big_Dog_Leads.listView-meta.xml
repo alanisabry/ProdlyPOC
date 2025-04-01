@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Big_Dog_Leads</fullName>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>LEAD.INDUSTRY</columns>
+    <columns>Days_since_last_activity__c</columns>
+    <columns>Reason_Nurtured__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>UK Anticon May 23 2024</label>
+</ListView>

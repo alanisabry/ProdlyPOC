@@ -1,0 +1,62 @@
+.container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.slds-page-header__title, .slds-card__header-title, label {
+    font-weight: bold;
+}
+
+.pricebookInfo label {
+    margin-right: 0.5rem;
+}
+
+.slds-card {
+    margin: 1rem 0;
+    overflow: auto;
+}
+
+.slds-card__body {
+    position: relative;
+}
+
+.zero-state {
+    text-align: center;
+}
+
+select {
+    width: 100%;
+}
+
+.slds-table th {
+    min-width: 75px;
+}
+
+.slds-table th.long-cell {
+    min-width: 250px;
+}
+
+.deleted > td > div {
+    text-decoration: line-through;
+}
+
+.search-header-item {
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+lightning-input.search-header-item {
+    width: 75%;
+    max-width: 300px;
+}
+
+footer {
+    text-align: center !important;
+}
+
+.wrapped {
+    white-space: pre-line;
+}

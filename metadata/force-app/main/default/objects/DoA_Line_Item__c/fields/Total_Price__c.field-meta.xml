@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Price__c</fullName>
+    <description>BODEV-76: Total Price of the Opportunity Product</description>
+    <formula>Sales_Price__c * Quantity__c</formula>
+    <label>Total Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

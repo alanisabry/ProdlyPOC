@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_items_from_project__c</fullName>
+    <label>Open items from project Old</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Derivatives</fullName>
+                <default>false</default>
+                <label>Derivatives</label>
+            </value>
+            <value>
+                <fullName>Theming</fullName>
+                <default>false</default>
+                <label>Theming</label>
+            </value>
+            <value>
+                <fullName>Custom URL</fullName>
+                <default>false</default>
+                <label>Custom URL</label>
+            </value>
+            <value>
+                <fullName>SSO</fullName>
+                <default>false</default>
+                <label>SSO</label>
+            </value>
+            <value>
+                <fullName>Admin Training</fullName>
+                <default>false</default>
+                <label>Admin Training</label>
+            </value>
+            <value>
+                <fullName>Templates</fullName>
+                <default>false</default>
+                <label>Templates</label>
+            </value>
+            <value>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+                <label>Workflow</label>
+            </value>
+            <value>
+                <fullName>Guidelines</fullName>
+                <default>false</default>
+                <label>Guidelines</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

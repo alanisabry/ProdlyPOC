@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Included_in_renewal__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(Product_ID__c=&quot;01t0P000002EGGlQAO&quot;,ISPICKVAL(Recurring_Discount__c, &quot;No&quot;)),0,1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Included in renewal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

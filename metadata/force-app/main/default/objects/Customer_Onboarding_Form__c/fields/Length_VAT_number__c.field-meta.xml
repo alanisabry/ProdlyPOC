@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Length_VAT_number__c</fullName>
+    <description>Indicates whether the submitted value is within the characters limit so it can be synced to NetSuite</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ISBLANK( VAT_Number__c ) || ISBLANK( Account__r.VAT_number__c ), &quot;&quot;,
+IF(
+LEN (VAT_Number__c) &lt;= 20,
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;),
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Length? - VAT number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

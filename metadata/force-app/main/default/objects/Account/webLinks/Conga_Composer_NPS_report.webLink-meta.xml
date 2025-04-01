@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_NPS_report</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://bynder--apxtconga4.na61.visual.force.com/a440d000000XQDuAAO
+19-Sep-2018 05:48:27 AM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>NPS report</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Account.Id}
+
+&amp;QueryId=[NPSWalkME]a3y0d000000VVWy,
+[NPSGainsight]a3y0d000000VVZd,
+[FAQWizard]a3y0d000000VVcX
+
+&amp;TemplateId=a460d000000V8hA
+
+&amp;DefaultPDF=0
+&amp;OFN={!Account.Name}+-+NPS+-+{!Today()}
+&amp;SelectTemplates=0
+&amp;SC0=1
+&amp;DS7=3
+&amp;AC0=1</url>
+    <width>900</width>
+</WebLink>

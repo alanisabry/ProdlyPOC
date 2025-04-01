@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contraction_Expans_on_Upsells</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  CloseDate &gt;= DATE(2020,3,9),
+  ISPICKVAL(StageName, &quot;Closed Won&quot;),
+  ISPICKVAL(Type, &quot;Existing Business-Upsell&quot;),
+  NOT(OEM__r.Name = &quot;Workfront&quot;),
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+  NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+  OR(
+    AND(
+      ISCHANGED(Contraction__c),
+      NOT(ISBLANK(Contraction__c)),
+      NOT(ROUND(Contraction__c, 2) = -1 * ROUND(MRR_from_Products__c, 2))),
+    AND(
+      ISCHANGED(Expansion__c),
+      NOT(ISBLANK(Expansion__c)),
+      NOT(ROUND(Expansion__c, 2) = ROUND(MRR_from_Products__c, 2))),
+    AND(
+      ISCHANGED(Internal_Transfer__c),
+      NOT(ISBLANK(Internal_Transfer__c)),
+      NOT(ROUND(Internal_Transfer__c, 2) = ROUND(MRR_from_Products__c, 2))),
+    AND(
+      NOT(ISBLANK(Expansion__c)),
+      NOT(ISBLANK(Contraction__c))),
+    NOT(ISBLANK(New_MRR__c)),
+    NOT(ISBLANK(Renewal__c)),
+    NOT(ISBLANK(Churn__c)),
+    NOT(ISBLANK(New_MRR_Platform_transfer__c)),
+    NOT(ISBLANK(Churn_Platform_churn__c))  
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Expansion__c</errorDisplayField>
+    <errorMessage>For upsells, only the Expansion or Contraction fields should be filled and it should match MRR from products.</errorMessage>
+</ValidationRule>

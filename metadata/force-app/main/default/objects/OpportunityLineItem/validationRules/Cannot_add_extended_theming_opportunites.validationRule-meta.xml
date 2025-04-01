@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_extended_theming_opportunites</fullName>
+    <active>true</active>
+    <description>Cannot add the extended theming product to New Business/Upsell opportunities—current opportunity with the product included no action.</description>
+    <errorConditionFormula>AND(
+OR(
+ISPICKVAL(Opportunity.Type, &quot;New Business-Enterprise Cloud&quot;),
+ISPICKVAL(Opportunity.Type, &quot;New Business - Expansion Portal&quot;),
+ISPICKVAL(Opportunity.Type, &quot;Existing Business-Professional Services&quot;),
+ISPICKVAL(Opportunity.Type, &quot;Existing Business - Platform Transfer&quot;),
+ISPICKVAL(Opportunity.Type, &quot;Existing Business-Upsell&quot;)),
+ISNEW(),
+Quantity &gt; 1,
+Product2.Product_ID_18_digits__c = &apos;01t0d000006PqJaAAK&apos;
+)</errorConditionFormula>
+    <errorMessage>Cannot add the extended theming product to New Business/Upsell opportunities.</errorMessage>
+</ValidationRule>

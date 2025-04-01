@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master</fullName>
+    <active>true</active>
+    <label>Master</label>
+    <picklistValues>
+        <picklist>Activity__c</picklist>
+        <values>
+            <fullName>BrightTalk Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Piece</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Syndication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events and Tradeshows</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Purchase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid Sponsorship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor Activity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar Email</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Aborted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planned</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subtype__c</picklist>
+        <values>
+            <fullName>Awareness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consideration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Target_Region__c</picklist>
+        <values>
+            <fullName>APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DACH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LATAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northern Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rest of Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Southern Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US%2FCA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Marketing Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lifecycle Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnerships</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>bizible2__Bizible_Attribution_SyncType__c</picklist>
+        <values>
+            <fullName>Exclude all Campaign Members</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Include all Campaign Members</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Include only %22Responded%22 Campaign Members</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

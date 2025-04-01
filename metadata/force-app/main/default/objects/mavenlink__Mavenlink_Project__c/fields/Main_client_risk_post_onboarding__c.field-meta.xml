@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Main_client_risk_post_onboarding__c</fullName>
+    <label>Main client risk post-onboarding?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Implementation timeline</fullName>
+                <default>false</default>
+                <label>Implementation timeline</label>
+            </value>
+            <value>
+                <fullName>Client’s technical understanding</fullName>
+                <default>false</default>
+                <label>Client’s technical understanding</label>
+            </value>
+            <value>
+                <fullName>Project lead’s stakeholder management</fullName>
+                <default>false</default>
+                <label>Project lead’s stakeholder management</label>
+            </value>
+            <value>
+                <fullName>Too many stakeholders</fullName>
+                <default>false</default>
+                <label>Too many stakeholders</label>
+            </value>
+            <value>
+                <fullName>External project lead</fullName>
+                <default>false</default>
+                <label>External project lead</label>
+            </value>
+            <value>
+                <fullName>Poorly planned roll-out</fullName>
+                <default>false</default>
+                <label>Poorly planned roll-out</label>
+            </value>
+            <value>
+                <fullName>Open deliverables</fullName>
+                <default>false</default>
+                <label>Open deliverables</label>
+            </value>
+            <value>
+                <fullName>Lack of communication</fullName>
+                <default>false</default>
+                <label>Lack of communication</label>
+            </value>
+            <value>
+                <fullName>Overly complex system - lack of autonomy</fullName>
+                <default>false</default>
+                <label>Overly complex system - lack of autonomy</label>
+            </value>
+            <value>
+                <fullName>Admin/Project lead out of touch with business needs</fullName>
+                <default>false</default>
+                <label>Admin/Project lead out of touch with business needs</label>
+            </value>
+            <value>
+                <fullName>Resourcing issues client-side</fullName>
+                <default>false</default>
+                <label>Resourcing issues client-side</label>
+            </value>
+            <value>
+                <fullName>Disengaged admin</fullName>
+                <default>false</default>
+                <label>Disengaged admin</label>
+            </value>
+            <value>
+                <fullName>Core team was not part of sales process</fullName>
+                <default>false</default>
+                <label>Core team was not part of sales process</label>
+            </value>
+            <value>
+                <fullName>Unrealistic expectations</fullName>
+                <default>false</default>
+                <label>Unrealistic expectations</label>
+            </value>
+            <value>
+                <fullName>Support package misalignment</fullName>
+                <default>false</default>
+                <label>Support package misalignment</label>
+            </value>
+            <value>
+                <fullName>Performance issues</fullName>
+                <default>false</default>
+                <label>Performance issues</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

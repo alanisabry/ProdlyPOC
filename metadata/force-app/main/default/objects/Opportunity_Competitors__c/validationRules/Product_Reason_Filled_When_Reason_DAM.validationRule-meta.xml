@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Reason_Filled_When_Reason_DAM</fullName>
+    <active>true</active>
+    <description>When the Reason is &quot;Product Capabilities within DAM&quot;, then the field &quot;Product Reason&quot; should be filled in.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Reason__c, &apos;Product Capabilities within DAM&apos;),
+ISBLANK(TEXT(Product_Reason__c))
+)</errorConditionFormula>
+    <errorDisplayField>Product_Reason__c</errorDisplayField>
+    <errorMessage>A product reason is required when loss reason is &quot;Product Capabilities within DAM&quot;.</errorMessage>
+</ValidationRule>

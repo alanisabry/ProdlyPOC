@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Activity_excl_blanks__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(
+CRMGAC__Total_Closed_Tasks__c&gt;0,
+ISBLANK(First_Activity_Channel__c)),
+&quot;Email&quot;,
+(First_Activity_Channel__c))</formula>
+    <label>First Activity  excl blanks</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

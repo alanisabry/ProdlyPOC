@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Match_Billing_Street__c</fullName>
+    <description>Indicates whether the submitted value matches the current value on Account/Opportunity.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  ISBLANK( Billing_Street__c ) || ISBLANK( Account__r.BillingStreet ), &quot;&quot;,
+  IF(
+    Billing_Street__c = Account__r.BillingStreet,
+    IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRdt&quot;,&quot;YES&quot;),
+    IMAGE(&quot;/servlet/servlet.FileDownload?file=0150P000005PRcW&quot;, &quot;NO&quot;) + &quot; &quot; + Account__r.BillingStreet
+  )
+)</formula>
+    <label>Match? - Billing Street</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

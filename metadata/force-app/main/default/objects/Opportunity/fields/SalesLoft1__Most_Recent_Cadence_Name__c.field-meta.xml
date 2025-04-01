@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesLoft1__Most_Recent_Cadence_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Most recent SalesLoft Cadence of Primary Contact associated with Opportunity.</description>
+    <externalId>false</externalId>
+    <label>Most Recent Cadence - Cadence Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

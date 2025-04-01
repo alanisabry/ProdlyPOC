@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Profile_Name__c</fullName>
+    <description>BODEV-1967: Formula text field to show Profile Name for easy retrieval via Athena to Sisense</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  CASESAFEID(Profile.Id) = &apos;00eU0000000iBVCIA2&apos;,
+  &quot;System Administrator&quot;,
+  Profile.Name
+)
+
+/* Known Issue: System Administrator appears as &quot;PT1&quot; with Profile.Name. So tweaked it with ID */</formula>
+    <label>Profile Name</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

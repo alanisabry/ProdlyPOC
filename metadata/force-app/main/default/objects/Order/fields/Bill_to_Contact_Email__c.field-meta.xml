@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bill_to_Contact_Email__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+OR(
+  CONTAINS(Account.OEM_Account__r.Name,&quot;Acquia&quot;),
+  CONTAINS(Account.OEM_Account__r.Name,&quot;Workfront&quot;),
+   Account.OEM_Account__r.Account_ID_18_digits__c  =  $Label.AWS_OEM_Account_ID 
+) &amp;&amp;
+NOT(CONTAINS(Account.OEM_Account__r.Name, &quot;Non OEM&quot;)),
+Account.OEM_Account__r.Bill_to_Contact_Email__c,
+Account.Bill_to_Contact_Email__c)</formula>
+    <label>Bill to Contact Email</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Scheme__c</fullName>
+    <label>Pricing Scheme</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Legacy</fullName>
+                <default>false</default>
+                <label>Legacy</label>
+            </value>
+            <value>
+                <fullName>2014 User Based</fullName>
+                <default>false</default>
+                <label>2014 User Based</label>
+            </value>
+            <value>
+                <fullName>2014 Tier Based</fullName>
+                <default>false</default>
+                <label>2014 Tier Based</label>
+            </value>
+            <value>
+                <fullName>2017 Tier Based</fullName>
+                <default>false</default>
+                <label>2017 Tier Based</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

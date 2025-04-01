@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Share_RFP_to_Slack__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is created to control the visibility of the &quot;Send to Slack&quot; button in the RFP object, only users with this checkbox checked will be able to see the button</description>
+    <label>Share RFP to Slack?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

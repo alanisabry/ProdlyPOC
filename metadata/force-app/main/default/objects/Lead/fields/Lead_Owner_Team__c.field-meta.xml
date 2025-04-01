@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Owner_Team__c</fullName>
+    <description>Shows which BDR team the lead owner belongs to (e.g. EMEA, US/CA)</description>
+    <externalId>false</externalId>
+    <formula>IF( Owner:User.Active_BDR__c = TRUE, TEXT(Owner:User.BDR_Team__c), &quot;&quot;)</formula>
+    <label>Lead Owner BDR Team</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

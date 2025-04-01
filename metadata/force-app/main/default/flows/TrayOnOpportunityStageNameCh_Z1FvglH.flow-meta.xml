@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>TrayOnOpportunityStageNameCh_Z1FvglH</name>
+        <label>TrayOnOpportunityStageNameCh_Z1FvglH</label>
+        <locationX>100</locationX>
+        <locationY>400</locationY>
+        <actionName>Opportunity.TrayOnOpportunityStageNameCh_Z1FvglH</actionName>
+        <actionType>outboundMessage</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>Opportunity.TrayOnOpportunityStageNameCh_Z1FvglH</nameSegment>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <label>TrayOnOpportunityStageNameCh_Z1FvglH</label>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>TrayOnOpportunityStageNameCh_Z1FvglH</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.StageName})</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

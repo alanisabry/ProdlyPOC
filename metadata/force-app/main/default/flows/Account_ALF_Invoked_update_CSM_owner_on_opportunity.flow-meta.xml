@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>assign_CSM_as_opportunity_owner</name>
+        <label>assign CSM as opportunity owner</label>
+        <locationX>138</locationX>
+        <locationY>974</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Opportunities.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varAccountRecord.CSM_Owner__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_CSM_Owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_CSM_Owner</name>
+        <label>Assign CSM Owner</label>
+        <locationX>424</locationX>
+        <locationY>1250</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Opportunities.Opp_CSM_Owner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varAccountRecord.CSM_Owner__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_to_record_collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_flag_to_avoid_validation_rule</name>
+        <label>Assign flag to avoid validation rule</label>
+        <locationX>292</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Opportunities.Close_Date_in_the_past__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Which_existing_business_opportunity_type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_to_record_collection</name>
+        <label>Assign to record collection</label>
+        <locationX>424</locationX>
+        <locationY>1358</locationY>
+        <assignmentItems>
+            <assignToReference>varOpptyUpdateCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Opportunities</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Opportunities</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Close_date_in_the_past</name>
+        <label>Close date in the past?</label>
+        <locationX>424</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Which_existing_business_opportunity_type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_close_date_in_the_past</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Opportunities.CloseDate</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_flag_to_avoid_validation_rule</targetReference>
+            </connector>
+            <label>Yes - close date in the past</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_CSM_already_opportunity_owner</name>
+        <label>Is CSM already opportunity owner?</label>
+        <locationX>270</locationX>
+        <locationY>866</locationY>
+        <defaultConnector>
+            <targetReference>Assign_CSM_Owner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Opportunities.OwnerId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>varAccountRecord.CSM_Owner__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assign_CSM_as_opportunity_owner</targetReference>
+            </connector>
+            <label>no</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunities_found</name>
+        <label>Opportunities found?</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <defaultConnectorLabel>No records</defaultConnectorLabel>
+        <rules>
+            <name>Records_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_related_existing_business_opportunities</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Opportunities</targetReference>
+            </connector>
+            <label>Records found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_existing_business_opportunity_type</name>
+        <label>Which existing business opportunity type?</label>
+        <locationX>424</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>Assign_CSM_Owner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Other Existing Business types</defaultConnectorLabel>
+        <rules>
+            <name>Existing_Business_Renewal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Opportunities.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_CSM_already_opportunity_owner</targetReference>
+            </connector>
+            <label>Existing Business - Renewal</label>
+        </rules>
+    </decisions>
+    <description>BODEV - 4149: Updates the CSM owner on the opportunity.</description>
+    <environments>Default</environments>
+    <interviewLabel>Account [ALF] Invoked: update CSM owner on opportunity {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account [ALF] Invoked: update CSM owner on opportunity</label>
+    <loops>
+        <name>Loop_Opportunities</name>
+        <label>Loop Opportunities</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <collectionReference>Get_related_existing_business_opportunities</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Close_date_in_the_past</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_CSM_on_opportunities</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_related_existing_business_opportunities</name>
+        <label>Get related existing business opportunities</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Opportunities_found</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6)</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varAccountRecord.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business-Renewal</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business-Upsell</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business - Internal Transfer</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business - Platform Transfer</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Enable_validation_rule_again</name>
+        <label>Enable validation rule again</label>
+        <locationX>50</locationX>
+        <locationY>1658</locationY>
+        <filterLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7) AND 8</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varAccountRecord.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business-Renewal</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business-Upsell</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business - Internal Transfer</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business-Professional Services</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Existing Business - Platform Transfer</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CloseDate</field>
+            <operator>LessThan</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Close_Date_in_the_past__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_CSM_on_opportunities</name>
+        <label>Update CSM on opportunities</label>
+        <locationX>50</locationX>
+        <locationY>1550</locationY>
+        <connector>
+            <targetReference>Enable_validation_rule_again</targetReference>
+        </connector>
+        <inputReference>varOpptyUpdateCollection</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_related_existing_business_opportunities</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>varAccountRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>varEnableValidationOnOppty</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>varOpptyUpdateCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

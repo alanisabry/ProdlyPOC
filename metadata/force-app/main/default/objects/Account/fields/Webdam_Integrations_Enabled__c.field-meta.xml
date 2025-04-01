@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Webdam_Integrations_Enabled__c</fullName>
+    <label>Webdam Integrations Enabled</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hootsuite</fullName>
+                <default>false</default>
+                <label>Hootsuite</label>
+            </value>
+            <value>
+                <fullName>Shutterstock Premier</fullName>
+                <default>false</default>
+                <label>Shutterstock Premier</label>
+            </value>
+            <value>
+                <fullName>Workfront (Basic)</fullName>
+                <default>false</default>
+                <label>Workfront (Basic)</label>
+            </value>
+            <value>
+                <fullName>Wordpress</fullName>
+                <default>false</default>
+                <label>Wordpress</label>
+            </value>
+            <value>
+                <fullName>Wordpress VIP</fullName>
+                <default>false</default>
+                <label>Wordpress VIP</label>
+            </value>
+            <value>
+                <fullName>Drupal</fullName>
+                <default>false</default>
+                <label>Drupal</label>
+            </value>
+            <value>
+                <fullName>Sitecore</fullName>
+                <default>false</default>
+                <label>Sitecore</label>
+            </value>
+            <value>
+                <fullName>Ice Portal</fullName>
+                <default>false</default>
+                <label>Ice Portal</label>
+            </value>
+            <value>
+                <fullName>Noosh</fullName>
+                <default>false</default>
+                <label>Noosh</label>
+            </value>
+            <value>
+                <fullName>Chute</fullName>
+                <default>false</default>
+                <label>Chute</label>
+            </value>
+            <value>
+                <fullName>inMotionNow</fullName>
+                <default>false</default>
+                <label>inMotionNow</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>eventid__c</columns>
+    <columns>NAME</columns>
+    <columns>registrantcount__c</columns>
+    <columns>attendedcount__c</columns>
+    <columns>attendedarchivecount__c</columns>
+    <columns>eventtime__c</columns>
+    <columns>eventtag1__c</columns>
+    <columns>eventtag2__c</columns>
+    <columns>eventtag3__c</columns>
+    <columns>eventtag4__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

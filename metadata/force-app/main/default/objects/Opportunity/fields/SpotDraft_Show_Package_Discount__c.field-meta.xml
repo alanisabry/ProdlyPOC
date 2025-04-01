@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SpotDraft_Show_Package_Discount__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Created this field to control how discounts should be shown on the Order Form. By default, we show package &amp; additional discounts separately.</description>
+    <inlineHelpText>By default Package &amp; Additional discounts are separated. Select &quot;No&quot; if Package &amp; Additional discounts should be shown together.</inlineHelpText>
+    <label>SpotDraft Package/Additional Discount</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

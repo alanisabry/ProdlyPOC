@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Partner_Referral_Fee_Products</fullName>
+    <active>true</active>
+    <description>Users cannot add  Recurring Partner Referral Fee and One Off Partner Referral Fee products to New Business or Upsell Opportunities.</description>
+    <errorConditionFormula>AND(
+
+ISNEW(),
+Quantity &gt;0,
+OR(
+TEXT(Opportunity.Type) = &quot;New Business-Enterprise Cloud&quot;,
+TEXT(Opportunity.Type) = &quot;Existing Business-Upsell&quot;,
+TEXT(Opportunity.Type) = &quot;New Business - Expansion Portal&quot;
+),
+OR(
+Product2.Product_ID_18_digits__c = &apos;01tRo000001oQbRIAU&apos;,
+Product2.Product_ID_18_digits__c = &apos;01t3g000000mx1jAAA&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot add Recurring Partner Referral Fee and One Off Partner Referral Fee products to New business or Upsell opportunities.</errorMessage>
+</ValidationRule>

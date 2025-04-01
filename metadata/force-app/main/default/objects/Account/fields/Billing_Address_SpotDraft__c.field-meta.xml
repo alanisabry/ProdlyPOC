@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Address_SpotDraft__c</fullName>
+    <description>Created this field to fix the display format of billing address on the order form template - SpotDraft</description>
+    <externalId>false</externalId>
+    <formula>BLANKVALUE(BillingStreet,&quot;&quot;) &amp;
+IF(ISBLANK(BillingCity),&quot;&quot;, &quot;,&quot;) &amp;
+IF(ISBLANK(BillingCity),&quot;&quot;,&quot; &quot;) &amp;
+BLANKVALUE(BillingCity, &quot;&quot;) &amp;
+IF(ISBLANK(BillingState),&quot;&quot;,&quot;,&quot;) &amp;
+IF(ISBLANK(BillingState),&quot;&quot;,&quot; &quot;) &amp;
+BLANKVALUE(BillingState, &quot;&quot;) &amp;
+IF(ISBLANK(BillingPostalCode),&quot;&quot;, &quot;,&quot;) &amp;
+IF(ISBLANK(BillingPostalCode),&quot;&quot;,&quot; &quot;) &amp;
+BLANKVALUE(BillingPostalCode, &quot;&quot;) &amp;
+IF(ISBLANK(BillingCountry),&quot;&quot;,&quot;,&quot;) &amp;
+IF(ISBLANK(BillingCountry),&quot;&quot;,&quot; &quot;) &amp;
+BLANKVALUE(BillingCountry, &quot;&quot;)</formula>
+    <label>SpotDraft Billing Address</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_memos_require_approval</fullName>
+    <active>true</active>
+    <description>Please submit this record for approval.</description>
+    <errorConditionFormula>AND(Total_Order_Value__c&lt;0,
+TEXT(Status) = &quot;Activated&quot;,
+ISBLANK(Order_Netsuite_ID__c),
+TEXT(Approval_Status__c) !=&quot;Approved&quot;)</errorConditionFormula>
+    <errorMessage>The credit memo has not been activated or submitted for approval, please click on the Submit for Approval button to submit/activate the credit memo.</errorMessage>
+</ValidationRule>

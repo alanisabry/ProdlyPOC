@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_to_convert_lead_to_MQL__c</fullName>
+    <externalId>false</externalId>
+    <formula>(Timestamp_MQL__c -  CreatedDate )*24</formula>
+    <label>Time to convert lead to MQL (h)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

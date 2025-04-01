@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Size_not_Blank</fullName>
+    <active>false</active>
+    <description>Only Clearbit can fill in the company size.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+NOT(ISPICKVAL(PRIORVALUE(Company_Size_New__c), &quot;&quot;)),
+ISCHANGED(Company_Size_New__c)
+)</errorConditionFormula>
+    <errorDisplayField>Company_Size_New__c</errorDisplayField>
+    <errorMessage>You cannot change the Company Size. If you believe this value is incorrect contact Marketing/Sales Operations</errorMessage>
+</ValidationRule>

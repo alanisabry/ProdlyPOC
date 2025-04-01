@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Field_Update</fullName>
+        <description>Update field to true</description>
+        <field>For_Renewal_Mapped__c</field>
+        <literalValue>1</literalValue>
+        <name>Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_API_users_per_product</fullName>
+        <field>API_Users__c</field>
+        <formula>API_Users_count__c</formula>
+        <name>Set API users per product</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_API_users_field</fullName>
+        <field>API_Users__c</field>
+        <formula>API_Users_count__c</formula>
+        <name>Update API users field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Conga_Family_field</fullName>
+        <field>Conga_Family__c</field>
+        <formula>Conga_Family_new__c</formula>
+        <name>Update Conga Family field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_name_for_Rollup_Summary_field</fullName>
+        <field>Name_rus__c</field>
+        <formula>Product2.Name</formula>
+        <name>Update name for Rollup Summary field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Conga Family update</fullName>
+        <actions>
+            <name>Update_Conga_Family_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>OR ( ISNEW() ,( ISCHANGED( Conga_Family_new__c )))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Map For Renewal field if true</fullName>
+        <actions>
+            <name>Field_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>OpportunityLineItem.For_Renewal__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.current_user__c</field>
+            <operation>notEqual</operation>
+            <value>0050P000007hH92</value>
+        </criteriaItems>
+        <description>Updates For Renewal Mapped field to TRUE if For Renewal field is true</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update name for Rollup Summary field</fullName>
+        <actions>
+            <name>Update_name_for_Rollup_Summary_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>OpportunityLineItem.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.current_user__c</field>
+            <operation>notEqual</operation>
+            <value>0050P000007hH92</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

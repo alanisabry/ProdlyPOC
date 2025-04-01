@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Churn_ARR_Platfrom_Transfer__c</fullName>
+    <description>Returns Churn Platform Transfer value for the product line item.</description>
+    <formula>/*
+    Basically, Previous Contract ARR * Quantity is recognised as Churn.
+    If Previous Contract Price is not specified,
+    The percentage of the Total Sales Price ARR against teh entire Opp ARR is allocated from Oriignal Renewal ARR.
+    If Opp ARR is 0 or Original Renewal ARR is not specified, it pulls Toatl Sales Price ARR of the item.
+*/
+
+IF(
+  AND(
+    ISPICKVAL(Opportunity.Type, &quot;Existing Business-Renewal&quot;),
+    ISPICKVAL(Opportunity.StageName, &quot;Closed Lost&quot;),
+    For_Renewal__c = TRUE,
+    TEXT(Opportunity.Reason_for_Churn__c) = &quot;Platform Transfer&quot;
+  ),
+  IF(
+    ISBLANK(Original_Price__c),
+    IF(
+        ISBLANK(Opportunity.Original_Renewal_Amount__c) || Opportunity.ARR_manual__c = 0,
+        Total_Sales_Price_ARR__c,
+        Opportunity.Original_Renewal_ARR__c * (Total_Sales_Price_ARR__c / Opportunity.ARR_manual__c)
+    ),
+    Original_Price_ARR_OneOff__c * Quantity
+  ),
+  NULL
+)</formula>
+    <label>Churn ARR: Platfrom Transfer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <type>Currency</type>
+</CustomField>

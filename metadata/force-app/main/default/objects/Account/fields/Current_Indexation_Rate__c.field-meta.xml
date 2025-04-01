@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Indexation_Rate__c</fullName>
+    <description>Used to store the current indexation rate of the subsidiary associated with the account</description>
+    <formula>IF(ISPICKVAL(Indexation_Type__c,&apos;Variable&apos;),Subsidiary_lookup__r.Current_Avg_Indexation_Rate__c,null)</formula>
+    <inlineHelpText>Variable indexation rate used in calculating indexation on orders activated in the current year.</inlineHelpText>
+    <label>Current Year Variable Indexation Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

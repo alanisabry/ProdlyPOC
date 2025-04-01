@@ -1,0 +1,1380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Tigger_backdate_business_hours__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Trigger is True</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if [Lead].Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 31) - MOD( DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 10, 31) - MOD( DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1 ) ) ) ), /* 9am CEST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1 ) ) ) ) /* 9am CET */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 3, 31) - MOD( DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c)), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 10, 31) - MOD( DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c)), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1) ) ) ), /* 9am CEST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1) ) ) ) /* 9am CET */
+      )
+    )
+  ) 
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A6_3087662992</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if myVariable_current.Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 31) - MOD( DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 10, 31) - MOD( DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1 ) ) ) ), /* 9am CEST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1 ) ) ) ) /* 9am CET */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 3, 31) - MOD( DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c})), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 10, 31) - MOD( DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c})), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1) ) ) ), /* 9am CEST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1) ) ) ) /* 9am CET */
+      )
+    )
+  ) 
+)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8), 7) +
+      IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;5, 0,
+      MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 05:00:00&apos; ), 1 ) ) ) )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1900, 1, 8) ) / 7) +
+     MIN( 5,
+       MOD( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1996, 1, 1), 7 ) +
+       IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;5, 0,
+       MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 05:00:00&apos; ), 1) ) ) )
+    )
+   ) 
+)
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A5_4631152830</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8), 7) +
+      IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;5, 0,
+      MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 05:00:00&apos; ), 1 ) ) ) )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+     MIN( 5,
+       MOD( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+       IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;5, 0,
+       MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 05:00:00&apos; ), 1) ) ) )
+    )
+   ) 
+)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if [Lead].Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;7, -1, 0) + /* This part is specific to San Mateo due to a large time zone gap */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;16 &amp;&amp; VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&gt;=7 , 0, /* This part is specific to San Mateo due to a large time zone gap */
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 16:00:00&apos; ), 1 ) ) ) ), /* 9am in local time DST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;8, -1, 0) + /* This part is specific to San Mateo due to a large time zone gap */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;17 &amp;&amp; VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&gt;=8, 0, /* This part is specific to San Mateo due to a large time zone gap */
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 17:00:00&apos; ), 1 ) ) ) ) /* 9am in local time */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c )), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c )), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;7, -1, 0) +
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;16 &amp;&amp; VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&gt;=7, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 16:00:00&apos; ), 1) ) ) ), /* 9am in local time DST */
+        /* Not daylight savign */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;8, -1, 0) +
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;17 &amp;&amp; VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&gt;=8, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 17:00:00&apos; ), 1) ) ) ) /* 9am in local time */
+      )
+    )
+  ) 
+)
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_4_myRule_1_A4_6495944875</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if myVariable_current.Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;7, -1, 0) + /* This part is specific to San Mateo due to a large time zone gap */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;16 &amp;&amp; VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&gt;=7 , 0, /* This part is specific to San Mateo due to a large time zone gap */
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 16:00:00&apos; ), 1 ) ) ) ), /* 9am in local time DST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;8, -1, 0) + /* This part is specific to San Mateo due to a large time zone gap */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;17 &amp;&amp; VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&gt;=8, 0, /* This part is specific to San Mateo due to a large time zone gap */
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 17:00:00&apos; ), 1 ) ) ) ) /* 9am in local time */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c} )), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c} )), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;7, -1, 0) +
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;16 &amp;&amp; VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&gt;=7, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 16:00:00&apos; ), 1) ) ) ), /* 9am in local time DST */
+        /* Not daylight savign */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;8, -1, 0) +
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;17 &amp;&amp; VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&gt;=8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 17:00:00&apos; ), 1) ) ) ) /* 9am in local time */
+      )
+    )
+  ) 
+)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if [Lead].Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 31) - MOD( DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 10, 31) - MOD( DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1 ) ) ) ), /* 9am CEST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;9, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 09:00:00&apos; ), 1 ) ) ) ) /* 9am CET */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 3, 31) - MOD( DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c)), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 10, 31) - MOD( DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c)), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1) ) ) ), /* 9am UK DST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;9, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 09:00:00&apos; ), 1) ) ) ) /* 9am GMT */
+      )
+    )
+  ) 
+)
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_5_myRule_1_A3_5157022131</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if myVariable_current.Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 31) - MOD( DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 10, 31) - MOD( DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1 ) ) ) ), /* 9am CEST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;9, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 09:00:00&apos; ), 1 ) ) ) ) /* 9am CET */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 3, 31) - MOD( DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c})), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 10, 31) - MOD( DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c})), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1) ) ) ), /* 9am UK DST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;9, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 09:00:00&apos; ), 1) ) ) ) /* 9am GMT */
+      )
+    )
+  ) 
+)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if [Lead].Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 31) - MOD( DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 10, 31) - MOD( DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1 ) ) ) ), /* 9am CEST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1 ) ) ) ) /* 9am CET */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 3, 31) - MOD( DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c)), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 10, 31) - MOD( DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c)), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1) ) ) ), /* 9am CEST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1) ) ) ) /* 9am CET */
+      )
+    )
+  ) 
+)
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_6_myRule_1_A2_9350555768</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if myVariable_current.Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 31) - MOD( DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 10, 31) - MOD( DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1 ) ) ) ), /* 9am CEST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1 ) ) ) ) /* 9am CET */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 3, 31) - MOD( DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c})), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 10, 31) - MOD( DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c})), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1) ) ) ), /* 9am CEST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1) ) ) ) /* 9am CET */
+      )
+    )
+  ) 
+)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( [Lead].Timestamp_First_Activity__c ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if [Lead].Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_First_Activity__c) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE( [Lead].Timestamp_First_Activity__c)), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;13, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 13:00:00&apos; ), 1 ) ) ) ), /* 9am in local time DST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT([Lead].Timestamp_First_Activity__c), 12, 2))&lt;14, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_First_Activity__c - DATETIMEVALUE( &apos;1900-01-08 14:00:00&apos; ), 1 ) ) ) ) /* 9am in local time */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( [Lead].Timestamp_MQL__c ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &gt;= (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c )), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( [Lead].Timestamp_MQL__c ) &lt; (DATE(YEAR(DATEVALUE( [Lead].Timestamp_MQL__c )), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE([Lead].Timestamp_MQL__c )), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;13, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 13:00:00&apos; ), 1) ) ) ), /* 9am in local time DST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT([Lead].Timestamp_MQL__c), 12, 2))&lt;14, 0,
+        MIN( 1, 24 / 9 * ( MOD( [Lead].Timestamp_MQL__c - DATETIMEVALUE( &apos;1900-01-08 14:00:00&apos; ), 1) ) ) ) /* 9am in local time */
+      )
+    )
+  ) 
+)
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_7_myRule_1_A1_8788206169</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c} ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if myVariable_current.Timestamp_First_Activity__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c}) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_First_Activity__c})), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;13, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 13:00:00&apos; ), 1 ) ) ) ), /* 9am in local time DST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT({!myVariable_current.Timestamp_First_Activity__c}), 12, 2))&lt;14, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_First_Activity__c} - DATETIMEVALUE( &apos;1900-01-08 14:00:00&apos; ), 1 ) ) ) ) /* 9am in local time */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c} )), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( {!myVariable_current.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!myVariable_current.Timestamp_MQL__c} )), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE({!myVariable_current.Timestamp_MQL__c} )), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;13, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 13:00:00&apos; ), 1) ) ) ), /* 9am in local time DST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT({!myVariable_current.Timestamp_MQL__c}), 12, 2))&lt;14, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!myVariable_current.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 14:00:00&apos; ), 1) ) ) ) /* 9am in local time */
+      )
+    )
+  ) 
+)</expression>
+        <scale>18</scale>
+    </formulas>
+    <interviewLabel>Backdate_Business_Hours-3_InterviewLabel</interviewLabel>
+    <label>Backdate Business Hours</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Lead</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Lead]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Boston: Business hour MQL - First Activity</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myRule_1_A2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Lead Owner Work Location</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Lead_Owner_Work_Location__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Boston</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Business Hours: MQL till Fist Activity</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Business_Hours_MQL_till_Fist_Activity__c</field>
+            <value>
+                <elementReference>formula_7_myRule_1_A1_8788206169</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Lead]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A2</name>
+        <label>Amsterdam</label>
+        <locationX>100</locationX>
+        <locationY>300</locationY>
+        <connector>
+            <targetReference>myRule_1_A3</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Lead Owner Work Location</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Lead_Owner_Work_Location__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Amsterdam</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Business Hours: MQL till Fist Activity</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Business_Hours_MQL_till_Fist_Activity__c</field>
+            <value>
+                <elementReference>formula_6_myRule_1_A2_9350555768</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Lead]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A3</name>
+        <label>London</label>
+        <locationX>100</locationX>
+        <locationY>400</locationY>
+        <connector>
+            <targetReference>myRule_1_A4</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Lead Owner Work Location</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Lead_Owner_Work_Location__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>London</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Business Hours: MQL till Fist Activity</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Business_Hours_MQL_till_Fist_Activity__c</field>
+            <value>
+                <elementReference>formula_5_myRule_1_A3_5157022131</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Lead]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A4</name>
+        <label>San Mateo</label>
+        <locationX>100</locationX>
+        <locationY>500</locationY>
+        <connector>
+            <targetReference>myRule_1_A5</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Lead Owner Work Location</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Lead_Owner_Work_Location__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>San Mateo</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Business Hours: MQL till Fist Activity</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Business_Hours_MQL_till_Fist_Activity__c</field>
+            <value>
+                <elementReference>formula_4_myRule_1_A4_6495944875</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Lead]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A5</name>
+        <label>Dubai</label>
+        <locationX>100</locationX>
+        <locationY>600</locationY>
+        <connector>
+            <targetReference>myRule_1_A6</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Lead Owner Work Location</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Lead_Owner_Work_Location__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Dubai</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Business Hours: MQL till Fist Activity</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Business_Hours_MQL_till_Fist_Activity__c</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A5_4631152830</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Lead]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A6</name>
+        <label>Remote</label>
+        <locationX>100</locationX>
+        <locationY>700</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Lead Owner Work Location</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Lead_Owner_Work_Location__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Remote</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Business Hours: MQL till Fist Activity</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Business_Hours_MQL_till_Fist_Activity__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A6_3087662992</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Obsolete</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connector_Available__c</fullName>
+    <description>Indicates whether a packaged connector available for this integration</description>
+    <formula>IF( Technology__r.of_Integrations_available__c &gt; 0, true,false)</formula>
+    <inlineHelpText>Indicates whether a packaged connector available for this integration</inlineHelpText>
+    <label>Connector Available?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

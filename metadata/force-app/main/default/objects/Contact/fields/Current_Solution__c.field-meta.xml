@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Solution__c</fullName>
+    <inlineHelpText>Answer to the Question: How do you manage digital files?</inlineHelpText>
+    <label>Current Solution</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Internal Server</fullName>
+                <default>false</default>
+                <label>Internal Server</label>
+            </value>
+            <value>
+                <fullName>Dropbox</fullName>
+                <default>false</default>
+                <label>Dropbox</label>
+            </value>
+            <value>
+                <fullName>Box</fullName>
+                <default>false</default>
+                <label>Box</label>
+            </value>
+            <value>
+                <fullName>Google Drive</fullName>
+                <default>false</default>
+                <label>Google Drive</label>
+            </value>
+            <value>
+                <fullName>Digital Asset Management</fullName>
+                <default>false</default>
+                <label>Digital Asset Management</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

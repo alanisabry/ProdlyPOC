@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Champion_Program__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is created for to check Customer Champion Signup contacts</description>
+    <label>Customer Champion Program</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

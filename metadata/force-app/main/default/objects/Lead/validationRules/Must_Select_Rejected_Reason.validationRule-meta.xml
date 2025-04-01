@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Select_Rejected_Reason</fullName>
+    <active>true</active>
+    <description>Partner Lead Rejection Reason needs to be populated</description>
+    <errorConditionFormula>ISPICKVAL(Partner_Lead_Acceptance_Status__c, &quot;Rejected&quot;)
+&amp;&amp;
+ISBLANK( TEXT( Partner_Lead_Rejected_Reason__c  ) )</errorConditionFormula>
+    <errorDisplayField>Partner_Lead_Rejected_Reason__c</errorDisplayField>
+    <errorMessage>This Lead has been rejected. Please enter the Partner Lead Rejection reason.</errorMessage>
+</ValidationRule>

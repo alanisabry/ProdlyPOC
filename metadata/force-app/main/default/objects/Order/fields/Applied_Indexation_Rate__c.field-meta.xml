@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applied_Indexation_Rate__c</fullName>
+    <description>Specifies the indexation rate applied on this order.</description>
+    <inlineHelpText>Specifies the indexation rate applied on this order.</inlineHelpText>
+    <label>Applied Indexation Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

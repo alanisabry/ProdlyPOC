@@ -1,0 +1,74 @@
+<!-- Object Info List -->
+<template>
+    <div style="min-height: 600px">
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Saving Record"></lightning-spinner>
+        </template>
+        <template if:false={showDetails}>
+            <lightning-card title={title} icon-name={iconName}>
+                <lightning-button name="addButton" variant="brand" class="slds-m-right_x-small" label={addLabel} onclick={handleClick} slot="actions"></lightning-button>
+                <div class="slds-p-horizontal_medium, slds-p-vertical_large">
+                    <ul class="slds-has-dividers_bottom-space">
+                        <template for:each={objs} for:item="obj">
+                            <li key={obj.Id} class="slds-item">
+                                <lightning-tile type="media" class="slds-p-bottom_medium">
+                                    <ul>
+                                        <li class="slds-item">
+                                            <template if:true={isLoaded}>
+                                                <template for:each={fieldSets} for:item="item">
+                                                    <lightning-card title={item.name} key={item.name}>
+                                                        <lightning-record-form object-api-name={objApiName} record-id={obj.Id} fields={item.values} columns={objColumns} onsuccess={handleSuccess} onsubmit={handleSubmit} onabort={handleAbort} onerror={handleError}> </lightning-record-form>
+                                                    </lightning-card>
+                                                </template>
+                                            </template>
+                                            <template if:false={isLoaded}>Loading...</template>
+                                        </li>
+                                    </ul>
+                                </lightning-tile>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </lightning-card>
+        </template>
+
+        <template if:true={showDetails}>
+            <lightning-card title="Record Details" icon-name={iconName}>
+                <lightning-record-edit-form 
+                    object-api-name={objApiName}
+                    layout-type="Full"
+                    onsubmit={handleSubmit}
+                    onsuccess={handleNewSuccess}
+                    onerror={handleError}>
+                    <lightning-messages></lightning-messages>
+                    <lightning-layout multiple-rows>
+                        <template for:each={newFields} for:item="field">
+                            <lightning-layout-item size={colSize} padding="around-small" key={field.label}>
+                                <lightning-input-field field-name={field.label} value={field.value} ></lightning-input-field>
+                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout>
+                    <div class="slds-var-m-top_medium">
+                        <lightning-layout horizontal-align="center">
+                            <lightning-layout-item>
+                                <lightning-button variant="neutral" type="button" label="Cancel" onclick={handleCancel}></lightning-button>
+                                &nbsp;
+                                <lightning-button variant="brand" type="submit" label="Save"></lightning-button>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </lightning-record-edit-form>
+                <!-- <lightning-record-form
+                    object-api-name={objApiName}
+                    fields={objFields}
+                    record-id={recordId}
+                    layout-type="Full"
+                    columns={objColumns}
+                    mode="edit"
+                    oncancel={handleCancel}
+                    onsuccess={handleNewSuccess}
+                ></lightning-record-form> -->
+            </lightning-card>
+        </template>
+    </div>
+</template>

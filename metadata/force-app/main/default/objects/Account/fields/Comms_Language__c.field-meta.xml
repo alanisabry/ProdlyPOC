@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comms_Language__c</fullName>
+    <description>Language used for customer communication</description>
+    <inlineHelpText>Language used for customer communication</inlineHelpText>
+    <label>Comms Language</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Languages</valueSetName>
+    </valueSet>
+</CustomField>

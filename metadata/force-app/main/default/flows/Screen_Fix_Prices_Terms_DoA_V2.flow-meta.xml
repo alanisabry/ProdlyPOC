@@ -1,0 +1,2534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <description>Send email notification to DoA levels who are not the ultimate DoA Approver in the process.
+(Ultimate DoA Approver will receive email notification sent from the Approval Process)</description>
+        <name>Notify_other_DoA_levels_0</name>
+        <label>Notify other DoA levels</label>
+        <locationX>1700</locationX>
+        <locationY>6416</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>susanne.mcgregor@bynder.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>[DoA Info ONLY] Approval Requested - No Action Required</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>test test</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Submit_DoA_Approval_Process</name>
+        <label>Submit DoA Approval Process</label>
+        <locationX>1832</locationX>
+        <locationY>6200</locationY>
+        <actionName>submit</actionName>
+        <actionType>submit</actionType>
+        <connector>
+            <targetReference>Additional_email_notification_required</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>objectId</name>
+            <value>
+                <elementReference>TEXT_Opportunity_ID</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>processDefinitionNameOrId</name>
+            <value>
+                <stringValue>Delegation_of_Authority_Approval_V1</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>skipEntryCriteria</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>submit</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_to_DoA_Line_Item_collection</name>
+        <label>Add to DoA Line Item collection</label>
+        <locationX>1722</locationX>
+        <locationY>5792</locationY>
+        <assignmentItems>
+            <assignToReference>COLLECTION_New_DoA_Line_Items</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>RECORD_New_DoA_Line_Item</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>x2_OLI_Loop_to_create_DoA_Line_Items</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AllStepUpProducts</name>
+        <label>AllStepUpProducts</label>
+        <locationX>1634</locationX>
+        <locationY>2564</locationY>
+        <assignmentItems>
+            <assignToReference>AllStepUpProductsLineItems</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Check_for_step_up_deal</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>step_up_deal_found</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>assign the doa approvers (still missing some fields on the DOA object!)</description>
+        <name>Assign_all_DOA_approvers</name>
+        <label>Assign all DOA approvers</label>
+        <locationX>1634</locationX>
+        <locationY>4136</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Level_Payment_Term__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ApproverPaymentTerm</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Level_ARR_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ApproverARRDiscount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Level_One_off_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ApproverOneOffDiscount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Level_Billing_Cadence__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ApproverBillingCadence</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decide_on_Ultimate_Approver</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set &quot;Approval Finalized&quot; field on the DoA record NOW()</description>
+        <name>Assign_Approval_Finalized_at_Now</name>
+        <label>Assign Approval Finalized at Now</label>
+        <locationX>1436</locationX>
+        <locationY>4868</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Approval_Finalized__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TIME_Now</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Approval_Finalized_Date_GMT__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DATE_Date_of_NOW_in_GMT</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_DoA_record_with_approvers</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign DoA Line Item values based on OLI in the loop</description>
+        <name>Assign_DoA_Line_Item_values</name>
+        <label>Assign DoA Line Item values</label>
+        <locationX>1722</locationX>
+        <locationY>5684</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TEXT_OLI_Product_Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Product__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.Product2Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Opportunity_Product__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Delegation_of_Authority__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RECORD_New_DoA.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Product_Code__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.ProductCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.List_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.ListPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Default_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.Default_Price__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Sales_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.UnitPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Quantity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.Quantity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Part_of_a_package__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.Part_of_a_package__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Conga_Family__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.Conga_Family__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.For_Renewal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.For_Renewal__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.Recurring_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>x2_OLI_Loop_to_create_DoA_Line_Items.Recurring_Discount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA_Line_Item.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.CurrencyIsoCode</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_to_DoA_Line_Item_collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign values for the new DoA record to be created. -&gt; the new DoA formula fields for the new scenarios need to be added!</description>
+        <name>Assign_DoA_values</name>
+        <label>Assign DoA values</label>
+        <locationX>1634</locationX>
+        <locationY>3704</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Invoice_Period__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.Invoice_period__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Payment_Period__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.Payment_Period__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.ARR_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RECORD_New_DoA.Discount_ARR__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.One_off_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RECORD_New_DoA.Discount_One_Off__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Requester__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Approval_Requested__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TIME_Now</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Approval_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TEXT_DoA_Approval_Status</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.CurrencyIsoCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.ARR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.ARR_manual__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.ARR_Before_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CURRENCY_ARR_Before_Discount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Standard_Package_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.Standard_Package_Name__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.OEM_Partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.OEM__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Approval_Requested_Date_GMT__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DATE_Date_of_NOW_in_GMT</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.StageName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Special_Billing_Scenario__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.Special_Billing_Scenario__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.of_Month_Delayed_Rent_Free__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.of_Month_Delayed_Rent_Free__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Waive_Indexation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.Waive_Indexation__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Contract_Term__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.Netsuite_Term__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_DOA_record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set Opportunity values to update with the DoA information</description>
+        <name>Assign_DoA_values_to_Opp</name>
+        <label>Assign DoA values to Opp</label>
+        <locationX>1634</locationX>
+        <locationY>5360</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.Latest_DoA__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RECORD_New_DoA.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.Ultimate_DoA_Approver__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>005Ro000007t1YvIAI</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.DoA_Approval_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TEXT_DoA_Approval_Status</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.Discount_reasons__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Discount_Reason</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opp</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>BODEV-929: Assign the entered comments to the DoA record and the Opportunity.</description>
+        <name>Assign_given_comments</name>
+        <label>Assign given comments</label>
+        <locationX>1700</locationX>
+        <locationY>4976</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Requester_Comments__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Requester_Comments</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.DoA_Requester_Comments__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Requester_Comments</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_DoA_record_with_approvers</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_step_up_deal_check_values</name>
+        <label>Assign step up deal check values</label>
+        <locationX>1480</locationX>
+        <locationY>3512</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Step_Up_Total_ACV__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SUMACVStepUp</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Step_up_Final_year_ARR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SumARRStepUp</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Step_Up_25_of_Y1_ARR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CheckOriginalOpptyARRStepUp25</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Step_Up_50_of_Y1_ARR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CheckOriginalOpptyARRStepUp50</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_DoA_values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Still need to add ID of approver user!</description>
+        <name>Assign_ultimate_approver_CFO</name>
+        <label>Assign ultimate approver CFO</label>
+        <locationX>1106</locationX>
+        <locationY>4352</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Ultimate_DoA_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>CFO</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Approver__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>005Ro000007t1YvIAI</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Test_screen_to_check_variables</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Ultimate_Approver_CRO</name>
+        <label>Assign Ultimate Approver CRO</label>
+        <locationX>1370</locationX>
+        <locationY>4352</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Ultimate_DoA_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>CRO</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Approver__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>005Ro000007t1YvIAI</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Test_screen_to_check_variables</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_ultimate_approver_not_required</name>
+        <label>Assign ultimate approver not required</label>
+        <locationX>1898</locationX>
+        <locationY>4352</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Ultimate_DoA_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Required</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Approver__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>005Ro000007t1YvIAI</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Test_screen_to_check_variables</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Ultimate_Approver_Sales_Manager</name>
+        <label>Assign Ultimate Approver Sales Manager</label>
+        <locationX>1634</locationX>
+        <locationY>4352</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Ultimate_DoA_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Sales Manager</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.DoA_Approver__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>005Ro000007t1YvIAI</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Test_screen_to_check_variables</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Clear DoA Approval Status and related fields. Stage is set back to VOC.</description>
+        <name>Clear_DoA_Approval_Status</name>
+        <label>Clear DoA Approval Status</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.Approval_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not submitted</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.Latest_DoA__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.Ultimate_DoA_Approver__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.Ultimate_DoA_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Opportunity_0.DoA_Requester_Comments__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opp_to_clear_DoA_Approval_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_approval_not_required</name>
+        <label>Set approval not required</label>
+        <locationX>2162</locationX>
+        <locationY>4352</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Ultimate_DoA_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Required</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Test_screen_to_check_variables</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_discount_on_unbundled_remaining_SKUs</name>
+        <label>Set discount on unbundled remaining SKUs</label>
+        <locationX>1502</locationX>
+        <locationY>2264</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Discount_on_unbundled_remaining_SKUs__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_for_step_up_deal</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_recurring_discount_to_true_on_DoA</name>
+        <label>Set recurring discount to true on DoA</label>
+        <locationX>1502</locationX>
+        <locationY>1856</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Discount_extending_past_the_initial_term__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_discount_on_unbundled_remaining_SKUs</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Step_up_products_with_discount_on_upsell_to_true_on_DoA</name>
+        <label>Set Step up products with discount on upsell to true on DoA</label>
+        <locationX>1348</locationX>
+        <locationY>3320</locationY>
+        <assignmentItems>
+            <assignToReference>RECORD_New_DoA.Step_Up_discount_on_products_Y2_Y3__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_step_up_deal_check_values</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>the resource used in the email required is not correct, for testing purposes only</description>
+        <name>Additional_email_notification_required</name>
+        <label>Additional email notification required?</label>
+        <locationX>1832</locationX>
+        <locationY>6308</locationY>
+        <defaultConnectorLabel>Email not required</defaultConnectorLabel>
+        <rules>
+            <name>Email_required</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApproverARRDiscount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Notify_other_DoA_levels_0</targetReference>
+            </connector>
+            <label>Email required</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Approval_required</name>
+        <label>Approval required?</label>
+        <locationX>1634</locationX>
+        <locationY>4652</locationY>
+        <defaultConnector>
+            <targetReference>Confirm_to_submit_approval_process</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Approval_not_required2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RECORD_New_DoA.Ultimate_DoA_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Complete_Not_Required</targetReference>
+            </connector>
+            <label>Approval not required2</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if the approval is required</description>
+        <name>Approval_Required_2</name>
+        <label>Approval Required? 2</label>
+        <locationX>1634</locationX>
+        <locationY>6092</locationY>
+        <defaultConnector>
+            <targetReference>Submit_DoA_Approval_Process</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Required</defaultConnectorLabel>
+        <rules>
+            <name>Not_Required</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RECORD_New_DoA.Ultimate_DoA_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Not Required</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if the checkbox was ticked in the previous screen</description>
+        <name>Clear_DoA_Values</name>
+        <label>Clear DoA Values?</label>
+        <locationX>446</locationX>
+        <locationY>458</locationY>
+        <defaultConnectorLabel>Do not clear</defaultConnectorLabel>
+        <rules>
+            <name>Clear</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BOOL_Clear_DoA_values</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clear_DoA_Approval_Status</targetReference>
+            </connector>
+            <label>Clear</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decide_on_Ultimate_Approver</name>
+        <label>Decide on Ultimate Approver</label>
+        <locationX>1634</locationX>
+        <locationY>4244</locationY>
+        <defaultConnector>
+            <targetReference>Set_approval_not_required</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CFO</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ApproverARRDiscount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CFO + CEO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverOneOffDiscount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CFO + CEO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverDiscountExtendingPastTerm</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CFO + CEO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverDiscountUnbundledSKUs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CFO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverDeviationSMBSpecialDeal</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CFO + CEO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverStepUp</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CRO + CFO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverProjectStartDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CFO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverBillingCadence</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CFO + CEO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverPaymentTerm</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CFO + CEO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverShortContractTerm</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>CFO</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_ultimate_approver_CFO</targetReference>
+            </connector>
+            <label>CFO</label>
+        </rules>
+        <rules>
+            <name>CRO</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ApproverARRDiscount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CRO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverOneOffDiscount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CRO</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Ultimate_Approver_CRO</targetReference>
+            </connector>
+            <label>CRO</label>
+        </rules>
+        <rules>
+            <name>Sales_Managers</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ApproverARRDiscount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales Manager</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverOneOffDiscount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales Manager</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Ultimate_Approver_Sales_Manager</targetReference>
+            </connector>
+            <label>Sales Managers</label>
+        </rules>
+        <rules>
+            <name>Approval_not_required</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApproverARRDiscount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverBillingCadence</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverDeviationSMBSpecialDeal</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverDiscountExtendingPastTerm</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverDiscountUnbundledSKUs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverOneOffDiscount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverPaymentTerm</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverProjectStartDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverStepUp</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ApproverShortContractTerm</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_ultimate_approver_not_required</targetReference>
+            </connector>
+            <label>Approval not required</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check whether Opp&apos;s DoA Approval Status is Approved</description>
+        <name>DoA_Already_Approved_0</name>
+        <label>DoA Already Approved?</label>
+        <locationX>1353</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Indexation_fields_on_account_filled</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not finalized yet</defaultConnectorLabel>
+        <rules>
+            <name>Pricing_factors_not_applied</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Pricing_factors_applied__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Pricing_factors_are_not_applied_yet</targetReference>
+            </connector>
+            <label>Pricing factors not applied</label>
+        </rules>
+        <rules>
+            <name>Already_finalized</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.DoA_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.DoA_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Required</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Reset_DoA_Approval_Status</targetReference>
+            </connector>
+            <label>Already finalized</label>
+        </rules>
+        <rules>
+            <name>Pending</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.DoA_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DoA_Approval_Pending</targetReference>
+            </connector>
+            <label>Pending</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Payment period is always required 
+Invoice period is not required if there are no recurring products
+!!!!Check if contract term is only required for recurring products!!!!</description>
+        <name>Fields_populated</name>
+        <label>Fields populated?</label>
+        <locationX>2162</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Please_fill_in_missing_information</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>All_fields_populated</name>
+            <conditionLogic>(1 AND 2 AND 3 AND 4) OR (5 AND 2 AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Invoice_period__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Payment_Period__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Netsuite_Term__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Waive_Indexation__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.of_products_MRR__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Confirm_to_submit_DoA_process</targetReference>
+            </connector>
+            <label>All fields populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check whether Opportunity products, Invoice Period, and Payment Period are filled.</description>
+        <name>Indexation_fields_on_account_filled</name>
+        <label>Indexation fields on account filled?</label>
+        <locationX>2657</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>MissingIndexationInfoOnAccount</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Filled</defaultConnectorLabel>
+        <rules>
+            <name>IndexationFieldsOnAccountFilled</name>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>FillIndexationLegalFields</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Price_uplift_info_mismatch</targetReference>
+            </connector>
+            <label>IndexationFieldsOnAccountFilled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Payment period is always required 
+Invoice period is not required if there are no recurring products
+!!!!Check if contract term is only required for recurring products!!!!</description>
+        <name>Missing_infocheck</name>
+        <label>Missing info?</label>
+        <locationX>2030</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Please_fill_in_missing_information</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Info_missing</name>
+            <conditionLogic>(1 AND 2 AND 3 AND 4) OR (5 AND 2 AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Invoice_period__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Payment_Period__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Netsuite_Term__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Waive_Indexation__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.of_products_MRR__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Confirm_to_submit_DoA_process</targetReference>
+            </connector>
+            <label>Info missing</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if OEM/Partner field is blank.</description>
+        <name>OEM_Partner_specified</name>
+        <label>OEM/Partner specified?</label>
+        <locationX>1634</locationX>
+        <locationY>1340</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_recurring_discount</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not specified</defaultConnectorLabel>
+        <rules>
+            <name>OEM_specified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.OEM__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_OEM_Partner_Account</targetReference>
+            </connector>
+            <label>Specified</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>OLI_records_found_for_discount_on_unbundled_remaining_SKUs</name>
+        <label>Records found for discount on unbundled remaining SKUs</label>
+        <locationX>1634</locationX>
+        <locationY>2156</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_step_up_deal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_discount_on_unbundled_remaining_SKUs</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_discount_on_unbundled_remaining_SKUs</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_discount_on_unbundled_remaining_SKUs</targetReference>
+            </connector>
+            <label>Yes, discount on unbundled remaining SKUs</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Price_uplift_info_mismatch</name>
+        <label>Price uplift info mismatch?</label>
+        <locationX>2360</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>MissingPriceUpliftInfoOnOpp</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Matched</defaultConnectorLabel>
+        <rules>
+            <name>Info_Matched</name>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Price_Uplift_On_Renewal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Opportunity_0.Account.Price_Uplift_On_Renewal__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_0.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing Business-Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Missing_infocheck</targetReference>
+            </connector>
+            <label>Info Matched</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>if Check for recurring discount returns any discount, it means that recurring discount approval is required for the scenario Discount extending past the initial contract term</description>
+        <name>Recurring_discount</name>
+        <label>Recurring discount?</label>
+        <locationX>1634</locationX>
+        <locationY>1748</locationY>
+        <defaultConnector>
+            <targetReference>Check_discount_on_unbundled_remaining_SKUs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_recurring_discount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_for_recurring_discount</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_recurring_discount_to_true_on_DoA</targetReference>
+            </connector>
+            <label>Yes, recurring discount</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if the checkbox was ticked in the previous screen.</description>
+        <name>Start_DoA_Process</name>
+        <label>Start DoA Process?</label>
+        <locationX>2030</locationX>
+        <locationY>1232</locationY>
+        <defaultConnectorLabel>Do not start</defaultConnectorLabel>
+        <rules>
+            <name>Start</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BOOL_Start_DoA</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>OEM_Partner_specified</targetReference>
+            </connector>
+            <label>Start</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>step_up_deal_found</name>
+        <label>step up deal found</label>
+        <locationX>1634</locationX>
+        <locationY>2672</locationY>
+        <defaultConnector>
+            <targetReference>Assign_DoA_values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Step_up_deal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_for_step_up_deal</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_total_ACV_of_releated_upsell_opportunities</targetReference>
+            </connector>
+            <label>Step up deal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if the checkbox was ticked in the previous screen.</description>
+        <name>Submit_Approval_Request</name>
+        <label>Submit Approval Request?</label>
+        <locationX>1832</locationX>
+        <locationY>4868</locationY>
+        <defaultConnectorLabel>Do not submit</defaultConnectorLabel>
+        <rules>
+            <name>Submit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BOOL_Submit_approval_request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_given_comments</targetReference>
+            </connector>
+            <label>Submit</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Upsell_Opportunity_Products_with_discount</name>
+        <label>Upsell Opportunity Products with discount?</label>
+        <locationX>1480</locationX>
+        <locationY>3212</locationY>
+        <defaultConnector>
+            <targetReference>Assign_step_up_deal_check_values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Upsell_Opportunity_Products_with_discount_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_upsell_opportunity_products_with_discount</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Step_up_products_with_discount_on_upsell_to_true_on_DoA</targetReference>
+            </connector>
+            <label>Upsell Opportunity Products with discount found</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>CHOICESET_Discount_Reason</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Discount_reasons__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>CHOICESET_Payment_Period</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Payment_Period__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>CHOICESET_Special_Billing_Scenario</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Special_Billing_Scenario__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>CHOICESET_Waive_Indexation</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Waive_Indexation__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <description>Approver based on ARR Discount DOA 2025</description>
+        <name>ApproverARRDiscount</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ({!Get_DOA_Record.Discount_ARR__c} &lt;= {!$Setup.DoA_Setting__c.MRR_Discount_Sales_Rep__c}), 
+  &quot;Not Required&quot;, 
+  IF(
+    ({!Get_DOA_Record.Discount_ARR__c} &lt;= {!$Setup.DoA_Setting__c.MRR_Discount_Sales_Manager__c}), 
+    &quot;Sales Manager&quot;, 
+    IF(
+      ({!Get_DOA_Record.Discount_ARR__c} &lt;= 0.5), 
+      &quot;CRO&quot;, 
+      IF(
+        {!Get_DOA_Record.Discount_ARR__c} &gt; 0.5, 
+        &quot;CFO + CEO&quot;, 
+        &quot;Not Required&quot;
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Approver if billing candence is more frequent than annually</description>
+        <name>ApproverBillingCadence</name>
+        <dataType>String</dataType>
+        <expression>IF( ({!Get_DOA_Record.Invoice_Period_formula__c} &gt; 12), &apos;CFO + CEO&apos;, &apos;Not Required&apos;)</expression>
+    </formulas>
+    <formulas>
+        <description>approver for deviation from SMB special deal</description>
+        <name>ApproverDeviationSMBSpecialDeal</name>
+        <dataType>String</dataType>
+        <expression>IF(({!Get_DOA_Record.SMB_Special_Deal_approval_required__c} = TRUE), &apos;CFO + CEO&apos;, &apos;Not Required&apos;)</expression>
+    </formulas>
+    <formulas>
+        <description>approver in case discount has been extending past the initial term</description>
+        <name>ApproverDiscountExtendingPastTerm</name>
+        <dataType>String</dataType>
+        <expression>IF  (   ( {!Get_DOA_Record.Discount_extending_past_the_initial_term__c} = TRUE &amp;&amp; ISPICKVAL({!Get_Opportunity_0.Account.Company_Size_New__c}, &apos;SMB&apos;) ), &apos;CFO + CEO&apos;, 
+    (
+     IF ( ({!Get_DOA_Record.Discount_extending_past_the_initial_term__c} = TRUE &amp;&amp; ISPICKVAL({!Get_Opportunity_0.Type}, &apos;New Business-Enterprise Cloud&apos;)), &apos;CFO&apos;, &apos;Not required&apos;)
+))</expression>
+    </formulas>
+    <formulas>
+        <description>approver for discount on unbundled remaining SKUs</description>
+        <name>ApproverDiscountUnbundledSKUs</name>
+        <dataType>String</dataType>
+        <expression>IF(({!Get_DOA_Record.Discount_on_unbundled_remaining_SKUs__c} = TRUE &amp;&amp; ISPICKVAL({!Get_Opportunity_0.Type}, &apos;	New Business-Enterprise Cloud&apos;)), &apos;CFO&apos;, &apos;Not Required&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>ApproverOneOffDiscount</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ({!Get_DOA_Record.Discount_One_Off__c} &lt;= 0.15), 
+  &quot;Not Required&quot;, 
+  IF(
+    ({!Get_DOA_Record.Discount_One_Off__c} &lt;= {!$Setup.DoA_Setting__c.One_off_Discount_VP_of_CS__c}), 
+    &quot;Sales Manager&quot;, 
+    IF(
+      ({!Get_DOA_Record.Discount_One_Off__c} &lt;= 0.5), 
+      &quot;CRO&quot;, 
+      IF(
+        {!Get_DOA_Record.Discount_One_Off__c} &gt; 0.5, 
+        &quot;CFO + CEO&quot;, 
+        &quot;Not Required&quot;
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Approver if payment term is &gt; 60 days</description>
+        <name>ApproverPaymentTerm</name>
+        <dataType>String</dataType>
+        <expression>IF( ({!Get_DOA_Record.Payment_term_formula__c} &gt; 60), &apos;CFO + CEO&apos;, &apos;Not Required&apos;)</expression>
+    </formulas>
+    <formulas>
+        <description>Approver in case project does not start by the end of the next month</description>
+        <name>ApproverProjectStartDate</name>
+        <dataType>String</dataType>
+        <expression>IF( ({!Get_DOA_Record.Project_start_date_approval_required__c} = TRUE) , &apos;CFO&apos;, &apos;Not Required&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>ApproverShortContractTerm</name>
+        <dataType>String</dataType>
+        <expression>IF ({!Get_DOA_Record.Shorter_term_and_discount__c} = TRUE, &apos;CFO&apos;, &apos;Not Required&apos;)</expression>
+    </formulas>
+    <formulas>
+        <description>Approver for Step Up</description>
+        <name>ApproverStepUp</name>
+        <dataType>String</dataType>
+        <expression>IF(  
+({!Get_DOA_Record.Step_Up_Total_ACV__c} &gt; {!Get_DOA_Record.Step_Up_25_of_Y1_ARR__c})
+||
+({!Get_DOA_Record.Step_Up_discount_on_products_Y2_Y3__c} = TRUE)
+||
+({!Get_DOA_Record.Step_up_Final_year_ARR__c} &gt; {!Get_DOA_Record.Step_Up_50_of_Y1_ARR__c}), &apos;CRO + CFO&apos;, &apos;Not Required&apos;)</expression>
+    </formulas>
+    <formulas>
+        <description>Calculates what ARR is + 25% of ARR. This is used to check for step up deals if ACV&gt; Y1 ARR by 25% or more. (ACV &gt; New Biz Opp ARR * 1.25) THIS IS NEW FOR DOA 25</description>
+        <name>CheckOriginalOpptyARRStepUp25</name>
+        <dataType>Currency</dataType>
+        <expression>{!Get_Opportunity_0.ARR_manual__c}*1.25</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <description>Calculates what ARR is + 50% of ARR. This is used to check for step up deals if if last Y ARR &gt; Y1 ARR by 50% or more. (Sum of ARR of all the Opps &gt; New Biz Opp ARR * 1.5) THIS IS USED FOR DOA 25</description>
+        <name>CheckOriginalOpptyARRStepUp50</name>
+        <dataType>Currency</dataType>
+        <expression>{!Get_Opportunity_0.ARR_manual__c}*1.5</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <description>Formula to represent ARR before discount (Sum of Default Price x Quantity of OLIs)</description>
+        <name>CURRENCY_ARR_Before_Discount</name>
+        <dataType>Currency</dataType>
+        <expression>{!CURRENCY_Sum_of_MRR_Default_Total_Price} * 12</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>BODEV-743: Populate Approval Finalized Date (GMT)</description>
+        <name>DATE_Date_of_NOW_in_GMT</name>
+        <dataType>Date</dataType>
+        <expression>DATE(
+  VALUE( MID( TEXT(NOW()), 1, 4)),
+  VALUE( MID( TEXT(NOW()), 6, 2)),
+  VALUE( MID( TEXT(NOW()), 9, 2))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FillIndexationLegalFields</name>
+        <dataType>Boolean</dataType>
+        <expression>IF((ISBLANK(TEXT({!Get_Opportunity_0.Account.Indexation__c})) || 
+((TEXT({!Get_Opportunity_0.Account.Indexation__c}) = &apos;Yes&apos; || TEXT({!Get_Opportunity_0.Account.Indexation__c}) = &apos;After Initial Term&apos;) &amp;&amp; 
+ISBLANK(TEXT({!Get_Opportunity_0.Account.Indexation__c})))) &amp;&amp; ISPICKVAL({!Get_Opportunity_0.Account.Platform__c},&quot;Bynder&quot;),true,false
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Total ACV for the step up deal (original new business opportunity + related upsell opportunities) USED FOR DOA 25</description>
+        <name>SUMACVStepUp</name>
+        <dataType>Currency</dataType>
+        <expression>{!Get_Opportunity_0.ACV_ARR__c} + {!Get_total_ACV_of_releated_upsell_opportunities}</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <description>Calculates the sum of ARR for the Step up Deal (original new business opportunity + related upsell opportunities) USED FOR DOA 25</description>
+        <name>SumARRStepUp</name>
+        <dataType>Currency</dataType>
+        <expression>{!Get_Opportunity_0.ARR_manual__c}+ {!Get_total_ARR_of_related_upsell_opportunities}</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <description>Formula field to return DoA Approval Status to be set on Opp and DoA record. Either &quot;Not Required&quot; or &quot;Pending&quot;.</description>
+        <name>TEXT_DoA_Approval_Status</name>
+        <dataType>String</dataType>
+        <expression>IF( ISPICKVAL({!RECORD_New_DoA.Ultimate_DoA_Level__c}, &quot;Not Required&quot;), &quot;Not Required&quot;, &quot;Pending&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Formula to extract only Product Name from Name of OLI (Opportunity Name + Producut Name)</description>
+        <name>TEXT_OLI_Product_Name</name>
+        <dataType>String</dataType>
+        <expression>RIGHT(
+  {!x2_OLI_Loop_to_create_DoA_Line_Items.Name},
+  LEN({!x2_OLI_Loop_to_create_DoA_Line_Items.Name}) - LEN({!Get_Opportunity_0.Name}) - 1
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Formula for timestamp</description>
+        <name>TIME_Now</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <interviewLabel>Screen: Fix Prices &amp; Terms DoA V2 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Screen: Fix Prices &amp; Terms DoA V2</label>
+    <loops>
+        <description>Loop on OLI to create DoA Line Item records under the created DoA record.</description>
+        <name>x2_OLI_Loop_to_create_DoA_Line_Items</name>
+        <label>2 OLI Loop to create DoA Line Items</label>
+        <locationX>1634</locationX>
+        <locationY>5576</locationY>
+        <collectionReference>COLLECTION_Opportunity_Products</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_DoA_Line_Item_values</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_DoA_Line_Items</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Create DoA Line Items based on the collection</description>
+        <name>Create_DoA_Line_Items</name>
+        <label>Create DoA Line Items</label>
+        <locationX>1634</locationX>
+        <locationY>5984</locationY>
+        <connector>
+            <targetReference>Approval_Required_2</targetReference>
+        </connector>
+        <inputReference>COLLECTION_New_DoA_Line_Items</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <description>DOA record needs to be created here so the flow can use the formula fields to assign the approvers</description>
+        <name>Create_DOA_record</name>
+        <label>Create DOA record</label>
+        <locationX>1634</locationX>
+        <locationY>3812</locationY>
+        <connector>
+            <targetReference>Get_DOA_Record</targetReference>
+        </connector>
+        <inputReference>RECORD_New_DoA</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>Get the opportunity line items to check if there are any products which are part of a package which have been removed (quantity &lt; 0)
+
+OLI records found means discount on unbundled remaining SKUs</description>
+        <name>Check_discount_on_unbundled_remaining_SKUs</name>
+        <label>Check discount on unbundled remaining SKUs</label>
+        <locationX>1634</locationX>
+        <locationY>2048</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>OLI_records_found_for_discount_on_unbundled_remaining_SKUs</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TEXT_Opportunity_ID</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Part_of_a_package__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Quantity</field>
+            <operator>LessThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Check to see if there is any recurring discount.</description>
+        <name>Check_for_recurring_discount</name>
+        <label>Check for recurring discount</label>
+        <locationX>1634</locationX>
+        <locationY>1640</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Recurring_discount</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TEXT_Opportunity_ID</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Recurring_Discount__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Default_Price_Discount__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Checks if the New Business opportunity is part of a step up deal. Step up deals are a combination of opportunity records of Type New Business and Upsell. The Upsell opportunity has a link to the New Business opportunity in the Related Primary Deal field.</description>
+        <name>Check_for_step_up_deal</name>
+        <label>Check for step up deal</label>
+        <locationX>1634</locationX>
+        <locationY>2456</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AllStepUpProducts</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Related_Primary_Deal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TEXT_Opportunity_ID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_DOA_Record</name>
+        <label>Get DOA Record for formula fields</label>
+        <locationX>1634</locationX>
+        <locationY>3920</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>test_variables_2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RECORD_New_DoA.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Delegation_of_Authority__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_OEM_Partner_Account</name>
+        <label>Get OEM/Partner Account</label>
+        <locationX>1502</locationX>
+        <locationY>1448</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_for_recurring_discount</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opportunity_0.OEM__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the current Opportunity record</description>
+        <name>Get_Opportunity_0</name>
+        <label>Get Opportunity</label>
+        <locationX>1353</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>DoA_Already_Approved_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TEXT_Opportunity_ID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Check if there are upsell opportunity products with discount</description>
+        <name>Get_upsell_opportunity_products_with_discount</name>
+        <label>Get upsell (step up) opportunity products with discount</label>
+        <locationX>1480</locationX>
+        <locationY>3104</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Upsell_Opportunity_Products_with_discount</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>Collect_all_Upsell_Step_Up_Deal_Record_IDs</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ProductCode</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Step-up Discount</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Discount</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_DoA_record_with_approvers</name>
+        <label>Update DoA record with approvers</label>
+        <locationX>1634</locationX>
+        <locationY>5252</locationY>
+        <connector>
+            <targetReference>Assign_DoA_values_to_Opp</targetReference>
+        </connector>
+        <inputReference>RECORD_New_DoA</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opp</name>
+        <label>Update Opp</label>
+        <locationX>1634</locationX>
+        <locationY>5468</locationY>
+        <connector>
+            <targetReference>x2_OLI_Loop_to_create_DoA_Line_Items</targetReference>
+        </connector>
+        <inputReference>Get_Opportunity_0</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opp_to_clear_DoA_Approval_Status</name>
+        <label>Update Opp to clear DoA Approval Status</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <inputReference>Get_Opportunity_0</inputReference>
+    </recordUpdates>
+    <runInMode>DefaultMode</runInMode>
+    <screens>
+        <description>Final screen in case of approval not required</description>
+        <name>Complete_Not_Required</name>
+        <label>Complete: Not Required</label>
+        <locationX>1436</locationX>
+        <locationY>4760</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_Approval_Finalized_at_Now</targetReference>
+        </connector>
+        <fields>
+            <name>TEXT_Completed_Not_Required</name>
+            <fieldText>&lt;p&gt;Approval is not required for this Opportunity.&lt;/p&gt;&lt;p&gt;Now the prices and terms have been fixed and you can move forward to next stages.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Screen to confirm before triggering the approval process</description>
+        <name>Confirm_to_submit_approval_process</name>
+        <label>Confirm to submit approval process</label>
+        <locationX>1832</locationX>
+        <locationY>4760</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Submit_Approval_Request</targetReference>
+        </connector>
+        <fields>
+            <name>CONFIRM_Submit_approval</name>
+            <fieldText>&lt;p&gt;Screen needs to be updated with new fields &amp;amp; scenarios!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Approval is required from the following approver(s).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;ARR Discount: %&lt;/p&gt;&lt;p&gt;One-off Discount: %&lt;/p&gt;&lt;p&gt;Special Billing Scenario: {!&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Get_Opportunity_0&lt;/span&gt;.Special_Billing_Scenario__c}&lt;/p&gt;&lt;p&gt;Invoice Period: {!R&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Get_Opportunity_0&lt;/span&gt;.Invoice_period__c} months&lt;/p&gt;&lt;p&gt;Payment Period: {!&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Get_Opportunity_0&lt;/span&gt;.Payment_Period__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Indexation Waived: {!&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Get_Opportunity_0&lt;/span&gt;.Waive_Indexation__c}&lt;/p&gt;&lt;p&gt;Contract Term: {!&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Get_Opportunity_0&lt;/span&gt;.Netsuite_Term__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;ARR before discount: {!&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Get_Opportunity_0&lt;/span&gt;.CurrencyIsoCode}&lt;/p&gt;&lt;p&gt;(* excl. products with negative quantity)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;﻿&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Tick below checkbox to submit the approval request.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You can also leave comments to explain why discounts/special payment terms are given.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>BOOL_Submit_approval_request</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <booleanValue>true</booleanValue>
+            </defaultValue>
+            <fieldText>Submit approval request</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Discount_Reason</name>
+            <choiceReferences>CHOICESET_Discount_Reason</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Opportunity_0.Discount_reasons__c</elementReference>
+            </defaultValue>
+            <fieldText>Discount Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Requester_Comments</name>
+            <fieldText>Comments (up to 1,000 characters)</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Confirm the user to trigger the DoA process.</description>
+        <name>Confirm_to_submit_DoA_process</name>
+        <label>Confirm to submit DoA process</label>
+        <locationX>2030</locationX>
+        <locationY>1124</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Start_DoA_Process</targetReference>
+        </connector>
+        <fields>
+            <name>TEXT_Confirm_to_submit_DoA_process</name>
+            <fieldText>&lt;p&gt;In order to proceed to Legal Review or later stage, you need to finalize the prices and terms.&lt;/p&gt;&lt;p&gt;In case DoA approval is required, you cannot edit the record until the process is accepted/rejected/recalled.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Once finalized, you cannot edit the prices and terms&lt;/b&gt; (Products, Invoice Period, Payment Period).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Tick below checkbox to fix the prices and terms.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>BOOL_Start_DoA</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <booleanValue>true</booleanValue>
+            </defaultValue>
+            <fieldText>Finalize prices &amp; terms</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>DoA Approval Request has been submitted and is pending for approval.</description>
+        <name>DoA_Approval_Pending</name>
+        <label>DoA Approval Pending</label>
+        <locationX>842</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>TEXT_Approval_Pending</name>
+            <fieldText>&lt;p&gt;DoA Approval Request has been submitted and is awaiting for approval.&lt;/p&gt;&lt;p&gt;If you need to cancel the approval request and update the Opportunity, &lt;/p&gt;&lt;p&gt;recall the approval process in the Approval History section.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>MissingIndexationInfoOnAccount</name>
+        <label>MissingIndexationInfoOnAccount</label>
+        <locationX>2954</locationX>
+        <locationY>458</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ErrorInfo</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(255, 0, 0);&quot;&gt;Indexation information is not filled on the account. Please contact the legal team.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>MissingPriceUpliftInfoOnOpp</name>
+        <label>MissingPriceUpliftInfoOnOpp</label>
+        <locationX>2690</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>PriceUpliftMissingError</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(255, 0, 0);&quot;&gt;Price Uplift on Renewal value on opportunity is not matching with the account. Please update before submitting for DOA approval.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Please_fill_in_missing_information</name>
+        <label>Please fill in missing information</label>
+        <locationX>2162</locationX>
+        <locationY>674</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Fields_populated</targetReference>
+        </connector>
+        <fields>
+            <name>Missing_Info</name>
+            <fieldText>&lt;p&gt;Please fill in the missing information&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>Get_Opportunity_0.Invoice_period__c</objectFieldReference>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Get_Opportunity_0.Invoice_period__c</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Get_Opportunity_0.of_products_MRR__c</leftValueReference>
+                    <operator>GreaterThan</operator>
+                    <rightValue>
+                        <numberValue>0.0</numberValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>Get_Opportunity_0.Payment_Period__c</objectFieldReference>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Get_Opportunity_0.Payment_Period__c</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>Get_Opportunity_0.Netsuite_Term__c</objectFieldReference>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Get_Opportunity_0.Netsuite_Term__c</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>Get_Opportunity_0.Waive_Indexation__c</objectFieldReference>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Get_Opportunity_0.Waive_Indexation__c</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Update</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Pricing_factors_are_not_applied_yet</name>
+        <label>Pricing factors are not applied yet</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>PricingNotApplied</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 12px; color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;Pricing factors are not applied yet, Please apply by clicking on &apos;Apply Pricing Factors&apos; button and retry the DOA process.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Reset DoA Approval Status if needed</description>
+        <name>Reset_DoA_Approval_Status</name>
+        <label>Reset DoA Approval Status</label>
+        <locationX>446</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Clear_DoA_Values</targetReference>
+        </connector>
+        <fields>
+            <name>TEXT_Confirm_Reset_DoA_Approval_Status</name>
+            <fieldText>&lt;p&gt;The prices and terms has been already finalized and fixed.&lt;/p&gt;&lt;p&gt;Do you want to unlock the prices and terms?&lt;/p&gt;&lt;p&gt;(If you unlock, then you will need to launch this process again.)&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Tick below checkbox if you want to unlock.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>BOOL_Clear_DoA_values</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Unlock prices &amp; terms</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Test_screen_to_check_variables</name>
+        <label>Test screen to check variables</label>
+        <locationX>1634</locationX>
+        <locationY>4544</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Approval_required</targetReference>
+        </connector>
+        <fields>
+            <name>test</name>
+            <fieldText>&lt;p&gt;Ultimate approver: {!RECORD_New_DoA.Ultimate_DoA_Level__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>test_variables_2</name>
+        <label>test variables 2</label>
+        <locationX>1634</locationX>
+        <locationY>4028</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Assign_all_DOA_approvers</targetReference>
+        </connector>
+        <fields>
+            <name>approverstest</name>
+            <fieldText>&lt;p&gt;Approvers: &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;ARR Discount: {!ApproverARRDiscount}&lt;/p&gt;&lt;p&gt;Billing Cadence: {!ApproverBillingCadence}&lt;/p&gt;&lt;p&gt;SMB Special Deal: {!ApproverDeviationSMBSpecialDeal}&lt;/p&gt;&lt;p&gt;Discount extending: {!ApproverDiscountExtendingPastTerm}Discount unbundled: {!ApproverDiscountUnbundledSKUs}&lt;/p&gt;&lt;p&gt;One Off Discount: {!ApproverOneOffDiscount}&lt;/p&gt;&lt;p&gt;Payment term: {!ApproverPaymentTerm}&lt;/p&gt;&lt;p&gt;Project Start date: {!ApproverProjectStartDate}Short term contract: {!ApproverShortContractTerm}Step up:{!ApproverStepUp}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>stepuptest</name>
+            <fieldText>&lt;p&gt;step up deal info Record_New_Doa:&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>RECORD_New_DoA.Step_Up_discount_on_products_Y2_Y3__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>stepupformularecord</name>
+            <fieldText>&lt;p&gt;step up deal info get record for formula&lt;/p&gt;&lt;p&gt;Check Original Oppty ARR Step Up 25: {!CheckOriginalOpptyARRStepUp25}&lt;/p&gt;&lt;p&gt;Ceck Original Oppty ARR Step Up 50: {!CheckOriginalOpptyARRStepUp50}&lt;/p&gt;&lt;p&gt;SUM ACV Step Up: {!SUMACVStepUp}&lt;/p&gt;&lt;p&gt;Sum ARR Ste[ Up: {!SumARRStepUp}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Transfrom elements:&lt;/p&gt;&lt;p&gt;Total ACV Upsell{!Get_total_ACV_of_releated_upsell_opportunities}&lt;/p&gt;&lt;p&gt;Total ARR upsell&lt;/p&gt;&lt;p&gt;{!Get_total_ARR_of_related_upsell_opportunities}&lt;/p&gt;&lt;p&gt;IDs:&lt;/p&gt;&lt;p&gt;{!Collect_all_Upsell_Step_Up_Deal_Record_IDs}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>Get_DOA_Record.Step_Up_discount_on_products_Y2_Y3__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>test2</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>1227</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opportunity_0</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <transforms>
+        <description>Collect all upsell step up deal records to us in the get opportunty products with discount</description>
+        <name>Collect_all_Upsell_Step_Up_Deal_Record_IDs</name>
+        <label>Collect all Upsell Step Up Deal Record IDs</label>
+        <locationX>1480</locationX>
+        <locationY>2996</locationY>
+        <connector>
+            <targetReference>Get_upsell_opportunity_products_with_discount</targetReference>
+        </connector>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <transformValues>
+            <transformValueActions>
+                <transformType>Map</transformType>
+                <value>
+                    <elementReference>Check_for_step_up_deal[$EachItem].Id</elementReference>
+                </value>
+            </transformValueActions>
+        </transformValues>
+    </transforms>
+    <transforms>
+        <description>get total ACV across the related upsell opportunities - this amount still needs to be added to the original new business opportunity</description>
+        <name>Get_total_ACV_of_releated_upsell_opportunities</name>
+        <label>Get total ACV of releated upsell opportunities</label>
+        <locationX>1480</locationX>
+        <locationY>2780</locationY>
+        <connector>
+            <targetReference>Get_total_ARR_of_related_upsell_opportunities</targetReference>
+        </connector>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <transformValues>
+            <transformValueActions>
+                <inputParameters>
+                    <name>aggregationValues</name>
+                    <value>
+                        <elementReference>Check_for_step_up_deal</elementReference>
+                    </value>
+                </inputParameters>
+                <inputParameters>
+                    <name>aggregationField</name>
+                    <value>
+                        <stringValue>ACV_ARR__c</stringValue>
+                    </value>
+                </inputParameters>
+                <transformType>Sum</transformType>
+            </transformValueActions>
+        </transformValues>
+    </transforms>
+    <transforms>
+        <description>Get the total ARR of all the related upsell opportunities</description>
+        <name>Get_total_ARR_of_related_upsell_opportunities</name>
+        <label>Get total ARR of related upsell opportunities</label>
+        <locationX>1480</locationX>
+        <locationY>2888</locationY>
+        <connector>
+            <targetReference>Collect_all_Upsell_Step_Up_Deal_Record_IDs</targetReference>
+        </connector>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <transformValues>
+            <transformValueActions>
+                <inputParameters>
+                    <name>aggregationValues</name>
+                    <value>
+                        <elementReference>Check_for_step_up_deal</elementReference>
+                    </value>
+                </inputParameters>
+                <inputParameters>
+                    <name>aggregationField</name>
+                    <value>
+                        <stringValue>ARR_manual__c</stringValue>
+                    </value>
+                </inputParameters>
+                <transformType>Sum</transformType>
+            </transformValueActions>
+        </transformValues>
+    </transforms>
+    <variables>
+        <name>AllStepUpProductsLineItems</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>Collection to create DoA Line Items based on OLIs</description>
+        <name>COLLECTION_New_DoA_Line_Items</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>DoA_Line_Item__c</objectType>
+    </variables>
+    <variables>
+        <description>Collection variable to store Opportunity Products under the current Opportunity.</description>
+        <name>COLLECTION_Opportunity_Products</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityLineItem</objectType>
+    </variables>
+    <variables>
+        <description>Variable to store the sum of Default Price x Quantity of MRR products.</description>
+        <name>CURRENCY_Sum_of_MRR_Default_Total_Price</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable to store the sum of Total Price of MRR products. Only includes OLIs with negative quantity.</description>
+        <name>CURRENCY_Sum_of_Negative_MRR_Total_Price</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <description>Variable to store the sum of Default Price x Quantity of One-off products.
+One-off products in a package are excluded.</description>
+        <name>CURRENCY_Sum_of_One_off_Default_Total_Price</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable to store the sum of Total Price of One-off products.
+One-off products in a package are excluded.</description>
+        <name>CURRENCY_Sum_of_One_off_Total_Price</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable to store the sum of Default Price x Quantity of MRR products. Only includes OLIs with positive quantity.</description>
+        <name>CURRENCY_Sum_of_Positive_MRR_Default_Total_Price</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable to store the sum of Total Price of MRR products. Only includes OLIs with positive quantity.</description>
+        <name>CURRENCY_Sum_of_Positive_MRR_Total_Price</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable for the new DoA record to be created</description>
+        <name>RECORD_New_DoA</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Delegation_of_Authority__c</objectType>
+    </variables>
+    <variables>
+        <description>DoA Line Item record to copy OLI values in each loop for OLIs</description>
+        <name>RECORD_New_DoA_Line_Item</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>DoA_Line_Item__c</objectType>
+    </variables>
+    <variables>
+        <description>BODEV-673: Variable to store the original contract of the Opp. Renewal: Previous contract. Upsell: Active current contract.</description>
+        <name>RECORD_Original_Contract</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>The step up deal upsell records found</description>
+        <name>StepUpDealUpsellRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>A variable of empty string that works as a line break when used in other text resources.
+Reference: https://trailblazer.salesforce.com/ideaView?id=0873A000000lIxrQAE</description>
+        <name>TEXT_Line_Break</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Text variable to store ID of the Opportunity record</description>
+        <name>TEXT_Opportunity_ID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

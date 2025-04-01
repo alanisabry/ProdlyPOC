@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expans_on_Expansion_Portals</fullName>
+    <active>true</active>
+    <description>On Expansion Portal opportunities, only Expansion MRR movement field can be filled in.</description>
+    <errorConditionFormula>AND(
+CloseDate &gt;= DATE(2020,3,9),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISPICKVAL(Type, &quot;New Business - Expansion Portal&quot;),
+OR(
+AND(
+ISCHANGED(Expansion__c),
+NOT(ISBLANK(Expansion__c)),
+NOT(ROUND(Expansion__c, 2) = ROUND(MRR_from_Products__c, 2))),
+NOT(ISBLANK(New_MRR__c)),
+NOT(ISBLANK(Contraction__c)),
+NOT(ISBLANK(Renewal__c)),
+NOT(ISBLANK(Churn__c))
+)
+)</errorConditionFormula>
+    <errorDisplayField>Expansion__c</errorDisplayField>
+    <errorMessage>For expansion portal opportunities, only the Expansion field should be filled and it should match MRR from products.</errorMessage>
+</ValidationRule>

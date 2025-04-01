@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Renewal (Close Date)</label>
+    <protected>false</protected>
+    <values>
+        <field>ARR_Movement_Field__c</field>
+        <value xsi:type="xsd:string">Renewal_ARR__c</value>
+    </values>
+    <values>
+        <field>Criteria_logical_operator__c</field>
+        <value xsi:type="xsd:string">&gt;</value>
+    </values>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">This record is used to create/update Opportunity ARR Movements of renewal movement type when close date &gt; contract start date</value>
+    </values>
+    <values>
+        <field>Movement_Field__c</field>
+        <value xsi:type="xsd:string">Renewal__c</value>
+    </values>
+    <values>
+        <field>Movement_Type__c</field>
+        <value xsi:type="xsd:string">Renewal</value>
+    </values>
+    <values>
+        <field>Opportunity_Type__c</field>
+        <value xsi:type="xsd:string">Existing Business-Renewal</value>
+    </values>
+    <values>
+        <field>Parent_Object__c</field>
+        <value xsi:type="xsd:string">Opportunity</value>
+    </values>
+    <values>
+        <field>Reporting_Date_Criteria_Field_1__c</field>
+        <value xsi:type="xsd:string">CloseDate</value>
+    </values>
+    <values>
+        <field>Reporting_Date_Criteria_Field_2__c</field>
+        <value xsi:type="xsd:string">Startdate_contract__c</value>
+    </values>
+    <values>
+        <field>Reporting_Date__c</field>
+        <value xsi:type="xsd:string">CloseDate</value>
+    </values>
+    <values>
+        <field>Reporting_Date_to_Close_Date__c</field>
+        <value xsi:type="xsd:string">Reporting_Date_to_Close_Date__c</value>
+    </values>
+</CustomMetadata>

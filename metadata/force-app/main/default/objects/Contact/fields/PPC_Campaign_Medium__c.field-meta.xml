@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PPC_Campaign_Medium__c</fullName>
+    <description>Webdam field
+&quot;Use utm_medium to identify a medium such as cost-per-click.&quot;</description>
+    <label>PPC Campaign Medium</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

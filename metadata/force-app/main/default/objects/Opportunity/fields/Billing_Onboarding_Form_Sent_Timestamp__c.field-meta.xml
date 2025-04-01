@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Onboarding_Form_Sent_Timestamp__c</fullName>
+    <description>BODEV-1487: Timestamp when Customer Billing Onboarding Form was sent. Populated by Opportunity [ALF] Invoked: Send Customer Onboarding Form</description>
+    <label>Billing Onboarding Form Sent Timestamp</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

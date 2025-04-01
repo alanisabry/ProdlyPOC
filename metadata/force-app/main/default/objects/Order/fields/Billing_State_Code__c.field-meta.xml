@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_State_Code__c</fullName>
+    <description>Code of the Billing State. Used for the NetSuite integration via Tray.io</description>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+  CONTAINS(Account.OEM_Account__r.Name,&quot;Acquia&quot;),
+  CONTAINS(Account.OEM_Account__r.Name,&quot;Workfront&quot;),
+Account.OEM_Account__r.Account_ID_18_digits__c = $Label.AWS_OEM_Account_ID
+) &amp;&amp;
+NOT(CONTAINS(Account.OEM_Account__r.Name, &quot;Non OEM&quot;)),
+TEXT(Account.OEM_Account__r.BillingStateCode),
+TEXT(Account.BillingStateCode))</formula>
+    <label>Billing State Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

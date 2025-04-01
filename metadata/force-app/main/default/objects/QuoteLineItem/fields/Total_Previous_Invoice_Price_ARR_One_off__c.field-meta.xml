@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Previous_Invoice_Price_ARR_One_off__c</fullName>
+    <description>Total Sales Price incl. Cumulative Indexation. This goes to Subscription Fee from Previous Invoice on Renewal Agreement.</description>
+    <formula>Total_Initial_Default_Price_ARR_One_off__c +  Cumulative_Indexation_Amount__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Previous Invoice Price ARR/One-off</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

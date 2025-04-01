@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_DoA__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>BDOEV-76: Indicates which DoA record is the latest one for the Opportunity</description>
+    <inlineHelpText>Indicates which DoA record is the latest one for the Opportunity</inlineHelpText>
+    <label>Latest DoA</label>
+    <referenceTo>Delegation_of_Authority__c</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

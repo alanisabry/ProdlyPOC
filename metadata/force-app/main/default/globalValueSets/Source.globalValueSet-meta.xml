@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CTA Marketing</fullName>
+        <default>false</default>
+        <label>CTA Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Behavioral Marketing</fullName>
+        <default>false</default>
+        <label>Behavioral Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Outbound</fullName>
+        <default>false</default>
+        <label>Outbound</label>
+    </customValue>
+    <customValue>
+        <fullName>Partnerships</fullName>
+        <default>false</default>
+        <label>Partnerships</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Success</fullName>
+        <default>false</default>
+        <label>Customer Success</label>
+    </customValue>
+    <masterLabel>Source</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

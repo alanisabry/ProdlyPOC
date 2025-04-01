@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Technical_Win_Assessment__c</fullName>
+    <inlineHelpText>Do we have explicit acknolwedgement from prospect that we meet all requirements?</inlineHelpText>
+    <label>Technical Win Assessment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Does not meet requirements</fullName>
+                <default>false</default>
+                <label>Does not meet requirements</label>
+            </value>
+            <value>
+                <fullName>Partially meets requirements</fullName>
+                <default>false</default>
+                <label>Partially meets requirements</label>
+            </value>
+            <value>
+                <fullName>Meets all requirements</fullName>
+                <default>false</default>
+                <label>Meets all requirements</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

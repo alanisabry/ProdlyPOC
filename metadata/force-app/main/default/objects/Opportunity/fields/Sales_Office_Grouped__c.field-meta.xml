@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Office_Grouped__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Sales_Office__c, 
+&quot;Amsterdam&quot;, &quot;EMEA&quot;, 
+&quot;London&quot;, &quot;EMEA&quot;,
+&quot;Dubai&quot;, &quot;EMEA&quot;,
+&quot;Boston&quot;, &quot;US&quot;,
+&quot;San Mateo&quot;, &quot;US&quot;,
+&quot;San Carlos&quot;, &quot;US&quot;,
+&quot;Melbourne&quot;, &quot;APAC&quot;,
+IF(
+  ISPICKVAL(Owner.Work_Location__c, &quot;Remote&quot;) &amp;&amp; CASESAFEID(Owner.Id) = &quot;0050P000007V4NTQA0&quot;, /* Exception for Ben Miller */
+  &quot;US&quot;,
+  &quot;&quot;
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Office Grouped</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

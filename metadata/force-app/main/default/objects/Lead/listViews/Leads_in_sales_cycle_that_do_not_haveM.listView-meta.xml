@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leads_in_sales_cycle_that_do_not_haveM</fullName>
+    <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>MQL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>contains</operation>
+        <value>3,Sales</value>
+    </filters>
+    <filters>
+        <field>MQL__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Source__c</field>
+        <operation>equals</operation>
+        <value>Inbound</value>
+    </filters>
+    <label>Leads in sales cycle that do not haveM</label>
+</ListView>

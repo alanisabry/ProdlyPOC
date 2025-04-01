@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Internal_Transfer_Opp__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The related Internal Transfer Opportunity</description>
+    <inlineHelpText>Please indicate the related internal transfer opportunity if the Opportunity Type is Internal Transfer.</inlineHelpText>
+    <label>Related Internal Transfer Opp</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Related Internal Transfer Opportunity</relationshipLabel>
+    <relationshipName>Opportunities1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

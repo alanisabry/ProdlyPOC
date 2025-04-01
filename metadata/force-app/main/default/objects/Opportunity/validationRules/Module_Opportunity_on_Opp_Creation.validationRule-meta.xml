@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Module_Opportunity_on_Opp_Creation</fullName>
+    <active>true</active>
+    <description>BO-1838: Module Opportunity is required when converting a Lead into Opportunity or creating a new business opportunity.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;Automated Process&quot;),
+
+/* When a New Business Opportunity is Created */
+ISNEW(),
+CONTAINS(TEXT(Type),&apos;New Business&apos;),
+
+/* when Module Opportunity is balnk */
+ISBLANK(Module_Opportunity__c)
+)</errorConditionFormula>
+    <errorMessage>When converting a Lead into Opportunity or creating a new Opportunity, Module Opportunity field should not be blank.</errorMessage>
+</ValidationRule>

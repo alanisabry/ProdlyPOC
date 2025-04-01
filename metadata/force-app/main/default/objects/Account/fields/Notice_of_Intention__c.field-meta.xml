@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notice_of_Intention__c</fullName>
+    <description>Notification period for non-renewal.</description>
+    <inlineHelpText>Notification period for non-renewal.</inlineHelpText>
+    <label>Notification period for non-renewal</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 Month</fullName>
+                <default>false</default>
+                <label>1 Month</label>
+            </value>
+            <value>
+                <fullName>2 Months</fullName>
+                <default>false</default>
+                <label>2 Months</label>
+            </value>
+            <value>
+                <fullName>3 Months</fullName>
+                <default>false</default>
+                <label>3 Months</label>
+            </value>
+            <value>
+                <fullName>30 Days</fullName>
+                <default>false</default>
+                <label>30 Days</label>
+            </value>
+            <value>
+                <fullName>60 Days</fullName>
+                <default>false</default>
+                <label>60 Days</label>
+            </value>
+            <value>
+                <fullName>90 Days</fullName>
+                <default>false</default>
+                <label>90 Days</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

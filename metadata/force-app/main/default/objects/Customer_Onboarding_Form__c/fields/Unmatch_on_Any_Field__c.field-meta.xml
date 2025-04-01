@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unmatch_on_Any_Field__c</fullName>
+    <description>Indicates whether any fields does not match with the current Account/Opportunity values.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  ISBLANK( Form_Submitted_Timestamp__c ), &quot;&quot;,
+  IF(
+    CONTAINS(
+      Match_Billing_Account_Name__c +
+      Match_Billing_CC_Email__c +
+      Match_Billing_City__c +
+      Match_Billing_Country__c +
+      Match_Billing_Phone_Number__c +
+      Match_Billing_State_Province__c +
+      Match_Billing_Street__c +
+      Match_Billing_Zip_Postal_Code__c +
+      Match_Bill_to_Contact_Email__c +
+      Match_Invoice_Delivery_Method__c +
+      Match_PO_Needed__c +
+      Match_Split_One_off_Subscr_Invoice__c +
+      Match_Taxable_Status__c +
+      Match_VAT_Number__c,
+    
+      &quot;NO&quot;
+    ),
+    &quot;Unmatch&quot;,
+    &quot;Match&quot;
+  )
+)</formula>
+    <label>Unmatch on Any Field?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

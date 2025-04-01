@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Net_New_Lead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>wd field
+Checked if associated lead or contact was created within 5 minutes of this response.</description>
+    <label>Net New Name</label>
+    <type>Checkbox</type>
+</CustomField>

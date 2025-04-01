@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_Package_Name__c</fullName>
+    <description>Auto-selected in the standard package process.</description>
+    <inlineHelpText>Type of standard package sold.</inlineHelpText>
+    <label>Standard Package Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Workgroup</fullName>
+                <default>false</default>
+                <label>Workgroup</label>
+            </value>
+            <value>
+                <fullName>Workgroup Plus</fullName>
+                <default>false</default>
+                <label>Workgroup Plus</label>
+            </value>
+            <value>
+                <fullName>Professional</fullName>
+                <default>false</default>
+                <label>Professional</label>
+            </value>
+            <value>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+                <label>Enterprise</label>
+            </value>
+            <value>
+                <fullName>Enterprise - Essential</fullName>
+                <default>false</default>
+                <label>Enterprise - Essential</label>
+            </value>
+            <value>
+                <fullName>Enterprise - Advanced</fullName>
+                <default>false</default>
+                <label>Enterprise - Advanced</label>
+            </value>
+            <value>
+                <fullName>Enterprise - Ultimate</fullName>
+                <default>false</default>
+                <label>Enterprise - Ultimate</label>
+            </value>
+            <value>
+                <fullName>Enterprise - Custom</fullName>
+                <default>false</default>
+                <label>Enterprise - Custom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

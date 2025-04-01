@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_update_DOA_processed_renewals</fullName>
+    <active>true</active>
+    <description>Restrict users to apply/reverse price uplift on DOA processed open renewals.</description>
+    <errorConditionFormula>ISCHANGED(Price_Uplift_On_Renewal__c) &amp;&amp; 
+ of_DOA_approved_open_renewals__c &gt;0 &amp;&amp;
+(ISPICKVAL(PRIORVALUE(Price_Uplift_On_Renewal__c),&quot;Yes&quot;) ||  TEXT(Price_Uplift_On_Renewal__c) = &apos;Yes&apos;)</errorConditionFormula>
+    <errorMessage>DOA is processed or pending on open renewal, please unlock the prices by clicking on &apos;Finalize Prices &amp; Terms&apos; on opportunity before changing the Price uplift on account.</errorMessage>
+</ValidationRule>

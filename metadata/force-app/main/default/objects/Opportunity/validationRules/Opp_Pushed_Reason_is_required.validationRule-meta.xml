@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_Pushed_Reason_is_required</fullName>
+    <active>true</active>
+    <description>BODEV-2679: Opp Pushed Reason required when Close Date is pushed out significantly.
+BODEV-4358: Opp Push Reason on Upsells and Renewals</description>
+    <errorConditionFormula>AND(
+    /* Exempting Admin/Finance/AutoProcess */
+    NOT($Profile.Name = &quot;Automated Process&quot;),
+    NOT(CONTAINS($Profile.Name, &quot;System Administrator&quot;)),
+    NOT(CONTAINS($Profile.Name, &quot;Finance&quot;)),
+
+    OR(
+        /* Applicable for New Business */
+        /* When CLosed Date is pushed out 21+ days (Qualified/Demo) or 7+ days (Proposal/VOC/Legal Review/Signature Stage) */
+        AND(
+            CONTAINS(TEXT(Type), &quot;New Business&quot;),
+            CloseDate - PRIORVALUE(CloseDate) &gt;= 
+            CASE(TEXT(StageName), &quot;Qualified&quot;, 21, &quot;Demo&quot;, 21, &quot;Proposal&quot;, 7, &quot;VOC&quot;, 7, &quot;Legal Review&quot;, 7, &quot;Signature Stage&quot;, 7, 99999)
+        ),
+
+        /* Applicable for Upsell with Solution/Core &amp; Modules (Close Date pushed more than 7 days) */
+        AND(
+            CONTAINS(TEXT(Type), &quot;Upsell&quot;),
+            Has_Solution_Core_Modules_Aggregate__c &gt; 0, 
+            CloseDate - PRIORVALUE(CloseDate) &gt;= 7
+        ),
+
+        /* Applicable for Renewal with Solution/Core &amp; Modules (Close Date pushed more than 30 days) */
+        AND(
+            CONTAINS(TEXT(Type), &quot;Renewal&quot;),
+            Has_Solution_Core_Modules_Aggregate__c &gt; 0,
+            CloseDate - PRIORVALUE(CloseDate) &gt;= 30
+        )
+    ),
+
+    NOT(IsClosed),
+
+    /* When Push Reason is blank or not changed */
+    OR(
+        ISBLANK(Opp_Pushed_Reason__c),
+        NOT(ISCHANGED(Opp_Pushed_Reason__c) || ISBLANK(Opp_Pushed_Reason__c))
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Opp_Pushed_Reason__c</errorDisplayField>
+    <errorMessage>Opp Pushed Reason required when Close Date is pushed out significantly.</errorMessage>
+</ValidationRule>

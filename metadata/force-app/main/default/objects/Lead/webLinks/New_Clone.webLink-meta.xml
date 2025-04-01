@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Clone</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Clone</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/{!Lead.Id}/e?clone=1
+&amp;retURL=%2F{!Lead.Id}
+&amp;00NU0000005XLYa=
+&amp;name_firstlea2=
+&amp;name_lastlea2=
+&amp;lea4=
+&amp;00NU0000005XRmv=
+&amp;lea20=
+&amp;00NU000000408Ar=
+&amp;00N5C000000KFhP=
+&amp;lea11= @{!Lead.Email_Domain__c} 
+&amp;lea13=&quot;Sales 1: Not Contacted Yet&quot;
+&amp;00NU000000406ea=
+&amp;00NU000000402nrMAA=
+&amp;00N5C000000JZ8h=
+&amp;00N5C000000Jj1C=
+&amp;00NU0000004nyft=
+&amp;00NU0000005wj8a=
+&amp;00NU0000005wlKz=
+&amp;00NU0000005wj8p=
+&amp;00NU0000005wlKz=
+&amp;00NU0000005wn0D=
+&amp;00N0P0000064nfN=
+&amp;00NU0000005wj8u=
+&amp;00NU0000005wj8z=
+&amp;00N0P00000656iw=
+&amp;00N0P000006518SUAQ=
+&amp;00NU0000005wV0y=
+&amp;00N0P0000065613=0
+&amp;00NU0000005XrJ6=
+&amp;00NU0000005sSlN=
+&amp;00NU0000005se5k=
+&amp;00NU0000005XrKi=
+&amp;00NU0000005XrKd=
+&amp;00NU0000005XrKT=
+&amp;00N0P0000064ppD=
+&amp;00N0P00000657T4=1</url>
+</WebLink>

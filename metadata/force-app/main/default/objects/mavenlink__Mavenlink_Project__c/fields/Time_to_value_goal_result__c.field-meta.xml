@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_to_value_goal_result__c</fullName>
+    <description>Indicates whether Goal Time to Value was met or not.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+Goal_Time_to_Value__c &gt;= MVP_DATE__c, &quot;Goal Met&quot;,
+IF(
+Goal_Time_to_Value__c &lt; MVP_DATE__c, &quot;Goal Missed&quot;,
+null))</formula>
+    <label>Time to Value Goal Result</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

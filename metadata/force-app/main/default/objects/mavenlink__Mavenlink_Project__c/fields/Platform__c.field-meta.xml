@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform__c</fullName>
+    <description>Platform that is associated with this project</description>
+    <externalId>false</externalId>
+    <formula>mavenlink__Opportunity__r.Platform__c</formula>
+    <inlineHelpText>Platform that is associated with this project</inlineHelpText>
+    <label>Platform</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

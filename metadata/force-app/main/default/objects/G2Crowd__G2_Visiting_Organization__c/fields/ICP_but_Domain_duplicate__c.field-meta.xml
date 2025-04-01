@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICP_but_Domain_duplicate__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This record fits ICP criteria but the Domain duplicates with multiple existing Accounts.</description>
+    <inlineHelpText>This record fits ICP criteria but the Domain duplicates with multiple existing Accounts.</inlineHelpText>
+    <label>ICP but Domain duplicate</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

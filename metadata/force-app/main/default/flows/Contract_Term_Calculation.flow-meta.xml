@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Corrected_X</name>
+        <label>Assign_Corrected_X</label>
+        <locationX>442</locationX>
+        <locationY>248</locationY>
+        <assignmentItems>
+            <assignToReference>Var_Corrected_X</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Form_Corrected_X</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Order_or_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_N</name>
+        <label>Assign N</label>
+        <locationX>50</locationX>
+        <locationY>248</locationY>
+        <assignmentItems>
+            <assignToReference>Var_N</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Form_N</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_X</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Term</name>
+        <label>Assign_Term</label>
+        <locationX>592</locationX>
+        <locationY>68</locationY>
+        <assignmentItems>
+            <assignToReference>Var_Order.Netsuite_Term__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Form_Term</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Order</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Term_Opportunity</name>
+        <label>Assign_Term_Opportunity</label>
+        <locationX>589</locationX>
+        <locationY>425</locationY>
+        <assignmentItems>
+            <assignToReference>Var_Opportunity.Netsuite_Term__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Form_Term</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_X</name>
+        <label>Assign_X</label>
+        <locationX>173</locationX>
+        <locationY>248</locationY>
+        <assignmentItems>
+            <assignToReference>Var_X</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Form_X</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_X_minus_1_month</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_X_minus_1_month</name>
+        <label>Assign_X_minus_1_month</label>
+        <locationX>301</locationX>
+        <locationY>248</locationY>
+        <assignmentItems>
+            <assignToReference>Var_X_minus_1_month</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Form_X_minus_1_month</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Corrected_X</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Order_or_Opportunity</name>
+        <label>Order or Opportunity</label>
+        <locationX>581</locationX>
+        <locationY>250</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Term_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Order</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_Order</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Term</targetReference>
+            </connector>
+            <label>Order</label>
+        </rules>
+        <rules>
+            <name>Quote</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_Quote</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Quote</targetReference>
+            </connector>
+            <label>Quote</label>
+        </rules>
+    </decisions>
+    <description>Added the logic to update Term on Quote</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Form_Corrected_X</name>
+        <dataType>Date</dataType>
+        <expression>IF( 
+AND( 
+DAY({!Var_StartDate}) = DAY({!Var_X_minus_1_month}), 
+{!Var_EndDate} &lt; {!Var_X}), 
+{!Var_X_minus_1_month} -1, 
+
+
+IF( 
+DAY({!Var_StartDate}) = DAY({!Var_X}), 
+{!Var_X} - 1, 
+
+IF( 
+{!Var_EndDate} &lt; {!Var_X}, 
+{!Var_X_minus_1_month}, 
+{!Var_X} 
+)))</expression>
+    </formulas>
+    <formulas>
+        <name>Form_N</name>
+        <dataType>Number</dataType>
+        <expression>(((YEAR( {!Var_EndDate} ) - YEAR({!Var_StartDate}))*12)-MONTH({!Var_StartDate})+MONTH({!Var_EndDate})) - 
+
+IF( 
+OR( 
+DAY({!Var_EndDate})&gt;=DAY({!Var_StartDate}), 
+DATE(YEAR({!Var_EndDate}), MONTH({!Var_EndDate}),CASE( MONTH({!Var_EndDate}), 2, IF( MOD( YEAR({!Var_EndDate}) , 4) = 0, 29, 28), 4, 30, 6, 30, 8, 31, 9, 30, 11, 30, 31))={!Var_EndDate}), 
+0, 
+1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>Form_Term</name>
+        <dataType>Number</dataType>
+        <expression>IF({!Var_Corrected_X} = {!Var_EndDate}, 
+
+	{!Var_N}, {!Var_N} + ((({!Var_EndDate} - ({!Var_Corrected_X} + 1)) + 1) / 
+
+		((IF(DAY({!Var_StartDate}) = DAY(DATE( YEAR({!Var_StartDate}) + FLOOR((MONTH({!Var_StartDate}) + ({!Var_N} +1)-1)/12), 
+			IF( MOD( MONTH({!Var_StartDate}) + ({!Var_N} +1) , 12 ) = 0, 12 , MOD( MONTH({!Var_StartDate}) + ({!Var_N} +1) , 12 )), 
+			MIN( DAY({!Var_StartDate}),CASE(MAX( MOD( MONTH({!Var_StartDate}) + ({!Var_N} +1) , 12 ) , 1),9,30,4,30,6,30,11,30,2,
+				IF(MOD(YEAR({!Var_StartDate}) + FLOOR((MONTH({!Var_StartDate}) + ({!Var_N} +1)-1)/12),4)=0,29,28),31)))), DATE( YEAR({!Var_StartDate}) + FLOOR((MONTH({!Var_StartDate}) + ({!Var_N} +1)-1)/12), 
+		IF( MOD( MONTH({!Var_StartDate}) + ({!Var_N} +1) , 12 ) = 0, 12 , MOD( MONTH({!Var_StartDate}) + ({!Var_N} +1) , 12 )), MIN( DAY({!Var_StartDate}),CASE(MAX( MOD( MONTH({!Var_StartDate}) + ({!Var_N} +1) , 12 ) , 1),9,30,4,30,6,30,11,30,2,
+			IF(MOD(YEAR({!Var_StartDate}) + FLOOR((MONTH({!Var_StartDate}) + ({!Var_N} +1)-1)/12),4)=0,29,28),31)))-1, DATE( YEAR({!Var_StartDate}) + FLOOR((MONTH({!Var_StartDate}) + ({!Var_N} +1)-1)/12), 
+				IF( MOD( MONTH({!Var_StartDate}) + ({!Var_N} +1) , 12 ) = 0, 12 , MOD( MONTH({!Var_StartDate}) + ({!Var_N} +1) , 12 )), MIN( DAY({!Var_StartDate}),CASE(MAX( MOD( MONTH({!Var_StartDate}) + ({!Var_N} +1) , 12 ) , 1),9,30,4,30,6,30,11,30,2,
+					IF(MOD(YEAR({!Var_StartDate}) + FLOOR((MONTH({!Var_StartDate}) + ({!Var_N} +1)-1)/12),4)=0,29,28),31)))) - ({!Var_Corrected_X} + 1)) +1)) )</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>Form_X</name>
+        <dataType>Date</dataType>
+        <expression>DATE( 
+YEAR({!Var_StartDate}) + FLOOR((MONTH({!Var_StartDate}) + ({!Var_N})-1)/12), 
+IF( MOD( MONTH({!Var_StartDate}) + ({!Var_N}) , 12 ) = 0, 12 , MOD( MONTH({!Var_StartDate}) + ({!Var_N}) , 12 )), 
+MIN( DAY({!Var_StartDate}),CASE(MAX( MOD( MONTH({!Var_StartDate}) + ({!Var_N}) , 12 ) , 1),9,30,4,30,6,30,11,30,2,IF(MOD(YEAR({!Var_StartDate}) + FLOOR((MONTH({!Var_StartDate}) + ({!Var_N})-1)/12),4)=0,29,28) 
+,31)))</expression>
+    </formulas>
+    <formulas>
+        <name>Form_X_minus_1_month</name>
+        <dataType>Date</dataType>
+        <expression>DATE( 
+year({!Var_StartDate}) 
++ FLOOR((MONTH({!Var_StartDate}) + ({!Var_N} - 1)-1)/12), 
+IF( MOD( MONTH({!Var_StartDate}) + ({!Var_N} - 1) , 12 ) = 0, 12 , MOD( MONTH({!Var_StartDate}) + ({!Var_N} - 1) , 12 )), 
+MIN( 
+DAY({!Var_StartDate}), 
+CASE( 
+MAX( MOD( MONTH({!Var_StartDate}) + ({!Var_N} - 1) , 12 ) , 1), 
+9,30,4,30,6,30,11,30,2,IF(MOD(YEAR({!Var_StartDate})+ FLOOR((MONTH({!Var_StartDate}) + ({!Var_N} - 1)-1)/12),4)=0,29,28),31)))</expression>
+    </formulas>
+    <interviewLabel>Contract Term Calculation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contract Term Calculation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update_Opportunity</label>
+        <locationX>821</locationX>
+        <locationY>425</locationY>
+        <connector>
+            <targetReference>Update_Term_on_OLIs</targetReference>
+        </connector>
+        <inputReference>Var_Opportunity</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Order</name>
+        <label>Update_Order</label>
+        <locationX>793</locationX>
+        <locationY>67</locationY>
+        <inputReference>Var_Order</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Quote</name>
+        <label>Update Quote</label>
+        <locationX>799</locationX>
+        <locationY>247</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Var_Quote.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Contract_Term__c</field>
+            <value>
+                <elementReference>Form_Term</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Quote</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Term_on_OLIs</name>
+        <label>Update Term on OLIs</label>
+        <locationX>972</locationX>
+        <locationY>425</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Var_Opportunity.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>For_Renewal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Term__c</field>
+            <value>
+                <elementReference>Form_Term</elementReference>
+            </value>
+        </inputAssignments>
+        <object>OpportunityLineItem</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Assign_N</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Var_Corrected_X</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_EndDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_N</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>Var_Opportunity</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>Var_Order</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Order</objectType>
+    </variables>
+    <variables>
+        <name>Var_Quote</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Quote</objectType>
+    </variables>
+    <variables>
+        <name>Var_StartDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_Term</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>3</scale>
+    </variables>
+    <variables>
+        <name>Var_X</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_X_minus_1_month</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

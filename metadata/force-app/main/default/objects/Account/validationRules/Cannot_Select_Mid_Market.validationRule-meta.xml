@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Select_Mid_Market</fullName>
+    <active>true</active>
+    <description>BODEV-1013: Temporary validation rule to prevent Mid-Market being selected in Company Size New field.</description>
+    <errorConditionFormula>AND(
+  OR(
+    ISNEW(),
+    ISCHANGED( Company_Size_New__c )
+  ),
+  ISPICKVAL( Company_Size_New__c, &quot;Mid-Market&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Company_Size_New__c</errorDisplayField>
+    <errorMessage>Mid-Market should not be selected. Please select MM - Small (&lt;= 1,000 FTEs) or MM - Large (&gt; 1,000 FTEs).</errorMessage>
+</ValidationRule>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assign the Current_Main_Competitors variable with the Main Competitors custom field</description>
+        <name>Get_Current_Main_Competitors_Value</name>
+        <label>Get Current Main Competitors Value</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignmentItems>
+            <assignToReference>Current_Main_Competitors</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Gong__Gong_Interaction__r.Gong__Primary_Opportunity__r.Gong__MainCompetitors__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Competitor_Exists</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Determine if the Competitor phrase already exists in the Main Competitors custom field</description>
+        <name>Competitor_Exists</name>
+        <label>Competitor Exists?</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_Primary_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update Main Competitors Field</defaultConnectorLabel>
+        <rules>
+            <name>Competitor_Phrase_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Current_Main_Competitors</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.Gong__Tracker_Phrase__c</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Competitor Phrase Updated</label>
+        </rules>
+    </decisions>
+    <description>BODEV - 4284
+This flow updates the Main Competitor field on the Opportunity, based on key competitor mentions as tracked by Gong. This flow is based on the flow template provided by Gong, with the name: Gong for Salesforce - Update Main Competitors</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>The updated Main Competitors custom field value, after the flow was executed</description>
+        <name>Updated_Competitors_Value</name>
+        <dataType>String</dataType>
+        <expression>If (ISBLANK({!Current_Main_Competitors}),{!$Record.Gong__Tracker_Phrase__c},  {!Current_Main_Competitors} &amp; &apos;, &apos; &amp; {!$Record.Gong__Tracker_Phrase__c})</expression>
+    </formulas>
+    <interviewLabel>Update Main Compet {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Main Competitor on Opportunity</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Update the Main Competitors custom field and add the competitor name</description>
+        <name>Update_Primary_Opportunity</name>
+        <label>Update Primary Opportunity</label>
+        <locationX>308</locationX>
+        <locationY>539</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Gong__Gong_Interaction__r.Gong__Primary_Opportunity__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Gong__MainCompetitors__c</field>
+            <value>
+                <elementReference>Updated_Competitors_Value</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <sourceTemplate>Gong__Gong_for_Salesforce_Update_main_competitors</sourceTemplate>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Current_Main_Competitors_Value</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Key Competitors</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Gong__Gong_Interaction__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Gong__Tracker_Phrase__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Gong__Tracker__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <variables>
+        <description>The current value of the main competitors custom field, which was created by the Gong for Salesforce package,  in the Opportunity object</description>
+        <name>Current_Main_Competitors</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

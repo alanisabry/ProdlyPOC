@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Object__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Select object related to sales KPI conditions (Opportunity)</inlineHelpText>
+    <label>Parent Object</label>
+    <referenceTo>EntityDefinition</referenceTo>
+    <relationshipLabel>Sales_KPI_Conditions</relationshipLabel>
+    <relationshipName>Sales_KPI_Conditions</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

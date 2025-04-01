@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>James_Inbound_Unresponsive_21_Days_MQLs</fullName>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Timestamp_MQL__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>LEAD.INDUSTRY</columns>
+    <columns>Days_since_last_activity__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>Jgrif</value>
+    </filters>
+    <filters>
+        <field>Timestamp_MQL__c</field>
+        <operation>greaterThan</operation>
+        <value>N_WEEKS_AGO:3</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>contains</operation>
+        <value>Sales 2</value>
+    </filters>
+    <label>James Inbound Unresponsive &gt;21 Days MQLs</label>
+</ListView>

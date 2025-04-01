@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_reminder_chatter_sent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Set to true when the auto-activation flow sends a chatter message notifying the CSM that the PO number is outstanding.</description>
+    <inlineHelpText>Set to true when the auto-activation flow sends a chatter message notifying the CSM that the PO number is outstanding.</inlineHelpText>
+    <label>PO reminder chatter sent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_approvers_can_approve_opps</fullName>
+    <active>true</active>
+    <description>Only Referral or QA approvers can change the Approval Status to &quot;Approved&quot;.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name=&quot;System Administrator&quot;),
+NOT($Profile.Name = &quot;Automated Process&quot;),
+ISPICKVAL(Approval_Status__c, &quot;Approved&quot;),
+ISCHANGED(Approval_Status__c),
+OR(
+ AND(
+  TEXT(Type) &lt;&gt; &quot;Referral&quot;, 
+  NOT($Permission.Sales_QA_Approval)),
+ AND(
+  TEXT(Type) = &quot;Referral&quot;, 
+  NOT($Permission.Close_Referrals))
+)
+)</errorConditionFormula>
+    <errorMessage>Only dedicated approvers can approve opportunities.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Uncontrollable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the loss reason was within the CS control or not. Filled in by CS operations/CS management once a renewal is set to &quot;Closed Lost&quot;. Used for reporting.</description>
+    <inlineHelpText>Indicates whether the loss was within the CS control or not.</inlineHelpText>
+    <label>Uncontrollable</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

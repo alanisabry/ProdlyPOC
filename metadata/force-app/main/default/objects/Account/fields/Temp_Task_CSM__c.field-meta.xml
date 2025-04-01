@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temp_Task_CSM__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>BODEV-3657: Used to allocate the risk tasks created in catalyst. This field will be populated on round robin basis by Leandata for Bynder Success Squad</description>
+    <label>Temp. Task CSM</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>TaskCSM</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

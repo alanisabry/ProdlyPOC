@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Topic_Category_ID__c</fullName>
+    <description>The unique ID of a category on the inSided community. You can use this when reporting to get data from a single category even if the category name has changed. Note: this ID can change if a topic is moved to another category.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The unique ID of a category on the inSided community. You can use this when reporting to get data from a single category even if the category name has changed. Note: this ID can change if a topic is moved to another category.</inlineHelpText>
+    <label>Topic Category ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

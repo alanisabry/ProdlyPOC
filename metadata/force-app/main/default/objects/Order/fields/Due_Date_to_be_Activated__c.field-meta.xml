@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Due_Date_to_be_Activated__c</fullName>
+    <description>Expected activation due date depending on Opportunity Type.</description>
+    <formula>/*
+  Expected activation due date depending on Opportunity Type:
+
+    Orders on Renewal / Internal Transfer / Platform Transfer: 30 days before Order Start Date
+    Orders on New Business (Not the first order of the contract): 30 days before Order Start Date
+    Orders on New Business (First order of the contract): 3 days before Order Start Date
+    Upsell &amp; Prof. Service: 3 days before Order Start Date
+*/
+
+IF(
+  Order_Type__c = &quot;Pre-Order&quot; || Total_Order_Value__c &lt;= 0,
+  NULL,
+  CASE( TEXT(Opportunity.Type), 
+    &quot;Existing Business-Renewal&quot;, EffectiveDate - 30,
+    &quot;Existing Business - Internal Transfer&quot;, EffectiveDate - 30,
+    &quot;Existing Business - Platform Transfer&quot;, EffectiveDate - 30,
+    &quot;New Business - Expansion Portal&quot;, IF( Opportunity.Subscription_Start_Date__c=EffectiveDate, EffectiveDate - 3, EffectiveDate - 30),
+    &quot;New Business-Enterprise Cloud&quot;, IF( Opportunity.Subscription_Start_Date__c=EffectiveDate, EffectiveDate - 3, EffectiveDate - 30),
+    &quot;Existing Business-Professional Services&quot;, EffectiveDate - 3,
+    &quot;Existing Business-Upsell&quot;, EffectiveDate - 3,
+    NULL
+  )
+)</formula>
+    <inlineHelpText>Expected activation due date depending on Opportunity Type.</inlineHelpText>
+    <label>Due Date to be Invoiced</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

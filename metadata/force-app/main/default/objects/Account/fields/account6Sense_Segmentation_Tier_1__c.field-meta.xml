@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>account6Sense_Segmentation_Tier_1__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BO-1292: Used for segmentation of 6sense account lists in salesforce.</description>
+    <label>6Sense Segmentation - Tier 1</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

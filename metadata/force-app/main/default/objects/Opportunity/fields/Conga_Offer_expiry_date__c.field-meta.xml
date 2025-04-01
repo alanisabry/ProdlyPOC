@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Offer_expiry_date__c</fullName>
+    <description>BODEV-2180 Update the table format in Order Form</description>
+    <inlineHelpText>When does this discount offer expire?</inlineHelpText>
+    <label>SpotDraft Offer expiry date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_End_Date_Update__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allows a process to automatically update end date of an upsell.</description>
+    <label>Allow End Date Update?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

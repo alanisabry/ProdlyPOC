@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_locked_on_renewals</fullName>
+    <active>true</active>
+    <description>Quantities cannot be changed in renewals. Adjustments must be made with upsell/downsell opportunities.</description>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+NOT(Allow_Product_Merge__c)=TRUE,
+NOT(ISCHANGED(Item_Start_Date__c)),
+NOT(ISCHANGED(Item_End_Date__c)),
+NOT(ISCHANGED(Term__c)),
+ISPICKVAL(Opportunity.Type,&quot;Existing Business-Renewal&quot;), 
+NOT(Contains($Profile.Name,&quot;System Administrator&quot;)), 
+ISCHANGED(Quantity))</errorConditionFormula>
+    <errorMessage>Product quantities cannot be edited in a renewal. Please use an upsell/downsell opportunity to make adjustments. For queries, contact Mandy Van Rijn.</errorMessage>
+</ValidationRule>

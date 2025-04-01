@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Name_Created_Date__c</fullName>
+    <defaultValue>today()</defaultValue>
+    <description>wd field
+Indicates the day the name was created. If contact is created from lead convert, the value will be populated from the lead.</description>
+    <label>Name Created Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

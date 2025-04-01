@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_of_Control__c</fullName>
+    <description>BODEV-4222 SF - QW - Legal Fields Optimisation</description>
+    <label>Change of Control</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes, in favour of direct competitior</fullName>
+                <default>false</default>
+                <label>Yes, in favour of direct competitior</label>
+            </value>
+            <value>
+                <fullName>Yes, other</fullName>
+                <default>false</default>
+                <label>Yes, other</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cap_Indexation_Rate__c</fullName>
+    <description>Used to store the cap % of the indexation rate which should be used for calculating the cumulative indexation.</description>
+    <inlineHelpText>If the variable indexation rate is greater than the Cap Indexation rate agreed with the customer, Cap Indexation % will be used as current indexation rate for calculating indexation on the orders.</inlineHelpText>
+    <label>Cap Indexation Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

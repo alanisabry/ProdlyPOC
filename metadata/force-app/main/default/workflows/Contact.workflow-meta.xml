@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>First_Contact_Owner_Team</fullName>
+        <field>First_Contact_Owner_Team__c</field>
+        <formula>TEXT(Owner.BDR_Team__c)</formula>
+        <name>First Contact Owner Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>First_Owner</fullName>
+        <field>First_Contact_Owner__c</field>
+        <formula>Owner.FirstName+&quot; &quot;+Owner.LastName</formula>
+        <name>First Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Trial_Deletion_Date</fullName>
+        <field>Trial_Deletion_Date__c</field>
+        <formula>TODAY ()</formula>
+        <name>Set Trial Deletion Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Trial_End_Date</fullName>
+        <field>Trial_End_Date__c</field>
+        <formula>Trial_Start_Date__c + 14 + Trial_Extension_Period__c</formula>
+        <name>Update Trial End Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>TrayOnContactContactTypeCha_25bW6K</fullName>
+        <apiVersion>55.0</apiVersion>
+        <endpointUrl>https://aa19d88b-e5d6-49f6-8315-4c831e547c11-7c53a1a27c030c3.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>hubspot@bynder.com</integrationUser>
+        <name>TrayOnContactContactTypeCha_25bW6K</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>TrayOnContactStatusChange_RDWAs</fullName>
+        <apiVersion>55.0</apiVersion>
+        <endpointUrl>https://ee45fd83-ba49-42db-85f4-049fe77e0162-87da7f53420bef8.trayapp.io</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>hubspot@bynder.com</integrationUser>
+        <name>TrayOnContactStatusChange_RDWAs</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>First Contact Owner</fullName>
+        <actions>
+            <name>First_Contact_Owner_Team</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>First_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.CreatedDate</field>
+            <operation>greaterThan</operation>
+            <value>1/18/2018 6:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.OwnerId</field>
+            <operation>notContain</operation>
+            <value>Fenton,Ni Ogain,Wisse,Siqi,Webhook,Webook,Bynder,Seignette,Inbound,Outbound,Queue,Leads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.First_Contact_Owner__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Current_User__c</field>
+            <operation>notEqual</operation>
+            <value>0050P000007hH92</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Trial Deletion Date</fullName>
+        <actions>
+            <name>Set_Trial_Deletion_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Trial_Deletion_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Trial_Deleted__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update%3A Trial End Date</fullName>
+        <actions>
+            <name>Update_Trial_End_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>IsChanged(Trial_Extension_Period__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

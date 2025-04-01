@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Roles</fullName>
+    <columns>Account_CSM_Owner__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Executive_Sponsor__c</columns>
+    <columns>Decision_Maker__c</columns>
+    <columns>IT_Contact__c</columns>
+    <columns>Legal__c</columns>
+    <columns>Project_Owner__c</columns>
+    <columns>Support_contact__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>0120P000000kNVg</value>
+    </filters>
+    <filters>
+        <field>Account_Type__c</field>
+        <operation>equals</operation>
+        <value>Customer</value>
+    </filters>
+    <filters>
+        <field>Account_CSM_Owner__c</field>
+        <operation>contains</operation>
+        <value>Maud</value>
+    </filters>
+    <label>Contact Roles</label>
+</ListView>

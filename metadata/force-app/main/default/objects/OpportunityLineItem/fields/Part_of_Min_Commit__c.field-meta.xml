@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Part_of_Min_Commit__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-2681 Build - Renewal Agreement</description>
+    <label>Part of Min Commit?</label>
+    <type>Checkbox</type>
+</CustomField>

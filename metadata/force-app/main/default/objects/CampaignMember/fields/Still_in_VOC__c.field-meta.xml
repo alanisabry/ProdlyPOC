@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Still_in_VOC__c</fullName>
+    <description>wd field
+Used by FCI</description>
+    <formula>CFCR_Current_Stage_in_Funnel__c = &quot;8. VOC&quot;</formula>
+    <inlineHelpText>Checked if Current Stage in Funnel is 8. VOC</inlineHelpText>
+    <label>Still in VOC</label>
+    <type>Checkbox</type>
+</CustomField>

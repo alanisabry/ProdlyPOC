@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>This element would assign the Contact and Account Id to the corresponding variables used in the flow</description>
+        <name>Assign_Contact_and_Account_Id</name>
+        <label>Assign Contact and Account Id</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Contact_Records.Account.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Contact_Records.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Bynder_Survey</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Before we update our triggering record we are checking if any corresponding contact is found</description>
+        <name>Check_If_Contact_found</name>
+        <label>Check If Contact found?</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_Bynder_Survey</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Contact Not Found</defaultConnectorLabel>
+        <rules>
+            <name>Contact_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Contact_Records.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Contact_and_Account_Id</targetReference>
+            </connector>
+            <label>Contact Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>This check is to identify whether the contact is a customer champion or not</description>
+        <name>Customer_Champion_Check</name>
+        <label>Customer Champion Check</label>
+        <locationX>182</locationX>
+        <locationY>839</locationY>
+        <defaultConnectorLabel>No Customer Champion Present</defaultConnectorLabel>
+        <rules>
+            <name>Is_Champion</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsCustomerChampion</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Customer_Champion_Contact</targetReference>
+            </connector>
+            <label>Is Champion</label>
+        </rules>
+    </decisions>
+    <description>BODEV-3767 : Typeform - Salesforce integration
+BODEV- Connect a Customer Champion Program member (from Typeform) to the contact and account level</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>This field would determine whether the contact is a customer champion or not.</description>
+        <name>IsCustomerChampion</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    NOT(ISBLANK({!$Record.Contact__r.Id})), 
+    {!$Record.Form_Name__c} = &quot;Customer Champion Program&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>Update Contact and Account information on Bynder Survey Object {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Contact and Account Information on Bynder Survey Object</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>This element looks for Contact Records that could match with the Email Address filled in Typeform</description>
+        <name>Get_Contact_Records</name>
+        <label>Get Contact Records</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_If_Contact_found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Email__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>This element updates the Bynder Survey Object Records - Account, Contact, Typeform Id</description>
+        <name>Update_Bynder_Survey</name>
+        <label>Update Bynder Survey</label>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
+        <connector>
+            <targetReference>Customer_Champion_Check</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contact__c</field>
+            <value>
+                <elementReference>ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Form_Name__c</field>
+            <value>
+                <elementReference>$Record.Typeform_Form_Mapping__r.typeform__Form__r.typeform__Title__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Typeform_Form__c</field>
+            <value>
+                <elementReference>$Record.Typeform_Form_Mapping__r.typeform__Form__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Customer_Champion_Contact</name>
+        <label>Update Customer Champion Contact</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>Customer_Champion_Program__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Contact__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Contact_Records</targetReference>
+        </connector>
+        <object>Bynder_Survey__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>AccountId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ContactId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+</Flow>

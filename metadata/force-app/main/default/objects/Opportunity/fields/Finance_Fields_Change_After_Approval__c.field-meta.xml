@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Fields_Change_After_Approval__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field indicates that some finance fields have been changed after the approval of the opportunity.</description>
+    <label>Reporting Fields Changed After Approval</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

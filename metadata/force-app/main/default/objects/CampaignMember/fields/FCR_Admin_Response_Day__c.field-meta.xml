@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Admin_Response_Day__c</fullName>
+    <description>wd field
+Converts the response date field (date time) to a response date for report processing</description>
+    <formula>if(ISBLANK(FCR_Response_Date__c),DATE(1970,1,1),DATEVALUE(FCR_Response_Date__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Response Day</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

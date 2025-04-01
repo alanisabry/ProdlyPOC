@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Legal_Signer_required</fullName>
+    <active>false</active>
+    <description>Customer Legal Signer and Signer Email fields have to be filled to launch the DocuSign Signature process.</description>
+    <errorConditionFormula>AND(ISCHANGED(StageName),
+    NOT($Profile.Name = &quot;System Administrator&quot;),
+     Platform__c = &quot;Bynder&quot;,
+     NOT(ISPICKVAL(Account.Automatic_Renewal__c,&quot;Yes&quot;)),
+     NOT(Stop_automatic_renewal__c = TRUE),
+     ISPICKVAL(StageName,&apos;Signature Stage&apos;),
+    OR(
+    ISBLANK(Customer_Legal_Signer__c),
+    ISBLANK(Customer_Legal_Signer_Email__c)),
+    ISPICKVAL(Type,&apos;Existing Business-Renewal&apos;)
+)</errorConditionFormula>
+    <errorMessage>Customer Legal Signer and Signer Email on opportunity is required to auto-populate the Signer information in the DocuSign Signature process.</errorMessage>
+</ValidationRule>

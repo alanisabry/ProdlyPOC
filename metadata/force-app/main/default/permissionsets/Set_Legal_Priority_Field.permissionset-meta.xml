@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Set_Legal_Priority_Field</name>
+    </customPermissions>
+    <description>This permission set allows to fill in the field "Legal Priority" on Opportunities. Used in the validation rule.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Set Legal Priority Field</label>
+</PermissionSet>

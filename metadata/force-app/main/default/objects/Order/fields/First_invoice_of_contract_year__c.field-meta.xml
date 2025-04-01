@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_invoice_of_contract_year__c</fullName>
+    <description>Used to identify the first invoice of the contract year.</description>
+    <formula>IF((MONTH(EffectiveDate) = MONTH(Opportunity.Subscription_Start_Date__c) || 
+/*------ Subscription start date within a leap year ----*/
+(AND(MONTH(EffectiveDate) = 3,
+DAY(EffectiveDate) = 1
+)&amp;&amp; AND(
+MONTH(Opportunity.Subscription_Start_Date__c) = 2,
+DAY(Opportunity.Subscription_Start_Date__c) = 29
+)))
+,true,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>First invoice of contract year?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

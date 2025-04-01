@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Salsify_Connector_products</fullName>
+    <active>true</active>
+    <description>Users cannot add Salsify Connector and Salsify Connector Setup products to New Business or Upsell Opportunities.</description>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($Profile.Name,&apos;System Administrator&apos;)),
+ISNEW(),
+Quantity &gt;0,
+OR(
+TEXT(Opportunity.Type) = &quot;New Business-Enterprise Cloud&quot;,
+TEXT(Opportunity.Type) = &quot;Existing Business-Upsell&quot;,
+TEXT(Opportunity.Type) = &quot;New Business - Expansion Portal&quot;
+),
+OR(
+Product2.Product_ID_18_digits__c = &apos;01tRo00000366c5IAA&apos;,
+Product2.Product_ID_18_digits__c = &apos;01tRo00000366llIAA&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot add Salsify Connector or Salsify Connector Setup products to New business or Upsell opportunities. Please contact BizApps team or Product Marketing team to add the product to the opportunity.</errorMessage>
+</ValidationRule>

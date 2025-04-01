@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nurture_Leads_DACH</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Nurture,Sales Nurture</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Nastasia,Justin,Johanna</value>
+    </filters>
+    <filters>
+        <field>Lead_Scoring__c</field>
+        <operation>greaterThan</operation>
+        <value>30</value>
+    </filters>
+    <filters>
+        <field>SMB_ENTERPRISE__c</field>
+        <operation>equals</operation>
+        <value>Enterprise</value>
+    </filters>
+    <label>Nurture Leads DACH</label>
+</ListView>

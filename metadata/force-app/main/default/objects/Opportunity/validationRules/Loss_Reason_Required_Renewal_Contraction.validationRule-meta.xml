@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason_Required_Renewal_Contraction</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+	ISCHANGED(StageName),
+	ISPICKVAL(StageName, &quot;Signature Stage&quot;),
+	OR(
+		ISPICKVAL(Type,&quot;Existing Business-Renewal&quot;),
+		ISPICKVAL(Type,&quot;Existing Business - Internal Transfer&quot;),
+		ISPICKVAL(Type,&quot;Existing Business - Platform Transfer&quot;)
+	),
+	(ARR__c - (Original_Renewal_ARR__c + Cumulative_Indexation_amount__c + Upcoming_Indexation_amount__c + Renewal_Uplift_amount__c) - Renewal_Uplift_amount__c - IF(NOT(ISBLANK(Applied_Upcoming_Indexation__c)) &amp;&amp; Applied_Upcoming_Indexation__c &gt; 0.02, Upcoming_Indexation_amount__c - ((Initial_Default_Price_ARR__c+Cumulative_Indexation_amount__c)*0.02),0)) &lt; 0,
+        ABS((ARR__c - (Original_Renewal_ARR__c + Cumulative_Indexation_amount__c + Upcoming_Indexation_amount__c + Renewal_Uplift_amount__c) - Renewal_Uplift_amount__c - IF(NOT(ISBLANK(Applied_Upcoming_Indexation__c)) &amp;&amp; Applied_Upcoming_Indexation__c &gt; 0.02, Upcoming_Indexation_amount__c - ((Initial_Default_Price_ARR__c+Cumulative_Indexation_amount__c)*0.02),0)))  &gt;=  1,
+	OR(
+		ISBLANK(TEXT(Primary_Loss_Reason__c)),
+		ISBLANK(Loss_Reason_Detail__c),
+		ISBLANK(TEXT(Did_Current_conditions_impact_decision__c))
+	)
+)</errorConditionFormula>
+    <errorMessage>Please ensure that &apos;Loss Reason,&apos; &apos;Loss Reason Details,&apos; and &apos;Did Current Conditions Impact Decision?&apos; fields are completed before closing this Opportunity, as a Contraction has been detected.</errorMessage>
+</ValidationRule>

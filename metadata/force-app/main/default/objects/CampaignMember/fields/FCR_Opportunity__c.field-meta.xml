@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>wd field
+If an opportunity was created as a result of this MQR follow up the Opportunity Name field will be populated.</description>
+    <label>Opportunity Name</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Campaign Members</relationshipLabel>
+    <relationshipName>Campaign_Members</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

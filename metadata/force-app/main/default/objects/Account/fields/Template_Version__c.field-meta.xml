@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Template_Version__c</fullName>
+    <label>Template Version</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre v.11</fullName>
+                <default>false</default>
+                <label>Pre v.11</label>
+            </value>
+            <value>
+                <fullName>v.11</fullName>
+                <default>false</default>
+                <label>v.11</label>
+            </value>
+            <value>
+                <fullName>v.12</fullName>
+                <default>false</default>
+                <label>v.12</label>
+            </value>
+            <value>
+                <fullName>v.13/Online Terms</fullName>
+                <default>false</default>
+                <label>v.13/Online Terms</label>
+            </value>
+            <value>
+                <fullName>v.14</fullName>
+                <default>false</default>
+                <label>v.14</label>
+            </value>
+            <value>
+                <fullName>Negotiated Terms</fullName>
+                <default>false</default>
+                <label>Negotiated Terms</label>
+            </value>
+            <value>
+                <fullName>v.14.1</fullName>
+                <default>false</default>
+                <label>v.14.1</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

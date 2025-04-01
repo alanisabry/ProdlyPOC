@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Alert_50k_Sent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox for the process that sends an email alert if a deal with ARR more than 50k created.</description>
+    <label>Email Alert &gt;50k Sent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

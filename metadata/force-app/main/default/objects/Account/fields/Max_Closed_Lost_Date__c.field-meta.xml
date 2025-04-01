@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Closed_Lost_Date__c</fullName>
+    <description>Date of the latest Closed Lost opportunity.</description>
+    <inlineHelpText>Date of the latest Closed Lost opportunity.</inlineHelpText>
+    <label>Max Closed Lost Date</label>
+    <summarizedField>Opportunity.CloseDate</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>equals</operation>
+        <value>Closed Lost</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.Type</field>
+        <operation>equals</operation>
+        <value>New Business-Enterprise Cloud, New Business - Expansion Portal</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

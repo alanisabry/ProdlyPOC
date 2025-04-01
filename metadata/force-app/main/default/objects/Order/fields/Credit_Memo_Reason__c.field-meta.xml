@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Memo_Reason__c</fullName>
+    <description>Reason for requesting a credit memo</description>
+    <label>Credit Memo - Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Billing Address</fullName>
+                <default>false</default>
+                <label>Billing Address</label>
+            </value>
+            <value>
+                <fullName>Billing Cycle</fullName>
+                <default>false</default>
+                <label>Billing Cycle</label>
+            </value>
+            <value>
+                <fullName>Billing Date</fullName>
+                <default>false</default>
+                <label>Billing Date</label>
+            </value>
+            <value>
+                <fullName>Churn Risk</fullName>
+                <default>false</default>
+                <label>Churn Risk</label>
+            </value>
+            <value>
+                <fullName>Compensation</fullName>
+                <default>false</default>
+                <label>Compensation</label>
+            </value>
+            <value>
+                <fullName>Contract Changes</fullName>
+                <default>false</default>
+                <label>Contract Changes</label>
+            </value>
+            <value>
+                <fullName>Covid</fullName>
+                <default>false</default>
+                <label>Covid</label>
+            </value>
+            <value>
+                <fullName>Customer Account Split</fullName>
+                <default>false</default>
+                <label>Customer Account Split</label>
+            </value>
+            <value>
+                <fullName>Customer Churned</fullName>
+                <default>false</default>
+                <label>Customer Churned</label>
+            </value>
+            <value>
+                <fullName>Discount In Opportunity Not Applied</fullName>
+                <default>false</default>
+                <label>Discount In Opportunity Not Applied</label>
+            </value>
+            <value>
+                <fullName>Downsell Contract Signed</fullName>
+                <default>false</default>
+                <label>Downsell Contract Signed</label>
+            </value>
+            <value>
+                <fullName>Duplicate Invoicing</fullName>
+                <default>false</default>
+                <label>Duplicate Invoicing</label>
+            </value>
+            <value>
+                <fullName>Financial Distress</fullName>
+                <default>false</default>
+                <label>Financial Distress</label>
+            </value>
+            <value>
+                <fullName>Incorrect Bynder Subsidiary</fullName>
+                <default>false</default>
+                <label>Incorrect Bynder Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Incorrect Customer Subsidiary</fullName>
+                <default>false</default>
+                <label>Incorrect Customer Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Product Changes</fullName>
+                <default>false</default>
+                <label>Product Changes</label>
+            </value>
+            <value>
+                <fullName>Renewal Pricing Negotiation</fullName>
+                <default>false</default>
+                <label>Renewal Pricing Negotiation</label>
+            </value>
+            <value>
+                <fullName>Sales Tax</fullName>
+                <default>false</default>
+                <label>Sales Tax</label>
+            </value>
+            <value>
+                <fullName>Split One-Off and Recurring Products</fullName>
+                <default>false</default>
+                <label>Split One-Off and Recurring Products</label>
+            </value>
+            <value>
+                <fullName>Subscription Term</fullName>
+                <default>false</default>
+                <label>Subscription Term</label>
+            </value>
+            <value>
+                <fullName>VAT</fullName>
+                <default>false</default>
+                <label>VAT</label>
+            </value>
+            <value>
+                <fullName>Withholding Tax</fullName>
+                <default>false</default>
+                <label>Withholding Tax</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

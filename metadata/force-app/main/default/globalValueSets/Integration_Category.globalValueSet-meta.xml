@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Ad serving &amp; Ad management</fullName>
+        <default>false</default>
+        <label>Ad serving &amp; Ad management</label>
+    </customValue>
+    <customValue>
+        <fullName>iPaaS</fullName>
+        <default>false</default>
+        <label>iPaaS</label>
+    </customValue>
+    <customValue>
+        <fullName>AI</fullName>
+        <default>false</default>
+        <label>AI</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Distribution</fullName>
+        <default>false</default>
+        <label>Content Distribution</label>
+    </customValue>
+    <customValue>
+        <fullName>CMS</fullName>
+        <default>false</default>
+        <label>CMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Content Operations</fullName>
+        <default>false</default>
+        <label>Content Operations</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative</fullName>
+        <default>false</default>
+        <label>Creative</label>
+    </customValue>
+    <customValue>
+        <fullName>CRM</fullName>
+        <default>false</default>
+        <label>CRM</label>
+    </customValue>
+    <customValue>
+        <fullName>Design / Collaboration / Mark-Up Tools</fullName>
+        <default>false</default>
+        <label>Design / Collaboration / Mark-Up Tools</label>
+    </customValue>
+    <customValue>
+        <fullName>DRM</fullName>
+        <default>false</default>
+        <label>DRM</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Signage</fullName>
+        <default>false</default>
+        <label>Digital Signage</label>
+    </customValue>
+    <customValue>
+        <fullName>eCommerce</fullName>
+        <default>false</default>
+        <label>eCommerce</label>
+    </customValue>
+    <customValue>
+        <fullName>Email Marketing</fullName>
+        <default>false</default>
+        <label>Email Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>ERP</fullName>
+        <default>false</default>
+        <label>ERP</label>
+    </customValue>
+    <customValue>
+        <fullName>File management</fullName>
+        <default>false</default>
+        <label>File management</label>
+    </customValue>
+    <customValue>
+        <fullName>SSO</fullName>
+        <default>false</default>
+        <label>SSO</label>
+    </customValue>
+    <customValue>
+        <fullName>LMS</fullName>
+        <default>false</default>
+        <label>LMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Automation</fullName>
+        <default>false</default>
+        <label>Marketing Automation</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobile</fullName>
+        <default>false</default>
+        <label>Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Print</fullName>
+        <default>false</default>
+        <label>Print</label>
+    </customValue>
+    <customValue>
+        <fullName>PIM</fullName>
+        <default>false</default>
+        <label>PIM</label>
+    </customValue>
+    <customValue>
+        <fullName>Project Management</fullName>
+        <default>false</default>
+        <label>Project Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Enablement</fullName>
+        <default>false</default>
+        <label>Sales Enablement</label>
+    </customValue>
+    <customValue>
+        <fullName>Social</fullName>
+        <default>false</default>
+        <label>Social</label>
+    </customValue>
+    <customValue>
+        <fullName>Stock</fullName>
+        <default>false</default>
+        <label>Stock</label>
+    </customValue>
+    <customValue>
+        <fullName>Storage Tools</fullName>
+        <default>false</default>
+        <label>Storage Tools</label>
+    </customValue>
+    <customValue>
+        <fullName>Translation &amp; Localization</fullName>
+        <default>false</default>
+        <label>Translation &amp; Localization</label>
+    </customValue>
+    <customValue>
+        <fullName>Video</fullName>
+        <default>false</default>
+        <label>Video</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Analytics</fullName>
+        <default>false</default>
+        <label>Analytics</label>
+    </customValue>
+    <customValue>
+        <fullName>Cloud Storage</fullName>
+        <default>false</default>
+        <label>Cloud Storage</label>
+    </customValue>
+    <customValue>
+        <fullName>DXP</fullName>
+        <default>false</default>
+        <label>DXP</label>
+    </customValue>
+    <customValue>
+        <fullName>Messaging</fullName>
+        <default>false</default>
+        <label>Messaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Presentation Software</fullName>
+        <default>false</default>
+        <label>Presentation Software</label>
+    </customValue>
+    <customValue>
+        <fullName>User Generated Content</fullName>
+        <default>false</default>
+        <label>User Generated Content</label>
+    </customValue>
+    <customValue>
+        <fullName>Watermarking</fullName>
+        <default>false</default>
+        <label>Watermarking</label>
+    </customValue>
+    <customValue>
+        <fullName>Workflow Automation Builder</fullName>
+        <default>false</default>
+        <label>Workflow Automation Builder</label>
+    </customValue>
+    <masterLabel>Integration Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

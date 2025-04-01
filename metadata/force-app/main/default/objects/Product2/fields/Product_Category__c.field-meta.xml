@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Category__c</fullName>
+    <label>Product Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admin/Regular Users</fullName>
+                <default>false</default>
+                <label>Admin/Regular Users</label>
+            </value>
+            <value>
+                <fullName>Administrator User</fullName>
+                <default>false</default>
+                <label>Administrator User</label>
+            </value>
+            <value>
+                <fullName>Admin Users</fullName>
+                <default>false</default>
+                <label>Admin Users</label>
+            </value>
+            <value>
+                <fullName>Adobe Creative Connector</fullName>
+                <default>false</default>
+                <label>Adobe Creative Connector</label>
+            </value>
+            <value>
+                <fullName>AI Enrichment</fullName>
+                <default>false</default>
+                <label>AI Enrichment</label>
+            </value>
+            <value>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+                <label>Analytics</label>
+            </value>
+            <value>
+                <fullName>API</fullName>
+                <default>false</default>
+                <label>API</label>
+            </value>
+            <value>
+                <fullName>Authentication</fullName>
+                <default>false</default>
+                <label>Authentication</label>
+            </value>
+            <value>
+                <fullName>Brand Connect</fullName>
+                <default>false</default>
+                <label>Brand Connect</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines</fullName>
+                <default>false</default>
+                <label>Brand Guidelines</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines legacy</fullName>
+                <default>false</default>
+                <label>Brand Guidelines legacy</label>
+            </value>
+            <value>
+                <fullName>Branding</fullName>
+                <default>false</default>
+                <label>Branding</label>
+            </value>
+            <value>
+                <fullName>Brand Store</fullName>
+                <default>false</default>
+                <label>Brand Store</label>
+            </value>
+            <value>
+                <fullName>Bynder Express</fullName>
+                <default>false</default>
+                <label>Bynder Express</label>
+            </value>
+            <value>
+                <fullName>Bynder Studio</fullName>
+                <default>false</default>
+                <label>Bynder Studio</label>
+            </value>
+            <value>
+                <fullName>CDN</fullName>
+                <default>false</default>
+                <label>CDN</label>
+            </value>
+            <value>
+                <fullName>CMS Connector</fullName>
+                <default>false</default>
+                <label>CMS Connector</label>
+            </value>
+            <value>
+                <fullName>Communications Connector</fullName>
+                <default>false</default>
+                <label>Communications Connector</label>
+            </value>
+            <value>
+                <fullName>Connected Ecosystem</fullName>
+                <default>false</default>
+                <label>Connected Ecosystem</label>
+            </value>
+            <value>
+                <fullName>Content Hub</fullName>
+                <default>false</default>
+                <label>Content Hub</label>
+            </value>
+            <value>
+                <fullName>Content Operations</fullName>
+                <default>false</default>
+                <label>Content Operations</label>
+            </value>
+            <value>
+                <fullName>Content Workflow</fullName>
+                <default>false</default>
+                <label>Content Workflow</label>
+            </value>
+            <value>
+                <fullName>Content Workflow Standalone</fullName>
+                <default>false</default>
+                <label>Content Workflow Standalone</label>
+            </value>
+            <value>
+                <fullName>Contract</fullName>
+                <default>false</default>
+                <label>Contract</label>
+            </value>
+            <value>
+                <fullName>Contributor User</fullName>
+                <default>false</default>
+                <label>Contributor User</label>
+            </value>
+            <value>
+                <fullName>Custom Users</fullName>
+                <default>false</default>
+                <label>Custom Users</label>
+            </value>
+            <value>
+                <fullName>CX Omnichannel</fullName>
+                <default>false</default>
+                <label>CX Omnichannel</label>
+            </value>
+            <value>
+                <fullName>CX User Community</fullName>
+                <default>false</default>
+                <label>CX User Community</label>
+            </value>
+            <value>
+                <fullName>DAM</fullName>
+                <default>false</default>
+                <label>DAM</label>
+            </value>
+            <value>
+                <fullName>Design Tools</fullName>
+                <default>false</default>
+                <label>Design Tools</label>
+            </value>
+            <value>
+                <fullName>Desktop integration</fullName>
+                <default>false</default>
+                <label>Desktop integration</label>
+            </value>
+            <value>
+                <fullName>Digital Brand Templates</fullName>
+                <default>false</default>
+                <label>Digital Brand Templates</label>
+            </value>
+            <value>
+                <fullName>Digital Rights Management</fullName>
+                <default>false</default>
+                <label>Digital Rights Management</label>
+            </value>
+            <value>
+                <fullName>Dynamic Asset Transformation</fullName>
+                <default>false</default>
+                <label>Dynamic Asset Transformation</label>
+            </value>
+            <value>
+                <fullName>E-commerce Connector</fullName>
+                <default>false</default>
+                <label>E-commerce Connector</label>
+            </value>
+            <value>
+                <fullName>End Users</fullName>
+                <default>false</default>
+                <label>End Users</label>
+            </value>
+            <value>
+                <fullName>Enterprise Success Package</fullName>
+                <default>false</default>
+                <label>Enterprise Success Package</label>
+            </value>
+            <value>
+                <fullName>Figma Connector</fullName>
+                <default>false</default>
+                <label>Figma Connector</label>
+            </value>
+            <value>
+                <fullName>File Storage</fullName>
+                <default>false</default>
+                <label>File Storage</label>
+            </value>
+            <value>
+                <fullName>FTP Import module</fullName>
+                <default>false</default>
+                <label>FTP Import module</label>
+            </value>
+            <value>
+                <fullName>GatherContent</fullName>
+                <default>false</default>
+                <label>GatherContent</label>
+            </value>
+            <value>
+                <fullName>Go4Flow</fullName>
+                <default>false</default>
+                <label>Go4Flow</label>
+            </value>
+            <value>
+                <fullName>Guidelines</fullName>
+                <default>false</default>
+                <label>Guidelines</label>
+            </value>
+            <value>
+                <fullName>Initial Onboarding</fullName>
+                <default>false</default>
+                <label>Initial Onboarding</label>
+            </value>
+            <value>
+                <fullName>Integration</fullName>
+                <default>false</default>
+                <label>Integration</label>
+            </value>
+            <value>
+                <fullName>Integration Platform as a service</fullName>
+                <default>false</default>
+                <label>Integration Platform as a service</label>
+            </value>
+            <value>
+                <fullName>Integrations Hub</fullName>
+                <default>false</default>
+                <label>Integrations Hub</label>
+            </value>
+            <value>
+                <fullName>License</fullName>
+                <default>false</default>
+                <label>License</label>
+            </value>
+            <value>
+                <fullName>Light + Template User</fullName>
+                <default>false</default>
+                <label>Light + Template User</label>
+            </value>
+            <value>
+                <fullName>Light Users</fullName>
+                <default>false</default>
+                <label>Light Users</label>
+            </value>
+            <value>
+                <fullName>Marketing Automation Connector</fullName>
+                <default>false</default>
+                <label>Marketing Automation Connector</label>
+            </value>
+            <value>
+                <fullName>Mass Uploader</fullName>
+                <default>false</default>
+                <label>Mass Uploader</label>
+            </value>
+            <value>
+                <fullName>Microsoft Office Connector</fullName>
+                <default>false</default>
+                <label>Microsoft Office Connector</label>
+            </value>
+            <value>
+                <fullName>Mobile App</fullName>
+                <default>false</default>
+                <label>Mobile App</label>
+            </value>
+            <value>
+                <fullName>Mojo</fullName>
+                <default>false</default>
+                <label>Mojo</label>
+            </value>
+            <value>
+                <fullName>Monthly discount</fullName>
+                <default>false</default>
+                <label>Monthly discount</label>
+            </value>
+            <value>
+                <fullName>Multi-Media Module</fullName>
+                <default>false</default>
+                <label>Multi-Media Module</label>
+            </value>
+            <value>
+                <fullName>Multiple Months discount</fullName>
+                <default>false</default>
+                <label>Multiple Months discount</label>
+            </value>
+            <value>
+                <fullName>Multi-Portal</fullName>
+                <default>false</default>
+                <label>Multi-Portal</label>
+            </value>
+            <value>
+                <fullName>Office Documents</fullName>
+                <default>false</default>
+                <label>Office Documents</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Open Asset Bank</fullName>
+                <default>false</default>
+                <label>Open Asset Bank</label>
+            </value>
+            <value>
+                <fullName>PaaS</fullName>
+                <default>false</default>
+                <label>PaaS</label>
+            </value>
+            <value>
+                <fullName>Partner Services</fullName>
+                <default>false</default>
+                <label>Partner Services</label>
+            </value>
+            <value>
+                <fullName>Payment fee</fullName>
+                <default>false</default>
+                <label>Payment fee</label>
+            </value>
+            <value>
+                <fullName>PIM Connector</fullName>
+                <default>false</default>
+                <label>PIM Connector</label>
+            </value>
+            <value>
+                <fullName>Plus Success Package</fullName>
+                <default>false</default>
+                <label>Plus Success Package</label>
+            </value>
+            <value>
+                <fullName>Portal</fullName>
+                <default>false</default>
+                <label>Portal</label>
+            </value>
+            <value>
+                <fullName>Portal Adoption</fullName>
+                <default>false</default>
+                <label>Portal Adoption</label>
+            </value>
+            <value>
+                <fullName>Portal features</fullName>
+                <default>false</default>
+                <label>Portal features</label>
+            </value>
+            <value>
+                <fullName>Power User</fullName>
+                <default>false</default>
+                <label>Power User</label>
+            </value>
+            <value>
+                <fullName>Premier Plus Success Package</fullName>
+                <default>false</default>
+                <label>Premier Plus Success Package</label>
+            </value>
+            <value>
+                <fullName>Premier Success Package</fullName>
+                <default>false</default>
+                <label>Premier Success Package</label>
+            </value>
+            <value>
+                <fullName>Premier Success Plan</fullName>
+                <default>false</default>
+                <label>Premier Success Plan</label>
+            </value>
+            <value>
+                <fullName>Print Brand Templates</fullName>
+                <default>false</default>
+                <label>Print Brand Templates</label>
+            </value>
+            <value>
+                <fullName>Print Templates</fullName>
+                <default>false</default>
+                <label>Print Templates</label>
+            </value>
+            <value>
+                <fullName>Product Information Management Layer</fullName>
+                <default>false</default>
+                <label>Product Information Management Layer</label>
+            </value>
+            <value>
+                <fullName>Product Layer</fullName>
+                <default>false</default>
+                <label>Product Layer</label>
+            </value>
+            <value>
+                <fullName>Project Management Connector</fullName>
+                <default>false</default>
+                <label>Project Management Connector</label>
+            </value>
+            <value>
+                <fullName>Publishing Connector</fullName>
+                <default>false</default>
+                <label>Publishing Connector</label>
+            </value>
+            <value>
+                <fullName>Regular Users</fullName>
+                <default>false</default>
+                <label>Regular Users</label>
+            </value>
+            <value>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+                <label>Reporting</label>
+            </value>
+            <value>
+                <fullName>Sandbox</fullName>
+                <default>false</default>
+                <label>Sandbox</label>
+            </value>
+            <value>
+                <fullName>Social Management Connector</fullName>
+                <default>false</default>
+                <label>Social Management Connector</label>
+            </value>
+            <value>
+                <fullName>Social Studio Module</fullName>
+                <default>false</default>
+                <label>Social Studio Module</label>
+            </value>
+            <value>
+                <fullName>SSO</fullName>
+                <default>false</default>
+                <label>SSO</label>
+            </value>
+            <value>
+                <fullName>Standard Success Package</fullName>
+                <default>false</default>
+                <label>Standard Success Package</label>
+            </value>
+            <value>
+                <fullName>Starter Success Package</fullName>
+                <default>false</default>
+                <label>Starter Success Package</label>
+            </value>
+            <value>
+                <fullName>Stock provider</fullName>
+                <default>false</default>
+                <label>Stock provider</label>
+            </value>
+            <value>
+                <fullName>Storage</fullName>
+                <default>false</default>
+                <label>Storage</label>
+            </value>
+            <value>
+                <fullName>Studio</fullName>
+                <default>false</default>
+                <label>Studio</label>
+            </value>
+            <value>
+                <fullName>Studio Users</fullName>
+                <default>false</default>
+                <label>Studio Users</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>Templates</fullName>
+                <default>false</default>
+                <label>Templates</label>
+            </value>
+            <value>
+                <fullName>Theming</fullName>
+                <default>false</default>
+                <label>Theming</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Unlimited Storage</fullName>
+                <default>false</default>
+                <label>Unlimited Storage</label>
+            </value>
+            <value>
+                <fullName>Unlimited Users</fullName>
+                <default>false</default>
+                <label>Unlimited Users</label>
+            </value>
+            <value>
+                <fullName>Upload infrastructure</fullName>
+                <default>false</default>
+                <label>Upload infrastructure</label>
+            </value>
+            <value>
+                <fullName>URL</fullName>
+                <default>false</default>
+                <label>URL</label>
+            </value>
+            <value>
+                <fullName>User License</fullName>
+                <default>false</default>
+                <label>User License</label>
+            </value>
+            <value>
+                <fullName>Users</fullName>
+                <default>false</default>
+                <label>Users</label>
+            </value>
+            <value>
+                <fullName>User seats</fullName>
+                <default>false</default>
+                <label>User seats</label>
+            </value>
+            <value>
+                <fullName>Video Brand Studio</fullName>
+                <default>false</default>
+                <label>Video Brand Studio</label>
+            </value>
+            <value>
+                <fullName>Video Platform</fullName>
+                <default>false</default>
+                <label>Video Platform</label>
+            </value>
+            <value>
+                <fullName>Webdam Education edition</fullName>
+                <default>false</default>
+                <label>Webdam Education edition</label>
+            </value>
+            <value>
+                <fullName>Webdam Enterprise edition</fullName>
+                <default>false</default>
+                <label>Webdam Enterprise edition</label>
+            </value>
+            <value>
+                <fullName>Webdam license</fullName>
+                <default>false</default>
+                <label>Webdam license</label>
+            </value>
+            <value>
+                <fullName>Webdam Non-profit edition</fullName>
+                <default>false</default>
+                <label>Webdam Non-profit edition</label>
+            </value>
+            <value>
+                <fullName>Webdam Professional Edition</fullName>
+                <default>false</default>
+                <label>Webdam Professional Edition</label>
+            </value>
+            <value>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+                <label>Workflow</label>
+            </value>
+            <value>
+                <fullName>Work Management Connector</fullName>
+                <default>false</default>
+                <label>Work Management Connector</label>
+            </value>
+            <value>
+                <fullName>Workstream Users</fullName>
+                <default>false</default>
+                <label>Workstream Users</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

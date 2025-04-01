@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_Customer_Stage_to_Adopting__c</fullName>
+    <description>Field used in the flow to set Customer Stage to Adopting</description>
+    <formula>AND(
+CloseDate &gt;= DATE(2019,8,27),	
+OR(CONTAINS(TEXT(Type), &quot;New Business&quot;), CONTAINS(TEXT(Type), &quot;Platform Transfer&quot;)),
+Project_Sign_off_Date__c &lt;= TODAY(),
+Project_Sign_off_Date__c &gt; TODAY() - 90,
+NOT(OR(ISPICKVAL(Account.Customer_Stage__c, &quot;Adopting&quot;),ISPICKVAL(Account.Customer_Stage__c, &quot;On Hold&quot;),
+	ISPICKVAL(Account.Customer_Stage__c, &quot;Cancelling&quot;),ISPICKVAL(Account.Customer_Stage__c, &quot;Churned&quot;),
+        ISPICKVAL(Account.Customer_Stage__c, &quot;Auto-Pilot&quot;)
+	)
+)
+)</formula>
+    <label>Flow: Customer Stage to Adopting</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

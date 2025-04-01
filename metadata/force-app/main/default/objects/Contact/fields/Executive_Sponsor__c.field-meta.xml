@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Executive_Sponsor__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>First point of Contact for CSM. Important in the decision making process.
+GS NPS: Yes
+Newsletter: Yes</description>
+    <inlineHelpText>First point of Contact for CSM. Important in the decision making process.
+GS NPS: Yes
+Newsletter: Yes</inlineHelpText>
+    <label>Champion</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

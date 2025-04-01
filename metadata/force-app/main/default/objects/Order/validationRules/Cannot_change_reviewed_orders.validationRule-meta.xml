@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_reviewed_orders</fullName>
+    <active>true</active>
+    <description>Prohibits from changing of the orders that have &quot;Order Reviewed&quot; checked.</description>
+    <errorConditionFormula>AND(
+  Order_Reviewed__c = True,
+  OR(
+    ISCHANGED(of_products__c),
+    ISCHANGED(Sum_of_quantities__c),
+    ISCHANGED(MRR__c),
+    ISCHANGED(One_off__c))
+)</errorConditionFormula>
+    <errorMessage>Products cannot be changed on reviewed orders. Please contact the Finance team.</errorMessage>
+</ValidationRule>

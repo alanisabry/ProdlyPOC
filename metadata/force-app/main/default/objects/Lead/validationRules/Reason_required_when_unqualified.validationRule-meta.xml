@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_required_when_unqualified</fullName>
+    <active>true</active>
+    <description>If a lead Status has been set to Unqualified, then the Reason Unqualified field must be filed out.
+BODEV-2539: Approach updated so that it only triggers when Status is changed to Unqualified, not on later edits on other fields.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;System Administrator&quot;),
+TEXT( Status ) = &quot;Unqualified&quot;,
+ISCHANGED(Status),
+NOT(ISNEW()),
+ISPICKVAL(Reason_Unqualified__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Reason_Unqualified__c</errorDisplayField>
+    <errorMessage>Please complete the Reason Unqualified field.</errorMessage>
+</ValidationRule>

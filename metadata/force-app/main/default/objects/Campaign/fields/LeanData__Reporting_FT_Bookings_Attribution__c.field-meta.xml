@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeanData__Reporting_FT_Bookings_Attribution__c</fullName>
+    <deprecated>false</deprecated>
+    <label>LD FT Bookings Attribution</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Additional_Price_Change__c</fullName>
+    <description>&quot;Show additional manual price increase (&gt;0) or discount (&lt;0) given on top of the pricing factors.
+Total Sales Price ARR/One-off - Total Base Price ARR/One-off&quot;</description>
+    <formula>Total_Sales_Price_ARR_One_off__c - Total_Base_Price_ARR_One_off__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Additional Price Change</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>8</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

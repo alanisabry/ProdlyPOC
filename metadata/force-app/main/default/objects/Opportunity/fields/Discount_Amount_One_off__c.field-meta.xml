@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Amount_One_off__c</fullName>
+    <description>Roll up of discount amount without MRR. For renewal = False</description>
+    <inlineHelpText>Roll up of discount amount without MRR</inlineHelpText>
+    <label>Discount Amount - One off</label>
+    <summarizedField>OpportunityLineItem.Discount_Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.For_Renewal_Mapped__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

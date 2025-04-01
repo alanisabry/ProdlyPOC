@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Priority_for_Sales_Management_Only</fullName>
+    <active>true</active>
+    <description>Only Sales Management and the Legal team can edit the field &quot;Legal Priority&quot;.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;Automated Process&quot;),
+NOT($Permission.Set_Legal_Priority_Field),
+ISCHANGED(Legal_Priority__c)
+)</errorConditionFormula>
+    <errorMessage>Only Sales Management and the Legal team can edit the field &quot;Legal Priority&quot;.</errorMessage>
+</ValidationRule>

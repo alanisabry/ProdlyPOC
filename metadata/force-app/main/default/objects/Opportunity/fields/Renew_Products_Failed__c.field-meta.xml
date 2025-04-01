@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renew_Products_Failed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This checkbox will be updated by the &apos;Add Upsell to Renewal&apos; flow if the renewal fails to merge with the renewal.</description>
+    <inlineHelpText>This checkbox will be updated by the &apos;Add Upsell to Renewal&apos; flow if the renewal fails to merge with the renewal.</inlineHelpText>
+    <label>Renew Products Failed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

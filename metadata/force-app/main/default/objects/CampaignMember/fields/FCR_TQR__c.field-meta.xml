@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_TQR__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>wd field
+Indicates that this Response passed threshold and proceeded to be evaluated. On Lead/Contact passing organizations, FCR_QR will also be set.</description>
+    <label>Threshold QR</label>
+    <type>Checkbox</type>
+</CustomField>

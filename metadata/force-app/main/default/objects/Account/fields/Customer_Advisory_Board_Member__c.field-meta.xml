@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Advisory_Board_Member__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BO-1889: Used to identify the Customer Advisory Board customers. Will be used in Product Board,Catalyst and Thoughtspot.</description>
+    <label>Customer Advisory Board Member</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

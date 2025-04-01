@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Set_Amsterdam</name>
+        <label>Assign - Set Amsterdam</label>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varLeadRecord.Business_Hours_MQL_till_Fist_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmAmsterdamHours</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Set_Boston</name>
+        <label>Assign - Set Boston</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varLeadRecord.Business_Hours_MQL_till_Fist_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmBostonHours</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Set_Dubai</name>
+        <label>Assign - Set Dubai</label>
+        <locationX>1106</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varLeadRecord.Business_Hours_MQL_till_Fist_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmDubaiHours</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Set_London</name>
+        <label>Assign - Set London</label>
+        <locationX>578</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varLeadRecord.Business_Hours_MQL_till_Fist_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmLondonHours</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Set_Melbourne</name>
+        <label>Assign - Set Melbourne</label>
+        <locationX>1370</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varLeadRecord.Business_Hours_MQL_till_Fist_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmMelbourneHours</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Set_Remote</name>
+        <label>Assign - Set Remote</label>
+        <locationX>1634</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varLeadRecord.Business_Hours_MQL_till_Fist_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmRemoteHours</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Set_San_Mateo</name>
+        <label>Assign - Set San Mateo</label>
+        <locationX>842</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>varLeadRecord.Business_Hours_MQL_till_Fist_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmSanMateoHours</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Decision_Set_Business_Hours</name>
+        <label>Decision - Set Business Hours?</label>
+        <locationX>974</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Boston</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varLeadRecord.Lead_Owner_Work_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Boston</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Set_Boston</targetReference>
+            </connector>
+            <label>Yes - Set Boston</label>
+        </rules>
+        <rules>
+            <name>Yes_Set_Amsterdam</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varLeadRecord.Lead_Owner_Work_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Amsterdam</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Set_Amsterdam</targetReference>
+            </connector>
+            <label>Yes - Set Amsterdam</label>
+        </rules>
+        <rules>
+            <name>Yes_Set_London</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varLeadRecord.Lead_Owner_Work_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>London</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Set_London</targetReference>
+            </connector>
+            <label>Yes - Set London</label>
+        </rules>
+        <rules>
+            <name>Yes_Set_San_Mateo</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>varLeadRecord.Lead_Owner_Work_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>San Mateo</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varLeadRecord.Lead_Owner_Work_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>San Carlos</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Set_San_Mateo</targetReference>
+            </connector>
+            <label>Yes - Set San Mateo</label>
+        </rules>
+        <rules>
+            <name>Yes_Set_Dubai</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varLeadRecord.Lead_Owner_Work_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dubai</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Set_Dubai</targetReference>
+            </connector>
+            <label>Yes - Set Dubai</label>
+        </rules>
+        <rules>
+            <name>Yes_Set_Melbourne</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varLeadRecord.Lead_Owner_Work_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Melbourne</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Set_Melbourne</targetReference>
+            </connector>
+            <label>Yes - Set Melbourne</label>
+        </rules>
+        <rules>
+            <name>Yes_Set_Remote</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varLeadRecord.Lead_Owner_Work_Location__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Remote</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Set_Remote</targetReference>
+            </connector>
+            <label>Yes - Set Remote</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>frmAmsterdamHours</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( NOW() ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( NOW() ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if NOW() is in daylight saving or not */ 
+        TODAY() &gt;= (DATE(YEAR(TODAY()), 3, 31) - MOD( DATE(YEAR(TODAY()), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        TODAY() &lt; (DATE(YEAR(TODAY()), 10, 31) - MOD( DATE(YEAR(TODAY()), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1 ) ) ) ), /* 9am CEST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1 ) ) ) ) /* 9am CET */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 3, 31) - MOD( DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c})), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 10, 31) - MOD( DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c})), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1) ) ) ), /* 9am CEST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1) ) ) ) /* 9am CET */
+      )
+    )
+  ) 
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>frmBostonHours</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( NOW() ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( NOW() ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if NOW() is in daylight saving or not */ 
+        TODAY() &gt;= (DATE(YEAR(TODAY()), 3, 1+7*2) - WEEKDAY(DATE(YEAR(TODAY()), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        TODAY() &lt; (DATE(YEAR(TODAY()), 11, 1+7*1) - WEEKDAY(DATE(YEAR(TODAY()), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;13, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 13:00:00&apos; ), 1 ) ) ) ), /* 9am in local time DST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;14, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 14:00:00&apos; ), 1 ) ) ) ) /* 9am in local time */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c} )), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c} )), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;13, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 13:00:00&apos; ), 1) ) ) ), /* 9am in local time DST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;14, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 14:00:00&apos; ), 1) ) ) ) /* 9am in local time */
+      )
+    )
+  ) 
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>frmDubaiHours</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( NOW() ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( NOW() ) - DATE( 1900, 1, 8), 7) +
+      IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;5, 0,
+      MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 05:00:00&apos; ), 1 ) ) ) )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+     MIN( 5,
+       MOD( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+       IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;5, 0,
+       MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 05:00:00&apos; ), 1) ) ) )
+    )
+   ) 
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>frmLondonHours</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( NOW() ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( NOW() ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if NOW() is in daylight saving or not */ 
+        TODAY() &gt;= (DATE(YEAR(TODAY()), 3, 31) - MOD( DATE(YEAR(TODAY()), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        TODAY() &lt; (DATE(YEAR(TODAY()), 10, 31) - MOD( DATE(YEAR(TODAY()), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1 ) ) ) ), /* 9am CEST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;9, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 09:00:00&apos; ), 1 ) ) ) ) /* 9am CET */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 3, 31) - MOD( DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c})), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 10, 31) - MOD( DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c})), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1) ) ) ), /* 9am UK DST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;9, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 09:00:00&apos; ), 1) ) ) ) /* 9am GMT */
+      )
+    )
+  ) 
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>frmMelbourneHours</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( NOW() ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( NOW() ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if NOW() is in daylight saving or not */ 
+        TODAY() &gt;= (DATE(YEAR(TODAY()), 4, 1) + CASE( MOD( DATE(YEAR(TODAY()), 4, 1) - DATE (1900,1,7),7), 1, 6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) ) &amp;&amp; /* First Sunday in April of the year */
+        TODAY() &lt; (DATE(YEAR(TODAY()), 10, 1) + CASE( MOD( DATE(YEAR(TODAY()), 10, 1) - DATE (1900,1,7),7), 1, 6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) ), /* First Sunday in October of the year */
+        /* NOT daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2)) &gt;= 14 &amp;&amp; VALUE(MID(TEXT(NOW()), 12, 2))&lt;23, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-07 23:00:00&apos; ), 1 ) ) ) ), /* 9am AEST */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2)) &gt;= 13 &amp;&amp; VALUE(MID(TEXT(NOW()), 12, 2))&lt;22, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-07 22:00:00&apos; ), 1 ) ) ) ) /* 9am AEDT */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 4, 1)
+        	+ CASE( MOD( DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c})), 4, 1) - DATE (1900,1,7),7), 1, 6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) ) &amp;&amp; /* First Sunday in April of the year */
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 10, 1) 
+        	+ CASE( MOD( DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c})), 10, 1) - DATE (1900,1,7),7), 1, 6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) ), /* First Sunday in October of the year */
+        /* NOT daylight saving */
+        IF( VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2)) &gt;= 14 &amp;&amp; VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;23, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-07 23:00:00&apos; ), 1) ) ) ), /* 9am AEST */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2)) &gt;= 13 &amp;&amp; VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;22, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-07 22:00:00&apos; ), 1) ) ) ) /* 9am AEDT */
+      )
+    )
+  ) 
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>frmRemoteHours</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( NOW() ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( NOW() ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if NOW() is in daylight saving or not */ 
+        TODAY() &gt;= (DATE(YEAR(TODAY()), 3, 31) - MOD( DATE(YEAR(TODAY()), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        TODAY() &lt; (DATE(YEAR(TODAY()), 10, 31) - MOD( DATE(YEAR(TODAY()), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1 ) ) ) ), /* 9am CEST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1 ) ) ) ) /* 9am CET */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 3, 31) - MOD( DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c})), 3, 31) - DATE (1900,1,7),7)) &amp;&amp; /* Last Sunday in March of the year */
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 10, 31) - MOD( DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c})), 10, 31) - DATE (1900,1,7),7)), /* Last Sunday in October of the year */
+        /* Daylight saving */
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;7, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 07:00:00&apos; ), 1) ) ) ), /* 9am CEST */
+        /* Not daylight savign */
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 08:00:00&apos; ), 1) ) ) ) /* 9am CET */
+      )
+    )
+  ) 
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>frmSanMateoHours</name>
+        <dataType>Number</dataType>
+        <expression>/* Detail explanation of the formula can be found on BODEV-341 */
+
+9 * (
+   ( 5 * FLOOR( ( DATEVALUE( NOW() ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN(5, 
+      MOD( DATEVALUE( NOW() ) - DATE( 1900, 1, 8), 7) +
+      IF(
+        /* Check if NOW() is in daylight saving or not */ 
+        TODAY() &gt;= (DATE(YEAR(TODAY()), 3, 1+7*2) - WEEKDAY(DATE(YEAR(TODAY()), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        TODAY() &lt; (DATE(YEAR(TODAY()), 11, 1+7*1) - WEEKDAY(DATE(YEAR(TODAY()), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;7, -1, 0) + /* This part is specific to San Mateo due to a large time zone gap */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;16 &amp;&amp; VALUE(MID(TEXT(NOW()), 12, 2))&gt;=7 , 0, /* This part is specific to San Mateo due to a large time zone gap */
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 16:00:00&apos; ), 1 ) ) ) ), /* 9am in local time DST */
+        /* Not daylight saving */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;8, -1, 0) + /* This part is specific to San Mateo due to a large time zone gap */
+        IF( VALUE(MID(TEXT(NOW()), 12, 2))&lt;17 &amp;&amp; VALUE(MID(TEXT(NOW()), 12, 2))&gt;=8, 0, /* This part is specific to San Mateo due to a large time zone gap */
+        MIN( 1, 24 / 9 * ( MOD( NOW() - DATETIMEVALUE( &apos;1900-01-08 17:00:00&apos; ), 1 ) ) ) ) /* 9am in local time */
+      )
+    ) 
+   )
+ -
+   ( 5 * FLOOR( ( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1900, 1, 8) ) / 7) +
+    MIN( 5,
+      MOD( DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) - DATE( 1996, 1, 1), 7 ) +
+      IF(
+        /* Check if Timestam_MQL__c is in daylight saving or not */ 
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &gt;= (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 3, 1+7*2) - WEEKDAY(DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c} )), 3, 7-0))) &amp;&amp; /* 2nd Sunday in March of the year */
+        DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} ) &lt; (DATE(YEAR(DATEVALUE( {!varLeadRecord.Timestamp_MQL__c} )), 11, 1+7*1) - WEEKDAY(DATE(YEAR(DATEVALUE({!varLeadRecord.Timestamp_MQL__c} )), 11, 7-0))), /* 1st Sunday in November of the year */
+        /* Daylight saving */
+        IF( VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;7, -1, 0) +
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;16 &amp;&amp; VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&gt;=7, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 16:00:00&apos; ), 1) ) ) ), /* 9am in local time DST */
+        /* Not daylight savign */
+        IF( VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;8, -1, 0) +
+        IF(VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&lt;17 &amp;&amp; VALUE(MID(TEXT({!varLeadRecord.Timestamp_MQL__c}), 12, 2))&gt;=8, 0,
+        MIN( 1, 24 / 9 * ( MOD( {!varLeadRecord.Timestamp_MQL__c} - DATETIMEVALUE( &apos;1900-01-08 17:00:00&apos; ), 1) ) ) ) /* 9am in local time */
+      )
+    )
+  ) 
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Lead [ALF] {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead [ALF] Invoked: Set Business Hours</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead</name>
+        <label>Update - Lead</label>
+        <locationX>974</locationX>
+        <locationY>494</locationY>
+        <inputReference>varLeadRecord</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>848</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decision_Set_Business_Hours</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>varLeadRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+</Flow>

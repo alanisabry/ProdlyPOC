@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Mavenlink_project</fullName>
+    <availability>online</availability>
+    <description>ACTIVE. The link is used to trigger a process that creates a Mavenlink project record.</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Create Mavenlink project</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Mavenlink_Project_Creation?curOpportunity={!Opportunity.Id}&amp;retURL={!URLFOR(Opportunity.Id)}</url>
+</WebLink>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Guillaume_Call_List</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>SMB_ENTERPRISE__c</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.MOBILE_PHONE</columns>
+    <columns>BDR_Completed__c</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>Lead_Free__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Region__c</field>
+        <operation>equals</operation>
+        <value>APAC</value>
+    </filters>
+    <filters>
+        <field>SMB_ENTERPRISE__c</field>
+        <operation>equals</operation>
+        <value>SMB,Mid-Market,Enterprise,Strategic</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Unqualified</value>
+    </filters>
+    <filters>
+        <field>Days_since_last_activity__c</field>
+        <operation>greaterThan</operation>
+        <value>60</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2017 12:00 AM</value>
+    </filters>
+    <label>Guillaume Call List</label>
+    <sharedTo>
+        <group>Sales</group>
+    </sharedTo>
+</ListView>

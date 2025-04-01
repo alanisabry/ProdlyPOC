@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_is_your_primary_reason_for_leaving__c</fullName>
+    <label>What is your primary reason for leaving?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Budget cuts or pricing too high</fullName>
+                <default>false</default>
+                <label>Budget cuts or pricing too high</label>
+            </value>
+            <value>
+                <fullName>Organizational restructuring</fullName>
+                <default>false</default>
+                <label>Organizational restructuring</label>
+            </value>
+            <value>
+                <fullName>Corporate consolidation of tools</fullName>
+                <default>false</default>
+                <label>Corporate consolidation of tools</label>
+            </value>
+            <value>
+                <fullName>Missing critical features or lacking innovation</fullName>
+                <default>false</default>
+                <label>Missing critical features or lacking innovation</label>
+            </value>
+            <value>
+                <fullName>Poor experience with Bynder CS or Support</fullName>
+                <default>false</default>
+                <label>Poor experience with Bynder CS or Support</label>
+            </value>
+            <value>
+                <fullName>Lack of ownership, resources or governance</fullName>
+                <default>false</default>
+                <label>Lack of ownership, resources or governance</label>
+            </value>
+            <value>
+                <fullName>Lack of value, ROI, or use case</fullName>
+                <default>false</default>
+                <label>Lack of value, ROI, or use case</label>
+            </value>
+            <value>
+                <fullName>Platform performance issues or bug resolution</fullName>
+                <default>false</default>
+                <label>Platform performance issues or bug resolution</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

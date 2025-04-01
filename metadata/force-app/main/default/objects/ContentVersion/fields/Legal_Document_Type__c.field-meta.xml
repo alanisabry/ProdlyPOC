@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Document_Type__c</fullName>
+    <label>Legal Document Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Order Form</fullName>
+                <default>false</default>
+                <label>Order Form</label>
+            </value>
+            <value>
+                <fullName>Terms of Service</fullName>
+                <default>false</default>
+                <label>Terms of Service</label>
+            </value>
+            <value>
+                <fullName>Data Processing Agreement</fullName>
+                <default>false</default>
+                <label>Data Processing Agreement</label>
+            </value>
+            <value>
+                <fullName>Service Level Agreement</fullName>
+                <default>false</default>
+                <label>Service Level Agreement</label>
+            </value>
+            <value>
+                <fullName>Mutual NDA</fullName>
+                <default>false</default>
+                <label>Mutual NDA</label>
+            </value>
+            <value>
+                <fullName>Third Party MSA</fullName>
+                <default>false</default>
+                <label>Third Party MSA</label>
+            </value>
+            <value>
+                <fullName>Certified Partner Agreement</fullName>
+                <default>false</default>
+                <label>Certified Partner Agreement</label>
+            </value>
+            <value>
+                <fullName>Referral Agreement</fullName>
+                <default>false</default>
+                <label>Referral Agreement</label>
+            </value>
+            <value>
+                <fullName>Certified Partnership Reseller Order Form</fullName>
+                <default>false</default>
+                <label>Certified Partnership Reseller Order Form</label>
+            </value>
+            <value>
+                <fullName>Technology Partnership Agreement</fullName>
+                <default>false</default>
+                <label>Technology Partnership Agreement</label>
+            </value>
+            <value>
+                <fullName>Partner Participation Agreement</fullName>
+                <default>false</default>
+                <label>Partner Participation Agreement</label>
+            </value>
+            <value>
+                <fullName>Purchase Agreement</fullName>
+                <default>false</default>
+                <label>Purchase Agreement</label>
+            </value>
+            <value>
+                <fullName>Renewal Agreement</fullName>
+                <default>false</default>
+                <label>Renewal Agreement</label>
+            </value>
+            <value>
+                <fullName>Termination Confirmation Letter</fullName>
+                <default>false</default>
+                <label>Termination Confirmation Letter</label>
+            </value>
+            <value>
+                <fullName>Business Transfer Agreement</fullName>
+                <default>false</default>
+                <label>Business Transfer Agreement</label>
+            </value>
+            <value>
+                <fullName>Demand Letter</fullName>
+                <default>false</default>
+                <label>Demand Letter</label>
+            </value>
+            <value>
+                <fullName>Webdam Agreement</fullName>
+                <default>false</default>
+                <label>Webdam Agreement</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

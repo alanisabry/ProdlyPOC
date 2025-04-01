@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Seniority__c</fullName>
+    <description>BODEV-2393 include fileds un campaign with campaign members reporting</description>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISBLANK(ContactId)), text(Contact.Seniority__c),   
+text(Lead.Seniority__c))</formula>
+    <label>Seniority</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

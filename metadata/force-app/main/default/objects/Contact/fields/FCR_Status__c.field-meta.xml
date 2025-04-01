@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Status__c</fullName>
+    <description>Webdam field</description>
+    <label>Contact Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Open - Not Contacted</fullName>
+                <default>false</default>
+                <label>Open - Not Contacted</label>
+            </value>
+            <value>
+                <fullName>Attempting Contact</fullName>
+                <default>false</default>
+                <label>Attempting Contact</label>
+            </value>
+            <value>
+                <fullName>Working</fullName>
+                <default>false</default>
+                <label>Working</label>
+            </value>
+            <value>
+                <fullName>Nurture/Marketing</fullName>
+                <default>false</default>
+                <label>Nurture/Marketing</label>
+            </value>
+            <value>
+                <fullName>Disqualified</fullName>
+                <default>false</default>
+                <label>Disqualified</label>
+            </value>
+            <value>
+                <fullName>Active Opportunity</fullName>
+                <default>false</default>
+                <label>Active Opportunity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

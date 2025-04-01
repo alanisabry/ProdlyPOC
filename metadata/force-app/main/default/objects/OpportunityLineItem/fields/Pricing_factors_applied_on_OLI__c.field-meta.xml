@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_factors_applied_on_OLI__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to identify if the pricing factors are applied or not on OLI</description>
+    <label>Pricing factors applied on OLI?</label>
+    <type>Checkbox</type>
+</CustomField>

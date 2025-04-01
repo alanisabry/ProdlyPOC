@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Written_permission_prior_to_publication__c</fullName>
+    <label>Written permission prior to publication</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Logo on website</fullName>
+                <default>false</default>
+                <label>Logo on website</label>
+            </value>
+            <value>
+                <fullName>Online Banner</fullName>
+                <default>false</default>
+                <label>Online Banner</label>
+            </value>
+            <value>
+                <fullName>Press Release</fullName>
+                <default>false</default>
+                <label>Press Release</label>
+            </value>
+            <value>
+                <fullName>Publication of Case Study</fullName>
+                <default>false</default>
+                <label>Publication of Case Study</label>
+            </value>
+            <value>
+                <fullName>Publication of White Paper</fullName>
+                <default>false</default>
+                <label>Publication of White Paper</label>
+            </value>
+            <value>
+                <fullName>Quote on website</fullName>
+                <default>false</default>
+                <label>Quote on website</label>
+            </value>
+            <value>
+                <fullName>Reference case study in Sales Pitch</fullName>
+                <default>false</default>
+                <label>Reference case study in Sales Pitch</label>
+            </value>
+            <value>
+                <fullName>Reference name/logo in Sales Pitch</fullName>
+                <default>false</default>
+                <label>Reference name/logo in Sales Pitch</label>
+            </value>
+            <value>
+                <fullName>Marketing collateral</fullName>
+                <default>false</default>
+                <label>Marketing collateral</label>
+            </value>
+            <value>
+                <fullName>Name and logo for marketing purposes</fullName>
+                <default>false</default>
+                <label>Name and logo for marketing purposes</label>
+            </value>
+            <value>
+                <fullName>Limited use</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Limited use</label>
+            </value>
+            <value>
+                <fullName>Total use</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Total use</label>
+            </value>
+            <value>
+                <fullName>Totally forbidden</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Totally forbidden</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

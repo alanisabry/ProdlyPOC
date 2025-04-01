@@ -1,0 +1,52 @@
+div[style*="overflow-x: auto"] {
+    max-width: 100%; 
+}
+
+.lightning-datatable {
+    padding: 10px;
+}
+
+div[style*="overflow-x: auto;"] {
+    border: 1px solid #dcdcdc; 
+    border-radius: 5px; 
+    padding: 10px; 
+}
+
+.lightning-datatable table {
+    border-collapse: collapse; 
+    width: 100%; 
+}
+
+.lightning-datatable table th,
+.lightning-datatable table td {
+    border: 1px solid #dcdcdc; 
+    padding: 8px; 
+}
+
+.lightning-datatable table th {
+    background-color: #f4f4f4; 
+    font-weight: bold;
+    text-align: left; 
+}
+
+.lightning-datatable table thead th {
+    background-color: #f4f6f9; 
+    color: #50575e; 
+    font-weight: bold; 
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+div[style*="overflow-x: auto;"] {
+    border: 1px solid #dcdcdc; 
+    border-radius: 5px; 
+    padding: 10px; 
+}
+
+.lightning-datatable table td {
+    text-align: left; 
+}
+
+.lightning-datatable table tbody tr:hover {
+    background-color: #f4f4f4; 
+    transition: background-color 0.2s ease-in-out;
+}

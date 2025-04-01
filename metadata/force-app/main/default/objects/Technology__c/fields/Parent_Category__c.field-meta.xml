@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Category__c</fullName>
+    <inlineHelpText>The parent category of the technology platform enables in the ecosystem</inlineHelpText>
+    <label>Parent Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Commerce &amp; Sales</fullName>
+                <default>false</default>
+                <label>Commerce &amp; Sales</label>
+            </value>
+            <value>
+                <fullName>Advertising &amp; Promotion</fullName>
+                <default>false</default>
+                <label>Advertising &amp; Promotion</label>
+            </value>
+            <value>
+                <fullName>Management</fullName>
+                <default>false</default>
+                <label>Management</label>
+            </value>
+            <value>
+                <fullName>Data</fullName>
+                <default>false</default>
+                <label>Data</label>
+            </value>
+            <value>
+                <fullName>Content &amp; Experience</fullName>
+                <default>false</default>
+                <label>Content &amp; Experience</label>
+            </value>
+            <value>
+                <fullName>Social &amp; Relationships</fullName>
+                <default>false</default>
+                <label>Social &amp; Relationships</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

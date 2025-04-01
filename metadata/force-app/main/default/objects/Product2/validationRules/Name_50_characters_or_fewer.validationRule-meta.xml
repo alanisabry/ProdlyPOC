@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_50_characters_or_fewer</fullName>
+    <active>true</active>
+    <description>Name needs to be 50 characters or fewer.</description>
+    <errorConditionFormula>LEN(Name) &gt; 50</errorConditionFormula>
+    <errorMessage>Please ensure that the product name is 50 characters or fewer.</errorMessage>
+</ValidationRule>

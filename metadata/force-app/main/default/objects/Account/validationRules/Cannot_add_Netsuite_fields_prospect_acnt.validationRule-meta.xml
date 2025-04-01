@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_Netsuite_fields_prospect_acnt</fullName>
+    <active>false</active>
+    <description>BODEV-2385 Clone of Salesforce Accounts Should Show Blank Netsuite internal ID</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;Automated Process&quot;),
+ISPICKVAL(Type,&quot;Prospect&quot;),
+NOT(ISNULL(Netsuite_Customer_ID__c )),
+NOT(ISNULL(Netsuite_Internal_ID__c)))</errorConditionFormula>
+    <errorMessage>Please clear the Netsuite fields like (Netsuite Customer ID &amp; and Internal ID) as the Account Type is Prospect</errorMessage>
+</ValidationRule>

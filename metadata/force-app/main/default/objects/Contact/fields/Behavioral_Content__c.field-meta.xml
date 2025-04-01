@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Behavioral_Content__c</fullName>
+    <description>Used to indicate Behavioral content interaction so we can identify which existing contacts have engaged with the Forrester Wave to add them to a campaign and notify them.</description>
+    <label>Behavioral Content</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>More info requested</fullName>
+                <default>false</default>
+                <label>More info requested</label>
+            </value>
+            <value>
+                <fullName>End WP download</fullName>
+                <default>false</default>
+                <label>End WP download</label>
+            </value>
+            <value>
+                <fullName>Mid WP download</fullName>
+                <default>false</default>
+                <label>Mid WP download</label>
+            </value>
+            <value>
+                <fullName>Top WP download</fullName>
+                <default>false</default>
+                <label>Top WP download</label>
+            </value>
+            <value>
+                <fullName>CS download</fullName>
+                <default>false</default>
+                <label>CS download</label>
+            </value>
+            <value>
+                <fullName>Forrester Wave 2022</fullName>
+                <default>false</default>
+                <label>Forrester Wave 2022</label>
+            </value>
+            <value>
+                <fullName>Forrester Wave 2024</fullName>
+                <default>false</default>
+                <label>Forrester Wave 2024</label>
+            </value>
+            <value>
+                <fullName>&lt;30 behavioral</fullName>
+                <default>false</default>
+                <label>&lt;30 behavioral</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

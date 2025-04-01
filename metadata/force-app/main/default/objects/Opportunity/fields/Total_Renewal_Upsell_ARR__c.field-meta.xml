@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Renewal_Upsell_ARR__c</fullName>
+    <description>BODEV-67: Renewal Upsell Amount MRR x 12. Requested by CS for reporting purpose.
+BODEV-2281: Formula tweaked to prevent the field from showing values for irrelevant Opp types.</description>
+    <formula>CASE(StageName,
+&quot;Closed Lost&quot;, 0,
+&quot;Closed Won&quot;,
+IF(AND(
+OR(
+ISPICKVAL(Type, &quot;Existing Business - Internal Transfer&quot;),
+ISPICKVAL(Type, &quot;Existing Business - Platform Transfer&quot;)),
+Original_Renewal_ARR__c &gt; 0),
+
+
+ARR_manual__c - Original_Renewal_ARR__c,
+
+ARR_manual__c -
+(
+Original_Renewal_ARR__c +
+New_ARR__c +
+Internal_Transfer_ARR__c -
+Churn_ARR_Platform_Transfer__c
+)),
+/* When Open, show values only for Renewal and Upsell */
+IF(
+ISPICKVAL(Type, &quot;Existing Business-Renewal&quot;) || ISPICKVAL(Type, &quot;Existing Business-Upsell&quot;) || ISPICKVAL(Type, &quot;New Business - Expansion Portal&quot;),
+ARR_manual__c -
+(
+Original_Renewal_ARR__c +
+New_ARR__c +
+Internal_Transfer_ARR__c +
+New_ARR_Platform_transfer__c -
+Churn_ARR_Platform_Transfer__c
+),
+IF(AND(
+OR(
+ISPICKVAL(Type, &quot;Existing Business - Internal Transfer&quot;),
+ISPICKVAL(Type, &quot;Existing Business - Platform Transfer&quot;)),
+Original_Renewal_ARR__c &gt; 0),
+ARR_manual__c - Original_Renewal_ARR__c,
+0
+)
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Sum of total expansion for Sales KPI (incl. cumulative indexation).</inlineHelpText>
+    <label>Total Renewal Upsell ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

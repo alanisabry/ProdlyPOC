@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UG_Days_b_w_Past_Cont_Start_Move__c</fullName>
+    <description>BODEV-1134: Calculate days since Past Account Original Contract Start Date till Current Job Start Date</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    ISBLANK( UG_Current_Job_Start_Date__c ),
+    ISBLANK( UG_Past_Acc_Original_Cont_Start_Date__c )
+  ),
+  NULL,
+  UG_Current_Job_Start_Date__c - UG_Past_Acc_Original_Cont_Start_Date__c
+)</formula>
+    <inlineHelpText>Calculate days since Past Account Original Contract Start Date till Current Job Start Date</inlineHelpText>
+    <label>UG - Days b/w Past Cont. Start &amp; Move</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

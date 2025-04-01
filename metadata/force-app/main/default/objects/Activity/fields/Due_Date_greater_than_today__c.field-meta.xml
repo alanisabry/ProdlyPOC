@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Due_Date_greater_than_today__c</fullName>
+    <description>Is due date in the future? Used by activity counter</description>
+    <formula>ActivityDate&gt;TODAY()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Is due date in the future? Used by activity counter</inlineHelpText>
+    <label>Due Date greater than today</label>
+    <type>Checkbox</type>
+</CustomField>

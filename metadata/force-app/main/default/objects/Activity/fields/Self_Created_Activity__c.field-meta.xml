@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Self_Created_Activity__c</fullName>
+    <formula>IF( ISBLANK( BDR__r.Username ) , 
+ IF( CreatedBy.Username = Owner:User.Username , TRUE, FALSE),
+ IF( BDR__r.Username = Owner:User.Username , TRUE , FALSE))</formula>
+    <label>Self-Created Activity</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Discovery_Calls</fullName>
+    <columns>SUBJECT</columns>
+    <columns>WHO_NAME</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>DUE_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>PRIORITY</columns>
+    <columns>STATUS</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contact_Type_excl_Blank__c</field>
+        <operation>equals</operation>
+        <value>Discovery Call</value>
+    </filters>
+    <filters>
+        <field>Active_User_Booked_by__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Discovery Calls (BDR)</label>
+</ListView>

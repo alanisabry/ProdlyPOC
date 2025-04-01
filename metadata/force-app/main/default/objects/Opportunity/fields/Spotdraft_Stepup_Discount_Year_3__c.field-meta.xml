@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spotdraft_Stepup_Discount_Year_3__c</fullName>
+    <description>Created this field to track step up Discount to be Removed in Year 3</description>
+    <inlineHelpText>Step-ups include rate increases at periodic intervals. Complete this section by indicating the scheduled rate increases over the contract term (per year). For example, if the contract Term is 3 years, specify the amount of the step-up discount to be removed in Year 3 and so on.</inlineHelpText>
+    <label>Step-up: Discount Removed in Year 3</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

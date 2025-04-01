@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isActive__c</fullName>
+    <description>Indicates whether this key is currently active or not.</description>
+    <formula>AND(
+Expired_Date__c &gt; TODAY(),
+Start_Date__c &lt;= TODAY()
+)</formula>
+    <label>Active</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

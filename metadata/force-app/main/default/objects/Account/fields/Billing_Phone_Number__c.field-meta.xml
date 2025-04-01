@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Phone_Number__c</fullName>
+    <description>BODEV-1323: Billing Phone Number of the customer. Can be filled through Customer Onboarding Form feature.</description>
+    <label>Billing Phone Number</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Phone</type>
+</CustomField>

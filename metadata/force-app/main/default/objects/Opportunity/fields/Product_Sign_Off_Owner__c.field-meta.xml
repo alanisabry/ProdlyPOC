@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Sign_Off_Owner__c</fullName>
+    <description>To show which product owner signed off on a customisation schedule</description>
+    <externalId>false</externalId>
+    <inlineHelpText>In the case of custom development, which product owner signed off on the timeline?</inlineHelpText>
+    <label>Product Sign-Off Owner</label>
+    <length>200</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

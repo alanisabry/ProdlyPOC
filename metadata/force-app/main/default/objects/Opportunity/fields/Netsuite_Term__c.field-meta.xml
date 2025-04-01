@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_Term__c</fullName>
+    <description>Term as calculated in Netsuite</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Term as calculated in Netsuite</inlineHelpText>
+    <label>Contract Term</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

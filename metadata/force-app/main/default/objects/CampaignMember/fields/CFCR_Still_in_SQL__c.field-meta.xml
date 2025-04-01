@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CFCR_Still_in_SQL__c</fullName>
+    <description>wd field
+Checked if Current Stage in Funnel is &quot;3. SQL&quot;</description>
+    <formula>CFCR_Current_Stage_in_Funnel__c = &quot;3. SQL&quot;</formula>
+    <inlineHelpText>Checked if Current Stage in Funnel is &quot;3. SQL&quot;</inlineHelpText>
+    <label>Still in SQL</label>
+    <type>Checkbox</type>
+</CustomField>

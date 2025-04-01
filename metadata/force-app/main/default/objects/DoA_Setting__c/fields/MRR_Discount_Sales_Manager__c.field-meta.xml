@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MRR_Discount_Sales_Manager__c</fullName>
+    <defaultValue>25</defaultValue>
+    <description>BODEV-76: MRR discount threshold below which Sales Manager can approve.</description>
+    <label>MRR Discount: Sales Manager</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

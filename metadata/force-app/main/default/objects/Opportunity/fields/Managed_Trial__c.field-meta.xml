@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Managed_Trial__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BODEV-64: Field to capture whether POC/Trial is provided for the Opportunity</description>
+    <inlineHelpText>Trial conducted by the AE/SE using a personalised portal</inlineHelpText>
+    <label>Managed Trial</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

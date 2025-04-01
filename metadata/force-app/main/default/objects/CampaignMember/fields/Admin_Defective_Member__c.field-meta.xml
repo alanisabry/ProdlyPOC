@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admin_Defective_Member__c</fullName>
+    <formula>AND( 
+BEGINS(FCR_Lead_Contact_18_Digit_ID__c, &apos;00Q&apos;), 
+OR( 
+Lead.Id = NULL, 
+Lead.IsConverted = True) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Admin Defective Member</label>
+    <type>Checkbox</type>
+</CustomField>

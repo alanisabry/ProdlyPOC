@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_add_legacy_Sitecore_Connectors</fullName>
+    <active>true</active>
+    <description>BODEV-2319: Sitecore Connector Basic and Sitecore Connector Advanced should not be added because they have been replaced with Bynder DAM Connector for Sitecore XP / XM.</description>
+    <errorConditionFormula>AND(
+  ISNEW(),
+  NOT( CONTAINS($Profile.Name,&quot;System Administrator&quot;) ),
+  NOT($Profile.Name = &quot;Automated Process&quot;),
+  NOT( ISPICKVAL( Opportunity.Type, &quot;Existing Business-Renewal&quot;) ),
+  OR(
+    Product2.Product_ID_18_digits__c = &quot;01t3g000000lmUmAAI&quot;,  /* Basic */
+    Product2.Product_ID_18_digits__c = &quot;01t3g000000lmUrAAI&quot; /* Advanced */
+  )
+)</errorConditionFormula>
+    <errorMessage>Sitecore Connector Basic and Sitecore Connector Advanced should not be used any more. Please use Bynder DAM Connector for Sitecore XP / XM.</errorMessage>
+</ValidationRule>

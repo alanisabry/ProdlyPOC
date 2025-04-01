@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Subregion__c</fullName>
+    <description>sales subregion from lead or contact</description>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(ContactId), Text(Lead__r.Sales_Subregion__c) ,Text(Contact.Sales_Subregion__c))</formula>
+    <label>Sales Subregion</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

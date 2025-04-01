@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_s_favourite_element_of_product__c</fullName>
+    <label>Client’s favourite element of product</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Taxonomy</fullName>
+                <default>false</default>
+                <label>Taxonomy</label>
+            </value>
+            <value>
+                <fullName>Derivatives</fullName>
+                <default>false</default>
+                <label>Derivatives</label>
+            </value>
+            <value>
+                <fullName>Theming</fullName>
+                <default>false</default>
+                <label>Theming</label>
+            </value>
+            <value>
+                <fullName>Custom URL</fullName>
+                <default>false</default>
+                <label>Custom URL</label>
+            </value>
+            <value>
+                <fullName>Permissions/Visibility Restrictions</fullName>
+                <default>false</default>
+                <label>Permissions/Visibility Restrictions</label>
+            </value>
+            <value>
+                <fullName>Waiting Room</fullName>
+                <default>false</default>
+                <label>Waiting Room</label>
+            </value>
+            <value>
+                <fullName>Upload screen</fullName>
+                <default>false</default>
+                <label>Upload screen</label>
+            </value>
+            <value>
+                <fullName>Mass uploader</fullName>
+                <default>false</default>
+                <label>Mass uploader</label>
+            </value>
+            <value>
+                <fullName>Duplicate Finder</fullName>
+                <default>false</default>
+                <label>Duplicate Finder</label>
+            </value>
+            <value>
+                <fullName>Collections</fullName>
+                <default>false</default>
+                <label>Collections</label>
+            </value>
+            <value>
+                <fullName>Forms</fullName>
+                <default>false</default>
+                <label>Forms</label>
+            </value>
+            <value>
+                <fullName>Notifications</fullName>
+                <default>false</default>
+                <label>Notifications</label>
+            </value>
+            <value>
+                <fullName>SSO</fullName>
+                <default>false</default>
+                <label>SSO</label>
+            </value>
+            <value>
+                <fullName>Dashboard/Homepage</fullName>
+                <default>false</default>
+                <label>Dashboard/Homepage</label>
+            </value>
+            <value>
+                <fullName>Print Templates</fullName>
+                <default>false</default>
+                <label>Print Templates</label>
+            </value>
+            <value>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+                <label>Workflow</label>
+            </value>
+            <value>
+                <fullName>Guidelines</fullName>
+                <default>false</default>
+                <label>Guidelines</label>
+            </value>
+            <value>
+                <fullName>Media Import</fullName>
+                <default>false</default>
+                <label>Media Import</label>
+            </value>
+            <value>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+                <label>Analytics</label>
+            </value>
+            <value>
+                <fullName>Digital Templates</fullName>
+                <default>false</default>
+                <label>Digital Templates</label>
+            </value>
+            <value>
+                <fullName>VBS</fullName>
+                <default>false</default>
+                <label>VBS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

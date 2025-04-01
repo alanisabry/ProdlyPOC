@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Video_Brand_Studio_Feedback__c</fullName>
+    <description>What feedback have you received when presenting and talking about Video Brand Studio with Prospects and Customers?</description>
+    <inlineHelpText>What feedback have you received when presenting and talking about Video Brand Studio with Prospects and Customers?</inlineHelpText>
+    <label>Video Brand Studio Feedback</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Html</type>
+    <visibleLines>50</visibleLines>
+</CustomField>

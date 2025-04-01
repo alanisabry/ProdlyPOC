@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Close_Referrals</name>
+    </customPermissions>
+    <description>Only users with this permission set can set referral opportunities to "Closed Won"</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Close Referrals</label>
+</PermissionSet>

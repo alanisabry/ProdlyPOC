@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owned_by_Active_BDR__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(BDR_Owner__r.Active_BDR__c,&quot;Yes&quot;,&quot;No&quot;)</formula>
+    <label>Owned by Active BDR?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>New ARR: OEM</label>
+    <protected>false</protected>
+    <values>
+        <field>ARR_Movement_Field__c</field>
+        <value xsi:type="xsd:string">New_ARR__c</value>
+    </values>
+    <values>
+        <field>Criteria_logical_operator__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">This record is used to create/update Opportunity ARR Movements of New ARR: OEM movement type</value>
+    </values>
+    <values>
+        <field>Movement_Field__c</field>
+        <value xsi:type="xsd:string">New_MRR__c</value>
+    </values>
+    <values>
+        <field>Movement_Type__c</field>
+        <value xsi:type="xsd:string">New ARR: OEM</value>
+    </values>
+    <values>
+        <field>Opportunity_Type__c</field>
+        <value xsi:type="xsd:string">New Business-Enterprise Cloud</value>
+    </values>
+    <values>
+        <field>Parent_Object__c</field>
+        <value xsi:type="xsd:string">Opportunity</value>
+    </values>
+    <values>
+        <field>Reporting_Date_Criteria_Field_1__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Reporting_Date_Criteria_Field_2__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Reporting_Date__c</field>
+        <value xsi:type="xsd:string">CloseDate</value>
+    </values>
+    <values>
+        <field>Reporting_Date_to_Close_Date__c</field>
+        <value xsi:type="xsd:string">Reporting_Date_to_Close_Date__c</value>
+    </values>
+</CustomMetadata>

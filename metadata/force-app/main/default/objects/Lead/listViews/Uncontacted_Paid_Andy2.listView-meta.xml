@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Uncontacted_Paid_Andy2</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>BDR_Completed__c</field>
+        <operation>equals</operation>
+        <value>,0</value>
+    </filters>
+    <filters>
+        <field>Marketing_Source__c</field>
+        <operation>equals</operation>
+        <value>Paid Referral,CPC - Adwords,Organic,Paid - Linkedin,Paid - Social other</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Sales 3: Nurture,Unqualified</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Converted</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>arahm</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>6/1/2019 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>SMB_ENTERPRISE__c</field>
+        <operation>equals</operation>
+        <value>Strategic,Enterprise</value>
+    </filters>
+    <label>Uncontacted Paid Andy</label>
+</ListView>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Modules_Spotdraft__c</fullName>
+    <description>Created this field to provide control to the users to display/hide sections - SpotDraft</description>
+    <inlineHelpText>Only include the discussed pricing</inlineHelpText>
+    <label>SpotDraft Additional Pricing Tables</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Additional Users with Adobe CC Connector license</fullName>
+                <default>false</default>
+                <label>Additional Users with Adobe CC Connector license</label>
+            </value>
+            <value>
+                <fullName>Additional Users without Adobe CC Connector license</fullName>
+                <default>false</default>
+                <label>Additional Users without Adobe CC Connector license</label>
+            </value>
+            <value>
+                <fullName>Additional Storage &amp; Traffic Pricing</fullName>
+                <default>false</default>
+                <label>Additional Storage &amp; Traffic Pricing</label>
+            </value>
+            <value>
+                <fullName>Asset Workflow</fullName>
+                <default>false</default>
+                <label>Asset Workflow</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines Basic</fullName>
+                <default>false</default>
+                <label>Brand Guidelines Basic</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines Advanced</fullName>
+                <default>false</default>
+                <label>Brand Guidelines Advanced</label>
+            </value>
+            <value>
+                <fullName>Brand Guidelines Enterprise</fullName>
+                <default>false</default>
+                <label>Brand Guidelines Enterprise</label>
+            </value>
+            <value>
+                <fullName>Content Workflow Basic</fullName>
+                <default>false</default>
+                <label>Content Workflow Basic</label>
+            </value>
+            <value>
+                <fullName>Content Workflow Advanced</fullName>
+                <default>false</default>
+                <label>Content Workflow Advanced</label>
+            </value>
+            <value>
+                <fullName>Print Brand Templates</fullName>
+                <default>false</default>
+                <label>Print Brand Templates</label>
+            </value>
+            <value>
+                <fullName>Studio Basic</fullName>
+                <default>false</default>
+                <label>Studio Basic</label>
+            </value>
+            <value>
+                <fullName>Studio Advanced</fullName>
+                <default>false</default>
+                <label>Studio Advanced</label>
+            </value>
+            <value>
+                <fullName>Analytics Standard</fullName>
+                <default>false</default>
+                <label>Analytics Standard</label>
+            </value>
+            <value>
+                <fullName>Analytics Advanced</fullName>
+                <default>false</default>
+                <label>Analytics Advanced</label>
+            </value>
+            <value>
+                <fullName>Analytics for BI</fullName>
+                <default>false</default>
+                <label>Analytics for BI</label>
+            </value>
+            <value>
+                <fullName>Dynamic Asset Transformation Base (&lt;1M)</fullName>
+                <default>false</default>
+                <label>Dynamic Asset Transformation Base (&lt;1M)</label>
+            </value>
+            <value>
+                <fullName>Dynamic Asset Transformation Premium (1M-100M)</fullName>
+                <default>false</default>
+                <label>Dynamic Asset Transformation Premium (1M-100M)</label>
+            </value>
+            <value>
+                <fullName>Dynamic Asset Transformation Elite (100M+)</fullName>
+                <default>false</default>
+                <label>Dynamic Asset Transformation Elite (100M+)</label>
+            </value>
+            <value>
+                <fullName>Open Asset Bank</fullName>
+                <default>false</default>
+                <label>Open Asset Bank</label>
+            </value>
+            <value>
+                <fullName>Content Workflow Custom</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Content Workflow Custom</label>
+            </value>
+            <value>
+                <fullName>Studio Custom</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Studio Custom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

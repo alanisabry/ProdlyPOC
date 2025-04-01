@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCR_Admin_Response_Control__c</fullName>
+    <description>wd field
+Numeric field to override standard processing of responses during evaluation</description>
+    <externalId>false</externalId>
+    <label>Admin Response Control</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

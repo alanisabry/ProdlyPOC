@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Native_Integration_is_required</fullName>
+    <active>true</active>
+    <description>Integration is required when the customer is using the offered integration for the technology.</description>
+    <errorConditionFormula>ISPICKVAL (Integration_approach__c,&apos;Using offered integration&apos;) &amp;&amp;
+ISNULL(Integration__c)</errorConditionFormula>
+    <errorMessage>Please select the integration when the offered integration is used.</errorMessage>
+</ValidationRule>

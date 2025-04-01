@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_API_or_Plug_in_Portal_Integration__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Used to identify if &apos;API or Plug-in Support&apos; or &apos;Portal Integration Readiness&apos; product are added on the opportunity</description>
+    <externalId>false</externalId>
+    <label># of API or Plug-in/Portal Integration</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

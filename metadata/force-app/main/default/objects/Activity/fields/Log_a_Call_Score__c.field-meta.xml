@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Log_a_Call_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+ISPICKVAL(Contact_Type__c,&quot;Call&quot;),
+NOT( 
+ISPICKVAL(Contact_Result__c ,&quot;No answer from line&quot;))), 
+1, 0) + 
+IF(
+AND(
+ISPICKVAL(Contact_Type__c,&quot;Call&quot;),
+ISPICKVAL(Contact_Result__c ,&quot;Quality Conversation&quot;)), 
+5, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Log a Call - Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

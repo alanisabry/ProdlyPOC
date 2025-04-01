@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_Synced_Quote__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicate whether this quote is the latest synced one or not. Updated by Sync Quote flow</description>
+    <label>Latest Synced Quote?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

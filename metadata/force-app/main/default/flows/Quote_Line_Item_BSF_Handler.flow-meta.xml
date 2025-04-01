@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Sales_Price_ARR_One_Off</name>
+        <label>Set Sales Price ARR/One Off</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Sales_Price_ARR_One_off__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SalesPriceARR</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Unit_Price</name>
+        <label>Set Unit Price</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.UnitPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>QLIUnitPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Unit_Price_is_changed</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Sales_Price_ARR_One_Off_is_changed</name>
+        <label>Sales Price ARR/One Off is changed?</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Unit_Price_is_changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sales_Price_ARR_One_off__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OnCreate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Unit_Price</targetReference>
+            </connector>
+            <label>Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Unit_Price_is_changed</name>
+        <label>Unit Price is changed?</label>
+        <locationX>182</locationX>
+        <locationY>587</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Unit_Price_Changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.UnitPrice</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OnCreate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Sales_Price_ARR_One_Off</targetReference>
+            </connector>
+            <label>Unit Price Changed</label>
+        </rules>
+    </decisions>
+    <description>Update the sales price when sales price ARR/One Off is changed on Quote LIne Item</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>OnCreate</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>QLIUnitPrice</name>
+        <dataType>Currency</dataType>
+        <expression>IF({!$Record.For_Renewal__c},{!$Record.Sales_Price_ARR_One_off__c}/12,
+{!$Record.Sales_Price_ARR_One_off__c})</expression>
+        <scale>8</scale>
+    </formulas>
+    <formulas>
+        <name>SalesPriceARR</name>
+        <dataType>Currency</dataType>
+        <expression>IF({!$Record.For_Renewal__c},{!$Record.UnitPrice} * 12,
+{!$Record.UnitPrice})</expression>
+        <scale>8</scale>
+    </formulas>
+    <interviewLabel>Quote Line Item [BSF] Handler {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote Line Item [BSF] Handler</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Sales_Price_ARR_One_Off_is_changed</targetReference>
+        </connector>
+        <object>QuoteLineItem</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

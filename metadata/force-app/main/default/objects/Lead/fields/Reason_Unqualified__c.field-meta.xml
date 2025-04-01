@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Unqualified__c</fullName>
+    <label>Reason Unqualified</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <label>Competitor</label>
+            </value>
+            <value>
+                <fullName>Job applicant</fullName>
+                <default>false</default>
+                <label>Job applicant</label>
+            </value>
+            <value>
+                <fullName>Bad Data</fullName>
+                <default>false</default>
+                <label>Bad Data</label>
+            </value>
+            <value>
+                <fullName>Rejected Partner Lead</fullName>
+                <default>false</default>
+                <label>Rejected Partner Lead</label>
+            </value>
+            <value>
+                <fullName>Left Company</fullName>
+                <default>false</default>
+                <label>Left Company</label>
+            </value>
+            <value>
+                <fullName>Left Company - Apollo</fullName>
+                <default>false</default>
+                <label>Left Company - Apollo</label>
+            </value>
+            <value>
+                <fullName>Left Company - LinkedIn</fullName>
+                <default>false</default>
+                <label>Left Company - LinkedIn</label>
+            </value>
+            <value>
+                <fullName>Freelancer/Consultant</fullName>
+                <default>false</default>
+                <label>Freelancer/Consultant</label>
+            </value>
+            <value>
+                <fullName>Email Bounced</fullName>
+                <default>false</default>
+                <label>Email Bounced</label>
+            </value>
+            <value>
+                <fullName>Marketing Cloud Inactivity List</fullName>
+                <default>false</default>
+                <label>Marketing Cloud Inactivity List</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Job applicant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Bad Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Rejected Partner Lead</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Left Company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Left Company - Apollo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Left Company - LinkedIn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Freelancer/Consultant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Email Bounced</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

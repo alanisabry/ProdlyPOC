@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_CSM__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Field for Success Squad members to indicate which CSM was involved in the renewal.</description>
+    <inlineHelpText>Field for Success Squad members to indicate which CSM was involved in the renewal.(Deprecated - Use &apos;Opp CSM Owner&apos; field)</inlineHelpText>
+    <label>Temp. Squad CSM (Deprecated)</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <errorMessage>Renewal CSM - Value does not exist or does not match filter criteria.</errorMessage>
+        <filterItems>
+            <field>User.Profile.Name</field>
+            <operation>contains</operation>
+            <value>Customer Success</value>
+        </filterItems>
+        <filterItems>
+            <field>User.Profile.Name</field>
+            <operation>contains</operation>
+            <value>Implementation Consultant</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Opportunities1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_waive_indexation_on_orders</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Waive_Indexation__c) &amp;&amp;  (ISPICKVAL(Waive_Indexation__c, &quot;Yes&quot;) || ISPICKVAL(Waive_Indexation__c, &quot;No&quot;)) 
+&amp;&amp; (Indexation__c !=  $Label.Apply_or_waive_indexation || (ISPICKVAL(Status, &quot;Activated&quot;) &amp;&amp; Indexation__c =  $Label.Apply_or_waive_indexation))</errorConditionFormula>
+    <errorMessage>Indexation cannot be waived on this order. Please contact the Finance team.</errorMessage>
+</ValidationRule>

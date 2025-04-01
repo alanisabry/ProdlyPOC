@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Do_you_use_other_platforms_a_lot__c</fullName>
+    <label>Do you use other platforms a lot?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Salesforce Lightning Web Component Connector</fullName>
+                <default>false</default>
+                <label>Salesforce Lightning Web Component Connector</label>
+            </value>
+            <value>
+                <fullName>Salesforce Marketing Cloud</fullName>
+                <default>false</default>
+                <label>Salesforce Marketing Cloud</label>
+            </value>
+            <value>
+                <fullName>Salesforce Commerce Cloud</fullName>
+                <default>false</default>
+                <label>Salesforce Commerce Cloud</label>
+            </value>
+            <value>
+                <fullName>SAP Commerce Cloud</fullName>
+                <default>false</default>
+                <label>SAP Commerce Cloud</label>
+            </value>
+            <value>
+                <fullName>Sprout Social</fullName>
+                <default>false</default>
+                <label>Sprout Social</label>
+            </value>
+            <value>
+                <fullName>SharePoint</fullName>
+                <default>false</default>
+                <label>SharePoint</label>
+            </value>
+            <value>
+                <fullName>Asana</fullName>
+                <default>false</default>
+                <label>Asana</label>
+            </value>
+            <value>
+                <fullName>Salsify</fullName>
+                <default>false</default>
+                <label>Salsify</label>
+            </value>
+            <value>
+                <fullName>Adobe CC Connector</fullName>
+                <default>false</default>
+                <label>Adobe CC Connector</label>
+            </value>
+            <value>
+                <fullName>Bigtincan</fullName>
+                <default>false</default>
+                <label>Bigtincan</label>
+            </value>
+            <value>
+                <fullName>Contentful</fullName>
+                <default>false</default>
+                <label>Contentful</label>
+            </value>
+            <value>
+                <fullName>Contentstack</fullName>
+                <default>false</default>
+                <label>Contentstack</label>
+            </value>
+            <value>
+                <fullName>Akeneo</fullName>
+                <default>false</default>
+                <label>Akeneo</label>
+            </value>
+            <value>
+                <fullName>InRiver</fullName>
+                <default>false</default>
+                <label>InRiver</label>
+            </value>
+            <value>
+                <fullName>Hootsuite</fullName>
+                <default>false</default>
+                <label>Hootsuite</label>
+            </value>
+            <value>
+                <fullName>Magnolia</fullName>
+                <default>false</default>
+                <label>Magnolia</label>
+            </value>
+            <value>
+                <fullName>Sprinklr</fullName>
+                <default>false</default>
+                <label>Sprinklr</label>
+            </value>
+            <value>
+                <fullName>Optimizely</fullName>
+                <default>false</default>
+                <label>Optimizely</label>
+            </value>
+            <value>
+                <fullName>Showpad</fullName>
+                <default>false</default>
+                <label>Showpad</label>
+            </value>
+            <value>
+                <fullName>Figma</fullName>
+                <default>false</default>
+                <label>Figma</label>
+            </value>
+            <value>
+                <fullName>Getty Images</fullName>
+                <default>false</default>
+                <label>Getty Images</label>
+            </value>
+            <value>
+                <fullName>Wrike</fullName>
+                <default>false</default>
+                <label>Wrike</label>
+            </value>
+            <value>
+                <fullName>Seismic</fullName>
+                <default>false</default>
+                <label>Seismic</label>
+            </value>
+            <value>
+                <fullName>Monday.com</fullName>
+                <default>false</default>
+                <label>Monday.com</label>
+            </value>
+            <value>
+                <fullName>Sitecore</fullName>
+                <default>false</default>
+                <label>Sitecore</label>
+            </value>
+            <value>
+                <fullName>Shopify</fullName>
+                <default>false</default>
+                <label>Shopify</label>
+            </value>
+            <value>
+                <fullName>Workfront</fullName>
+                <default>false</default>
+                <label>Workfront</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

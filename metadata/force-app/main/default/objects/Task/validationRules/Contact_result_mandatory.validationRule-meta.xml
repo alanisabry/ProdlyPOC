@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_result_mandatory</fullName>
+    <active>false</active>
+    <description>Contact result mandatory if task is completed</description>
+    <errorConditionFormula>AND (
+NOT(Contains(Current_User_Profile__c,&quot;Webdam&quot;)),
+ISPICKVAL (Status, &quot;Completed&quot;),
+NOT (ISPICKVAL (Contact_Type__c, &quot;Meeting Booked&quot;)), 
+NOT (ISPICKVAL (Contact_Type__c, &quot;&quot;)),
+NOT (ISPICKVAL (Contact_Type__c, &quot;Customer: Important Date&quot;)),
+NOT (ISPICKVAL (Contact_Type__c, &quot;Customer Check-in&quot;)),
+NOT (ISPICKVAL (Contact_Type__c, &quot;Demo&quot;)),
+NOT (ISPICKVAL (Contact_Type__c, &quot;Dynamic Template Test&quot;)),
+NOT (ISPICKVAL (Contact_Type__c, &quot;IT/Security Question&quot;)),
+NOT (ISPICKVAL (Contact_Type__c, &quot;Product Question&quot;)),
+NOT (ISPICKVAL (Contact_Type__c, &quot;Trial Account&quot;)),
+NOT(CONTAINS(Subject,&quot;Call: No Answer&quot;)),
+ISPICKVAL (Contact_Result__c, &quot;&quot;))</errorConditionFormula>
+    <errorMessage>Please enter the contact result for completed tasks.</errorMessage>
+</ValidationRule>

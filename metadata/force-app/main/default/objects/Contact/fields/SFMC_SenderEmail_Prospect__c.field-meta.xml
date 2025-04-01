@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFMC_SenderEmail_Prospect__c</fullName>
+    <description>BODEV-1968 Text fields with the values applied via automation separately from RingLead</description>
+    <externalId>false</externalId>
+    <label>SFMC_SenderEmail-Prospect</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevents_create_and_edit_closed_opps</fullName>
+    <active>true</active>
+    <description>Prevents users from editing opportunity products after an opportunity is closed.</description>
+    <errorConditionFormula>AND(
+NOT(CONTAINS($User.LastName, &quot;Bypass&quot;)),
+NOT(ISCHANGED(of_Archival_Storage_Mapped__c)),
+NOT(ISCHANGED(of_Custom1_Users_Mapped__c)),
+NOT(ISCHANGED(of_Light_Users_Mapped__c)),
+NOT(ISCHANGED(of_Regular_Users_Mapped__c)),
+NOT(ISCHANGED(of_Storage_Mapped__c)),
+NOT(ISCHANGED(of_Admin_Users_Mapped__c)),
+NOT(ISCHANGED(Item_Start_Date__c)),
+NOT(ISCHANGED(Item_End_Date__c)),
+NOT(ISCHANGED(Term__c)),
+NOT(OR((Contains($Profile.Name,&quot;System Administrator&quot;)),(Contains($Profile.Name,&quot;Finance&quot;)))), 
+OR(ISPICKVAL(Opportunity.StageName, &quot;Closed Won&quot;), ISPICKVAL(Opportunity.StageName, &quot;Closed Lost&quot;)))</errorConditionFormula>
+    <errorMessage>Opportunity Line Items cannot be created or edited because the Opportunity is closed.</errorMessage>
+</ValidationRule>
