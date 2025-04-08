@@ -5,8 +5,8 @@
     <assignments>
         <name>Assign_ARR_MRR</name>
         <label>Assign - ARR/MRR</label>
-        <locationX>1832</locationX>
-        <locationY>7595</locationY>
+        <locationX>1040</locationX>
+        <locationY>7187</locationY>
         <assignmentItems>
             <assignToReference>$Record.ARR_manual__c</assignToReference>
             <operator>Assign</operator>
@@ -28,8 +28,8 @@
     <assignments>
         <name>Assign_Cap_indexation_rate_on_renewal</name>
         <label>Assign Cap indexation rate on renewal</label>
-        <locationX>1832</locationX>
-        <locationY>9887</locationY>
+        <locationX>1040</locationX>
+        <locationY>9479</locationY>
         <assignmentItems>
             <assignToReference>$Record.Cap_Indexation_Rate__c</assignToReference>
             <operator>Assign</operator>
@@ -44,8 +44,8 @@
     <assignments>
         <name>Assign_Churn_Churn_Platform_Transfer</name>
         <label>Assign - Churn &amp; Churn: Platform Transfer</label>
-        <locationX>1832</locationX>
-        <locationY>1703</locationY>
+        <locationX>1040</locationX>
+        <locationY>1595</locationY>
         <assignmentItems>
             <assignToReference>$Record.Churn__c</assignToReference>
             <operator>Assign</operator>
@@ -67,8 +67,8 @@
     <assignments>
         <name>Assign_Close_Date_Autofill_Other</name>
         <label>Assign - Close Date Autofill - Other</label>
-        <locationX>1832</locationX>
-        <locationY>803</locationY>
+        <locationX>1040</locationX>
+        <locationY>695</locationY>
         <assignmentItems>
             <assignToReference>$Record.CloseDate</assignToReference>
             <operator>Assign</operator>
@@ -83,8 +83,8 @@
     <assignments>
         <name>Assign_Close_Date_Autofill_SMB</name>
         <label>Assign - Close Date Autofill - SMB</label>
-        <locationX>1832</locationX>
-        <locationY>503</locationY>
+        <locationX>1040</locationX>
+        <locationY>395</locationY>
         <assignmentItems>
             <assignToReference>$Record.CloseDate</assignToReference>
             <operator>Assign</operator>
@@ -99,8 +99,8 @@
     <assignments>
         <name>Assign_Closed_Won_Reopened</name>
         <label>Assign - Closed Won Reopened</label>
-        <locationX>1832</locationX>
-        <locationY>4487</locationY>
+        <locationX>1040</locationX>
+        <locationY>4079</locationY>
         <assignmentItems>
             <assignToReference>$Record.Approval_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -192,8 +192,8 @@
     <assignments>
         <name>Assign_Conga_Onboarding_Package_Content_Enterprise</name>
         <label>Assign Conga Onboarding Package Content - Enterprise</label>
-        <locationX>1612</locationX>
-        <locationY>9503</locationY>
+        <locationX>820</locationX>
+        <locationY>9095</locationY>
         <assignmentItems>
             <assignToReference>$Record.Conga_Onboarding_Package_Content__c</assignToReference>
             <operator>Assign</operator>
@@ -208,8 +208,8 @@
     <assignments>
         <name>Assign_Conga_Onboarding_Package_Content_Professional</name>
         <label>Assign Conga Onboarding Package Content - Professional</label>
-        <locationX>1348</locationX>
-        <locationY>9503</locationY>
+        <locationX>556</locationX>
+        <locationY>9095</locationY>
         <assignmentItems>
             <assignToReference>$Record.Conga_Onboarding_Package_Content__c</assignToReference>
             <operator>Assign</operator>
@@ -224,8 +224,8 @@
     <assignments>
         <name>Assign_Conga_Onboarding_Package_Content_Workgroup</name>
         <label>Assign Conga Onboarding Package Content - Workgroup</label>
-        <locationX>1084</locationX>
-        <locationY>9503</locationY>
+        <locationX>292</locationX>
+        <locationY>9095</locationY>
         <assignmentItems>
             <assignToReference>$Record.Conga_Onboarding_Package_Content__c</assignToReference>
             <operator>Assign</operator>
@@ -240,8 +240,8 @@
     <assignments>
         <name>Assign_Conga_Onboarding_Package_Content_Workgroup_Plus</name>
         <label>Assign Conga Onboarding Package Content - Workgroup Plus</label>
-        <locationX>1876</locationX>
-        <locationY>9503</locationY>
+        <locationX>1084</locationX>
+        <locationY>9095</locationY>
         <assignmentItems>
             <assignToReference>$Record.Conga_Onboarding_Package_Content__c</assignToReference>
             <operator>Assign</operator>
@@ -256,8 +256,8 @@
     <assignments>
         <name>Assign_DAM</name>
         <label>Assign - DAM</label>
-        <locationX>1898</locationX>
-        <locationY>10703</locationY>
+        <locationX>1106</locationX>
+        <locationY>10295</locationY>
         <assignmentItems>
             <assignToReference>$Record.DAM_Standalone__c</assignToReference>
             <operator>Assign</operator>
@@ -272,8 +272,8 @@
     <assignments>
         <name>Assign_DAM_Standalone</name>
         <label>Assign - DAM/Standalone</label>
-        <locationX>1700</locationX>
-        <locationY>10187</locationY>
+        <locationX>908</locationX>
+        <locationY>9779</locationY>
         <assignmentItems>
             <assignToReference>$Record.DAM_Standalone__c</assignToReference>
             <operator>Assign</operator>
@@ -288,8 +288,8 @@
     <assignments>
         <name>Assign_DAM_Standalone_0</name>
         <label>Assign - DAM/Standalone</label>
-        <locationX>1964</locationX>
-        <locationY>10187</locationY>
+        <locationX>1172</locationX>
+        <locationY>9779</locationY>
         <assignmentItems>
             <assignToReference>$Record.DAM_Standalone__c</assignToReference>
             <operator>Assign</operator>
@@ -304,8 +304,8 @@
     <assignments>
         <name>Assign_Demo_Completed_True</name>
         <label>Assign - Demo Completed True</label>
-        <locationX>1832</locationX>
-        <locationY>4787</locationY>
+        <locationX>1040</locationX>
+        <locationY>4379</locationY>
         <assignmentItems>
             <assignToReference>$Record.Demo_Completed_Timestamp__c</assignToReference>
             <operator>Assign</operator>
@@ -320,8 +320,8 @@
     <assignments>
         <name>Assign_Demo_Date_Today</name>
         <label>Assign - Demo Date Today</label>
-        <locationX>842</locationX>
-        <locationY>3311</locationY>
+        <locationX>50</locationX>
+        <locationY>2903</locationY>
         <assignmentItems>
             <assignToReference>$Record.Demo_Date__c</assignToReference>
             <operator>Assign</operator>
@@ -336,8 +336,8 @@
     <assignments>
         <name>Assign_Legal_Review_Stage_Today</name>
         <label>Assign - Legal Review Stage Today</label>
-        <locationX>1634</locationX>
-        <locationY>3311</locationY>
+        <locationX>842</locationX>
+        <locationY>2903</locationY>
         <assignmentItems>
             <assignToReference>$Record.Legal_review_date__c</assignToReference>
             <operator>Assign</operator>
@@ -352,8 +352,8 @@
     <assignments>
         <name>Assign_Loss_Reason_Entered</name>
         <label>Assign - Loss Reason Entered</label>
-        <locationX>1832</locationX>
-        <locationY>6095</locationY>
+        <locationX>1040</locationX>
+        <locationY>5687</locationY>
         <assignmentItems>
             <assignToReference>$Record.Loss_Reason_Entered__c</assignToReference>
             <operator>Assign</operator>
@@ -368,8 +368,8 @@
     <assignments>
         <name>Assign_Main_Objective_Entered</name>
         <label>Assign - Main Objective Entered</label>
-        <locationX>1832</locationX>
-        <locationY>6395</locationY>
+        <locationX>1040</locationX>
+        <locationY>5987</locationY>
         <assignmentItems>
             <assignToReference>$Record.MainObjectiveEntered__c</assignToReference>
             <operator>Assign</operator>
@@ -384,8 +384,8 @@
     <assignments>
         <name>Assign_Map_Prior_Value_Closed_Opp</name>
         <label>Assign - Map Prior Value Closed Opp</label>
-        <locationX>1832</locationX>
-        <locationY>2303</locationY>
+        <locationX>1040</locationX>
+        <locationY>2195</locationY>
         <assignmentItems>
             <assignToReference>$Record.Stage_prior_to_closing__c</assignToReference>
             <operator>Assign</operator>
@@ -400,8 +400,8 @@
     <assignments>
         <name>Assign_MRR_From_Products_Changed</name>
         <label>Assign - MRR From Products Changed</label>
-        <locationX>1832</locationX>
-        <locationY>5495</locationY>
+        <locationX>1040</locationX>
+        <locationY>5087</locationY>
         <assignmentItems>
             <assignToReference>$Record.MRR__c</assignToReference>
             <operator>Assign</operator>
@@ -430,8 +430,8 @@
     <assignments>
         <name>Assign_MRR_Manual</name>
         <label>Assign - MRR Manual</label>
-        <locationX>1832</locationX>
-        <locationY>7895</locationY>
+        <locationX>1040</locationX>
+        <locationY>7487</locationY>
         <assignmentItems>
             <assignToReference>$Record.MRR__c</assignToReference>
             <operator>Assign</operator>
@@ -446,8 +446,8 @@
     <assignments>
         <name>Assign_MRR_Movement_Update</name>
         <label>Assign - MRR Movement Update</label>
-        <locationX>1832</locationX>
-        <locationY>6995</locationY>
+        <locationX>1040</locationX>
+        <locationY>6587</locationY>
         <assignmentItems>
             <assignToReference>$Record.Finance_Fields_Change_After_Approval__c</assignToReference>
             <operator>Assign</operator>
@@ -462,8 +462,8 @@
     <assignments>
         <name>Assign_New_Activity_Completed</name>
         <label>Assign - New Activity Completed</label>
-        <locationX>1832</locationX>
-        <locationY>2603</locationY>
+        <locationX>1040</locationX>
+        <locationY>2495</locationY>
         <assignmentItems>
             <assignToReference>$Record.New_activity_completed__c</assignToReference>
             <operator>Assign</operator>
@@ -472,14 +472,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Decision_Opportunity_with_value_based_pricing_to_No</targetReference>
+            <targetReference>Decision_Opp_Stage_Timestamps</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_Newly_Converted_Lead</name>
         <label>Assign - Newly Converted Lead</label>
-        <locationX>1832</locationX>
-        <locationY>1103</locationY>
+        <locationX>1040</locationX>
+        <locationY>995</locationY>
         <assignmentItems>
             <assignToReference>$Record.Sales_Office__c</assignToReference>
             <operator>Assign</operator>
@@ -494,8 +494,8 @@
     <assignments>
         <name>Assign_Next_Step_Updated</name>
         <label>Assign - Next Step Updated</label>
-        <locationX>1832</locationX>
-        <locationY>5087</locationY>
+        <locationX>1040</locationX>
+        <locationY>4679</locationY>
         <assignmentItems>
             <assignToReference>$Record.Next_Step_Timestamp__c</assignToReference>
             <operator>Assign</operator>
@@ -510,8 +510,8 @@
     <assignments>
         <name>Assign_Opp_CSM_Owner</name>
         <label>Assign Opp CSM Owner</label>
-        <locationX>1832</locationX>
-        <locationY>11387</locationY>
+        <locationX>1040</locationX>
+        <locationY>10979</locationY>
         <assignmentItems>
             <assignToReference>$Record.Opp_CSM_Owner__c</assignToReference>
             <operator>Assign</operator>
@@ -526,8 +526,8 @@
     <assignments>
         <name>Assign_Opportunity_Owner_Manager_Email</name>
         <label>Assign Opportunity Owner Manager Email</label>
-        <locationX>1832</locationX>
-        <locationY>8795</locationY>
+        <locationX>1040</locationX>
+        <locationY>8387</locationY>
         <assignmentItems>
             <assignToReference>$Record.Opportunity_Owner_Manager_Email__c</assignToReference>
             <operator>Assign</operator>
@@ -542,8 +542,8 @@
     <assignments>
         <name>Assign_Opportunity_Push_Count</name>
         <label>Assign Opportunity Push Count</label>
-        <locationX>1832</locationX>
-        <locationY>9095</locationY>
+        <locationX>1040</locationX>
+        <locationY>8687</locationY>
         <assignmentItems>
             <assignToReference>$Record.Opportunity_Push_Count__c</assignToReference>
             <operator>Add</operator>
@@ -556,26 +556,10 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_Opportunity_with_value_based_pricing_No</name>
-        <label>Assign - Opportunity with value-based pricing? - No</label>
-        <locationX>1832</locationX>
-        <locationY>2903</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Opportunity_with_value_based_pricing__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>No</stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Decision_Opp_Stage_Timestamps</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Assign_Other_Finance_Fields_Update</name>
         <label>Assign - Other Finance Fields Update</label>
-        <locationX>1832</locationX>
-        <locationY>7295</locationY>
+        <locationX>1040</locationX>
+        <locationY>6887</locationY>
         <assignmentItems>
             <assignToReference>$Record.Finance_Fields_Change_After_Approval__c</assignToReference>
             <operator>Assign</operator>
@@ -590,8 +574,8 @@
     <assignments>
         <name>Assign_Product_Customization_Required_Filled</name>
         <label>Assign - Product Customization Required Filled</label>
-        <locationX>1832</locationX>
-        <locationY>4187</locationY>
+        <locationX>1040</locationX>
+        <locationY>3779</locationY>
         <assignmentItems>
             <assignToReference>$Record.Product_Customisation_Required_Filled__c</assignToReference>
             <operator>Assign</operator>
@@ -606,8 +590,8 @@
     <assignments>
         <name>Assign_Prop_Stage_Today</name>
         <label>Assign - Prop Stage Today</label>
-        <locationX>1106</locationX>
-        <locationY>3311</locationY>
+        <locationX>314</locationX>
+        <locationY>2903</locationY>
         <assignmentItems>
             <assignToReference>$Record.Prop_Date__c</assignToReference>
             <operator>Assign</operator>
@@ -622,8 +606,8 @@
     <assignments>
         <name>Assign_Sales_Office</name>
         <label>Assign Sales Office</label>
-        <locationX>1832</locationX>
-        <locationY>11087</locationY>
+        <locationX>1040</locationX>
+        <locationY>10679</locationY>
         <assignmentItems>
             <assignToReference>$Record.Sales_Office__c</assignToReference>
             <operator>Assign</operator>
@@ -638,8 +622,8 @@
     <assignments>
         <name>Assign_SAM_Renewal</name>
         <label>Assign SAM Renewal</label>
-        <locationX>1832</locationX>
-        <locationY>11987</locationY>
+        <locationX>1040</locationX>
+        <locationY>11579</locationY>
         <assignmentItems>
             <assignToReference>$Record.Renewal_SAM__c</assignToReference>
             <operator>Assign</operator>
@@ -654,8 +638,8 @@
     <assignments>
         <name>Assign_Set_Type_to_New_Business</name>
         <label>Assign - Set Type to New Business</label>
-        <locationX>1832</locationX>
-        <locationY>1403</locationY>
+        <locationX>1040</locationX>
+        <locationY>1295</locationY>
         <assignmentItems>
             <assignToReference>$Record.Type</assignToReference>
             <operator>Assign</operator>
@@ -670,8 +654,8 @@
     <assignments>
         <name>Assign_Signature_Stage_Today</name>
         <label>Assign - Signature Stage Today</label>
-        <locationX>1898</locationX>
-        <locationY>3311</locationY>
+        <locationX>1106</locationX>
+        <locationY>2903</locationY>
         <assignmentItems>
             <assignToReference>$Record.Signature_Stage_Date__c</assignToReference>
             <operator>Assign</operator>
@@ -686,8 +670,8 @@
     <assignments>
         <name>Assign_Solution_Owner_Updates</name>
         <label>Assign - Solution Owner Updates</label>
-        <locationX>1832</locationX>
-        <locationY>8195</locationY>
+        <locationX>1040</locationX>
+        <locationY>7787</locationY>
         <assignmentItems>
             <assignToReference>$Record.Solution_Owner_Timestamp__c</assignToReference>
             <operator>Assign</operator>
@@ -709,8 +693,8 @@
     <assignments>
         <name>Assign_SpotDraft_Subsidiary_Field</name>
         <label>Assign SpotDraft Subsidiary Field</label>
-        <locationX>1964</locationX>
-        <locationY>11687</locationY>
+        <locationX>1172</locationX>
+        <locationY>11279</locationY>
         <assignmentItems>
             <assignToReference>$Record.SpotDraft_Subsidiary__c</assignToReference>
             <operator>Assign</operator>
@@ -725,8 +709,8 @@
     <assignments>
         <name>Assign_SpotDraft_Subsidiary_Field_0</name>
         <label>Assign SpotDraft Subsidiary Field</label>
-        <locationX>1700</locationX>
-        <locationY>11687</locationY>
+        <locationX>908</locationX>
+        <locationY>11279</locationY>
         <assignmentItems>
             <assignToReference>$Record.SpotDraft_Subsidiary__c</assignToReference>
             <operator>Assign</operator>
@@ -741,8 +725,8 @@
     <assignments>
         <name>Assign_SpotDraft_Subsidiary_Field_0_0</name>
         <label>Assign SpotDraft Subsidiary Field</label>
-        <locationX>1832</locationX>
-        <locationY>12287</locationY>
+        <locationX>1040</locationX>
+        <locationY>11879</locationY>
         <assignmentItems>
             <assignToReference>$Record.SpotDraft_Subsidiary__c</assignToReference>
             <operator>Assign</operator>
@@ -754,8 +738,8 @@
     <assignments>
         <name>Assign_Standalone_GC</name>
         <label>Assign - Standalone GC</label>
-        <locationX>1634</locationX>
-        <locationY>10703</locationY>
+        <locationX>842</locationX>
+        <locationY>10295</locationY>
         <assignmentItems>
             <assignToReference>$Record.DAM_Standalone__c</assignToReference>
             <operator>Assign</operator>
@@ -770,8 +754,8 @@
     <assignments>
         <name>Assign_Update_Changed_Counter_and_Close_Date</name>
         <label>Assign - Update Changed Counter and Close Date</label>
-        <locationX>1832</locationX>
-        <locationY>6695</locationY>
+        <locationX>1040</locationX>
+        <locationY>6287</locationY>
         <assignmentItems>
             <assignToReference>$Record.Changed__c</assignToReference>
             <operator>Assign</operator>
@@ -793,8 +777,8 @@
     <assignments>
         <name>Assign_Update_One_off_Products</name>
         <label>Assign - Update One off Products</label>
-        <locationX>1832</locationX>
-        <locationY>5795</locationY>
+        <locationX>1040</locationX>
+        <locationY>5387</locationY>
         <assignmentItems>
             <assignToReference>$Record.One_off__c</assignToReference>
             <operator>Assign</operator>
@@ -809,8 +793,8 @@
     <assignments>
         <name>Assign_Update_Record_Type</name>
         <label>Assign - Update Record Type</label>
-        <locationX>1832</locationX>
-        <locationY>2003</locationY>
+        <locationX>1040</locationX>
+        <locationY>1895</locationY>
         <assignmentItems>
             <assignToReference>$Record.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -825,8 +809,8 @@
     <assignments>
         <name>Assign_VOC_Stage_Today</name>
         <label>Assign - VOC Stage Today</label>
-        <locationX>1370</locationX>
-        <locationY>3311</locationY>
+        <locationX>578</locationX>
+        <locationY>2903</locationY>
         <assignmentItems>
             <assignToReference>$Record.VOC_Date__c</assignToReference>
             <operator>Assign</operator>
@@ -841,8 +825,8 @@
     <assignments>
         <name>Assign_waive_indexation</name>
         <label>Assign waive indexation</label>
-        <locationX>1832</locationX>
-        <locationY>8495</locationY>
+        <locationX>1040</locationX>
+        <locationY>8087</locationY>
         <assignmentItems>
             <assignToReference>$Record.Waive_Indexation__c</assignToReference>
             <operator>Assign</operator>
@@ -857,8 +841,8 @@
     <assignments>
         <name>Assign_Win_Reason_Detail_Filled</name>
         <label>Assign - Win Reason Detail Filled</label>
-        <locationX>1832</locationX>
-        <locationY>3887</locationY>
+        <locationX>1040</locationX>
+        <locationY>3479</locationY>
         <assignmentItems>
             <assignToReference>$Record.WinReasonEntered__c</assignToReference>
             <operator>Assign</operator>
@@ -870,75 +854,11 @@
             <targetReference>Decision_Product_Customization_Required_Filled</targetReference>
         </connector>
     </assignments>
-    <assignments>
-        <name>Update_Bypass_Process_to_False</name>
-        <label>Update Bypass Process to False</label>
-        <locationX>50</locationX>
-        <locationY>503</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Bypass_Process__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </assignmentItems>
-    </assignments>
-    <decisions>
-        <name>Bypass_Automations</name>
-        <label>Bypass Automations?</label>
-        <locationX>1073</locationX>
-        <locationY>287</locationY>
-        <defaultConnector>
-            <targetReference>Decision_Close_Date_Autofill_SMB</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$User.Id</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>frmBypassUserID</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Bypass_Process__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Process_Bypass_TRUE</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-        <rules>
-            <name>Bypass_is_Changed_to_False</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Bypass_Process__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Bypass_Process__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <label>Bypass is Changed to False</label>
-        </rules>
-    </decisions>
     <decisions>
         <name>Check_Account_CSM_Owner</name>
         <label>Account CSM Owner</label>
-        <locationX>1964</locationX>
-        <locationY>11279</locationY>
+        <locationX>1172</locationX>
+        <locationY>10871</locationY>
         <defaultConnector>
             <targetReference>Check_Account_Subsidiary_Sales_Office_is_Filled</targetReference>
         </defaultConnector>
@@ -990,8 +910,8 @@
     <decisions>
         <name>Check_Account_Subsidiary_Sales_Office_is_Filled</name>
         <label>Check Account Subsidiary/Sales Office is Filled</label>
-        <locationX>1964</locationX>
-        <locationY>11579</locationY>
+        <locationX>1172</locationX>
+        <locationY>11171</locationY>
         <defaultConnector>
             <targetReference>Check_SAM</targetReference>
         </defaultConnector>
@@ -1051,8 +971,8 @@
     <decisions>
         <name>Check_Cap_Indexation_rate_on_account</name>
         <label>Check - Cap Indexation rate on account</label>
-        <locationX>1964</locationX>
-        <locationY>9779</locationY>
+        <locationX>1172</locationX>
+        <locationY>9371</locationY>
         <defaultConnector>
             <targetReference>Check_GC_Lead_Source</targetReference>
         </defaultConnector>
@@ -1090,8 +1010,8 @@
     <decisions>
         <name>Check_DAM_Standalone</name>
         <label>Check - DAM/Standalone</label>
-        <locationX>1964</locationX>
-        <locationY>10379</locationY>
+        <locationX>1172</locationX>
+        <locationY>9971</locationY>
         <defaultConnector>
             <targetReference>Opportunity_Owner_is_Changed</targetReference>
         </defaultConnector>
@@ -1122,8 +1042,8 @@
     <decisions>
         <name>Check_GC_Lead_Source</name>
         <label>Check - GC Lead Source</label>
-        <locationX>1964</locationX>
-        <locationY>10079</locationY>
+        <locationX>1172</locationX>
+        <locationY>9671</locationY>
         <defaultConnector>
             <targetReference>Check_DAM_Standalone</targetReference>
         </defaultConnector>
@@ -1205,8 +1125,8 @@
     <decisions>
         <name>Check_if_Sales_Office_is_Updated</name>
         <label>Check if Sales Office is Updated</label>
-        <locationX>1964</locationX>
-        <locationY>12179</locationY>
+        <locationX>1172</locationX>
+        <locationY>11771</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Sales_Office_Updated</name>
@@ -1241,8 +1161,8 @@
     <decisions>
         <name>Check_Opportunity_Owner_changed_Opportunity_Manager_Email_Field_blank</name>
         <label>Check Opportunity Owner changed/Opportunity Manager Email Field blank</label>
-        <locationX>1964</locationX>
-        <locationY>8687</locationY>
+        <locationX>1172</locationX>
+        <locationY>8279</locationY>
         <defaultConnector>
             <targetReference>Decision_Close_date_pushed</targetReference>
         </defaultConnector>
@@ -1281,8 +1201,8 @@
         <description>Check if the SAM on the opportunity is the same as the account owner</description>
         <name>Check_SAM</name>
         <label>Check SAM</label>
-        <locationX>1964</locationX>
-        <locationY>11879</locationY>
+        <locationX>1172</locationX>
+        <locationY>11471</locationY>
         <defaultConnector>
             <targetReference>Check_if_Sales_Office_is_Updated</targetReference>
         </defaultConnector>
@@ -1334,8 +1254,8 @@
     <decisions>
         <name>Check_Standalone_GC</name>
         <label>Check - Standalone GC</label>
-        <locationX>1766</locationX>
-        <locationY>10595</locationY>
+        <locationX>974</locationX>
+        <locationY>10187</locationY>
         <defaultConnector>
             <targetReference>Assign_DAM</targetReference>
         </defaultConnector>
@@ -1359,8 +1279,8 @@
     <decisions>
         <name>Check_Standard_Package_Field_Filled</name>
         <label>Check Standard Package Field Filled</label>
-        <locationX>1964</locationX>
-        <locationY>9287</locationY>
+        <locationX>1172</locationX>
+        <locationY>8879</locationY>
         <defaultConnector>
             <targetReference>Check_Cap_Indexation_rate_on_account</targetReference>
         </defaultConnector>
@@ -1391,8 +1311,8 @@
     <decisions>
         <name>Check_Standard_Package_Selected</name>
         <label>Check Standard Package Selected</label>
-        <locationX>1612</locationX>
-        <locationY>9395</locationY>
+        <locationX>820</locationX>
+        <locationY>8987</locationY>
         <defaultConnector>
             <targetReference>Check_Cap_Indexation_rate_on_account</targetReference>
         </defaultConnector>
@@ -1461,8 +1381,8 @@
     <decisions>
         <name>Check_waive_indexation</name>
         <label>Check waive indexation?</label>
-        <locationX>1964</locationX>
-        <locationY>8387</locationY>
+        <locationX>1172</locationX>
+        <locationY>7979</locationY>
         <defaultConnector>
             <targetReference>Check_Opportunity_Owner_changed_Opportunity_Manager_Email_Field_blank</targetReference>
         </defaultConnector>
@@ -1500,8 +1420,8 @@
     <decisions>
         <name>Decision_ARR_is_changed_MRR_doesn_t_equal_ARR_12</name>
         <label>Decision - ARR is changed, MRR doesn&apos;t equal ARR/12</label>
-        <locationX>1964</locationX>
-        <locationY>7787</locationY>
+        <locationX>1172</locationX>
+        <locationY>7379</locationY>
         <defaultConnector>
             <targetReference>Decision_Chatter_new_Project_for_Solution_Owner</targetReference>
         </defaultConnector>
@@ -1532,8 +1452,8 @@
     <decisions>
         <name>Decision_Change_Close_Date_Count</name>
         <label>Decision - Change Close Date Count?</label>
-        <locationX>1964</locationX>
-        <locationY>6587</locationY>
+        <locationX>1172</locationX>
+        <locationY>6179</locationY>
         <defaultConnector>
             <targetReference>Decision_MRR_Movement_Fields_Changed</targetReference>
         </defaultConnector>
@@ -1557,8 +1477,8 @@
     <decisions>
         <name>Decision_Chatter_new_Project_for_Solution_Owner</name>
         <label>Decision - Chatter new Project for Solution Owner</label>
-        <locationX>1964</locationX>
-        <locationY>8087</locationY>
+        <locationX>1172</locationX>
+        <locationY>7679</locationY>
         <defaultConnector>
             <targetReference>Check_waive_indexation</targetReference>
         </defaultConnector>
@@ -1596,8 +1516,8 @@
     <decisions>
         <name>Decision_Close_Date_Autofill_Other</name>
         <label>Decision - Close Date Autofill Other?</label>
-        <locationX>1964</locationX>
-        <locationY>695</locationY>
+        <locationX>1172</locationX>
+        <locationY>587</locationY>
         <defaultConnector>
             <targetReference>Decision_Newly_Converted_Lead</targetReference>
         </defaultConnector>
@@ -1636,8 +1556,8 @@
     <decisions>
         <name>Decision_Close_Date_Autofill_SMB</name>
         <label>Decision - Close Date Autofill SMB?</label>
-        <locationX>1964</locationX>
-        <locationY>395</locationY>
+        <locationX>1172</locationX>
+        <locationY>287</locationY>
         <defaultConnector>
             <targetReference>Decision_Close_Date_Autofill_Other</targetReference>
         </defaultConnector>
@@ -1676,8 +1596,8 @@
     <decisions>
         <name>Decision_Close_date_pushed</name>
         <label>Decision - Close date pushed</label>
-        <locationX>1964</locationX>
-        <locationY>8987</locationY>
+        <locationX>1172</locationX>
+        <locationY>8579</locationY>
         <defaultConnector>
             <targetReference>Check_Standard_Package_Field_Filled</targetReference>
         </defaultConnector>
@@ -1708,8 +1628,8 @@
     <decisions>
         <name>Decision_Closed_Oppty_Reopened</name>
         <label>Decision - Closed Oppty Reopened?</label>
-        <locationX>1964</locationX>
-        <locationY>1595</locationY>
+        <locationX>1172</locationX>
+        <locationY>1487</locationY>
         <defaultConnector>
             <targetReference>Decision_Update_Record_Type</targetReference>
         </defaultConnector>
@@ -1762,8 +1682,8 @@
         <description>Replaces the &quot;Closed Won Reopened&quot; node in the &quot;Main Process&quot; PB</description>
         <name>Decision_Closed_Won_Reopened</name>
         <label>Decision - Closed Won Reopened</label>
-        <locationX>1964</locationX>
-        <locationY>4379</locationY>
+        <locationX>1172</locationX>
+        <locationY>3971</locationY>
         <defaultConnector>
             <targetReference>Decision_Demo_Completed_True</targetReference>
         </defaultConnector>
@@ -1802,8 +1722,8 @@
         <description>Replaces the &quot;Demo Completed True&quot; node in the &quot;Main Process&quot; PB</description>
         <name>Decision_Demo_Completed_True</name>
         <label>Decision - Demo Completed True</label>
-        <locationX>1964</locationX>
-        <locationY>4679</locationY>
+        <locationX>1172</locationX>
+        <locationY>4271</locationY>
         <defaultConnector>
             <targetReference>Decision_Next_Step_Updated</targetReference>
         </defaultConnector>
@@ -1843,8 +1763,8 @@
         <description>Moved the logic from &apos;LossReasonFilled&apos; trigger to this decision element and inactivated the trigger.</description>
         <name>Decision_Loss_Reason_Filled</name>
         <label>Decision - Loss Reason Filled?</label>
-        <locationX>1964</locationX>
-        <locationY>5987</locationY>
+        <locationX>1172</locationX>
+        <locationY>5579</locationY>
         <defaultConnector>
             <targetReference>Decision_Main_Objective_Filled</targetReference>
         </defaultConnector>
@@ -1877,8 +1797,8 @@
         <description>Moved the logic from &apos;MainObjectiveEntered&apos; trigger to this decision element and inactivated the trigger.</description>
         <name>Decision_Main_Objective_Filled</name>
         <label>Decision - Main Objective Filled?</label>
-        <locationX>1964</locationX>
-        <locationY>6287</locationY>
+        <locationX>1172</locationX>
+        <locationY>5879</locationY>
         <defaultConnector>
             <targetReference>Decision_Change_Close_Date_Count</targetReference>
         </defaultConnector>
@@ -1925,8 +1845,8 @@
         <description>Replaced &quot;Map Prior Value Closed Opp&quot; node in &quot;Main Process&quot; PB</description>
         <name>Decision_Map_Prior_Value_Closed_Opp</name>
         <label>Decision - Map Prior Value Closed Opp</label>
-        <locationX>1964</locationX>
-        <locationY>2195</locationY>
+        <locationX>1172</locationX>
+        <locationY>2087</locationY>
         <defaultConnector>
             <targetReference>Decision_New_Activity_Completed</targetReference>
         </defaultConnector>
@@ -1965,8 +1885,8 @@
     <decisions>
         <name>Decision_MRR_From_Products_Changed</name>
         <label>Decision - MRR From Products Changed</label>
-        <locationX>1964</locationX>
-        <locationY>5279</locationY>
+        <locationX>1172</locationX>
+        <locationY>4871</locationY>
         <defaultConnector>
             <targetReference>Decision_One_off_from_products_changed</targetReference>
         </defaultConnector>
@@ -1997,8 +1917,8 @@
     <decisions>
         <name>Decision_MRR_Movement_Fields_Changed</name>
         <label>Decision - MRR Movement Fields Changed?</label>
-        <locationX>1964</locationX>
-        <locationY>6887</locationY>
+        <locationX>1172</locationX>
+        <locationY>6479</locationY>
         <defaultConnector>
             <targetReference>Decision_Other_Finance_Fields_Changed</targetReference>
         </defaultConnector>
@@ -2024,10 +1944,10 @@
         <description>Replaces the &quot;New Activity Completed&quot; node in the &quot;Main Process&quot; PB</description>
         <name>Decision_New_Activity_Completed</name>
         <label>Decision - New Activity Completed</label>
-        <locationX>1964</locationX>
-        <locationY>2495</locationY>
+        <locationX>1172</locationX>
+        <locationY>2387</locationY>
         <defaultConnector>
-            <targetReference>Decision_Opportunity_with_value_based_pricing_to_No</targetReference>
+            <targetReference>Decision_Opp_Stage_Timestamps</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Skip Process</defaultConnectorLabel>
         <rules>
@@ -2056,8 +1976,8 @@
     <decisions>
         <name>Decision_Newly_Converted_Lead</name>
         <label>Decision - Newly Converted Lead</label>
-        <locationX>1964</locationX>
-        <locationY>995</locationY>
+        <locationX>1172</locationX>
+        <locationY>887</locationY>
         <defaultConnector>
             <targetReference>Decision_Set_Type_to_New_Business</targetReference>
         </defaultConnector>
@@ -2097,8 +2017,8 @@
         <description>Replaces the &quot;Next Step Updated&quot; node in &quot;Main Process&quot; PB</description>
         <name>Decision_Next_Step_Updated</name>
         <label>Decision - Next Step Updated</label>
-        <locationX>1964</locationX>
-        <locationY>4979</locationY>
+        <locationX>1172</locationX>
+        <locationY>4571</locationY>
         <defaultConnector>
             <targetReference>Decision_MRR_From_Products_Changed</targetReference>
         </defaultConnector>
@@ -2122,8 +2042,8 @@
     <decisions>
         <name>Decision_One_off_from_products_changed</name>
         <label>Decision - One off from products changed?</label>
-        <locationX>1964</locationX>
-        <locationY>5687</locationY>
+        <locationX>1172</locationX>
+        <locationY>5279</locationY>
         <defaultConnector>
             <targetReference>Decision_Loss_Reason_Filled</targetReference>
         </defaultConnector>
@@ -2161,8 +2081,8 @@
     <decisions>
         <name>Decision_Opp_Stage_Timestamp_Current_Stage</name>
         <label>Decision - Opp Stage Timestamp Current Stage</label>
-        <locationX>1502</locationX>
-        <locationY>3203</locationY>
+        <locationX>710</locationX>
+        <locationY>2795</locationY>
         <defaultConnectorLabel>Skip Process</defaultConnectorLabel>
         <rules>
             <name>Yes_Demo_Stage</name>
@@ -2279,8 +2199,8 @@
         <description>Replaces the &quot;Opp Stage Timestamps&quot; node in the &quot;Main Process&quot; PB</description>
         <name>Decision_Opp_Stage_Timestamps</name>
         <label>Decision - Opp Stage Timestamps</label>
-        <locationX>1964</locationX>
-        <locationY>3095</locationY>
+        <locationX>1172</locationX>
+        <locationY>2687</locationY>
         <defaultConnector>
             <targetReference>Decision_Win_Reason_Detail_Filled</targetReference>
         </defaultConnector>
@@ -2366,63 +2286,10 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Decision_Opportunity_with_value_based_pricing_to_No</name>
-        <label>Decision - Opportunity with value-based pricing? to No</label>
-        <locationX>1964</locationX>
-        <locationY>2795</locationY>
-        <defaultConnector>
-            <targetReference>Decision_Opp_Stage_Timestamps</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Opportunity_with_value_based_pricing_to_No</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Enterprise_Pricing_Products__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Enterprise_Pricing_Products__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <numberValue>0.0</numberValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Existing Business-Upsell</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Existing Business - Internal Transfer</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Existing Business-Professional Services</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_Opportunity_with_value_based_pricing_No</targetReference>
-            </connector>
-            <label>Opportunity with value-based pricing? to No</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Decision_Other_Finance_Fields_Changed</name>
         <label>Decision - Other Finance Fields Changed?</label>
-        <locationX>1964</locationX>
-        <locationY>7187</locationY>
+        <locationX>1172</locationX>
+        <locationY>6779</locationY>
         <defaultConnector>
             <targetReference>Decision_Set_Default_MRR</targetReference>
         </defaultConnector>
@@ -2447,8 +2314,8 @@
     <decisions>
         <name>Decision_Product_Customization_Required_Filled</name>
         <label>Decision - Product Customization Required Filled</label>
-        <locationX>1964</locationX>
-        <locationY>4079</locationY>
+        <locationX>1172</locationX>
+        <locationY>3671</locationY>
         <defaultConnector>
             <targetReference>Decision_Closed_Won_Reopened</targetReference>
         </defaultConnector>
@@ -2480,8 +2347,8 @@
     <decisions>
         <name>Decision_Set_Default_MRR</name>
         <label>Decision - Set Default MRR?</label>
-        <locationX>1964</locationX>
-        <locationY>7487</locationY>
+        <locationX>1172</locationX>
+        <locationY>7079</locationY>
         <defaultConnector>
             <targetReference>Decision_ARR_is_changed_MRR_doesn_t_equal_ARR_12</targetReference>
         </defaultConnector>
@@ -2528,8 +2395,8 @@
         <description>Replaces the &quot;Set Type to New Business&quot; node in the &quot;Main Process&quot; PB</description>
         <name>Decision_Set_Type_to_New_Business</name>
         <label>Decision - Set Type to New Business</label>
-        <locationX>1964</locationX>
-        <locationY>1295</locationY>
+        <locationX>1172</locationX>
+        <locationY>1187</locationY>
         <defaultConnector>
             <targetReference>Decision_Closed_Oppty_Reopened</targetReference>
         </defaultConnector>
@@ -2555,8 +2422,8 @@
         <description>Replaces the invoked process &quot;Update Record Type&quot; called by the &quot;Main Process&quot; PB</description>
         <name>Decision_Update_Record_Type</name>
         <label>Decision - Update Record Type</label>
-        <locationX>1964</locationX>
-        <locationY>1895</locationY>
+        <locationX>1172</locationX>
+        <locationY>1787</locationY>
         <defaultConnector>
             <targetReference>Decision_Map_Prior_Value_Closed_Opp</targetReference>
         </defaultConnector>
@@ -2602,8 +2469,8 @@
         <description>Replaces the &quot;Win Reason Detail Filled&quot; node in the &quot;Main Process&quot; PB</description>
         <name>Decision_Win_Reason_Detail_Filled</name>
         <label>Decision - Win Reason Detail Filled</label>
-        <locationX>1964</locationX>
-        <locationY>3779</locationY>
+        <locationX>1172</locationX>
+        <locationY>3371</locationY>
         <defaultConnector>
             <targetReference>Decision_Product_Customization_Required_Filled</targetReference>
         </defaultConnector>
@@ -2636,8 +2503,8 @@
         <description>Update sales office when opp owner is changed</description>
         <name>Opportunity_Owner_is_Changed</name>
         <label>Opportunity Owner is Changed</label>
-        <locationX>1964</locationX>
-        <locationY>10979</locationY>
+        <locationX>1172</locationX>
+        <locationY>10571</locationY>
         <defaultConnector>
             <targetReference>Check_Account_CSM_Owner</targetReference>
         </defaultConnector>
@@ -2662,8 +2529,8 @@
         <description>This is strictly used to cleanup the paths in Flow to stop it from getting hard to read.</description>
         <name>Path_Cleanup</name>
         <label>Path Cleanup</label>
-        <locationX>1502</locationX>
-        <locationY>3503</locationY>
+        <locationX>710</locationX>
+        <locationY>3095</locationY>
         <defaultConnector>
             <targetReference>Decision_Win_Reason_Detail_Filled</targetReference>
         </defaultConnector>
@@ -2684,30 +2551,10 @@
             <label>Continue</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>Process_Bypass_TRUE</name>
-        <label>Process Bypass = TRUE?</label>
-        <locationX>182</locationX>
-        <locationY>395</locationY>
-        <defaultConnectorLabel>NO</defaultConnectorLabel>
-        <rules>
-            <name>YES_Process_Bypass_TRUE</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Bypass_Process__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Bypass_Process_to_False</targetReference>
-            </connector>
-            <label>YES</label>
-        </rules>
-    </decisions>
-    <description>BODEV-4533 Tracing New Pricing Deals
-Updated the flow to set &quot;Opportunity with value-based pricing&quot; to No if Enterprise pricing products are removed.</description>
+    <description>BODEV - 4152 Renewal SAM
+
+BODEV-4216 DAM/Standalone CW field not set properly through Opportunity[BSF] flow
+Updated the flow to set DAM/Standalone CW field properly upon Closed Won</description>
     <environments>Default</environments>
     <formulas>
         <name>ARRforBizibleEUR</name>
@@ -2923,8 +2770,8 @@ TEXT({!$Record.Type}) = &quot;Referral&quot;, &quot;0123g000000bpTw&quot;, {!$Re
     <recordLookups>
         <name>Get_GC_Standalone_Products</name>
         <label>Get GC Standalone Products</label>
-        <locationX>1766</locationX>
-        <locationY>10487</locationY>
+        <locationX>974</locationX>
+        <locationY>10079</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Standalone_GC</targetReference>
@@ -2958,8 +2805,8 @@ TEXT({!$Record.Type}) = &quot;Referral&quot;, &quot;0123g000000bpTw&quot;, {!$Re
     <recordLookups>
         <name>Get_Latest_Currency_Exchange_Rate</name>
         <label>Get Latest Currency Exchange Rate</label>
-        <locationX>1832</locationX>
-        <locationY>5387</locationY>
+        <locationX>1040</locationX>
+        <locationY>4979</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_MRR_From_Products_Changed</targetReference>
@@ -2977,10 +2824,10 @@ TEXT({!$Record.Type}) = &quot;Referral&quot;, &quot;0123g000000bpTw&quot;, {!$Re
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>947</locationX>
+        <locationX>1046</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Bypass_Automations</targetReference>
+            <targetReference>Decision_Close_Date_Autofill_SMB</targetReference>
         </connector>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
